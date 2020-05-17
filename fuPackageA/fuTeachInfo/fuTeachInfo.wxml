@@ -1,0 +1,90 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-12 15:32:18 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-12 15:32:18 
+    技师信息个人编辑页
+*/ -->
+
+<view id="fuTeachInfo">
+
+    <!--  -->
+    <view class="navTap">
+        <span class="name">上传形象照</span>  （最多可传3张）
+    </view>
+    <view class="contant">
+        <span class="img" wx:for="{{imageLoad}}" data-index="{{index}}" wx:key="{{index}}" >
+            <image src="{{item}}" mode="aspectFill" />
+        </span>
+        <span class="img" >
+            <image bindtap="chooseImage" src="{{imgUrl+'addMD.png?1'}}" mode="aspectFill" />
+        </span>
+    </view>
+
+    <!--  -->
+    <view class="child flexMin">
+        <span class="name">
+            职务级别
+        </span>
+        <span class="val">
+            <span class="neirou">{{dataInfo.GradeName}}</span>
+        </span>
+    </view>
+    <view class="child flexMin">
+        <span class="name">
+            工作年限
+        </span>
+        <span class="val left">
+            <span class="neirou ">
+                <picker bindchange="bindRegion" mode="selector" value="{{dataInfo.WorkYeas}}" range="{{numList}}">
+                    {{dataInfo.WorkYeas}}
+                </picker>
+                
+            </span>
+            <image src="{{imgUrl+'arrow_btn.png'}}" />
+        </span>
+        年
+    </view>
+    <view class="child txtflex">
+        <span class="name">
+            个性签名
+        </span>
+        <span class="val">
+            <textarea bindinput="changeFN" data-name="dataInfo.Sign" value="{{dataInfo.Sign}}"  maxlength="18" placeholder="最多可输入20字"></textarea>
+        </span>
+    </view>
+    <view class="child addTip border">
+        <span class="name">
+            添加标签
+        </span>
+        <span class="val">
+            <span bindtap="chooseFN" data-tf="{{item.IsInclude}}" data-index='{{index}}' class="choose {{item.IsInclude?'red':''}}" wx:for="{{dataInfo.Tags}}" wx:key="{{index}}">
+                {{item.TagName}}
+            </span>
+        </span>
+    </view>
+    <view class="child addTip">
+        <span class="name">
+            擅长项目
+        </span>
+        <span class="val">
+            <span class="choose inp" wx:for="{{dataInfo.Specialize}}" wx:key="{{index}}" >
+               <input value="{{item}}" bindinput="changeFN" data-name="{{'dataInfo.Specialize['+index+']'}}" />
+            </span>
+        </span>
+    </view>
+     <view class="child txtflex">
+        <span class="name">
+            擅长介绍
+        </span>
+        <span class="val">
+            <textarea bindinput="changeFN" data-name="dataInfo.Introduce" class="max" value="{{dataInfo.Introduce}}"></textarea>
+        </span>
+    </view>
+
+    <!--  -->
+    <!--  -->
+    <view class="btn" bindtap="submit">
+        <van-button >提交</van-button>
+    </view>
+</view>

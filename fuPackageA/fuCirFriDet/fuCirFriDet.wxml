@@ -1,0 +1,120 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-18 16:38:19 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-07-18 16:38:41
+    朋友圈详情
+*/ -->
+
+<view id="fuCirFriDet">
+
+    <!--  -->
+    <swiper  wx:if="{{!dataInfo.videoF}}" id="myVideo" src="{{dataInfo.ImageUrls}}" style="height:{{imgheights[current]}}rpx;" indicator-dots="{{indicatorDots}}"  autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}"   bindchange="bindchangeImg"> 
+
+        <swiper-item wx:for="{{dataInfo.ImageUrlsArr}}"  wx:key="index" data-id='{{index}}'>
+           
+            <image  data-id='{{index}}'  bindload="imageLoad" class='item-img' data-photoId="{{item.PhotoId}}" src="{{item+'?x-oss-process=image/resize,l_640'}}" mode='widthFix' data-categoryId="{{item.CategoryId}}" ></image>
+        </swiper-item>
+
+    </swiper>
+
+
+     <video autoplay="{{true}}" object-fit="contain" wx:if="{{dataInfo.videoF}}" id="myVideo" src="{{dataInfo.ImageUrls}}"   controls></video>
+
+
+    <!--  -->
+    <view class="people"  id="people">
+        <image class="img" bindtap="toFNF" src="{{dataInfo.Picture}}" />
+        <span bindtap="toFNF" class="name">{{dataInfo.UserName?dataInfo.UserName:'无'}}</span>
+        <van-button bindtap="followFN" size="mini">{{dataInfo.IsFavorite?'已关注':'关注'}}</van-button>
+        
+        <button open-type="share" plain="true" style="border:0;margin:0;padding:0;"><image  class="share" src="{{imgUrl+'shareT.png'}}" /></button>
+    </view>
+
+    <!--  -->
+    <view class="textarea">
+        {{dataInfo.Contents}}
+    </view>
+
+    <!--  -->
+    <view class="plNav">
+        共{{dataInfo.CommentCount}}条评论
+    </view>
+    <view class="seachMT">
+        <image class="touxian" src="{{GetMembersInfo.Picture}}" />
+        <view class="seachbg">
+            <input disabled="{{true}}" bindtap="openFN" placeholder="说点什么，让TA也认识看笔记的你" value="{{seach}}" data-name="seach"/>
+        </view>
+    </view>
+
+    <!--  -->
+    <view class="pingLun">
+        <view class="peopleHt" wx:for="{{CommentList.data}}" wx:key="{{index}}"  bindtap="commentOne" data-id="{{item.id}}" data-aid="{{item.Articleid}}">
+            <image class="pt" src="{{item.Picture}}"/>
+            <span class="contant">
+                <view class="name" >{{item.UserName}}</view>
+                <view class="title">{{item.Contents}} <span class="time">{{item.CommentDate}}</span></view>
+                <view class="huiFu" wx:for="{{item.CommentsList}}" wx:for-item="citem" wx:for-index="cindex" wx:key="{{cindex}}">
+                    <image class="ht" src="{{citem.Picture}}"/>
+                    <span class="contantH">
+                        <view class="name_type">
+                            <span class="na">{{citem.UserName}}</span>
+                            <span class="type" wx:if="{{citem.UserId==dataInfo.UserId}}">作者</span>
+                        </view>
+                        <view class="rtext">{{citem.Contents}}
+                            <span class="time">{{citem.CommentDate}}</span>
+                        </view>
+                    </span>
+                </view>
+            </span>
+        </view>
+    </view>
+    <view class="noMore" wx:if="{{CommentList.finsh}}">
+        已经到底啦~~~
+    </view>
+
+    <view class="morePYQ" bindtap='toFN'> <image  src="{{imgUrl+'morePYQ.png'}}" />
+</view>
+   
+    <!--  -->
+    <view class="btnFun" wx:if="{{!fixBot}}">
+        <view class="border"></view>
+        <view class="contant">
+            <span bindtap="chooseFN" data-index="{{index}}" class="child" wx:for="{{funtionL}}" wx:key="{{index}}">
+                <van-icon name="{{item.choose?item.imgA:item.img}}" color="{{item.choose?'#f56e68':'#666'}}" size="40rpx"/>
+                <span class="num">{{item.val}}</span>
+            </span>
+        </view>
+        
+    </view> 
+
+    <!--  -->
+    <view class="btnFixed" wx:if="{{fixBot}}">
+        <span class="border"  bindtap="openFN">
+            <van-icon name="edit" size="40rpx" color="#666" />
+            <span class="seachbg">
+                说点什么...
+            </span>
+        </span>
+        <view class="contant">
+            <span bindtap="chooseFN" data-index="{{index}}" class="child" wx:for="{{funtionL}}" wx:key="{{index}}">
+                <van-icon name="{{item.choose?item.imgA:item.img}}" color="{{item.choose?'#f56e68':'#666'}}" size="40rpx"/>
+                <span class="num">{{item.val}}</span>
+            </span>
+        </view>
+    </view>
+
+    <!--  -->
+
+    <!--  -->
+    <van-popup show="{{commenT.show}}"  position="bottom" bind:close="onCloseP">
+       <view class="seachMT" >
+            <view class="seachbg">
+                <input  focus="{{focusfu}}"  placeholder="请输入你回复的内容" value="{{commenT.txt}}" data-name="commenT.txt" bindinput="seaChFN"/>
+            </view>
+            <van-button size="small" bindtap="submitComT">发送</van-button>
+        </view>
+        
+    </van-popup>
+
+</view>

@@ -1,0 +1,165 @@
+
+page{
+    height: 100%;
+    font-size: 26rpx;
+    position: relative;
+}
+
+#fuCollAciton{
+    position: relative;
+    color: #666;
+
+   
+    
+    // 
+    .storeCard{
+        box-sizing: border-box;
+        padding: 20rpx;
+        display: flex;
+        align-items: center;
+        background: white;
+        image{
+            height: 140rpx;
+            width: 140rpx;
+            border-radius: 10rpx;
+        }
+        .contant{
+            // height: 140rpx;
+            flex: 1;
+            margin-left: 20rpx;
+            // display: flex;
+            // flex-direction: column;
+            .name{
+                font-size: 32rpx;
+                font-weight: 800;
+            }
+            .val{
+                // flex: 1;
+                display:-webkit-box;
+                -webkit-line-clamp: 2; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break:break-all;
+                margin: 10rpx 0;
+                font-size: 22rpx;
+                color: #999;
+            }
+            .pri_num{
+                display: flex;
+                align-items: center;
+                .pri{
+                    font-size: 32rpx;
+                    font-weight: 800;
+                    color: #f56e68;
+                    flex: 1;
+                }
+                .num{
+                    color: #999;
+                }
+            }
+        }
+    }
+
+    // 
+    .collage{
+        box-sizing: border-box;
+        padding: 20rpx;
+        font-size: 38rpx;
+        text-align: center;
+        .color{
+            color: #f56e68;
+        }
+    }
+
+    // 
+    .time{
+        color: #999;
+        box-sizing: border-box;
+        padding: 20rpx;
+        text-align: center;
+    }
+
+    // 
+    .editor{
+        margin-top: 20rpx;
+        background: white;
+        padding-bottom: 20rpx;
+        box-sizing: border-box;
+        .navTap{
+            box-sizing: border-box;
+            padding: 20rpx; 
+            font-size: 32rpx;
+        }
+        .contant{
+            .flexEd{
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                padding: 0 20rpx 20rpx ; 
+                .name{
+                    font-size: 30rpx;
+                    margin-right: 20rpx;
+                }
+                .input{
+                    width: 20%;
+                    border-radius: 30rpx;
+                    padding: 0 20rpx  ; 
+                    box-sizing: border-box;
+                    border:1px solid rgb(240, 240, 240);
+                    input{
+                        
+                        width: 100%;
+                    }
+                }
+                .check{
+                    transform: scale(0.6,0.6);
+                    .wx-checkbox-input {
+                        background: none !important;
+                        border:2px solid rgb(238, 238, 238); 
+                    }
+                }
+                .zdy{
+                    margin:0 10rpx;
+                }
+            }
+            .num_peo{
+                .name{
+                    margin: 0;
+                }
+                .val{
+                    font-size: 22rpx;
+                }
+            }
+            .guizhe{
+                margin: 0 20rpx 80rpx;
+               
+                border:1px solid rgb(240, 240, 240);
+                textarea{
+                    padding:20rpx; 
+                    box-sizing: border-box;
+                }
+            }
+        }
+    }
+
+    // 
+    .btn{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        .van-button{
+            width: 100%;
+            border:none;
+            border-radius: 0;
+            color: white;
+            background: #f56e68;
+        }
+    }
+  
+}
+
+
+// 
+.van-picker-column__item--selected,.van-picker__cancel,.van-picker__confirm{
+    color: #F56F68;
+}

@@ -1,0 +1,40 @@
+<!--
+ * @Author: fujihang
+ * @Date: 2019-11-05 15:15:49
+ * @LastEditors: fujihang
+ * @LastEditTime: 2020-02-19 14:04:31
+ * @FilePath: \头道惠\pages\fujihang\fuSuperior\fuSuperior.wxml
+ -->
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-25 17:14:49 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-04-25 17:14:49 
+    我的上级
+*/ -->
+<view id="fuSuperior">
+
+    <!-- 头像 -->
+    <view class="headTop">
+        <image mode="aspectFill" src="{{dataObj.Picture}}"/>
+        <span class="contant">
+            <view class="name">{{dataObj.UserName}}</view>
+            <view class="address">
+                <image mode="aspectFill" src="{{imgUrl+'circuit-city-icon@2x.png'}}"/>
+                {{dataObj.RegionName}}
+            </view>
+        </span>
+    </view>
+
+    <view class="contant_sr" wx:for="{{dataList}}" wx:key="{{index}}">
+        <span class="name">{{item.name}}</span>
+        <span class="val">{{item.val?item.val:'无'}}</span>
+
+    </view>
+
+    <span class="sss"  bindtap="jieBan">
+        <van-button >解绑上级</van-button>
+
+    </span>
+
+</view>

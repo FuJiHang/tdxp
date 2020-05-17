@@ -1,0 +1,270 @@
+page {
+  height: 100%;
+  overflow: hidden;
+}
+#fuBusiCard {
+  font-size: 26rpx;
+  color: #666;
+  height: 100%;
+  overflow: auto;
+}
+#fuBusiCard .moreInfor .nameTop {
+  padding: 20rpx;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 28rpx;
+}
+#fuBusiCard .moreInfor .contant {
+  transition: 0.5s;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  background: #f0f0f0;
+}
+#fuBusiCard .moreInfor .contant .child {
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+}
+#fuBusiCard .moreInfor .contant .child .name {
+  font-size: 28rpx;
+  color: #999;
+}
+#fuBusiCard .moreInfor .contant .child .val {
+  margin: 0 20rpx;
+  flex: 1;
+}
+#fuBusiCard .moreInfor .openInfor {
+  opacity: 1;
+  height: auto;
+}
+#fuBusiCard .BusiCard {
+  box-sizing: border-box;
+  display: flex;
+  margin: 20rpx;
+  border-radius: 20rpx;
+  position: relative;
+  overflow: hidden;
+}
+#fuBusiCard .BusiCard .tx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 310rpx;
+}
+#fuBusiCard .BusiCard .rightBC {
+  background: white;
+  position: relative;
+  min-height: 310rpx;
+  margin-left: 45%;
+  text-align: right;
+  width: 55%;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+}
+#fuBusiCard .BusiCard .rightBC .xiejiao {
+  top: 0;
+  left: -58rpx;
+  position: absolute;
+  width: 0;
+  border-top: 330rpx solid transparent;
+  border-right: 60rpx solid white;
+}
+#fuBusiCard .BusiCard .rightBC .logo {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20rpx 0 25rpx ;
+}
+#fuBusiCard .BusiCard .rightBC .logo .logoImg {
+  height: 60rpx;
+  width: 60rpx;
+}
+#fuBusiCard .BusiCard .rightBC .name {
+  font-size: 40rpx;
+  font-weight: 700;
+  margin-bottom: 20rpx;
+}
+#fuBusiCard .BusiCard .rightBC .join {
+  font-size: 30rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 2px solid #333;
+  margin-bottom: 20rpx;
+}
+#fuBusiCard .BusiCard .rightBC .address {
+  position: absolute;
+  right: 20rpx;
+  display: flex;
+  align-items: center;
+  width: 102%;
+}
+#fuBusiCard .BusiCard .rightBC .address .val {
+  flex: 1;
+  text-align: right;
+  color: #999;
+  margin-right: 20rpx;
+}
+#fuBusiCard .BusiCard .rightBC .address .imgss {
+  height: 30rpx;
+  width: 30rpx;
+}
+#fuBusiCard .shareTxl {
+  padding-top: 20rpx;
+  display: flex;
+  margin: 0 20rpx;
+}
+#fuBusiCard .shareTxl .btn {
+  flex: 1;
+}
+#fuBusiCard .shareTxl .btn .van-button {
+  height: 80rpx;
+  line-height: 82rpx;
+  width: 100%;
+  border-color: #009090;
+  color: #009090;
+}
+#fuBusiCard .shareTxl .cr {
+  margin-left: 20rpx;
+}
+#fuBusiCard .shareTxl .cr .van-button {
+  background: #009090;
+  color: white;
+}
+#fuBusiCard .bw {
+  background: white;
+}
+#fuBusiCard .historyBC {
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+#fuBusiCard .historyBC .leftHy {
+  flex: 1;
+}
+#fuBusiCard .historyBC .leftHy .Person {
+  display: flex;
+}
+#fuBusiCard .historyBC .leftHy .Person .pImg {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 15rpx;
+}
+#fuBusiCard .historyBC .leftHy .val {
+  color: #999;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}
+#fuBusiCard .historyBC .rightHy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#fuBusiCard .historyBC .rightHy .zanHy {
+  width: 40rpx;
+  height: 40rpx;
+}
+#fuBusiCard .historyBC .rightHy .good {
+  color: #999;
+  margin-top: 15rpx;
+  font-size: 28rpx;
+}
+#fuBusiCard .introductBC {
+  margin-top: 40rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+#fuBusiCard .introductBC .name {
+  font-size: 30rpx;
+  font-weight: 700;
+  margin-bottom: 20rpx;
+}
+#fuBusiCard .introductBC .yuyin {
+  margin: 20rpx 0;
+  border-radius: 10rpx;
+  border: 1px solid #f0f0f0;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+}
+#fuBusiCard .introductBC .yuyin .open {
+  height: 80rpx;
+  width: 80rpx;
+}
+#fuBusiCard .introductBC .yuyin .contant {
+  flex: 1;
+  margin-left: 20rpx;
+}
+#fuBusiCard .introductBC .yuyin .contant .yval {
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+#fuBusiCard .introductBC .yuyin .contant .yname {
+  color: #999;
+}
+#fuBusiCard .myVideo {
+  margin-top: 40rpx;
+}
+#fuBusiCard .myVideo .name {
+  font-size: 30rpx;
+  font-weight: 700;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuBusiCard .myVideo .contantVO {
+  justify-content: center;
+  display: flex;
+  margin: 20rpx 0;
+}
+#fuBusiCard .myVideo .contantVO video {
+  height: 300rpx;
+  width: 70%;
+}
+#fuBusiCard .impres {
+  margin-top: 40rpx;
+}
+#fuBusiCard .impres .name {
+  font-size: 30rpx;
+  font-weight: 700;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuBusiCard .impres .contant {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10rpx 10rpx;
+  box-sizing: border-box;
+}
+#fuBusiCard .impres .contant .child {
+  margin: 10rpx;
+  padding: 5rpx 20rpx;
+  border-radius: 50rpx;
+  box-sizing: border-box;
+  background: #4545ff;
+  color: white;
+  font-size: 28rpx;
+}
+#fuBusiCard .myWorks {
+  margin-top: 40rpx;
+}
+#fuBusiCard .myWorks .name {
+  font-size: 30rpx;
+  font-weight: 700;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuBusiCard .myWorks .contant {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10rpx 10rpx;
+  box-sizing: border-box;
+}
+#fuBusiCard .myWorks .contant .workImg {
+  margin: 10rpx;
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 10rpx;
+}

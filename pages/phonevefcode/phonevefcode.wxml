@@ -1,0 +1,27 @@
+<view class="container mt32 font32 borderbott0m">
+    <view class="m24-horizontal mt32 overflow font28 font-color-grey74">Hi,<text style="color:#ff191b;font-weight:bolder">{{UserName}}</text>，欢迎登录，账号绑定后可一键登录</view>
+    <view class="w100">
+        <view class="loginpassword borderbott0m ">
+            <text>手机号码</text>
+            <input bindinput="InputValue" data-key="PhoneCell" maxlength="20" placeholder="请输入手机" placeholderStyle="color:#bdbdbd" type="number" value="{{CellPhone}}"></input>
+        </view>
+    </view>
+    <view class="w100">
+        <view class="loginpassword borderbott0m threerow">
+            <text>图形验证</text>
+            <input bindinput="InputValue" data-key="ImageCode" maxlength="20" placeholder="请输入手机" placeholderStyle="color:#bdbdbd" type="number" value="{{ImageCode}}"></input>
+            <image bindtap="ChangeCode" class="codeimg w20" src="{{VcodeUrl}}"></image>
+        </view>
+    </view>
+    <view class="w100">
+        <view class="loginpassword threerow">
+            <text>手机验证</text>
+            <input bindinput="InputValue" data-key="PhoneCode" maxlength="20" placeholder="请输入手机验证码" placeholderStyle="color:#bdbdbd" type="number" value="{{CellphoneCode}}"></input>
+            <view bindtap="GetPhoneCode" class="btncode w20">{{PhoneText}}</view>
+        </view>
+    </view>
+</view>
+<view class="tjiaoname mt32 ">
+    <view class="font28 m24-horizontal mb24">关联后，您的微信账号和商城注册账号都可以登录</view>
+    <button bindtap="Savephone" class="other-button-hover font36 pt24 pb24 line_height40">立即绑定 </button>
+</view>

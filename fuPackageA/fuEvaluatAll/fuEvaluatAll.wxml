@@ -1,0 +1,124 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-08-02 20:17:28 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-08-02 20:17:28 
+    评价列表
+*/ -->
+<view id="fuEvaluatAll">
+
+    <!--  -->
+    <view class="topChoose">
+        <span class="choose {{chooseI==index?'':'chooseI'}}" bindtap="changeTap" data-index="{{index}}" wx:for="{{chooseList}}" wx:key="{{index}}">{{item.name}}
+            <view hidden="{{chooseI!=index}}" class="border"></view>
+        </span>
+        <image bindtap="openSeach"  src="{{imgUrl+'icon_pro.png'}}" class="seach" />
+    </view>
+
+    <!--  -->
+    <view class="typeList {{moreType?'overhide':''}}">
+        <span class="type {{postType==index?'postType':''}}" data-index="{{index}}" bindtap="chooseType" wx:key="{{index}}" wx:for="{{typel}}">
+            {{item.TagName}}
+        </span>
+    </view>
+    <view class="moreC" bindtap="moreType">
+        <van-icon name="{{moreType?'arrow-down':'arrow-up'}}" size="40rpx" color="#999" />
+    </view>
+
+    <view class="evaluate"  wx:for="{{dataList}}" wx:key="{{index}}">
+      
+        <view class="evaChild">
+            <view class="person">
+                <image src="{{item.UserPicture+'?x-oss-process=image/resize,l_640'}}" mode='aspectFill' />
+                <span class="contant">
+                    <view class="name">{{item.UserName}}<span class="class">Lv5</span></view>
+                    <view class="time">{{item.AddDate}}</view>
+                    <view class="art">技术分<span class="star"><image wx:for="{{item.TechnicalScore}}" wx:key="{{index}}" mode='aspectFit' src="{{imgUrl+'xinH.png'}}" /></span></view>
+                    <view class="art">服务分<span class="star"><image wx:for="{{item.ServiceScore}}" wx:key="{{index}}" mode='aspectFit' src="{{imgUrl+'xinH.png'}}" /></span></view>
+                    <!-- {
+        name:app.imgUrl+'haoping.png',
+        val:'好评',
+      },
+      {
+        name:app.imgUrl+'zhongping.png',
+        val:'中评',
+      },
+      {
+        name:app.imgUrl+'chaping.png',
+        val:'差评',
+      }, -->
+                </span>
+                <image wx:if="{{item.IsSpecial!='False'}}" class="bgImg" src="{{imgUrl+'zxhpS.png'}}" mode='aspectFit' />
+            </view>
+            <view class="evaText {{item.all?'':'shoushuo'}}">
+                {{item.AppraiseText}}
+            </view>
+            <view class="hide" bindtap="allFN" data-index="{{'dataList['+index+'].all'}}" data-data="{{item.all}}">{{item.all?'收起':'全文'}}</view>
+            <view class="evaImg">
+                <image wx:for="{{item.Pictures}}" wx:for-item="ac" wx:for-index="aI" wx:key="{{aI}}" src="{{ac+'?x-oss-process=image/resize,l_640'}}" mode='aspectFill' />
+            </view>
+        </view>
+
+         <!--  -->
+        <view class="teacher" bindtap="toTeach" data-id="{{item.TechnicianId}}">
+            <image src="{{item.TechnicianPicture+'?x-oss-process=image/resize,l_640'}}" /> 
+            <span class="contant">
+                <view class="name">{{item.TechnicianName}}</view>
+                <view class="join">{{item.TechnicianGrade}}</view>
+            </span>
+        </view>
+        
+        <view class="funtion">
+            <image src="{{imgUrl+(item.IsGood==0?'xxGood.png':'xxGoodA.png')}}" class="good"  data-id="{{item.AppraiseId}}" data-tf="{{item.IsGood}}" data-num="{{item.LikesCount}}" bindtap="goodFN" data-namenum="{{'dataList['+index+'].LikesCount'}}" data-name="{{'dataList['+index+'].IsGood'}}"/>
+            <image wx:for="{{item.Likes}}" wx:for-index="ic" wx:for-item="it" wx:key="{{ic}}" src="{{it.LikeUserPicture+'?x-oss-process=image/resize,l_640'}}" wx:if="{{ic<2}}" class="people" />
+            <view class="text">{{item.LikesCount}}人点赞</view>
+            <span class="num" bindtap="toFN" data-aid="{{item.AppraiseId}}" data-in="{{index}}">
+                <image src="{{imgUrl+'xxXX.png'}}"  />
+                {{item.CommentsCount}}
+            </span>
+            <button open-type="share">
+                <image src="{{imgUrl+'shareT.png'}}" class="share" />
+            </button>
+        </view>
+         <!-- <view class="huiFu" wx:for="{{item.Comments}}" wx:for-item="citem" wx:for-index="cindex" wx:key="{{cindex}}">
+            <image class="ht" src="{{citem.Picture}}"/>
+            <span class="contantH">
+                <view class="name_type">
+                    <span class="na">{{citem.NickName}}</span>
+                    <span class="type" wx:if="{{citem.UserId==dataInfo.UserId}}">作者</span>
+                </view>
+                <view class="rtext">{{citem.Contents}}
+                    <span class="time">{{citem.CommentDate}}</span>
+                </view>
+            </span>
+        </view> -->
+       
+    </view>
+
+    <view class="noMore" wx:if="{{!dataList.length}}">
+        没有更多的了~~~
+    </view>
+
+   
+    <!--  -->
+    <van-popup show="{{commenT.show}}"  position="bottom" bind:close="onCloseP">
+       <view class="seachMT" >
+            <view class="seachbg">
+                <input  focus="{{focusfu}}"  placeholder="请输入你回复的内容" value="{{commenT.txt}}" data-name="commenT.txt" bindinput="seaChFN"/>
+            </view>
+            <van-button size="small" bindtap="submitComT">发送</van-button>
+        </view>
+    </van-popup>
+
+    <!--  -->
+    <van-popup show="{{seachAll.show}}"  position="top" bind:close="onCloseP">
+       <view class="seachMT" >
+            <view class="seachbg">
+                <input  focus="{{focusfuS}}"  placeholder="请输入搜索内容" value="{{seachAll.txt}}" data-name="seachAll.txt" bindinput="seaChFN"/>
+            </view>
+            <van-button size="small" bindtap="seachPJFN">搜索</van-button>
+        </view>
+    </van-popup>
+
+
+</view>

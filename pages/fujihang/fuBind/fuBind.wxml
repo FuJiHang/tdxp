@@ -1,0 +1,55 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-05-15 15:19:19 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-05-15 15:19:19 
+    技师申请绑定执行团队长
+*/ -->
+<view id="fuBind">
+    
+    <view class="teach_name_tdz" >
+        <view class="teachName" wx:for="{{teachTDZ}}" wx:key="index">
+            <span class="name">{{item.name}}</span>
+            <span class="child"  bindtap="getZxtdzFN">{{item.val?item.val:item.plr}}
+            </span>
+        </view>
+    </view>
+
+    <view class="bw" >
+        <!-- 标题 -->
+        <view class="navtop">
+            申请理由
+        </view>
+        <!-- 内容 -->
+        <view class="contont">
+            <view class="textfu">
+                <textarea wx:if="{{!show}}"   placeholder="请输入内容" maxlength="-1" value="{{textarea}}" bindinput="textAreaFN" />
+            </view>
+        </view>
+    </view>
+
+    <view class="btn">
+        <van-button bindtap="Submit">提交</van-button>
+
+    </view>
+
+    <van-popup show="{{ show }}" bind:close="onClose" position="bottom">
+        <!-- 搜索 -->
+        <view class="seachMTAM">
+            <view class="seachbg">
+                <image src="{{imgUrl+'icon_search.png'}}"  mode="aspectFill"/>
+                <input value="{{seach}}" bindinput="seaChFN"/>
+            </view>
+            <van-button size="small" bindtap="seachZXT">搜索</van-button>
+        </view>
+        <view class="seaConCL">
+            <view wx:if="{{getZxtdz.length!=0}}" class="chooseList" wx:for="{{getZxtdz}}" wx:key="{{index}}" bindtap="chooseTDZ" data-index="{{index}}">
+                <span class="name" data-index="{{index}}">名字：{{item.RealName}}</span>电话：{{item.CellPhone}}
+            </view>
+            <view class="noMore">
+                没有查询到哦~~~
+            </view>
+        </view>
+        
+    </van-popup>
+</view>

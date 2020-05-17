@@ -1,0 +1,527 @@
+page {
+  height: 100%;
+  font-size: 26rpx;
+}
+
+#fuProMang {
+  position: relative;
+  color: #666;
+
+  .navTop {
+    padding: 20rpx 0;
+    box-sizing: border-box;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20rpx;
+
+    .seachbg {
+      margin-right: 10rpx;
+      width: 36%;
+      align-items: center;
+      display: flex;
+      background: rgb(243, 243, 243);
+      border-radius: 40rpx;
+
+      image {
+        margin-left: 10rpx;
+        height: 30rpx;
+        width: 30rpx;
+      }
+
+      input {
+        color: #666;
+        font-size: 26rpx;
+        margin: 0 20rpx;
+        flex: 1;
+        height: 60rpx;
+
+
+      }
+    }
+
+    .contant {
+      flex: 1;
+      display: flex;
+
+      .flex {
+        width: 50%;
+        text-align: center;
+      }
+
+      .choose {
+        color: #E7483F;
+      }
+    }
+  }
+
+  // 
+  .product2 {
+    background: #fff;
+    margin: 10rpx 20rpx;
+
+    .topContant {
+      display: flex;
+      border-bottom: 1px solid rgb(241, 241, 241);
+      padding: 10rpx 20rpx;
+      box-sizing: border-box;
+
+    }
+
+    .btnContant {
+      padding: 10rpx 20rpx;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-end;
+
+      span {
+        border: 1px solid #E7483F;
+        border-radius: 30rpx;
+        padding: 5rpx 30rpx;
+        color: #E7483F;
+        margin-left: 15rpx;
+      }
+
+      .up {
+        background: #E7483F;
+        color: #fff;
+
+
+      }
+    }
+
+    image {
+      height: 200rpx;
+      width: 200rpx;
+    }
+
+    .contant {
+      margin-left: 20rpx;
+      height: 200rpx;
+      display: flex;
+      flex-direction: column;
+
+      .name {
+        display: -webkit-box;
+        -webkit-line-clamp: 2; //超出多少行
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        word-break: break-all;
+        font-size: 30rpx;
+        margin: 7rpx 5rpx;
+
+        .hot {
+          padding: 0 10rpx;
+          border-radius: 20rpx;
+          background: linear-gradient(83deg, rgba(232, 84, 77, 1) 0%, rgba(231, 72, 105, 1) 100%);
+          color: #fff;
+          margin-right: 10rpx;
+          font-size: 26rpx;
+        }
+      }
+
+      .price {
+        font-size: 32rpx;
+        color: #E7483F;
+        padding: 0 5rpx;
+        box-sizing: border-box;
+        flex: 1;
+        display: flex;
+        align-items: flex-end;
+
+        .m {
+          margin-left: 5rpx;
+          font-size: 26rpx;
+        }
+
+        .conpou {
+          font-size: 24rpx;
+          border: 1px solid #E7483F;
+          padding: 0 10rpx;
+          margin-left: 10rpx;
+
+        }
+      }
+
+      .num {
+        color: #999;
+        padding: 0 5rpx;
+        box-sizing: border-box;
+
+        display: flex;
+        align-items: flex-end;
+
+        .flex {
+          margin-left: 20rpx;
+          flex: 1;
+        }
+
+      }
+    }
+  }
+}
+
+// wjx新的分佣设置
+.points_set {
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 101;
+  width: 100%;
+  height: 260rpx;
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+
+  .content-set {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .set_search {
+      width: 200rpx;
+      height: 60rpx;
+      border: 1rpx solid #80becc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 25rpx;
+      border-radius: 5rpx;
+      position: relative;
+
+      .set-main {
+        background-color: #fff;
+        width: 400rpx;
+        height: 200rpx;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        border-radius: 10rpx;
+
+        .set-off {
+          position: absolute;
+          top: -34rpx;
+          right: -25rpx;
+          padding: 10rpx;
+          border-radius: 50%;
+          font-size: 28rpx;
+          color: #999;
+          background-color: #f8f8f8;
+          text-align: center;
+          width: 60rpx;
+          height: 60rpx;
+          line-height: 60rpx;
+        }
+
+        text {
+          padding: 15rpx;
+          border-bottom: 1rpx solid #eee;
+        }
+      }
+
+      .set-test {
+        margin-left: 20rpx;
+      }
+
+      .set_img {
+        width: 30rpx;
+        height: 20rpx;
+        // transform: rotateZ(-90deg);
+      }
+
+      .set_btn {
+        width: 228rpx;
+        height: 58rpx;
+        // background-color: pink;
+        position: absolute;
+        top: 0;
+        left: 10rpx;
+      }
+    }
+
+    .set_input {
+      flex: 1;
+      margin: 0 0rpx 0 30rpx;
+      height: 60rpx;
+      padding-left: 15rpx;
+      border: 1rpx solid #80becc;
+      display: flex;
+      align-items: center;
+      border-radius: 5rpx;
+
+      .the-input {
+        width: 100%;
+      }
+    }
+  }
+
+  .set-btn {
+    width: 90%;
+    background-color: red;
+    color: #fff;
+    position: absolute;
+    bottom: 30rpx;
+    left: 5%;
+    padding: 20rpx 0;
+    font-size: 28rpx;
+    border-radius: 50rpx;
+    text-align: center;
+  }
+}
+
+.set_zz {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .6);
+  z-index: 100;
+}
+
+
+
+//
+.CList {
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(241, 241, 241);
+  display: flex;
+  align-items: center;
+
+  .name {
+    width: 30%;
+  }
+
+  .val {
+    flex: 1;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .type {
+    text-align: center;
+    width: 25%;
+    color: #E7483F;
+  }
+}
+
+.dingWei {
+  // left: 3%;
+  // right: 3%;
+  // bottom: 3%;
+  // position: fixed;
+  width: 94%;
+  margin: 3%;
+}
+
+.van-button {
+  width: 100%;
+
+}
+
+// wjx
+.wjx_add {
+  margin-bottom: 30rpx;
+
+  .add_title {
+    padding: 20rpx 150rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1rpx solid #eee;
+  }
+
+  .zong_wjx {
+    display: flex;
+    justify-content: space-between;
+
+    .shougou {
+      flex: 1;
+
+      .CList {
+
+        padding: 20rpx 40rpx;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgb(241, 241, 241);
+        display: flex;
+        align-items: center;
+
+        // width: 100rpx;
+        // height: 100rpx;
+        // background-color: orange;
+        // margin-right: 5rpx;
+        // display:flex;
+        // flex-direction: column;
+
+        .name {
+          width: 40%;
+          font-size: 24rpx; //
+        }
+
+        .val {
+          flex: 1;
+
+          input {
+            // width: 100%;
+          }
+        }
+
+        .type {
+          text-align: center;
+          width: 25%;
+          color: #E7483F;
+          font-size: 24rpx;
+        }
+      }
+
+    }
+
+    .fugou {
+      flex: 1;
+
+      .CLists {
+        padding: 20rpx 40rpx;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgb(241, 241, 241);
+        display: flex;
+        // width: 100rpx;
+        // height: 100rpx;
+        // background-color: pink;
+        align-items: center;
+
+        // display:flex;
+        // flex-direction: column;
+        .name {
+          width: 40%;
+          font-size: 24rpx; //
+        }
+
+        .val {
+          flex: 1;
+
+          input {
+            // width: 100%;
+          }
+        }
+
+        .type {
+          text-align: center;
+          width: 25%;
+          color: #E7483F;
+          font-size: 24rpx;
+        }
+      }
+    }
+  }
+
+
+
+  .dingWei {
+    // left: 3%;
+    // right: 3%;
+    // bottom: 3%;
+    // position: fixed;
+    width: 94%;
+    margin: 3%;
+  }
+}
+
+
+
+
+
+.van-button {
+  width: 100%;
+
+}
+
+.tList {
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(241, 241, 241);
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+
+  .name {
+    flex: 1;
+    font-size: 32rpx;
+  }
+
+  .val {
+    border: 1px solid #E7483F;
+    border-radius: 30rpx;
+    padding: 5rpx 30rpx;
+    color: #E7483F;
+  }
+}
+
+.noMore {
+  text-align: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.or{
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 36rpx;
+  text-align: center;
+  color: #999;
+  border-bottom: 1px solid rgb(241, 241, 241);
+}
+
+.childFuMem {
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  border-bottom: 1px solid rgb(241, 241, 241);
+  display: flex;
+align-items: center;
+  .name {
+    width: 33%;
+    text-align: center;
+  }
+
+  .val {
+  
+
+  
+  }
+  .van-button {
+    background: #f56e68;
+    color: white;
+
+  }
+
+  .input {
+    flex: 1;
+    margin: 0 10rpx;
+    input {
+      border-bottom: 1px solid rgb(241, 241, 241);
+
+      width: 100%;
+    }
+  }
+
+}
+.van-popup{
+  .van-button {
+    background: #f56e68;
+    color: white;
+    border:none;
+  }
+}

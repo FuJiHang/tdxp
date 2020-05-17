@@ -1,0 +1,247 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-16 09:27:58 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-16 09:27:58 
+    朋友圈
+*/ -->
+<view id="fuCircleFri">
+
+    <view class="fiexd">
+        <!--  -->
+        <view class="navTap">
+    
+            <span class="mid">
+                <span bindtap="chooseFN" data-index="{{index}}" class="name {{choose==index?'choose':''}}" wx:for="{{navtap}}" wx:key="{{index}}">{{item}}</span>
+            </span>
+        
+        </view>
+
+        <!--  -->
+        <view class="seachF">
+            <input focus="{{onfous}}" value="{{seach}}" bindinput="seachChange" bindconfirm="seachFN" placeholder="🔍 大家都在搜“拓客引流”" />
+        </view>
+    </view>
+    
+
+     <!--  -->
+    <view class="noLike" wx:if="{{choose==1&&FollowData.length==0}}">
+        <view class="name">你还没有关注过人</view>
+        <view class="val">看看大家都在关注那些人吧！</view>
+    </view>
+
+    <!--  -->
+    <view class="follow" wx:if="{{choose==1&&FollowData.length!=0}}">
+        <scroll-view  scroll-x="{{true}}">
+            <view class="people" bindtap="grkjFN" data-data="{{item}}" wx:for="{{FollowData}}" wx:key="{{index}}">
+                <image src="{{item.Picture}}" mode="aspectFit" />
+                <view class="name">{{item.NickName}}</view>
+            </view> 
+        </scroll-view>
+        
+    </view>
+
+    <!--  -->
+    <view class="navLike" wx:if="{{choose==1}}">
+        <span class="le">你可能感兴趣的用户</span>
+        <span class="ri">查看更多</span>
+        <image src="{{imgUrl+'arrow_right.png'}}" />
+    </view>
+ 
+    <!--  -->
+    <view class="follow" wx:if="{{choose==1}}">
+        <scroll-view class="bgb" scroll-x="{{true}}">
+            <view class="peopleLike" wx:for="{{interested}}" wx:key="{{index}}">
+                <view class="delect" bindtap="delectFN" data-index="{{index}}">
+                    <van-icon name="cross" color="#999" />
+                </view>
+                <view class="img">
+                    <image src="{{item.Picture+'?x-oss-process=image/resize,h_480'}}" mode="aspectFit" />
+                </view>
+                <view class="name">{{item.NickName?item.NickName:'无'}}</view>
+                <view class="val">{{item.VipName?item.VipName:'无'}}</view>
+                <view class="btn_l">
+                    <van-button size="mini" bindtap="followFN" data-index="{{index}}" data-id="{{item.UserId}}">{{item.follow?'已关注':'关注'}}</van-button>
+                </view>
+            </view> 
+        </scroll-view>
+        
+    </view>
+
+   
+    <!-- 推荐的朋友圈 -->
+    <view class="contantKan" wx:if="{{choose==0}}">
+        <view class="leftK" id="leftKfTH" >
+            <view  class="child" bindtap="toFN" data-no="{{item.No}}" data-index="{{index}}" data-choose="0" data-name="le" data-id="{{item.Id}}" wx:for="{{tuijian.data1}}" wx:key="{{index}}">
+                <view class="logoImg">
+                     <image hidden="{{!item.isVideo}}" src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}" class="myVideo" mode="widthFix" />
+                    
+                    <view wx:if="{{item.isVideo}}" class="playBtn">
+                        <van-icon name="play-circle" color="#fff" size="60rpx"/>
+                    </view>
+                    <image hidden="{{item.isVideo}}" mode="widthFix"  src="{{item.ImageUrlsArr[0]}}" />
+                </view>
+                <view class="name">
+                    {{item.Contents?item.Contents:'无'}}
+                </view>
+                <view class="btnXX">
+                    <view class="touxiang">
+                        <image  mode="aspectFit"  src="{{item.Picture}}" />
+                    </view>
+                    <span class="nameC">{{item.UserName?item.UserName:'无'}}</span>
+                    <van-icon catchtap="Fabulous" data-nameNum="{{'tuijian.data1['+index+'].ArticleLikeCount'}}" data-num="{{item.ArticleLikeCount}}" data-name="{{'tuijian.data1['+index+'].IsArticleLike'}}" data-tf="{{item.IsArticleLike}}" data-id="{{item.Id}}" name="{{item.IsArticleLike?'like':'like-o'}}" size="30rpx" color="{{item.IsArticleLike?'#f7726d':'#666'}}"/>
+                    <span class="num">{{item.ArticleLikeCount}}</span>
+                </view>
+            </view>
+        </view>
+        <view class="rightK" id="rightKfTH">
+            <view class="child" bindtap="toFN" data-no="{{item.No}}"  data-index="{{index}}" data-choose="0"  data-id="{{item.Id}}" wx:for="{{tuijian.data2}}" wx:key="{{index}}">
+                <view class="logoImg">
+                     <image hidden="{{!item.isVideo}}" src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}" class="myVideo" mode="widthFix" />
+                    
+                    <view wx:if="{{item.isVideo}}" class="playBtn">
+                        <van-icon name="play-circle" color="#fff" size="60rpx"/>
+                    </view>
+                    <image hidden="{{item.isVideo}}" mode="widthFix"  src="{{item.ImageUrlsArr[0]}}" />
+                </view>
+                <view class="name">
+                    {{item.Contents?item.Contents:'无'}}
+                </view>
+                <view class="btnXX">
+                    <view class="touxiang">
+                        <image   mode="aspectFit"  src="{{item.Picture}}" />
+                    </view>
+                    <span class="nameC">{{item.UserName?item.UserName:'无'}}</span>
+                    <van-icon catchtap="Fabulous" data-nameNum="{{'tuijian.data2['+index+'].ArticleLikeCount'}}" data-num="{{item.ArticleLikeCount}}"  data-name="{{'tuijian.data2['+index+'].IsArticleLike'}}" data-tf="{{item.IsArticleLike}}" data-id="{{item.Id}}" name="{{item.IsArticleLike?'like':'like-o'}}" size="30rpx" color="{{item.IsArticleLike?'#f7726d':'#666'}}"/>
+                    <span class="num">{{item.ArticleLikeCount}}</span>
+                </view>
+            </view>
+        </view>
+        <view class="noMore" hidden="{{!tuijian.finsh}}">
+            没有更多的了~~~
+        </view> 
+    </view>
+
+    <!-- 附近的朋友圈 -->
+    <view class="contantKan" wx:if="{{choose==2}}">
+        <view class="leftK" id="leftK" >
+            <view  class="child" bindtap="toFN" data-no="{{item.No}}" data-index="{{index}}" data-choose="2" data-name="le" data-id="{{item.Id}}" wx:for="{{nearList.data1}}" wx:key="{{index}}">
+                <view class="logoImg">
+                     <image hidden="{{!item.isVideo}}" src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}" class="myVideo" mode="widthFix" />
+                   
+                    <view wx:if="{{item.isVideo}}" class="playBtn">
+                        <van-icon name="play-circle" color="#fff" size="60rpx"/>
+                    </view>
+                    <image hidden="{{item.isVideo}}" mode="widthFix"  src="{{item.ImageUrlsArr[0]}}" />
+                </view>
+                <view class="name">
+                    {{item.Contents?item.Contents:'无'}}
+                </view>
+                <view class="btnXX">
+                    <view class="touxiang">
+                        <image  mode="aspectFit"  src="{{item.Picture}}" />
+                    </view>
+                    <span class="nameC">{{item.UserName?item.UserName:'无'}}</span>
+                    <van-icon catchtap="Fabulous" data-nameNum="{{'nearList.data1['+index+'].ArticleLikeCount'}}" data-num="{{item.ArticleLikeCount}}" data-name="{{'nearList.data1['+index+'].IsArticleLike'}}" data-tf="{{item.IsArticleLike}}" data-id="{{item.Id}}" name="{{item.IsArticleLike?'like':'like-o'}}" size="30rpx" color="{{item.IsArticleLike?'#f7726d':'#666'}}"/>
+                    <span class="num">{{item.ArticleLikeCount}}</span>
+                </view>
+            </view>
+        </view>
+        <view class="rightK" id="rightK">
+            <view class="child" bindtap="toFN" data-no="{{item.No}}" data-index="{{index}}" data-choose="2"  data-id="{{item.Id}}" wx:for="{{nearList.data2}}" wx:key="{{index}}">
+                <view class="logoImg">
+                     <image hidden="{{!item.isVideo}}" src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}" class="myVideo" mode="widthFix" />
+                   
+                    <view wx:if="{{item.isVideo}}" class="playBtn">
+                        <van-icon name="play-circle" color="#fff" size="60rpx"/>
+                    </view>
+                    <image hidden="{{item.isVideo}}" mode="widthFix"  src="{{item.ImageUrlsArr[0]}}" />
+                </view>
+                <view class="name">
+                    {{item.Contents?item.Contents:'无'}}
+                </view>
+                <view class="btnXX">
+                    <view class="touxiang">
+                        <image   mode="aspectFit"  src="{{item.Picture}}" />
+                    </view>
+                    <span class="nameC">{{item.UserName?item.UserName:'无'}}</span>
+                    <van-icon catchtap="Fabulous" data-nameNum="{{'nearList.data2['+index+'].ArticleLikeCount'}}" data-num="{{item.ArticleLikeCount}}"  data-name="{{'nearList.data2['+index+'].IsArticleLike'}}" data-tf="{{item.IsArticleLike}}" data-id="{{item.Id}}" name="{{item.IsArticleLike?'like':'like-o'}}" size="30rpx" color="{{item.IsArticleLike?'#f7726d':'#666'}}"/>
+                    <span class="num">{{item.ArticleLikeCount}}</span>
+                </view>
+            </view>
+        </view>
+        <view class="noMore" hidden="{{!nearList.finsh}}">
+            没有更多的了~~~
+        </view>
+    </view>
+
+
+    <!-- 关注的朋友圈 -->
+    <view class="contantKan" wx:if="{{choose==1}}">
+        <view class="leftK" id="leftKf" >
+            <view  class="child" bindtap="toFN" data-no="{{item.No}}" data-index="{{index}}" data-choose="1" data-name="le" data-id="{{item.Id}}" wx:for="{{followList.data1}}" wx:key="{{index}}">
+                <view class="logoImg">
+                     <image hidden="{{!item.isVideo}}" src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}" class="myVideo" mode="widthFix" />
+                  
+                    <image hidden="{{item.isVideo}}" mode="widthFix"  src="{{item.ImageUrlsArr[0]}}" />
+                    <view wx:if="{{item.isVideo}}" class="playBtn">
+                        <van-icon name="play-circle" color="#fff" size="60rpx"/>
+                    </view>
+                </view>
+                <view class="name">
+                    {{item.Contents?item.Contents:'无'}}
+                </view>
+                <view class="btnXX">
+                    <view class="touxiang">
+                        <image  mode="aspectFit"  src="{{item.Picture}}" />
+                    </view>
+                    <span class="nameC">{{item.UserName?item.UserName:'无'}}</span>
+                    <van-icon catchtap="Fabulous" data-nameNum="{{'followList.data1['+index+'].ArticleLikeCount'}}" data-num="{{item.ArticleLikeCount}}" data-name="{{'followList.data2['+index+'].IsArticleLike'}}" data-tf="{{item.IsArticleLike}}" data-id="{{item.Id}}" name="{{item.IsArticleLike?'like':'like-o'}}" size="30rpx" color="{{item.IsArticleLike?'#f7726d':'#666'}}"/>
+                    <span class="num">{{item.ArticleLikeCount}}</span>
+                </view>
+            </view>
+        </view>
+        <view class="rightK" id="rightKf">
+            <view class="child" bindtap="toFN" data-no="{{item.No}}" data-index="{{index}}" data-choose="1" data-id="{{item.Id}}" wx:for="{{followList.data2}}" wx:key="{{index}}">
+                <view class="logoImg">
+                     <image hidden="{{!item.isVideo}}" src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}" class="myVideo" mode="widthFix" />
+   
+                    <image hidden="{{item.isVideo}}" mode="widthFix"  src="{{item.ImageUrlsArr[0]}}" />
+                    <view wx:if="{{item.isVideo}}" class="playBtn">
+                        <van-icon name="play-circle" color="#fff" size="60rpx"/>
+                    </view>
+                </view>
+                <view class="name">
+                    {{item.Contents?item.Contents:'无'}}
+                </view>
+                <view class="btnXX">
+                    <view class="touxiang">
+                        <image   mode="aspectFit"  src="{{item.Picture}}" />
+                    </view>
+                    <span class="nameC">{{item.UserName?item.UserName:'无'}}</span>
+                    <van-icon catchtap="Fabulous" data-nameNum="{{'followList.data2['+index+'].ArticleLikeCount'}}" data-num="{{item.ArticleLikeCount}}" data-name="{{'followList.data2['+index+'].IsArticleLike'}}" data-tf="{{item.IsArticleLike}}" data-id="{{item.Id}}" name="{{item.IsArticleLike?'like':'like-o'}}" size="30rpx" color="{{item.IsArticleLike?'#f7726d':'#666'}}"/>
+                    <span class="num">{{item.ArticleLikeCount}}</span>
+                </view>
+            </view>
+        </view>
+
+        <view class="noMore" hidden="{{!followList.finsh}}">
+            没有更多的了~~~
+        </view>
+    </view>
+   
+
+
+
+    <!--  -->
+    <!-- 地址弹窗 -->
+    <view class='address-box' wx:if="{{showSelect}}" catchtouchmove="ture">
+        <view class='address-box2' catchtap='remakeAddress' wx:if="{{showSelect}}">
+
+        当前位置
+        </view>
+        <addr-picker bindaddrevent="onSelectRegion" id='addr-picker' wx:if="{{showSelect}}"></addr-picker>
+    </view>
+
+
+</view>

@@ -1,0 +1,126 @@
+/* pages/myBeautyIntegral/myBeautyIntegral.wxss */
+/* pages/myCommission/myCommission.wxss */
+/* pages/myIntegral/myIntegral.wxss */
+page {
+    height: 100%;
+  }
+  .myBeautyIntegral {
+    background-color: #fff;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+  }
+  .myBeautyIntegral scroll-view {
+    flex: 1;
+    overflow: auto;
+  }
+  .myBeautyIntegral scroll-view .noMore {
+    font-size: 28rpx;
+    color: #999;
+    padding: 20rpx;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .myBeautyIntegral .integral-titile {
+    width: 750rpx;
+    height: 260rpx;
+    background-color: #F56F68;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .myBeautyIntegral .integral-titile .titile-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 244rpx;
+    height: 244rpx;
+    z-index: 999;
+    position: relative;
+  }
+  .myBeautyIntegral .titile-box image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -4rpx;
+    left: 0;
+    z-index: -1;
+  }
+  .myBeautyIntegral .titile-box .beauty-num {
+    font-family: 'BebasNeue-Regular';
+    font-size: 60rpx;
+    color: #fff;
+  }
+  .myBeautyIntegral .titile-box .my-beauty {
+    font-size: 24rpx;
+    color: #fff;
+    text-align: center;
+    margin-top: 16rpx;
+  }
+  .myBeautyIntegral .his-beauty-money {
+    width: 750rpx;
+    height: 90rpx;
+    background-color: #f7f7f7;
+    line-height: 90rpx;
+    font-size: 26rpx;
+    color: #666666;
+    padding-left: 30rpx;
+    display: flex;
+    align-items: center;
+  }
+  .myBeautyIntegral .his-beauty-money text {
+    margin-left: -4rpx;
+    margin-top: 2rpx;
+    line-height: 90rpx;
+  }
+  .myBeautyIntegral .integral-record-box {
+    padding: 0 30rpx 0 30rpx;
+  }
+  .myBeautyIntegral .integral-record-item {
+    width: 750rpx;
+    height: 98rpx;
+  }
+  .myBeautyIntegral .record-titile {
+    position: relative;
+  }
+  .myBeautyIntegral .record-titile::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #e5e5e5;
+    position: absolute;
+    top: 98rpx;
+    left: 0;
+  }
+  .myBeautyIntegral .integral-record-item .record-titile {
+    font-size: 24rpx;
+    color: #666666;
+    display: flex;
+    flex-direction: column;
+    padding-top: 14rpx;
+  }
+  .myBeautyIntegral .record-titile .record-info {
+    padding-top: 14rpx;
+    color: #666666;
+    font-size: 24rpx;
+  }
+  .myBeautyIntegral .record-titile .record-info text {
+    margin: 5rpx;
+  }
+  .myBeautyIntegral .record-comp {
+    position: absolute;
+    top: 30rpx;
+    right: 60rpx;
+  }
+  .myBeautyIntegral .record-comp .comp-jia,
+  .myBeautyIntegral .record-comp .comp-jian {
+    font-size: 24rpx;
+  }
+  .myBeautyIntegral .record-comp .comp-num,
+  .myBeautyIntegral .record-comp .comp-num {
+    font-size: 28rpx;
+  }
+  

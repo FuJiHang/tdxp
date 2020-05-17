@@ -1,0 +1,11 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-22 11:28:35 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-04-22 11:29:04
+    测试分享功能
+*/ -->
+<view id="fuShareCs" bindtap="aliasss">
+    ssssaaaa
+    <button open-type="share">sss</button>
+</view>

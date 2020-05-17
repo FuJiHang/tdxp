@@ -1,0 +1,80 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-10-21 16:18:17 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-10-21 16:18:17 
+    分享有奖
+ */ -->
+<view id="fuShareReward">
+
+    <!--  -->
+    <view class="navTop">
+        <span bindtap="sss" class="child" wx:for="{{navTop}}" wx:key="{{index}}">
+            <button open-type="share" id="{{index}}" wx:if="{{index>1}}">
+                <image src="{{item.img}}" mode="widthFix" />
+                <view class="name">
+                    {{item.name}}
+                </view>
+            </button>
+            <button bindtap="toFN" data-url="{{item.url}}"  id="{{index}}" wx:else>
+                 <image src="{{item.img}}" mode="widthFix" />
+                <view class="name">
+                    {{item.name}}
+                </view>
+
+            </button>
+         
+        </span>
+    </view>
+
+    <!--  -->
+    <view class="tip">
+       -- 分享奖励说明 --
+    </view>
+
+    <view class="contant">
+        <view class="name">
+            视频分享
+        </view>
+        <view class="det">
+            发布动态分享，审核通过且获得《优质分享》的，发布者获得100积分/条+100头道惠币/条,成功发布5条动态分享，审核通过且获得《优质分享》。可获得10元现金奖励，在我的佣金里提现。
+        </view>
+         <view class="name">
+            评价分享
+        </view>
+        <view class="det">
+            订单评价可获得抽奖机会+1次，头道惠币+100。
+            评价至少分享给2位及以上的好友，可获得1元/条的奖励,最高2元，可在我的佣金里提现
+        </view>
+         <view class="name">
+            门店分享
+        </view>
+        <view class="det">
+           发布动态分享，审核通过且获得《优质分享》的，发布者获得100积分/条+100头道惠币/条，成功发布5条动态分享，审核通过且获得《优质分享》,可获得10元现金奖励，在我的佣金里提现
+        </view>
+        <view class="name">
+            技师分享
+        </view>
+        <view class="det">
+           订单评价可获得抽奖机会+1次，头道惠币+100。
+           评价至少分享给2位及以上的好友，可获得1元/条的奖励，最高2元，可在我的佣金里提现
+        </view>
+        <view class="name">
+            抽奖分享
+        </view>
+        <view class="det">
+           订单评价可获得抽奖机会+1次，头道惠币+100。
+           评价至少分享给2位及以上的好友，可获得1元/条的奖励，最高2元，可在我的佣金里提现
+        </view>
+
+    </view>
+
+
+    <!--  -->
+    <view class="btn">
+        *本活动最终解释权归头道惠平台所有
+    </view>
+
+
+
+</view>

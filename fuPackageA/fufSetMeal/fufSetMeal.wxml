@@ -1,0 +1,63 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-08 09:33:29 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-08 09:33:29 
+    设置套餐页
+*/ -->
+<view id="fufSetMeal">
+
+    <!--  -->
+    <view class="childASet" wx:for="{{product}}" wx:key="{{index}}">
+        <view class="proImg" bindtap="uploadLogo">
+            <image mode="aspectFill"  src="{{item.Pic+'?x-oss-process=image/resize,h_480'}}" />
+        </view>
+        <view class="contant">
+            <view class="nameC">
+                <span class="le">{{item.ProductName}} </span>
+            </view>
+            <view class="detail">
+                {{item.ShortDescription}}
+            </view>
+            <view class="price">
+                <span class="mon">￥{{item.SalePrice}}</span>
+                <span class="monO">￥{{item.MarketPrice}}</span>
+                <span class="num">已售{{item.SaleCounts}}</span>
+            </view>
+        </view>
+    </view>
+
+    <!--  -->
+    <view class="changeAction">
+        <view class="navtap">
+            编辑活动
+        </view>
+        <view class="child" bindtap="uploadLogo">
+            <span class="name">主图：</span>
+            <span class="val">
+                <image src="{{post.Images?post.Images:imgUrl+'add_2.png'}}" />
+            </span>
+        </view>
+        <view class="child">
+            <span class="name">标题：</span>
+            <span class="val">
+                <input value="{{post.ActivityName}}" placeholder="请输入名字" bindinput="inputChange" data-name="post.ActivityName" />
+            </span>
+        </view>
+        <view class="child">
+            <span class="name">套餐价：</span>
+            <span class="val">
+                <input value="{{post.packPrice}}"  placeholder="请输入价格" bindinput="inputChange" data-name="post.packPrice" />
+            </span>
+        </view>
+        <view class="textarea">
+            <textarea  value="{{post.Description}}"  placeholder="请输入介绍" bindinput="inputChange" data-name="post.Description" ></textarea>
+        </view>
+    </view>
+
+
+    <!--  -->
+    <view class="btn" style="z-index:999;" bindtap="submit">
+        <van-button>提交</van-button>
+    </view>
+</view>

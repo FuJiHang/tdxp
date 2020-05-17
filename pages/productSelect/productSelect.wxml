@@ -1,0 +1,22 @@
+<!--pages/productSelect/productSelect.wxml-->
+<!-- 操作栏 -->
+<view class='operation'>
+  <view class='operaCon disflex'>
+    <view>已选择：<text class='selectNum'>{{goodsSelectNum}}</text></view>
+    <view bindtap='toComplete'>完成</view>
+  </view>
+</view>
+<!-- 列表 -->
+<view class='productList disflex'>
+  <view class='store-products'>
+    <view class='pro-item' wx:for="{{LiveProductList}}">
+      <view class='item-wrap'>
+        <view class='img-box'>
+          <image src='{{item.ThumbnailUrl160}}'></image>
+          <text class="title">{{item.ProductName}}件</text>
+          <checkbox class='goodsSelect' value="{{index}}" data-index='{{index}}' checked='{{ischecked}}' bindtap="checkboxGoodsChange" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

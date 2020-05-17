@@ -1,0 +1,1763 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"bundle": true,
+		"preloadBackgroundData": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.3",
+	"appid": "wxa4d03cf8e1ea5904",
+	"projectname": "%E5%A4%B4%E9%81%93%E6%83%A0%E9%97%A8%E5%BA%97",
+	"cloudfunctionTemplateRoot": "",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "添加收货地址",
+					"pathName": "pages/address/address",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/productdetail/productdetail",
+					"query": "id=14"
+				},
+				{
+					"id": -1,
+					"name": "查看物流",
+					"pathName": "pages/logistics/logistics",
+					"query": "orderid=201812140733956"
+				},
+				{
+					"id": -1,
+					"name": "会员中心",
+					"pathName": "pages/usehome/usehome",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "关联商品列表",
+					"pathName": "pages/productSelect/productSelect",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选择分类",
+					"pathName": "pages/createLiving/tabSelect",
+					"query": ""
+				},
+				{
+					"id": 11,
+					"name": "录播页面",
+					"pathName": "pages/myLiving/reportVideo",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "充值",
+					"pathName": "pages/recharge/recharge",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "productcategory商品",
+					"pathName": "pages/productcategory/productcategory",
+					"query": ""
+				},
+				{
+					"id": 16,
+					"name": "项目",
+					"pathName": "pages/project/project",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 17,
+					"name": "我的",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "填写",
+					"pathName": "pages/fillin/fillin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "技师详情",
+					"pathName": "pages/ technicianDetails/ technicianDetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "预约详情",
+					"pathName": "pages/appointmentDetails/appointmentDetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 25,
+					"name": "个人信息编辑 -- 会员",
+					"pathName": "pages/PersonalInformationMember/PersonalInformationMember",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 26,
+					"name": "个人信息--会员",
+					"pathName": "pages/PersonalInformationEditingMember/PersonalInformationEditingMember",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店申请",
+					"pathName": "pages/shopApplyFor/shopApplyFor",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "身份申请",
+					"pathName": "pages/identityToApplyFor/identityToApplyFor",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "资料申请",
+					"pathName": "pages/informationToApplyFor/informationToApplyFor",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "资料申请_技师",
+					"pathName": "pages/informationToApplyForTechnician/informationToApplyForTechnician",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "资料申请_门店",
+					"pathName": "pages/informationToApplyForShop/informationToApplyForShop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的预约tabbar",
+					"pathName": "pages/bchome/bchome",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 33,
+					"name": "我的订单",
+					"pathName": "pages/fujihang/fuMyOrder/fuMyOrder",
+					"query": ""
+				},
+				{
+					"id": 34,
+					"name": "填写资料",
+					"pathName": "pages/fujihang/fuPlace/fuPlace",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "支付",
+					"pathName": "pages/fujihang/fuPayState/fuPayState",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "pages/fujihang/fuOrderDetail/fuOrderDetail",
+					"query": ""
+				},
+				{
+					"id": 37,
+					"name": "团队技师订单",
+					"pathName": "pages/technicianAppointment/technicianAppointment",
+					"query": "type=1&active=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "技师列表",
+					"pathName": "pages/fujihang/fuTeachList/fuTeachList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 29,
+					"name": "我的二",
+					"pathName": "pages/fujihang/fuMy/fuMy",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的预约",
+					"pathName": "pages/technician/technician",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "上下架",
+					"pathName": "pages/fujihang/fuUpDown/fuUpDown",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "预约",
+					"pathName": "pages/fujihang/fuAppoint/fuAppoint",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商家核销",
+					"pathName": "pages/fujihang/fuWriteOff/fuWriteOff",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "用户我的订单",
+					"pathName": "pages/fujihang/fuMyOrder/fuMyOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 46,
+					"name": "我的佣金",
+					"pathName": "pages/myCommission/myCommission",
+					"query": "type=0",
+					"scene": null
+				},
+				{
+					"id": 47,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "评价",
+					"pathName": "pages/fujihang/fuEvaluate/fuEvaluate",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 49,
+					"name": "门店订单",
+					"pathName": "pages/storesOrder/storesOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 50,
+					"name": "技师订单/团队订单",
+					"pathName": "pages/technicianAppointment/technicianAppointment",
+					"query": "type=0&active=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "旧团队技师订单",
+					"pathName": "pages/fujihang/fuTeamOrder/fuTeamOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "项目列表页",
+					"pathName": "pages/packageList/packageList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 53,
+					"name": "测试分享",
+					"pathName": "pages/fujihang/fuShareCs/fuShareCs",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "申请身份",
+					"pathName": "pages/fujihang/fuIdentity/fuIdentity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "身份申请资料",
+					"pathName": "pages/fujihang/fuApplicaMate/fuApplicaMate",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 56,
+					"name": "项目详情",
+					"pathName": "pages/projectDetails/projectDetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的团队",
+					"pathName": "pages/fujihang/fuMyTeam/fuMyTeam",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "身份审核",
+					"pathName": "pages/identityVerification/identityVerification",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 59,
+					"name": "我的上级",
+					"pathName": "pages/fujihang/fuSuperior/fuSuperior",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "推广",
+					"pathName": "pages/fujihang/fuExtension/fuExtension",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "审核列表",
+					"pathName": "pages/fujihang/fuExamine/fuExamine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "审核身份",
+					"pathName": "pages/identityVerification/identityVerification",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "技师团队",
+					"pathName": "pages/fujihang/fuTeachTeam/fuTeachTeam",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人名片",
+					"pathName": "pages/fujihang/fuBusiCard/fuBusiCard",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "绑定身份",
+					"pathName": "pages/fujihang/fuExtension/fuExtension",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "全国门店",
+					"pathName": "pages/fujihang/fuCountryStore/fuCountryStore",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 67,
+					"name": "解绑门店技师",
+					"pathName": "pages/fujihang/fuUntyStore/fuUntyStore",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "聚道门店",
+					"pathName": "pages/fujihang/fuGathStore/fuGathStore",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "验证码新",
+					"pathName": "pages/fujihang/fuVerificatCode/fuVerificatCode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "全国技师",
+					"pathName": "pages/fujihang/fuCountryTeach/fuCountryTeach",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "签合同",
+					"pathName": "pages/fujihang/fuSignContract/fuSignContract",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "技师申请绑定执行团队长",
+					"pathName": "pages/fujihang/fuBind/fuBind",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新积分商城",
+					"pathName": "pages/fujihang/fuBeaStore/fuBeaStore",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "换购商品",
+					"pathName": "pages/pointDetail/pointDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "优惠券",
+					"pathName": "pages/fujihang/fuCoupon/fuCoupon",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "条件商城",
+					"pathName": "pages/fujihang/fuBeaStoreList/fuBeaStoreList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "帮助页面",
+					"pathName": "pages/fujihang/fuHelp/fuHelp",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 79,
+					"name": "团队长活动",
+					"pathName": "pages/fujihang/fuAction/fuAction",
+					"query": "zxz=true",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "技师领项目",
+					"pathName": "pages/fujihang/fuTeaProGet/fuTeaProGet",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "录视频",
+					"pathName": "pages/fujihang/fuVideo/fuVideo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "技师详情加价",
+					"pathName": "pages/fujihang/fuTeaDetail/fuTeaDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 83,
+					"name": "活动历史列表",
+					"pathName": "pages/fujihang/fuActionList/fuActionList",
+					"query": "zxz=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提现",
+					"pathName": "pages/fujihang/fuWithdrawal/fuWithdrawal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "支付宝二维码",
+					"pathName": "pages/fujihang/fuAlipay/fuAlipay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "写字版",
+					"pathName": "pages/fujihang/fuWrapper/fuWrapper",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "拼团列表",
+					"pathName": "pages/fujihang/fuAssemList/fuAssemList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "执行者订单",
+					"pathName": "pages/fujihang/fuExecutList/fuExecutList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 90,
+					"name": "门店技师业绩",
+					"pathName": "pages/fujihang/fuAchieve/fuAchieve",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 91,
+					"name": "执行者业绩",
+					"pathName": "pages/fujihang/fuExecuPer/fuExecuPer",
+					"query": "type=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "业绩详情",
+					"pathName": "pages/fujihang/fuAchieveDet/fuAchieveDet",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 92,
+					"name": "购物车",
+					"pathName": "fuPackageA/fuCart/fuCart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 94,
+					"name": "执行者团队长门店",
+					"pathName": "pages/fujihang/fuShopChoose/fuShopChoose",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "晋升团队长",
+					"pathName": "pages/fujihang/fuPromot/fuPromot",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店推荐改",
+					"pathName": "pages/fujihang/fuStoreG/fuStoreG",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 94,
+					"name": "产品改",
+					"pathName": "pages/fujihang/fuProduct/fuProduct",
+					"query": "id=461&StoreName=%25E8%258A%25B3%25E6%259D%2591%25E4%25BE%25BF%25E5%2588%25A9%25E5%25BA%25972%25E5%25BA%2597&storeDet=%257B%2522StoreId%2522%253A50%252C%2522EnvironmentImages%2522%253A%2522http%253A%252F%252Ffile.9oasd.com%252Fbcdj%252FStorage%252Fmaster%252F201911050923006147850.png%2522%252C%2522StoreName%2522%253A%2522%25E8%258A%25B3%25E6%259D%2591%25E4%25BE%25BF%25E5%2588%25A9%25E5%25BA%25972%25E5%25BA%2597%2522%252C%2522Distance%2522%253A%25221.0km%2522%252C%2522Address%2522%253A%2522%25E5%25B9%25BF%25E4%25B8%259C%25E7%259C%2581%25E5%25B9%25BF%25E5%25B7%259E%25E5%25B8%2582%25E8%25B6%258A%25E7%25A7%2580%25E5%258C%25BA%25E5%25A4%25A7%25E5%258D%2597%25E8%25B7%25AF130%25E5%258F%25B7%2522%257D",
+					"scene": null
+				},
+				{
+					"id": 97,
+					"name": "门店详情改",
+					"pathName": "pages/fujihang/fuStoreDet/fuStoreDet",
+					"query": "id=47",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "技师列表改",
+					"pathName": "pages/fujihang/fuTeacher/fuTeacher",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 100,
+					"name": "技师详情改",
+					"pathName": "pages/fujihang/fuTeacherDet/fuTeacherDet",
+					"query": "id=45",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "排行榜",
+					"pathName": "fuPackageA/fuRank/fuRank",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "业绩申报",
+					"pathName": "fuPackageA/fuDeclare/fuDeclare",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "拼团详情",
+					"pathName": "fuPackageA/fuCollageDet/fuCollageDet",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "拼团活动编辑",
+					"pathName": "fuPackageA/fuCollAciton/fuCollAciton",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店编辑选择",
+					"pathName": "fuPackageA/fuEditerStore/fuEditerStore",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动卡详情",
+					"pathName": "fuPackageA/fuActionCard/fuActionCard",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动卡领取",
+					"pathName": "fuPackageA/fuCardGet/fuCardGet",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "测试",
+					"pathName": "fuPackageA/fuCs/fuCs",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "套餐设置页",
+					"pathName": "fuPackageA/fufSetMeal/fufSetMeal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "电子券设置",
+					"pathName": "fuPackageA/fuCouponSet/fuCouponSet",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "上传门店环境",
+					"pathName": "fuPackageA/fuStoreView/fuStoreView",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店基础信息",
+					"pathName": "fuPackageA/fuStoreInfo/fuStoreInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "技师编辑选择列表",
+					"pathName": "fuPackageA/fuEditerTeach/fuEditerTeach",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动卡列表",
+					"pathName": "fuPackageA/fuCardList/fuCardList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动卡列表顾客",
+					"pathName": "fuPackageA/fuCartListC/fuCartListC",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "技师头衔",
+					"pathName": "fuPackageA/fuTeachTitle/fuTeachTitle",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "技师信息编辑页",
+					"pathName": "fuPackageA/fuTeachInfo/fuTeachInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "匠心编辑",
+					"pathName": "fuPackageA/fuTeachSchool/fuTeachSchool",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 119,
+					"name": "技师签约详情页",
+					"pathName": "fuPackageA/fuTeachDet/fuTeachDet",
+					"query": "tid=56",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "技师j匠心详情页",
+					"pathName": "fuPackageA/fuTeachSchDet/fuTeachSchDet",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "技师j作品上传",
+					"pathName": "fuPackageA/fuTeachWork/fuTeachWork",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "抽奖",
+					"pathName": "fuPackageA/fuLuckDraw/fuLuckDraw",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新售后服务",
+					"pathName": "fuPackageA/fuAfterSale/fuAfterSale",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新",
+					"pathName": "fuPackageA/fuApplyCom/fuApplyCom",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "朋友圈列表",
+					"pathName": "fuPackageA/fuCircleFri/fuCircleFri",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发布朋友圈",
+					"pathName": "fuPackageA/fuRelease/fuRelease",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "技师特殊服务",
+					"pathName": "fuPackageA/fuSpecial/fuSpecial",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人空间",
+					"pathName": "fuPackageA/fuPerSpace/fuPerSpace",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息",
+					"pathName": "fuPackageA/fuNews/fuNews",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "朋友圈详情",
+					"pathName": "fuPackageA/fuCirFriDet/fuCirFriDet",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "相册",
+					"pathName": "fuPackageA/fuAlbum/fuAlbum",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新我的收藏",
+					"pathName": "fuPackageA/fuMyCollect/fuMyCollect",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 133,
+					"name": "我的拼团",
+					"pathName": "fuPackageA/fuMyPuzzle/fuMyPuzzle",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "业绩申报详情",
+					"pathName": "fuPackageA/fuActionDetOut/fuActionDetOut",
+					"query": "id=413&zxz=true",
+					"scene": null
+				},
+				{
+					"id": 135,
+					"name": "新评价",
+					"pathName": "fuPackageA/fuEvaluatNew/fuEvaluatNew",
+					"query": "orderData=%7B%22PayTotal%22%3A%22200.02%22%2C%22OrderType%22%3A%22%E9%A1%B9%E7%9B%AE%22%2C%22OrderId%22%3A%22201907057885109%22%2C%22StatusText%22%3A%22%E5%B7%B2%E5%AE%8C%E6%88%90%22%2C%22Status%22%3A5%2C%22ItemStatus%22%3A0%2C%22ItemStatusText%22%3A%22%E6%AD%A3%E5%B8%B8%E7%8A%B6%E6%80%81%22%2C%22OrderDate%22%3A%222019-07-05%2019%3A41%3A14%22%2C%22Cellphone%22%3A%2213553570072%22%2C%22OrderTotal%22%3A200.02%2C%22OrderAmount%22%3A200.02%2C%22Deposit%22%3A%220.00%22%2C%22DeductionPoints%22%3Anull%2C%22CouponAmount%22%3A0%2C%22CouponName%22%3Anull%2C%22DeductionMoney%22%3Anull%2C%22RefundAmount%22%3A0%2C%22Remark%22%3A%22%22%2C%22InvoiceTitle%22%3A%22%22%2C%22Tax%22%3A0%2C%22AdjustedFreight%22%3A%220.00%22%2C%22Freight%22%3A%220.00%22%2C%22ModeName%22%3A%22%E5%88%B0%E5%BA%97%E6%9C%8D%E5%8A%A1%22%2C%22CountDownId%22%3A0%2C%22GroupBuyId%22%3A0%2C%22PreSaleId%22%3A0%2C%22HasInvoice%22%3Afalse%2C%22InvoiceTaxpayerNumber%22%3Anull%2C%22AdjustedDiscount%22%3A0%2C%22StoreId%22%3A523%2C%22StoreName%22%3A%22BEAUTY%26%E5%9B%BD%E9%99%85%E5%BD%A2%E8%B1%A1%E7%AE%A1%E7%90%86%E4%B8%AD%E5%BF%83%22%2C%22Address%22%3A%22%E5%B9%BF%E4%B8%9C%E7%9C%81%E5%B9%BF%E5%B7%9E%E5%B8%82%E7%99%BD%E4%BA%91%E5%8C%BA%22%2C%22UserName%22%3A%22%E5%A5%BD%E5%A5%BD%E5%A5%BD%22%2C%22UserTel%22%3A%2213553570072%22%2C%22HActivityId%22%3A0%2C%22RestoresCount%22%3A1%2C%22RestorerHasPaid%22%3A%22True%22%2C%22IsFightGroupOrder%22%3A%22False%22%2C%22FightGroupStatusText%22%3A%22%22%2C%22LineItems%22%3A%5B%7B%22ProducId%22%3A917%2C%22ProductName%22%3A%22%E6%9E%81%E8%87%B4%E7%BA%B9%E6%A2%85%22%2C%22Image%22%3A%22https%3A%2F%2Ffile.9oasd.com%2Fbcdj%2FStorage%2Fmaster%2F201907042035546241670.jpg%22%2C%22VerificationPassword%22%3A%2210935093%22%2C%22TechnicianId%22%3A306%2C%22Technician%22%3A%22Aaa%22%2C%22StoreName%22%3A%22BEAUTY%26%E5%9B%BD%E9%99%85%E5%BD%A2%E8%B1%A1%E7%AE%A1%E7%90%86%E4%B8%AD%E5%BF%83%22%2C%22StoreAddress%22%3A%22%E7%BA%A2%E7%81%AB%E9%B1%BChhu%22%2C%22Price%22%3A%220.02%22%2C%22SelectDate%22%3A%222019-07-05%2019%3A39%3A22%22%2C%22IsAppraised%22%3Afalse%2C%22CanUpdate%22%3A%22True%22%2C%22SkuId%22%3A%22917_0%22%2C%22HaveUpdate%22%3A%22False%22%2C%22Description%22%3A%22%E8%9E%8D%E5%90%88%E5%B9%BF%E5%B7%9E%E5%B8%82%E7%89%B9%E6%9C%89%E5%9C%9F%E4%BA%A7%E7%9A%84%E7%BE%8E%E9%A2%9C%E9%A1%B9%E7%9B%AE%22%2C%22SalesCount%22%3A0%7D%2C%7B%22ProducId%22%3A917%2C%22ProductName%22%3A%22%E8%A1%A5%E8%89%B2%22%2C%22Image%22%3A%22https%3A%2F%2Ffile.9oasd.com%2Fbcdj%2FStorage%2Fmaster%2F201907042035546241670.jpg%22%2C%22VerificationPassword%22%3A%2210634570%22%2C%22TechnicianId%22%3A0%2C%22Technician%22%3A%22%E6%9C%AA%E5%88%86%E9%85%8D%E6%8A%80%E5%B8%88%22%2C%22StoreName%22%3A%22BEAUTY%26%E5%9B%BD%E9%99%85%E5%BD%A2%E8%B1%A1%E7%AE%A1%E7%90%86%E4%B8%AD%E5%BF%83%22%2C%22StoreAddress%22%3A%22%E7%BA%A2%E7%81%AB%E9%B1%BChhu%22%2C%22Price%22%3A%220.00%22%2C%22SelectDate%22%3A%22%22%2C%22IsAppraised%22%3Afalse%2C%22CanUpdate%22%3A%22True%22%2C%22SkuId%22%3A%22%22%2C%22HaveUpdate%22%3A%22False%22%2C%22Description%22%3A%22%E8%9E%8D%E5%90%88%E5%B9%BF%E5%B7%9E%E5%B8%82%E7%89%B9%E6%9C%89%E5%9C%9F%E4%BA%A7%E7%9A%84%E7%BE%8E%E9%A2%9C%E9%A1%B9%E7%9B%AE%22%2C%22SalesCount%22%3A0%7D%5D%2C%22QRCode%22%3A%22%22%2C%22Coupon%22%3A%7B%22Name%22%3A%22%22%2C%22Price%22%3A%22%22%2C%22BuyPrice%22%3A%22%22%2C%22ClosingTime%22%3A%22%22%2C%22OrderUseLimit%22%3A%22%22%2C%22Type%22%3A%22%22%7D%7D&index=0",
+					"scene": null
+				},
+				{
+					"id": 136,
+					"name": "精选全部评价",
+					"pathName": "fuPackageA/fuEvaluatAll/fuEvaluatAll",
+					"query": "sid=930",
+					"scene": null
+				},
+				{
+					"id": 137,
+					"name": "线上申报活动新",
+					"pathName": "fuPackageA/fuAchieveG/fuAchieveG",
+					"query": "aid=813&zxzOrtdz=0",
+					"scene": null
+				},
+				{
+					"id": 138,
+					"name": "新评价详情",
+					"pathName": "fuPackageA/fuEvaluatDet/fuEvaluatDet",
+					"query": "aid=24&StoreId=930",
+					"scene": null
+				},
+				{
+					"id": 139,
+					"name": "奖品列表",
+					"pathName": "fuPackageA/fuPrizeList/fuPrizeList",
+					"query": "dzOrZxz=true",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "美花币",
+					"pathName": "fuPackageA/fuBeautiCoin/fuBeautiCoin",
+					"query": "zxz=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提现记录",
+					"pathName": "fuPackageA/fuRecordJiLu/fuRecordJiLu",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "天天抽奖",
+					"pathName": "fuPackageA/fuEveryDay/fuEveryDay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 130,
+					"name": "订单列表",
+					"pathName": "pages/pointAllOrder/pointAllOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "朋友圈详情改版",
+					"pathName": "fuPackageA/fuJitter/fuJitter",
+					"query": "id=4",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "朋友圈改版二",
+					"pathName": "fuPackageA/fuJitterT/fuJitterT",
+					"query": "id=4",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的搬迁",
+					"pathName": "fuPackageA/fuFunChoose/fuFunChoose",
+					"query": "id=4",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的二搬迁",
+					"pathName": "fuPackageA/fuMyTowQH/fuMyTowQH",
+					"query": "id=4",
+					"scene": null
+				},
+				{
+					"id": 148,
+					"name": "抖音个人空间",
+					"pathName": "fuPackageA/fuJitterPeo/fuJitterPeo",
+					"query": "UserId=16555",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "展示合同",
+					"pathName": "fuPackageA/fuContract/fuContract",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "音乐",
+					"pathName": "fuPackageA/fuMusic/fuMusic",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人评论列表",
+					"pathName": "fuPackageA/fuPorsonEva/fuPorsonEva",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "弹窗帮助",
+					"pathName": "fuPackageA/fuEImgGai/fuEImgGai",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分享有奖",
+					"pathName": "fuPackageA/fuShareReward/fuShareReward",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新登录注册",
+					"pathName": "fuPackageA/fuLogin/fuLogin",
+					"query": "dzOrZxz=true",
+					"scene": null
+				},
+				{
+					"id": 154,
+					"name": "new门店列表",
+					"pathName": "wuPackageB/wuStore/wuStore",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 155,
+					"name": "new积分商城",
+					"pathName": "pages/fujihang/newMall/newMall",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new积分明细",
+					"pathName": "wuPackageB/newIntegral/newIntegral",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店筛选列表",
+					"pathName": "wuPackageB/wuScreen/wuScreen",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new活动上架",
+					"pathName": "wuPackageB/activities/activities",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": 159,
+					"name": "new拼团活动详情",
+					"pathName": "wuPackageB/detailsGroup/detailsGroup",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": 160,
+					"name": "new平台/营收/会员/奖励",
+					"pathName": "wuPackageB/rewardDetails/rewardDetails",
+					"query": "id=1&num=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new选择身份入口",
+					"pathName": "fuPackageA/fuMyTowQH/fuMyTowQH",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new代理申请",
+					"pathName": "wuPackageB/agency/agency",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new技师管理",
+					"pathName": "wuPackageB/newTechnician/newTechnician",
+					"query": "id=1&num=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new会员管理",
+					"pathName": "wuPackageB/newMember/newMember",
+					"query": "id=1&num=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new项目上架",
+					"pathName": "wuPackageB/projectOn/projectOn",
+					"query": "id=1&num=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new店员管理",
+					"pathName": "wuPackageB/salesclerk/salesclerk",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new店员管理(添加)",
+					"pathName": "wuPackageB/addClerk/addClerk",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new店员管理(编辑)",
+					"pathName": "wuPackageB/clerkEdit/clerkEdit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new门店设置(分类佣金)",
+					"pathName": "wuPackageB/reward/reward",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 170,
+					"name": "new门店申请",
+					"pathName": "wuPackageB/application/application",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 169,
+					"name": "new空白页(用于店员管理)",
+					"pathName": "wuPackageB/kongPage/KongPage",
+					"query": "scene=ReferralId%3D10",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new机主资料",
+					"pathName": "wuPackageB/mainData/mainData",
+					"query": "authid=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品分类",
+					"pathName": "fuPackageA/fuClassfiy/fuClassfiy",
+					"query": "id=47",
+					"scene": null
+				},
+				{
+					"id": 162,
+					"name": "商品确认订单",
+					"pathName": "fuPackageA/fuOkOrder/fuOkOrder",
+					"query": "fromPage=signbuy&sku=23027_0&buyAmount=1&groupId=&IsFightGroup=false&prDid=23027&storeid=187&pType=0&countDownId=&PreSaleId=",
+					"scene": null
+				},
+				{
+					"id": 169,
+					"name": "商品视频导购",
+					"pathName": "fuPackageA/fuProVideo/fuProVideo",
+					"query": "pid=466",
+					"scene": null
+				},
+				{
+					"id": 164,
+					"name": "商品详情改版",
+					"pathName": "fuPackageA/fuProductT/fuProductT",
+					"query": "prDid=23014&roomId=11",
+					"scene": null
+				},
+				{
+					"id": 158,
+					"name": "积分下订单",
+					"pathName": "fuPackageA/fuOkOrderT/fuOkOrderT",
+					"query": "prDid=536&pagetype=6",
+					"scene": null
+				},
+				{
+					"id": 176,
+					"name": "支付成功提示",
+					"pathName": "fuPackageA/fuOrderTip/fuOrderTip",
+					"query": "total=0.01&orderid=201911151741",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "积分商品订单详情",
+					"pathName": "fuPackageA/fuOrderProDet/fuOrderProDet",
+					"query": "prDid=536&pagetype=6",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的订单二",
+					"pathName": "fuPackageA/fuMyOrder/fuMyOrder",
+					"query": "prDid=536&pagetype=6",
+					"scene": null
+				},
+				{
+					"id": 162,
+					"name": "我的自提订单详情",
+					"pathName": "fuPackageA/fuOrderDetail/fuOrderDetail",
+					"query": "prDid=536&pagetype=6",
+					"scene": null
+				},
+				{
+					"id": 161,
+					"name": "定位地图门店",
+					"pathName": "fuPackageA/fuMapDoor/fuMapDoor",
+					"query": "city=越秀区",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "项目商品导购",
+					"pathName": "fuPackageA/fuProjectVideo/fuProjectVideo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "优惠券详情",
+					"pathName": "fuPackageA/fuCouponDet/fuCouponDet",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店项目商品搜索",
+					"pathName": "fuPackageA/fuSeachDGP/fuSeachDGP",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 184,
+					"name": "new添加地址列表",
+					"pathName": "wuPackageB/recAddress/recAddress",
+					"query": "authid=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物商城",
+					"pathName": "fuPackageA/fuShop/fuShop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new添加地址",
+					"pathName": "wuPackageB/addAddress/addAddress",
+					"query": "authid=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new确认核销",
+					"pathName": "wuPackageB/verification/verification",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "头道惠首页",
+					"pathName": "pages/fujihang/fuIndexG/fuIndexG",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new测试",
+					"pathName": "wuPackageB/ceshi/ceshi",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "首页改版二",
+					"pathName": "pages/fujihang/fuIndexG/fuIndexG",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "更多卡包，我的卡包",
+					"pathName": "fuPackageA/fuCouponList/fuCouponList",
+					"query": "id=1&num=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店二维码",
+					"pathName": "fuPackageA/fuStroeCode/fuStroeCode",
+					"query": "id=1&num=1",
+					"scene": null
+				},
+				{
+					"id": 183,
+					"name": "购买卡卷详情",
+					"pathName": "fuPackageA/fuProductCou/fuProductCou",
+					"query": "pId=481&type=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "卡券下单",
+					"pathName": "fuPackageA/fuBuyCoupon/fuBuyCoupon",
+					"query": "id=1&num=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new最新项目上下架",
+					"pathName": "wuPackageB/projectUpper/projectUpper",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店看客户列表",
+					"pathName": "fuPackageA/fuPeople/fuPeople",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 187,
+					"name": "new拼团完成",
+					"pathName": "wuPackageB/groupCompleted/groupCompleted",
+					"query": "FightGroupId=388&prDid=23012",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "到店打卡",
+					"pathName": "fuPackageA/fuSignIn/fuSignIn",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 195,
+					"name": "总部首页",
+					"pathName": "pages/fujihang/fuIndexZB/fuIndexZB",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new添加技师",
+					"pathName": "wuPackageB/addTechnician/addTechnician",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new技师编辑",
+					"pathName": "wuPackageB/editTechnician/editTechnician",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new技师绑定空白页面",
+					"pathName": "wuPackageB/kongTechnician/kongTechnician",
+					"query": "prDid=459&pagetype=6",
+					"scene": null
+				},
+				{
+					"id": 201,
+					"name": "new购物车",
+					"pathName": "pages/cart/cart",
+					"query": "prDid=459&pagetype=6",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "拼团列表头",
+					"pathName": "fuPackageA/fuTeamList/fuTeamList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new提交订单页面",
+					"pathName": "fuPackageA/fuOkOrder/fuOkOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new收藏列表",
+					"pathName": "pages/fujihang/fuCollect/fuCollect",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "设置客服微信",
+					"pathName": "fuPackageA/fuSetService/fuSetService",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "卡核销记录",
+					"pathName": "fuPackageA/fuCouHis/fuCouHis",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "核销卡评价",
+					"pathName": "fuPackageA/fuEvaluatCou/fuEvaluatCou",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "团队奖励列表",
+					"pathName": "fuPackageA/fuTeamReward/fuTeamReward",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 201,
+					"name": "奖金池",
+					"pathName": "fuPackageA/fuRewardPool/fuRewardPool",
+					"query": "aid=62",
+					"scene": null
+				},
+				{
+					"id": 202,
+					"name": "new订单详情",
+					"pathName": "wuPackageB/wuorderDetail/wuorderDetail",
+					"query": "id=202003313464406",
+					"scene": null
+				},
+				{
+					"id": 203,
+					"name": "门店首页",
+					"pathName": "pages/fujihang/fuIndexG/fuIndexG",
+					"query": "id=187",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new查看物流",
+					"pathName": "wuPackageB/wuLogistics/wuLogistics",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new拼团上下架",
+					"pathName": "wuPackageB/groupStores/groupStores",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "积分列表详情",
+					"pathName": "fuPackageA/fuUserPoint/fuUserPoint",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new门店订单",
+					"pathName": "pages/storesOrder/storesOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new店主订单列表",
+					"pathName": "wuPackageB/wuOrderList/wuOrderList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new添加地址",
+					"pathName": "wuPackageB/recAddress/recAddress",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店设置次数",
+					"pathName": "fuPackageA/fuSetfrequen/fuSetfrequen",
+					"query": "id=50",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "设置首页轮播图",
+					"pathName": "fuPackageA/fuSetBack/fuSetBack",
+					"query": "id=50",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "客服设置",
+					"pathName": "fuPackageA/setCustomer/setCustomer",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "附近门店跳抵用券",
+					"pathName": "fuPackageA/fuNearStore/fuNearStore",
+					"query": "id=171",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店详情二",
+					"pathName": "fuPackageA/fuStoreDet/fuStoreDet",
+					"query": "id=171",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新商城二",
+					"pathName": "pages/fujihang/fuNewMarket/fuNewMarket",
+					"query": "id=50",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "店主收益",
+					"pathName": "fuPackageA/managerReturns/managerReturns",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "奖金活动列表",
+					"pathName": "fuPackageA/fuRewordList/fuRewordList",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "红卡会员",
+					"pathName": "fuPackageA/fuHongKa/fuHongKa",
+					"query": "g=8",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "限时抢购",
+					"pathName": "fuPackageA/fuXJMS/fuXJMS",
+					"query": "id=50",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品分类二",
+					"pathName": "fuPackageA/fuShopClass/fuShopClass",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "红卡专区产品",
+					"pathName": "pages/fujihang/fuHongKaPro/fuHongKaPro",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订阅消息模板",
+					"pathName": "fuPackageA/fuSubscribePage/fuSubscribePage",
+					"query": "prDid=23013&pagetype=undefined&storeid=undefined",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "黑卡申请",
+					"pathName": "fuPackageA/fuBlackApply/fuBlackApply",
+					"query": "prDid=23013&pagetype=undefined&storeid=undefined",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "直播",
+					"pathName": "subPackageC/entranceMenu/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新建直播",
+					"pathName": "subPackageC/newLive/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "直播间",
+					"pathName": "subPackageC/liveRoom/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "直播订单",
+					"pathName": "subPackageC/liveOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "subPackageC/liveOrder/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 229,
+					"name": "商品详情改",
+					"pathName": "fuPackageA/fuProductT/fuProductT",
+					"query": "prDid=23027&pagetype=undefined&storeid=null&dname=undefined&IsShowVideo=true",
+					"scene": null
+				},
+				{
+					"id": 230,
+					"name": "商品详情改",
+					"pathName": "fuPackageA/fuProductT/fuProductT",
+					"query": "prDid=23027&pagetype=undefined&storeid=null&dname=undefined",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "直播功能选择",
+					"pathName": "subPackageC/entranceMenu/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新建直播",
+					"pathName": "subPackageC/newLive/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "直播订单",
+					"pathName": "subPackageC/liveOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 234,
+					"name": "直播订单详情",
+					"pathName": "subPackageC/liveOrder/detail",
+					"query": "orderId=202002281605182",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "直播间列表",
+					"pathName": "subPackageC/liveRoom/index",
+					"query": "orderId=202002281605182",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "客户直播列表",
+					"pathName": "fuPackageA/fuLive/fuLive",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "物流信息",
+					"pathName": "fuPackageA/fuWuLiu/fuWuLiu",
+					"query": "id=50",
+					"scene": null
+				},
+				{
+					"id": 238,
+					"name": "分享参与拼团",
+					"pathName": "fuPackageA/fuYQPT/fuYQPT",
+					"query": "prDid=23012&storeid=50&isTeam= 33198",
+					"scene": null
+				},
+				{
+					"id": 239,
+					"name": "直播详情",
+					"pathName": "fuPackageA/fuLiveDet/fuLiveDet",
+					"query": "id=10",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "上下架项目",
+					"pathName": "fuPackageA/fuUpper/fuUpper",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "智慧门店申请",
+					"pathName": "fuPackageA/fuZhiHuiApply/fuZhiHuiApply",
+					"query": "id=50",
+					"scene": null
+				},
+				{
+					"id": 242,
+					"name": "分类列表二",
+					"pathName": "fuPackageA/fuProByType/fuProByType",
+					"query": "data=%7B%22cid%22%3A174%2C%22name%22%3A%22%E5%AE%B6%E5%B1%85%E7%94%A8%E5%93%81%22%2C%22icon%22%3A%22%22%2C%22subs%22%3A%5B%7B%22cid%22%3A175%2C%22name%22%3A%22%E6%B4%97%E6%8A%A4%22%2C%22icon%22%3A%22%22%7D%5D%7D",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的管理津贴",
+					"pathName": "fuPackageA/fuManageJT/fuManageJT",
+					"query": "prDid=23027&pagetype=undefined&storeid=null&dname=undefined&IsShowVideo=true",
+					"scene": null
+				}
+			]
+		}
+	}
+}

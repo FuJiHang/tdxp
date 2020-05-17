@@ -1,0 +1,49 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-15 10:43:17 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-04-15 10:43:39
+    我的订单
+ */ -->
+
+<view id="technician">
+    
+    <!-- 导航条 -->
+    <!-- <view class="navTopMO">
+        <span class="child {{isChoose==index?'danger':''}}" wx:for="{{navTop}}"  wx:key="index">
+            <van-button size="small" bindtap="changeTop"  data-index="{{index}}">{{item}}</van-button>
+        </span>
+    </view> -->
+    
+    <!-- 功能 -->
+    <van-tabs class="van_order"  line-width='20' color="#F56F68"  active="{{ active }}" bind:change="onChange" swipeable>
+        <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+            
+            <!-- <view class="orderFlex"> -->
+                <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getDataR">
+                    <orderListFU bindtap="toFN" order="{{item}}" wx:for="{{functionList[active].data}}" wx:key="index"></orderListFU>
+                    <!-- <view wx:for="{{functionList[active].data}}">
+                        {{item}}
+                    </view> -->
+
+
+                    <view class="noMore" wx:if="{{functionList[active].finish}}">
+                        没有更多的了~~~
+                    </view>
+                </scroll-view>
+            <!-- </view> -->
+            
+            
+        </van-tab>
+    </van-tabs>
+
+
+    <!-- 底部导航条 --> 
+<view class="navBarFu">
+    <view bindtap="toFNavc" data-to="{{item.to}}" class="child {{index==2?'max':''}} {{xz==index?'black':''}}" wx:for="{{navBar}}" wx:key="index" data-index="{{index}}" >
+        <image  mode="aspectFill" src="{{imgUrl+item.img}}" data-index="{{index}}"/>
+        <text class="name" data-index="{{index}}">{{item.name}}</text>
+    </view>
+</view>
+</view>
+

@@ -1,0 +1,15 @@
+<view class="addressInfo">
+  <view class="addressInfo-left">
+    <view class="addressInfo-icon">
+      <van-icon name="location-o" />
+    </view>
+  </view>
+  <view class="addressInfo-right">
+    <view class="addressInfo-title">
+      {{ addressee.name }} {{ addressee.phone }}
+    </view>
+    <view class="addressInfo-sub">
+      {{ addressee.address }}
+    </view>
+  </view>
+</view>

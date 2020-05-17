@@ -1,0 +1,30 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2020-03-16 15:29:28 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2020-03-16 15:29:28 
+    物流
+ */ -->
+<view id="fuWuLiu">
+    <!--  -->
+    <view class="navTop">
+        <image mode="widthFix" src="{{postImg+'wuliu.png'}}" />
+        <span class="contant">
+            <view class="name">{{dataInfo.ShipperCode}}</view>
+            <view class="val mb">运单编号：{{dataInfo.LogisticCode}}</view>
+            <view class="val">物流状态：{{dataInfo.State==0?'在途':dataInfo.State==1?'揽收':dataInfo.State==2?'疑难':dataInfo.State==3?'签收':dataInfo.State==4?'退签':dataInfo.State==5?'派件':'退回'}}</view>
+        </span>
+    </view>
+    <!--  -->
+    <view class="top">物流跟踪</view>
+    <!--  -->
+    <view class="wl" wx:for="{{dataInfo.Traces}}" wx:key="{{index}}">
+        <view class="name">
+            <span class="dian {{index==0?'start':''}} {{index==dataInfo.Traces.length-1?'end':''}}"></span>
+               <span class="flex">          {{item.AcceptStation}}</span>
+            
+  
+        </view>
+         <view class="val">{{item.AcceptTime}}</view>
+    </view>
+</view>

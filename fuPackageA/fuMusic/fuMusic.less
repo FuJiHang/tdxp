@@ -1,0 +1,76 @@
+page {
+    height: 100%;
+    font-size: 26rpx;
+    position: relative;
+
+}
+
+#fuMusic {
+
+    .Music{
+        
+        display: none;
+       
+    }
+
+    .list {
+        width: 100%;
+        box-sizing: border-box;
+        padding:  20rpx;
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border-bottom: 1px solid rgb(243, 243, 243);
+        image{
+            height: 140rpx;
+            width: 140rpx;
+        }
+        .contant{
+            flex: 1;
+            .name_time{
+                display: flex;
+                align-items: center;
+                .name{
+                    flex: 1;
+                }
+            }
+            .person{
+                margin-top: 20rpx;
+            }
+        }
+        
+
+    }
+
+
+    // 
+    .btn {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        .flex{
+            flex: 1;
+        }
+        .van-button {
+            width: 100%;
+            border: none;
+            border-radius: 0;
+            color: white;
+            background: #f56e68;
+        }
+        .cancal{
+            .van-button{
+                background: rgb(255, 95, 37);
+
+            }
+        }
+    }
+    .noMore{
+        font-size: 28rpx;
+        color: #999;
+        padding: 20rpx 20rpx 200rpx;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}

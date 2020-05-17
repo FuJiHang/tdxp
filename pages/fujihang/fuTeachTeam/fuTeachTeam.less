@@ -1,0 +1,226 @@
+page{
+    height: 100%;
+    // overflow: auto;
+    
+}
+#fuTeachTeam{
+    background: rgb(240, 240, 240);
+    font-size: 26rpx;
+    color: #666;
+    padding-bottom: 120rpx;
+    box-sizing: border-box;
+    // height: 100%;
+    // overflow: hidden;
+    // display: flex;
+    // flex-direction: column;
+    .MyTeamContant{
+        flex: 1;
+        overflow: hidden;
+        scroll-view{
+            height: 100%;
+            overflow: auto;
+           
+        }
+    }
+    // 搜索框
+    .teamFTop{
+        background: white;
+        display: flex;
+        align-items: center;
+        padding: 20rpx;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgb(240, 240, 240);
+        image{
+            height: 120rpx;
+            width: 120rpx;
+        }
+        .contant{
+            margin-left: 20rpx;
+            flex: 1;
+            .name_cla{
+                font-size:30rpx;
+                margin-bottom: 10rpx;
+            }
+            .shen_phone{
+                color: #999;
+                font-size: 28rpx;
+               
+            }
+        }
+        
+    }
+
+    // 内容
+    .conantTeam{
+        position: relative;
+        overflow: hidden;
+        .teamFu{
+            z-index: 9;
+            background: white;
+            padding: 20rpx;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            font-size: 27rpx;
+            border-bottom: 1px solid rgb(240, 240, 240);
+            image{
+                height: 100rpx;
+                width: 100rpx;
+            }
+            .contant{
+                flex: 1;
+                margin: 0 20rpx;
+                .name_cla{
+                    display: flex;
+                    margin-bottom: 20rpx;
+                    align-items: flex-end;
+                    .name{
+                        margin-right: 30rpx;
+                        font-size: 30rpx;
+                    }
+                }
+                .shen_phone{
+                    display: flex;
+                    align-items: center;
+                    .shen{
+                        background: #F5B168;
+                        box-sizing: border-box;
+                        padding: 0 5rpx;
+                        color: white;
+                        margin-right: 20rpx;
+                        border-radius: 20rpx;
+                    }
+                    .phone{
+                        color: #999;
+                        .red{
+                            color: #F56F68;
+                        }
+                    }
+                }
+            }
+            .van-button{
+                background:#F56F68;
+                color: white; 
+            }
+
+        }
+
+        // <view class="teamChild">
+        //     <image mode="aspectFill" src="{{imgUrl+'icon_search.png'}}"/>
+        //     <view class="contant">
+        //         <view class="name_cla">
+        //             <span class="name">s</span>
+        //             <span class="cla">s</span>
+        //         </view>
+        //         <view class="shen_phone">
+        //             <span class="shen">s</span>
+        //             <span class="phone">s</span>
+        //         </view>
+        //     </view>
+        //     <van-icon name="arrow" />
+        // </view>
+        
+        .teamChild{
+            z-index: -1;
+            display: flex;
+            align-items: center;
+            padding: 20rpx 0;
+            margin:0 30rpx;
+            box-sizing: border-box;
+            border-bottom: 1px solid rgb(219, 219, 219);
+            transition: .3s;
+            image{
+                margin-right: 20rpx;
+                width: 80rpx;
+                height: 80rpx;
+            }
+            .contant{
+                flex: 1;
+                .name_cla{
+                    margin-bottom: 20rpx;
+                    .name{
+                        font-size: 30rpx;
+                        margin-right: 20rpx;
+                    }
+                    .cla{
+                        font-size: 28rpx;
+                    }
+                }
+                .shen_phone{
+                    .shen{
+                        padding: 0 5rpx;
+                        box-sizing: border-box;
+                        color: white;
+                        font-size: 28rpx;
+                        background: #F56F68;
+                        border-radius: 20rpx;
+                        margin-right: 20rpx;
+                    }
+                }
+            }
+        }
+        .open{
+            position: absolute;
+            top: 0;
+        }
+    }
+    .noMore{
+        padding: 20rpx;
+        text-align: center;
+        font-size: 30rpx;
+    }
+    .btn{
+        position: fixed;
+        bottom: 0; 
+        width: 100%;
+        .van-button{
+            border:none;
+            width: 100%;
+            background: #F56F68;
+            color: white;
+        }
+    }
+
+    .van-popup {
+        height: 100%;
+        background: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .yzm{
+            border-radius: 10rpx;
+            background: white;
+            width: 80%;
+            
+            .child{
+                .van-button{
+                    color: #999;
+                    width: 100%;
+                    border:none;
+                }
+            }
+            .btns{
+                padding: 20rpx;
+                box-sizing: border-box;
+                display: flex;
+                .van-button{
+                    width: 100%;
+                    border:none;
+                    background: #F56F68;
+                    color: white;
+                }
+                .cancl{
+                    margin-right: 10rpx;
+                    .van-button{
+                        background: #1989fa;
+                    }
+                    
+                }
+                .wt{
+                    flex: 1;
+                }
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-10-29 11:43:25 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-10-29 11:43:25 
+    新登录注册
+*/ -->
+<view id="fuLogin">
+
+    <view class="child" wx:for="{{postList}}" wx:key="{{index}}">
+        <span class="name">
+            {{item.name}}
+        </span>
+        <span class="input">
+            <input placeholder="{{item.plr}}" data-name="{{'postList['+index+'].val'}}" value="{{item.val}}" bindinput="changeInput" />
+        </span>
+    </view>
+    
+    <van-button bindtap="loginFN" round >登录</van-button>
+
+    <view class="WeiXi">
+        <view class="tip">
+            点击下方微信图标可快速登录
+        </view>
+        <image mode="widthFix" src="{{imgUrl+'weixi.png'}}" />
+        <van-button bindtap="quickLogin"  round open-type='getUserInfo'>微信快速登录</van-button>
+        <van-button bindtap="returnFN"  round >返回</van-button>
+    </view>
+
+
+</view>

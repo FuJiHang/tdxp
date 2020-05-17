@@ -1,0 +1,57 @@
+#agency .logo_wrap {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  border-top: 1rpx solid #eee;
+}
+#agency .logo_wrap .logo {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+#agency .logo_wrap .title_wrap {
+  font-size: 26rpx;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#agency .formList {
+  position: relative;
+  background-color: #fff;
+}
+#agency .formList .form_wrap {
+  padding: 15rpx 0 15rpx 20rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #eee;
+}
+#agency .formList .form_wrap .name {
+  width: 150rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+#agency .formList .form_wrap .input_f {
+  flex: 1;
+  width: 300rpx;
+}
+#agency .formList .form_wrap .input_c {
+  font-size: 26rpx;
+}
+#agency .formList .btn-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 500rpx;
+}
+#agency .formList .btn-area button {
+  width: 90%;
+  background-color: #E65656;
+  color: #fff;
+  border-radius: 50rpx;
+}

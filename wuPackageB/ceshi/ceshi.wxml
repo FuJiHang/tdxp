@@ -1,0 +1,17 @@
+<!-- <view class="teachers_banner">
+  <view class="container clearfix teachers_b">
+    <view class="slide" id="slide" bindtouchstart='moveStart' bindtouchend='moveItem'>
+      <ul>
+        <block wx:for="{{datas}}" wx:key>
+          <li animation="{{item.animation}}" style="z-index: {{item.zIndex}} ;opacity:{{item.opacity}};"
+            bindtap="choose" data-id="{{item.id}}">
+            <image src="{{item.iamge}}" alt="林奇涵" title=""></image>
+          </li>
+        </block>
+      </ul>
+    </view>
+  </view>
+</view> -->
+
+  <!-- 画布大小按需定制  -->
+  <canvas canvas-id="shareBox"></canvas>

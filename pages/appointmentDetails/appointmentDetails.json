@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "time-picker":"/components/timePicker/timePicker"
+  },
+  "navigationBarTitleText": "预约详情"
+}

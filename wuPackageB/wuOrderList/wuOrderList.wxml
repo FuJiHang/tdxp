@@ -1,0 +1,152 @@
+<!--pages/storesOrder/storesOrder.wxml-->
+<view id="storesOrder">
+
+  <!-- 导航条 -->
+  <view class="navTopMO">
+    <span class="child {{isChoose==index?'danger':''}}" wx:for="{{navTop}}" wx:key="index">
+      <van-button size="small" bindtap="changeTop" data-index="{{index}}">{{item}}</van-button>
+    </span>
+  </view>
+
+  <!-- 功能 -->
+  <van-tabs class="van_order" wx:if="{{isChoose==0}}" line-width='20' color="#F56F68" active="{{ active }}"
+    bind:change="onChange" swipeable>
+    <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+      <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getDataR">
+        <view class="orderList" wx:for="{{functionList[active].data}}" wx:key="{{index}}" wx:for-item="order">
+          <view class="orderListTop">
+            <span class="name">订单号：{{order.OrderId}}</span>
+            <span class="state" wx:if="{{order.Status==2}}">待成团</span>
+            <span class="state" wx:if="{{order.Status==5}}">已成团</span>
+            <span class="state" wx:if="{{order.Status==4}}">成团失败</span>
+            <span class="state" wx:if="{{active==3}}">{{order.StatusText}}</span>
+          
+          </view>
+          <!-- <view class="orderListContent" wx:for="{{order.LineItems}}" wx:key="index">
+            <view class="contant">
+              <image src="{{item.Image}}" mode="aspectFill" />
+              <span class="middin">
+                <view class="name_mid child">{{item.Name?item.Name:'无'}}
+                  <view class="money">￥{{item.Price?item.Price:'0'}}</view>
+                </view>
+                <view class="teacher">{{item.TechnicianName?item.TechnicianName:'无'}}</view>
+                <view class="detail">
+                  <text class="code">详情</text>{{item.Description?item.Description:'无'}}
+                </view>
+              </span>
+            </view>
+            <view class="time">预约时间：{{item.SelectDate}}
+            </view>
+          </view>
+          <view class='userInfo'>
+            <image src='{{order.LineItems[0].UserPicture}}'></image>
+            <view class='userRightInfo'>
+              <view>用户:{{order.LineItems[0].UserName}}</view>
+            </view>
+          </view>
+          <view class="orderListAll">
+            共{{order.Quantity}}个项目 金额：
+            <text class="moneyAll">￥{{order.Amount}}</text>
+          </view> -->
+          <view class="orderListContent" wx:for="{{order.LineItems.length?order.LineItems:order.Gifts}}" wx:key="index">
+            <view class="contant">
+              <image src="{{item.Image}}" mode="aspectFill" />
+              <span class="middin">
+                <view class="name_mid child">{{order.LineItems[0].Name?order.LineItems[0].Name:'无'}}</view>
+                <!-- <view class="money">{{item.NeedPoint}}积分</view> -->
+                <view class="money">{{order.Amount}}元</view>
+                <view class='confirmBtn seeLog' wx:if="{{order.Status==3}}" data-id='{{order.OrderId}}'
+                  data-items="{{order.LineItems}}" bindtap='toLogistics'>查看物流</view>
+                <view class='confirmBtn seeLog' wx:if="{{order.Status==5}}" data-id='{{order.OrderId}}'
+                  data-items="{{order.LineItems}}" bindtap='toLogistics'>查看物流</view>
+                <view class='confirmBtn' wx:if="{{order.Status==3}}" data-id='{{order.OrderId}}' bindtap='toConfirm'>
+                  确认收货</view>
+              </span>
+              <view class="btn_wrap" bindtap="handleClick" data-id="{{order.OrderId}}"></view>
+            </view>
+            <view class="payFU {{order.Status==3?'kd':''}} noBb" data-oId="{{item.OrderId}}">
+              {{order.ShipOrderNumber?order.ExpressCompanyName  +'   快递号:'+order.ShipOrderNumber:''}}
+              <span class="bgf">
+                <van-button wx:if="{{order.Status==1}}" size="small" bindtap="coloseFN" data-oId="{{order.OrderId}}">取消
+                </van-button>
+              </span>
+              <van-button wx:if="{{order.Status==1}}" size="small" bindtap="payFN" data-oId="{{order.OrderId}}">支付
+              </van-button>
+              <van-button wx:if="{{active==3}}" size="small" bindtap="openAppFN" data-oId="{{order.OrderId}}">审核</van-button>
+            </view>
+          </view>
+        </view>
+
+        <view class="noMore" wx:if="{{functionList[active].finish}}">
+          没有更多的了~~~
+        </view>
+      </scroll-view>
+    </van-tab>
+  </van-tabs>
+
+  <!-- 功能 -->
+  <van-tabs class="van_order" wx:if="{{isChoose==1}}" line-width='20' color="#F56F68" active="{{ active }}"
+    bind:change="onChange" swipeable>
+    <van-tab wx:for="{{functionList2}}" title="{{item.name}}" wx:key="index">
+      <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getDataR">
+        <view class="orderList" wx:for="{{functionList2[active].data}}" wx:key="{{index}}" wx:for-item="order">
+          <view class="orderListTop">
+            <span class="name">订单号：{{order.OrderId}}</span>
+            <span class="state" wx:if="{{order.Status==3}}">待收货</span>
+            <span class="state" wx:if="{{order.Status==5}}">已收货</span>
+            <span class="state" wx:if="{{order.Status==4}}">已取消</span>
+          </view>
+
+          <view class="orderListContent" wx:for="{{order.LineItems.length?order.LineItems:order.Gifts}}" wx:key="index">
+            <view class="contant">
+              <image src="{{item.Image}}" mode="aspectFill" />
+              <span class="middin">
+                <view class="name_mid child">{{item.GiftName?item.GiftName:item.Name}}</view>
+                <!-- <view class="money">{{item.NeedPoint}}积分</view> -->
+                <view class="money">{{order.Amount}}元</view>
+                <view class="name_mid child">收货人：{{order.LineItems[0].UserName}} 电话：{{order.LineItems[0].UserPhone}}</view>
+
+                <view class='confirmBtn' wx:if="{{order.Status==3}}" data-id='{{order.OrderId}}' bindtap='toConfirm'>
+                  确认收货</view>
+              </span>
+              <view class="btn_wrap" bindtap="handleClick" data-id="{{order.OrderId}}"></view>
+            </view>
+            <view class="payFU {{order.Status==3?'kd':''}}" data-oId="{{item.OrderId}}">
+              {{order.ShipOrderNumber?order.ExpressCompanyName  +'   快递号:'+order.ShipOrderNumber:''}}
+              <span class="bgf">
+                <van-button wx:if="{{order.Status==1}}" size="small" bindtap="coloseFN" data-oId="{{order.OrderId}}">取消
+                </van-button>
+              </span>
+              <van-button wx:if="{{order.Status==1}}" size="small" bindtap="payFN" data-oId="{{order.OrderId}}">支付
+              </van-button>
+              <van-button wx:if="{{order.Status==2}}" size="small" bindtap="errOrder" data-oId="{{order.OrderId}}">申请售后
+              </van-button>
+            </view>
+          </view>
+        </view>
+
+        <view class="noMore" wx:if="{{functionList[active].finish}}">
+          没有更多的了~~~
+        </view>
+      </scroll-view>
+    </van-tab>
+  </van-tabs>
+</view>
+
+
+
+<!--  -->
+<!-- <van-popup show="{{true}}" bindtap="onCloseP" position="bottom" bind:close="onCloseP">
+  <view class="tipFN">
+    <textarea placeholder-class="plr" catchtap value="{{Remark}}" placeholder="请输入备注，也可不填" bindinput="RemarkFN" />
+    <view class="ok">
+        <span class="red btn">
+          <van-button catchtap="errFN" size="small">拒绝</van-button>
+        </span>
+       <span class="btn">
+        <van-button catchtap="okFN" size="small">同意</van-button>
+       </span>
+         
+      </view>
+  </view>
+</van-popup> -->

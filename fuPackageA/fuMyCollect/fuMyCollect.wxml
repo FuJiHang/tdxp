@@ -1,0 +1,77 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-19 09:37:54 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-19 09:37:54 
+    新我的收藏
+*/ -->
+<view id="fuMyCollect">
+
+    <!-- 搜索 -->
+    <view class="seachMTAM">
+        <view class="seachbg">
+            <image src="{{imgUrl+'icon_search.png'}}"  mode="aspectFill"/>
+            <input placeholder="请输入搜索的店名" value="{{seach}}" bindinput="seaChFN"/>
+        </view>
+        <van-button size="small" bindtap="seachZXT">搜索</van-button>
+    </view>
+
+
+    <!--  -->
+    <van-tabs class="van_order" line-width='20' color="#F56F68" active="{{ active }}" bind:change="onChange" swipeable>
+        <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+            <scroll-view  scroll-y class="{{paiLie?'paiLie':''}}" >
+                
+                <!-- 门店 -->
+                <view  class="storeChildSHU" data-url="/pages/fujihang/fuStoreDet/fuStoreDet" data-id="{{child.StoreId}}" bindtap="toFN"  wx:for-item="child" wx:for-index="cindex" wx:for="{{item.STData}}" wx:key="{{cindex}}" >
+                    <image mode="aspectFill" class="storeImg" src="{{child.StoreImages+'?x-oss-process=image/resize,l_640'}}" />
+                    <view class="contantS">
+                        <view class="name">{{child.StoreName}}</view>
+                        <view class="eva">
+                            <image class="xx" wx:for="{{child.AVGScore/20}}" wx:key="{{index}}" src="{{imgUrl+'xinH.png'}}" />
+                            {{child.ScoreCount}}条好评
+                        </view>
+                          <view class="bottomC">
+                            <!-- <image class="add" src="{{imgUrl+'icon_address33.png'}}" mode="aspectFill" /> -->
+                            <span class="flexC">{{child.Address}}</span>
+                            <span class="mi">{{child.TagNames?child.TagNames:''}}</span>
+                        </view>
+                        <view class="coup">
+                           <span >联系人：{{child.ContactMan}}</span>
+                        </view>
+                    </view>
+                </view>
+                <!-- 技师 -->
+                <view class="teacher" bindtap="toFN" data-url="/pages/fujihang/fuTeacherDet/fuTeacherDet" data-id="{{citem.Id}}" wx:for-item="citem" wx:for-index="cindex" wx:for="{{item.TCData}}" wx:key="{{index}}">
+                    <image src="{{citem.HeadPortrait+'?x-oss-process=image/resize,l_640'}}" mode="aspectFill"  />
+                    <span class="contant">
+                        <view class="name">{{citem.Name}}<span class="join">{{citem.GradeName}}</span></view>
+                        <view class="detail">{{citem.Introduce}}</view>
+                        <view class="rate">
+                            <van-rate size="{{12}}" value="{{citem.AVGScore/20}}" color="#F56F68" />
+                        </view>
+                    </span>
+                </view>
+          
+
+                <!-- 动态标题 -->
+                <view class="dynamic" bindtap="toFN" data-url="/fuPackageA/fuCirFriDet/fuCirFriDet" data-id="{{itema.Id}}" wx:for="{{item.fAData}}" wx:for-item="itema" wx:for-index="aindex" wx:key="{{aindex}}"> 
+                    <image src="{{itema.ImageUrls[0]+'?x-oss-process=image/resize,l_640'}}" mode="aspectFill" />
+                    
+                    <span class="contant">
+                        <view class="name">{{itema.UserName}}<span class="join">{{itema.CreateDate}}</span></view>
+                        <view class="detail">{{itema.Contents}}</view>
+                    </span>
+                </view>
+'
+                
+
+                <view class="noMore" wx:if="{{item.finsh}}">
+                    没有更多的了~~~
+                </view>
+            </scroll-view>
+        </van-tab>
+    </van-tabs>
+
+
+</view>

@@ -1,0 +1,75 @@
+page{
+    height: 100%;
+    overflow: hidden;
+}
+// 导航条
+#fuMyOrder{
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: #666;
+    box-sizing: border-box;
+    // 导航条
+    .navTopMO{
+        display: flex;
+        padding: 18rpx 0;
+        box-sizing: border-box;
+        background: white;
+        .child{
+            flex: 1;
+            text-align: center;
+            .van-button{
+                color: #999;
+                border:none;
+                background: white;
+            }
+            
+        }
+        .danger{
+            .van-button{
+                background: #FF6262;
+                color: white;
+            }
+            
+        }
+    }
+    // 功能
+    .van_order{
+        flex: 1;
+        color: #999;
+        overflow: hidden;
+        .van-tabs{
+            height: 100%;
+            overflow: hidden;
+        }
+        .van-tabs__content{
+            height: 100%;
+            overflow: hidden;
+            .van-tabs__track{
+                height: 100%;
+                overflow: hidden;
+                .van-tab__pane{
+                    padding-bottom: 44px ;  
+                    height: 100% ; 
+                    box-sizing: border-box;
+                    overflow: hidden;
+                    scroll-view{
+                        overflow: auto;
+                        height: 100%;
+                        .noMore{
+                            font-size: 28rpx;
+                            color: #999;
+                            padding: 20rpx;
+                            text-align: center;
+                            box-sizing: border-box;
+                        }
+                    }
+                }
+            }
+        }
+        .van-tab--active{
+            color: red;
+        }
+    }
+}

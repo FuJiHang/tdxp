@@ -1,0 +1,126 @@
+page {
+  height: 100%;
+  font-size: 16rpx;
+  color: #666;
+}
+#fuSetfrequen {
+  padding: 10rpx 10rpx 120rpx;
+  box-sizing: border-box;
+}
+#fuSetfrequen .topNav {
+  display: flex;
+  background: #fff;
+  margin-bottom: 20rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+#fuSetfrequen .topNav view {
+  flex: 1;
+  font-size: 35rpx;
+  text-align: center;
+  position: relative;
+  padding: 30rpx 20rpx;
+}
+#fuSetfrequen .topNav view:first-child::after {
+  top: 0;
+  right: 0;
+  width: 4rpx;
+  content: '';
+  height: 100%;
+  position: absolute;
+  background: #ccc;
+}
+#fuSetfrequen .topNav .navClick {
+  color: #fff;
+  font-weight: bold;
+  background: rgba(233, 100, 151, 0.6);
+}
+#fuSetfrequen .child {
+  padding: 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+#fuSetfrequen .child .contant {
+  position: relative;
+  flex: 1;
+  margin-left: 20rpx;
+}
+#fuSetfrequen .child image {
+  height: 260rpx;
+  width: 100%;
+}
+#fuSetfrequen .child .detail {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  padding: 26rpx 30rpx;
+  box-sizing: border-box;
+  color: #fff;
+  font-weight: bold;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+#fuSetfrequen .child .detail .name {
+  font-size: 16rpx;
+  margin-bottom: 20rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+#fuSetfrequen .child .detail .price {
+  font-size: 16rpx;
+  margin-bottom: 5rpx;
+}
+#fuSetfrequen .child .detail .val {
+  font-size: 16rpx;
+  margin-bottom: 18rpx;
+}
+#fuSetfrequen .child .detail .btn .van-button {
+  width: 150rpx;
+  border-radius: 50rpx;
+  background: #fff;
+  color: #E96497;
+  font-size: 32rpx;
+}
+#fuSetfrequen .child .bg {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+#fuSetfrequen .noMore {
+  font-size: 28rpx;
+  color: #999;
+  padding: 20rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+#fuSetfrequen .btn {
+  z-index: 9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  display: flex;
+  border-top: 1px solid #ececec;
+}
+#fuSetfrequen .btn .childBtn {
+  width: 50%;
+}
+#fuSetfrequen .btn .childBtn .van-button {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  color: white;
+  background: #E96497;
+}
+#fuSetfrequen .btn .one .van-button {
+  color: #E96497;
+  background: #fff;
+}

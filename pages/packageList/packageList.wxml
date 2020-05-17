@@ -1,0 +1,48 @@
+<!--pages/packageList/packageList.wxml-->
+<view class="title">套餐详情</view>
+<view class="item-box">
+  <view class="item" wx:for="{{packageListObj}}" wx:key="{{index}}" bindtap='goparticulars' data-listObj='{{item}}' data-index="{{index}}">
+    <image src='{{item.Image}}' />
+    <view class="item-right">
+      <view class="item-title">
+        <view>{{item.Name}}</view>
+        <view class="price">￥{{item.Price}}</view>
+      </view>
+      <view class="item-info">
+        <text class="item-info-icon">详情</text>
+        <text>{{item.Description}}</text>
+      </view>
+    </view>
+  </view>
+
+</view>
+<!-- 选择门店 -->
+<view class='selcetStore'>
+  <view class='title'>选择门店</view>
+</view>
+<radio-group class="radio-group" bindchange="radioChange">
+  <label class="radioPackList" wx:for="{{stores}}" wx:key="{{index}}">
+    <radio  value="{{index}}" color="#f56f68"/>
+      <view class='radioItems'>
+        <image src='{{item.StoreImages}}'></image>
+        <view class='radioRight'>
+          <view class='radioName'>
+            <view>{{item.StoreName}}</view>
+            <view>距离{{item.Distance}}</view>
+          </view>
+          <view class='radioAddress'>{{item.Address}}</view>
+        </view>
+      </view>
+  </label>
+</radio-group>
+
+<!-- 底部 -->
+<view class="bottom">
+  <view class="b-left" wx:if="{{packageListObj!=''}}">
+    <text>套餐金额:</text>
+    <text class=".comp-price">￥{{PackPrice}}</text >
+  </view>
+  <view class="b-right" bindtap='gotoyuyue'>
+    立即预约
+  </view>
+</view>

@@ -1,0 +1,163 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-06-26 09:43:02 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-06-26 09:43:02 
+    门店详情（改）
+*/ -->
+<view id="fuStoreDet">
+    <!-- style="height:{{imgheights[current]}}rpx;" -->
+    <!-- 轮播图 -->
+    <swiper class="lbt" style="height:{{minImgH}}rpx;" autoplay="{{true}}" circular="{{true}}" interval="{{5000}}" duration="{{500}}" bindchange="bindchangeImg">
+        <swiper-item wx:for="{{background}}" wx:key="index" data-id='{{index}}'>
+            <image hidden="{{index==0&&video}}" data-id='{{index}}' bindload="imageLoad" class='item-img' src="{{item+'?x-oss-process=image/crop,w_640,h_480'}}" mode="widthFix"></image>
+            <video poster="true" show-play-btn="false" object-fit="fill" wx:if="{{!index&&video}}" id="myVideo" src="{{item}}"></video>
+        </swiper-item>
+    </swiper>
+    <!--  -->
+    <view class="storeDetail">
+        <view class="top">
+            <view class="storeName">
+                {{getStore.StoreName}}
+                <van-icon color="#999999" name="play" />
+            </view>
+            <view class="time">营业时间：{{getStore.yysj}}</view>
+            <view class="rate">
+                <span class="name">评分4.6</span>
+                <span class="val">预约9999</span>
+            </view>
+            <view class="address">
+                <span class="name">{{getStore.Address}}dsf</span>
+                <span class="add">
+                    <image src="{{imgUrl+'circuit-city-icon@2x.png'}}" mode='aspectFit' />
+                </span>
+                <span class="phone">
+                    <image src="{{imgUrl+'phoneS.png'}}" mode='aspectFit' />
+                </span>
+            </view>
+        </view>
+        <view class="appoint" bindtap="toFFN" data-to="/pages/fujihang/fuCoupon/fuCoupon?active=3">
+            <image src="{{imgUrl+'quanS.png'}}" mode='aspectFit' />
+            优惠券
+            <span class="flex">
+                <span class="type">满100元减79元</span>
+            </span>
+            <!-- <span class="peo">{{getStore.CouponSalesCount?getStore.CouponSalesCount:0}}人领取</span> -->
+            <van-icon name="arrow" size="35rpx" color="#999" />
+        </view>
+    </view>
+    <!--  -->
+    <view class="teamPro">
+        <view class="navTop" bindtap="toFigList">
+            <image src="{{imgUrl+'tuanS.png'}}" mode='aspectFit' />
+            团购项目
+            <span class="flex">
+                <!-- <span class="type">2人团</span> -->
+            </span>
+            <van-icon name="arrow" size="38rpx" color="#999" />
+        </view>
+        <view class="project" bindtap="toFigGro" data-id="{{item.FightGroupActivityId}}" wx:for="{{getStore.FightGroups}}" wx:key="{{index}}">
+            <image src="{{item.ProductPicture+'?x-oss-process=image/resize,l_640'}}" mode='aspectFill' />
+            <span class="contant">
+                <view class="name_num">
+                    <span class="name">{{item.ProductName}}</span>
+                    <van-icon name="arrow" size="35rpx" color="#999" />
+                </view>
+                <view class="num">已预约{{item.BuyCount?item.BuyCount:0}}</view>
+                <view class="price">
+                    ￥{{item.FightPrice}}
+                    <span class="errPri">￥{{item.SalePrice}}</span>
+                </view>
+            </span>
+        </view>
+    </view>
+    <!--  -->
+    <view class="hotPro">
+        <view class="navTop">
+            <span class="flex">热门项目</span>
+            <van-icon name="arrow" size="38rpx" color="#999" />
+        </view>
+        <van-tabs class="van_order" line-width='20' color="#F56F68" active="{{ active }}" bind:change="onChange" swipeable>
+            <van-tab wx:for="{{hotPro}}" title="{{item.name}}" wx:key="index">
+                <view class="dahezi">
+                    <view class="project" bindtap="toProDet" wx:for-item="itemc" wx:for-index="indexc" data-id="{{itemc.ProductId}}" wx:for="{{item.data}}" wx:key="{{indexs}}">
+                        <!-- item.data -->
+                        <image src="{{itemc.Pic+'?x-oss-process=image/resize,l_640'}}" mode='aspectFill' />
+                        <span class="contant">
+                            <view class="name_num">
+                                <span class="name">{{itemc.ProductName}}</span>
+                                <van-icon name="arrow" size="35rpx" color="#999" />
+                            </view>
+                            <view class="num">已预约{{itemc.SaleCounts?itemc.SaleCounts:0}}</view>
+                            <view class="price">
+                                ￥{{itemc.SalePrice}}
+                                <span class="errPri">￥{{itemc.MarketPrice}}</span>
+                            </view>
+                        </span>
+                    </view>
+                    <view class="noMore" bindtap="toStroe">查看更多</view>
+                </view>
+            </van-tab>
+        </van-tabs>
+    </view>
+    <!-- getStore.Appraises -->
+    <view class="evaluate">
+        <view class="navTop" bindtap="toFNEVA">
+            <span class="flex">精选点评</span>
+            <van-icon name="arrow" size="35rpx" color="#999" />
+        </view>
+        <view class="evaChild" wx:for="{{getStore.Appraises}}" wx:key="{{index}}">
+            <view class="person">
+                <image src="{{item.UserPicture+'?x-oss-process=image/resize,l_640'}}" mode='aspectFill' />
+                <span class="contant">
+                    <view class="name">
+                        {{item.UserName}}
+                        <span class="class">Lv5</span>
+                    </view>
+                    <view class="time">{{item.AddDate}}</view>
+                    <view class="art">
+                        技术分
+                        <span class="star">
+                            <image wx:for="{{item.TechnicalScore}}" wx:key="{{index}}" mode='aspectFit' src="{{imgUrl+'xinH.png'}}" />
+                        </span>
+                    </view>
+                    <view class="service art">
+                        服务分
+                        <span class="star">
+                            <image wx:for="{{item.ServiceScore}}" wx:key="{{index}}" mode='aspectFit' src="{{imgUrl+'xinH.png'}}" />
+                        </span>
+                    </view>
+                    <!-- {
+        name:app.imgUrl+'haoping.png',
+        val:'好评',
+      },
+      {
+        name:app.imgUrl+'zhongping.png',
+        val:'中评',
+      },
+      {
+        name:app.imgUrl+'chaping.png',
+        val:'差评',
+      }, -->
+                </span>
+                <image wx:if="{{item.IsSpecial!='False'}}" class="bgImg" src="{{imgUrl+'zxhpS.png'}}" mode='aspectFit' />
+            </view>
+            <view class="evaText {{item.all?'':'shoushuo'}}">{{item.AppraiseText}}</view>
+            <view class="hide" bindtap="allFN" data-index="{{'getStore.Appraises['+index+'].all'}}" data-data="{{item.all}}">
+                {{item.all?'收起':'全文'}}
+            </view>
+            <view class="evaImg">
+                <image wx:for="{{item.Pictures}}" wx:for-item="ac" wx:for-index="aI" wx:key="{{aI}}" src="{{ac+'?x-oss-process=image/resize,l_640'}}" mode='aspectFill' />
+            </view>
+        </view>
+    </view>
+</view>
+<view class="alertQcode  {{Qcode?'Qcode':''}}" catchtouchmove="true">
+    <view class="exit_c" bindtap="exitImgFN">关闭</view>
+    <view class="img">
+        <image mode="aspectFit" src="{{myQcode}}" />
+    </view>
+    <view class="info_f" bindtap="saveImgFN">
+        <van-button size="small">保存到本地</van-button>
+    </view>
+</view>

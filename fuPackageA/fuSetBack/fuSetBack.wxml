@@ -1,0 +1,16 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-12-10 14:31:25 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-12-10 14:31:25 
+    设置首页轮播图
+ */ -->
+<view id="fuSetBack">
+    <view class="child" wx:for="{{dataList}}" wx:key="{{index}}" bindtap="chooseFN" data-name="{{'dataList['+index+'].IsStore'}}" data-IsStore="{{item.IsStore}}">
+        <van-checkbox value="{{ item.IsStore }}" checked-color="#E96497"></van-checkbox>
+        <image src="{{item.AdImg}}" mode="aspectFill"></image>
+    </view>
+    <view class="btn" bindtap="setFN">
+        <van-button>设置</van-button>
+    </view>
+</view>

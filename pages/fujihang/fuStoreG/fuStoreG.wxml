@@ -1,0 +1,138 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-06-24 09:38:35 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-06-24 09:38:35 
+    门店推荐
+*/ -->
+<view id="fuStoreG">
+ 
+    <!-- 搜索 -->
+    <view class="seachMTAM">
+        <view class="seachbg">
+            <image src="{{imgUrl+'icon_search.png'}}"  mode="aspectFill"/>
+            <input placeholder="请输入搜索的店名" value="{{seach}}" bindinput="seaChFN"/>
+        </view>
+        <van-button size="small" bindtap="seachZXT">搜索</van-button>
+    </view>
+
+    <!--  -->
+    <view class="find" bindtap="changePai">
+        <span class="blob">精选好店</span>
+        <span class="manzhu">开启你的美好健康生活</span>
+        <image class="qhImg"  src="{{imgUrl+(paiLie?'dapai.png':'xiaopai.png')}}" />
+    </view>
+
+    <!--  -->
+    <van-tabs class="van_order" line-width='20' color="#F56F68" active="{{ active }}" bind:change="onChange" swipeable>
+        <van-tab wx:for="{{functionList}}" title="{{item.TagName}}" wx:key="index">
+            <scroll-view  scroll-y class="{{paiLie?'paiLie':''}}" >
+                <view class="storeChild" wx:for-item="child" wx:for-index="cindex" wx:for="{{item.data}}" wx:key="{{cindex}}" wx:if="{{paiLie}}">
+                    <view class="navTop">
+                        <image mode="aspectFill" class="storeImg" src="{{child.StoreImages+'?x-oss-process=image/resize,l_640'}}" />
+                        <view class="contant">
+                            <view class="topC">
+                                <view class="name_eva">
+                                    <view class="name">{{child.StoreName}}</view>
+                                    <view class="eva">
+                                        <image class="xx" wx:for="{{child.Star}}" wx:key="{{index}}" src="{{imgUrl+'xinH.png'}}" />
+                                        {{child.AppraiseCount}}条好评
+                                    </view>
+                                </view>
+                                <van-button size="small" data-id="{{child.StoreId}}" bindtap="toStroe">进店</van-button>
+                            </view>
+                            <view class="bottomC">
+                                <image class="add" src="{{imgUrl+'icon_address33.png'}}"/>
+                                <span class="flex">{{child.Address}}</span>
+                                <span class="mi">距离{{child.Distance}}</span>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="project">
+                        <view class="leImg" data-id="{{child.ProductList[0].ProductId}}" data-store="{{child}}" wx:if="{{child.EnvironmentImages[0]}}">
+                            <image mode="aspectFill" src="{{child.EnvironmentImages[0]+'?x-oss-process=image/resize,l_640'}}"  />
+                            <!-- <span class="name">{{child.ProductList[0].ProductName}}</span> -->
+                        </view>
+                        <view class="riCont" data-id="{{child.ProductList[1].ProductId}}" data-store="{{child}}" wx:if="{{child.EnvironmentImages[1]}}">
+                            <view class="topImg">
+                                <image mode="aspectFill" src="{{child.EnvironmentImages[1]+'?x-oss-process=image/resize,l_640'}}" />
+                                <!-- <span class="name">{{child.ProductList[1].ProductName}}</span> -->
+                            </view>
+                            <view class="topImg" data-id="{{child.ProductList[2].ProductId}}" data-store="{{child}}" wx:if="{{child.EnvironmentImages[2]}}">
+                                <image mode="aspectFill" src="{{child.EnvironmentImages[2]+'?x-oss-process=image/resize,l_640'}}"  />
+                                <!-- <span class="name">{{child.ProductList[2].ProductName}}</span> -->
+                            </view>
+                        </view>
+                    </view>
+                    <!-- <view class="people">
+                        顾客说：“<span class="flex">{{child.TDescription}}</span>”
+                    </view> -->
+                    <view class="groupB groupT" bindtap="ff" data-id="{{child.StoreId}}">
+                        <image src="{{imgUrl+'tuanS.png'}}" />
+                        拼团列表
+                        <!-- <span class="flex">
+                            <span class="tip">188人团</span>
+                        </span> -->
+                        <image class="arrow" src="{{imgUrl+'right.png'}}" />
+                    </view>
+                    <!-- <view class="yuyue groupB" bindtap="toFFN"  data-to="/pages/fujihang/fuCoupon/fuCoupon?active=3" >
+                        <image src="{{imgUrl+'quanS.png'}}" />
+                        立即预约
+                        <span class="flex">
+                            <span class="tip">188人团</span>
+                        </span>
+                        <span class="num">{{child.CouponSalesCount?child.CouponSalesCount:0}}人领取</span>
+                        <image class="arrow" src="{{imgUrl+'right.png'}}" />
+                    </view> -->
+                </view>
+
+
+
+                <!--  -->
+                <view class="storeChildSHU" data-id="{{child.StoreId}}" bindtap="toStroe" wx:if="{{!paiLie}}" wx:for-item="child" wx:for-index="cindex" wx:for="{{item.data}}" wx:key="{{cindex}}" >
+                    <image mode="aspectFill" class="storeImg" src="{{child.StoreImages+'?x-oss-process=image/resize,l_640'}}" />
+                    <view class="contantS">
+                        <view class="name">{{child.StoreName}}</view>
+                        <view class="eva">
+                            <image class="xx" wx:for="{{child.Star}}" wx:key="{{index}}" src="{{imgUrl+'xinH.png'}}" />
+                            {{child.AppraiseCount}}条好评
+                        </view>
+                        <view class="coup">
+                           <span >100减10</span>
+                        </view>
+                        <view class="bottomC">
+                            <image class="add" src="{{imgUrl+'icon_address33.png'}}" mode="aspectFill" />
+                            <span class="flexC">{{child.Address}}</span>
+                            <span class="mi">距离{{child.Distance}}</span>
+                        </view>
+                        <view class="groupB" >
+                            <image src="{{imgUrl+'tuanS.png'}}" />
+                            拼团列表
+                            <!-- <span class="flex">
+                                <span class="tip">188人团</span>
+                            </span> -->
+                        </view>
+                         <!-- <view class="people">
+                            <image mode="aspectFill" class="laba" src="{{imgUrl+'labaS.png'}}" />
+                            <span class="flex">顾客说：“{{child.TDescription}}</span>”
+                        </view> -->
+                    </view>
+                </view>
+
+                <view class="noMore" wx:if="{{item.finsh}}">
+                    没有更多的了~~~
+                </view>
+            </scroll-view>
+        </van-tab>
+    </van-tabs>
+
+    <!-- 弹窗 -->
+    <van-popup custom-style="background:none;height:100%;" 	 show="{{showC}}" bindtap="onCloseP" position="bottom" bind:close="onCloseP">
+        <view class="rev">
+                <image catchtap="toFFN" data-to="/pages/fujihang/fuCoupon/fuCoupon?active=3" style="width:90%;" mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/coupon_popup.png" />
+                <view class="close" bindtap="onCloseP"></view>
+        </view>
+
+    </van-popup>
+
+</view>

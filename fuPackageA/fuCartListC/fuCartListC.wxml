@@ -1,0 +1,40 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-11 19:40:59 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-07-11 19:41:21
+    活动卡列表顾客
+*/ -->
+<view id="fuCardListC">
+    
+    
+
+ 
+
+
+    
+    <view wx:for="{{dataList}}" 
+        wx:for-index="cindex" 
+        wx:for-item="citem" 
+        class="Card {{'bg'+citem.ColorType}}" 
+        bindtap="chooseFN" 
+        data-data="{{citem}}"
+        wx:key>
+        <view class="name mb">{{citem.CardName?citem.CardName:'无'}}
+        </view>
+        <view class="det mb">{{citem.ProductName?citem.ProductName:'无'}}
+        </view>
+        <view class="price mb" >￥{{citem.CostPrice?citem.CostPrice:'无'}}元
+        <!-- <span class="num">/次</span> -->
+        </view>
+        <view class="time mb">有效期至{{citem.EndDate}}</view>
+        <view class="time mb">店名：{{citem.StoreName}} 剩余使用 {{citem.LeftUseCount}}次</view>
+        <image mode="aspectFill" class="rightS" src="{{imgUrl+(citem.ColorType==0?'yj.png':citem.ColorType==1?'mr.png':'meijia.png')}}" />
+    </view> 
+
+    <view class="noMore" wx:if="{{finsh}}">
+        没有更多的了~~~
+    </view>
+
+
+</view>

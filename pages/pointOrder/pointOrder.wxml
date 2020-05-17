@@ -1,0 +1,63 @@
+<!--pages/pointOrder/pointOrder.wxml-->
+<view class="cart-main" style="padding-bottom: 79px">
+  <view class="cart-header">
+    <view class="cart-header-top">
+      <icon class="finish"></icon>
+      <icon class="finish"></icon>
+      <icon></icon>
+      <icon></icon>
+    </view>
+    <view class="cart-header-bottom">
+      <text class="current-item">确认订单</text>
+      <text>下单成功</text>
+    </view>
+  </view>
+  <view class="addr-wrap" wx:if="{{selectAddress.ShipTo}}" bindtap='onToAddressPage'>
+    <view class="addr-name list">{{selectAddress.ShipTo}} {{selectAddress.CellPhone}}</view>
+    <view class="addr-info list">{{selectAddress.FullAddress}}</view>
+    <view class="right-nav-box">
+      <image src="https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/path-right@2x.png"></image>
+    </view>
+  </view>
+  <view class="addr-wrap" bindtap='onToAddressPage' wx:else>
+    <text>选择地址</text>
+    <view class="right-nav-box">
+      <image src="https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/path-right@2x.png"></image>
+    </view>
+  </view>
+  <view class='borderImg'>
+    <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/bg-line@2x.png'></image>
+  </view>
+  <view class="cart-list-top">
+    <text>购物商品</text>
+    <text>积分余额：<text style='color:red'>{{selectAddress.Points}} </text>积分</text>
+  </view>
+  <view class="cart-list">
+    <view wx:for="{{confirmList.data}}" wx:key="{{index}}">
+      <view class="img-box">
+        <image src="{{item.ImageUrl}}"></image>
+      </view>
+      <view class="rightCon">
+        <view class="title">{{item.Name}}</view>
+        <view class="wrap">
+          <text class="price">{{item.NeedPoint}}积分</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="cart-footer">
+    <view class='footerList '>
+      <view>运费：
+        <text style='color:red'>{{confirmList.data[0].ShippingCost?confirmList.data[0].ShippingCost:0}} 元</text>
+      </view>
+      <view>兑换所需价格：
+        <text style='color:red'>{{isPayType?confirmList.data[0].ComboPrice:0}} 元</text>
+      </view>
+      <view>兑换所需积分：
+        <text style='color:#FFA500'>{{isPayType?confirmList.data[0].ComboPoint:confirmList.data[0].NeedPoint}} 积分</text>
+      </view>
+    </view>
+    <view bindtap="submit" data-order="submit" class='footerList1 '>兑换</view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-icon": "../../../vant-weapp/dist/icon/index",
+    "van-datetime-picker": "../../../vant-weapp/dist/datetime-picker/index",
+    "van-popup": "../../../vant-weapp/dist/popup/index"
+  },
+  "navigationBarTitleText": "填写资料"
+}

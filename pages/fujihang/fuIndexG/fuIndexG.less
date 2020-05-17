@@ -1,0 +1,1520 @@
+page {
+    font-size: 26rpx;
+    color: #666;
+    -webkit-overflow-scrolling: touch; //有回弹效果
+    -webkit-overflow-scrolling: auto; //滑到哪停到哪
+
+}
+
+view {
+    -webkit-overflow-scrolling: touch; //有回弹效果
+    -webkit-overflow-scrolling: auto; //滑到哪停到哪
+}
+
+#fuIndexG {
+
+
+    // 搜索框
+    .seachMTAM {
+        // background: #dc4100;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        padding: 20rpx 22rpx 10rpx;
+        box-sizing: border-box;
+
+        .addressImg {
+            display: flex;
+            align-items: center;
+            margin-right: 20rpx;
+            max-width: 25%;
+
+            >span {
+                flex: 1;
+                margin-right: 10rpx;
+                display: -webkit-box;
+                -webkit-line-clamp: 1; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break: break-all;
+            }
+
+            .van-icon {
+                margin-top: 5rpx;
+            }
+        }
+
+        navigator {
+            flex: 1;
+        }
+
+        .seachDIv {
+            align-items: center;
+            display: flex;
+            width: 100%;
+
+            .logo {
+                width: 20%;
+                height: 1rpx;
+                margin-right: 20rpx;
+            }
+
+            .name {
+                margin-right: 12rpx;
+
+                // .top{
+                //     font-size: 32rpx;
+                //     margin-bottom: 3rpx;
+                //     font-weight: bold;
+                //     .red{
+                //         color: #FF1F50;
+                //     }
+                // }
+                image {
+                    width: 164rpx;
+                    height: 1rpx;
+                }
+
+                .button {
+                    font-size: 17rpx;
+                    color: #999999;
+                }
+            }
+        }
+
+        .seachbg {
+            // margin-right: 10rpx;
+            flex: 1;
+            align-items: center;
+            display: flex;
+            // background: #EEEEEE;
+            background: rgba(245, 245, 245, 1);
+            // border-radius: 10rpx;
+            border-radius: 34rpx;
+            justify-content: center;
+
+            image {
+
+                height: 28rpx;
+                width: 28rpx;
+            }
+
+            input {
+                font-size: 28rpx;
+
+
+                height: 60rpx;
+                text-align: center;
+            }
+        }
+    }
+
+    .swiper {
+        position: relative;
+
+        .dot {
+            position: absolute;
+            bottom: 50rpx;
+            left: 0;
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            padding: 0 60rpx;
+            box-sizing: border-box;
+
+            .child {
+                background: rgba(51, 51, 51, 1);
+                height: 15rpx;
+                width: 15rpx;
+                border-radius: 50%;
+                margin: 0 3rpx;
+                opacity: 0.8;
+            }
+
+            .dotRed {
+                background: rgb(255, 255, 255);
+
+            }
+        }
+    }
+
+    swiper {
+        padding: 0 22rpx;
+        box-sizing: border-box;
+        border-radius: 8rpx;
+        // background: #dc4100;
+        background: #fff;
+
+        image {
+            border-radius: 8rpx;
+        }
+
+    }
+
+    .address {
+        background: #fff;
+        padding: 20rpx 23rpx 26rpx;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+
+        .storeImg {
+            height: 108rpx;
+            width: 108rpx;
+            // height: 80rpx;
+            // width: 80rpx;
+            // border-radius: 50%;
+        }
+        .IsBlack{
+            border-radius: 50%;
+        }
+        .contant {
+            flex: 1;
+            margin: 0 0 0 8rpx;
+
+            .name {
+                display: flex;
+                align-items: center;
+                font-size: 24rpx;
+                font-weight: 800;
+                padding-left: 10rpx;
+                color: #000000;
+
+                image {
+                    width: 24rpx;
+                    margin-right: 8rpx;
+                    margin-top: 10rpx;
+                }
+
+                .flex {
+                    max-width: 100%;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break: break-all;
+                }
+
+                .more {
+                    width: 8rpx;
+                }
+            }
+
+            .tip {
+                display: flex;
+                align-items: center;
+
+                image {
+                    width: 20rpx;
+                    margin-right: 8rpx;
+                    margin-top: 1rpx;
+                }
+
+                margin-top: 7rpx;
+                color: #999;
+                font-size: 18rpx;
+                padding-left: 10rpx;
+                box-sizing: border-box;
+
+            }
+
+
+        }
+
+        .child {
+            display: flex;
+            // flex-direction: column;
+            align-items: center;
+            font-size: 22rpx;
+            color: #999;
+            margin-left: 32rpx;
+            position: relative;
+
+            image {
+                width: 30rpx;
+                // margin-bottom: 14rpx;
+                margin-right: 4rpx;
+            }
+
+            .fx_btn {
+                width: 60rpx;
+                height: 93rpx;
+                // background-color: pink;
+                position: absolute;
+                top: -3rpx;
+                right: 2rpx;
+                opacity: 0;
+            }
+        }
+    }
+
+    // 
+    .conpouGet {
+        // padding:0 20rpx;
+        box-sizing: border-box;
+        // padding: 20rpx 0;
+        background: #fff;
+        padding: 25rpx 22rpx 20rpx;
+
+        .cou {
+
+            height: 220rpx;
+            width: 100%;
+        }
+    }
+
+    // 
+    .function {
+        box-sizing: border-box;
+        // padding: 8rpx 20rpx 20rpx;
+        padding: 36rpx 0 0;
+        background: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 14rpx;
+        color: #333;
+
+        .child {
+            box-sizing: border-box;
+            // padding: 8rpx 34rpx 18rpx;
+            // width: 25%;
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 36rpx;
+            font-size: 24rpx;
+            font-weight: bold;
+
+            image {
+                // width: 106rpx;
+                width: 118rpx;
+                height: 1rpx;
+                margin-bottom: 14rpx;
+            }
+
+            .name {}
+        }
+    }
+
+
+    // 
+    .bg {
+
+        border-radius: 8rpx;
+        border: 4rpx solid rgba(251, 31, 79, 1);
+        box-sizing: border-box;
+    }
+
+    // 
+    .myStorePro {
+        padding: 20rpx 22rpx;
+        background: #fff;
+
+        .navTopH {
+            padding: 20rpx 12rpx;
+            font-size: 40rpx;
+            font-weight: 600;
+            background: rgba(251, 31, 79, 1);
+            color: #fff;
+        }
+
+        .allProduct {
+
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+
+            .child {
+
+                width: 33.33%;
+                border: 1px solid rgb(246, 246, 246);
+                box-sizing: border-box;
+
+                image {
+                    width: 100%;
+                    height: 210rpx;
+                }
+
+                .name {
+                    margin: 16rpx 10rpx 5rpx;
+                    font-size: 22rpx;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break: break-all;
+                }
+
+                .price_btn {
+                    display: flex;
+                    align-items: center;
+                    padding: 0 10rpx 14rpx;
+                    font-weight: bold;
+
+                    .mini {
+                        margin-top: 5rpx;
+                        font-size: 16rpx;
+                        color: #FB1F4F;
+                    }
+
+                    .price {
+                        font-size: 26rpx;
+                        color: #FB1F4F;
+                    }
+
+                    .del {
+                        color: #CCCCCC;
+                        font-size: 18rpx;
+                        margin-left: 6rpx;
+                        text-decoration: line-through;
+                    }
+
+
+                }
+            }
+        }
+
+        .bottonMore {
+            display: flex;
+            justify-content: center;
+            padding: 36rpx 0;
+            background: rgba(237, 237, 237, 1);
+
+            .van-button {
+                width: 210rpx;
+                height: 54rpx;
+                display: flex;
+                align-items: center;
+                color: #FB1F4F;
+                border-radius: 28rpx;
+                background: #fff;
+                border: none;
+                padding: 0;
+                font-weight: bold;
+                color: #666;
+                font-size: 22rpx;
+            }
+        }
+    }
+
+    // 
+    .coupon {
+        background: white;
+        margin-bottom: 20rpx;
+        border-radius: 4px;
+        overflow: hidden;
+
+        .navTop {
+
+            display: flex;
+            align-items: center;
+            padding: 20rpx 30rpx;
+            box-sizing: border-box;
+            font-size: 28rpx;
+            color: #999;
+
+            .flex {
+                font-size: 32rpx;
+                flex: 1;
+            }
+
+            image {
+                height: 44rpx;
+                width: 44rpx;
+                margin-right: 10rpx;
+            }
+
+            .van-icon {
+                margin-top: 8rpx;
+                margin-left: 10rpx;
+            }
+        }
+
+        .imgBanner {
+            height: 260rpx;
+            width: 100%;
+            border-radius: 4px;
+
+        }
+
+        .contant {
+            padding: 10rpx;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            white-space: nowrap;
+
+            .child {
+                display: inline-block;
+                width: 95%;
+                padding: 10rpx;
+                box-sizing: border-box;
+                position: relative;
+
+                image {
+                    height: 260rpx;
+                    width: 100%;
+
+                }
+
+                .detail {
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    padding: 26rpx 30rpx;
+                    box-sizing: border-box;
+                    color: #fde2ab;
+                    font-weight: bold;
+                    top: 0;
+                    left: 0;
+
+                    .name {
+                        font-size: 40rpx;
+                        margin-bottom: 20rpx;
+                    }
+
+                    .price {
+                        font-size: 32rpx;
+                        margin-bottom: 5rpx;
+                    }
+
+                    .val {
+                        font-size: 28rpx;
+                        margin-bottom: 18rpx;
+                    }
+
+                    .btn {
+                        .van-button {
+                            width: 150rpx;
+                            border-radius: 50rpx;
+                            background: #fde2ab;
+                            color: #333;
+                            font-size: 32rpx;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    // 
+    // .teamPro {
+    //     background: white;
+    //     margin-bottom: 20rpx;
+    //     padding-bottom: 20rpx;
+
+    //     .navTop {
+
+    //         display: flex;
+    //         align-items: center;
+    //         padding: 20rpx 30rpx;
+    //         box-sizing: border-box;
+    //         font-size: 28rpx;
+    //         color: #999;
+    //         border-bottom: 1px solid rgb(243, 243, 243);
+
+    //         .flex {
+    //             font-size: 32rpx;
+    //             flex: 1;
+    //         }
+
+    //         image {
+    //             height: 44rpx;
+    //             width: 44rpx;
+    //             margin-right: 10rpx;
+    //         }
+
+    //         .van-icon {
+    //             margin-top: 8rpx;
+    //             margin-left: 10rpx;
+    //         }
+    //     }
+
+    //     .project {
+    //         margin: 24rpx 30rpx 0;
+    //         display: flex;
+    //         align-items: center;
+    //         background: #F7F7F7;
+
+    //         .img_num {
+    //             position: relative;
+
+    //             image {
+    //                 height: 270rpx;
+    //                 width: 270rpx;
+    //             }
+
+    //             .num {
+    //                 border-radius: 0 30rpx 30rpx 30rpx;
+    //                 color: #fff;
+    //                 font-size: 24rpx;
+    //                 padding: 2rpx 10rpx 4rpx;
+    //                 box-sizing: border-box;
+    //                 position: absolute;
+    //                 top: 0;
+    //                 left: 0;
+    //                 background: rgba(212, 70, 57, 1);
+    //             }
+    //         }
+
+    //         .contant {
+    //             display: flex;
+    //             flex-direction: column;
+    //             padding: 24rpx 22rpx;
+    //             box-sizing: border-box;
+    //             height: 270rpx;
+    //             flex: 1;
+
+    //             .name_num {
+    //                 font-size: 28rpx;
+    //                 display: -webkit-box;
+    //                 -webkit-line-clamp: 2; //超出多少行
+    //                 overflow: hidden;
+    //                 -webkit-box-orient: vertical;
+    //                 word-break: break-all;
+    //             }
+
+    //             .price_btn {
+    //                 flex: 1;
+    //                 display: flex;
+    //                 align-items: flex-end;
+
+    //                 .flex {
+    //                     flex: 1;
+
+    //                     .peo_pri {
+    //                         color: #E65757;
+    //                         font-size: 24rpx;
+    //                         margin-bottom: 10rpx;
+
+    //                         .pri {
+    //                             font-size: 34rpx;
+
+    //                         }
+    //                     }
+
+    //                     .oneBuy {
+    //                         color: #999;
+
+    //                         .pri {
+    //                             text-decoration: line-throug;
+    //                         }
+    //                     }
+    //                 }
+
+    //                 .van-button {
+    //                     color: #fff;
+    //                     background: linear-gradient(83deg, rgba(211, 68, 56, 1) 0%, rgba(242, 99, 94, 1) 100%);
+    //                     border-radius: 15px;
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    // }
+
+
+    // 
+    .goodProduct {
+        background: #fff;
+
+        .navTop {
+
+            display: flex;
+            align-items: center;
+            padding: 20rpx 30rpx;
+            box-sizing: border-box;
+            font-size: 28rpx;
+            color: #999;
+            border-bottom: 1px solid rgb(243, 243, 243);
+
+            .flex {
+                font-size: 32rpx;
+                flex: 1;
+            }
+
+            image {
+                height: 44rpx;
+                width: 44rpx;
+                margin-right: 10rpx;
+            }
+
+            .van-icon {
+                margin-top: 8rpx;
+                margin-left: 10rpx;
+            }
+        }
+
+        .productCont {
+            padding: 10rpx;
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+
+
+
+            .product {
+                padding: 10rpx;
+                width: 50%;
+                box-sizing: border-box;
+
+                .border {
+                    height: 100%;
+                    border: 1px solid rgb(231, 231, 231);
+                }
+
+                .jiaoZiPi {
+                    background: white;
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                }
+
+                .img {
+                    flex: 1;
+                    box-sizing: border-box;
+                    border-bottom: 1px solid rgb(250, 250, 250);
+
+                    image {
+                        height: 220rpx;
+                        max-width: 100%;
+                    }
+                }
+
+                .name {
+                    font-size: 28rpx;
+                    padding: 0 20rpx;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break: break-all;
+                    margin: 10rpx 0 5rpx;
+                }
+
+                .det {
+                    color: #999;
+                    margin-bottom: 10rpx;
+                    padding: 0 20rpx;
+                    box-sizing: border-box;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break: break-all;
+                }
+
+                .val {
+                    display: flex;
+                    align-items: center;
+                    color: #F56F68;
+                    padding: 0 20rpx 20rpx;
+                    box-sizing: border-box;
+
+                    .ovFU {
+                        flex: 1;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1; //超出多少行
+                        overflow: hidden;
+                        -webkit-box-orient: vertical;
+                        word-break: break-all;
+                    }
+
+                    .bea {
+                        font-size: 28rpx;
+                        overflow: hidden;
+
+                        .num {
+                            color: #E65757;
+                            font-size: 32rpx;
+                        }
+                    }
+
+                    .xjin {
+                        color: #999;
+
+                        font-size: 22rpx;
+                        text-decoration: line-through;
+
+                        .num {
+                            margin: 0 10rpx;
+                            font-size: 30rpx;
+                        }
+                    }
+                }
+
+
+
+
+            }
+        }
+    }
+
+    // 
+    navigator {
+        display: flex;
+        align-items: center;
+    }
+
+    // 
+    .botLogo {
+        color: rgba(153, 153, 153, 1);
+        font-size: 22rpx;
+        padding: 16rpx;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+
+        image {
+            width: 32rpx;
+            height: 1px;
+            margin-right: 16rpx;
+        }
+
+
+    }
+
+
+
+    .konbai {
+        height: 150rpx;
+    }
+
+    .van-popup {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+
+        .img {
+            width: 100%;
+            position: relative;
+        }
+    }
+}
+
+
+// dib导航
+.navBarFu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    background: white;
+    display: flex;
+    padding: 24rpx 0 12rpx;
+    padding-bottom: 12rpx;
+    padding-bottom: calc(env(safe-area-inset-bottom) /2 + 12rpx);
+    box-sizing: border-box;
+    font-size: 22rpx;
+    border-top: 1px solid rgb(240, 240, 240);
+
+    .child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex: 1;
+        position: relative;
+        color: #999;
+        font-weight: bold;
+
+        image {
+            width: 40rpx;
+            height: 40rpx;
+        }
+
+        .name {
+            margin-top: 12rpx;
+            // color: #999;
+
+        }
+
+    }
+
+    .black {
+        color: #FB1F4F;
+    }
+
+    .max {
+
+
+        image {
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            top: -40rpx;
+            width: 100rpx;
+            height: 100rpx;
+        }
+    }
+
+
+
+}
+
+
+button {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    line-height: inherit;
+    height: 100rpx;
+    border-radius: 0;
+    border: none;
+    font-size: 60rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button::after {
+    border: none;
+}
+
+/* 技师列表 */
+
+.technicianBox {
+    padding: 0 20rpx;
+    background: #fff;
+}
+
+.tips {
+    padding: 0 20rpx;
+
+    box-sizing: border-box;
+    font-size: 28rpx;
+
+    font-weight: bold;
+    // border-bottom: 1rpx solid #f1f1f1;
+    border-left: 6rpx solid rgba(102, 102, 102, 1);
+    ;
+    background: #fff;
+}
+
+.technicianBox .content {
+    width: 100%;
+    padding: 0rpx 0 20rpx;
+    white-space: nowrap;
+}
+
+.technicianBox .content .item {
+    display: inline-block;
+    margin-right: 12rpx;
+}
+
+.technicianBox .content .item:last-child {
+    margin: 0;
+}
+
+.technicianBox .content .item image {
+    width: 228rpx;
+    height: 274rpx;
+}
+
+
+.van-popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28rpx;
+
+    image {
+        width: 100%;
+    }
+
+    .img {
+        width: 100%;
+        position: relative;
+
+        .name,
+        .phone,
+        .code,
+        .getCode,
+        .register {
+            position: absolute;
+            // background: black;
+            width: 48%;
+            height: 75rpx;
+        }
+
+        .name {
+            left: 33%;
+            top: 46%;
+        }
+
+        .phone {
+            left: 32.7%;
+            top: 78%;
+        }
+
+        .code {
+            left: 33%;
+            top: 56.8%;
+            width: 23%;
+        }
+
+        .getCode {
+            left: 58%;
+            top: 56.8%;
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fd5c48;
+        }
+
+        .register {
+            left: 22%;
+            top: 72%;
+            width: 58%;
+        }
+    }
+
+    .close {
+        position: absolute;
+        bottom: 0;
+        left: 20%;
+        height: 100rpx;
+        width: 60%;
+    }
+}
+
+/* 客服 */
+
+// .tabIcon {
+//     width: 90rpx;
+//     height: 90rpx;
+//     z-index: 3;
+//     position: fixed;
+// }
+
+// .tabIcon image {
+//     width: 100%;
+//     height: 100%;
+// }
+
+.popupBox {
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.popupBox .popupCon {
+    width: 80%;
+    padding: 20rpx;
+    background: #fff;
+    border-radius: 15rpx;
+}
+
+.popupBox .popupCon .top {
+    display: flex;
+    color: #333;
+    font-size: 50rpx;
+    align-items: center;
+    padding-bottom: 20rpx;
+    justify-content: space-between;
+    border-bottom: 1rpx solid #ccc;
+}
+
+.popupBox .popupCon .top .tips {
+    display: flex;
+    font-size: 36rpx;
+    align-items: center;
+}
+
+.popupBox .popupCon .top .tips image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 15rpx;
+}
+
+.popupBox .popupCon .list .listItem {
+    display: flex;
+    padding: 20rpx 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popupBox .popupCon .list .listItem .wxname {
+    flex: 1;
+    color: #333;
+    border-radius: 8rpx;
+    margin-right: 20rpx;
+    padding: 20rpx 40rpx;
+    background: #f5f5f5;
+}
+
+.popupBox .popupCon .list .listItem .copyBtn {
+    color: #fff;
+    border-radius: 50rpx;
+    padding: 20rpx 40rpx;
+    background: #e73535;
+    box-shadow: 2px 2px 2px 1px #e73535;
+}
+
+.noPid {
+    swiper {
+        padding: 0 !important;
+    }
+}
+
+.zzzb {
+    position: fixed;
+    left: 0;
+    bottom: 120rpx;
+    bottom: calc(env(safe-area-inset-bottom) /2 + 120rpx);
+    width: 100%;
+    color: #fff;
+
+    swiper {
+        padding: 0 !important;
+    }
+
+    .zbList {
+        background: url('http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/zbBgIndex.png') no-repeat;
+        background-size: 100% 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 32rpx 0 28rpx;
+        height: 106rpx;
+
+        .img_status {
+            position: relative;
+
+            image {
+                width: 82rpx;
+                height: 82rpx;
+                border-radius: 50% !important;
+
+            }
+
+            .name {
+                font-size: 18rpx;
+                position: absolute;
+                margin: auto;
+                left: 0;
+                right: 0;
+                bottom: 5rpx;
+                padding: 2rpx 10rpx;
+                border-radius: 20rpx;
+                text-align: center;
+                color: #fff;
+                background: linear-gradient(90deg, rgba(255, 83, 83, 1) 0%, rgba(255, 43, 149, 1) 100%);
+            }
+        }
+
+        .contant {
+            flex: 1;
+            margin: 0 12rpx;
+            font-weight: bold;
+
+            .title {
+                font-size: 32rpx;
+                margin-bottom: 3rpx;
+            }
+
+            .val {
+                font-size: 22rpx;
+            }
+        }
+
+        .van-button {
+            width: 132rpx;
+            height: 54rpx;
+            display: flex;
+            align-items: center;
+            color: #FB1F4F;
+            border-radius: 26rpx;
+            background: #fff;
+            border: none;
+            padding: 0;
+            font-weight: bold;
+        }
+    }
+}
+
+.numBy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8rpx 20rpx 10rpx 40rpx;
+    border-radius: 0 0 0 40rpx;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+
+.zhiBoT {
+    padding: 0 22rpx;
+    background: #fff;
+
+    .navT {
+        padding: 28rpx 0;
+        font-size: 22rpx;
+        font-weight: bold;
+        color: #666;
+
+        .color {
+            margin-right: 5rpx;
+            font-size: 40rpx;
+            background: linear-gradient(227deg, rgba(255, 83, 83, 1) 0%, rgba(255, 20, 153, 1) 53%, rgba(45, 43, 255, 1) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+        }
+
+    }
+
+    .contant {
+        display: flex;
+
+
+        .img {
+            flex: 4;
+            border-radius: 8rpx;
+            overflow: hidden;
+            position: relative;
+
+            .imgbg {
+
+                width: 100%;
+                height: 660rpx;
+            }
+
+            .stuts {
+                font-size: 22rpx;
+                position: absolute;
+                top: 14rpx;
+                left: 8rpx;
+                background: rgba(0, 0, 0, 0.4);
+                color: #fff;
+                border-radius: 20rpx;
+                overflow: hidden;
+
+                .name {
+                    display: inline-block;
+                    padding: 4rpx 18rpx;
+                    border-radius: 20rpx;
+                    background: linear-gradient(90deg, rgba(255, 83, 83, 1) 0%, rgba(255, 43, 149, 1) 100%);
+                }
+
+                .val {
+                    // background: rgba(0, 0, 0, 0.4);
+                    padding: 4rpx 10rpx;
+                }
+
+                .hui {
+                    background: rgba(7, 7, 7, 0.6);
+                }
+            }
+        }
+
+        .peopleLive {
+            font-size: 22rpx;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            padding: 14rpx 12rpx;
+            background: rgba(0, 0, 0, 0.4);
+            box-sizing: border-box;
+            color: #fff;
+
+            image {
+                width: 36rpx;
+                height: 36rpx;
+                border-radius: 50%;
+                margin-right: 5rpx;
+            }
+
+            .name {
+                flex: 1;
+            }
+
+            .val {
+                border: 1px solid #fff;
+                border-radius: 20rpx;
+                width: 100rpx;
+                height: 36rpx;
+                font-size: 22rpx;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .IsSubscription {
+                color: #fff;
+                border: none;
+                background: linear-gradient(90deg, rgba(255, 83, 83, 1) 0%, rgba(255, 43, 149, 1) 100%);
+            }
+        }
+
+        .typeImg {
+            position: absolute;
+            right: 18rpx;
+            bottom: 70rpx;
+            width: 72rpx;
+            height: 72rpx;
+        }
+
+        .lastBtn {
+            bottom: 160rpx;
+        }
+    }
+
+    // 
+    .rightTwo {
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 660rpx;
+        margin-left: 10rpx;
+
+        .img {
+            flex: 1;
+            overflow: hidden;
+
+            .imgbg {
+
+                width: 100%;
+                height: 328rpx;
+            }
+
+        }
+
+        .topbtn {
+            margin-top: 10rpx;
+        }
+
+    }
+
+    .HuiFan {
+        position: absolute;
+        left: 10rpx;
+        bottom: 15rpx;
+        display: flex;
+        align-items: center;
+        background: rgba(102, 102, 102, 1);
+        border-radius: 54rpx;
+        opacity: 0.7;
+        font-size: 22rpx;
+        color: #fff;
+        padding: 2rpx 10rpx;
+
+        image {
+            width: 16rpx;
+            height: 20rpx;
+        }
+    }
+}
+
+
+//
+.zhibo {
+    margin: 60rpx;
+    background: #fff;
+    height: calc(100% - 120rpx);
+    width: 100%;
+    border-radius: 10rpx;
+
+    .scroll-view {
+        height: 100%;
+        overflow: auto;
+    }
+
+    .child {
+        margin-bottom: 20rpx;
+        padding-bottom: 20rpx;
+        font-size: 26rpx;
+
+        .time {
+            padding: 20rpx;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        video {
+            width: calc(100% - 40rpx);
+            margin: 0 20rpx;
+            height: 300rpx;
+        }
+
+    }
+}
+
+
+// 大家都在看
+.moreKan {
+    .noMore {
+        float: left;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 120rpx;
+        color: #999;
+    }
+
+    .topName {
+        // background: white;
+        padding: 20rpx 20rpx;
+        box-sizing: border-box;
+        display: flex;
+
+        .name {
+            flex: 1;
+            font-size: 40rpx;
+            font-weight: bold;
+        }
+
+        .van-icon {
+            margin-top: 2rpx;
+        }
+    }
+
+    .contantKan {
+        // display: flex;
+        padding: 0 8rpx;
+        box-sizing: border-box;
+
+        .rightK {
+            float: right;
+        }
+
+        .leftK {
+            float: left;
+        }
+
+        .leftK,
+        .rightK {
+            width: 50%;
+            padding: 0 0 10rpx;
+            box-sizing: border-box;
+
+            // margin-bottom: 50px;
+            .child {
+                margin: 0 8rpx 20rpx;
+                background: white;
+                border-radius: 12rpx;
+                overflow: hidden;
+
+                .logoImg {
+                    position: relative;
+
+                    .playBtn {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        z-index: 2;
+                        opacity: .8;
+                        padding: 10rpx;
+                        background: rgba(0, 0, 0, .1);
+                        box-sizing: border-box;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: flex-end;
+                    }
+
+                    image,
+                    .myVideo {
+                        max-height: 800rpx;
+                        width: 100%;
+                    }
+                }
+
+                .name {
+                    margin: 15rpx;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break: break-all;
+                    font-size: 28rpx;
+                }
+
+                .btnXX {
+                    padding: 0 20rpx 20rpx;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    color: #999;
+
+                    .touxiang {
+                        overflow: hidden;
+                        border-radius: 50%;
+                        width: 60rpx;
+                        height: 60rpx;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        image {
+                            width: 100%;
+                        }
+                    }
+
+                    .nameC {
+                        flex: 1;
+                        margin: 0 5rpx;
+                    }
+
+                    .van-icon {
+                        margin: 8rpx 5rpx 0 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// 
+.wxkf {
+    position: fixed;
+    right: 22rpx;
+    bottom: 184rpx;
+    background: none;
+    padding: 0;
+    margin: 0;
+    transition: .3s;
+    image {
+        width: 90rpx;
+        height: 90rpx;
+    }
+}
+.wxkfSy{
+    bottom: 296rpx;
+}
+
+.zd{
+    width: 90rpx;
+    height: 90rpx;
+    position: fixed;
+    right: -90rpx;
+    bottom: 184rpx;
+    transition: .3s;
+}
+.isShowTop{
+    right: 22rpx;
+}

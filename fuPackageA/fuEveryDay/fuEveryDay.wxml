@@ -1,0 +1,35 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-09-02 14:38:02 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-09-02 14:38:02 
+    天天抽奖
+ */ -->
+<view id="fuEveryDay">
+    <image class="image" mode="widthFix" src="{{imgUrl+'ttcj004.png'}}" />
+    <view class="post">
+        <view class="name">请输入手机号领取抽奖机会</view>
+        <view class="child">
+            <span class="input">
+                <input value="{{username}}" bindinput="changeFN" data-name="username" placeholder="输入姓名" />
+            </span>
+        </view>
+        <view class="child">
+            <span class="input">
+                <input value="{{phone}}" bindinput="changeFN" data-name="phone" placeholder="输入手机号" />
+            </span>
+        </view>
+        <view class="child">
+            <span class="input">
+                <input value="{{yzm}}" bindinput="changeFN" data-name="yzm" placeholder="输入验证码" />
+            </span>
+            <van-button size="small" bindtap="getSMS">{{SMS}}</van-button>
+        </view>
+    </view>
+    <!--  -->
+    <view class="get" bindtap="getCJ">
+        <van-button>领取抽奖机会</van-button>
+    </view>
+    <!--  -->
+    <view class="tip">*奖品：领取积分或到店领取礼品</view>
+</view>

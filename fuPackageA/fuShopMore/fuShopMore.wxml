@@ -1,0 +1,60 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-15 10:30:45 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-15 10:30:45 
+    商城分类
+ */ -->
+ <view id="fuShopMore">
+        <!-- 轮播图 -->
+        <!-- 轮播图 -->
+        <!-- <swiper autoplay="{{true}}" interval="{{3000}}" style="height:{{imgheights[current]}}rpx;" circular bindchange="bindchange">
+            <swiper-item wx:for="{{imgUrls}}" wx:key="{{index}}">
+                <image data-id='{{index}}' bindload="imageLoad" mode='widthFix' src="{{item.PhotoPath+'?x-oss-process=image/resize,l_640'}}" class="slide-image" width="355" height="150" />
+            </swiper-item>
+        </swiper> -->
+        <!--  -->
+        <view class="seachMT">
+            <view class="seachbg">
+                <image mode="widthFix" src="{{imgUrl+'icon_search.png'}}" />
+                <input placeholder="洗衣液" value="{{seach}}" bindinput="seaChFN" />
+                <van-icon wx:if="{{clear}}" bindtap="clearFN" name="clear" color="#999" size="30rpx" />
+            </view>
+            <van-button size="small" bindtap="submitComT">搜索</van-button>
+        </view>
+        <!--  -->
+        <van-tabs sticky="{{true}}" class="van_order" line-width='20' color="#F56F68" active="{{ active }}" bind:change="onChangeTop" swipeable>
+            <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+                <view class="productCont">
+                    <view class="product" wx:for="{{item.data}}" wx:for-index="indexc" wx:for-item="itemc" wx:key="{{indexc}}" bindtap="handleDetail" data-productId="{{itemc.ProductId}}" data-storeid="{{itemc.StoreId}}">
+                        <view class="jiaoZiPi">
+                            <view class="img">
+                                <image src="{{itemc.ImageUrl1+'?x-oss-process=image/resize,l_640'}}" mode="widthFix" />
+                            </view>
+                            <view class="name">{{itemc.ProductName}}</view>
+                            <view class="det">{{itemc.Description}}</view>
+                            <view class="val">
+                                <view class="ovFU">
+                                    <span class="bea">
+                                        <span class="num">￥{{itemc.SalePrice}}</span>
+                                    </span>
+                                    <span class="xjin">
+                                        <span class="num">￥{{itemc.MarketPrice}}</span>
+                                    </span>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                
+                <view class="noMore" wx:if="{{functionList[active].finsh}}">没有更多的了~~~</view>
+            <view class="konbai"></view>
+            </van-tab>
+        </van-tabs>
+        <!--  -->
+       
+    
+        
+        
+
+    </view>

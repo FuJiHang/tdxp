@@ -1,0 +1,262 @@
+page {
+  height: 100%;
+  overflow: hidden;
+}
+#fuPlace {
+  font-size: 26rpx;
+  color: #666;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+#fuPlace .storeApp {
+  background: white;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+#fuPlace .storeApp image {
+  height: 120rpx;
+  width: 120rpx;
+}
+#fuPlace .storeApp .contant {
+  flex: 1;
+  margin-left: 20rpx;
+}
+#fuPlace .storeApp .contant .name_juli {
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+}
+#fuPlace .storeApp .contant .name_juli .juli {
+  font-size: 28rpx;
+  flex: 1;
+  text-align: right;
+  color: #61B6FD;
+}
+#fuPlace .storeApp .contant .address {
+  margin-top: 20rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+}
+#fuPlace .storeApp .contant .address image {
+  margin-right: 10rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+#fuPlace .fuPlaceContant {
+  flex: 1;
+  overflow: auto;
+}
+#fuPlace .navTopP {
+  background: white;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+#fuPlace .navTopP image {
+  height: 30rpx;
+  width: 30rpx;
+}
+#fuPlace .navTopP .name {
+  font-weight: bold;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+#fuPlace .Project {
+  background: white;
+}
+#fuPlace .Project .cont_nav {
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+#fuPlace .Project .cont_nav .name {
+  flex: 1;
+  font-size: 28rpx;
+}
+#fuPlace .Project .cont_nav .time {
+  color: #61B6FD;
+  margin-right: 10rpx;
+}
+#fuPlace .Project .cont_nav .van-icon {
+  margin-top: 10rpx;
+}
+#fuPlace .Project .cont_det {
+  margin: 15rpx 20rpx 0 20rpx ;
+  padding: 20rpx;
+  box-sizing: border-box;
+  align-items: center;
+  background: #f8f8f8;
+  display: flex;
+}
+#fuPlace .Project .cont_det image {
+  height: 130rpx;
+  width: 130rpx;
+}
+#fuPlace .Project .cont_det .detail {
+  margin-left: 20rpx;
+  flex: 1;
+}
+#fuPlace .Project .cont_det .name_men {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+#fuPlace .Project .cont_det .name_men .name {
+  flex: 1;
+  font-weight: bold;
+  font-size: 30rpx;
+}
+#fuPlace .Project .cont_det .name_men .money {
+  font-size: 28rpx;
+  color: #F56F68;
+}
+#fuPlace .Project .cont_det .company {
+  margin-bottom: 10rpx;
+}
+#fuPlace .Project .cont_det .address {
+  display: flex;
+  align-items: center;
+  color: #999;
+}
+#fuPlace .Project .cont_det .address image {
+  margin-right: 5rpx;
+  height: 25rpx;
+  width: 25rpx;
+}
+#fuPlace .Project .border {
+  height: 25rpx;
+  margin-left: 20rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+#fuPlace .personTop {
+  margin-top: 20rpx;
+}
+#fuPlace .personData {
+  background: white;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx 20rpx 20rpx 0;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f0f0f0;
+}
+#fuPlace .personData .name {
+  width: 25%;
+  font-size: 28rpx;
+}
+#fuPlace .personData > input {
+  font-size: 26rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+#fuPlace .PlaceOk {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+#fuPlace .PlaceOk .money {
+  font-size: 30rpx;
+  flex: 1;
+  color: #999;
+}
+#fuPlace .PlaceOk .money .num {
+  color: #F56F68;
+}
+#fuPlace .PlaceOk .van-button {
+  border: none;
+  width: 300rpx;
+  background: #F56F68;
+  color: white;
+}
+#fuPlace .van-picker-column__item--selected,
+#fuPlace .van-picker__cancel,
+#fuPlace .van-picker__confirm {
+  color: #F56F68;
+}
+#fuPlace .couponPE,
+#fuPlace .payMode {
+  padding: 20rpx;
+  box-sizing: border-box;
+  background: white;
+  margin: 20rpx 0;
+  display: flex;
+  align-items: center;
+}
+#fuPlace .couponPE .name,
+#fuPlace .payMode .name {
+  flex: 1;
+  font-size: 28rpx;
+}
+#fuPlace .couponPE .val,
+#fuPlace .payMode .val {
+  color: #999;
+}
+#fuPlace .choosePay {
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f5f5f5;
+}
+#fuPlace .choosePay image {
+  width: 100%;
+  height: 70rpx;
+}
+#fuPlace .xiuFuJi {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background: white;
+  margin-top: 20rpx;
+}
+#fuPlace .xiuFuJi .name {
+  flex: 1;
+}
+#fuPlace .xiuFuJi .val {
+  margin-right: 20rpx ;
+}
+#fuPlace .fwb .van-popup--bottom {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+#fuPlace .richtext {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuPlace .btn {
+  display: flex;
+  width: 100%;
+}
+#fuPlace .btn .bty .van-button {
+  background: #ffc863;
+}
+#fuPlace .btn .disable {
+  filter: grayscale(100%);
+}
+#fuPlace .btn span {
+  width: 50%;
+}
+#fuPlace .btn .van-button {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  color: white;
+  background: #f56e68;
+}

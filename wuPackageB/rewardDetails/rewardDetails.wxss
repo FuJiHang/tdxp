@@ -1,0 +1,225 @@
+#reward .header {
+  width: 750rpx;
+  height: 300rpx;
+  background-color: #ff8056;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#reward .header .header_price {
+  display: flex;
+  flex-direction: column;
+  font-size: 28rpx;
+  color: #fff;
+  position: absolute;
+  top: 53rpx;
+}
+#reward .header .header_price .price {
+  margin-bottom: 15rpx;
+  font-size: 48rpx;
+}
+#reward .header .header_price .miaoshu {
+  margin-bottom: 20rpx;
+}
+#reward .header .show_wrap {
+  color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: linear-gradient(80deg, #e66a51 0%, #e66951 100%);
+  padding: 10rpx 0;
+}
+#reward .header .show_wrap .show_je {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#reward .header .show_wrap .show_je::after {
+  content: '';
+  width: 4rpx;
+  height: 40rpx;
+  background-color: #fff;
+  position: absolute;
+  top: 20rpx;
+  right: 2rpx;
+}
+#reward .header .show_wrap .show_je:last-child::after {
+  background: none;
+}
+#reward .header .show_wrap .show_je .num_store {
+  font-size: 30rpx;
+}
+#reward .header .show_wrap .show_je .num_name {
+  font-size: 26rpx;
+}
+#reward .nav_wrap {
+  margin-bottom: 20rpx;
+}
+#reward .nav_wrap .nav_title {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 25rpx 0;
+  font-size: 30rpx;
+  color: #333;
+}
+#reward .nav_wrap .nav_title .title {
+  flex: 1;
+  text-align: center;
+}
+#reward .nav_wrap .nav_title .active {
+  color: #E9696A;
+  position: relative;
+}
+#reward .nav_wrap .nav_title .active::after {
+  content: '';
+  width: 60rpx;
+  height: 4rpx;
+  background-color: #E9696A;
+  position: absolute;
+  left: 41%;
+  bottom: -23rpx;
+}
+#reward .nav_wrap .search_wrap {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 25rpx 0;
+  font-size: 30rpx;
+  color: #333;
+  width: 100%;
+}
+#reward .nav_wrap .search_wrap .search_ytd {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#reward .nav_wrap .search_wrap .search_ytd .ytd {
+  text-align: center;
+}
+#reward .nav_wrap .search_wrap .search_ytd .ytd_img {
+  width: 18rpx;
+  height: 13rpx;
+  margin: 10rpx 0 0 5rpx;
+}
+#reward .nav_wrap .search_wrap .search_price {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#reward .nav_wrap .search_wrap .search_price .s_price {
+  text-align: center;
+}
+#reward .nav_wrap .search_wrap .search_price .ytd_img {
+  width: 18rpx;
+  height: 13rpx;
+  margin: 10rpx 0 0 5rpx;
+}
+#reward .list_wrap .pingtai .list {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+#reward .list_wrap .pingtai .list .reservation_wrap {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  justify-content: space-between;
+  padding: 15rpx 20rpx;
+}
+#reward .list_wrap .pingtai .list .reservation_wrap .reservation {
+  font-size: 26rpx;
+  color: #666;
+}
+#reward .list_wrap .pingtai .list .reservation_wrap .res_time {
+  font-size: 26rpx;
+  color: #666;
+}
+#reward .list_wrap .pingtai .list .reservation_img {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 20rpx;
+}
+#reward .list_wrap .pingtai .list .reservation_img .res_img {
+  width: 80rpx;
+  height: 80rpx;
+}
+#reward .list_wrap .pingtai .list .reservation_img .res_content {
+  margin-left: 10rpx;
+}
+#reward .list_wrap .pingtai .list .predict .predict_wrap {
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  padding: 15rpx 20rpx;
+}
+#reward .list_wrap .pingtai .list .predict .predict_wrap .predict_s .s_title {
+  margin-left: 30rpx;
+}
+#reward .price_win {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 377rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-top: 1rpx solid #eee;
+  padding: 15rpx 50rpx;
+  z-index: 10;
+}
+#reward .price_win .win_content {
+  font-size: 28rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+#reward .price_win .win_content .win_btn {
+  width: 161rpx;
+  border: 1rpx solid #eee;
+  padding: 10rpx 15rpx;
+  text-align: center;
+  margin-bottom: 15rpx;
+  border-radius: 5rpx;
+}
+#reward .price_win .win_content .add_win {
+  color: #E65757;
+  background-color: #fff6f9;
+  border: 1rpx solid #E65757;
+}
+#reward .price_win .affirm_btn {
+  width: 310rpx;
+  text-align: center;
+  padding: 15rpx 20rpx;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 50rpx;
+  background-color: #E65757;
+  margin-top: 60rpx;
+}
+#reward .price_zz {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+}

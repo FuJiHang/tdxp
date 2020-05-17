@@ -1,0 +1,44 @@
+<!-- <view class="layout" wx:if='{{storeList.CartItemInfo.length != 0}}'> -->
+<view class="layout" wx:if='{{boo}}'>
+  <!--  -->
+  <view class="fuCart" wx:for='{{storeList.CartItemInfo}}' wx:for-index='index' wx:key="{{index}}" data-id='{{item.SkuID}}'>
+    <van-checkbox data-id='{{item.SkuID}}'
+    bindtap='selelctSingle' checked-color="#02E809" value="{{ item.status }}"></van-checkbox>
+    <image class="product" mode="aspectFill" src='{{item.ThumbnailUrl100}}' />
+    <span class="contant">
+      <view class='title'>{{item.Name}}</view>
+      <view class='val'>
+        <span class="price_sku">
+          <view class="sku">{{item.SkuContent}}</view>
+          <view class="price">￥{{item.MemberPrice}}</view>
+        </span>
+        <span class='reduce' data-id='{{item.SkuID}}' data-num='{{item.Quantity}}' data-type='reduce' bindtap='changeNum'>
+          -
+        </span>
+        <input style="text-align: center;" class='num' type="number" data-id='{{item.SkuID}}' bindblur="blurFN" bindinput="inputFN" value="{{item.Quantity}}" />
+        <span class='add' data-id='{{item.SkuID}}' data-num='{{item.Quantity}}' data-type='add' bindtap='changeNum'>
+          +
+        </span>
+      </view>
+    </span>
+    <image mode="aspectFill" bindtap='clear' data-id='{{item.SkuID}}'
+            data-num='{{item.Quantity}}'  src="{{newImg+'close_h.png'}}" class="close" />
+  </view>
+  <!-- 优惠券 -->
+  <Coupon id='coupon' />
+  <!-- 底部tab -->
+  <Custom-tab bind:selectAllZ="selectAll" selectAllStatus="{{selectAllStatus}}" goodsTotal="{{goodsTotal}}" totalPrice="{{totalPrice}}" storeList='{{storeList}}' magnitude="{{magnitudeObj}}" />
+</view>
+<view class='emptyCart df ais fdc' wx:if='{{storeList.CartItemInfo.length == 0}}'>
+  <!-- <image src='{{imgUrl+"icon_gouwuche-t@2x.png"}}' mode='widthFix'></image> -->
+  <view class='emptyCart-item1'>亲，您的购物车还是空的哦！</view>
+
+  <view class='emptyCart-item2' bindtap="toFN">去添加商品</view>
+</view>
+<!-- 底部导航条 -->
+<view class="navBarFu">
+  <view bindtap="toFNavc" data-to="{{item.to}}" class="child  {{xz==index?'black':''}}" wx:for="{{navBar}}" wx:key="index" data-index="{{index}}">
+    <image mode="aspectFill" src="{{item.img}}" data-index="{{index}}" />
+    <text class="name" data-index="{{index}}">{{item.name}}</text>
+  </view>
+</view>

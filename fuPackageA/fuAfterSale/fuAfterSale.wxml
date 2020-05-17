@@ -1,0 +1,32 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-15 17:00:12 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-07-15 17:00:32
+    售后服务
+*/ -->
+<view id="fuAfterSale">
+
+    <view class="child" wx:for="{{dataInfo}}" wx:key="{{index}}">
+        <span class="name">{{item.name}}：</span>
+        <span class="val">{{item.val}}</span>
+    </view>
+    <view class="child">
+        <span class="name">价格</span>
+        <span class="val"><input placeholder="请输入价格" value="{{RefundMoney}}" data-name="RefundMoney" bindinput="inputChange"  ></input></span>
+        
+    </view>
+    <view class="child">
+        <textarea placeholder-class="plr" value="{{RefundReason}}" data-name="RefundReason" placeholder="请输入备注，也可不填"
+        bindinput="inputChange" ></textarea>
+    </view>
+
+     
+   
+
+    <view class="btn">
+        <van-button bindtap="appFN">同意</van-button>
+    </view>
+
+
+</view>

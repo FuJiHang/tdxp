@@ -1,0 +1,128 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-28 10:03:45 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-28 10:03:45 
+    拼团列表
+ */ -->
+<view id="fuTeamList">
+
+
+    <!--  -->
+    <!-- <view class="address">
+        <image class="storeImg" src="{{getStore.StoreImages}}" mode="aspectFill"></image>
+        <span class="contant">
+            <view class="name">
+                <image src="{{imgUrl+'circuit-city-icon@2x.png'}}" mode="widthFix"></image>
+                <span class="flex">{{getStore.RegionName}}</span>
+                <image class="more" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/moreMan.png" mode="widthFix">
+                </image>
+
+            </view>
+            <view class="tip">
+                距您{{getStore.Distance}}，步行大概需要{{getStore.Time}}分钟
+            </view>
+        </span>
+        <span class="child" bindtap="toFN" data-to="/fuPackageA/fuStroeCode/fuStroeCode">
+            <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/homepage_erweima.png" mode="widthFix"></image>
+
+            <view class="name">二维码</view>
+        </span>
+        <button open-type="share">
+            <span class="child">
+                <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/homepage_share.png" mode="widthFix"></image>
+                <view class="name">分享</view>
+            </span>
+        </button>
+    </view> -->
+
+
+
+    <!-- 搜索 -->
+
+    <!-- <view class="seachMTAM">
+        <view class="seachbg" >
+
+            <image src="{{imgUrl+'icon_search.png'}}" mode="aspectFill" />
+            <input  bindinput="changInput" value="{{seach}}" placeholder="请输入要搜索的内容"
+                bindconfirm="seachFN" />
+
+        </view>
+    </view> -->
+
+
+
+
+    <!--  -->
+    <!-- <view class="dataList">
+        <view class="project" bindtap="handleDetail" data-id="{{item.FightGroupActivityId}}"
+            data-productId="{{item.ProductId}}" wx:for="{{teamList}}" wx:key="{{index}}">
+            <span class="img_num">
+                <image src="{{item.ImageUrl1+'?x-oss-process=image/resize,l_640'}}" mode='aspectFill' />
+                <span class="num">
+                    已拼{{item.SoldCount?item.SoldCount:0}}件
+                </span>
+            </span>
+            <span class="contant">
+                <view class="name_num">
+                    {{item.ProductName}}
+                </view>
+                <view class="price_btn">
+                    <span class="flex">
+                        <view class="peo_pri">
+                            {{item.JoinNumber}}人团
+                            <span class="pri">
+                                ¥{{item.SalePrice}}
+                            </span>
+                        </view>
+                        <view class="oneBuy">
+                            单买价
+                            <span class="pri">¥{{item.SingleSalePrice?item.SingleSalePrice:0}}</span>
+                        </view>
+
+                    </span>
+                    <van-button size="small" round>去拼团</van-button>
+
+                </view>
+            </span>
+        </view>
+
+
+    </view> -->
+
+
+
+
+    <!--  -->
+
+    <view class="banner">
+        <image src="{{AdImg}}" mode="widthFix"></image>
+    </view>
+    <view wx:if="{{item.limitTxt!='已结束'}}" class="porduct" bindtap="handleDetail" data-id="{{item.FightGroupActivityId}}"
+        data-productId="{{item.ProductId}}" wx:for="{{teamList}}" wx:key="{{index}}">
+        <image src="{{item.ImageUrl2+'?x-oss-process=image/resize,l_640'}}" mode='aspectFill'></image>
+        <span class="contant">
+            <view class="name">{{item.ProductName}}</view>
+            <view class="price">
+                <span class="mini">{{item.JoinNumber}}人拼团价:</span>
+                ¥{{item.SalePrice}}
+            </view>
+            <view class="del">市场价:¥{{item.SingleSalePrice?item.SingleSalePrice:0}}</view>
+            <view class="num_buy {{item.limitTxt=='离活动开始'?'ks':''}}">
+                <span class="num">已有{{item.ShowSaleCounts?item.ShowSaleCounts:0}}人拼团</span>
+                <van-button>{{item.limitTxt=='离活动开始'?'即将开始':'立即拼团'}}</van-button>
+            </view>
+        </span>
+        <view class="time">
+            <span class="color">
+                {{item.limitTxt}}:
+            </span>
+            {{item.day}}天{{item.limitHours%24}}时{{item.limitMin}}分{{item.limitSecond}}秒
+        </view>
+    </view>
+
+
+    <view class="noMore" wx:if="{{finsh}}">
+        没有更多的了~~~
+    </view>
+</view>

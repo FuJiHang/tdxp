@@ -1,0 +1,227 @@
+page {
+  height: 100%;
+  font-size: 26rpx;
+}
+#fuShop {
+  color: #666;
+}
+#fuShop swiper-item image {
+  width: 100%;
+}
+#fuShop .classfiy {
+  position: fixed;
+  right: 10rpx;
+  top: 60%;
+  width: 130rpx;
+  height: 1rpx;
+}
+#fuShop .productCont {
+  padding: 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+#fuShop .productCont .product {
+  padding: 10rpx;
+  width: 50%;
+  box-sizing: border-box;
+}
+#fuShop .productCont .product .jiaoZiPi {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#fuShop .productCont .product .img {
+  flex: 1;
+  box-sizing: border-box;
+  border-bottom: 1px solid #fafafa;
+}
+#fuShop .productCont .product .img image {
+  height: 220rpx;
+  max-width: 100%;
+}
+#fuShop .productCont .product .name {
+  font-size: 32rpx;
+  padding: 0 20rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  margin: 10rpx 0;
+}
+#fuShop .productCont .product .det {
+  color: #999;
+  margin-bottom: 20rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+#fuShop .productCont .product .val {
+  display: flex;
+  align-items: center;
+  color: #F56F68;
+  padding: 0 20rpx 20rpx;
+  box-sizing: border-box;
+}
+#fuShop .productCont .product .val .ovFU {
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+#fuShop .productCont .product .val .bea {
+  font-size: 30rpx;
+  overflow: hidden;
+}
+#fuShop .productCont .product .val .bea .num {
+  color: #E65757;
+  font-size: 30rpx;
+}
+#fuShop .productCont .product .val .xjin {
+  color: #999;
+  font-size: 22rpx;
+  text-decoration: line-through;
+}
+#fuShop .productCont .product .val .xjin .num {
+  margin: 0 10rpx;
+  font-size: 30rpx;
+}
+#fuShop .van-popup--right {
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+#fuShop .van-popup--right .seachMT {
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuShop .van-popup--right .seachMT .seachbg {
+  flex: 1;
+  align-items: center;
+  display: flex;
+  background: #EEEEEE;
+  border-radius: 40rpx;
+}
+#fuShop .van-popup--right .seachMT .seachbg image {
+  width: 40rpx;
+  margin-left: 20rpx;
+}
+#fuShop .van-popup--right .seachMT .seachbg input {
+  height: 70rpx;
+  font-size: 28rpx;
+  margin: 0 20rpx;
+  flex: 1;
+}
+#fuShop .van-popup--right .seachMT .seachbg .van-icon {
+  margin-top: 5rpx;
+  margin-right: 20rpx;
+}
+#fuShop .van-popup--right .seachMT .van-button {
+  padding: 0;
+  border: none;
+  background: none;
+}
+#fuShop .van-popup--right .appointTO {
+  display: flex;
+  overflow: hidden;
+  flex: 1;
+  border-top: 1px solid #f0f0f0;
+}
+#fuShop .van-popup--right .appointTO .leftCont {
+  width: 180rpx;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 250rpx;
+  box-sizing: border-box;
+}
+#fuShop .van-popup--right .appointTO .leftCont .Choose {
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  height: 80rpx;
+  box-sizing: border-box;
+  transition: 0.5s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#fuShop .van-popup--right .appointTO .leftCont .isChoose {
+  background: #E5414A;
+  color: white;
+}
+#fuShop .van-popup--right .appointTO .rightCont {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+#fuShop .van-popup--right .appointTO .rightCont scroll-view {
+  background: white;
+  height: 100%;
+  overflow: auto;
+}
+#fuShop .van-popup--right .appointTO .rightCont scroll-view .noMore {
+  font-size: 28rpx;
+  color: #999;
+  padding: 20rpx 20rpx 250rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+#fuShop .van-popup--right .detail .banner {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuShop .van-popup--right .detail .banner image {
+  width: 100%;
+}
+#fuShop .van-popup--right .detail .list .title {
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  color: #E5414A;
+}
+#fuShop .van-popup--right .detail .list .title .flex {
+  flex: 1;
+  margin-left: 40rpx;
+  height: 1px;
+  background: #eeeeee;
+}
+#fuShop .van-popup--right .detail .list .contant {
+  padding: 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+#fuShop .van-popup--right .detail .list .contant .child {
+  width: 33.33%;
+  padding: 10rpx;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+#fuShop .van-popup--right .detail .list .contant .child image {
+  width: 100%;
+  margin-bottom: 5rpx;
+  height: 100rpx;
+}
+#fuShop .van-popup--right .detail .list .contant .child .name {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}

@@ -1,0 +1,35 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-13 20:27:28 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-13 20:27:28 
+    优惠券详情
+*/ -->
+<view id="fuCouponDet">
+    <block wx:for="{{list}}" wx:key="{{item}}">
+        <!--  -->
+        <view class="top">
+            <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/coupon_bg.png" />
+        </view>
+        <!--  -->
+        <view class="logo">
+            <image mode="aspectFill" src="{{item.UploadLogo}}" />
+        </view>
+        <view class="bw">
+            <view class="detail">
+                <image mode="widthFix" src="{{item.UploadLogo}}" />
+            </view>
+            <view class="coupon">
+                <span>满减券</span>
+            </view>
+            <view class="name">{{item.CouponName}}</view>
+            <view class="price">{{item.Price}}元</view>
+            <view class="tip">满{{item.OrderUseLimit}}元可用</view>
+            <view class="time">有效期 {{item.start}} - {{item.closing}}</view>
+            <view class="btn">
+                <van-button bindtap="pullDown" data-couponid="{{item.CouponId}}">领取优惠券</van-button>
+                <!-- <van-button bindtap="pullDown">立即分享</van-button> -->
+            </view>
+        </view>
+    </block>
+</view>

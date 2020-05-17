@@ -1,0 +1,474 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-19 10:23:15 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-19 10:23:15 
+    首页改版二期
+ */ -->
+
+
+
+
+
+<view id="fuIndexG">
+  <!-- 搜索 -->
+  <view class="seachMTAM">
+    <!-- <view class="addressImg" bindtap="getaddress">
+                <span>{{getAddressDet}}</span>
+                <van-icon name="arrow-down" size="30rpx" />
+            </view> -->
+    <navigator url="/fuPackageA/fuSeachDGP/fuSeachDGP" open-type="navigate">
+      <view class="seachDIv">
+        <span class="name">
+          <!-- <view class="top">
+            头道<span class="red">惠</span>
+          </view>
+          <view class="button">惠选精品好货</view> -->
+          <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/logo003.png" mode="widthFix"></image>
+        </span>
+        <!-- <image class="logo" mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/seachLogo.png" ></image> -->
+        <view class="seachbg">
+          <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/seach@3x.png" mode="aspectFill" />
+          <input disabled="{{true}}" bindinput="changInput" value="{{seach}}" placeholder="请您输入您搜索的商品"
+            bindconfirm="seaChFN" />
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <!--  -->
+  <view class="swiper">
+    <swiper indicator-dots="{{false}}" style="height:{{imgheights[current]+'rpx'}}" autoplay="{{true}}"
+      circular="{{false}}" vertical="{{false}}" interval="{{4000}}" duration="{{500}}" bindchange="bindchangeImg">
+      <swiper-item wx:for="{{background}}" wx:key="index" data-id='{{index}}'>
+        <image data-id='{{index}}' bindload="imageLoad" data-categoryId="{{item.CategoryId}}" class='item-img'
+          data-photoId="{{item.PhotoId}}" src="{{item.AdImg}}" mode="widthFix" data-categoryId="{{item.CategoryId}}"
+          catchtap='clickImg'></image>
+      </swiper-item>
+    </swiper>
+    <view class="dot">
+      <span class="child {{index==current?'dotRed':''}}" wx:for="{{background}}" wx:key="{{key}}"></span>
+    </view>
+  </view>
+  <!--  -->
+  <view class="address">
+    <image class="storeImg {{getStore.IsBlack?'IsBlack':''}}" src="{{getStore.StoreImages}}" mode="aspectFill"></image>
+    <span class="contant" bindtap="toStoreDetail">
+      <view class="name">
+        <span class="flex">{{getStore.StoreName}}</span>
+        <image class="more" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/moreMan.png" mode="widthFix"></image>
+      </view>
+      <view wx:if="{{!getStore.IsBlack}}" class="tip" style="font-size: 22rpx;color: #666;margin: 6rpx 0;">
+        <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/dw@3x.png" mode="widthFix"></image>
+        {{getStore.RegionName}}
+      </view>
+      <view class="tip" wx:if="{{!getStore.IsBlack}}">距您{{getStore.Distance}}，步行大概需要{{getStore.Time}}分钟</view>
+    </span>
+    <span class="child" bindtap="toFN" data-to="/fuPackageA/fuStroeCode/fuStroeCode">
+      <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/rwm@3x.png" mode="widthFix"></image>
+      <view class="name">二维码</view>
+    </span>
+    <button open-type="{{shareOpen?'share':''}}" bindtap="toLogin">
+      <span class="child">
+        <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/share@3x.png" mode="widthFix"></image>
+        <view class="name">分享</view>
+      </span>
+    </button>
+  </view>
+  <!--  -->
+  <view class="function">
+    <!-- <span class="child" bindtap="toFN" data-to="{{item.to}}" data-post="{{item.post}}" wx:for="{{funList}}"
+      wx:key="{{index}}" wx:if="{{index&&index!=1&&index!=2||getStore.IsSignIn}}">
+      <image src="{{item.img}}" mode="widthFix"></image>
+      <view class="name">{{item.name}}</view>
+    </span> -->
+    <span class="child" bindtap="toFN" data-to="{{item.to}}" data-post="{{item.post}}" wx:for="{{funList}}"
+      wx:key="{{index}}">
+      <image src="{{item.img}}" mode="widthFix"></image>
+      <view class="name">{{item.name}}</view>
+    </span>
+  </view>
+  <!--  -->
+  <!-- <view class="teamPro" wx:if="{{teamList.length !=0}}">
+    <view class="navTop" bindtap="toFN" data-to="/fuPackageA/fuTeamList/fuTeamList">
+      <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/hot.png" mode='aspectFit' />
+      <span class="flex">火爆拼团中</span>
+      更多
+      <van-icon name="arrow" size="35rpx" color="#999" />
+    </view>
+    <view class="project" bindtap="handleDetail" data-id="{{item.FightGroupActivityId}}"
+      data-productId="{{item.ProductId}}" wx:for="{{teamList}}" wx:key="{{index}}">
+      <span class="img_num">
+        <image src="{{item.ImageUrl1+'?x-oss-process=image/resize,l_640'}}" mode='aspectFill' />
+        <span class="num">已拼{{item.ShowSaleCounts?item.ShowSaleCounts:0}}件</span>
+      </span>
+      <span class="contant">
+        <view class="name_num">{{item.ProductName}}</view>
+        <view class="price_btn">
+          <span class="flex">
+            <view class="peo_pri">
+              {{item.JoinNumber}}人团
+              <span class="pri">¥{{item.SalePrice}}</span>
+            </view>
+            <view class="oneBuy">
+              单买价
+              <span class="pri">¥{{item.SingleSalePrice?item.SingleSalePrice:0}}</span>
+            </view>
+          </span>
+          <van-button size="small" round>去拼团</van-button>
+        </view>
+      </span>
+    </view>
+  </view> -->
+
+
+   <!-- 广告图 -->
+
+   <view class=" coupon conpouGet" wx:if="{{getActivtyInfo.isLength}}">
+    <swiper style="padding: 0 !important;height:270rpx; " autoplay="{{true}}" circular="{{false}}" vertical="{{false}}"
+      interval="{{4000}}" duration="{{500}}">
+      <swiper-item data-index="{{index}}" wx:if="{{item.IsStore}}" data-type="{{item.AdType}}"
+        wx:for="{{getActivtyInfo.data}}" wx:key="{{index}}" bindtap="dealActivty">
+        <image class="imgBanner" src="{{item.AdImg}}" mode="aspectFill"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!--  -->
+  <view class=" coupon conpouGet" wx:if="{{getStoreIndex.length}}">
+    <swiper style="height:270rpx;padding: 0 !important;" autoplay="{{true}}" circular="{{false}}" vertical="{{false}}"
+      interval="{{4000}}" duration="{{500}}">
+      <swiper-item data-to="{{'/fuPackageA/fuProductCou/fuProductCou?pId='+item.id}}" wx:for="{{getStoreIndex}}"
+        wx:key="{{index}}" bindtap="toFN">
+
+        <image src="{{item.Img}}" mode="aspectFill"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!--  -->
+  <view class="tips" wx:if="{{hotPro[active].data.length}}">头道汤会员精选养生卡</view>
+  <view class="coupon conpouGet" wx:if="{{hotPro[active].data.length}}">
+    <scroll-view class="contant" scroll-x>
+      <span class="child" wx:for="{{hotPro[active].data}}" wx:for-index="indexc" wx:for-item="itemc" wx:key="{{indexc}}"
+        data-to="{{'/fuPackageA/fuProductCou/fuProductCou?pId='+itemc.ProductId}}" bindtap="toFN">
+        <image src="{{itemc.ImageUrl1}}" mode="widthFix"></image>
+      </span>
+    </scroll-view>
+  </view>
+
+
+
+  <!-- 我的小铺有好货 -->
+  <view class="myStorePro">
+    <view class="bg">
+      <view class="navTopH">
+        我的小铺有好货
+      </view>
+      <view class="allProduct">
+        <span class="child" wx:for-index="indexc" wx:for-item="itemc" data-productId="{{itemc.ProductId}}"
+          data-storeid="{{itemc.StoreId}}" bindtap="handleDetail" wx:for="{{getXiaoDian}}" wx:key="{{indexc}}">
+          <image mode="aspectFit" src="{{itemc.ImageUrl2}}" />
+          <view class="name">{{itemc.ProductName}}</view>
+          <view class="price_btn">
+            <span class="mini">￥</span>
+            <span class="price">{{itemc.SalePrice}}</span>
+            <span class="del">{{itemc.SalePrice}}</span>
+          </view>
+        </span>
+      </view>
+      <view class="bottonMore" bindtap='toFN' data-to="/fuPackageA/fuShopClass/fuShopClass">
+        <van-button>显示更多</van-button>
+      </view>
+    </view>
+  </view>
+
+  <!--  -->
+  <view class="zhiBoT" wx:if="{{liveRoom.length}}">
+
+    <view class="navT">
+      <span class="color">
+        我的直播
+      </span>
+      越健康悦生活
+    </view>
+    <view class="contant">
+      <span class="img" bindtap="toFNLive" data-stu="{{liveRoom[0].Status}}"
+        data-url="{{'plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id='+liveRoom[0].LiveRoomId}}"
+        data-rid="{{liveRoom[0].LiveRoomId}}">
+        <image class="imgbg" src="{{liveRoom[0].ShowImg[0]}}" mode="aspectFill"></image>
+        <span class="stuts" wx:if="{{liveRoom[0].Status!=4}}">
+          <span class="name {{liveRoom[0].Status!=3?'hui':''}}">
+            {{liveRoom[0].Status==3?'直播中':liveRoom[0].Status==4?'已结束':'待开播'}}
+          </span>
+          <!-- <span class="val">{{liveRoom[0].ViewNum}}人观看</span> -->
+        </span>
+        <span class="peopleLive" wx:if="{{liveRoom[0].Status!=4}}">
+          <!-- <image src="{{liveRoom[0].Picture}}" mode="aspectFill"></image> -->
+          <span class="name">{{liveRoom[0].Title}}</span>
+        </span>
+        <image wx:if="{{liveRoom[0].Status!=4}}" class="typeImg"
+          src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/like003.png?1" mode="aspectFill">
+        </image>
+        <image wx:if="{{liveRoom[0].Status!=4}}" class="typeImg lastBtn"
+          src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/gift003.png?1" mode="aspectFill"></image>
+        <span class="HuiFan" data-id="{{liveRoom[0].Id}}" catchtap="openAlert" wx:if="{{liveRoom[0].Status==4}}">
+          <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/playW.png" mode="aspectFill"></image>回放
+        </span>
+      </span>
+      <span class="rightTwo">
+        <span class="img" bindtap="toFNLive" data-stu="{{liveRoom[1].Status}}"
+          data-url="{{'plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id='+liveRoom[1].LiveRoomId}}"
+          data-rid="{{liveRoom[1].LiveRoomId}}">
+          <image class="imgbg" src="{{liveRoom[1].ShowImg[0]}}" mode="aspectFill"></image>
+          <span class="stuts" wx:if="{{liveRoom[1].Status!=4}}">
+            <span class="name {{liveRoom[1].Status!=3?'hui':''}}">
+              {{liveRoom[1].Status==3?'直播中':liveRoom[1].Status==4?'已结束':'待开播'}}
+            </span>
+            <!-- <span class="val">{{liveRoom[1].ViewNum}}人观看</span> -->
+          </span>
+          <span class="peopleLive" wx:if="{{liveRoom[1].Status!=4}}">
+            <!-- <image src="{{liveRoom[0].Picture}}" mode="aspectFill"></image> -->
+            <span class="name">{{liveRoom[1].Title}}</span>
+          </span>
+          <image class="typeImg" wx:if="{{liveRoom[1].Status!=4}}"
+            src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/like003.png?1" mode="aspectFill">
+          </image>
+          <image class="typeImg lastBtn" wx:if="{{liveRoom[1].Status!=4}}"
+            src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/gift003.png?1" mode="aspectFill"></image>
+          <span class="HuiFan" data-id="{{liveRoom[1].Id}}" catchtap="openAlert" wx:if="{{liveRoom[1].Status==4}}">
+            <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/playW.png" mode="aspectFill"></image>回放
+          </span>
+        </span>
+        <span class="img topbtn" bindtap="toFNLive" data-stu="{{liveRoom[2].Status}}"
+          data-url="{{'plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id='+liveRoom[2].LiveRoomId}}"
+          data-rid="{{liveRoom[2].LiveRoomId}}">
+          <image class="imgbg" src="{{liveRoom[2].ShowImg[0]}}" mode="aspectFill"></image>
+          <span class="stuts" wx:if="{{liveRoom[2].Status!=4}}">
+            <span class="name {{liveRoom[2].Status!=3?'hui':''}}">
+              {{liveRoom[2].Status==3?'直播中':liveRoom[2].Status==4?'已结束':'待开播'}}
+            </span>
+            <!-- <span class="val">{{liveRoom[2].ViewNum}}人观看</span> -->
+          </span>
+          <span class="peopleLive" wx:if="{{liveRoom[2].Status!=4}}">
+            <!-- <image src="{{liveRoom[0].Picture}}" mode="aspectFill"></image> -->
+            <span class="name">{{liveRoom[2].Title}}</span>
+          </span>
+          <image class="typeImg" wx:if="{{liveRoom[2].Status!=4}}"
+            src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/like003.png?1" mode="aspectFill">
+          </image>
+          <image class="typeImg lastBtn" wx:if="{{liveRoom[2].Status!=4}}"
+            src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/gift003.png?1" mode="aspectFill"></image>
+          <span class="HuiFan" data-id="{{liveRoom[2].Id}}" catchtap="openAlert" wx:if="{{liveRoom[0].Status==4}}">
+            <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/playW.png" mode="aspectFill"></image>回放
+          </span>
+        </span>
+      </span>
+    </view>
+
+
+  </view>
+
+
+
+ 
+  <!-- 技师列表 -->
+  <!-- <view class="technicianBox" wx:if="{{technicianInfo.list.length}}">
+    <view style="background: #fff;padding:20rpx 0;">
+      <view class="tips">技师列表</view>
+    </view>
+    <scroll-view scroll-x="true" class="content" bindscrolltolower="toNextPage">
+      <view class="item" wx:for="{{technicianInfo.list}}" wx:key="{{index}}" bindtap="toDetailForTechnician"
+        data-idx="{{index}}">
+        <image mode="aspectFit" src="{{item.HeadPortrait}}"></image>
+      </view>
+    </scroll-view>
+  </view> -->
+
+
+  <view class="moreKan" >
+    <view class="topName" bindtap="toPYQLB">
+      <span class="name">大家都在看</span>
+      <!-- <van-icon name="arrow" size="30rpx" /> -->
+    </view>
+    <view class="contantKan">
+      <view class="leftK" id="leftK">
+        <view class="child" bindtap="toPYQFN" data-no="{{item.No}}" data-index="{{index}}" data-name="le"
+          data-id="{{item.Id}}" wx:for="{{nearList.data1}}" wx:key="{{index}}">
+          <view class="logoImg">
+            <image wx:if="{{item.isVideo}}"
+              src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}"
+              class="myVideo" mode="widthFix" />
+
+            <view wx:if="{{item.isVideo}}" class="playBtn">
+              <van-icon name="play-circle" color="#fff" size="60rpx" />
+            </view>
+            <image wx:if="{{!item.isVideo}}" mode="widthFix" src="{{item.ImageUrlsArr[0]}}" />
+          </view>
+          <view class="name">
+            {{item.Contents?item.Contents:'无'}}
+          </view>
+          <view class="btnXX">
+            <view class="touxiang">
+              <image mode="aspectFit" src="{{item.Picture}}" />
+            </view>
+            <span class="nameC">{{item.UserName?item.UserName:'无'}}</span>
+            <van-icon catchtap="Fabulous" data-nameNum="{{'nearList.data1['+index+'].ArticleLikeCount'}}"
+              data-num="{{item.ArticleLikeCount}}" data-name="{{'nearList.data1['+index+'].IsArticleLike'}}"
+              data-tf="{{item.IsArticleLike}}" data-id="{{item.Id}}" name="{{item.IsArticleLike?'like':'like-o'}}"
+              size="30rpx" color="{{item.IsArticleLike?'#f7726d':'#666'}}" />
+            <span class="num">{{item.ArticleLikeCount}}</span>
+          </view>
+        </view>
+      </view>
+      <view class="rightK" id="rightK">
+        <view class="child" bindtap="toPYQFN" data-no="{{item.No}}" data-index="{{index}}" data-id="{{item.Id}}"
+          wx:for="{{nearList.data2}}" wx:key="{{index}}">
+          <view class="logoImg">
+            <image wx:if="{{item.isVideo}}"
+              src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}"
+              class="myVideo" mode="widthFix" />
+
+
+            <view wx:if="{{item.isVideo}}" class="playBtn">
+              <van-icon name="play-circle" color="#fff" size="60rpx" />
+            </view>
+            <image wx:if="{{!item.isVideo}}"  mode="widthFix" src="{{item.ImageUrlsArr[0]}}" />
+          </view>
+          <view class="name">
+            {{item.Contents?item.Contents:'无'}}
+          </view>
+          <view class="btnXX">
+            <view class="touxiang">
+              <image mode="aspectFit" src="{{item.Picture}}" />
+            </view>
+            <span class="nameC">{{item.UserName?item.UserName:'无'}}</span>
+            <van-icon catchtap="Fabulous" data-nameNum="{{'nearList.data2['+index+'].ArticleLikeCount'}}"
+              data-num="{{item.ArticleLikeCount}}" data-name="{{'nearList.data2['+index+'].IsArticleLike'}}"
+              data-tf="{{item.IsArticleLike}}" data-id="{{item.Id}}" name="{{item.IsArticleLike?'like':'like-o'}}"
+              size="30rpx" color="{{item.IsArticleLike?'#f7726d':'#666'}}" />
+            <span class="num">{{item.ArticleLikeCount}}</span>
+          </view>
+        </view>
+      </view>
+      <view class="noMore" hidden="{{!nearList.finsh}}">
+        没有更多的了~~~
+      </view>
+    </view>
+  </view>
+
+
+  <!--  -->
+  <!-- <view class="botLogo">
+    <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/logoGS.png" mode='widthFix' />
+    鸿猫企云提供技术支持
+  </view> -->
+  <view class="konbai"></view>
+</view>
+
+  
+  <!-- 底部导航条 -->
+  <view class="navBarFu">
+    <view bindtap="toFNavc" data-to="{{item.to}}" class="child  {{xz==index?'black':''}}" wx:for="{{navBar}}"
+      wx:key="index" data-index="{{index}}">
+      <image mode="aspectFill" src="{{item.img}}" data-index="{{index}}" />
+      <text class="name" data-index="{{index}}">{{item.name}}</text>
+    </view>
+  </view>
+  <van-popup catchtouchmove custom-style="background:none;height:100%;" bindtap="onCloseP" show="{{serviceAlert}}"
+    position="bottom" bind:close="onCloseP">
+    <span class="img" catchtap></span>
+  </van-popup>
+  <!-- 客服 -->
+  <!-- <view class="tabIcon" bindtap="openCustomer" catchtouchmove='btn_move' catchtouchend='btn_end'
+    style='top:{{clientY}};left:{{clientX}}'>
+    <image mode="aspectFit" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/wex@3x.png"></image>
+  </view> -->
+  <!-- <view class="popupBox" wx:if="{{isShowPopup}}">
+    <view class="popupCon">
+      <view class="top">
+        <view class="tips">
+          <image mode="aspectFit" src="http://bcdj.9oasd.com/images/kefu064.png"></image>
+          <view>客服联系方式</view>
+        </view>
+        <view class="close" bindtap="closeCustomer">×</view>
+      </view>
+      <view class="list">
+        <view class="listItem" wx:for="{{customerList}}" wx:key="{{index}}">
+          <view class="wxname">{{item.wxNum}}</view>
+          <image bindtap="openImg" data-url="{{item.img}}" style="width: 70rpx;height: 1rpx;margin-right: 20rpx;"
+            src="{{item.img}}" mode="widthFix"></image>
+          <view class="copyBtn" bindtap="copyWxNum" data-idx="{{index}}">复制微信</view>
+        </view>
+      </view>
+    </view>
+  </view> -->
+  <!--  -->
+  <!-- <view class="zzzb" wx:if="{{zhuBoList.length}}">
+    <swiper indicator-dots="{{false}}" style="height:106rpx;" autoplay="{{true}}" circular="{{false}}"
+      vertical="{{false}}" interval="{{4000}}" duration="{{500}}" bindchange="bindchangeImg">
+      <swiper-item wx:for="{{zhuBoList}}" wx:key="index" data-id='{{index}}'>
+        <view class="zbList" bindtap="toFN" data-rid="{{item.LiveRoomId}}"
+          data-to="{{'plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id='+item.LiveRoomId}}">
+          <span class="img_status">
+            <image src="{{item.Picture}}" mode="widthFix"></image>
+            <view class="name">直播中</view>
+          </span>
+          <span class="contant">
+            <view class="title">{{item.AnchorName}}</view>
+            <view class="val">{{item.Title}}</view>
+          </span>
+          <van-button>去观看</van-button>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view> -->
+
+
+
+  
+
+
+
+
+
+
+<!--  -->
+<van-popup catchtouchmove custom-style="background:none;height:100%;" bindtap="onCloseP" show="{{newAlert}}"
+  position="bottom" bind:close="onCloseP">
+  <span class="img" catchtap>
+    <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/popup_bangding.png?2" />
+    <input class="name" data-index="0" type="number" bindinput="changeInput" placeholder="{{postList[0].plr}}"
+      value="{{postList[0].val}}" />
+    <!-- <input class="phone" data-index="2" bindinput="changeInput" placeholder="{{postList[2].plr}}"
+                value="{{postList[2].val}}" /> -->
+    <input class="code" data-index="1" type="number" bindinput="changeInput" placeholder="{{postList[1].plr}}"
+      value="{{postList[1].val}}" />
+    <span class="getCode" bindtap="getSMS">{{SMS}}</span>
+    <span class="register" bindtap="subimt"></span>
+    <view class="close" bindtap="onCloseP"></view>
+  </span>
+</van-popup>
+
+
+
+<!--  -->
+<van-popup show="{{showHui}}"
+  custom-style="height:100%;justify-content: center;align-items: center;background:rgba(0,0,0,.1);display: flex;"
+  bindtap="onCloseP" position="bottom" bind:close="onCloseP">
+  <view class="zhibo" catchtap>
+    <scroll-view class="scroll-view" lower-threshold="huifan" scroll-y="true">
+      <span class="child" wx:for="{{videoList}}" wx:key="{{index}}">
+        <view class="time">
+          <span class="create">开始时间:{{item.create_time}}</span>
+          <span>过期时间:{{item.expire_time}}</span>
+        </view>
+        <video poster="{{item.media_url+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_10000,m_fast'}}"
+          object-fit="cover" class="myVideo" src="{{item.media_url}}" autoplay='{{false}}' controls></video>
+      </span>
+    </scroll-view>
+  </view>
+</van-popup>
+
+
+<button class="wxkf {{scrollTop>200?'wxkfSy':''}}" open-type="contact">
+  <image mode="aspectFill" src="{{newImg+'wxkf003.png'}}" data-index="{{index}}" />
+</button>
+<image bindtap="toTopFn" class="zd {{scrollTop>200?'isShowTop':''}}" mode="aspectFill" src="{{newImg+'zd003.png'}}" data-index="{{index}}" />

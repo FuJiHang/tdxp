@@ -1,0 +1,91 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-17 16:38:10 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-17 16:38:10 
+    特殊服务
+ */ -->
+<view id="fuSpecial">
+
+    <!--  -->
+    <view class="navtap">
+        <span class="name">
+            特色服务
+        </span>
+        <span class="EN">
+            SERVICE
+        </span>
+    </view>
+
+    <!--  -->
+    <view class="contantSL {{edit?'editNO':''}}">
+        <span class="name_text" >
+            <view class="name">
+                <input disabled="{{edit}}" value="{{server[0].name}}" bindinput="changeFN" data-name="server[0].name" placeholder="请填写项目名称"  />
+            </view>
+            <view class="text">
+                <textarea disabled="{{edit}}" value="{{server[0].text}}" bindinput="changeFN" data-name="server[0].text" placeholder="请填写项目特色详情" ></textarea>
+            </view>
+        </span>
+        <span class="img">
+            <view class="addImg"  bindtap="chooseImage" data-name="server[0].img" wx:if="{{!server[0].img&&!edit}}">
+                <van-icon name="plus" size="80rpx" color="#666" />
+                <view class="name">添加图片</view>
+            </view>
+            <image bindtap="chooseImage" data-num="1" data-name="server[0].img" src="{{server[0].img+'?x-oss-process=image/crop,w_720,h_720'}}" mode="aspectFit" wx:if="{{server[0].img}}" />
+        </span>
+    </view>
+
+    <!--  -->
+    <view class="contantSL  {{edit?'editNO':''}}">
+        <span class="img" >
+            <view class="addImg"  bindtap="chooseImage" data-num="1" data-name="server[1].img" wx:if="{{!server[1].img&&!edit}}">
+                <van-icon name="plus" size="80rpx" color="#666" />
+                <view class="name">添加图片</view>
+            </view>
+            <image wx:if="{{server[1].img}}" src="{{server[1].img+'?x-oss-process=image/crop,w_720,h_720'}}" mode="aspectFit" bindtap="chooseImage" data-name="server[1].img"   />
+        </span>
+        <span class="name_text">
+            <view class="name">
+                <input disabled="{{edit}}" bindinput="changeFN" value="{{server[1].name}}" data-name="server[1].name" placeholder="请填写项目名称"  />
+            </view>
+            <view class="text">
+                <textarea disabled="{{edit}}" bindinput="changeFN" value="{{server[1].text}}" data-name="server[1].text" placeholder="请填写项目特色详情" ></textarea>
+            </view>
+        </span>
+        
+    </view>
+    
+
+    <!--  -->
+    <view class="navtap">
+        <span class="name">
+            作品展示
+        </span>
+        <span class="EN">
+            SHOW
+        </span>
+    </view> 
+
+    <!--  -->
+    <view class="imgList" wx:for="{{show}}" wx:key="{{index}}"> 
+        <image src="{{item+'?x-oss-process=image/crop,w_720,h_720'}}"  mode="aspectFit" />
+    </view>
+    <view class="imgList" wx:if="{{show.length<5&&!edit}}">
+        <view class="addImg" bindtap="chooseImage" data-num="5" data-name="workList"  >
+            <van-icon name="plus" size="60rpx" color="#666" />
+            <view class="name">添加图片</view>
+        </view>
+    </view>
+
+    <!--  -->
+    <view class="tip" wx:if="{{!edit}}">
+    *最多可上传5张</view>
+
+    <!--  -->
+    <view class="btn" bindtap="submit" wx:if="{{!edit}}">
+        <van-button>提交</van-button>
+    </view>
+    
+
+</view>

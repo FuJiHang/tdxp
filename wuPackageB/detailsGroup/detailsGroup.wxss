@@ -1,0 +1,17 @@
+#group {
+  background-color: #fff;
+  padding: 20rpx 20rpx 40rpx 20rpx;
+  border-top: 1rpx solid #eee;
+  font-size: 28rpx;
+  color: #333;
+}
+.time_wrap{
+  margin: 15rpx 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 15rpx;
+}

@@ -1,0 +1,16 @@
+<!--pages/projectDetail/projectDetail.wxml-->
+<view class='project_head'>
+  <view class='project_list_item' >
+    <image class='item_img'></image>
+    <view class='item_content'>
+      <text class='item_name'>芭比美甲</text>
+      <view class='item_info' style='-webkit-line-clamp:1;'><navigator class='item_lebal'>主营</navigator>光疗指甲油可卸美甲渐变QQ芭光疗指甲油可卸美甲渐变QQ芭光疗指甲芭,光疗指甲油可卸美甲渐变QQ芭光疗指甲油可卸美甲渐变QQ芭光疗指甲芭…光疗指甲油可卸美甲渐变QQ芭光疗指甲油可卸美甲渐变QQ芭光疗指甲芭…</view>
+      <text class='addr_text' >广州市天河区天河北路曙光整形医院</text>
+    </view>
+  </view>
+</view>
+
+<view class='floor border_bottom'>
+  <text class='pd_left_44 icon_pink'>详情介绍</text>
+</view>
+<view class='pic_box'><image src='' mode='widthFix'></image></view>

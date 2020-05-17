@@ -1,0 +1,26 @@
+<view class="steps">
+  <view 
+    class="steps-item steps-item-finish" 
+    wx:for="{{ steps }}" 
+    wx:key="index"
+  >
+    <view class="steps-item-content">
+      <view class="steps-item-subTitle">{{ item.subTitle }}</view>
+      <text 
+        class="steps-item-des" 
+        wx:if="{{ item.desc }}"
+        selectable
+      >
+        {{ item.desc }}
+      </text>
+    </view>
+    <view class="steps-item-title">
+      <view class="steps-item-title-top">{{ item.hour }}</view>
+      <view class="steps-item-title-bottom">{{ item.month }}</view>
+    </view>
+    <view class="steps-item-line"></view>
+    <view class="steps-item-circle"></view>
+  </view>
+  
+  <loading wx:if="{{ loading }}" />
+</view>

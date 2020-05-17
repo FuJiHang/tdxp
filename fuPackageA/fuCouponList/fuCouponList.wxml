@@ -1,0 +1,135 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-20 15:41:17 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-20 15:41:17 
+    卡包和更多
+ */ -->
+
+
+<view id="fuCouponList">
+
+    <!--  -->
+    <view class="seachMT" wx:if="{{sf==1}}">
+        <view class="seachbg">
+            <image src="{{imgUrl+'icon_search.png'}}" mode="aspectFill" />
+            <input placeholder="请输入客户名字" value="{{seach}}" bindinput="seaChFN" />
+        </view>
+        <van-button size="small" bindtap="getCateCou">搜索</van-button>
+    </view>
+
+    <!--  -->
+    <van-tabs swipeable class="van_order" line-width='20' color="#E65757" active="{{ active }}" bind:change="onChange">
+        <van-tab wx:for="{{hotPro}}" title="{{item.name}}" wx:key="index">
+            <scroll-view class="contant" scroll-y wx:if="{{active==index}}">
+                <!-- 购买页面 -->
+                <view wx:if="{{sf==0}}" class="child" wx:for="{{hotPro[active].data}}" wx:for-index="indexc"
+                    wx:for-item="itemc" wx:key="{{indexc}}"
+                    data-to="{{'/fuPackageA/fuProductCou/fuProductCou?pId='+itemc.ProductId}}" bindtap="toFN">
+                    <image src="{{itemc.ImageUrl1}}" mode="aspectFill"></image>
+                    <span class="detail">
+                        <!-- <view class="name">{{itemc.ProductName?itemc.ProductName:' '}}</view> -->
+                        <view class="price">
+                            {{itemc.MaxCount?itemc.MaxCount:0}}次/¥{{itemc.MarketPrice?itemc.MarketPrice:0}}</view>
+                        <view class="val">{{itemc.ShortDescription?itemc.ShortDescription:'无'}}</view>
+
+                        <view class="btn">
+                            <van-button size="mini">立即购买</van-button>
+                        </view>
+                    </span>
+                </view>
+                <!-- 店主页面 -->
+                <view class="child maxChild {{itemc.LeftUseCount==0?'hui':''}}" wx:if="{{sf==1}}"
+                    wx:for="{{hotPro[active].data}}" wx:for-index="indexc" wx:for-item="itemc" wx:key="{{indexc}}"
+                    data-isok="{{itemc.LeftUseCount}}" bindtap="chooseCou" data-id="{{itemc.ID}}">
+                    <image src="{{itemc.ImageUrl1}}" mode="aspectFill"></image>
+                    <span class="detail">
+                        <!-- <view class="name">{{itemc.CardName?itemc.CardName:' '}}</view> -->
+                        <view class="price">
+                            剩余：{{itemc.LeftUseCount?itemc.LeftUseCount:0}}次 ¥{{itemc.CostPrice?itemc.CostPrice:0}}
+                        </view>
+                        <view class="val">用户ID：{{itemc.UserId?itemc.UserId:'无'}}</view>
+                        <view class="btn">
+                            购买时间：{{itemc.GetDate?itemc.GetDate:''}}
+                            <!-- <van-button size="mini">立即购买</van-button> -->
+                        </view>
+                    </span>
+                </view>
+                <!-- 客户页面 -->
+                <view class="child {{itemc.LeftUseCount==0?'hui':''}}" wx:if="{{sf==2}}"
+                    data-to="{{'/fuPackageA/fuCouHis/fuCouHis?id='+itemc.ProductId}}" bindtap="toFN"
+                    wx:for="{{hotPro[active].data}}" wx:for-index="indexc" wx:for-item="itemc" wx:key="{{indexc}}">
+                    <image src="{{itemc.ImageUrl1}}" mode="aspectFill"></image>
+                    <span class="detail">
+                        <!-- <view class="name">{{itemc.CardName?itemc.CardName:' '}}</view> -->
+                        <view class="price">
+                            剩余：{{itemc.LeftUseCount?itemc.LeftUseCount:0}}次 ¥{{itemc.CostPrice?itemc.CostPrice:0}}
+                        </view>
+                        <view class="val">可使用门店名称：{{itemc.StoreName?itemc.StoreName:'无'}}</view>
+                        <!-- <view>距离：{{itemc.Distance?itemc.Distance:'无'}}</view> -->
+                        <view class="btn">
+                            购买时间：{{itemc.GetDate?itemc.GetDate:''}}
+                            <!-- <van-button size="mini">立即购买</van-button> -->
+                        </view>
+                    </span>
+                </view>
+                <view class="noMore" wx:if="{{hotPro[active].finsh}}">
+                    没有更多的了~~~
+                </view>
+            </scroll-view>
+        </van-tab>
+    </van-tabs>
+
+
+
+    <!--  -->
+    <van-popup show="{{show}}" position="right" bind:close="onClose">
+        <scroll-view scrolltolower="150" scroll-y="true">
+            <view class="teamFu" wx:for="{{teahList}}" wx:key="{{index}}" bindtap="ChangeTC"
+                data-choose="{{item.choose}}" data-index="{{index}}" data-id="{{item.Id}}">
+                <span class="choose">
+                    <van-checkbox checked-color="#F56F68" value="{{item.choose}}"></van-checkbox>
+                </span>
+                <image src="{{item.HeadPortrait?item.HeadPortrait:item.Picture}}" />
+                <view class="contant">
+                    <view class="name_cla">
+                        <span class="name">{{item.Name?item.Name:'无'}}</span>
+                    </view>
+                    <view class="shen_phone">
+                        <!-- <span class="shen">省代</span> -->
+                        <span class="phone">电话：{{item.CellPhone?item.CellPhone:'无'}}</span>
+                    </view>
+                </view>
+            </view>
+            <view class="noMore">
+                没有更多的了~~~
+            </view>
+        </scroll-view>
+        <van-button bindtap="okTeach">确定</van-button>
+    </van-popup>
+
+
+    <!--  -->
+    <!--  -->
+    <!-- <van-popup show="{{show}}" bindtap="onCloseP" position="bottom" bind:close="onCloseP">
+        <view class="tipFN">
+                <input catchtap value="{{Remark}}" placeholder="请输入备注，也可不填" bindinput="RemarkFN" />
+                <input catchtap value="{{Remark}}" placeholder="请输入备注，也可不填" bindinput="RemarkFN" />
+
+            <input catchtap value="{{Remark}}" placeholder="请输入备注，也可不填" bindinput="RemarkFN" />
+            <view class="ok">
+                <van-button catchtap="okFN" size="small">确定</van-button>
+            </view>
+        </view>
+    </van-popup> -->
+
+    <!--  -->
+    <view class="tip" wx:if="{{sf==1}}">
+        请选择卡券，然后勾选技师核销
+    </view>
+
+    <view class="tip" wx:if="{{sf==2}}">
+        可以选择卡券，然后选择记录去评价
+        
+    </view>
+</view>

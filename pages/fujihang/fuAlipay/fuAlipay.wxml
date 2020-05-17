@@ -1,0 +1,17 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-06-11 16:41:58 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-06-11 16:41:58 
+    支付宝页面
+*/ -->
+
+
+<view id="fuAlipay">
+    <view class="name">请用支付宝扫码支付，点击保存图片</view>
+    <view class="name" wx:if="{{imgUrl}}">项目</view>
+    <image mode="widthFix" wx:if="{{imgUrl}}" src="{{imgUrl}}" bindtap="saveImgFN" data-index="{{0}}"/>
+    <view wx:if="{{xfj}}" class="name">修复剂</view>
+    <image wx:if="{{xfj}}" mode="widthFix" src="{{xfj}}" bindtap="saveImgFN" data-index="{{1}}" />
+    <van-button size="small" bindtap="toFN">{{bc?'首页':'查看订单'}}</van-button>
+</view>

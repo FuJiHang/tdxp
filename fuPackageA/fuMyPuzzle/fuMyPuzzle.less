@@ -1,0 +1,205 @@
+page {
+    height: 100%;
+    overflow: hidden;
+}
+
+#fuMyPuzzle {
+    font-size: 26rpx;
+    color: #666;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+
+    // 功能
+    .van_order {
+        flex: 1;
+        color: #666;
+        overflow: hidden;
+
+        .van-tabs {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .van-tabs__content {
+            height: 100%;
+            overflow: hidden;
+            padding-bottom: 44px;
+            box-sizing: border-box;
+
+            .van-tabs__track {
+
+                height: 100%;
+                overflow: hidden;
+
+                .van-tab__pane {
+
+                    height: 100%;
+                    overflow: hidden !important;
+
+
+                    scroll-view {
+
+                        height: 100%;
+
+                        .noMore {
+                            font-size: 28rpx;
+                            color: #999;
+                            padding: 20rpx;
+                            text-align: center;
+                            box-sizing: border-box;
+                        }
+                    }
+                }
+            }
+        }
+
+        .van-tab--active {
+            color: red;
+        }
+
+        // 
+        .assem {
+            padding: 20rpx;
+            box-sizing: border-box;
+            background: white;
+
+            .topName {
+                padding: 20rpx 20rpx 0;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+
+                image {
+                    height: 32rpx;
+                    width: 32rpx;
+                }
+
+                .name {
+                    font-size: 32rpx;
+                    margin-left: 10rpx;
+                }
+            }
+
+            .childA {
+                position: relative;
+                border: 1px solid rgb(245, 245, 245);
+                margin-top: 20rpx;
+                padding: 20rpx;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                box-shadow: -10rpx 5rpx 10rpx rgb(228, 228, 228);
+
+                .proImg {
+                    height: 170rpx;
+                    width: 170rpx;
+                    border-radius: 20rpx;
+                    display: flex;
+                    justify-items: center;
+                    align-items: center;
+                    overflow: hidden;
+
+                    // position: relative;
+                    image {
+                        background: rgb(255, 249, 249);
+                        // position:absolute;
+                        height: 100%;
+                        // width:  180rpx;
+                    }
+                }
+
+                .contant {
+                    flex: 1;
+                    margin-left: 20rpx;
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+
+                    .ptcg {
+                        top: 30%;
+                        right: 30rpx;
+                        position: absolute;
+                        width: 100rpx;
+                        height: 100rpx;
+                    }
+
+                    .nameC {
+                        display: flex;
+                        align-items: center;
+
+                        .le {
+                            flex: 1;
+                            margin-right: 5rpx;
+                            font-weight: 800;
+                            color: #333;
+                            font-size: 30rpx;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 1; //超出多少行
+                            overflow: hidden;
+                            -webkit-box-orient: vertical;
+                            word-break: break-all;
+                        }
+
+                        .ri {
+                            font-size: 28rpx;
+                            color: #F56F68;
+                        }
+
+                    }
+
+                    .detail {
+                        margin: 10rpx 0;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2; //超出多少行
+                        overflow: hidden;
+                        -webkit-box-orient: vertical;
+                        word-break: break-all;
+                        color: #999;
+                    }
+
+                    .price {
+                        flex: 1;
+                        display: flex;
+                        align-items: flex-end;
+                        color: #999;
+
+                        .mon {
+                            color: #F56F68;
+                            font-size: 32rpx;
+                        }
+
+                        .monO {
+                            font-size: 29rpx;
+                            flex: 1;
+                            margin: 0 10rpx;
+                        }
+
+                        .num {
+                            margin-right: 10rpx;
+                        }
+
+                        .btn {
+
+                            .van-button {
+                                border-radius: 30rpx;
+                                background: #F56F68;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.noMore {
+    font-size: 28rpx;
+    color: #999;
+    padding: 20rpx;
+    text-align: center;
+    box-sizing: border-box;
+}

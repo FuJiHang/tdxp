@@ -1,0 +1,389 @@
+/* pages/myCommission/myCommission.wxss */
+/* pages/myIntegral/myIntegral.wxss */
+
+page {
+  height: 100%;
+  background: #fff;
+}
+
+.myCommission {
+  background-color: #fff;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+
+  // 
+
+  .topNavG {
+    background: linear-gradient(32deg, rgba(255, 45, 91, 1) 0%, rgba(255, 43, 149, 1) 100%);
+    border-radius: 8rpx;
+    margin: 24rpx 22rpx;
+    padding: 32rpx 48rpx 42rpx;
+    color: #fff;
+    font-size: 22rpx;
+
+    .val {
+      font-size: 58rpx;
+      font-weight: bold;
+      color: #FFF4A5;
+      margin-bottom: 10rpx;
+    }
+
+    .price {
+      display: flex;
+      justify-content: space-between;
+
+      .child {
+        display: flex;
+        align-items: center;
+
+        .color {
+          font-size: 28rpx;
+          font-weight: bold;
+          color: #FFF4A5;
+        }
+      }
+    }
+  }
+
+  // 
+  .van-tabs__line {
+    background: #FB1F4F;
+  }
+
+  .van-tab--active {
+    color: #FB1F4F;
+    font-size: 30rpx;
+  }
+
+  .van-ellipsis {
+    font-weight: bold;
+  }
+
+  van-tabs {
+    height: 100%;
+    overflow: hidden;
+
+    .van-tabs {
+      height: 100%;
+      overflow: hidden;
+
+      .van-tabs__content {
+        height: 100%;
+        overflow: hidden;
+
+        .van-tabs__track {
+          height: 100%;
+          overflow: hidden;
+
+          .van-tab__pane {
+            height: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
+
+            scroll-view {
+              height: 100%;
+              overflow: auto;
+
+              .noMore {
+                font-size: 28rpx;
+                color: #999;
+                padding: 20rpx 20rpx 350rpx;
+                text-align: center;
+                box-sizing: border-box;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+
+
+
+  .topNav {
+    position: relative;
+
+    image {
+      width: 100%;
+    }
+
+    .detailAll {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+
+      .val {
+        font-size: 40rpx;
+        font-weight: bold;
+        margin-bottom: 15rpx;
+      }
+
+      .name {
+        font-size: 30rpx;
+      }
+    }
+  }
+
+  .integral-titile {
+    width: 750rpx;
+    height: 260rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .tixian {
+      position: absolute;
+      right: 20rpx;
+      top: 20rpx;
+      font-size: 30rpx;
+      color: white;
+    }
+  }
+
+  .integral-titile .titile-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    z-index: 999;
+    position: relative;
+
+  }
+
+  .titile-box image {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .titile-box .commission-num {
+    font-family: 'BebasNeue-Regular';
+    font-size: 60rpx;
+    color: #fff;
+  }
+
+  .titile-box .my-integral {
+    font-size: 24rpx;
+    color: #fff;
+    text-align: center;
+    margin-top: 16rpx;
+  }
+
+  .his-commission {
+    background-color: #f7f7f7;
+    font-size: 26rpx;
+    color: #666666;
+    display: flex;
+    align-items: center;
+    padding: 20rpx;
+    box-sizing: border-box;
+  }
+
+  .his-commission .flexHis {
+    flex: 1;
+  }
+
+  .his-integral text {
+    margin-left: -4rpx;
+    margin-top: 2rpx;
+    line-height: 90rpx;
+  }
+
+  .integral-record-box {
+
+    color: #666;
+    position: relative;
+
+    .yfz {
+      top: 20rpx;
+      left: 60%;
+      position: absolute;
+      height: 100rpx;
+      width: 100rpx;
+    }
+
+    .topFuInt {
+      font-size: 30rpx;
+      display: flex;
+      padding: 20rpx;
+      box-sizing: border-box;
+
+      .name {
+        flex: 1;
+        margin-right: 20rpx;
+
+      }
+
+      .pic {
+        color: #FF853C;
+        font-weight: 800;
+      }
+    }
+
+    .mb {
+      padding-top: 0;
+    }
+  }
+
+  .integral-record-item {
+    width: 750rpx;
+    height: 98rpx;
+  }
+
+  .record-titile {
+    position: relative;
+  }
+
+  .record-titile::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #e5e5e5;
+    position: absolute;
+    top: 98rpx;
+    left: 0;
+  }
+
+  .integral-record-item .record-titile {
+    font-size: 24rpx;
+    color: #666666;
+    display: flex;
+    flex-direction: column;
+    padding-top: 14rpx;
+  }
+
+  .record-titile .record-info {
+    padding-top: 14rpx;
+    color: #666666;
+    font-size: 24rpx;
+  }
+
+  .record-titile .record-info text {
+    margin: 5rpx;
+  }
+
+  .record-comp {
+    position: absolute;
+    top: 30rpx;
+    right: 60rpx;
+  }
+
+  .record-comp .comp-jia,
+  .record-comp .comp-jian {
+    font-size: 24rpx;
+  }
+
+  .record-comp .comp-num,
+  .record-comp .comp-num {
+    font-size: 28rpx;
+  }
+}
+
+
+.integral-record-box {
+  padding: 0 22rpx;
+  background: #fff;
+  color: #333;
+  border-bottom: 14rpx solid rgba(245,245,245,1);
+  .top {
+    padding: 30rpx 0;
+    font-size: 24rpx;
+    font-weight: bold;
+  }
+
+  .proImgG {
+    display: flex;
+    align-items: center;
+    font-size: 24rpx;
+    color: #666;
+    margin-bottom: 40rpx;
+    image {
+      width: 130rpx;
+      height: 130rpx;
+    }
+
+    .valG {
+      margin-left: 18rpx;
+      font-weight: bold;
+      .name {
+        width: 80%;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; //超出多少行
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        word-break: break-all;
+        font-size: 26rpx;
+  
+        margin-bottom: 20rpx;
+      }
+
+      .val {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .pic {
+          color: #FB1F4F;
+        }
+      }
+    }
+  }
+
+  .stName {
+    font-size: 22rpx;
+    font-weight: bold;
+    color: #666;
+
+    .name {
+      color: #333;
+      font-size: 24rpx;
+    }
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 18rpx 0 28rpx;
+    .child {
+      font-size: 22rpx;
+      color: #666;
+
+      .color {
+        font-size: 24rpx;
+        font-weight: bold;
+        color: #333;
+      }
+    }
+  }
+}
+
+.proImg {
+  display: flex;
+  padding: 0 20rpx;
+
+  image {
+    width: 30%;
+    height: 1rpx;
+  }
+
+  .val {
+    font-size: 32rpx;
+    margin-left: 20rpx;
+  }
+}

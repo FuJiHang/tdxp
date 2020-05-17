@@ -1,0 +1,63 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-08 13:49:44 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-08 13:49:44 
+    卡券下单
+    */ -->
+<view id="fuBuyCoupon">
+    <view class="help">
+        下单后可到附近门店消费～
+    </view>
+    <!--  -->
+    <view class="chooseType">
+        <view class="contant">
+            <span class="flex">
+                <view class="name_phone">
+                    {{getStore.StoreName}}
+                </view>
+                <view class="address"> {{getStore.RegionName}}{{getStore.Address}}</view>
+                <view class="address"> 距您{{getStore.Distance}}，步行大概需要{{getStore.Time}}分钟</view>
+            </span>
+            <image  class="mini" bindtap="openMap" mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/addressKa.png" />
+        </view>
+    </view>
+    <!--  -->
+    <view class="info">
+        <view class="top">
+            <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/icon_shop%20name.png" />
+            商品信息
+        </view>
+        <view class="product">
+            <image mode="aspectFill" src="{{getProject.background[0]}}" />
+            <span class="contant">
+                <view class="name">{{getProject.Name}}</view>
+                <view class="pri_num">
+                    <span class="pri">¥{{getProject.Price}}</span>
+                    <span class="num">
+                        x1
+                    </span>
+                </view>
+            </span>
+        </view>
+    </view>
+
+    <!--  -->
+    <view class="list" bindtap="toFN">
+        <span class="name flex">店铺优惠</span>
+        <span class="val">{{couponId.id!=0?'已选择优惠券价格：'+couponId.pic+'元':'请选择优惠券'}}</span>
+        <image class="mini" mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/more_1.png" />
+    </view>
+    <view class="list">
+        <span class="name flex"></span>
+        <span class="val big">
+            共1件 合计：
+        </span>
+        <span class="val pri big">
+            ￥{{allPrice}}
+        </span>
+    </view>
+    <view class="btn" bindtap="payOrder">
+        <van-button round>提交订单</van-button>
+    </view>
+</view>

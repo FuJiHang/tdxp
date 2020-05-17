@@ -1,0 +1,58 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-11 17:59:57 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-11 17:59:57 
+    我的订单详情二(自提)
+ */ -->
+<view id="fuOrderDetail">
+    <!--  -->
+    <view class="top">
+        <image mode="widthFix" src="{{imgUrl+'index009.jpg'}}" />
+        <view class="tip">-  展示核销二维码  -</view>
+        <view class="hxm">核销码 :827368</view>
+    </view>
+    <!--  -->
+    <view class="isGet">核销码 : 827368</view>
+    <!--  -->
+    <view class="store_order">
+        <view class="name">广州市越秀区创举大厦店</view>
+        <view class="val">广东省广州市越秀区南路185号创举大厦8楼</view>
+        <view class="phone">17826357901</view>
+        <view class="order">
+            <span class="id">订单编号：448745653121654674894</span>
+            <span class="status">待核销</span>
+        </view>
+        <view class="time">订单日期：2018.04.05  12:45:59</view>
+    </view>
+    <!--  -->
+    <view class="detail">
+        <view class="product">
+            <image mode="aspectFill" src="{{imgUrl+'index009.jpg'}}" />
+            <span class="contant">
+                <view class="name">雅诗兰黛红石榴界面乳</view>
+                <view class="sku">
+                    <span>规格：200ml</span>
+                </view>
+                <view class="pri_num">
+                    <span class="flex">￥234</span>
+                    X2
+                </view>
+            </span>
+        </view>
+        <view class="box">
+            <view class="child">
+                <span class="flex">商品合计</span>
+                <span class="val">￥50000.00</span>
+            </view>
+            <view class="child">
+                <span class="flex">价格调整</span>
+                <span class="val">￥50000.00</span>
+            </view>
+            <view class="child">
+                <span class="flex">实付</span>
+                <span class="val  pri">￥50000</span>
+            </view>
+        </view>
+    </view>
+</view>

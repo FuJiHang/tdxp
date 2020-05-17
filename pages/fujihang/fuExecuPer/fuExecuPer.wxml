@@ -1,0 +1,136 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-06-19 14:52:12 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-06-19 17:01:38
+    各个身份的业绩统计
+ */ -->
+<view id="fuExecuPer">
+    
+    <!--  -->
+    <view class="navTopKa">
+        <view class="Price">
+            <view class="name"> 
+                <text decode="{{true}}" space="{{true}}">&nbsp;</text>
+                 {{type==1?'今日收入金额':'预存款（元）'}}</view>
+            <view class="pri_btn"><span>￥{{type==1?dataList.TodayGetTotal:dataList.Balance}}</span>
+                <van-button size="mini" bindtap="toFN" data-url="/pages/fujihang/fuWithdrawal/fuWithdrawal">提现</van-button>
+            </view>
+        </view>
+        <view class="storePr" wx:if="{{type==4}}">
+            <span wx:for="{{store}}" wx:key="{{index}}">{{item}}
+            </span>
+        </view>
+        <view class="PriceList">
+            <span class="child " wx:for="{{price}}" wx:key="{{index}}">
+                <view class="cname">
+                    <span class="dian {{item.bg}}"></span>
+                    {{item.name}}
+                </view>
+                 <view class="mon">
+                    {{item.mon}}
+                </view>
+            </span>
+        </view>
+    </view>
+
+    <!--  -->
+    <view class="detail">
+        <view class="top" bindtap="toFN" data-url="/pages/fujihang/fuAchieveDet/fuAchieveDet">
+            <!-- options.type=4 //type:0执行者,1团队长,2技师,3渠道,4门店 -->
+            <span class="name">{{type==0||type==3?'业绩明细':type==1?'今日业绩排行榜':'订单详情'}}</span>
+            <image  bindtap="showFN" src="{{imgUrl+'saixuan.png'}}" wx:if="{{type!=4}}" />
+            {{type!=4?'筛选':''}}
+            <van-icon name="arrow" size="30rpx" color="#999"  wx:if="{{type==4}}" />
+        </view>
+        <scroll-view scroll-y="true" bindscrolltolower="getData">
+            <view class="childDet" wx:for="{{orderS}}" wx:key="{{index}}" data-open="{{item.openDet}}" data-index='{{index}}' bindtap="openFN">
+                <view class="detailMin" wx:if="{{type!=2}}">
+                    <view class="time">{{item.OrderDate}}</view>
+                    <span class="tdz ">
+                        <view class="name yh" wx:if="{{type!=2}}">{{type==1?(item.ExcutorName?item.ExcutorName:'无'):''}}
+                            {{type!=1?(item.TechnicianHeadName?item.TechnicianHeadName:'无'):''}}
+                            <image src="{{imgUrl+(type==1?'xxsq.png':'team01.png')}}" mode="widthFix" /></view>
+                        <view class="name yh" wx:if="{{type==2}}">
+                            {{item.ActivityName?item.ActivityName:'无'}}
+                        </view>
+                        <view class=" yh mini" wx:if="{{type==3}}">
+                            <image src="{{imgUrl+'store-16.png'}}" mode="widthFix" />
+                            {{item.StoreName?item.StoreName:'无'}}
+                        </view> 
+                    </span>
+                    <span class="cout"  wx:if="{{type!=2&&type!=3}}">
+                        <view class="name">{{type==1||type==4||type==0?(item.TechniciaInfo[0].Name?item.TechniciaInfo[0].Name:'无'):''}}
+                        </view>
+                        <view class="ico">{{type==1?item.TechniciaInfo[0].GradeName:'高级头疗师'}}</view>
+                    </span>
+                    <span class="proj cout" wx:if="{{type!=4&&type!=3}}">
+                        <view class="name" wx:if="{{type!=2}}">{{item.TechniciaInfo[1].Product?item.TechniciaInfo[1].Product:'无'}}</view>
+                        <view class="ico yh">
+                            <image src="{{imgUrl+'store-16.png'}}" mode="widthFix" />
+                            {{item.StoreName?item.StoreName:'无'}}
+                        </view> 
+                    </span>
+                    <span class="cout" wx:if="{{type==4||type==3}}">{{item.OrdersCount}}单</span>
+                    <span class="money">￥{{type!=4?item.OrderTotal:''}}{{type==4||type==3?item.OrdersTotal:''}}
+                    </span>
+                    <van-icon name="{{item.openDet?'arrow':'arrow-down'}}" size="30rpx"  />
+                </view>
+                <!-- 店家除外 -->
+                <view class="detailMax" hidden="{{item.openDet}}" wx:if="{{type!=4&&type!=3}}">
+                    <view class="flexGP color">
+                        <span class="flex_le">订单编号：{{item.OrderId}}</span>
+                        <span>日期:{{item.timeFJ}}</span>
+                    </view>
+                    <view class="flexGP">
+                        <span class="flex_gp">顾客名字：{{item.UserName}}</span>
+                        <span class="flex_gp">头疗师：{{item.TechniciaInfo[1].Name}}</span>
+                        <span class="flex_gp">执行团队长：{{item.TechnicianHeadName}}</span>
+                    </view>
+                    <view class="flexGP">
+                        <span class="flex_gp">项目名：{{item.TechniciaInfo[1].Product}}</span>
+                        <span class="flex_gp">修复剂：{{item.IsIncludeRestorer=='False'?0:1}}</span>
+                        <span class="flex_gp">代金券：{{item.IsIncludeCoupon=='False'?0:1}}</span>
+                    </view>
+                    <view class="rightSJ">实收金额:{{item.Paytotal?item.Paytotal:item.PayTotal}}</view>
+                </view>
+                <!-- 店家 -->
+                 <view class="detailMax" wx:for-item="itemoc" wx:key="indexoc" wx:for-index="indexoc" wx:for="{{item.OrderDetails}}" hidden="{{item.openDet}}" wx:if="{{type==4||type==3}}">
+                    <view class="flexGP color">
+                        <span class="flex_le">订单编号：{{itemoc.OrderId}}</span>
+                        <span>日期:{{itemoc.timeFJ}}</span>
+                    </view>
+                    <view class="flexGP">
+                        <span class="flex_gp">顾客名字：{{itemoc.UserName}}</span>
+                        <span class="flex_gp">头疗师：{{itemoc.TechniciaInfo[1].Name}}</span>
+                        <span class="flex_gp">执行团队长：{{itemoc.TechnicianHeadName}}</span>
+                    </view>
+                    <view class="flexGP">
+                        <span class="flex_gp">项目名：{{itemoc.TechniciaInfo[1].Product}}</span>
+                        <span class="flex_gp">修复剂：{{itemoc.IsIncludeRestorer=='False'?0:1}}</span>
+                        <span class="flex_gp">代金券：{{itemoc.IsIncludeCoupon=='False'?0:1}}</span>
+                    </view>
+                    <view class="rightSJ">实收金额:{{itemoc.PayTotal}}</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+
+
+    <!--  -->
+    <view class="btnDay">
+        <span class="child {{type==4?'noWidth':''}}">
+            今日单数：{{type!=3?(dataList.TodayOrdersNum?dataList.TodayOrdersNum:'0'):''}}
+            {{type==3?(dataList.TodayOrders?dataList.TodayOrders:'0'):''}}单
+        </span>
+        <span class="last {{type==4?'noWidth':''}}">
+            <view class="zon">结算金额：￥{{dataList.SettleAmount}}</view>
+            <view class="zon">提成金额：￥{{dataList.SplittinFromOrders}}</view>
+        </span>
+        <span class="compla" wx:if="{{type==4}}">
+            <image src="{{imgUrl+'kefu.png'}}" />
+            <view class="val">我要投诉</view>
+        </span>
+    </view>
+
+</view>

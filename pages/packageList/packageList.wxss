@@ -1,0 +1,177 @@
+/* pages/packageList/packageList.wxss */
+
+page {
+  background: #f7f7f7;
+  box-sizing: border-box;
+  padding-bottom: 110rpx;
+}
+
+
+.title {
+  width: 100%;
+  height: 95rpx;
+  line-height: 95rpx;
+  font-size: 28rpx;
+  color: #000;
+  font-weight: bold;
+  padding-left: 30rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.item-box {
+  box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  padding: 2%;
+}
+
+.item-box .item {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 30rpx;
+  border-radius: 4px;
+  display: flex;
+  margin-bottom: 20rpx;
+}
+
+.item image {
+  width: 120rpx;
+  height: 120rpx;
+  background-color: green;
+  flex-shrink: 0;
+}
+
+.item-right {
+  /* margin:0 30rpx; */
+  margin-left: 30rpx;
+  width: 100%;
+}
+
+.item-right .item-title {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.item-right .item-title .price {
+  color: #f56f68;
+  font-size: 26rpx;
+}
+
+.item-info {
+  font-size: 26rpx;
+  color: #c9c9c9;
+  margin-top: 20rpx;
+  display:-webkit-box;
+  -webkit-line-clamp: 3; 
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break:break-all;
+}
+
+.item-info .item-info-icon {
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+  padding: 2rpx 8rpx;
+  background-color: #f56f68;
+  border-radius: 10rpx;
+  margin-right: 6rpx;
+  font-size: 26rpx;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  width: 750rpx;
+  height: 98rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom .b-left {
+  padding: 28rpx;
+  font-size: 26rpx;
+  color: #999;
+  margin-right: 5rpx;
+}
+
+.bottom .b-left .comp-price {
+  color: red;
+}
+
+.bottom .b-right {
+  width: 200rpx;
+  height: 100%;
+  background-color: #f56f68;
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 98rpx;
+  text-align: center;
+}
+
+/* 选择门店 */
+
+.selcetStore {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.selcetStore .title {
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+.radioPackList {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background: #fff;
+}
+
+.radioItems {
+  width: 100%;
+  background: #fff;
+  display: flex;
+}
+
+.radioItems image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.radioItems .radioRight {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.radioItems .radioRight .radioName {
+  color: #333;
+  font-size: 32rpx;
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.radioItems .radioRight .radioName view:nth-child(1) {
+  flex: 1;
+  display:-webkit-box;
+  -webkit-line-clamp: 1; 
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break:break-all;
+}
+.radioItems .radioRight .radioName view:nth-child(2) {
+  color: #61B6FD;
+  font-size: 32rpx;
+}
+
+.radioItems .radioRight .radioAddress {
+  color: #999;
+  font-size: 28rpx;
+}

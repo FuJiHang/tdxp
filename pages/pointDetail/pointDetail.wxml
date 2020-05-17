@@ -1,0 +1,61 @@
+<!--pages/pointDetail/pointDetail.wxml-->
+<!--轮播-->
+<view class='banner-wrap'>
+  <swiper  autoplay='true' interval='3000' circular='true' bindtap="previewImage" style='height: {{swiperH}}px'>
+    <swiper-item>
+      <image mode='widthFix' style='width:100%' src="{{dataInfo.ImageUrl}}" bindload='onLoadImg' />
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 商品详情 -->
+<view class='pointInfo'>
+   <!-- <view class='needPoint'>
+     兑换方式一：
+     <image src="{{imgUrl+'fujinQian.png'}}" />
+    <span>{{dataInfo.MaxPoint?dataInfo.MaxPoint:0}}</span>
+    积分
+  </view>
+  <view class='needPoint'>
+      兑换方式二：
+      <image src="{{imgUrl+'fujinQian.png'}}" />
+     <span>{{dataInfo.ComboPoint?dataInfo.ComboPoint:0}}</span>
+     积分 +
+     <span>{{dataInfo.ComboPrice?dataInfo.ComboPrice:0}}</span>
+     元
+   </view> -->
+  <view class='title'>{{dataInfo.Name}}</view>
+  <view class='desc'>{{dataInfo.ShortDescription}}</view>
+  <view class="detfu">
+    <span class="child">
+      <van-icon name="like" size="33rpx" color="#999"/>
+      已有{{dataInfo.CollectionCount}}人收藏
+    </span>
+    <span class="child">
+      <image src="{{imgUrl+'fujinQian.png'}}" />
+      已有{{dataInfo.BuyCount}}人换购
+    </span>
+  </view>
+</view>
+<!-- 商品图片 -->
+<view class='detailImg'>
+  <view class='line'>
+    <span>商品详情</span>
+  </view>
+  <view class='imgArr' wx:for="{{detailImg}}" wx:key="{{index}}">
+    <image mode='widthFix' src="{{item}}" wx:if="{{item}}"></image>
+  </view>
+</view>
+<!-- 按钮 -->
+<view class="fuBtn" wx:if="{{!isSee}}">
+    <view class='submit colorT' bindtap="toPointOrder">
+        {{dataInfo.NeedPoint?dataInfo.NeedPoint:0}}积分兑换
+    </view>
+    <view class='submit' data-type="true" bindtap="toPointOrder">
+        {{dataInfo.ComboPoint?dataInfo.ComboPoint:0}}积分+{{dataInfo.ComboPrice?dataInfo.ComboPrice:0}}元兑换
+    </view>
+</view>
+
+<view class="btn" wx:if="{{isSee}}">
+  <van-button round bindtap='payModal'>领取</van-button>
+</view>
+

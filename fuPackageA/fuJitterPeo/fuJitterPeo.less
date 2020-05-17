@@ -1,0 +1,480 @@
+page {
+    height: 100%;
+    font-size: 26rpx;
+    background: #1a1c2b;
+}
+
+#fuJitterPeo {
+    color: #fff;
+
+    // 
+    .bgTop {
+        position: relative;
+        height: 300rpx;
+        overflow: hidden;
+
+        image {
+
+            width: 100%;
+        }
+
+        .black {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, .5);
+        }
+    }
+
+    // 
+    .navTop {
+        // margin-top: 50rpx;
+        padding: 0 20rpx ;
+        box-sizing: border-box;
+
+        .people {
+            display: flex;
+            align-items: center;
+            // margin-top: -30rpx;
+            padding: 30rpx 0;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 9;
+            border-bottom: 1px solid rgb(24, 4, 47);
+            .flex{
+                flex: 1;
+                margin: 0 20rpx;
+            }
+            .img {
+                image {
+                    height: 180rpx;
+                    width: 180rpx;
+                    border-radius: 50%;
+                    border: 4px solid #1a1c2b;
+                }
+            }
+
+            .guanzhu {
+                // width: 40%;
+               
+
+                .van-button {
+                    border: none;
+                    width: 100%;
+                    padding: 0 20rpx;
+                    box-sizing: border-box;
+                    color: #fff;
+                    background: #fe2a53;
+                }
+
+            }
+        }
+
+        .name {
+            // margin: 20rpx 0;
+            margin-bottom: 20rpx;
+            font-size: 40rpx;
+        }
+
+        .bc {
+            display: flex;
+            align-items: center;
+
+            image {
+                height: 40rpx;
+                width: 40rpx;
+                margin-right: 20rpx;
+            }
+        }
+
+        .sign {
+            margin-top: 20rpx;
+            color: rgb(214, 214, 214);
+        }
+
+        .funtion {
+            display: flex;
+            align-items: center;
+            margin: 25rpx 0 30rpx;
+
+            .child {
+                display: flex;
+                align-items: center;
+
+                image {
+                    height: 30rpx;
+                    width: 30rpx;
+                    margin-right: 5rpx;
+                }
+
+                padding: 10rpx 20rpx;
+                border-radius: 10rpx;
+                color: #f4c913;
+                background: rgba(255, 237, 79, 0.2);
+                margin-right: 20rpx;
+            }
+        }
+
+        .hz_gz_fs {
+            display: flex;
+            align-items: center;
+            .flex{
+                flex: 1;
+            }
+            .child {
+                font-size: 28rpx;
+                margin-right: 20rpx;
+
+            }
+            .red{
+                color: #fe2a53;
+                font-size: 30rpx;
+            }
+        }
+    }
+
+    .contant {
+        .van-tabs__wrap {
+            background: #1a1c2b;
+        }
+
+        .van-hairline--top-bottom:after {
+            border-width: 0 0;
+        }
+
+        .van-tab--active {
+            color: #e9e9ec;
+        }
+
+        .van-tab__pane{ 
+            display: flex ;
+            flex-wrap: wrap;
+            margin-bottom: 800rpx;
+
+                
+            
+
+        }
+        .goods {
+            width: 33.33%;
+            padding: 3rpx;
+            box-sizing: border-box;        
+            position: relative;
+            image {
+                height: 280rpx;
+                width: 100% ;
+            }
+            .btn{
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                display: flex ;
+                align-items: center;
+                color: #e9e9ec;
+                padding: 10rpx 15rpx;
+                box-sizing: border-box;
+                .van-icon{
+                    margin-right: 10rpx;
+                }
+            }
+            .check{
+                position: absolute;
+                top: 10rpx;
+                right: 10rpx;
+            }
+        }
+
+    }
+
+    // 
+    .pyq{    
+        padding: 20rpx;
+        box-sizing: border-box;
+        width: 100% ;
+        border-bottom: 3px solid #22222c  ;
+        .logo_name{
+            color: #e7e8ed;
+            display: flex;
+            align-items: center;
+            image{
+                height: 100rpx;
+                width: 100rpx;
+                border-radius: 50%;
+                margin-right: 20rpx;
+            }
+        }
+        .title{
+            color:#e6e6f2;
+            font-size: 40rpx;
+            margin: 20rpx 0;
+            display:-webkit-box;
+            -webkit-line-clamp: 3; //超出多少行
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            word-break:break-all;
+        }
+        .video{
+            position: relative;
+            .play{
+                position: absolute;
+                bottom: 10rpx;
+                right: 10rpx;
+                opacity: .6;
+            }      
+            video,image{ 
+                border-radius: 20rpx;
+                width: 100%;
+                // height: 380rpx;
+            }
+        }
+        .funtion_time{
+            display: flex;
+            align-items: center;
+            padding: 20rpx 0;
+            box-sizing: border-box;
+            .time{
+                flex: 1;
+                color: #898993;
+            }
+            .flex{
+                color: #e8e9ee;
+                display: flex;
+                align-items: center;
+                .child{
+                    display: flex;
+                    align-items: center;
+                    margin-right: 20rpx;
+                    
+                    image{
+                        width: 60rpx;
+                        height: 60rpx;
+                        margin-right: 10rpx;
+                    }
+                }
+            }
+        }
+        .evaluate{
+            background: #17171f;
+            border-radius: 10rpx;
+            .zan{
+                color: #c5c6ca;
+                padding: 20rpx;
+                box-sizing: border-box;
+                border-bottom: 1px solid #23232d;
+            }
+            .allEva{
+                color: #8b8b93;
+                font-size: 40rpx;
+                padding: 20rpx;
+                box-sizing: border-box;
+            }
+            .btn{
+                color: #8b8b95;
+                padding:0 20rpx 20rpx;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                image{
+                    width: 30rpx;
+                    height: 30rpx;
+                    margin-right: 20rpx;
+                }
+            }
+        }
+
+    }
+
+    // 
+    .navTopDing{
+        position: fixed;
+        left: 0;top: 0;
+        width: 100%;
+        height: 10%;
+        background: #1a1c2b ;
+        display: none;
+        align-items: flex-end;
+        font-size: 30rpx;
+        padding-left: 20rpx;
+        box-sizing: border-box;
+        z-index: 80;
+        .name{
+            width: 40%;
+        }
+        .guanzhu {
+            margin-left: 20rpx;
+            .van-button {
+                border: none;
+                box-sizing: border-box;
+                color: #fff;
+                background: #fe2a53;
+            }
+
+        }
+    }
+    .see{
+        display: flex;
+    }
+}
+
+// 
+.nearTop{
+    .van-tabs__wrap{
+        background: #1a1c2b !important;
+        top: 10% !important;        
+    }
+}
+
+ // 搜索框
+ .seachMT{
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 20rpx 20rpx 0;
+    box-sizing: border-box;
+    margin-bottom: 20rpx;
+    .seachbg{
+        margin-right: 10rpx;
+        flex: 1;
+        align-items: center;
+        display: flex;
+        background: #EEEEEE;
+        border-radius: 40rpx;
+        image{
+            margin-left: 20rpx;
+            height: 40rpx;
+            width: 40rpx;
+        }
+        input{
+            height: 70rpx;
+            font-size: 28rpx;
+            margin:0 20rpx;
+            flex: 1;
+        }
+    }
+    .touxian{
+        margin-right: 20rpx;
+        height: 80rpx;
+        width: 80rpx;
+        border-radius: 50%;
+    }
+    .van-button{
+        border:none;
+        background: none;
+    }
+}
+
+
+// 
+.Comment {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: .3s;
+    transform: translateY(100%);
+    .contantCom{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70%;
+        background: white;
+        border-radius: 20rpx 20rpx 0 0;
+        display: flex;
+        flex-direction: column;
+        .listDiv{
+            flex: 1;
+            overflow: hidden;
+            padding: 0 20rpx;
+            box-sizing: border-box;
+            scroll-view{
+                overflow: auto;
+                height: 100%;
+            }
+            .peopleHt{
+                display: flex;
+                padding:20rpx 0rpx ;
+                box-sizing: border-box;
+                border-bottom: 1px solid rgb(240, 240, 240);
+                .pt{
+                    height: 80rpx;
+                    width: 80rpx;
+                    border-radius: 50%;
+                }
+                .contant{
+                    flex: 1;
+                    margin-left: 20rpx;
+                    padding-top: 10rpx;
+                    box-sizing: border-box;
+                    .name{
+                        font-size: 28rpx;
+                        color: #999;
+                    }
+                    .title{
+                        .time{
+                            font-size: 24rpx;
+                            color: #999;
+                        }
+                    }
+                    .huiFu{
+                        display: flex;
+                        padding:20 0rpx ;
+                        box-sizing: border-box;
+                        margin-top: 20rpx;
+                        .ht{
+                            height: 50rpx;
+                            width: 50rpx;
+                            border-radius: 50%;
+                        }
+                        .contantH{
+                            flex: 1;
+                            margin-left: 20rpx;
+    
+                            .name_type{
+                                .na{
+                                    color: #999;
+                                }
+                                .type{
+                                    border-radius: 30rpx;
+                                    font-size: 24rpx;
+                                    padding:10 5rpx ;
+                                    background: rgb(240, 240, 240);
+                                    box-sizing: border-box;
+                                }
+                            }
+                            .rtext{
+                                font-size: 28rpx;
+                                .time{
+                                    font-size: 24rpx;
+                                    color: #999;
+                                }
+                            }
+                        } 
+                    }
+                }
+            }
+
+        }
+        .input{
+            height: 40rpx;
+        }
+    }
+}
+
+.isComShow{
+    transform: translateY(0%);
+
+}
+// 
+.noMore{
+    font-size: 28rpx;
+    color: #999;
+    padding: 20rpx 20rpx 160rpx;
+    text-align: center;
+    box-sizing: border-box;
+}

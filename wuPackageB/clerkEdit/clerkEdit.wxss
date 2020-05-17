@@ -1,0 +1,98 @@
+#clerk_edit {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#clerk_edit .content {
+  font-size: 30rpx;
+  color: #333;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20rpx;
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+}
+#clerk_edit .content .title {
+  flex: 1;
+}
+#clerk_edit .content .inputstyle {
+  flex: 4;
+}
+#clerk_edit .content .img {
+  width: 17rpx;
+  height: 32rpx;
+}
+#clerk_edit .body-view {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background-color: #fff;
+}
+#clerk_edit .del {
+  width: 90%;
+  margin-bottom: 30rpx;
+  border-radius: 50rpx;
+  border: 1px solid red;
+  color: red;
+  position: absolute;
+  left: 5%;
+  bottom: 150rpx;
+}
+#clerk_edit .btn-area {
+  width: 100%;
+  position: fixed;
+  bottom: 50rpx;
+}
+#clerk_edit .btn-area .submit {
+  width: 90%;
+  border-radius: 50rpx;
+  color: #fff;
+  background-color: red;
+}
+.level {
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  font-size: 30rpx;
+  color: #666;
+  z-index: 10;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  height: 327rpx;
+}
+.level .view_search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #3399FF;
+  padding: 20rpx 0;
+}
+.level .level_wrap {
+  height: 230rpx;
+  overflow: auto;
+}
+.level .level_wrap .level_list {
+  text-align: center;
+  padding: 20rpx 0;
+  border-top: 1rpx solid #eee;
+}
+.level .active {
+  color: red;
+}
+.zhezhao {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 8;
+}

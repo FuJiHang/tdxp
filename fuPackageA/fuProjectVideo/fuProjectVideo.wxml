@@ -1,0 +1,111 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-07 17:04:13 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-07 17:04:13 
+    总部首页项目视频导购页面
+*/ -->
+<view id="fuProjectVideo">
+    <swiper current="{{showTH}}" bindchange="playMusic" data-data="{{item}}" bindanimationfinish="finshFN" class="swiper" duration="300" easing-function="easeInOutCubic" vertical="true">
+        <swiper-item wx:for="{{tuijian.data}}" wx:key="{{index}}">
+            <image src="{{item.ImageUrlsArr[0]}}" mode="aspectFill" wx:if="{{!item.isVideo}}" />
+            <block wx:if="{{item.isVideo}}">
+                <image src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}" mode="aspectFill" wx:if="{{showTH!=index}}" />
+                <image style="display:none;" bindload="getVideo" src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}" mode="aspectFill" wx:if="{{showTH==index}}" />
+      
+                <video muted="{{item.MusicUrl}}" bindtimeupdate="bindtimeupdateFN" object-fit="{{quanOrBan?'cover':'contain'}}" show-center-play-btn="{{false}}" loop="{{true}}" wx:if="{{showTH==index}}" autoplay="{{true}}" controls='{{false}}' src="{{item.ImageUrls}}"></video>
+            </block>
+            <audio hidden="{{true}}" wx:if="{{item.MusicUrl&&showTH==index}}" src="{{item.MusicUrl}}" id="myAudio"></audio>
+        </swiper-item>
+    </swiper>
+</view>
+<view class="navTop"></view>
+<!-- 邀请提示 -->
+<view class="getPeople" wx:if="{{tuijian.data[showTH].Rebate}}">
+        邀请粉丝下单赚
+    <span class="pri">{{tuijian.data[showTH].Rebate}}元</span>
+</view>
+<!-- 分享 -->
+<button class="share" open-type="share">
+    <image mode="aspectFit" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/pse40ed171dba3a238-e0aa-4964-a901-bfff1e2701a1.png" />
+</button>
+<view class="fiexdBox">
+  
+    <view class="product" wx:if="{{tuijian.data[showTH].ProductName}}" bindtap="toBuy">
+        <image mode="aspectFill" src="{{tuijian.data[showTH].ImageUrl1}}" />
+        <span class="contant">
+            <view class="name">{{tuijian.data[showTH].ProductName}}</view>
+            <view class="buy">{{tuijian.data[showTH].SaleCounts}}人 已购买</view>
+            <view class="pri_num">
+                <span class="pri">¥{{tuijian.data[showTH].SalePrice}}</span>
+                <span class="num">
+                    <image mode="aspectFill" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/lijiyuyue.png" />
+                    前往下单
+                </span>
+            </view>
+        </span>
+    </view>
+    <view class="conTant" wx:else >
+        {{tuijian.data[showTH].Contents}}
+        
+    </view>
+</view>
+<!--  -->
+<view class="funtion">
+    <view class="child {{index<2?'max':''}}" wx:for="{{funtion}}"  wx:key="{{index}}" data-index="{{index}}" bindtap="openfutionFN">
+              <view wx:if="{{index<2}}" class="val">{{item.val?item.val:0}}</view>
+        <image src="{{(index==0&&item.choose||index==2&&item.choose)?item.img1:item.img}}" />
+
+    </view>
+   
+</view>
+<!--  -->
+<view class="Comment {{isComShow?'isComShow':''}}" bindtap="ComShowFN">
+    <view class="contantCom" catchtap>
+        <view class="listDiv">
+            <scroll-view scroll-y="{{true}}" bindscrolltolower="getComment">
+                <view class="peopleHt" wx:for="{{CommentList.data}}" wx:key="{{index}}" bindtap="commentOne" data-id="{{item.id}}" data-aid="{{item.Articleid}}">
+                    <image class="pt" src="{{item.Picture}}" />
+                    <span class="contant">
+                        <view class="name">{{item.UserName}}</view>
+                        <view class="title">
+                            {{item.Contents}}
+                            <span class="time">{{item.CommentDate}}</span>
+                        </view>
+                        <view class="huiFu" wx:for="{{item.CommentsList}}" wx:for-item="citem" wx:for-index="cindex" wx:key="{{cindex}}">
+                            <image class="ht" src="{{citem.Picture}}" />
+                            <span class="contantH">
+                                <view class="name_type">
+                                    <span class="na">{{citem.UserName}}</span>
+                                    <span class="type" wx:if="{{citem.UserId==dataInfo.UserId}}">
+                                        作者
+                                    </span>
+                                </view>
+                                <view class="rtext">
+                                    {{citem.Contents}}
+                                    <span class="time">{{citem.CommentDate}}</span>
+                                </view>
+                            </span>
+                        </view>
+                    </span>
+                </view>
+                <view class="noMore" wx:if="{{CommentList.finsh}}">已经到底啦~~~</view>
+            </scroll-view>
+        </view>
+        <view class="seachMT">
+            <view class="seachbg">
+                <input disabled="{{true}}" bindtap="openFN" placeholder="说点什么，让TA也认识看笔记的你" value="{{seach}}" data-name="seach" />
+            </view>
+            <van-button size="small" bindtap="submitComT">发送</van-button>
+        </view>
+    </view>
+</view>
+<!--  -->
+<van-popup show="{{commenT.show}}" position="bottom" bind:close="onCloseP">
+    <view class="seachMT">
+        <view class="seachbg">
+            <input focus="{{focusfu}}" placeholder="请输入你回复的内容" value="{{commenT.txt}}" data-name="commenT.txt" bindinput="seaChFN" />
+        </view>
+        <van-button size="small" bindtap="submitComT">发送</van-button>
+    </view>
+</van-popup>

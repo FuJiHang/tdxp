@@ -1,0 +1,57 @@
+/* 项目列表 */
+.project_list_item{
+  padding: 20rpx 30rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e5e5e5;
+}
+.item_img{
+  margin-right: 20rpx;
+  flex-shrink: 0;
+  width: 120rpx;
+  height: 120rpx;
+  background: #e5e5e5;
+}
+.item_content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.item_name{
+  color: #666;
+  font-size: 32rpx;
+}
+.item_info,.item_summary{
+  margin-top: 8rpx;
+  font-size: 28rpx;
+  color: #999;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.item_lebal{
+  display: inline-block;
+  padding: 2rpx 8rpx;
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 6rpx;
+  background: #F56F68;
+}
+.level{
+  margin-left: 1em;
+  font-size: 28rpx;
+  color: #61B6FD;
+}
+.item_hospital{
+  margin-top: 8rpx;
+  color: #666;
+  font-size: 28rpx;
+}
+.item_summary{
+  -webkit-line-clamp:1;
+}
+/* end 项目列表 */

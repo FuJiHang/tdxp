@@ -1,0 +1,232 @@
+page{
+    height: 100%;
+    overflow: hidden;
+}
+#fuAppoint{
+    font-size: 26rpx;
+    color: #666;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    // 门店信息
+    .storeApp{
+        background: white;
+        margin-bottom: 20rpx;
+        padding: 20rpx;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        image{
+            height: 120rpx;
+            width: 120rpx;
+        }
+        .contant{
+            flex: 1;
+            margin-left: 20rpx;
+            .name_juli{
+                font-size: 30rpx;
+                display: flex; 
+                align-items: center;
+                .juli{
+                    font-size: 28rpx;
+                    flex: 1;
+                    text-align: right;
+                    color: #61B6FD;
+                }
+            }
+            .address{
+                margin-top: 20rpx;
+                color: #999;
+                display: flex;
+                align-items: center;
+                image{
+                    margin-right: 10rpx;
+                    width: 30rpx;
+                    height: 30rpx;
+                }
+            }
+        }
+    }
+    .vanCont{
+        height: 100%;
+        overflow: hidden;
+    }
+    van-tabs{
+        
+        height: 100%;
+        overflow: hidden;
+        .van-tabs{
+            height: 100%;
+            overflow: hidden;
+            .van-tabs__content{
+                height: 100%;
+                overflow: hidden;
+                .van-tabs__track{
+                    height: 100%;
+                    overflow: hidden;
+                    .van-tab__pane{
+                        height: 100%;
+                        overflow: hidden;
+                    }
+                  }
+                }
+              }
+            }
+    
+    .van-tab--active{
+        color: red; 
+    }
+    
+    // 内容
+    .appointTO{
+        display: flex;
+        overflow: hidden;
+        height: 100%;
+        .leftCont{
+            width: 180rpx;
+            height: 100%;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 380rpx ;
+            box-sizing: border-box;
+            .Choose{
+                overflow: hidden;
+                width: 100%;
+                text-align: center;
+                line-height: 80rpx;
+                font-size: 28rpx;
+                height: 80rpx;
+                box-sizing: border-box;
+                border-left: 5rpx solid #f8f8f8 ;
+            }
+            .isChoose{
+                border-color:  #F56F68;
+                background: white;
+                color: #F56F68;
+            }
+        }
+        .rightCont{
+            height: 100%; 
+            width: 100%;
+            overflow: hidden;
+            scroll-view {
+                background: white;
+                height: 100%;
+                width: 100%;
+                overflow: auto;
+                .noMore{
+                    font-size: 28rpx;
+                    color: #999;
+                    padding: 20rpx 0 380rpx;
+                    box-sizing: border-box;
+                    text-align: center;
+                }
+
+
+                // 项目卡片
+                .upDownList{
+                    display: flex;
+                    padding: 20rpx 20rpx 20rpx 0;
+                    margin-left: 20rpx;
+                    box-sizing: border-box;
+                    background: white;
+                    border-bottom: 1px solid rgb(240, 240, 240);
+                    align-items: center;
+                    image{
+                        margin-left: 20rpx;
+                        height: 130rpx;
+                        width: 130rpx;
+                    }
+                    .contantTL{
+                        flex: 1;
+                        margin-left: 20rpx;
+                        .name_mon{
+                            display: flex;
+                            align-items: center;
+                            .name{
+                                font-size: 29rpx; 
+                                font-weight: bold;
+                                flex: 1;
+                                margin-right: 5rpx;
+                                display:-webkit-box;
+                                -webkit-line-clamp: 1; //超出多少行
+                                overflow: hidden; 
+                                -webkit-box-orient: vertical;
+                                word-break:break-all;
+                            }
+                            .mon{
+                                color: #F56F68;
+                                font-size: 28rpx;
+                            }
+                        }
+                        .detail_btn{
+                            margin-top: 20rpx;
+                            display:-webkit-box;
+                            -webkit-line-clamp: 2; //超出多少行
+                            overflow: hidden; 
+                            -webkit-box-orient: vertical;
+                            word-break:break-all;
+                            font-size: 26rpx;
+                            line-height: 40rpx;
+                            color: #999;
+                            .det{
+                                font-size: 24rpx;
+                                border-radius: 10rpx;
+                                margin-right: 10rpx;
+                                color: #fff;
+                                background: #F56F68;
+                                box-sizing: border-box;
+                                padding:2rpx 5rpx;
+                            }
+                           
+                        }
+                    }
+                }
+
+
+
+            }
+        }  
+    } 
+    // 底部按钮
+    .btn{
+        background: white;
+        border-top: 1px solid rgb(240, 240, 240);
+        font-size: 30rpx;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        text{
+            margin-left: 10%;
+            flex: 1;
+        }
+        .ok{
+            display: flex;
+            width: 55%;
+            .diaosiTuhao{
+                flex: 1;
+            }
+            .van-button{
+                background: #F56F68;
+                color: white;
+                width: 100%;
+                border:none;
+                border-radius: 0;
+            }
+            .tuhao{
+                .van-button{
+                    background: #ff8b4e;
+                }
+                
+            }
+            
+        }
+        
+    }
+    ::-webkit-scrollbar{
+        width: 0 !important;
+        height: 0 !important;
+        color: transparent !important;
+    }
+}

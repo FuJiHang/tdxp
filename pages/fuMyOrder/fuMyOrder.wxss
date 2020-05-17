@@ -1,0 +1,37 @@
+page {
+  height: 100%;
+  overflow: hidden;
+}
+#fuMyOrder {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #666;
+}
+#fuMyOrder .navTopMO {
+  display: flex;
+  padding: 18rpx 0;
+  box-sizing: border-box;
+  background: white;
+}
+#fuMyOrder .navTopMO .child {
+  flex: 1;
+  text-align: center;
+}
+#fuMyOrder .navTopMO .child .van-button {
+  color: #999;
+  border: none;
+  background: white;
+}
+#fuMyOrder .navTopMO .danger .van-button {
+  background: #FF6262;
+  color: white;
+}
+#fuMyOrder .van-tabs {
+  flex: 1;
+  color: #999;
+}
+#fuMyOrder .van-tabs .van-tab--active {
+  color: red;
+}

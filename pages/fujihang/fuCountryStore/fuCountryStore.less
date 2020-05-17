@@ -1,0 +1,138 @@
+page{
+    overflow: hidden;
+    height: 100%;
+
+}
+#fuCountryStore{
+    background: rgb(240, 240, 240);
+    font-size: 26rpx;
+    color: #666;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    // 搜索框
+    .seachMT{
+        background: white;
+        display: flex;
+        align-items: center;
+        padding: 20rpx;
+        box-sizing: border-box;
+        .seachbg{
+            margin-right: 10rpx;
+            flex: 1;
+            align-items: center;
+            display: flex;
+            background: #EEEEEE;
+            border-radius: 40rpx;
+            image{
+                margin-left: 20rpx;
+                height: 40rpx;
+                width: 40rpx;
+            }
+            input{
+                font-size: 28rpx;
+                margin:0 20rpx;
+                flex: 1;
+                height: 60rpx;
+            }
+        }
+        .van-button{
+            border:none;
+            background: none;
+        }
+    }
+
+    // 内容
+    .contantCS{
+        flex: 1;
+        overflow: hidden;
+        .van-tabs{
+            height: 100%;
+            overflow: hidden;
+        }
+        .van-tabs__content{
+            height: 100%;
+            overflow: hidden;
+            .van-tabs__track{
+                height: 100%;
+                overflow: hidden;
+                .van-tab__pane{
+                    padding-bottom: 44px ;  
+                    height: 100% ; 
+                    box-sizing: border-box;
+                    overflow: hidden;
+                    scroll-view{
+                        overflow: auto;
+                        height: 100%;
+                        .noMore{
+                            font-size: 28rpx;
+                            color: #999;
+                            padding: 20rpx;
+                            text-align: center;
+                            box-sizing: border-box;
+                        }
+                        // 门店卡片
+                        .storeCard{
+                            background: white;
+                            padding: 20rpx;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            image{
+                                height: 120rpx;
+                                width: 120rpx;
+                            }
+                            .contantStore{
+                                flex: 1;
+                                margin-left: 20rpx;
+                                .name_mi{
+                                    display: flex;
+                                    align-items: center;
+                                    .name{
+                                        font-weight: 700;
+                                        margin-right: 10rpx;
+                                        flex: 1;
+                                        font-size: 30rpx;
+                                    }
+                                    .mi{
+                                        color: #61B6FD;
+                                        font-size: 28rpx
+                                    }
+                                }
+                                .address{
+                                    display: flex;
+                                    align-items: center;
+                                    image{
+                                        width: 30rpx;
+                                        height: 30rpx;
+                                        margin-right: 10rpx;
+                                    }
+                                    margin-top: 20rpx;
+                                    color:#999;
+                                }
+                            }
+                            .right_Statu{
+                                .van-button{
+                                    margin-left: 20rpx;
+                                    background: #F56F68;
+                                    color: white;
+                                }
+                                .Rname{
+                                    text-align: center;
+                                    color: #61B6FD;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+        .van-tab--active{
+            color: red;
+        }
+    }
+    
+}

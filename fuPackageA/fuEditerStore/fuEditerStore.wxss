@@ -1,0 +1,51 @@
+page {
+  height: 100%;
+  font-size: 28rpx;
+  position: relative;
+}
+#fuEditerStore {
+  position: relative;
+  color: #666;
+}
+#fuEditerStore .funChild {
+  background: white;
+}
+#fuEditerStore .funChild .navTop {
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f1f1f1;
+}
+#fuEditerStore .funChild .child {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f1f1f1;
+}
+#fuEditerStore .funChild .child .name {
+  flex: 1;
+}
+#fuEditerStore .funChild .child image {
+  height: 30rpx;
+  width: 30rpx;
+}
+#fuEditerStore .fisrt {
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+}
+#fuEditerStore .tip {
+  padding-top: 30rpx;
+  text-align: center;
+}
+#fuEditerStore .btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+#fuEditerStore .btn .van-button {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  color: white;
+  background: #f56e68;
+}

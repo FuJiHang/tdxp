@@ -1,0 +1,21 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-05-13 11:02:02 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-05-13 11:02:02 
+    验证码
+*/ -->
+<view id="fuVerificatCode">
+
+    <view class="verCodeTop" wx:for="{{postList}}" wx:key="{{index}}">
+        <van-icon name="{{item.img}}" size="34rpx" />
+        <span class="name">{{item.name}}</span>
+        <input type="{{index>1?'password':''}}" placeholder="{{item.plr}}" value="{{item.val}}" bindinput="changeInput" data-index="{{index}}"/>
+        <van-button bindtap="getSMS" size="small" wx:if="{{index==1}}">{{SMS}}</van-button>
+    </view>
+
+    <view class="verCodeBtn">
+        <van-button bindtap="subimt">提交</van-button>        
+    </view>
+
+</view>

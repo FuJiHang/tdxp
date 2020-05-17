@@ -1,0 +1,33 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-18 15:21:52 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-18 15:21:52 
+    消息
+*/ -->
+<view id="fuNews">
+
+    <!--  -->
+    <view class="funtionL">
+        <span class="child" wx:for="{{functionL}}" wx:key="{{index}}">
+            <image src="../../images/home_tab_11.png" />
+            <view class="name">
+                {{item.name}}
+            </view>
+        </span>
+    </view>
+
+    <!--  -->
+    <view class="new" wx:for="{{3}}" wx:key="{{index}}">
+        <image src="../../images/home_tab_11.png" />
+        <span class="contant" >
+            <view class="name_time">
+                <span class="name">sa</span>
+                <span class="time">ret</span>
+            </view>
+            <view class="say">er</view>
+        </span>
+    </view>
+
+
+</view>

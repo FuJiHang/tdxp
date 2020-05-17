@@ -1,0 +1,56 @@
+<!--
+ * @Author: fujihang
+ * @Date: 2019-12-10 15:12:15
+ * @LastEditors: fujihang
+ * @LastEditTime: 2020-02-26 13:49:42
+ * @FilePath: \头道惠门店\wuPackageB\newTechnician\newTechnician.wxml
+ -->
+<view id="technician">
+  <block wx:for="{{list}}" wx:key="{{item}}" >
+    <view class="list">
+      <view class="img_wrap">
+        <image class="img" src="{{item.HeadPortrait}}"></image>
+      </view>
+      <view class="content">
+        <text class="name">{{item.Name}}</text>
+        <text class="test">介绍:{{item.Introduce}}</text>
+        <view class="nums_wrap">已接订单:<text class="nums">{{item.ServiceCount}}</text></view>
+      </view>
+      <!-- <view class="list_code" bindtap="handleCode" data-id="{{item.Id}}" data-sid="{{item.HeadId}}">
+        <image class="code" src="{{imgUrl+'icon_code.png'}}"></image>
+      </view> -->
+      <view class="edit_wrap" 
+        bindtap="handleEdit" 
+        data-name="{{item.Name}}" 
+        data-img="{{item.HeadPortrait}}" 
+        data-introduce="{{item.Introduce}}"
+        data-id="{{item.Id}}"
+        data-hid="{{item.HeadId}}">
+        <image class="edit_img" src="{{imgUrl+'bianji@2x.png'}}"></image>
+      </view>
+      <view class="btn_list" bindtap="handleDel" data-id="{{item.Id}}">
+        <image class="btn_del" src='{{imgUrl+"icon_del.png"}}'></image>
+      </view>
+    </view>
+  </block>
+  <view class="btn_wrap" >
+    <!-- <image class="btn_img" src="{{imgUrl+'icon_add.png'}}"></image> -->
+    <view class="btn_test" bindtap="handleClick">添加技师</view>
+  </view>
+</view>
+
+<!-- 生成二维码 -->
+<view id="code" wx:if="{{isShow}}">
+  <view class="code_wrap">
+    <image class="code_img" src="{{codeImg}}"></image>
+  </view>
+  <view class="code_test">扫描二维码绑定会员</view>
+  <view class="btn_wrap">
+    <view class="b_code" catchtap="handleBC" data-code="{{codeImg}}">
+      <image class="share_img" src="{{imgUrl+'icon_code2.png'}}"></image>
+      <text class="share_code">保存二维码</text>
+    </view>
+  </view>
+</view>
+<view id="zhezhao" wx:if="{{isShow}}" catchtap="handleHide"></view>
+

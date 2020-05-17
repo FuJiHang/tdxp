@@ -1,0 +1,24 @@
+<view id="agency">
+  <view class="logo_wrap">
+    <image class="logo" src="{{img}}"></image>
+    <view class="title_wrap">
+      <text class="">张天爱</text>
+      <text class="">广东省区域代理</text>
+    </view>
+  </view>
+
+ <view class="formList">
+    <form bindsubmit="formSubmit">
+      <block wx:for="{{inputData}}" wx:key="{{item}}">
+        <view class="form_wrap">
+          <label class="name" for="">{{item.name}}</label>
+          <input type="text" class="input_f" name="{{item.name}}" placeholder="{{item.pla}}" placeholder-class="input_c" />
+        </view>
+      </block>
+     
+      <view class="btn-area">
+        <button formType="submit" calss="btn">保存</button>
+      </view>
+    </form>
+ </view>
+</view>

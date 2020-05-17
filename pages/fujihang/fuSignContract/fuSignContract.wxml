@@ -1,0 +1,95 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-05-13 17:55:46 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-05-13 18:09:14
+    签合同
+*/ -->
+<view id="fuSignContract">
+    
+    <!-- <view class="contantSC">
+    <image src="" mode="aspectFit" />
+
+    </view>
+
+    <view class="buttomSC">
+        <van-checkbox
+        checked-color="#61B6FD"
+            value="{{ checked }}"
+            bind:change="onChange"
+            >
+            已阅读电子协议
+        </van-checkbox>
+        <van-button size="small">我同意</van-button>
+    </view> -->
+
+
+    <!--二期 -->
+    <view class="ContractO" wx:if="{{bz==0}}">
+        <view class="childInput" wx:for="{{postList}}" wx:key="{{index}}">
+            <span class="name">{{item.name}}</span>
+            <span class="val">
+                <input value="{{item.val}}" placeholder="{{item.plr}}" bindinput="changeInput" data-index="{{index}}"/>
+            </span>
+        </view>
+
+        <view class="tip">*用于后续接收短信验证码</view>
+
+        <view class="childChech">
+            <span class="flex" wx:for="{{checkList}}" wx:key="{{index}}" data-index="{{index}}" bindtap="onChange">
+                <van-checkbox  data-index="{{index}}" value="{{ checked==index }}" >{{item.name}}</van-checkbox>
+
+            </span>
+        </view>
+
+        <view class="tip">*港澳台和外籍经销商需要选择相应的选项</view>
+
+        <view class="btn">
+            <van-button  bindtap="nextFN">实名认证</van-button>
+        </view>
+    </view>
+
+
+    <view class="ContractT" wx:if="{{bz}}">
+        <view class="text">
+            <image src="{{imgtext}}" mode="widthFix" />
+        </view>
+        <view class="btn" wx:if="{{bz==1}}">
+            <van-button bindtap="returnFN">不同意</van-button>
+            <van-button bindtap="toFN">同意</van-button>
+        </view>
+         <view class="btn" wx:if="{{bz==2}}">
+            <van-button bindtap="returnFN">不签约</van-button>
+            <van-button type="danger" bindtap="onOpen">签约</van-button>
+        </view>
+    </view>
+
+    <!-- <view class="ContractTH ContractT" >
+        <view class="text"></view>
+        <view class="btn">
+            <van-button >不签约</van-button>
+            <van-button  bindtap="onOpen">签约</van-button>
+        </view>
+    </view> -->
+
+    <van-popup show="{{show}}" position="bottom" bind:close="onCloseP">
+        
+        <view class="yzm">
+            <view class="child" wx:for="{{yzm}}" wx:key="{{index}}">
+                <span class="input">
+                    <input value="{{item.val}}" placeholder="{{item.plr}}" data-index="{{index}}" bindinput="changeI"/>
+                </span>
+                <van-button bindtap="getSMS" wx:if="{{index}}" size="small">{{SMS}}</van-button>
+            </view>
+            <view class="btn">
+                <span class="cancl wt">
+                    <van-button  bindtap="submit"  size="small" data-index="0">取消</van-button>
+                </span>
+                <span class="wt">
+                    <van-button bindtap="submit"  size="small" data-index="1">确定</van-button>
+                </span>
+            </view>
+        </view>
+    </van-popup>
+    
+</view>

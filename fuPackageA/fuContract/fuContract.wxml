@@ -1,0 +1,13 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-09-27 10:38:05 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-09-27 10:38:05 
+    合同展示
+*/ -->
+<view id="fuContract" bindtap="openFN">
+
+
+    {{sss?'无合同':'重新打开合同'}}
+
+</view>

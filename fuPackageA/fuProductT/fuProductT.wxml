@@ -1,0 +1,450 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-08 11:19:59 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-08 11:19:59 
+    商品详情改版
+*/ -->
+
+
+<view class='layout' hidden="{{currentTab != 1}}">
+  <!-- banner图片 -->
+  <view class='banner'>
+    <view class='swiperFu'>
+
+      <swiper indicator-dots="{{false}}" bindchange="bindchangeImg" style="height:{{imgheights[current]+'rpx'}}"
+        circular="true">
+        <swiper-item class='banner-item' wx:for='{{bannerArr}}' wx:key="{{index}}">
+          <image wx:if="{{!item.video}}" src="{{item.url}}" class='banner-img' mode="widthFix" data-id='{{index}}'
+            bindload="imageLoad" data-categoryId="{{item.CategoryId}}" data-photoId="{{item.PhotoId}}" />
+          <image style="display: none;" wx:if="{{item.video&&index==current}}" class='banner-img' mode="widthFix"
+            data-id='{{index}}' bindload="imageLoad" data-categoryId="{{item.CategoryId}}"
+            data-photoId="{{item.PhotoId}}"
+            src="{{item.url+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_10000,m_fast'}}"></image>
+          <video poster="{{item.url+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_10000,m_fast'}}"
+            style="height:{{imgheights[current]+'rpx'}}" wx:if="{{item.video&&index==current}}" object-fit="cover"
+            class="myVideo" src="{{item.url}}" autoplay='{{false}}' controls></video>
+        </swiper-item>
+      </swiper>
+      <swiper hidden='{{shopUser == ""}}' class='banner-user' autoplay='true' vertical='true' circular="true">
+        <swiper-item wx:for='{{shopUser}}' wx:for-idnex='{{shopUser}}' wx:key="item">
+          <view class='df ais'>
+            <image src='{{shopUser.CusUserHead}}' mode='widthFix'></image>
+            <text>{{shopUser.CusUserName}}</text>
+            <text>购买了此商品</text>
+          </view>
+        </swiper-item>
+      </swiper>
+      <span class="num">
+        {{current+1}}/{{bannerArr.length}}
+      </span>
+    </view>
+    <!-- 新拼团价格模块 -->
+    <view class="new_group" wx:if="{{groupStatus}}">
+
+      <view class="djs_price">
+        <span class="price">
+          <span class="mini">￥</span>{{goodsInfo.FightGroupSkuInfos[0].SalePrice}}
+        </span>
+        <span class="flex">￥{{goodsInfo.DefaultSku.SalePrice}}</span>
+        <span class="djs">
+          <view class="tip">
+            {{limitTxt}}仅剩
+          </view>
+          <view class="time">
+            <span class="child">{{limitDay}}</span>天
+            <span class="child">{{limitHours}}</span>时
+            <span class="child">{{limitMin}}</span>分
+            <span class="child">{{limitSecond}}</span>秒
+          </view>
+        </span>
+      </view>
+
+
+      <view class="navTopG">
+        {{goodsInfo.ProductName}}
+      </view>
+      <view class="kdNum">
+        <span class="child">快递:{{goodsInfo.Freight}}元</span>
+        <span class="flex">已售{{goodsInfo.ShowSaleCounts}}件</span>
+        <span class="child">{{nowStroeInfo.RegionName}}</span>
+      </view>
+      <view class="jzjs">
+        <span class="child" wx:for="{{jzjs}}" wx:key="{{index}}">
+          <image mode="widthFix" src="{{item.img}}" />
+          {{item.name}}
+        </span>
+      </view>
+      <!-- 上 -->
+      <!-- <view class="group_header">
+        <view class="group_title">{{goodsInfo.ProductName}}</view>
+        <view class="haibao" bindtap="onShare">
+          <image class="hb_img" src="{{newImg+'icon_code.png'}}"></image>
+          <text class="hb_test">海报</text>
+        </view>
+        <view class="fenxiang">
+          <image class="fx_img" src="{{newImg+'icon_fx.png'}}"></image>
+          <text class="fx_test">分享</text>
+          <button class="fx_btns" open-type="share"></button>
+        </view>
+      </view> -->
+      <!-- 中 -->
+      <!-- <view class="group_content">
+        <view class="left_group addactive" bindtap="handleGroup">
+          <view class="l_title">拼团价</view>
+          <view class="l_price">￥
+            <text class="price">{{gsku.SalePrice}}</text>
+          </view>
+          <view class="group_num">{{goodsInfo.FightGroupActivityInfo.JoinNumber}}人团</view>
+        </view>
+        <view class="left_group" bindtap="handleGroup">
+          <view class="l_title">单独购买</view>
+          <view class="l_price">￥
+            <text class="price">{{normal.SalePrice}}</text>
+          </view>
+          <view class="group_scj">市场价:
+            <text class="scj_price">{{goodsInfo.MarketPrice}}</text>
+          </view>
+        </view>
+      </view> -->
+      <!-- 下 -->
+      <!-- <view class="group_hint">
+        <text class="hint_test1">*开团并邀请{{glist[0].LeftNum}}人参团，人数不足系统自动退款</text>
+        <text class="hint_test2">拼团玩法</text>
+      </view> -->
+    </view>
+
+    <!-- 新拼团列表 -->
+    <view class="group_list" wx:if="{{groupStatus}}">
+      <view class="list_header">
+        <text class="list_title">以下小伙伴正在发起拼团，你可以直接参与哦~</text>
+        <text class="list_btn" bindtap="openGroup">查看全部></text>
+      </view>
+      <view class="list_wrap">
+        <!-- <swiper interval="5000" autoplay circular vertical style="height: 260rpx;">
+            <swiper-item >
+              <block wx:for="{{groupList}}" wx:key="item">
+                <view class="swiper-item">
+                  <view class="item_wrap">
+                    <image class="item_img" src="{{item.THeadPicture}}" style="height: 100rpx;width: 100rpx;"></image>
+                  </view>
+                  <view class="item_title">{{item.THeadNickName}}</view>
+                  <view class="kong"></view>
+                  <view class="item_content">
+                    <view class="item_nums">还差<text class="item_red">{{item.LeftNum}}人</text>拼成</view>
+                    <view class="item_time">剩余 {{item.limitHours}}:{{item.limitMin}}:{{item.limitSecond}}</view>
+                  </view>
+                  <view class="item_btn" data-index="{{index}}" catchtap="handleQP">去拼单</view>
+                </view>
+              </block>
+            </swiper-item>
+        </swiper> -->
+
+        <block wx:for="{{groupList}}" wx:key="{{index}}">
+          <view class="swiper-item" wx:if="{{index < 2&&isTeam==0||isTeam!=0&&isTeam==item.THeadUserId}}">
+            <view class="item_wrap">
+              <image class="item_img" src="{{item.THeadPicture}}" style="height: 80rpx;width: 80rpx;"></image>
+            </view>
+            <span class="flex_Contant">
+              <view class="item_title">{{item.THeadNickName}}</view>
+
+              <view class="item_nums">
+                还差{{item.LeftNum}}人成团剩余时间{{item.limitHours}}:{{item.limitMin}}:{{item.limitSecond}}结束
+              </view>
+
+            </span>
+
+            <!-- <view class="js_item" wx:if="{{false}}">已结束</view> -->
+            <!-- <view class="item_btn" bindtap='joinOver' 
+              wx:if="{{item.limitHours =='00' && item.limitMin =='00' && item.limitSecond =='00' || item.LeftNum==0}}"
+              >
+              已结束
+            </view> -->
+            <!-- <view class="item_btn" wx:if="{{false}}" data-index="{{index}}" catchtap="handleQP">去拼单</view> -->
+            <view class="item_btn" wx:if="{{item.limitHours !='00' || item.limitMin !='00' || item.limitSecond !='00'}}"
+              data-index="{{index}}" data-id='{{item.FightGroupActivityId}}' data-isown='{{item.IsJoinGroup}}'
+              data-FightGroupId="{{item.FightGroupId}}" catchtap="joinGroup">
+              去凑团
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 赠送卡 -->
+    <view class="bundledCard" wx:if="{{goodsInfo.BundledCardList && goodsInfo.BundledCardList != 0}}">
+      <view class="tips">赠送卡</view>
+      <view class="plane">
+        <image src="{{item.ImageUrl1}}" mode="aspectFill" wx:for="{{goodsInfo.BundledCardList}}"
+          wx:key="{{item.ProdImageUrl1uctId}}"></image>
+      </view>
+    </view>
+    <!-- 门店列表 -->
+    <view class="storeList" wx:if="{{typeforList}}">
+      <image class="storeImg" src="{{nowStroeInfo.StoreImages}}" mode="aspectFill"></image>
+      <span class="contant">
+        <view class="name">
+          <span class="flex">{{nowStroeInfo.Address}}</span>
+        </view>
+        <view class="tip">
+          距您{{nowStroeInfo.Distance}}
+        </view>
+      </span>
+      <span class="child" bindtap="listOpenMap" data-location="{{nowStroeInfo.Position}}">
+        <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/addressKa.png" mode="widthFix"></image>
+      </span>
+      <span class="child" bindtap="listPhoneFN" data-phone="{{nowStroeInfo.Tel}}">
+        <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/kefu.png" mode="widthFix"></image>
+      </span>
+    </view>
+    <view class="listBox" wx:if="{{storeList.length > 1&&isNotStore}}">
+      <view class="listTips" bindtap="bindUnfold">
+        <view>选择其他门店</view>
+        <view class="{{isUnfold?'downArrow':'arrow'}}"></view>
+      </view>
+      <scroll-view class="list" scroll-y bindscrolltolower="scrollBottom" style="max-height:{{isUnfold?'350rpx':'0'}}">
+        <radio-group bindchange="radioChange">
+          <view class="storeList" wx:for="{{storeList}}" wx:key="{{index}}">
+            <image class="storeImg" src="{{item.StoreImages}}" mode="aspectFill"></image>
+            <span class="contant">
+              <view class="name">
+                <span class="flex">{{item.Address}}</span>
+              </view>
+              <view class="tip">
+                距您{{item.Distance}}
+              </view>
+            </span>
+            <radio value="{{index}}"></radio>
+          </view>
+        </radio-group>
+      </scroll-view>
+    </view>
+
+
+
+    <!-- 更多拼团列表 -->
+    <view class="single" wx:if="{{groupShow}}" style="height:{{groupList.length<3?500:600}}rpx;">
+      <view class="single_title">
+        正在拼单
+        <view class="title_x" catchtap="handleGB">x</view>
+      </view>
+      <view class="new_wrap">
+        <block wx:for="{{groupList}}" wx:key="{{item}}">
+          <view class="single_list">
+            <image class="single_img" src="{{item.THeadPicture}}"></image>
+            <view class="single_content">
+              <view class="single_test">{{item.THeadNickName}} 还差{{item.LeftNum}}人</view>
+              <view class="single_time">剩余{{item.limitHours}}:{{item.limitMin}}:{{item.limitSecond}}</view>
+            </view>
+            <view class="single_btn" data-id='{{item.FightGroupActivityId}}' data-isown='{{item.IsJoinGroup}}'
+              data-FightGroupId="{{item.FightGroupId}}" data-sku='{{newSku}}' catchtap="joinGroup"
+              data-index="{{index}}">去拼单</view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <!-- 拼团完成弹窗 -->
+    <view class="accomplish" wx:if="{{qpShow}}">
+      <view class="acc-btn" bindtap="handleQgb">x</view>
+      <view class="accomplish_t">
+        <view class="acc_title">
+          <text class="acc_wrap">参与{{newObj.THeadNickName}}的拼单</text>
+          <text class="acc_test">剩余<text class="acc_num">{{newObj.LeftNum}}</text>个名额,
+            {{groupList[0].limitHours}}:{{groupList[0].limitMin}}:{{groupList[0].limitSecond}}后结束</text>
+        </view>
+      </view>
+      <view class="acc_content">
+        <view class="acc_img">
+          <image class="accimg" src="{{newObj.THeadPicture}}"></image>
+        </view>
+        <view class="acc_img2">?</view>
+      </view>
+      <view class="acc_btn" catchtap="handleCY">参与拼团</view>
+    </view>
+    <view class="zhezhao" wx:if="{{qpShow}}" catchtap="handleGB"></view>
+    <view class="zhezhao" wx:if="{{groupShow}}" catchtap="handleGB"></view>
+
+
+    <!-- 新评价列表 用不上了-->
+    <!-- <view class="evaluate" wx:if="{{groupStatus}}">
+      <view class="header_title">
+        <text class="eva_title">商品评价 (216849)</text>
+        <text class="eva_btn">查看全部 ></text>
+      </view>
+      <view class="pjmo">
+        <view class="pj_btn" style="color:#5CB23E;background-color: #DEF7D2;">正品 (862)</view>
+        <view class="pj_btn" style="color:#E35245;background-color: #FFCCCC;">质量很好 (2784)</view>
+      </view>
+      <view class="eva_list">
+        <view class="eva_info">
+          <image class="eva_img" src="{{imgss}}"></image>
+          <view class="eva_name">小六</view>
+        </view>
+        <view class="eva_main">很满意的一次购物，很有诚意体验过程店家服务很好。</view>
+      </view>
+    </view> -->
+
+    <!-- 查看详情 -->
+    <!-- <view class="look_info" wx:if="{{groupStatus}}"> -->
+    <view class="look_info" wx:if="{{false}}">
+      <view class="look_title">查看详情</view>
+      <view class="look_all">查看全部
+        <image class="look_img" src="{{newImg+'xiangxia_btn.png'}}"></image>
+      </view>
+    </view>
+    <!-- 图文详情 -->
+    <!-- <view class="graphic_details" wx:if="{{groupStatus}}"></view> -->
+
+    <!-- 参团提示 不要了-->
+    <view class="tuxedo_prompt" wx:if="{{false}}">
+      <!-- <view class="tuxedo_prompt" wx:if="{{groupList.length!=0}}"> -->
+      <!-- <image class="tp_img" src="{{glist[0].THeadPicture}}"></image>
+      <view class="tp_content">
+        剩余<text class="tp_test">{{groupList[0].limitHours}}:{{groupList[0].limitMin}}:{{groupList[0].limitSecond}}</text>,还差{{glist[0].LeftNum}}人
+      </view>
+      <view class="tp_btn" catchtap="handleTS" data-index="0">参与拼单</view> -->
+      <block wx:for="{{groupList}}" wx:key="{{item}}">
+        <view class="glist">
+          <image class="tp_img" src="{{item.THeadPicture}}"></image>
+          <view class="tp_content">
+            剩余
+            <text class="tp_test">{{item.limitHours}}:{{item.limitMin}}:{{item.limitSecond}}</text>,还差{{item.LeftNum}}人
+          </view>
+          <view class="tp_btn" catchtap="handleTS" data-index="{{index}}">参与拼单</view>
+        </view>
+      </block>
+    </view>
+
+  </view>
+
+  <!-- 限时组件  需要传入限时的时间 -->
+  <!-- <LimitTime goodsInfo='{{goodsInfo}}' wx:if='{{goodsInfo.IsCountDown || goodsInfo.IsWaitSale}}' /> -->
+
+  <!-- 商品标题和价格 -->
+  <!-- <PriceItem goodsInfo='{{goodsInfo}}' wx:if="{{goodsInfo.IsFavorite}}" storeid="{{storeid}}" /> -->
+  <PriceItem bind:openShare="onShare" goodsInfo='{{goodsInfo}}' wx:if="{{!groupStatus && goodsInfo}}"
+    storeid="{{storeid}}" />
+
+  <!-- 优惠模块 -->
+  <!-- <Coupon promotionStr="{{promotionStr}}" coupons='{{coupons}}' storeid="{{storeid}}" wx:if="{{!groupStatus}}" /> -->
+
+  <!-- 产品规格  /  发货地址  弹出组件 wx:if="{{!groupStatus}}"-->
+  <GoodsSpecs wx:if="{{goodsInfo}}" goodsInfo='{{goodsInfo}}' skuItem='{{skuItem}}' skus='{{skus}}' prDid='{{prDid}}'
+    goodsInfo='{{goodsInfo}}' freight='{{freight}}' id='goodsSpecsCom' bind:succ="succ" paramData="{{paramData}}"
+    storeid="{{nowStroeInfo.StoreId}}" />
+
+  <!-- 拼团模块-->
+  <!-- <GroupPlay goodsInfo='{{goodsInfo}}' wx:if='{{goodsInfo.IsFightGroup}}' storeid="{{storeid}}"/> -->
+
+  <!-- 商品服务保障 -->
+  <Discount wx:if="{{!groupStatus}}" />
+
+  <!-- 店家实拍模块 -->
+  <!-- <ShopPicture bind:toChange="selectNav" prDid='{{prDid}}' storeid="{{storeid}}" wx:if="{{!groupStatus}}"/> -->
+
+  <!-- 推荐商品 -->
+  <view class="tuijian" wx:if="{{goodsInfo.RelatedProductList.length}}">
+    <view class="navtop">
+      产品推荐
+    </view>
+    <swiper indicator-dots="{{true}}" style="height: 450rpx;">
+      <swiper-item wx:for="{{RelatedProductNum}}" wx:key="{{index}}">
+        <view class="allProduct">
+
+          <span class="child" wx:if="{{(index+1)*3-3<=indexc&&(index+1)*3>indexc}}" wx:for-index="indexc"
+            wx:for-item="itemc" data-productId="{{itemc.ProductId}}" bindtap="handleDetail"
+            wx:for="{{goodsInfo.RelatedProductList}}" wx:key="{{indexc}}">
+            <image mode="aspectFit" src="{{itemc.ImageUrl2}}" />
+            <view class="name">{{itemc.ProductName}}</view>
+            <view class="price_btn">
+              <span class="mini">￥</span>
+              <span class="price">{{itemc.SalePrice}}</span>
+            </view>
+            <view class="border">
+              <!-- <view class="redCard">
+                <span class="red">
+                  <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/honka@3x.png" mode="widthFix" />
+                  红卡</span>
+                <span class="black">专享￥{{itemc.VipPrice}}</span>
+              </view> -->
+            </view>
+          </span>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+
+  <!-- 0元购 -->
+  <view class="myStorePro" wx:if="{{goodsInfo.GiftList}}">
+    <view class="bgS">
+      <view class="navTopH">每月0元领</view>
+      <view class="allProductT">
+        <span class="child" wx:for-index="indexc" wx:for-item="itemc" data-data="{{itemc}}" bindtap="pointDetail"
+          wx:for="{{goodsInfo.GiftList.Data}}" wx:key="{{indexc}}">
+          <span class="image">
+            <span class="tip" wx:if="{{!itemc.Stock}}">已领完</span>
+            <image mode="aspectFit" src="{{itemc.ImageUrl}}" />
+          </span>
+          <view class="name">{{itemc.Name}}</view>
+          <view class="price_btn">
+            <span class="mini">￥</span>
+            <span class="price">0</span>
+            <span class="del">{{itemc.BuyPrice}}</span>
+          </view>
+          <view  catchtap="getFN" data-id="{{itemc.GiftId}}" class="buyFN {{!itemc.Stock?'fiter':''}}">
+            <van-button>立即领取</van-button>
+          </view>
+        </span>
+      </view>
+    </view>
+  </view>
+
+  <!-- 商品图文详情 -->
+  <PictureDetail wx:if="{{description&&!deZDY.length}}" description='{{description}}' storeid="{{storeid}}" />
+  <view class="deZDY" wx:if="{{description&&deZDY.length}}">
+    <view class="navtop">
+      产品推荐
+    </view>
+    <view class="goodsDetail">
+      <image wx:for="{{deZDY}}" src="{{item.img}}" wx:key="{{index}}" mode="widthFix" bindtap="redFN"
+        data-url="{{item.to}}"></image>
+    </view>
+
+  </view>
+
+
+  <!-- 自定义底部tab -->
+  <Tab bind:openShare="onShare" wx:if="{{goodsInfo}}" goodsInfo='{{goodsInfo}}' bind:open='openSpecs'
+    bind:share='onShare' num="{{num}}" />
+  <!-- <Tab wx:if="{{!groupStatus}}" goodsInfo='{{goodsInfo}}' bind:open='openSpecs' bind:share='onShare' num="{{num}}" /> -->
+  <!-- 分享 -->
+  <!--   <share  wx:if="{{isShow}}" shareInfo="{{shareInfo}}" bind:closeEvent="closeEvent"></share> -->
+</view>
+
+
+<!-- tab实拍组件 -->
+<!-- <UserComment currentTab="{{currentTab}}" prDid='{{prDid}}' wx:if="{{!groupStatus}}" /> -->
+<view class="yyemity"></view>
+
+
+<view class="maskStyle" bindtap="closeShare" catchtouchmove wx:if="{{isShow}}">
+  <view class="canvasBox">
+    <view class="content" data-mode="mask" catchtap="closeMask">
+      <canvas class="canvasStyle"
+        style="{{ratio==0.7?'width:224px;height:336px':ratio==0.8?'width:256px;height:384px':''}}" canvas-id="qrCanvas"
+        data-mode="content"></canvas>
+    </view>
+    <view class="bottomShare" catchtap>
+      <view class="shareLeft">
+        <button open-type="share" class="opacity"></button>
+        <image src="http://img.hmeshop.cn/hmeshop_jxy/images/icon_wechat@2x.png"></image>
+        <view>分享好友</view>
+      </view>
+      <view class="shareRight" bindtap="checkAuthority">
+        <image src="http://img.hmeshop.cn/hmeshop_jxy/images/icon_xiazai@2x.png"></image>
+        <view>保存图片</view>
+      </view>
+    </view>
+  </view>
+</view>

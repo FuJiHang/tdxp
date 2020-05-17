@@ -1,0 +1,370 @@
+page{
+    height: 100%;
+    font-size: 28rpx;
+    position: relative;
+}
+.Remark{
+    padding: 20rpx;
+    box-sizing: border-box;
+    background: white;
+    display: flex;
+    align-items: center;
+    .flex{
+        border:1px solid rgb(245, 245, 245);
+        flex: 1;
+        input{
+            padding: 0 20rpx;
+            box-sizing: border-box;
+            width: 100%;
+        }
+    }
+}
+#fuDeclare{
+    position: relative;
+    color: #666;
+
+    
+    // 
+    .DeclareCart{
+        padding:0 20rpx 20rpx;
+        box-sizing: border-box;
+        background: white;
+        margin: 20rpx;
+        .store_time{
+            padding: 20rpx 0;
+            box-sizing: border-box;
+            font-size: 30rpx;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            .nameS{
+                flex: 1;
+            }
+            .nameS,.tiemS{
+                color: #999;
+                font-size: 28rpx;
+            }
+
+        }
+        .name{
+            font-size: 30rpx;
+            display: flex;
+            align-items: center;
+            padding: 5rpx 0;
+            box-sizing: border-box;
+            .flex{
+                flex: 1;
+            }
+            .van-button{
+                background: #f56e68;
+                color: white;
+                border-radius: 30rpx;
+                width:60px;
+            }
+        }
+        .checkList{
+           
+            display: flex;
+            align-items: center;
+            padding: 5rpx 0;
+            box-sizing: border-box;
+            .checkS{
+                display: flex;
+                align-items: center;
+                font-size: 45rpx;
+                transform: scale(0.6,0.6);
+            }
+        }
+        .mini{
+            font-size: 28rpx;
+            color: #999;
+        }
+    }
+
+    // 
+    .addDeclare{
+        padding:0 20rpx 20rpx;
+        margin-bottom: 200rpx;
+        box-sizing: border-box;
+        font-size: 34rpx;
+        font-weight: 800;
+    }
+
+    // 
+    .teachCart{
+        padding: 20rpx;
+        box-sizing: border-box;
+        background: white;
+        margin: 20rpx;
+        .navP{
+            font-size: 30rpx;
+            font-weight: 800;
+            margin-bottom: 30rpx;
+            display: flex;
+            align-items: center;
+            .flex{
+                flex: 1;
+            }
+            .del{color: rgb(255, 50, 50);}
+        }
+        .name{
+            font-size: 30rpx;
+            margin-bottom: 20rpx;
+            display: flex;
+            align-items: center;
+            .input{
+                width: 50%;
+                border:1px solid rgb(245, 245, 245);
+                input{
+                    width: 100%;
+                }
+            }
+        }
+        .image{
+            color: #999;
+            display: flex;
+            align-items: flex-end;
+            image{
+                height: 200rpx;
+                width: 200rpx;
+                margin-right: 20rpx;
+            }
+        }
+        .checkList{
+           
+            display: flex;
+            align-items: center;
+            padding: 5rpx 0;
+            box-sizing: border-box;
+            .checkS{
+                display: flex;
+                align-items: center;
+                font-size: 45rpx;
+                transform: scale(0.6,0.6);
+            }
+        }
+        .select{
+            border:1px solid rgb(226, 226, 226);
+            height: 52rpx;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-bottom: 20rpx;
+            width: 50%;
+            font-size: 30rpx;
+            
+            .left{
+                box-sizing: border-box ;
+                padding-left: 5rpx;
+                flex: 1;
+            } 
+            image{
+               
+                margin-right: 5rpx;
+                height: 30rpx;
+                width: 30rpx;
+                
+            }
+            .overDiv{
+                width: 100%;
+                position: absolute ;
+                top: 52rpx;
+                background: white;
+                border-left:1px solid rgb(226, 226, 226);
+                border-right:1px solid rgb(226, 226, 226);
+                border-bottom:1px solid rgb(226, 226, 226);
+                max-height: 200rpx;
+                overflow: auto;
+                z-index: 5;
+                left: -1px;
+                .choose{
+                    padding: 10rpx 5rpx ;
+                    box-sizing: border-box;
+                    border-top:1px solid rgb(226, 226, 226);
+                }
+            }
+        }
+
+    }
+    
+}
+
+// 
+.tip{
+    
+    bottom: 80rpx; 
+    padding: 20rpx;
+    text-align: center;
+    box-sizing: border-box;
+    color: #999;
+    margin-bottom: 200rpx;
+ }
+// 
+.btn{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    color: white;
+    .left{
+        background: #f56e68;
+        height: 120rpx;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .pro{
+            margin-top: -8rpx;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           .check{
+            transform: scale(0.6,0.6);
+            .wx-checkbox-input {
+                background: none !important;
+                border:2px solid #fff; 
+            }
+            
+           }
+        }
+        .top{
+            margin-top: -2rpx;
+        }
+    }
+    .okFN{
+        width: 50%;
+        height: 120rpx;
+        
+        .van-button{
+            color: white;
+            border:none;
+            height: 100%;
+            width: 100%;
+            background: #ff934b;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .quanDA{
+        width: 100%; 
+    }
+
+    
+
+
+    
+}
+
+// 
+// 技师
+.teamFu{
+    background: white;
+    padding: 20rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    font-size: 27rpx;
+    border-bottom: 1px solid rgb(240, 240, 240);
+    
+    image{
+        margin-left: 20rpx;
+        height: 100rpx;
+        width: 100rpx;
+    }
+    .contant{
+        flex: 1;
+        margin: 0 20rpx;
+        .name_cla{
+            display: flex;
+            margin-bottom: 20rpx;
+            align-items: flex-end;
+            .name{
+                margin-right: 30rpx;
+                font-size: 30rpx;
+            }
+        }
+        .shen_phone{
+            display: flex;
+            align-items: center;
+            .phone{
+                color: #999;
+            }
+        }
+    }
+}
+
+// // 门店卡片
+.storeCard{
+    background: white;
+    padding: 20rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    image{
+        height: 120rpx;
+        width: 120rpx;
+    }
+    .contantStore{
+        flex: 1;
+        margin-left: 20rpx;
+        .name_mi{
+            display: flex;
+            align-items: center;
+            .name{
+                font-weight: 700;
+                margin-right: 10rpx;
+                flex: 1;
+                font-size: 30rpx;
+            }
+            .mi{
+                color: #61B6FD;
+                font-size: 28rpx
+            }
+        }
+        .address{
+            display: flex;
+            align-items: center;
+            image{
+                width: 30rpx;
+                height: 30rpx;
+                margin-right: 10rpx;
+            }
+            margin-top: 20rpx;
+            color:#999;
+        }
+    }
+    .right_Statu{
+        .van-button{
+            margin-left: 20rpx;
+            background: #F56F68;
+            color: white;
+        }
+        .Rname{
+            text-align: center;
+            color: #61B6FD;
+        }
+    }
+    
+}
+
+// 
+.van-popup--right{
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
+    scroll-view{
+        overflow: auto;
+        flex: 1;
+        .noMore{
+            font-size: 28rpx;
+            color: #999;
+            padding: 20rpx;
+            text-align: center;
+            box-sizing: border-box;
+        }
+    }
+    
+}

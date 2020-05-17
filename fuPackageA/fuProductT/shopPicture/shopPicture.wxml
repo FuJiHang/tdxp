@@ -1,0 +1,45 @@
+<!-- 店家实拍 -->
+
+<view class='goods-comment'>
+  <view class='goods-commentH df ais jct-between'>
+    <view>买家实拍</view>
+    <view class='df ais' bindtap='onChange'>
+      <text>查看全部</text>
+      <image class='arrowRight' src='{{imgUrl+"icon_more@2x.png"}}' mode='widthFix'></image>
+    </view>
+  </view>
+  <view class='a' wx:for='{{listData}}' wx:for-index='index' wx:key="item" wx:if='{{index < 2}}'>
+    <view class='userInfo df ais'>
+      <image class='userInfoImg' src='{{item.Picture}}' mode='widthFix'></image>
+      <view class='userInfo-inner flex'>
+        <view class='userInfo-innerT df ais jct-between'>
+          <view class='df ais'>
+            <view class='userName'>{{item.UserName}}</view>
+            <!-- <view class='userInfo-grade df ais jct'>
+              <image src='{{imgUrl+"icon_putong@2x.png"}}' mode='widthFix'></image>
+              <text class='df ais jct'>铂金会员</text>
+            </view> -->
+          </view>
+          <view class='buyTime'>{{item.ReviewDate}}</view>
+        </view>
+        <view class='userInfo-gradeStar df ais'>
+          <image src='{{imgUrl+"icon_01@2x (2).png"}}' mode='widthFix'></image>
+          <image src='{{imgUrl+"icon_01@2x (2).png"}}' mode='widthFix'></image>
+          <image src='{{imgUrl+"icon_02@2x.png"}}' mode='widthFix'></image>
+          <image src='{{imgUrl+"icon_02@2x.png"}}' mode='widthFix'></image>
+          <image src='{{imgUrl+"icon_02@2x.png"}}' mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+    <view class='commoentInfo'>{{item.ReplyText}}</view>
+
+    <view class='commoentImg df ais'>
+      <block wx:for='{{item.ImagesList}}' wx:for-item='ImagesList' wx:key="ImagesList" wx:for-index="sindex">
+        <image src='{{ImagesList}}' mode='widthFix' data-pindex="{{index}}" data-sindex="{{sindex}}" bindtap="previewImage">
+        </image>
+      </block>
+      <!-- <image wx:for='{{item.ImagesList}}' wx:for-item='ImagesList' wx:key src='{{ImagesList}}' mode='widthFix' data-pindex="{{pindex}}" data-sindex="{{index}}" bindtap="previewImage"></image> -->
+    </view>
+    
+  </view>
+</view>

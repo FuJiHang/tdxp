@@ -1,0 +1,134 @@
+page {
+    height: 100%;
+    overflow: hidden;
+    background:rgba(245,245,245,1);
+}
+
+#fuIdentity {
+    font-weight: bold;
+    // background: white;
+    // font-size: 26rpx;
+    // color: #666;
+    // height: 100%;
+    // overflow: hidden;
+    // display: flex;
+    // flex-direction: column;
+
+    // 导航条
+    .navTopIY {
+        background:rgba(255,255,255,1);
+        color: #000000;
+        padding: 28rpx 32rpx;
+  
+        box-sizing: border-box;
+        font-size: 32rpx;
+        margin: 14rpx 0 0; 
+    }
+
+    // 选项
+    .chooseIndentity {
+         font-size: 32rpx;
+        background:rgba(255,255,255,1);
+        color: #666666;
+        display: flex;
+        padding: 18rpx 32rpx;
+        // margin: 20rpx;
+        box-sizing: border-box;
+        align-items: center;
+        position: relative;
+        border-top: 1px solid rgb(246, 246, 246);
+        font-size: 28rpx;
+        // justify-content: space-between;
+        image {
+            height: 54rpx;
+            width: 54rpx;
+            margin-right: 12rpx;
+        }
+
+        .wjx_img {
+            width: 100rpx;
+            height: 100rpx;
+            background-color: #72B2F7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        .active {
+            width: 46rpx;
+            height: 50rpx;
+            z-index: 10 !important;
+        }
+
+        .contant_cy {
+            flex: 1;
+            margin: 0 20rpx;
+
+            .name {
+                font-weight: bold;
+                font-size: 28rpx;
+                // margin-bottom: 10rpx;
+            }
+
+            .text {
+                font-size: 28rpx;
+            }
+        }
+    }
+
+    .chooseIndentity::after {
+        position: absolute;
+        left: 5%;
+        width: 90%;
+        bottom: 0rpx;
+        content: "";
+        text-align: center;
+        display: flex;
+        height: 10rpx;
+
+    }
+
+    .bg0 {
+        background: #FFB462;
+    }
+
+    .bg0::after {
+        box-shadow: 0 5rpx 30rpx #FFB462;
+    }
+
+    .bg1 {
+        // // background: #FFCD62;
+        background: #84D1FF;
+    }
+
+    .bg1::after {
+        // box-shadow: 0 5rpx 30rpx #FFCD62;
+        box-shadow: 0 5rpx 30rpx #84D1FF;
+    }
+
+    .bg2 {
+        background: #FF6262;
+    }
+
+    .bg2::after {
+        box-shadow: 0 5rpx 30rpx #FF6262;
+    }
+
+    .bg3 {
+        background: #84D1FF;
+    }
+
+    .bg3::after {
+        box-shadow: 0 5rpx 30rpx #84D1FF;
+    }
+
+    .bg4 {
+        background: #84D1FF;
+    }
+
+    .bg4::after {
+        box-shadow: 0 5rpx 30rpx #84D1FF;
+    }
+
+}

@@ -1,0 +1,37 @@
+<!--fuPackageA/managerReturns/managerReturns.wxml-->
+<view id="managerReturns">
+  <block wx:if="{{isList}}">
+    <view class="allNum">
+     总额度：{{info.OrderTotal}}
+    </view>
+    <view class="list">
+      <view class="item" wx:for="{{list}}" wx:key="{{index.OrderId}}" data-idx="{{index}}" bindtap="toDetail">
+        <view >订单号：{{item.OrderId}}</view>
+        <view class="line">{{item.OrderDate}}</view>
+        <view class="plane">
+          <view>{{item.TypeName}}</view>
+          <view>￥{{item.OrderTotal}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="detail">
+      <view class="arr" wx:for="{{detailInfo}}" wx:key="{{index}}">
+        <image mode="aspectFit" src="{{item.Picture}}"></image>
+        <view class="content">
+          <view class="title">{{item.ProductName}}</view>
+          <view class="info">
+            <view>订单号：{{item.OrderId}}</view>
+            <view>用户名：{{item.UserName}}</view>
+          </view>
+          <view class="bottom">
+            <view>￥{{item.OrderTotal}}</view>
+            <view>{{item.OrderDate}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="returnBtn" bindtap="returnList">返回</view>
+  </block>
+</view>

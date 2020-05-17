@@ -1,0 +1,47 @@
+/* 单行溢出省略 */
+.textOverflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+/* 两行溢出省略 */
+.textOverflowMulti2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* 清除浮动 */
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix::before,
+.clearfix::after {
+  display: table;
+  content: ' ';
+}
+
+.clearfix::after {
+  clear: both;
+  height: 0;
+  font-size: 0;
+  visibility: hidden;
+}
+
+/* 拓展点击 */
+.extendClick {
+  position: relative;
+}
+
+.extendClick::before {
+  content: '';
+  position: absolute;
+  top: -10rpx;
+  left: -10rpx;
+  right: -10rpx;
+  bottom: -10rpx;
+}

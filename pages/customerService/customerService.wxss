@@ -1,0 +1,26 @@
+/* pages/customerService/customerService.wxss */
+page{
+  background: #fff;
+}
+.content{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.content image{
+  height: 100%;
+}
+.content .itemCon{
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.content .itemCon .item{
+  color: #333;
+}
+.content .itemCon .date{
+  margin-left:30rpx;
+  color: #00BFFF;
+  text-decoration: underline;
+}

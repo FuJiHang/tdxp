@@ -1,0 +1,81 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-12-10 10:55:17 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-12-10 10:55:17 
+    设置首页是否展示次数卡
+ */ -->
+<view id="fuSetfrequen">
+  <view class="topNav">
+    <view bindtap="changeNav" data-idx="{{index}}" wx:for="{{navInfo.list}}" wx:key="{{index}}" class="{{navInfo.nowIdx==index?'navClick':''}}">{{item.name}}</view>
+  </view>
+  <!-- 次数卡 -->
+  <block wx:if="{{navInfo.nowIdx == 0}}">
+    <view class="child" bindtap="chooseFN" data-name="{{'dataList['+indexc+'].isChoose'}}" data-isChoose="{{itemc.isChoose}}" data-type="1" data-index="{{indexc}}" wx:for="{{dataList}}" wx:for-index="indexc" wx:for-item="itemc" wx:key="{{indexc}}">
+      <van-checkbox value="{{ itemc.isChoose }}" checked-color="#E96497"></van-checkbox>
+      <view class="contant">
+        <image src="{{itemc.ThumbnailUrl40}}" mode="aspectFill"></image>
+        <view class="bg"></view>
+        <span class="detail">
+          <view class="name">{{itemc.ProductName?itemc.ProductName:' '}}</view>
+          <!-- <view class="price">
+                    {{itemc.SaleCounts?itemc.SaleCounts:0}}次 ¥{{itemc.SalePrice?itemc.SalePrice:0}}
+                </view> -->
+          <!-- <view class="val">可使用门店名称：{{itemc.StoreName?itemc.StoreName:'无'}}</view> -->
+          <!-- <view>距离：{{itemc.Distance?itemc.Distance:'无'}}</view> -->
+          <view class="time">
+            创建时间：{{itemc.AddedDate?itemc.AddedDate:''}}
+            <!-- <van-button size="mini">立即购买</van-button> -->
+          </view>
+        </span>
+      </view>
+
+    </view>
+
+    <view class="noMore" wx:if="{{finsh}}">
+      没有更多的了~~~
+    </view>
+
+    <view class="btn">
+      <span bindtap="setProduct" data-type="1" data-isCancl="true" class="childBtn one">
+        <van-button>取消设置</van-button>
+      </span>
+      <span bindtap="setProduct" data-type="1" class="childBtn">
+        <van-button>设置</van-button>
+      </span>
+
+    </view>
+  </block>
+  <!-- 活动图 -->
+  <block wx:else>
+    <view class="child" bindtap="chooseFN" data-id="{{itemc.AdValue}}" data-name="{{'dataList['+indexc+'].isChoose'}}" data-ischoose="{{itemc.isChoose}}" data-type="4" data-index="{{indexc}}" wx:for="{{dataList}}" wx:for-index="indexc" wx:for-item="itemc" wx:key="{{indexc}}">
+      <van-checkbox value="{{ itemc.isChoose }}" checked-color="#E96497"></van-checkbox>
+      <view class="contant">
+        <image src="{{itemc.AdImg}}" mode="aspectFill"></image>
+        <view class="bg"></view>
+        <span class="detail">
+          <view class="name">{{itemc.AdName?itemc.AdName:' '}}</view>
+          <view class="time">
+            创建时间：{{itemc.CreateTime?itemc.CreateTime:''}}
+          </view>
+        </span>
+      </view>
+    </view>
+    <view class="noMore" wx:if="{{finsh}}">
+      没有更多的了~~~
+    </view>
+    <view class="btn">
+      <span bindtap="setProduct" data-type="4" data-isCancl="true" class="childBtn one">
+        <van-button>取消设置</van-button>
+      </span>
+      <span bindtap="setProduct" data-type="4" class="childBtn">
+        <van-button>设置</van-button>
+      </span>
+    </view>
+  </block>
+
+
+
+
+
+</view>

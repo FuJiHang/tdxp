@@ -1,0 +1,58 @@
+.upDownList{
+    display: flex;
+    padding: 20rpx 20rpx 20rpx 0;
+    margin-left: 20rpx;
+    box-sizing: border-box;
+    background: white;
+    border-bottom: 1px solid rgb(240, 240, 240);
+    align-items: center;
+    image{
+        margin-left: 20rpx;
+        height: 130rpx;
+        width: 130rpx;
+    }
+    .contantTL{
+        flex: 1;
+        margin-left: 20rpx;
+        .name_mon{
+            display: flex;
+            align-items: center;
+            .name{
+                font-size: 29rpx; 
+                font-weight: bold;
+                flex: 1;
+                margin-right: 5rpx;
+                display:-webkit-box;
+                -webkit-line-clamp: 1; //超出多少行
+                overflow: hidden; 
+                -webkit-box-orient: vertical;
+                word-break:break-all;
+            }
+            .mon{
+                color: #F56F68;
+                font-size: 28rpx;
+            }
+        }
+        .detail_btn{
+            margin-top: 20rpx;
+            display:-webkit-box;
+            -webkit-line-clamp: 2; //超出多少行
+            overflow: hidden; 
+            -webkit-box-orient: vertical;
+            word-break:break-all;
+            font-size: 26rpx;
+            line-height: 40rpx;
+            color: #999;
+            .det{
+                font-size: 24rpx;
+                border-radius: 10rpx;
+                margin-right: 10rpx;
+                color: #fff;
+                background: #F56F68;
+                box-sizing: border-box;
+                padding:2rpx 5rpx;
+            }
+           
+        }
+    }
+}

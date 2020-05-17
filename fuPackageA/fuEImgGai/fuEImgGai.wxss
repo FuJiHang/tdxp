@@ -1,0 +1,11 @@
+/* fuPackageA/fuEImgGai/fuEImgGai.wxss */
+
+
+page{
+    background: white;
+}
+#fuEImgGai image{
+    
+        width: 100%;
+    
+}

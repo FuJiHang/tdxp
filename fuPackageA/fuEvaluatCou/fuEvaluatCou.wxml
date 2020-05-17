@@ -1,0 +1,91 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-08-02 19:17:26 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-08-02 19:17:26 
+    核销卡评价
+*/ -->
+<view id="fuEvaluatCou">
+
+        <view class="evaNew">
+    
+            <!--  -->
+            <!-- <view class="assem" >
+                <view class="childA">
+                    <view class="proImg">
+                        <image mode="aspectFill" src="{{dataInfo.LineItems[index].Image+'?x-oss-process=image/resize,h_480'}}" />
+                    </view>
+                    <view class="contant">
+                        <view class="nameC">
+                            <span class="le">{{dataInfo.LineItems[index].ProductName}} </span>
+                        </view>
+                        <view class="detail">
+                            {{dataInfo.LineItems[index].Description}}
+                        </view>
+                        <view class="price">
+                            <span class="mon">￥{{dataInfo.LineItems[index].Price}}</span>
+                            <span class="num">已售{{dataInfo.LineItems[index].SalesCount}}</span>
+                        </view>
+                    </view>
+                </view>
+            </view> -->
+    
+            <!--  -->
+            <textarea maxlength="500" value="{{text}}" bindinput="changeFN" placeholder="亲，写下你的感受吧~">
+    
+            </textarea>
+    
+            <!--  -->
+            <view class="chooselt">
+                <span bindtap="chooseFN" data-index="{{index}}" data-choose="{{item.isChoose}}" class="child {{item.isChoose?'choose':''}}" wx:key="index" wx:for="{{tags}}">{{item.TagName}}</span>
+            </view>
+    
+            <!--  -->
+            <view class="imgList" >
+                <view class="img" wx:for="{{imgShow}}" wx:key="{{index}}">
+                    <image src="{{item}}" mode="aspectFill"/>
+                </view>
+                <view class="padding" bindtap="uploadLogo" wx:if="{{imgShow.length<8}}">
+                    <view class="choose">
+                        <image src="{{imgUrl+'pyImg.png'}}" />
+                        <view >照片</view>
+                    </view>
+                </view>
+            </view>
+    
+            <!--  -->
+            <view class="cate">
+                <view class="name">评分</view>
+                <view class="child">
+                    技术分 <van-rate
+                            value="{{ jsf }}"
+                            icon="like"
+                            void-icon="like-o"
+                            bind:change="onChange"
+                            data-name="jsf"
+                            size="{{15}}"
+                            color="#F56F68"
+                            />
+                </view>
+                <view class="child">
+                    服务分 <van-rate
+                            value="{{ fwf }}"
+                            icon="like"
+                            void-icon="like-o"
+                            bind:change="onChange"
+                            data-name="fwf"
+                            size="{{15}}"
+                            color="#F56F68"
+                            />
+                </view>
+            </view>
+    
+        </view>
+    
+    
+        <!--  -->
+        <view class="btn" bindtap="submit">
+            <van-button>提交</van-button>
+        </view>
+    
+    </view>

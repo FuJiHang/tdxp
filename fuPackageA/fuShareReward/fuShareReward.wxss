@@ -1,0 +1,59 @@
+page {
+  height: 100%;
+  font-size: 26rpx;
+}
+#fuShareReward {
+  color: #666;
+}
+#fuShareReward button::after {
+  border: none;
+}
+#fuShareReward button {
+  width: 100%;
+  text-align: center;
+  margin: 20rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+#fuShareReward .navTop {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+#fuShareReward .navTop .child {
+  width: 25%;
+}
+#fuShareReward .navTop .child image {
+  width: 40%;
+}
+#fuShareReward .navTop .child .name {
+  font-size: 32rpx;
+}
+#fuShareReward .tip {
+  color: #999;
+  font-size: 34rpx;
+  text-align: center;
+}
+#fuShareReward .contant {
+  margin-bottom: 30rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+#fuShareReward .contant .name {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 15rpx;
+}
+#fuShareReward .contant .det {
+  color: #999;
+  margin-bottom: 20rpx;
+}
+#fuShareReward .btn {
+  margin: 60rpx 0;
+  color: #999;
+  text-align: center;
+}

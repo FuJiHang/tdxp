@@ -1,0 +1,171 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-09-27 17:24:11 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-09-27 17:24:11 
+    商品管理
+*/ -->
+<view id="fuProMang">
+    <!--  -->
+    <view class="navTop">
+        <view class="seachbg">
+            <image src="../../../images/icon_search@2x.png" mode="aspectFill" />
+            <input value="{{Keywords}}" bindconfirm="OkSeach" placeholder-style="color:#999;" placeholder="请输入商品名字" value="{{seach}}" bindinput="seaChFN" />
+        </view>
+        <span class="contant">
+            <span bindtap="chooseFN" data-index="{{index}}" class="flex {{choose==index?'choose':''}}" wx:for="{{chooseList}}" wx:key="{{index}}">
+                {{item.name+'('+item.val+')'}}
+            </span>
+        </span>
+    </view>
+    <!--  -->
+    <view class="product2" wx:for="{{dataList}}" wx:key="{{index}}">
+        <view class="topContant">
+            <image mode="aspectFit" src="{{item.ImageUrl1}}" />
+            <span class="contant">
+                <view class="name">{{item.ProductName}}</view>
+                <view class="price">
+                    <span class="m">￥</span>
+                    {{item.MarketPrice}}
+                    <!-- <span class="conpou">
+                        领券130减12
+                    </span> -->
+                </view>
+                <view class="num" wx:if="{{false}}">
+                    已售{{item.SaleCounts}}件
+                    <span class="flex">库存{{item.Stock}}</span>
+                    <view class='moreAdd'>
+                        <text></text>
+                        <text></text>
+                    </view>
+                </view>
+            </span>
+        </view>
+        <view class="btnContant">
+            <!-- 2 -->
+            <!-- <span bindtap="openTagFN" data-data="{{item}}">设置</span> -->
+            <!-- <span wx:if="{{item.StoreSaleStatus!=1}}" bindtap="changeStatus" data-data="{{item}}" data-type="up">上架</span>
+            <span wx:if="{{item.StoreSaleStatus==1}}" bindtap="changeStatus" data-data="{{item}}" data-type="down">下架</span> -->
+            <span wx:if="{{typeNum==2}}" bindtap="changeStatus" data-data="{{item}}" data-type="1">
+                上架
+            </span>
+            <span wx:if="{{typeNum==1}}" bindtap="changeStatus" data-data="{{item}}" data-type="2">
+                下架
+            </span>
+            <span wx:if="{{choose==0}}" bindtap="getMemData" data-isdian="false" data-data="{{item}}">
+                分佣
+            </span>
+            <!-- <span wx:if="{{choose==0}}" class="up" bindtap="StockFN" data-data="{{item}}">库存</span> -->
+        </view>
+    </view>
+    <view class="noMore" wx:if="{{finsh}}">没有更多了～</view>
+</view>
+<!-- wjx新的分佣设置 -->
+<view class="points_set" wx:if="{{newShow}}">
+    <view class="content-set">
+        <view class="set_search">
+            <view class="set-test">{{setVal}}</view>
+            <image class="set_img" src="{{imgUrl+'sanjiaoxing.png'}}"></image>
+            <view class="set-main" wx:if='{{setShow}}'>
+                <block wx:for="{{setTitle}}" wx:key="{{item}}">
+                    <text bindtap="handleItem" data-item="{{item}}" data-index="{{index}}">
+                        {{item}}
+                    </text>
+                </block>
+                <view class="set-off" bindtap="handleGB">x</view>
+            </view>
+            <view class="set_btn" bindtap="handleSearch"></view>
+        </view>
+        <view class="set_input">
+            <input type="text" class="the-input" value="{{val}}" placeholder="请输入返利比率数值或固定金额" placeholder-class="input_style" bindinput="handleInput" />
+        </view>
+    </view>
+    <view class="set-btn" catchtap="subData" data-val="{{setVal}}">提交</view>
+</view>
+<view class="set_zz" wx:if="{{newShow}}" bindtap="handleAll"></view>
+<van-popup show="{{stockShow}}" custom-style="max-height:70%; display: flex;flex-direction: column;overflow:hiddren;" position="bottom" bind:close="onCloseST">
+    <view style="flex:1;overflow:auto;">
+        <view class="CList" data-index="{{index}}" wx:for="{{SList}}" wx:key="{{index}}">
+            <span class="name">名称：{{item.ValueStr?item.ValueStr:'无'}}</span>
+            <span class="val">
+                <input bindinput="inputFN" type="number" data-name="{{'SList['+index+'].StoreStock'}}" value="{{item.StoreStock}}" />
+            </span>
+            个
+            <span class="type">{{item.SalePrice}}元</span>
+        </view>
+    </view>
+    <view class="dingWei">
+        <van-button type="danger" bindtap="subminFNST">提交</van-button>
+    </view>
+</van-popup>
+<!-- wjx修改  不要了 -->
+<van-popup show="{{false}}" custom-style="max-height:70%; display: flex;flex-direction: column;overflow:hiddren;" position="bottom" bind:close="onCloseS">
+    <!-- <van-popup show="{{subShow}}" custom-style="max-height:70%; display: flex;flex-direction: column;overflow:hiddren;"  position="bottom" bind:close="onCloseS"> -->
+    <!-- <van-popup show="{{true}}" custom-style="max-height:70%; display: flex;flex-direction: column;overflow:hiddren;"  position="bottom" bind:close="onCloseS"> -->
+    <view style="flex:1;overflow:auto;" class="wjx_add">
+        <view class="add_title">
+            <text>首购</text>
+            <text>复购</text>
+        </view>
+        <view class="zong_wjx">
+            <!-- 首购 -->
+            <view class="shougou">
+                <view class="CList" data-index="{{index}}" wx:for="{{CList}}" wx:key="{{index}}">
+                    <span class="name">{{item.GradeName}}</span>
+                    <span class="val">
+                        <input bindinput="inputFN" type="number" data-name="{{'CList['+index+'].Commission'}}" value="{{item.Commission}}" />
+                    </span>
+                    <span class="type" bindtap="changeType" data-index="{{index}}" data-val="{{item.CType}}">
+                        {{item.CType==0?'金额':'百分比'}}
+                    </span>
+                </view>
+            </view>
+            <!-- 复购 -->
+            <view class="fugou">
+                <view class="CLists" data-index="{{index}}" wx:for="{{CList}}" wx:key="{{index}}">
+                    <span class="name">{{item.GradeName}}</span>
+                    <span class="val">
+                        <input bindinput="inputFN" type="number" data-name="{{'CList['+index+'].ACommission'}}" value="{{item.Commission}}" />
+                    </span>
+                    <span class="type" bindtap="changeAType" data-index="{{index}}" data-val="{{item.AType}}">
+                        {{item.AType==0?'金额':'百分比'}}
+                    </span>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="dingWei">
+        <van-button type="danger" bindtap="subminFN">提交</van-button>
+    </view>
+</van-popup>
+<!--  -->
+<van-popup show="{{tabShow}}" custom-style="max-height:70%; display: flex;flex-direction: column;overflow:hiddren;" position="bottom" bind:close="onCloseT">
+    <view class="tList" bindtap="setFN" data-index="{{index}}" data-data="{{item}}" wx:for="{{tagIdList}}" wx:key="{{index}}">
+        <span class="name">{{item.name}}</span>
+        <span class="val">{{item.status?'取消':'设置'}}</span>
+    </view>
+</van-popup>
+<!-- 设置分佣 -->
+<!-- memShow -->
+<van-popup show="{{memShow}}" custom-style="max-height:70%; display: flex;flex-direction: column;overflow:hiddren;" position="bottom" bind:close="onCloseT">
+    <!-- postMember -->
+    <block wx:for="{{postMember}}" wx:key="{{index}}">
+        <view class="childFuMem">
+            <span class="name">{{item.Name}}:</span>
+            <span class="input" data-name="Commission">
+                <input value="{{item.Commission}}" bindinput="changeInput" data-index="{{index}}" />
+            </span>
+            <span class="val">
+                <van-button size="mini" bindtap="changeBFBJE" data-index="{{index}}" data-val="{{item.FirstType}}">
+                    {{item.FirstType?'百分比':'固定金额'}}
+                </van-button>
+            </span>
+        </view>
+        <view class="or" wx:if="{{index==0}}">
+            
+        </view>
+    </block>
+    <van-button bindtap="postMemberFN" data-index="{{index}}" data-val="{{item.FirstType}}">
+        提交
+    </van-button>
+</van-popup>

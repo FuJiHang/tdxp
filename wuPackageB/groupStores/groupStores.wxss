@@ -1,0 +1,85 @@
+#activities .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 20rpx 0;
+  border-top: 1rpx solid #eee;
+}
+#activities .header .header_title {
+  flex: 1;
+  font-size: 30rpx;
+  color: #333;
+  text-align: center;
+}
+#activities .header .active {
+  color: #E9696A;
+  position: relative;
+}
+#activities .header .active::after {
+  content: '';
+  width: 50rpx;
+  height: 2px;
+  background-color: #E9696A;
+  position: absolute;
+  left: 43%;
+  bottom: -19rpx;
+}
+#activities .list_wrap {
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+#activities .list_wrap .nodata {
+  font-size: 30rpx;
+  color: #999;
+  padding: 20rpx;
+  text-align: center;
+}
+#activities .list_wrap .list {
+  display: flex;
+  align-items: center;
+  padding: 15rpx 25rpx 15rpx 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+#activities .list_wrap .list .list_logo {
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  background-color: #F6D28B;
+  font-size: 60rpx;
+  color: #fff;
+  margin-right: 15rpx;
+}
+#activities .list_wrap .list .add_active {
+  background-color: #ccc;
+}
+#activities .list_wrap .list .list_main {
+  flex: 1;
+}
+#activities .list_wrap .list .list_main .list_title {
+  font-size: 28rpx;
+  color: #333;
+}
+#activities .list_wrap .list .list_main .list_test {
+  font-size: 22rpx;
+  color: #999;
+  margin-bottom: 10rpx;
+}
+#activities .list_wrap .list .list_main .list_time {
+  font-size: 24rpx;
+  color: #61B6FD;
+}
+#activities .list_wrap .list .list_main .add_time {
+  color: #ccc;
+}
+#activities .list_wrap .list .list_btn {
+  width: 100rpx;
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  border-radius: 30rpx;
+  background-color: #E65757;
+  margin-right: 20rpx;
+  padding: 5rpx 0;
+}

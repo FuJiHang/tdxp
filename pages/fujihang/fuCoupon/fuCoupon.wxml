@@ -1,0 +1,123 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-15 10:43:17 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-04-15 10:43:39
+    审核列表
+ */ -->
+<view id="fuCoupon">
+    <!-- 导航条 -->
+    <!-- <view class="navTopMO">
+        <span class="child {{isChoose==index?'danger':''}}" wx:for="{{navTop}}"  wx:key="index">
+            <van-button size="small" bindtap="changeTop"  data-index="{{index}}">{{item}}</van-button>
+        </span>
+    </view> -->
+    <!-- 功能 -->
+    <van-tabs class="van_order" line-width='20' color="#F56F68" active="{{ active }}" bind:change="onChange" swipeable>
+        <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+            <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getDataRDD" wx:if="{{active==index}}">
+                <!-- <view class="couponFu {{itemc.disableF||active==2?'disableF':''}}" wx:for="{{functionList[active].data}}" wx:for-index="indexs" wx:for-item="itemc" wx:key="{{indexs}}" bindtap="chooseFN" data-data="{{itemc}}">
+                    <view class="time_hd time" wx:if="{{active!=3}}">{{itemc.GetDate}} 获得</view>
+                    <view class="time_hd time" wx:else >售价 {{itemc.BuyPrice}}元</view>                    
+                    <view class="name_pic hei">
+                        <span class="name">{{itemc.CouponName}}</span>
+                        <span class="pic">￥{{itemc.Price}}</span>
+                    </view>
+                    <view class="rule hei">使用规则：所购买的商品金额必须大于或等于{{itemc.OrderUseLimit}}元</view>
+                    <view class="time_gq time">{{itemc.ClosingTime}} 过期</view>
+                    <view class="bg"></view>
+                </view> -->
+                <!-- functionList[active].data -->
+                <view wx:if="{{type==0}}" class="couponGanT {{itemc.disableF||active==2?'disableF':''}}"
+                    wx:for="{{functionList[active].data}}" wx:for-index="indexs" wx:for-item="itemc" wx:key="{{indexs}}"
+                    bindtap="chooseFN" data-data="{{itemc}}">
+                    <view class="letfCon">
+                        <view class="contant">
+                            <view class="name">
+                                <span>￥</span>
+                                {{itemc.Price}}
+                                <span>抵用券</span>
+                            </view>
+                            <view class="disp">
+                                <view class="role">所购买的商品金额必须大于或等于{{itemc.OrderUseLimit}}元</view>
+                                <view class="time">{{itemc.ClosingTime}}过期</view>
+                            </view>
+                        </view>
+                        <view class="yuan shang"></view>
+                        <view class="yuan xia"></view>
+                        <view class="glass"></view>
+                    </view>
+                    <view class="rightCon" wx:if="{{active!=3}}">
+                        <view class="contantR">
+                            <view class="buyName">附近可用</view>
+                            <view class="btn">立即使用</view>
+                            <!-- <view class="btn">分享好友</view> -->
+                            <!-- <button class="cp_btn" bindtap="tipFN" data-data="{{itemc}}" open-type="{{itemc.PayId?'share':''}}"  data-name="{{itemc.CouponName}}"
+                                data-imgc="{{itemc.UploadLogo}}" data-couponid="{{item.CouponId}}"></button> -->
+                        </view>
+                    </view>
+                    <view class="rightCon" wx:else>
+                        <view class="contantR">
+                            <view class="buyName noPad">购买价格
+                            </view>
+                            <view class="pirce">{{itemc.BuyPrice}}元
+                            </view>
+                            <view class="btn">立即购买
+                            </view>
+                        </view>
+
+                    </view>
+                </view>
+                <view wx:if="{{type==1}}" class="couponGan {{itemc.disableF||active==2?'disableF':''}}"
+                    wx:for="{{functionList[active].data}}" wx:for-index="indexs" wx:for-item="itemc" wx:key="{{indexs}}"
+                    bindtap="chooseFN" data-data="{{itemc}}">
+                    <view class="bWCou">
+                        <view class="juchi top">
+                            <view class="child" wx:for="{{150}}"></view>
+                        </view>
+                        <view class="juchi btn">
+                            <view class="child" wx:for="{{150}}"></view>
+                        </view>
+                        <view class="juchi left">
+                            <view class="child" wx:for="{{150}}"></view>
+                        </view>
+                        <view class="leftNaction">
+                            {{itemc.Price}}
+                            <span>元</span>
+                        </view>
+                        <view class="rightNaction">
+                            <view class="name">
+                                <span>{{itemc.CouponName}}</span>
+                            </view>
+                            <view class="vip">VIP客户专享</view>
+                            <view class="time">使用日期：{{itemc.ClosingTime}}使用</view>
+                        </view>
+                    </view>
+                    <view class="yuan">
+                        <view class="aaaa"></view>
+                    </view>
+                    <view class="typeName">活动专用</view>
+                </view>
+                <view class="noMore" wx:if="{{functionList[active].finish}}">没有更多的了~~~</view>
+            </scroll-view>
+        </van-tab>
+    </van-tabs>
+    <!--  -->
+    <van-popup show="{{show}}" bindtap="onCloseP" position="bottom" bind:close="onCloseP">
+        <view class="iosJJ">
+            <view class="child" wx:for="{{personData}}" wx:key="{{index}}">
+                {{item.name}}
+                <input value="{{item.val}}" catchtap placeholder="{{item.plr}}" bindinput="changeInput"
+                    data-name="{{'personData['+index+'].val'}}" />
+            </view>
+            <view class="btn">
+                <span class="flex">
+                    <van-button size="small" bindtap="onCloseP">取消</van-button>
+                </span>
+                <span class="okFN flex">
+                    <van-button size="small" catchtap="payOrder">确定</van-button>
+                </span>
+            </view>
+        </view>
+    </van-popup>
+</view>

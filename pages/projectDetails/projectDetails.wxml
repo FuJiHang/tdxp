@@ -1,0 +1,87 @@
+
+<view id='projectDetails'>
+  
+  <view class="productCont">
+
+  
+    <swiper style="height:{{imgheights[current]}}rpx;" bindchange="bindchange" class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}">
+
+        <swiper-item wx:for="{{background}}" wx:key="index">
+            <image data-id='{{index}}' bindload="imageLoad" class="banner"  src="{{item+'?x-oss-process=image/resize,l_640'}}" mode='widthFix'></image>
+        </swiper-item>
+
+    </swiper>
+    
+
+  <!--  -->
+    <view class="productDetail">
+      <view class="name">{{Name}}
+        <view class="Share">
+          <van-button open-type="share" size="mini">分享</van-button>
+        </view>
+      </view>
+      <view class="detail">{{Description}}</view>
+      <view class="money_person">
+        <span class="mon">{{Price}}元</span>
+        <span class="mon_d">定金：{{Deposit}}元</span>
+        <span class="num">{{SaleCounts}}人已预约</span>
+      </view>
+    </view>
+ 
+  <!-- 选择门店 -->
+    <view class="storePD" wx:if="{{!GetstoreData}}">
+      
+      <view class="navtop"><image mode="aspectFill" src="{{imgUrl+'spot_5.png'}}"/>选择门店</view>
+      
+      <view class="child" wx:for="{{storeList}}"  wx:key="{{index}}" data-index="{{index}}" >
+        <van-checkbox  checked-color="#F56F68" value="{{ item.isChoose }}" bind:change="onChange" data-index="{{index}}"></van-checkbox>
+        <view class="border" data-index="{{index}}" bindtap="toStoreFN">
+          <image class="imgH"  src="{{item.StoreImages+'?x-oss-process=image/resize,l_640'}}" data-index="{{index}}" bindtap="toStoreFN"/>
+          <view class="contant_c">
+            <view class="name_add" >
+              <span class="name">{{item.StoreName}}</span>
+              <span class="add">距离：{{item.Distance}}</span>
+            </view>
+            <view class="address">
+                <image src="{{imgUrl+'icon_address33.png'}}" />
+                <span class="add_text">
+                  {{item.Address}}
+                </span>
+                
+            </view>
+          </view>
+        </view>
+      </view>
+
+
+    </view>
+
+    <!-- 项目详情 -->
+    <view class="detailPD">
+      <view class="navtop"><image src="{{imgUrl+'spot_5.png'}}"/>项目详情</view>
+      <view class="det">
+        <image mode="widthFix" src="{{Info+'?x-oss-process=image/resize,l_1080'}}"/>
+      </view>
+      
+    </view>
+
+
+  </view>
+<!-- <text class="alert">{{fu01}}</text>
+<text class="alert">{{fu02}}</text>
+<text class="alert">{{fu03}}</text>
+<text class="alert">{{fu04}}</text>
+  <text class="alert">{{alert}}</text> -->
+  <view class="btn">
+    <span class="flexIcon" bindtap="qiehuan" wx:if="{{false}}">
+      <van-icon name="gold-coin-o" size="50rpx"/>
+      <view >{{pasreAll?'定金':'全额'}}</view>
+    </span>
+    <span class="flexbtn">
+      <van-button wx:if="{{!pasreAll}}"  bindtap="toBayMin" open-type="getUserInfo">立即预约</van-button>
+      <van-button wx:else class="tuhao" bindtap="toBayAll" open-type="getUserInfo">全额付款</van-button>
+    </span>
+  </view>
+  
+</view>
+

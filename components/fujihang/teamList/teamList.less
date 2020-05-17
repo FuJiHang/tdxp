@@ -1,0 +1,62 @@
+.teamList{
+    display: flex;
+    padding: 20rpx 20rpx 20rpx 0;
+    margin-left: 20rpx;
+    box-sizing: border-box;
+    background: white;
+    border-bottom: 1px solid rgb(240, 240, 240);
+    image{
+        height: 160rpx;
+        width: 160rpx;
+    }
+    .contantTL{
+        flex: 1;
+        margin-left: 20rpx;
+        .name_mon{
+            display: flex;
+            align-items: center;
+            .name{
+                font-size: 29rpx; 
+                font-weight: bold;
+                flex: 1;
+                margin-right: 20rpx;
+            }
+            .mon{
+                color: #F56F68;
+                font-size: 28rpx;
+            }
+        }
+        .detail_btn{
+            margin-top: 20rpx;
+            display: flex;
+            align-items: flex-end;
+            .left_db{
+                flex: 1;
+                margin-right: 20rpx;
+                display:-webkit-box;
+                -webkit-line-clamp: 2; //超出多少行
+                overflow: hidden; 
+                -webkit-box-orient: vertical;
+                word-break:break-all;
+                font-size: 26rpx;
+                line-height: 40rpx;
+                color: #999;
+                .det{
+                    font-size: 24rpx;
+                    border-radius: 10rpx;
+                    margin-right: 10rpx;
+                    color: #fff;
+                    background: #F56F68;
+                    box-sizing: border-box;
+                    padding:2rpx 5rpx;
+                }
+            }
+            .van-button--mini{ 
+                font-size: 23rpx; 
+                color: #61B6FD !important;
+                border-color: #61B6FD !important;
+                background: white !important;
+            }
+        }
+    }
+}

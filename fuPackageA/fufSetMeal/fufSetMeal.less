@@ -1,0 +1,154 @@
+
+
+
+page{
+    height: 100%;
+    font-size: 26rpx;
+    position: relative;
+}
+
+#fufSetMeal{
+    position: relative;
+    color: #666;
+
+    // 
+    .childASet{
+        background: white;
+        position: relative;
+        border:1px solid rgb(245, 245, 245);
+        margin-top: 20rpx;
+        padding: 20rpx;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        box-shadow: -10rpx 5rpx 10rpx rgb(228, 228, 228);
+        .proImg{
+            height: 170rpx;
+            width: 170rpx;
+            border-radius: 20rpx;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            overflow: hidden;
+            // position: relative;
+            image{
+                // position:absolute;
+                height: 100%;
+                // width:  180rpx;
+            }
+        }
+        
+        .contant{
+            flex: 1;
+            margin-left: 20rpx;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            .nameC{
+                display: flex;
+                align-items: center;
+                .le{
+                    flex: 1;
+                    margin-right: 5rpx;
+                    font-weight: 800;
+                    color: #333;
+                    font-size: 30rpx;
+                    display:-webkit-box;
+                    -webkit-line-clamp: 1; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break:break-all;
+                }
+            }
+            .detail{
+                margin: 10rpx 0;
+                display:-webkit-box;
+                -webkit-line-clamp: 2; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break:break-all;
+                color: #999;
+            }
+            .price{
+                flex: 1;
+                display: flex;
+                align-items: flex-end;
+                color: #999;
+                .mon{
+                    color:#F56F68;
+                    font-size: 32rpx;
+                }
+                .monO{
+                    font-size: 29rpx;
+                    margin: 0 10rpx;
+                    text-decoration: line-through;
+                }
+                .num{
+                    margin-right: 30rpx;
+                }
+            }
+        }
+    }
+
+    // 
+    .changeAction{
+        background: white;
+        .navtap{
+            padding: 20rpx;
+            box-sizing: border-box;
+            font-size: 30rpx;
+            border-bottom: 1px solid rgb(240, 240, 240);
+        }
+
+        .child{
+            display: flex;
+            align-items: center;
+            padding: 20rpx 20rpx 0;
+            box-sizing: border-box;
+            font-size: 28rpx;
+            .name{
+                width: 20%;
+            }
+            .val{
+                flex: 1;
+                input{
+                    width: 60%;
+                    border-radius: 30rpx;
+                    padding:0 30rpx;
+                    box-sizing: border-box;
+                    border:1px solid rgb(241, 241, 241);
+                }
+                image{
+                    width: 80rpx;
+                    height: 80rpx;
+                }
+            }
+        }
+        .textarea{
+            padding: 20rpx;
+            box-sizing: border-box;
+            textarea{
+                padding: 20rpx;
+                box-sizing: border-box;
+                border-radius: 10rpx;
+                width: 100%;
+                border:1px solid rgb(241, 241, 241);
+            }
+        }
+    }
+
+
+    // 
+    .btn{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        .van-button{
+            width: 100%;
+            border:none;
+            border-radius: 0;
+            color: white;
+            background: #f56e68;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+<!--pages/pointStore/pointStore.wxml-->
+<image class='banner' src='{{banner}}'></image>
+<view class='content'>
+  <image class='title' src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/zhuangshi@2x.png'>
+    <view class='text'>积分兑换享好礼</view>
+  </image>
+  <view class='li'>
+    <view class='list' wx:for='{{dataList}}' wx:key="index">
+      <navigator url='/pages/pointDetail/pointDetail?id={{item.GiftId}}' hover-class="none">
+        <image src='{{item.ImageUrl}}'></image>
+        <view class='jifen'>积分换购</view>
+        <view class="fujihangF">
+          <view class='txt'>{{item.Name}}</view>
+          <view class='price'>{{item.NeedPoint}}积分</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class='empty' wx:if="{{isEmpty}}">
+    <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/pic-kong.png'></image>
+    <text>暂无数据</text>
+  </view>
+</view>

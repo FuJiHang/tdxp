@@ -1,0 +1,41 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2020-03-27 21:11:16 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2020-03-27 21:11:16 
+ 智慧门店申请
+ */ -->
+<view id="fuZhiHuiApply" wx:if="{{getForm.SWXApplyStatus!=4}}"> 
+    <view class="bw">
+        <view class="navTop">基础信息</view>
+    </view>
+    <view class="child" wx:for="{{dataList}}" wx:key="{{index}}">
+        <span class="name">{{item.name}}</span>
+        <span class="val" wx:if="{{!item.add}}">
+            <input placeholder-class="plr" placeholder="{{item.plr}}" value="{{item.val}}" bindinput="inputFN"
+                data-name="{{'dataList['+index+'].val'}}" />
+        </span>
+        <picker wx:if="{{item.add}}" mode="region" bindchange="bindRegionChange" value="{{region}}"
+            custom-item="{{customItem}}">
+            <view class="picker">
+                {{region[0]}}，{{region[1]}}，{{region[2]}}
+            </view>
+        </picker>
+        <image wx:if="{{item.add}}" mode="widthFix" src="{{newImg+'arrow_rl.png'}}"></image>
+    </view>
+
+
+    <view class="btn">
+        <van-button bindtap="formSubmit">提交保存</van-button>
+    </view>
+</view>
+
+
+<view wx:else class="qianYue">
+    请点击保存签约图片进行绑定门店
+    <image style="width:100%;height:1rpx;" src="{{getForm.SWXSignUrl}}" mode="widthFix"></image>
+
+    <van-button round bindtap="saveJScode">点我保存</van-button>
+
+</view>
+

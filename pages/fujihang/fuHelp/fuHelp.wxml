@@ -1,0 +1,23 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-05-27 09:26:41 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-05-27 09:26:41 
+    帮助页面
+ */ -->
+<view id="fuHelp">
+    
+    <view class="topName" wx:if="{{text}}">
+        {{text}}
+    </view>
+    <view class="imgList">
+        <image mode="widthFix" wx:for="{{image}}" wx:key="{{index}}" src="{{item}}" />
+    </view>
+
+
+</view>
+
+<view class="helpBtn" bindtap="openClose">视 频</view>
+<view class="helpVideo"   wx:if="{{show}}" bindtap="openClose">
+    <video id="myVideo" catchtap="aaaa" src="{{video}}"  controls></video>
+</view>

@@ -1,0 +1,60 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-05-07 20:06:20 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-05-07 20:06:20 
+    全国门店
+ */ -->
+<view id="fuCountryStore">
+
+    <!-- 搜索 -->
+    <view class="seachMT">
+        <view class="seachbg">
+            <image src="{{imgUrl+'icon_search.png'}}"  mode="aspectFill"/>
+            <input value="{{seach}}" bindinput="seaChFN"/>
+        </view>
+        <van-button size="small" bindtap="getData">搜索</van-button>
+    </view>
+    
+
+    <!-- 内容 -->
+
+    <view class="contantCS">
+        <van-tabs active="{{ active }}" bind:change="onChange" swipeable>
+            <van-tab title="{{items.name}}" wx:for="{{contantList}}" wx:for-item="items" wx:for-index="indexs" wx:key="{{indexs}}"> 
+                <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getDataR"  >
+                
+                    <view class="storeCard" wx:for="{{items.data}}"  wx:key="{{index}}" data-index="{{index}}" bindtap="toFN">
+                        <image mode="aspectFit" src="{{item.StoreImages}}" />
+
+                        <view class="contantStore">
+                            <view class="name_mi">
+                                <span class="name">{{item.StoreName}}</span>
+                                <span class="mi">距离{{item.Distance}}</span>
+                            </view>
+                            <view class="address">
+                                <image mode="aspectFit" src="{{imgUrl+'icon_address33.png'}}"/>{{item.Address}}
+                            </view>
+                        </view>
+                        <view class="right_Statu" wx:if="{{active==2}}">
+                            <van-button size="mini"  data-index="{{index}}" bindtap="callback">取消</van-button>
+                            <view class="Rname">
+                                {{item.BindRequestType?'解绑中':'绑定中'}}
+                            </view>
+                        </view>
+
+                    </view>
+                    
+                    <view class="noMore" wx:if="{{contantList[active].finsh}}">
+                        没有更多的了~~~
+                    </view>
+
+                </scroll-view>
+               
+            </van-tab>
+
+        </van-tabs>
+    </view>
+    
+    
+</view>

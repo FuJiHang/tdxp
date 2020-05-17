@@ -1,0 +1,100 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-14 11:57:47 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-14 11:57:47 
+    搜索门店 项目 商品
+ */ -->
+<view class='layout'>
+  <view class='search df ais'>
+    <view class='search-l df ais flex'>
+      <image src='http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/seach.png' mode='widthFix'></image>
+      <input class='flex' value='{{searchVal}}' placeholder='请输入门店/商品名称' confirm-type='search' bindconfirm='onSearch' />
+    </view>
+    <view class='search-r' bindtap='cancelSearch'>取消</view>
+  </view>
+  <!-- 搜索的关键词列表 -->
+  <view class='searchKey' hidden='{{false}}'>
+    <!-- 热门 -->
+    <view class='popular'>
+      <view class='popularTitle'>热门</view>
+      <view class='popular-ul df ais'>
+        <view class='popular-li' wx:for="{{popularKeyword}}" wx:for-index="keyword" wx:for-item='items' wx:key="{{keyword}}" data-id='{{keyword}}' data-categoryid="{{items.CategoryId}}" bindtap='onPopular'>
+          {{items.CategoryName}}
+        </view>
+      </view>
+    </view>
+    <!-- 历史搜索 -->
+    <view class='popular'>
+      <view class='popularTitle df ais jct-between'>
+        <text>历史搜索</text>
+        <image src='{{imgUrl+"icon_del@2x.png"}}' mode='widthFix' bindtap='clearHistory'></image>
+      </view>
+      <view class='popular-ul df ais'>
+        <view class='popular-li to-line' wx:for="{{historyKeyword}}" wx:for-index="history" wx:for-item='historyKeyword' wx:key="{{history}}" data-id='{{history}}' bindtap='onHistory'>
+          {{historyKeyword}}
+        </view>
+      </view>
+    </view>
+    <!-- 常用分类 -->
+    <view class='classify' wx:if="{{false}}">
+      <view class='popularTitle'>常用分类</view>
+      <view class='classify-ul df ais'>
+        <view class='classify-li df ais fdc' wx:for="{{classify}}" wx:for-index="classifyIndex" wx:for-item="classify" wx:key="{{classifyIndex}}">
+          <image src='{{imgUrl+classify.img}}' mode='widthFix'></image>
+          <text>{{classify.txt}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--  -->
+  <!-- <view class="projectCon" wx:if="{{projectList.length}}">
+    <view class="nav">项目</view>
+    <view class="project" bindtap="toProDet" wx:for-item="itemc" wx:for-index="indexc" data-id="{{itemc.ProductId}}" data-sid="{{itemc.StoreId}}" wx:for="{{projectList}}" wx:key="{{indexs}}">
+    
+      <image src="{{itemc.ImageUrl1+'?x-oss-process=image/resize,l_640'}}" mode='aspectFill' />
+      <span class="contant">
+        <view class="name_num">
+          <span class="name">{{itemc.ProductName}}</span>
+          <van-icon name="arrow" size="35rpx" color="#999" />
+        </view>
+        <view class="num">已预约{{itemc.SaleCounts?itemc.SaleCounts:0}}</view>
+        <view class="price">
+          ￥{{itemc.SalePrice}}
+          <span class="errPri">￥{{itemc.MarketPrice}}</span>
+        </view>
+      </span>
+    </view>
+    <view class="noMore" bindtap="toStroe">查看更多</view>
+  </view> -->
+
+  <view class="projectCon" wx:if="{{projectList.length}}">
+    <view class="nav">商品</view>
+    <view class="project" bindtap="toProDet" wx:for-item="itemc" wx:for-index="indexc" data-id="{{itemc.ProductId}}"
+      data-sid="{{itemc.StoreId}}" wx:for="{{projectList}}" wx:key="{{indexs}}">
+      <!-- item.data -->
+      <image src="{{itemc.ImageUrl1}}" mode='aspectFill' />
+      <span class="contant">
+        <view class="name_num">
+          <span class="name">{{itemc.ProductName}}</span>
+          <van-icon name="arrow" size="35rpx" color="#999" />
+        </view>
+        <!-- <view class="num">已预约{{itemc.SaleCounts?itemc.SaleCounts:0}}</view> -->
+        <view class="price">
+          ￥{{itemc.SalePrice}}
+          <span class="errPri">￥{{itemc.MarketPrice}}</span>
+        </view>
+      </span>
+    </view>
+    <view class="noMore" bindtap="toStroe">查看更多</view>
+  </view>
+  
+
+
+  <!-- 搜索结果组件 -->
+  <!-- <searchResult hiddenResult="{{hiddenResult}}" bind:drawerState="openDrawer" bind:gdState="handleClick" id='search-result' searchVal="{{searchVal}}" bindsaleprice="getSortNum" comList="{{CommodityList}}" storeList="{{storeList}}" /> -->
+  <!-- 筛选drawer -->
+  <screenDrawer hiddenDrawer="{{hiddenDrawer}}" hideFN="{{hideFN}}" bind:drawerState="openDrawer" minPrice="{{minPrice}}" maxPrice="{{maxPrice}}" />
+  
+</view>

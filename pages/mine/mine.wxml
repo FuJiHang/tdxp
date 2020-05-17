@@ -1,0 +1,527 @@
+<!-- pages/mine/mine.wxml -->
+<import src="../common/templeates.wxml"></import>
+<view class="mine-box {{Qcode?'overhide':''}}">
+  <!--  -->
+  <view class='mine-top' data-type='info'>
+    <view class='mine-hand' wx:if="{{GetMembersInfo}}">
+      <image src="{{GetMembersInfo.Picture+'?x-oss-process=image/resize,l_640'}}" class='mine-hand-img'></image>
+    </view>
+    <!-- <view class=' mine-msg' wx:if="{{GetMembersInfo}}">
+      <view class='mine-name' style="display: flex;width: 80%;">
+        <span class='user-name' style="max-width:80%;display: -webkit-box;-webkit-line-clamp: 1;text-overflow: ellipsis;-webkit-box-orient: vertical;overflow: hidden;height: 42rpx;">{{GetMembersInfo.NickName}}</span>
+        <text class='user-type'>{{GetMembersInfo.GradeName}}</text>
+      </view>
+      <view class="mine-msg" wx:if="{{GetMembersInfo.IdentityName!='会员'}}">{{GetMembersInfo.IdentityName}}</view>
+      <view class="phone " style="font-size: 22rpx;">ID:{{GetMembersInfo.UserName}}</view>
+      <view class="phone" wx:if="{{GetMembersInfo.CellPhone != null}}">{{GetMembersInfo.CellPhone}}</view>
+      <view class="phone addphone" wx:else>无</view>
+     
+    </view> -->
+    <span class="contantS">
+      <view class="name">
+        {{GetMembersInfo.NickName}} 
+        
+        <span class="type {{GetMembersInfo.IdentityName=='个体店长'||GetMembersInfo.IdentityName=='店长'?'dianZhan':''}} {{GetMembersInfo.GradeName=='智店长'?'zhidian':''}}" >
+          <image mode="widthFix" wx:if="{{GetMembersInfo.GradeName=='红卡会员'}}" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/sfHK.png" />
+          <image mode="widthFix" wx:if="{{GetMembersInfo.IdentityName=='个体店长'||GetMembersInfo.IdentityName=='店长'}}" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/sfMD.png" />
+          <image mode="widthFix" wx:if="{{GetMembersInfo.GradeName=='智店长'}}" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/sfZH.png" />
+          {{GetMembersInfo.GradeName}}{{GetMembersInfo.IdentityName!='会员'&&GetMembersInfo.IdentityName?'/'+GetMembersInfo.IdentityName:''}}
+        </span>
+
+
+
+        <!-- <span class="type" style="background:linear-gradient(90deg,rgba(240,160,48,1) 0%,rgba(255,212,70,1) 100%);">
+          <image mode="widthFix" wx:if="{{GetMembersInfo.GradeName=='红卡会员'}}" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/sfMD.png" />
+          {{GetMembersInfo.GradeName}}{{GetMembersInfo.IdentityName!='会员'&&GetMembersInfo.IdentityName?'/'+GetMembersInfo.IdentityName:''}}
+        </span>
+        <span class="type" style="background:linear-gradient(90deg,rgba(27,13,75,1) 0%,rgba(110,93,160,1) 100%);">
+          <image mode="widthFix" wx:if="{{GetMembersInfo.GradeName=='红卡会员'}}" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/sfZH.png" />
+          {{GetMembersInfo.GradeName}}{{GetMembersInfo.IdentityName!='会员'&&GetMembersInfo.IdentityName?'/'+GetMembersInfo.IdentityName:''}}
+        </span> -->
+
+      </view>
+      <view class="val">ID:{{GetMembersInfo.UserName}}</view>
+    </span>
+    <!-- <view class="logincss" wx:if="{{!GetMembersInfo}}">
+      <navigator url='/pages/login/login'>点击前往登录账户</navigator>
+    </view> -->
+    <!-- <view class="imgMH" bindtap="toMH">
+      <view class="img_wrap">惠</view>
+      <view class="img_test">头道惠</view>
+      <image class="td_img" src='{{imgUrl2+"more_02@2x.png"}}'></image>
+    </view> -->
+    <view class="jsqh" bindtap="toMH">
+      <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/jsqh@3x.png"></image>
+      角色切换
+    </view>
+  </view>
+
+  <!-- 测试用 -->
+  <!-- <navigator 
+    url="plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id=4&custom_params={{customParams}}"
+    style="background: #ffffff; padding: 30rpx; text-align: center;"
+  >
+    前往直播间
+  </navigator> -->
+
+  <!--  -->
+  <view class="jkgy">
+    <span class="child" bindtap="toFN" data-to="{{'/fuPackageA/fuUserPoint/fuUserPoint'}}">
+      <view class="val">{{GetMembersInfo.Points}}</view>
+      <view class="name">我的积分</view>
+    </span>
+    <span class="child" bindtap="toFNXin" data-url="/fuPackageA/fuCouponList/fuCouponList?sf=2">
+      <view class="val">{{GetMembersInfo.StoreCardItemCount?GetMembersInfo.StoreCardItemCount:0}}</view>
+      <view class="name">我的次数卡</view>
+    </span>
+    <span class="child" bindtap="toFNXin" data-url="/pages/cart/cart" >
+      <view class="val">{{GetMembersInfo.ShoppingCartCount?GetMembersInfo.ShoppingCartCount:0}}</view>
+      <view class="name">购物车</view>
+    </span>
+    <span class="child" bindtap="toFNXin" data-url="/pages/fujihang/fuCoupon/fuCoupon">
+      <view class="val">{{GetMembersInfo.CouponItemsCount?GetMembersInfo.CouponItemsCount:0}}</view>
+      <view class="name">优惠券</view>
+    </span>
+  </view>
+  <!--  -->
+  <view class="redCard" bindtap="toFNXin" data-url="/fuPackageA/fuProductT/fuProductT?prDid=541&pagetype=undefined&storeid=undefined&dname=undefined&IsShowVideo=false">
+    <span class="name">升级红卡会员 专享购物</span>
+    <span class="buttn">立即升级</span>
+  </view>
+  <!--  -->
+  <view class="orderG">
+    <span class="child" wx:for="{{orderG}}" wx:key="{{index}}" bindtap="toFN" data-to="{{item.to}}">
+      <image mode="widthFix" src="{{item.img}}" />
+      <view class="name">{{item.name}}</view>
+    </span>
+  </view>
+  <!--  -->
+  <view class="friend_jiang" wx:if="{{false}}">
+    <span class="child" bindtap="yqptFN" data-index="{{0}}">
+      <view class="name">邀请好友</view>
+      <view class="val">邀请好友注册享返现</view>
+      <view class="btnj">
+        <span>马上邀请</span>
+      </view>
+    </span>
+    <span class="child child2" bindtap="yqptFN" data-url="/fuPackageA/fuPrizeList/fuPrizeList" data-index="{{1}}">
+      <view class="name">我要抽奖</view>
+      <view class="val">确认收货即可抽大奖咯~</view>
+      <view class="btnj">
+        <span>我要抽奖</span>
+      </view>
+    </span>
+  </view>
+  <!--  -->
+  <view class="sygnG">
+    <span data-index="{{index}}" data-url="{{item.to}}" bindtap="toFNNG" class="child {{index==12||index==13?'noBoder':''}} {{index==12&&sygnG.length==13||sygnG.length==14?'BoderLeft':''}}" wx:for="{{sygnG}}" wx:key="{{index}}">
+      <image mode="widthFix" src="{{item.img?item.img:'http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/list@3x'+(index+(sygnG.length==13?1:''))+'.png?1'}}" />
+      <view class="name">{{item.name}}</view>
+    </span>
+  </view>
+  <!--  -->
+  <!-- <view class="fri_ml_mh" wx:if="{{false}}">
+    <span class="child" bindtap="toFNXin" data-url="/pages/fujihang/fuMyTeam/fuMyTeam">
+      <view class="name">0</view>
+      <view class="val">我的好友</view>
+    </span>
+    <span class="border"></span>
+    <span class="child" bindtap="toFNXin" data-url="/pages/myBeautyIntegral/myBeautyIntegral">
+      <view class="name">{{GetMembersInfo.Points || 0}}</view>
+      <view class="val">奖励金</view>
+    </span>
+    <span class="border"></span>
+    <span class="child" bindtap="toFNXin" data-url="/fuPackageA/fuBeautiCoin/fuBeautiCoin">
+      <view class="name">{{GetMembersInfo.Coins || 0}}</view>
+      <view class="val">头道惠币</view>
+    </span>
+  </view> -->
+  <!--  -->
+  <!-- <view class="bgwr">
+    <view class="yq_pt_cj_qd">
+      <span class="child" wx:for="{{yq_pt_cj_qd}}" wx:key="item" bindtap="yqptFN" data-index="{{index}}" data-url="{{item.url}}">
+        <image src="{{item.img}}" />
+        <view class="name">{{item.name}}</view>
+      </span>
+    </view>
+  </view> -->
+  <!-- 我的订单 -->
+  <!-- <view class="myOrder">
+    <template is="temp_166"></template>
+    <view class='mine-form-state' style="height: {{logShow?'340':''}}rpx;">
+      <view class='form-box'>
+        <view class='form-state-img' bindtap="toFN" data-to="{{'/pages/pointAllOrder/pointAllOrder?active=0'}}">
+          <view class='state-img'>
+            <image src="{{imgUrl2+'icon_order_01@2x.png'}}"></image>
+          </view>
+        </view>
+        <view class='form-state-img' bindtap="toFN" data-to="{{'/pages/pointAllOrder/pointAllOrder?active=1'}}">
+          <view class='state-img'>
+            <image src="{{imgUrl2+'icon_order_02@2x.png'}}"></image>
+          </view>
+        </view>
+        <view class='form-check-img' bindtap="toFN" data-to="{{'/pages/pointAllOrder/pointAllOrder?active=2'}}">
+          <view class="check-img">
+            <image src="{{imgUrl2+'icon_order_03@2x.png'}}"></image>
+          </view>
+        </view>
+        <view class='form-success-img' bindtap="toFN" data-to="{{'/pages/pointAllOrder/pointAllOrder?active=3'}}">
+          <view class='success-img'>
+            <image src="{{imgUrl2+'icon_order_05@2x.png'}}"></image>
+          </view>
+        </view>
+      </view>
+      <view class='form-title'>
+        <view bindtap="toFN" data-to="{{'/pages/pointAllOrder/pointAllOrder?active=0'}}">待付款</view>
+        <view bindtap="toFN" data-to="{{'/pages/pointAllOrder/pointAllOrder?active=1'}}">待发货</view>
+        <view bindtap="toFN" data-to="{{'/pages/pointAllOrder/pointAllOrder?active=2'}}">待收货</view>
+        <view bindtap="toFN" data-to="{{'/pages/pointAllOrder/pointAllOrder?active=3'}}">已完成</view>
+      </view> -->
+  <!-- 物流信息 -->
+  <!-- <view class="logistics" wx:if="{{logShow}}">
+        <view class="log_title">
+          <text>最新物流</text>
+          <text>08-06</text>
+        </view>
+        <view class="log_main">
+          <view class="logimg_wrap">
+            <image class="log_img" src="{{imgs}}"></image>
+          </view>
+          <view class="log_content">
+            <text class="log_text">已签收</text>
+            <text class="log_info">广东省广州市越秀区创举大厦 已签收 签收人...</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view> -->
+  <!-- ?? -->
+  <!-- <template is="temp_167"></template> -->
+  <!-- <view class='mine-common-box'>
+    <view class="new_wjx">
+      <view class="new_title">常用功能</view>
+      <view class='circles-box'>
+        <view class='page-section-circle1 mine-common1'></view>
+        <view class='page-section-circle2 mine-common2'></view>
+      </view>
+    </view>
+    <view class="wjx_newwrap"> -->
+  <!-- <view class='common-box' bindtap="toFN" data-to="{{'/pages/PersonalInformationEditingMember/PersonalInformationEditingMember'}}">
+                <form bindsubmit='registerFormSubmit' report-submit='true'>
+                  <button form-type='submit' class="btnMrFu">
+                    <view class='common-img'>
+                      <image mode="widthFix" src="http://bcdj.9oasd.com/images/action031.png"></image>
+                    </view>
+                    <view class='common-text'>个人信息</view>
+                  </button>
+                </form>
+              </view>
+              <view class='common-box' bindtap="toFNXin" data-url="/fuPackageA/fuPerSpace/fuPerSpace">
+                <form bindsubmit='registerFormSubmit' report-submit='true'>
+                  <button form-type='submit' class="btnMrFu">
+                    <view class='common-img'>
+                      <image mode="widthFix" src="https://bcdj.9oasd.com/images/person031.png"></image>
+                    </view>
+                    <view class='common-text'>个人展示</view>
+                  </button>
+                </form>
+              </view> -->
+  <!-- <navigator url="/pages/address/address" class='common-box'> -->
+  <!-- <view class='common-box' bindtap="toFNXin" data-url="/pages/PersonalInformationMember/PersonalInformationMember">
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image mode="widthFix" src="http://bcdj.9oasd.com/images/action031.png"></image>
+            </view>
+            <view class='common-text'>个人信息</view>
+          </button>
+        </form>
+      </view>
+      <navigator url="/wuPackageB/recAddress/recAddress" class='common-box'>
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image mode="widthFix" src="https://bcdj.9oasd.com/images/address051.png"></image>
+            </view>
+            <view class='common-text'>收货地址</view>
+          </button>
+        </form>
+      </navigator>
+      <view class='common-box' bindtap="toFNPhone">
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image mode="widthFix" src="https://bcdj.9oasd.com/images/phone031.png?1"></image>
+            </view>
+            <view class='common-text'>更换手机</view>
+          </button>
+        </form>
+      </view> -->
+  <!-- <view class='common-box' bindtap="QcodeFN">
+                <form bindsubmit='registerFormSubmit' report-submit='true'>
+                  <button form-type='submit' class="btnMrFu">
+                    <view class='common-img'>
+                      <image mode="widthFix" src="{{imgUrl+'pri031.png'}}"></image>
+                    </view>
+                    <view class='common-text'>推广海报</view>
+                  </button>
+                </form>
+              </view> -->
+  <!-- <view class='common-box' bindtap="toFNXin" data-url="/pages/fujihang/fuCoupon/fuCoupon">
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image mode="widthFix" src="https://bcdj.9oasd.com/images/coupon031.png"></image>
+            </view>
+            <view class='common-text'>优惠券</view>
+          </button>
+        </form>
+      </view>
+      <view class='common-box' bindtap="toFNXin" data-url="/fuPackageA/fuCouponList/fuCouponList?sf=2">
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image mode="widthFix" src="https://bcdj.9oasd.com/images/bank031.png"></image>
+            </view>
+            <view class='common-text'>次数卡</view>
+          </button>
+        </form>
+      </view>
+      <view class='common-box' bindtap="toFNColl">
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image mode="widthFix" src="https://bcdj.9oasd.com/images/xin031.png"></image>
+            </view>
+            <view class='common-text'>我的收藏</view>
+          </button>
+        </form>
+      </view>
+      <view class='common-box' bindtap="toFNXin" data-url="/pages/fujihang/fuHelp/fuHelp?role=Client">
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image mode="widthFix" src="https://bcdj.9oasd.com/images/help031.png"></image>
+            </view>
+            <view class='common-text'>帮助</view>
+          </button>
+        </form>
+      </view>
+      <view class='common-box' bindtap="toFNXin" data-url="/fuPackageA/fuRecordJiLu/fuRecordJiLu">
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image src="https://bcdj.9oasd.com/images/jyjl.png?1"></image>
+            </view>
+            <view class='common-text'>交易记录</view>
+          </button>
+        </form>
+      </view>
+      <view class='common-box' bindtap="toFN" data-to="{{'../../pages/myCommission/myCommission?type=0'}}">
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image src='http://bcdj.9oasd.com/images/gxjj064.png'></image>
+            </view>
+            <view class='common-text'>共享经济</view>
+          </button>
+        </form>
+      </view> -->
+  <!-- <view class='common-box' bindtap="toFN" data-to="{{'/pages/fujihang/fuIdentity/fuIdentity'}}">
+                <form bindsubmit='registerFormSubmit' report-submit='true'>
+                  <button form-type='submit' class="btnMrFu">
+                    <view class='common-img'>
+                      <image src="http://bcdj.9oasd.com/images/icon_order_07.png"></image>
+                    </view>
+                    <view class='common-text'>身份申请</view>
+                  </button>
+                </form>
+              </view> -->
+  <!-- <view class='common-box' bindtap="toFN" data-to="{{'/pages/customerService/customerService'}}">
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image src="http://bcdj.9oasd.com/images/kefu064.png"></image>
+            </view>
+            <view class='common-text'>联系客服</view>
+          </button>
+        </form>
+      </view> -->
+  <!-- <view class='common-box' bindtap="toFN" data-to="{{'/pages/fujihang/fuMyTeam/fuMyTeam'}}">
+                <form bindsubmit='registerFormSubmit' report-submit='true'>
+                  <button form-type='submit' class="btnMrFu">
+                    <view class='common-img'>
+                      <image src="http://bcdj.9oasd.com/images/icon_order_09.png"></image>
+                    </view>
+                    <view class='common-text'>我的团队</view>
+                  </button>
+                </form>
+              </view> -->
+  <!-- <view class='common-box' bindtap="toFN" data-to="{{'/pages/fujihang/fuSuperior/fuSuperior'}}">
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image src="http://bcdj.9oasd.com/images/wdsj051.png"></image>
+            </view>
+            <view class='common-text'>我的上级</view>
+          </button>
+        </form>
+      </view> -->
+  <!-- wjx-门店申请 用不上了 -->
+  <!-- <view class='common-box' bindtap="toFN" data-to="{{'/wuPackageB/application/application'}}" wx:if="{{false}}">
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/icon_04@2x.png"></image>
+            </view>
+            <view class='common-text'>门店申请</view>
+          </button>
+        </form>
+      </view>
+      <view class='common-box' bindtap="toFN" data-to="{{'/fuPackageA/fuApplyCom/fuApplyCom'}}">
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image src="http://bcdj.9oasd.com/images/news031.png"></image>
+            </view>
+            <view class='common-text'>我要投诉</view>
+          </button>
+        </form>
+      </view>
+      <view class='common-box' bindtap="toFN" wx:if="{{GetMembersInfo.tcid}}" data-to="{{'/fuPackageA/fuTeamReward/fuTeamReward'}}">
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image src="http://bcdj.9oasd.com/images/news031.png"></image>
+            </view>
+            <view class='common-text'>团队奖分配</view>
+          </button>
+        </form>
+      </view>
+      <view class='common-box' bindtap="toFN" data-to="{{'/fuPackageA/fuUserPoint/fuUserPoint'}}">
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/sjmed/jiFenMy.png"></image>
+            </view>
+            <view class='common-text'>我的积分</view>
+          </button>
+        </form>
+      </view>
+      <view class='common-box' bindtap="toFN" data-to="{{'/fuPackageA/fuJitterPeo/fuJitterPeo'}}">
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/myVideo.png"></image>
+            </view>
+            <view class='common-text'>我的视频</view>
+          </button>
+        </form>
+      </view>
+      <view wx:if="{{GetMembersInfo.tcid}}" class='common-box' bindtap="toFN" data-to="{{'/fuPackageA/fuEditerTeach/fuEditerTeach'}}">
+        <form bindsubmit='registerFormSubmit' report-submit='true'>
+          <button form-type='submit' class="btnMrFu">
+            <view class='common-img'>
+              <image src="fuPackageA/fuEditerTeach/fuEditerTeach"></image>
+            </view>
+            <view class='common-text'>技师编辑</view>
+          </button>
+        </form>
+      </view> -->
+  <!-- <view class='common-box' bindtap="qiandao">
+                <form bindsubmit='registerFormSubmit' report-submit='true'>
+                  <button form-type='submit' class="btnMrFu">
+                    <view class='common-img'>
+                      <image src="https://bcdj.9oasd.com/images/qiandao.png"></image>
+                    </view>
+                    <view class='common-text'>签到</view>
+                  </button>
+                </form>
+              </view> -->
+  <!-- <view class='common-box' bindtap="toFNXin" data-url="/fuPackageA/fuPrizeList/fuPrizeList">
+                <form bindsubmit='registerFormSubmit' report-submit='true'>
+                  <button form-type='submit' class="btnMrFu">
+                    <view class='common-img'>
+                      <image src="https://bcdj.9oasd.com/images/Prize.jpg"></image>
+                    </view>
+                    <view class='common-text'>奖品列表</view>
+                  </button>
+                </form>
+              </view> -->
+  <!-- <view class='common-box' bindtap="toFNXin" data-url="/fuPackageA/fuRank/fuRank" >
+                <form bindsubmit='registerFormSubmit' report-submit='true'>             
+                  <button  form-type='submit' class="btnMrFu">
+                    <view class='common-img'>
+                      <image src="https://bcdj.9oasd.com/images/phb.png"></image>
+                    </view>
+                    <view class='common-text'>排行榜</view>
+                  </button>     
+                </form>
+              </view> -->
+  <!-- <view class='common-box' bindtap="toFNXin" data-url="/fuPackageA/fuBeautiCoin/fuBeautiCoin">
+                <form bindsubmit='registerFormSubmit' report-submit='true'>
+                  <button form-type='submit' class="btnMrFu">
+                    <view class='common-img'>
+                      <image src="https://bcdj.9oasd.com/images/mhbiLogo.png"></image>
+                    </view>
+                    <view class='common-text'>头道惠币</view>
+                  </button>
+                </form>
+              </view> -->
+  <!-- </view>
+  </view> -->
+  <!-- 身份切换 -->
+  <!-- <view class="fuIdCard">
+    <template is="temp_2019"></template>
+    <view class="idCardCont">
+      <view class="cardChild" wx:for="{{idCard}}" wx:key="index" bindtap="toFNF" data-index="{{index}}">
+        <form bindsubmit='registerFormSubmit' report-submit='true' data-index="{{index}}">
+          <button form-type='submit' class="btnMrFu" data-index="{{index}}">
+            <image mode="aspectFill" src="{{item.img}}" data-index="{{index}}" />
+            <view class="name" data-index="{{index}}">{{item.name}}</view>
+          </button>
+        </form>
+      </view>
+    </view>
+  </view> -->
+  <view class="konbai"></view>
+  <!-- 二维码弹窗 -->
+</view>
+<view class="alertQcode  {{Qcode?'Qcode':''}}" catchtouchmove="ture">
+  <view class="exit_c" bindtap="exitImgFN">关闭</view>
+  <view class="img">
+    <image mode="aspectFit" src="{{myQcode}}" />
+  </view>
+  <view class="info_f" bindtap="saveImgFN">
+    <van-button size="small">保存到本地</van-button>
+  </view>
+</view>
+<!-- zxtdzShow -->
+<van-popup show="{{zxtdzShow}}" position="bottom" bind:close="onCloseP">
+  <view class="chooseZX" data-index="{{index}}" wx:for="{{zxtdzList}}" wx:key="item" bindtap="zxtdzFN">
+    {{item}}
+  </view>
+</van-popup>
+<!-- 底部导航条 -->
+<view class="navBarFu">
+  <view bindtap="toFNavc" wx:if="{{index!=2}}" data-to="{{item.to}}" data-index="{{index}}" class="child {{index==2&&!isDoor?'max':''}}  {{xz==index?'black':''}}" wx:for="{{navBar}}" wx:key="index" data-index="{{index}}">
+    <image mode="aspectFill" src="{{item.img}}" data-index="{{index}}" />
+    <text class="name" data-index="{{index}}">{{item.name}}</text>
+  </view>
+</view>
+<!-- <van-popup catchtouchmove custom-style="background:none;height:100%;" bindtap="onCloseP" show="{{newAlert}}"
+    position="bottom" bind:close="onCloseP">
+    <span class="img" catchtap>
+        <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/popup_bangding.png?1" />
+        <input class="name" data-index="0" bindinput="changeInput" placeholder="{{postList[0].plr}}"
+            value="{{postList[0].val}}" />
+        
+        <input class="code" data-index="1" bindinput="changeInput" placeholder="{{postList[1].plr}}"
+            value="{{postList[1].val}}" />
+        <span class="getCode" bindtap="getSMS">{{SMS}}</span>
+        <span class="register" bindtap="subimt"></span>
+        <view class="close" bindtap="onCloseP"></view>
+    </span>
+
+
+</van-popup> -->

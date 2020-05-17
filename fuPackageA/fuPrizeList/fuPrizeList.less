@@ -1,0 +1,102 @@
+page{
+    height: 100%;
+    font-size: 26rpx;
+}
+
+
+#fuPrizeList{
+    color: #666;
+    
+
+    // 搜索框
+    .seachMT{
+        z-index: 2;
+        background: white;
+        display: flex;
+        align-items: center;
+        padding: 20rpx;
+        box-sizing: border-box;
+        margin-bottom: 20rpx;
+        position: fixed;
+        top: 0;left: 0;
+        width: 100%;
+        .seachbg{
+            margin-right: 10rpx;
+            flex: 1;
+            align-items: center;
+            display: flex;
+            background: #EEEEEE;
+            border-radius: 40rpx;
+            image{
+                margin-left: 20rpx;
+                height: 40rpx;
+                width: 40rpx;
+            }
+            input{
+                font-size: 28rpx;
+                margin:0 20rpx;
+                flex: 1;
+                height: 60rpx;
+            }
+        }
+        .van-button{
+            border:none;
+            background: none;
+        }
+    }
+
+    // 
+    .child{
+        margin: 20rpx 20rpx 0;
+        padding: 20rpx;
+        border-radius: 15rpx;
+        background: white;
+        display: flex;
+        align-items: center;
+        image{
+            height: 160rpx;
+            width: 160rpx;
+        }
+        .contant{
+            flex: 1;
+            margin-left: 20rpx;
+        }
+        .name{
+            font-size: 30rpx;
+            color: #333;
+            font-weight: 800;
+            margin-bottom: 5rpx;
+        }
+        .val{
+            color: #999;
+            margin-bottom: 5rpx;
+        }
+        .time{
+            display: flex;
+            align-items: center;
+            .min{
+                color: #999;
+                flex: 1;
+                
+            }
+            .van-button{
+                color: white;
+                border:none;
+                background: #f56e68;
+            }
+        }
+    }
+
+    .noMore{
+        font-size: 28rpx;
+        color: #999;
+        padding: 20rpx;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+.pdt{
+    padding-top: 120rpx;
+    box-sizing: border-box;
+}

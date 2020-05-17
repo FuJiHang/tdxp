@@ -1,0 +1,103 @@
+
+
+
+
+page{
+    height: 100%;
+    font-size: 28rpx;
+    position: relative;
+    background: white;
+}
+
+#fuTeachTitle{
+    position: relative;
+    color: #666;
+
+    // 
+    .navTap{
+        padding: 20rpx;
+        box-sizing: border-box;
+        font-size: 36rpx;
+        font-weight: 800;
+        margin-bottom: 20rpx;
+    }
+
+    // 
+    .child{
+        padding: 0 20rpx;
+        margin-bottom: 20rpx;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        color: #999;
+        .val{
+            margin-left: 20rpx;
+            flex: 1;
+            border:1px solid rgb(240, 240, 240);
+            input{
+                width: 100%;
+            }
+        }
+    }
+
+    // 
+    .teacher{
+        padding:  20rpx;
+        margin: 20rpx 30rpx;
+        box-sizing: border-box;
+        border:1px solid rgb(240, 240, 240);
+        border-radius: 15rpx;
+        display: flex;
+        align-items: center;
+        image{
+            height: 250rpx;
+            width: 40%;
+            border-radius: 10rpx;
+            background: rgb(245, 173, 169);
+        }
+        .name_tip{
+            display: flex;
+            align-items: center;
+            font-size: 36rpx;
+            font-weight: 800;
+            .mini{
+                font-size: 27rpx;
+            }
+        }
+        .vip{
+            margin:0 10rpx;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            border-radius: 50%;
+            background:#F56F68;
+            width: 30rpx;
+            height: 30rpx;
+            z-index: 2;
+            position: relative;
+            image{
+                width: 20rpx;
+                height: 20rpx;
+            }
+        }
+        .contant{
+            flex: 1;
+            margin-left: 10rpx;
+        }
+    }
+
+    // 
+    .btn{
+        position: fixed;
+        bottom: 0;
+        // display: flex;
+        width: 100%;
+        .van-button{
+            width: 100%;
+            border:none;
+            border-radius: 0;
+            color: white;
+            background: #f56e68;
+        }
+    }
+}

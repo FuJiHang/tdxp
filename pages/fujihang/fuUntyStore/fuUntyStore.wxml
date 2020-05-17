@@ -1,0 +1,46 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-05-08 10:13:09 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-05-08 10:14:51
+    解绑门店
+*/ -->
+
+<view id="fuUntyStore">
+    
+
+
+    <view class="bw" >
+            <!-- 标题 -->
+        <view class="navtop">
+            {{state==1?'申请理由':'解绑理由'}}
+        </view>
+        <!-- 内容 -->
+        <view class="contont">
+            <view class="textfu">
+                <textarea  placeholder="请输入内容" maxlength="-1" value="{{textarea}}" bindinput="textAreaFN" />
+            </view>
+        </view>
+    </view>
+
+    <!--  -->
+    <view class="bw">
+        <view class="navtop">
+            上传图片
+        </view>
+        <view class="upload" >
+            <span class="img" wx:for="{{imageLoad}}" wx:key="{{index}}">
+                <image src="{{item}}" mode="aspectFill" />
+            </span>
+            <span  class="img">
+                <span class="add" bindtap="chooseImage" wx:if="{{imageLoad.length<1}}">+</span>
+            </span>
+        </view>
+    </view>
+    
+
+</view>
+
+<view class="btnFAM">
+    <van-button bindtap="submitFN">提交</van-button>
+</view>

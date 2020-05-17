@@ -1,0 +1,35 @@
+<view id="clerk_edit">
+  <form bindsubmit="formSubmit">
+    <block wx:for="{{formData}}" wx:key="{{item}}">
+      <view class="content">
+        <label for="" class="title">{{item.title}}</label>
+        <input type="{{item.type}}" class="inputstyle" value="{{item.val}}" name="{{item.name}}" maxlength="{{item.nums}}"
+          disabled="{{!item.status}}" />
+        <image class="img" src="{{imgUrl+'more_02@2x.png'}}" wx:if="{{!item.status}}" bindtap="handleJS"></image>
+      </view>
+    </block>
+    <view class="body-view">
+      <switch type="checkbox" checked="{{sta}}" bindchange="handleChange" data-storeid="{{item.StoreId}}"
+        data-name="{{item.Name}}" data-phone="{{item.Phone}}" data-picture="{{item.Picture}}" data-authid="{{item.AuthId}}"
+        data-role="{{item.Role}}" />
+      <view class="set">店员</view>
+    </view>
+    <button class="del" catchtap="delClerk">删除</button>
+    <view class="btn-area">
+      <button formType="submit" class="submit">提交</button>
+    </view>
+  </form>
+</view>
+<!-- 切换角色弹窗 -->
+<view class="level" wx:if="{{isShow}}">
+  <div class="view_search">
+    <text catchtap="handleQX">取消</text>
+    <text catchtap="handleQD">确定</text>
+  </div>
+  <view class="level_wrap">
+    <block wx:for="{{level}}" wx:key="{{item}}">
+      <view class="level_list {{index==nums?'active':''}}" catchtap="handleSeach" data-index="{{index}}" data-item="{{item}}">{{item}}</view>
+    </block>
+  </view>
+</view>
+<view class="zhezhao" catchtap="handleZZ" wx:if="{{isShow}}"></view>

@@ -1,0 +1,131 @@
+page {
+  height: 100%;
+  font-size: 26rpx;
+  position: relative;
+  background: white;
+}
+#fuCollageDet {
+  position: relative;
+  color: #666;
+}
+#fuCollageDet .storeC {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+#fuCollageDet .storeC image {
+  height: 30rpx;
+  width: 30rpx;
+  margin-right: 10rpx;
+}
+#fuCollageDet .storeCard {
+  box-sizing: border-box;
+  padding: 20rpx;
+  margin: 0 20rpx 20rpx;
+  border: 1px solid #fff7f8;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+}
+#fuCollageDet .storeCard image {
+  height: 160rpx;
+  width: 160rpx;
+  background: #fdd1cf;
+}
+#fuCollageDet .storeCard .contant {
+  min-height: 160rpx;
+  flex: 1;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+#fuCollageDet .storeCard .contant .name {
+  font-size: 34rpx;
+  font-weight: 800;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+#fuCollageDet .storeCard .contant .val {
+  margin: 10rpx 0;
+  font-size: 22rpx;
+  color: #999;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+#fuCollageDet .storeCard .contant .pri_num {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+#fuCollageDet .storeCard .contant .pri_num .pri {
+  font-size: 34rpx;
+  font-weight: 800;
+  color: #f56e68;
+  flex: 1;
+}
+#fuCollageDet .storeCard .contant .pri_num .num {
+  color: #999;
+}
+#fuCollageDet .collage {
+  box-sizing: border-box;
+  padding: 20rpx;
+  font-size: 38rpx;
+  text-align: center;
+}
+#fuCollageDet .collage .color {
+  color: #f56e68;
+}
+#fuCollageDet .time {
+  color: #999;
+  box-sizing: border-box;
+  padding: 20rpx;
+  text-align: center;
+}
+#fuCollageDet .img_join_con {
+  box-sizing: border-box;
+  padding: 20rpx 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#fuCollageDet .img_join_con .img_join {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 10rpx 10rpx;
+}
+#fuCollageDet .img_join_con .img_join image {
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 50%;
+}
+#fuCollageDet .img_join_con .img_join .join {
+  margin-top: -30rpx;
+  padding: 0 20rpx 2rpx;
+  box-sizing: border-box;
+  background: #f56e68;
+  color: white;
+  border-radius: 20rpx;
+}
+#fuCollageDet .bigger .big {
+  font-size: 44rpx;
+}
+#fuCollageDet .btn {
+  width: 70%;
+  margin: 0 15% 20rpx;
+}
+#fuCollageDet .btn .van-button {
+  width: 100%;
+  color: #f56e68;
+  border: 1px solid #f56e68;
+  border-radius: 35rpx;
+}

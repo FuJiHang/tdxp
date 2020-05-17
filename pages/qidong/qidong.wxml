@@ -1,0 +1,18 @@
+<!--
+ * @Author: fujihang
+ * @Date: 2019-12-10 15:12:15
+ * @LastEditors: fujihang
+ * @LastEditTime: 2020-02-27 23:16:40
+ * @FilePath: \头道惠门店\pages\qidong\qidong.wxml
+ -->
+<!--pages/qidong/qidong.wxml-->
+<!-- <text>pages/qidong/qidong.wxml</text> -->
+<view class='box-qidong'>
+ <image src='{{imgurl}}'  mode='aspectFill'></image>
+ <view class='gobchome' bindtap='gobchome' style='height:{{}} ;' ></view>
+ <view wx:if="{{timeout}}" class='showtime'>
+     <view class="sss">{{timeout}}</view><view class="loading"></view>
+  </view>
+  <view class="tiaoguo" bindtap="tiaoguoFN">跳过</view>
+</view>
+

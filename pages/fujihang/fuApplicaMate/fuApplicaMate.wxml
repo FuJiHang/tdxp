@@ -1,0 +1,190 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-22 19:15:48 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-04-22 19:16:12
+    身份申请资料
+*/ -->
+<view id="fuApplicaMate">
+    <view class="contantFAM">
+        <!-- 头部 -->
+        <view class="bw bwH">
+            <view class="chooseIndentity {{applicaData.bg}}">
+                <image mode="aspectFill" src="{{applicaData.img}}" />
+                <view class="contant_cy">
+                    <view class="name">{{applicaData.name}}</view>
+                    <view class="text">{{applicaData.text}}</view>
+                </view>
+                已选择
+            </view>
+        </view>
+        <!-- 技师，执行团队长 -->
+        <view class="teach_name_tdz" wx:if="{{shengfeng==1}}">
+            <view class="teachName" wx:for="{{teachTDZ}}" wx:key="index">
+                <span class="name">{{item.name}}</span>
+                <input class="child" value="{{item.val}}" placeholder="{{item.plr}}" wx:if="{{!index}}" bindinput="jsNmae" />
+                <span class="child" wx:if="{{index>0}}" bindtap="onOpen">
+                    {{item.val?item.val:item.plr}}
+                </span>
+                <!-- <span class="child" wx:if="{{index==1}}"> -->
+                <!-- 地址选择 -->
+                <!-- <picker mode="region" bindchange="bindRegionChange" value="{{item.val}}" custom-item="{{customItem}}">
+                        <view class="picker">
+                        {{item.val[0]}} {{item.val[1]}} {{item.val[2]}}
+                        </view>
+                    </picker>
+                </span> -->
+            </view>
+        </view>
+        <view class="bw zxAddress" wx:if="{{shengfeng==2}}">
+            <span class="name">地址:</span>
+            <picker mode="region" bindchange="bindRegion" value="{{zxAddress}}" custom-item="{{customItem}}">
+                <view class="picker">{{zxAddress[0]}} {{zxAddress[1]}} {{zxAddress[2]}}</view>
+            </picker>
+        </view>
+        <view class="bw">
+            <!-- 标题 -->
+            <view class="navtop">{{shengfeng==0?'推荐人':'申请理由'}}</view>
+            <!-- 内容 -->
+            <view class="contont">
+                <view class="textfu">
+                    <textarea wx:if="{{!show&&!showXY}}" placeholder="{{shengfeng==1?'推荐人姓名+手机号   匠心签约头疗师   职务，团队长  已认真阅读了《头道惠平台技师服务协议》':(shengfeng==0?'推荐人+手机号':'请输入内容')}}" maxlength="-1" value="{{textarea}}" bindinput="textAreaFN" />
+                </view>
+            </view>
+        </view>
+        <view class="bw" wx:if="{{shengfeng==3}}">
+            <!-- 标题 -->
+            <view class="navtop">详细地址</view>
+            <!-- 内容 -->
+            <view class="contont">
+                <view class="textfu">
+                    <textarea wx:if="{{!show&&!showXY}}" placeholder="请输入详细地址" maxlength="-1" value="{{detailAdd}}" bindinput="detailAddFN" />
+                </view>
+            </view>
+        </view>
+        <view class="bw" wx:if="{{shengfeng==1}}">
+            <!-- 标题 -->
+            <view class="navtop">个人简介</view>
+            <!-- 内容 -->
+            <view class="contont">
+                <textarea wx:if="{{!show&&!showXY}}" placeholder="请输入内容" maxlength="-1" value="{{grjj}}" bindinput="grjjFN"></textarea>
+            </view>
+        </view>
+        <!-- <view class="bw"> -->
+        <!-- 标题 -->
+        <!-- <view class="navtop">
+                作品案例
+            </view> -->
+        <!-- 内容 -->
+        <!-- <view class="contont">
+                <view class="img {{index==4?'noR':''}}" wx:for="{{5}}" wx:key="{{index}}">
+                    <image src="../../../images/home_tab_01.png" mode="aspectFill" />
+                </view>
+            </view>
+        </view> -->
+        <!-- 门店 -->
+        <view class="bw" wx:if="{{shengfeng!=3}}">
+            <view class="storeCon" data-index="{{index}}" wx:for="{{storeList}}" wx:key="{{index}}" wx:if="{{shengfeng==0}}">
+                <span class="name">{{item.name}}</span>
+                <span class="val" wx:if="{{index==0||index==5||index==6}}" data-index="{{index}}" bindtap="uploadLogo">
+                    <image src="{{item.val}}" mode="aspectFill" data-index="{{index}}" />
+                </span>
+                <span class="val" wx:elif="{{index==1}}">
+                    <input value="{{item.val}}" placeholder="请输入店名" bindinput="nameFN" />
+                </span>
+                <span class="val" wx:elif="{{index==4}}">
+                    <input value="{{item.val}}" placeholder="请输入门牌号" bindinput="mpFN" />
+                </span>
+                <span class="val" wx:elif="{{index==2}}">
+                    <!-- 地址选择 -->
+                    <picker mode="region" bindchange="bindRegionChange" value="{{item.val}}" custom-item="{{customItem}}">
+                        <view class="picker">{{item.val[0]}} {{item.val[1]}} {{item.val[2]}}</view>
+                    </picker>
+                </span>
+                <span class="val" wx:elif="{{index==3}}" bindtap="toChooseAdd">{{item.val}}</span>
+                <span class="val" wx:else>{{item.val}}</span>
+                <van-icon name="arrow" wx:if="{{item.right}}" />
+            </view>
+            <view class="storeCon" bindtap="openBSChoose">
+                <span class="name">
+                    渠道名称
+                {{BsRoleList.HeadName?BsRoleList.HeadName:'无'}}
+                </span>
+                <span class="val">
+                    电话
+                {{BsRoleList.HeadCellPhone?BsRoleList.HeadCellPhone:'无'}}
+                </span>
+                <span style="color:red;">重新选择</span>
+            </view>
+            <view class="chooseType" v-if="data.shengfeng==0">
+                <span class="name">门店类型：</span>
+                <span class="val">
+                    <span class="checkS" bindtap="chooseMdType" wx:for="{{chooseType}}" wx:key="{{index}}" data-name="{{'chooseType['+index+'].isChoose'}}" data-xz="{{item.isChoose}}">
+                        <checkbox checked="{{item.isChoose}}" />
+                        {{item.TagName}}
+                    </span>
+                </span>
+            </view>
+            <view class="navtop" wx:if="{{shengfeng==1}}">作品案例</view>
+            <view class="upload" wx:if="{{shengfeng!=2&&shengfeng!=3}}">
+                <span class="img" wx:for="{{imageLoad}}" wx:key="{{index}}">
+                    <image src="{{item}}" mode="aspectFill" />
+                </span>
+                <span wx:if="{{shengfeng==0}}" class="img">
+                    <span class="add" bindtap="chooseImage" wx:if="{{imageLoad.length<5}}">+</span>
+                </span>
+                <span wx:if="{{shengfeng==1}}" class="img ">
+                    <span class="add" bindtap="chooseImage" wx:if="{{imageLoad.length<5}}">+</span>
+                </span>
+            </view>
+        </view>
+    </view>
+    <van-popup show="{{ show }}" bind:close="onClose" position="bottom">
+        <!-- 搜索 -->
+        <view class="seachMTAM">
+            <view class="seachbg">
+                <image src="{{imgUrl+'icon_search.png'}}" mode="aspectFill" />
+                <input value="{{seach}}" bindinput="seaChFN" />
+            </view>
+            <van-button size="small" bindtap="seachZXT">搜索</van-button>
+        </view>
+        <view class="seaConCL">
+            <view wx:if="{{getZxtdz.length!=0}}" class="chooseList" wx:for="{{getZxtdz}}" wx:key="{{index}}" bindtap="chooseTDZ" data-index="{{index}}">
+                <span class="name" data-index="{{index}}">名字：{{item.RealName}}</span>
+                电话：{{item.CellPhone}}
+            </view>
+            <view class="noMore">没有查询到哦~~~</view>
+        </view>
+    </van-popup>
+</view>
+<view class="btnFAM">
+    <van-button bindtap="submitFN">提交</van-button>
+</view>
+<van-popup class="fwb" show="{{ showXY }}" position="bottom">
+    <rich-text class="richtext" nodes="{{richtext}}"></rich-text>
+    <view class="btn">
+        <span class="bty">
+            <van-button bindtap="closeXY">不同意</van-button>
+        </span>
+        <span class="{{totalTime>0?'disable':''}}">
+            <van-button bindtap="wtyFN">{{SMS}}</van-button>
+        </span>
+    </view>
+</van-popup>
+<van-popup class="fwb" bind:close="closeBSFN" custom-style="max-height:70%;overflow:auto;" show="{{ showBS }}" position="bottom">
+    <view class="seachMTAM">
+        <view class="seachbg">
+            <image src="{{imgUrl+'icon_search.png'}}" mode="aspectFill" />
+            <input value="{{seach}}" bindinput="seaChFN" />
+        </view>
+        <van-button size="small" bindtap="getBsRoleList">搜索</van-button>
+    </view>
+    <view  class="showBS" bindtap="chooseBSFN" data-data="{{item}}" wx:for="{{BsRoleList.Data}}" wx:key="{{index}}">
+        <span class="name">名字：
+            {{item.RealName?item.RealName:'无'}}</span>
+        <span class="val">电话：
+            {{item.CellPhone?item.CellPhone:'无'}}</span>
+        <!-- <span class="val">{{item.Address2}}</span> -->
+    </view>
+    <view class="noMore">没有更多的了~~~</view>
+</van-popup>

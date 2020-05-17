@@ -1,0 +1,183 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-16 16:35:44 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-07-16 16:51:00
+    发布朋友圈
+ */ -->
+<view id="fuRelease">
+
+
+
+
+    <!-- 改 -->
+    <view class="people">
+        <image src="{{GetMembersInfo.Picture}}" mode="aspectFill" />
+        {{GetMembersInfo.NickName}}
+    </view>
+
+    <!--  -->
+    <textarea wx:if="{{!showChoose.show}}" placeholder="分享新鲜事" value="{{Contents}}" data-name="Contents" bindinput="seaChFN" class="text">
+
+    </textarea>
+
+    <!--  -->
+    <view class="imgList" wx:if="{{!video}}">
+        <view class="img" wx:for="{{imgSubmit}}" wx:key="{{index}}">
+            <image src="{{item}}" mode="aspectFill"/>
+        </view>
+        <view class="padding" bindtap="uploadLogo" wx:if="{{imgSubmit.length<8}}">
+            <view class="choose">
+                <image src="{{imgUrl+'pyImg.png'}}" />
+                <view >照片</view>
+            </view>
+        </view>
+    </view>
+
+    <!--  -->
+    
+            <view class="imgList" wx:if="{{!imgSubmit.length}}">
+
+        <view class="padding" wx:if="{{!video}}" bindtap="chooseVideo">
+            <view class="choose">
+                <image src="{{imgUrl+'pyVideo.png'}}" />
+                <view >视频</view>
+            </view>
+        </view>
+        <view class="img video" wx:if="{{video}}">
+            <video id="myVideo" src="{{video}}" enable-danmu danmu-btn controls></video>
+        </view>
+    </view>
+
+    <view class="btnChoose">
+        <span class="child" wx:if="{{index!=2}}" wx:for="{{choose}}" wx:key="{{index}}" bindtap="StoreOrTea" data-index="{{index}}">
+            <image src="{{item.img}}" />
+            {{item.name}}
+        </span>
+    </view>
+
+    <!--  -->
+    <view class="btn" bindtap="submitFN">
+        <van-button>发布</van-button>
+    </view>
+
+    <!--  -->
+    <van-popup show="{{ showChoose.show }}" position="right" bind:close="onClose" data-name="showStore">
+
+        <view class="overauto" wx:if="{{showChoose.index==0}}">
+            <view class="seachMTAM">
+                <view class="seachbg">
+                    <image src="{{imgUrl+'icon_search.png'}}"  mode="aspectFill"/>
+                    <input placeholder="请输入门店名字" value="{{seach}}" bindinput="seaChFN" data-name="listDataS.seach"/>
+                </view>
+                <van-button size="small" bindtap="seachMD">搜索</van-button>
+            </view>
+            <view class="storeCard" wx:for="{{listDataS.data}}"  wx:key="{{index}}" data-index="{{item}}" bindtap="storeFN">
+                <image mode="aspectFit" src="{{item.StoreImages}}" />
+                <view class="contantStore">
+                    <view class="name_mi">
+                        <span class="name">{{item.StoreName}}</span>
+                        <span class="mi">距离{{item.Distance}}</span>
+                    </view>
+                    <view class="address">
+                        <image mode="aspectFit" src="{{imgUrl+'icon_address33.png'}}"/>{{item.Address}}
+                    </view>
+                </view>
+            </view>
+            
+            <view class="noMore" >
+                没有更多的了~~~
+            </view>
+
+        </view>
+
+        <!--  -->
+        <view class="overauto" wx:if="{{showChoose.index==1}}">
+            <view class="seachMTAM">
+                <view class="seachbg">
+                    <image src="{{imgUrl+'icon_search.png'}}"  mode="aspectFill"/>
+                    <input placeholder="请输入技师名字" value="{{listDataT.seach}}" bindinput="seaChFN" data-name="listDataT.seach"/>
+                </view>
+                <van-button size="small" bindtap="seachJS">搜索</van-button>
+            </view>
+            
+            
+            <view class="teamFu" wx:for="{{listDataT.data}}" wx:key="{{index}}" data-index="{{item}}" bindtap="teachFN">
+                <image  src="{{item.HeadPortrait?item.HeadPortrait:item.Picture}}" bindtap="ChangeTC"  data-index="{{index}}"/>
+                <view class="contant" bindtap="ChangeTC"  data-index="{{index}}">
+                    <view class="name_cla">
+                        <span class="name">{{item.Name?item.Name:'无'}}</span>
+                    </view>
+                    <view class="shen_phone">
+                      
+                        <span class="phone">电话：{{item.CellPhone?item.CellPhone:'无'}}</span>
+                    </view>
+                </view>
+            </view>
+            <view class="noMore" >
+                没有更多的了~~~
+            </view>
+        </view>
+
+
+        <view class="overauto" wx:if="{{showChoose.index==2}}">
+
+            <view class="teamFu" wx:for="{{musicList}}" wx:key="{{index}}" data-index="{{index}}" data-data="{{item}}" bindtap="chooseMusic">
+               <van-checkbox
+                    value="{{ item.isChoose }}"
+                    checked-color="#F56F68"
+                />
+                <view class="contant"  data-index="{{index}}">
+                        <span class="name">{{item.Name}}</span>
+                </view>
+            </view>
+            <view class="btns">
+              
+                <span class="flex red" data-s="1"  bindtap="okMusic">
+                    <van-button >确定</van-button>
+                </span>
+            </view>
+            <view class="noMore" >
+                没有更多的了~~~
+            </view>
+        </view>
+
+        <view class="overauto" wx:if="{{showChoose.index==3}}">
+            <view class="seachMTAM">
+                <view class="seachbg">
+                    <image src="{{imgUrl+'icon_search.png'}}"  mode="aspectFill"/>
+                    <input placeholder="请输入商品名字" value="{{listDataP.seach}}" bindinput="seaChFN" data-name="listDataP.seach"/>
+                </view>
+                <van-button size="small" bindtap="getProjcet">搜索</van-button>
+            </view>
+
+            <view class="upDownList"  wx:for="{{listDataP.data}}" wx:for-item="data" wx:key="index " bindtap="ChangeXM" data-name="{{data.ProductName}}" data-pid="{{data.ProductId}}">
+                <span >
+                    <image src="{{data.ImageUrl1}}"  />
+                </span>
+            
+                <view class="contantTL" >
+                    <view class="name_mon">
+                        <text class="name">{{data.ProductName?data.ProductName:'无'}}</text>
+                        <span class="mon">￥{{data.SalePrice?data.SalePrice:0}}</span>
+                    </view>
+                    <view class="detail_btn" >
+                        <text class="det" >详情</text>{{data.Description}}
+                    </view>
+                </view>
+                
+            </view>
+           
+
+            <view class="noMore" >
+                没有更多的了~~~
+            </view>
+        </view>
+
+
+
+    </van-popup>   
+
+    <audio hidden="{{true}}" src="{{musicUrl}}" id="myAudio" controls loop></audio>
+
+</view>

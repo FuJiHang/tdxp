@@ -1,0 +1,17 @@
+<!--fuPackageA/setCustomer/setCustomer.wxml-->
+<view class="plane" wx:for="{{list}}" wx:key="{{index}}">
+  <view class="block">
+    <span>微信号</span>
+    <input bindinput="setValue" data-idx="{{index}}" placeholder="请填写微信号" value="{{item.wxNum}}">{{item.wxNum}}</input>
+    <view class="remove" wx:if="{{index != 0}}" bindtap="removeItem" data-idx="{{index}}">移除</view>
+  </view>
+  <view class="block">
+    <span>微信二维码</span>
+    <view class="uploading">
+      <view class="add" wx:if="{{!item.img}}" bindtap="uploadingImg" data-idx="{{index}}">+</view>
+      <image mode="aspectFit" src="{{item.img}}" wx:else bindtap="uploadingImg" data-idx="{{index}}"></image>
+    </view>
+  </view>
+</view>
+<view class="theAdd" bindtap="addListItem">新增</view>
+<view class="submitBtn" bindtap="submit">设置客服</view>

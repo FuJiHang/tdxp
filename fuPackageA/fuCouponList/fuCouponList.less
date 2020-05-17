@@ -1,0 +1,311 @@
+page {
+    height: 100%;
+    overflow: hidden;
+}
+
+#fuCouponList {
+    font-size: 26rpx;
+    color: #666;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    // 搜索框
+    .seachMT {
+        background: white;
+        display: flex;
+        align-items: center;
+        padding: 20rpx;
+        box-sizing: border-box;
+        margin-bottom: 20rpx;
+
+        .seachbg {
+            margin-right: 10rpx;
+            flex: 1;
+            align-items: center;
+            display: flex;
+            background: #EEEEEE;
+            border-radius: 40rpx;
+
+            image {
+                margin-left: 20rpx;
+                height: 40rpx;
+                width: 40rpx;
+            }
+
+            input {
+                font-size: 28rpx;
+                margin: 0 20rpx;
+                flex: 1;
+                height: 60rpx;
+            }
+        }
+
+        .van-button {
+            border: none;
+            background: none;
+        }
+    }
+
+
+    .van_order {
+        flex: 1;
+        color: #666;
+        overflow: hidden;
+
+        .van-tabs {
+            height: 100%;
+            overflow: hidden;
+
+            .van-tab {
+                line-height: 35px;
+            }
+        }
+
+        .van-tabs__content {
+            height: 100%;
+            overflow: hidden;
+            padding-bottom: 44px;
+            box-sizing: border-box;
+
+            .van-tabs__track {
+                height: 100%;
+                overflow: hidden;
+
+                .van-tab__pane {
+                    height: 100%;
+                    overflow: hidden !important;
+
+                    scroll-view {
+                        -webkit-overflow-scrolling: touch;
+                        height: 100%;
+                        padding: 10rpx 10rpx 0;
+                        box-sizing: border-box;
+                        overflow: auto;
+                        .hui{
+                            filter: grayscale(100%);
+                        }
+                        .child {
+                            padding: 10rpx;
+                            box-sizing: border-box;
+                            position: relative;
+
+                            image {
+                                height: 260rpx;
+                                width: 100%;
+                            }
+
+                            .detail {
+                                height: 100%;
+                                width: 100%;
+                                position: absolute;
+                                padding: 26rpx 30rpx;
+                                box-sizing: border-box;
+                                color: #fff;
+                                font-weight: bold;
+                                top: 0;
+                                left: 0;
+
+                                .name {
+                                    display:-webkit-box;
+                                    -webkit-line-clamp: 1; //超出多少行
+                                    overflow: hidden;
+                                    -webkit-box-orient: vertical;
+                                    word-break:break-all;
+                                    font-size: 40rpx;
+                                    margin-bottom: 20rpx;
+                                }
+
+                                .price {
+                                    background: rgba(0, 0, 0, .7);
+                                    font-size: 32rpx;
+                                    padding-bottom: 5rpx;
+                                }
+
+                                .val {
+                                    background: rgba(0, 0, 0, .7);
+                                    font-size: 28rpx;
+                                    padding-bottom: 18rpx;
+                                }
+
+                                .btn {
+                                    background: rgba(0, 0, 0, .7);
+                                    .van-button {
+                                        width: 150rpx;
+                                        border-radius: 50rpx;
+                                        background: #fff;
+                                        color: #E96497;
+                                        font-size: 32rpx;
+                                    }
+                                }
+                            }
+
+                        }
+                        .maxChild{
+                            image{
+                                height: 290rpx;
+                            }
+                        }
+
+                        .noMore {
+                            font-size: 28rpx;
+                            color: #999;
+                            padding: 20rpx 20rpx 100rpx;
+                            text-align: center;
+                            box-sizing: border-box;
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+
+    // 
+    .teamFu {
+        background: white;
+        padding: 20rpx;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        font-size: 27rpx;
+        border-bottom: 1px solid rgb(240, 240, 240);
+
+        image {
+            margin-left: 20rpx;
+            height: 100rpx;
+            width: 100rpx;
+        }
+
+        .contant {
+            flex: 1;
+            margin: 0 20rpx;
+
+            .name_cla {
+                display: flex;
+                margin-bottom: 20rpx;
+                align-items: flex-end;
+
+                .name {
+                    margin-right: 30rpx;
+                    font-size: 30rpx;
+                }
+            }
+
+            .shen_phone {
+                display: flex;
+                align-items: center;
+
+                .phone {
+                    color: #999;
+                }
+            }
+        }
+    }
+
+    .van-popup--right {
+        width: 80%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        scroll-view {
+            overflow: auto;
+            height: 100%;
+
+            .noMore {
+                font-size: 28rpx;
+                color: #999;
+                padding: 20rpx;
+                text-align: center;
+                box-sizing: border-box;
+            }
+        }
+        .van-button{
+            width: 100%;
+            border: none;
+            background: #F56F68;
+            color: #fff;
+        }
+
+    }
+
+    // 
+    .van-popup--bottom {
+        height: 100%;
+        background: rgba(156, 156, 156, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .tipFN{
+            width: 80%;
+            background: #fff;
+            border-radius: 30rpx;
+            padding: 20rpx;
+            box-sizing: border-box;
+            input{
+                font-size: 30rpx;
+                border-bottom: 1px solid rgb(241, 241, 241);
+            }
+            .van-button{
+                margin-top: 20rpx;
+                width: 100%;
+                border:none;
+                border-radius: 0;
+                color: white;
+                background: #f56e68;
+            }
+        }
+    }
+    .tip{
+        position: fixed;
+        right: 0; top: 240rpx;
+        padding:10rpx 30rpx;
+        box-sizing: border-box;
+        color: #FF5353;
+        background: rgb(255, 255, 255);
+        box-shadow: 5rpx 5rpx 20rpx rgb(180, 180, 180);
+        border:1px solid rgb(240, 240, 240);
+        font-size: 34rpx;
+        border-radius: 35rpx 0 0 40rpx;
+        transform: translateX(100%);
+        animation:fff 4s ;
+        
+    }
+    .btnHX{
+        .van-button{
+            background: #FF5353;
+            color: #fff;
+            border:none;
+            width: 100%;
+        }
+    }
+}
+
+@keyframes fff{
+    5%{
+        transform: translateX(100%);
+        opacity: 0;
+
+    }
+    15%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    87%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    99.9%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateX(100%);
+
+    }
+
+
+}

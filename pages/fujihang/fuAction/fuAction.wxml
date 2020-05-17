@@ -1,0 +1,188 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-05-28 15:33:45 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-05-28 15:34:09
+    团队长做活动
+*/ -->
+<view id="fuAction">
+    
+    <view class="nameAC">
+        活动名称：
+        <span class="inp">
+            <input placeholder="请输入活动名" disabled="{{shenghezhon}}" value="{{nameAC}}" bindinput="inputFN" data-name="nameAC"/>
+        </span>
+    </view>
+    <!-- 日期 -->
+    <view class="timeFA" wx:for="{{timeList}}" wx:key="index" bindtap="openTime" data-index="{{index}}">
+        <span class="name">{{item.name}}：</span>{{item.plr}}
+    </view>
+    <!-- 门店 -->
+    <view class="storeAC timeFA" wx:for="{{storeList}}" wx:key="index" bindtap="openChoose" data-index="{{index}}">
+        <span class="name">{{item.name}}：</span>{{item.plr}}
+    </view>
+    <!--  -->
+    <view class="nameAC">
+        归属地：
+        <span class="inp">
+            <input placeholder="请输入归属地" disabled="{{shenghezhon}}" value="{{gsdAC}}" bindinput="inputFN" data-name="gsdAC"/>
+        </span>
+    </view>
+    <!--  -->
+    <view class="nameAC">
+        渠道商：
+        <span class="inp">
+            <input placeholder="请输入渠道商" disabled="{{shenghezhon}}" value="{{jdsAC}}" bindinput="inputFN" data-name="jdsAC"/>
+        </span>
+    </view>
+    <view class="nameAC textarea">
+        备注：
+        <span class="inp">
+            <textarea disabled="{{shenghezhon}}" wx:if="{{!showTime&&!showStore.show}}" maxlength="-1" placeholder="请输入备注" value="{{beizhu}}" bindinput="inputFN" data-name="beizhu"/>
+        </span>
+    </view>
+    
+
+
+    <!-- 时间 -->
+    <van-popup show="{{ showTime }}" position="bottom" bind:close="onClose" data-name="showTime">
+        <van-datetime-picker
+            type="datetime"
+            value="{{currentDate}}"
+            bind:input="onInput"
+            bind:confirm="okTime"
+            bind:cancel="onClose"
+            min-date="{{minDate}}"
+        />
+    </van-popup>   
+
+
+    <!--  -->
+    <van-popup show="{{ showStore.show }}" position="right" bind:close="onClose" data-name="showStore">
+        <view class="storeList">
+            
+            <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getStore"  wx:if="{{showStore.index==0}}">
+                <view class="seachMTAM">
+                    <view class="seachbg">
+                        <image src="{{imgUrl+'icon_search.png'}}"  mode="aspectFill"/>
+                        <input value="{{seach}}" bindinput="seaChFN" data-name="listDataS.seach"/>
+                    </view>
+                    <van-button size="small" bindtap="seachMD">搜索</van-button>
+                </view>
+                <view class="storeCard" wx:for="{{listDataS.data}}"  wx:key="{{index}}" data-index="{{item}}" bindtap="storeFN">
+                    <image mode="aspectFit" src="{{item.StoreImages}}" />
+                    <view class="contantStore">
+                        <view class="name_mi">
+                            <span class="name">{{item.StoreName}}</span>
+                            <span class="mi">距离{{item.Distance}}</span>
+                        </view>
+                        <view class="address">
+                            <image mode="aspectFit" src="{{imgUrl+'icon_address33.png'}}"/>{{item.Address}}
+                        </view>
+                    </view>
+                </view>
+                
+                <view class="noMore" wx:if="{{listDataS.finsh}}">
+                    没有更多的了~~~
+                </view>
+            </scroll-view>
+
+            <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getProject"  wx:if="{{showStore.index==1}}">
+                
+                
+                <view class="upDownList"  wx:for="{{listDataP.data}}" wx:for-item="data" wx:key="index" data-index="{{index}}">
+                    <span class="choose" >
+                        <van-checkbox checked-color="#F56F68"  bindtap="ChangeXM" value="{{data.choose}}"   data-index="{{index}}"></van-checkbox>
+                    </span>
+                    <span data-index="{{index}}" bindtap="ChangeXM">
+                        <image src="{{data.Pic?data.Pic:data.Picture}}"  />
+                    </span>
+                
+                    <view class="contantTL" data-index="{{index}}" bindtap="ChangeXM" >
+                        <view class="name_mon">
+                            <text class="name">{{data.ProductName?data.ProductName:data.Name}}</text>
+                            <span class="mon">￥{{data.SalePrice?data.SalePrice:data.Price}}</span>
+                        </view>
+                        <view class="detail_btn" wx:if="{{!data.Price}}">
+                            <text class="det" >详情</text>{{data.ShortDescription}}
+                        </view>
+                    </view>
+                    
+                </view>
+                <view class="noMore" wx:if="{{listDataP.finsh}}">
+                    没有更多的了~~~
+                </view>
+            </scroll-view>
+
+
+            <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getTeach"  wx:if="{{showStore.index==2}}">
+                <view class="seachMTAM">
+                    <view class="seachbg">
+                        <image src="{{imgUrl+'icon_search.png'}}"  mode="aspectFill"/>
+                        <input value="{{listDataT.seach}}" bindinput="seaChFN" data-name="listDataT.seach"/>
+                    </view>
+                    <van-button size="small" bindtap="seachJS">搜索</van-button>
+                </view>
+                
+             
+                <view class="teamFu" wx:for="{{listDataT.data}}" wx:key="{{index}}" >
+                    <span class="choose">
+                        <van-checkbox checked-color="#F56F68"   value="{{item.choose}}" bindtap="ChangeTC"  data-index="{{index}}"></van-checkbox>
+                    </span>
+                    <image  src="{{item.HeadPortrait?item.HeadPortrait:item.Picture}}" bindtap="ChangeTC"  data-index="{{index}}"/>
+                    <view class="contant" bindtap="ChangeTC"  data-index="{{index}}">
+                        <view class="name_cla">
+                            <span class="name">{{item.Name?item.Name:'无'}}</span>
+                        </view>
+                        <view class="shen_phone">
+                            <!-- <span class="shen">省代</span> -->
+                            <span class="phone">电话：{{item.CellPhone?item.CellPhone:'无'}}</span>
+                        </view>
+                    </view>
+                </view>
+
+
+
+                <view class="noMore" wx:if="{{listDataT.finsh}}">
+                    没有更多的了~~~
+                </view>
+            </scroll-view>
+            
+
+            <scroll-view scrolltolower="150" scroll-y="true"   wx:if="{{showStore.index==3}}">
+                <view class="teamFu" wx:for="{{listDataE}}" wx:key="{{index}}" >
+                    <span class="choose">
+                        <van-checkbox checked-color="#F56F68"   value="{{item.choose}}" bindtap="ChangeTE"  data-index="{{index}}"></van-checkbox>
+                    </span>
+                    <image  src="{{item.HeadPortrait?item.HeadPortrait:item.Picture}}" bindtap="ChangeTE"  data-index="{{index}}"/>
+                    <view class="contant" bindtap="ChangeTE"  data-index="{{index}}">
+                        <view class="name_cla">
+                            <span class="name">{{item.Name?item.Name:'无'}}</span>
+                        </view>
+                        <view class="shen_phone">
+                            <!-- <span class="shen">省代</span> -->
+                            <span class="phone">电话：{{item.CellPhone?item.CellPhone:'无'}}</span>
+                        </view>
+                    </view>
+                </view>
+
+            </scroll-view>
+
+
+            <view class="btn" wx:if="{{showStore.index&&(!shenghezhon||showStore.index==2)&&showStore.index!=3}}">
+                <span class="child">
+                    <van-button data-index="{{showStore.index}}" data-data="{{false}}"  bindtap="allFN">全不选</van-button>
+                </span>
+                <span class="child red">
+                    <van-button data-index="{{showStore.index}}" data-data="{{true}}" bindtap="allFN">全选</van-button>
+                </span>
+            </view>
+            
+        </view>
+    </van-popup>   
+
+</view>
+
+<view class="submit" bindtap="submitFN" >
+    <van-button>{{shenghezhon?'修改':'提交'}}</van-button>
+</view>

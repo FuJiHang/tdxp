@@ -1,0 +1,53 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-06-17 19:07:45 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-06-17 19:12:42
+    我的拼团
+*/ -->
+<view id="fuMyPuzzle">
+
+    <van-tabs class="van_order" line-width='20' color="#F56F68" active="{{ active }}" bind:change="onChange" swipeable>
+        <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+            <scroll-view>
+                <view class="assem" wx:for="{{item.data}}" wx:for-index="indexc" wx:for-item="itemc"
+                    wx:key="{{indexc}}">
+                    <!-- <view class="topName">
+                        <image src="{{imgUrl+'store.png'}}" />
+                        <span class="name">{{itemc.StoreName}}</span>
+                    </view> -->
+                    <view class="childA">
+                        <view class="proImg">
+                            <image mode="aspectFill" src="{{itemc.ImageUrl1+'?x-oss-process=image/resize,h_480'}}" />
+                        </view>
+                        <view class="contant">
+                            <view class="nameC">
+                                <span class="le">{{itemc.ProductName}} </span>
+                                <span class="ri" wx:if="{{active==0}}">拼团中，还差{{itemc.LeftJoinNumber}}人 </span>
+                            </view>
+                            <view class="detail">
+                                {{itemc.ProductDescription}}
+                            </view>
+                            <view class="price">
+                                <span class="mon">￥{{itemc.FightPrice}}</span>
+                                <span class="monO">￥{{itemc.SalePrice}}</span>
+                                <span class="num">已售{{itemc.BuyCount}}</span>
+                                <span class="btn">
+                                    <van-button size="mini" wx:if="{{active!=1}}" data-gid="{{itemc.FightGroupId}}"
+                                        data-id="{{itemc.FightGroupActivityId}}" data-index="{{index}}" bindtap="toFN">
+                                        立即参团</van-button>
+                                </span>
+                            </view>
+                            <image wx:if="{{active==1}}" class="ptcg" src="{{imgUrl+'ptcg.png'}}" />
+                        </view>
+                    </view>
+                </view>
+
+                <view class="noMore" wx:if="{{item.finsh}}">
+                    没有更多的了~~~
+                </view>
+            </scroll-view>
+        </van-tab>
+    </van-tabs>
+
+</view>

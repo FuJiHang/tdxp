@@ -1,0 +1,51 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-12 17:08:05 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-12 17:08:05 
+    匠心学院编辑
+*/ -->
+<view id="fuTeachSchool">
+
+    <view class="contantSL" wx:for="{{dataInfo.Honors}}" wx:key="{{index}}">
+        <view class="navtop" >
+            匠心商学院荣誉{{index+1}}
+        </view>
+
+        <view class="child">
+            标题<span class="val">
+                <input placeholder="如：2019年荣获上海纹绣大赛一等奖" value="{{item.Title}}" bindinput="changeFN" data-name="{{'dataInfo.Honors['+index+'].Title'}}" />
+            </span>
+        </view>
+        <view class="child cc">
+            内容<span class="val">
+                <textarea  placeholder="此处输入荣誉详情..." value="{{item.Content}}" bindinput="changeFN" data-name="{{'dataInfo.Honors['+index+'].Content'}}" ></textarea>
+            </span>
+        </view>
+        <view class="contant">
+            <span class="img" wx:if="{{item.Picture}}">
+                <image src="{{item.Picture}}" mode="aspectFill" />
+            </span>
+            <span class="img" wx:if="{{!item.Picture}}">
+                <image data-index="{{index}}" bindtap="chooseImage" src="{{imgUrl+'addMD.png?1'}}" mode="aspectFill" />
+            </span>
+        </view>
+    </view>
+        
+
+    <view class="add" bindtap="addFN">
+        <van-icon name="plus" color="#f56e68" /> 添加荣誉
+    </view>
+
+    <!--  -->
+    <view class="lizi">
+        示例：
+    </view>
+    <image class="liziImg" src="{{imgUrl+'teachTip.png'}}" mode="aspectFit" />
+
+    <!--  -->
+    <view class="btn" bindtap="submit">
+        <van-button >提交</van-button>
+    </view>
+    
+</view>

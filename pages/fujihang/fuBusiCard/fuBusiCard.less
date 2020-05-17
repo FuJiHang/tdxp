@@ -1,0 +1,295 @@
+page{
+    height: 100%;
+    overflow: hidden;
+}
+#fuBusiCard{
+    font-size: 26rpx;
+    color: #666;
+    height: 100%;
+    overflow: auto;
+    
+    // 
+    .moreInfor{
+        .nameTop{
+            padding: 20rpx;
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 28rpx;
+        }
+        .contant{
+            transition: .5s;
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+            background: rgb(240, 240, 240);
+            .child{
+                padding: 20rpx;
+                box-sizing: border-box;
+                font-size: 28rpx;
+                display: flex;
+                align-items: center;
+                .name{
+                    font-size: 28rpx;
+                    color: #999;
+                }
+                .val{
+                    margin: 0 20rpx;
+                    flex: 1;
+                }
+                
+            }
+        }
+        .openInfor{
+            opacity: 1;
+            height: auto;
+        }
+    }
+
+    // 名片
+    .BusiCard{
+        
+        box-sizing: border-box;
+        display: flex;
+        margin: 20rpx;
+        border-radius: 20rpx;
+        position: relative;
+        overflow: hidden;
+        
+        .tx{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width:45%;
+            height: 310rpx;
+        }
+        .rightBC{
+            .xiejiao{
+                top: 0;
+                left: -58rpx;
+                position: absolute;
+                width:0;
+                border-top:330rpx solid transparent;
+                // border-bottom:50px solid transparent;
+                border-right:60rpx solid white;
+     
+            }
+            background: white;
+            position: relative;
+            min-height:310rpx;
+            margin-left: 45%;
+            text-align: right;
+            width: 55%;
+            padding-right: 20rpx;
+            box-sizing: border-box;
+            .logo{
+                display: flex;
+                justify-content: flex-end;
+                .logoImg{
+                    height: 60rpx;
+                    width: 60rpx;
+                }
+                margin:20rpx 0 25rpx ;
+            }
+            .name{
+                font-size: 40rpx;
+                font-weight: 700;
+                margin-bottom: 20rpx;
+            }
+            .join{
+                font-size: 30rpx;
+                padding-bottom:10rpx;
+                border-bottom: 2px solid #333;
+                margin-bottom: 20rpx; 
+            }
+            .address{
+                position: absolute;
+                right: 20rpx;
+                display: flex;
+                align-items: center;
+                width: 102%;
+                .val{
+                    flex: 1;
+                    text-align: right;
+                    color: #999;
+                    margin-right: 20rpx;
+                }
+                .imgss{
+                    height: 30rpx;
+                    width: 30rpx;
+                }
+            }
+                
+        }
+    }
+
+    // 
+    .shareTxl{
+        padding-top: 20rpx;
+        display: flex;
+        margin: 0 20rpx;
+        .btn{
+            flex: 1;
+            .van-button{
+                height: 80rpx;
+                line-height: 82rpx;
+                width: 100%;
+                border-color: rgb(0, 144, 144);
+                color: rgb(0, 144, 144);
+            }
+        }
+        .cr{
+            .van-button{
+                background: rgb(0, 144, 144);
+                color: white;
+            }
+            
+            margin-left: 20rpx;
+        }
+    }
+    .bw{
+        background: white;
+    }
+    // 
+    .historyBC{
+        padding: 20rpx;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        .leftHy{
+            flex: 1;
+            .Person{
+                display: flex;
+                .pImg{
+                    width: 60rpx;
+                    height: 60rpx;
+                    border-radius: 50%;
+                    margin-right: 15rpx;
+                }
+            }
+            .val{
+                color: #999;
+                margin-top: 20rpx;
+                font-size: 28rpx;
+            }
+        }
+        .rightHy{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .zanHy{
+                width: 40rpx;
+                height: 40rpx;
+            }
+            .good{
+                color: #999;
+                margin-top: 15rpx;
+                font-size: 28rpx;
+            }
+        }
+    }
+
+    // 
+    .introductBC{
+        margin-top: 40rpx;
+        padding:0 20rpx;
+        box-sizing: border-box;
+        .name{
+            font-size: 30rpx;
+            font-weight: 700;
+            margin-bottom: 20rpx;
+        }
+        .yuyin{
+            margin: 20rpx 0;
+            border-radius: 10rpx;
+            border:1px solid rgb(240, 240, 240);
+            padding: 20rpx;
+            display: flex;
+            align-items: center;
+            .open{
+                height: 80rpx;
+                width: 80rpx;
+            }
+            .contant{
+                flex: 1;
+                margin-left: 20rpx;
+                .yval{
+                    font-size: 28rpx;
+                    margin-bottom: 10rpx;
+                }
+                .yname{
+                    color: #999;
+                }
+            }
+        }
+    }
+
+
+    // 
+    .myVideo{
+        margin-top: 40rpx;
+        .name{
+            font-size: 30rpx;
+            font-weight: 700;
+            padding: 20rpx;
+            box-sizing: border-box;
+        }
+        .contantVO{
+            justify-content:center;
+            display: flex;
+            margin:20rpx 0;
+            video{
+                height: 300rpx;
+                width: 70%;
+            }
+        }
+    }
+
+    // 
+    .impres{
+        margin-top: 40rpx;
+        .name{
+            font-size: 30rpx;
+            font-weight: 700;
+            padding: 20rpx;
+            box-sizing: border-box;
+        }
+        .contant{
+            display: flex;
+            flex-wrap: wrap;
+            padding:0 10rpx 10rpx;
+            box-sizing: border-box;
+            .child{
+                margin: 10rpx;
+                padding: 5rpx 20rpx;
+                border-radius: 50rpx;
+                box-sizing: border-box;
+                background: rgb(69, 69, 255);
+                color: white;
+                font-size: 28rpx;
+            }
+        }
+    }
+
+    // 
+    .myWorks{
+        margin-top: 40rpx;
+        .name{
+            font-size: 30rpx;
+            font-weight: 700;
+            padding: 20rpx;
+            box-sizing: border-box;
+        }
+        .contant{
+            display: flex;
+            flex-wrap: wrap;
+            padding:0 10rpx 10rpx;
+            box-sizing: border-box;
+            .workImg{
+                margin: 10rpx;
+                height: 150rpx;
+                width: 150rpx;
+                border-radius: 10rpx;
+            }
+        }
+    }
+}

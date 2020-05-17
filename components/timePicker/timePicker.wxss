@@ -1,0 +1,63 @@
+/* components/timePicker/timePicker.wxss */
+
+.time_picker_main{
+  position: fixed;
+  top: 101vh;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 2;
+  opacity: 0;
+  /* transition: opacity .3s linear; */
+}
+.show{
+  top: 0;
+  opacity: 1;
+  transition: opacity .3s linear;
+}
+.show>.picker_box{
+  transform-origin: 0 bottom;
+  animation: slid_up .2s ease-out;
+}
+
+@keyframes slid_up{
+  from{
+    transform: scaleY(0)
+  }
+  to{
+    transform: scaleY(1)
+  }
+}
+
+.picker_box,.time_mask{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+}
+picker-view-column{
+  text-align: center;
+}
+.time_mask{
+  top: 0;
+  background: rgba(0, 0, 0, .5);
+}
+.time_btn_box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88rpx;
+  background: rgba(256, 256, 256, .95);
+}
+.time_btn_box>.btn_cancel,.time_btn_box>.btn_sure{
+  padding: 20rpx 40rpx;
+  font-size: 32rpx;
+  border-radius: 8rpx;
+}
+.time_btn_box>.btn_sure{
+  color: #1ACBD3;
+}
+.hover{
+  background: rgba(0, 0, 0, .1);
+}

@@ -1,0 +1,67 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-08-13 16:45:18 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-08-13 16:45:18 
+    美花币
+ */ -->
+<view id="fuBeautiCoin">
+
+    <!--  -->
+    <view class="header">
+        <view class="head">
+            <span class="child">
+                <view class="name">
+                    {{dataList.NowCoins}}
+                </view>
+                <view class="val">
+                    剩余头道惠币(个数)
+                </view>
+            </span>
+            <span class="child border">
+                <view class="name">
+                    {{dataList.ActiveCoins}}
+                </view>
+                <view class="val">
+                    已激活(个数)
+                </view>
+            </span>
+        </view>
+    </view>
+
+    <!--  -->
+    <view class="list" wx:for="{{dataList.Result.Models}}" wx:key="{{index}}">
+        <span class="flex">
+            <view class="name">
+                {{item.TradeTypeName}}
+            </view>
+            <view class="val">
+                {{item.DateTime}}
+            </view>
+        </span>
+        <span class="mon">{{item.Increased?'+'+item.Increased:'-'+item.Reduced}}</span>
+    </view>
+
+    <view class="onMore" wx:if="!dataList.Result.Models.length">
+        暂无记录~
+    </view>
+
+
+    <view class="alert {{dataList.NeedShowNum?'isAlert':''}}">
+        <view class="image">
+            <image mode="widthFix" src="{{imgUrl+'mhbi.png'}}" />
+            <view class="tip">
+                恭喜你
+                <view class="br">
+                    成功激活80头道惠币
+                </view>
+            </view>
+            <view class="btn" bindtap="toFN">
+                进入商城
+            </view>
+        </view>
+        <view class="close" bindtap="closeFN">
+            ✖
+        </view>
+    </view>
+</view>

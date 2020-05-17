@@ -1,0 +1,40 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-09 09:27:53 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-09 09:27:53 
+    上传技师作品
+ */ -->
+<view id="fuTeachWork">
+    
+   <!--  -->
+   <view class="navTap">
+      <span class="name">操作记录</span>（最多可传4张）
+   </view>
+   <view class="contant">
+      <span class="img" wx:for="{{imageLoad}}" data-index="{{index}}" wx:key="{{index}}" bindtap="chooseFN">
+         <image src="{{item}}" mode="aspectFill" />
+      </span>
+      <span class="img" wx:if="{{imageLoad.length<4}}">
+         <image bindtap="chooseImage" src="{{imgUrl+'addMD.png?1'}}" mode="aspectFill" />
+      </span>
+   </view>
+
+   <!--  -->
+   <view class="navTap">
+      <span class="name">上传视频</span>（可传10S）
+   </view>
+   <view class="contant" >
+      <span class="img" bindtap="chooseVideo" wx:if="{{!video}}">
+         <image src="{{imgUrl+'addMD.png?1'}}" mode="aspectFill" />
+      </span>
+      <video wx:if="{{video}}" id="myVideo" src="{{video}}"  enable-danmu danmu-btn controls></video>
+   </view>
+
+   <!--  -->
+   <view class="btn" bindtap="submit">
+      <van-button >提交</van-button>
+   </view>
+
+
+</view>

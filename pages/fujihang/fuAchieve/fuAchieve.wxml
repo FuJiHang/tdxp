@@ -1,0 +1,32 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-06-17 19:07:45 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-06-17 19:12:42
+    拼团列表
+*/ -->
+<view id="fuAchieve">
+    
+    <van-tabs class="van_order" line-width='20' color="#F56F68" active="{{ active }}" bind:change="onChange" swipeable>
+        <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+            <scroll-view >
+                <view class="achieve">
+                 
+                </view>
+            </scroll-view>
+        </van-tab>
+    </van-tabs>
+
+
+    <view class="btnDay">
+        <span class="child">
+            今日单数：2单
+        </span>
+        <span class="last">
+            <view class="zon">结算金额：￥5555</view>
+            <view class="zon">提成金额：￥5555</view>
+        </span>
+    </view>
+
+
+</view>

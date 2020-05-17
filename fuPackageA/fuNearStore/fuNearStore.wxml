@@ -1,0 +1,54 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-12-11 15:55:22 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-12-11 15:55:22 
+    附近门店跳抵用券
+ */ -->
+
+
+<view id="fuNearStore">
+
+
+    <!--  -->
+    <view class="storeChildSHU" data-id="{{child.StoreId}}" bindtap="toStroe" wx:if="{{!paiLie}}" wx:for-item="child"
+        wx:for-index="cindex" wx:for="{{dataList}}" wx:key="{{cindex}}">
+        <image mode="aspectFill" class="storeImg" src="{{child.StoreImages+'?x-oss-process=image/resize,l_640'}}" />
+        <view class="contantS">
+            <view class="name">{{child.StoreName}}</view>
+            <view class="eva">
+                <image class="xx" wx:for="{{child.Star}}" wx:key="{{index}}" src="{{imgUrl+'xinH.png'}}" />
+                {{child.AppraiseCount}}条好评
+            </view>
+            <view class="coup">
+                <span>100减10</span>
+            </view>
+            <view class="bottomC">
+                <image class="add" src="{{imgUrl+'icon_address33.png'}}" mode="aspectFill" />
+                <span class="flexC">{{child.Address}}</span>
+                <span class="mi">距离{{child.Distance}}</span>
+            </view>
+            <view class="groupB">
+                <image src="{{imgUrl+'tuanS.png'}}" />
+                拼团列表
+                <!-- <span class="flex">
+                    <span class="tip">188人团</span>
+                </span> -->
+            </view>
+            <!-- <view class="people">
+                <image mode="aspectFill" class="laba" src="{{imgUrl+'labaS.png'}}" />
+                <span class="flex">顾客说：“{{child.TDescription}}</span>”
+            </view> -->
+        </view>
+    </view>
+
+    <view class="noMore" >
+        没有更多的了~~~
+    </view>
+
+
+    <view class="tip">
+        请选择门店以购买抵用券
+    </view>
+
+</view>

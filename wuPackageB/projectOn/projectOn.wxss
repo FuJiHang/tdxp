@@ -1,0 +1,148 @@
+#project .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 20rpx 0;
+  border-top: 1rpx solid #eee;
+  margin-bottom: 20rpx;
+}
+#project .header .header_title {
+  flex: 1;
+  font-size: 30rpx;
+  color: #333;
+  text-align: center;
+}
+#project .header .active {
+  color: #E9696A;
+  position: relative;
+}
+#project .header .active::after {
+  content: '';
+  width: 90rpx;
+  height: 2px;
+  background-color: #E9696A;
+  position: absolute;
+  left: 37%;
+  bottom: -19rpx;
+}
+#project .content {
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  background-color: #fff;
+}
+#project .content .main {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 15rpx 40rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+#project .content .main .seach_wrap {
+  width: 45rpx;
+  margin-right: 15rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#project .content .main .seach_wrap .img_icon {
+  width: 38rpx;
+  height: 38rpx;
+  border-radius: 50%;
+  border: 1rpx solid #666;
+}
+#project .content .main .seach_wrap .seach_img {
+  width: 40rpx;
+  height: 40rpx;
+}
+#project .content .main .img_wrap {
+  margin-right: 15rpx;
+}
+#project .content .main .img_wrap .img {
+  width: 120rpx;
+  height: 120rpx;
+}
+#project .content .main .con_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 120rpx;
+}
+#project .content .main .con_main .price_wrap {
+  margin-bottom: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#project .content .main .con_main .price_wrap .title {
+  font-size: 28rpx;
+  color: #333;
+}
+#project .content .main .con_main .price_wrap .price {
+  font-size: 26rpx;
+  color: #E65757;
+}
+#project .content .main .con_main .info_wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#project .content .main .con_main .info_wrap .info {
+  font-size: 20rpx;
+  color: #666;
+}
+#project .content .main .con_main .info_wrap .info .info_btn {
+  width: 48rpx;
+  height: 27rpx;
+  line-height: 27rpx;
+  font-size: 20rpx;
+  color: #fff;
+  background-color: red;
+  padding: 0 2rpx;
+  border-radius: 5rpx;
+  text-align: center;
+}
+#project .foot {
+  padding: 25rpx 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+#project .foot .check_all {
+  font-size: 28rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#project .foot .check_all .all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+}
+#project .foot .check_all .all .img_icons {
+  width: 38rpx;
+  height: 38rpx;
+  border: 1rpx solid #666;
+  border-radius: 50%;
+}
+#project .foot .check_all .all .check_img {
+  width: 40rpx;
+  height: 40rpx;
+}
+#project .foot .btn {
+  width: 200rpx;
+  font-size: 28rpx;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 15rpx 25rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  background-color: #E65757;
+}

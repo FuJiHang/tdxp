@@ -1,0 +1,63 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-11 19:40:59 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-07-11 19:41:21
+    活动卡列表
+*/ -->
+<view id="fuCardList">
+    
+    
+
+    <!--  -->
+    <van-tabs  line-width='20' color="#F56F68" active="{{ active }}" bind:change="onChange" swipeable>
+        <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="{{index}}">
+            
+            <scroll-view scroll-y bindscrolltolower="getData">
+
+               <!--  -->
+                <view class="seachMT" wx:if="{{active==0}}">
+                    <view class="seachbg">
+                        <image src="{{imgUrl+'icon_search.png'}}"  mode="aspectFill"/>
+                        <input placeholder="请输入客户名字" value="{{seach}}" bindinput="seaChFN"/>
+                    </view>
+                    <van-button size="small" bindtap="getDataS">搜索</van-button>
+                </view>
+
+                <view class="tip"  >
+                    {{active?'***点击卡片修改信息***':'***点击卡片减少顾客使用次数***'}}
+                    <!-- ***点击卡片减少顾客使用次数*** -->
+                </view>
+
+              
+                <view wx:for="{{item.data}}" wx:for-index="cindex" wx::key="{{cindex}}" wx:for-item="citem" class="Card {{'bg'+citem.ColorType}}" bindtap="chooseFN" data-data="{{citem}}">
+                    <view class="name mb" wx:if="{{active==0}}">{{citem.CardName?citem.CardName:'无'}}
+                    </view>
+                    <view class="name mb" wx:if="{{active==1}}">{{citem.ActivityCardName?citem.ActivityCardName:'无'}}
+                    </view>
+                    <view class="det mb">{{citem.ProductName?citem.ProductName:'无'}}
+                    </view>
+                    <view class="price mb" >￥{{citem.CostPrice?citem.CostPrice:'无'}}元 
+                    <!-- <span class="num">/次</span> -->
+                    </view>
+                    <view class="time mb">有效期至{{citem.EndDate}}</view>
+                    <view class="time mb" wx:if="{{active==0}}">用户名：{{citem.UserName}} 剩余使用 {{citem.LeftUseCount}}次</view>
+                    <image mode="aspectFill" class="rightS" src="{{imgUrl+(citem.ColorType==0?'yj.png':citem.ColorType==1?'mr.png':'meijia.png')}}" />
+                </view> 
+
+                <view class="noMore" wx:if="{{item.finsh}}">
+                    没有更多的了~~~
+                </view>
+
+            </scroll-view>
+          
+        </van-tab>
+    </van-tabs>
+
+    <!--  -->
+    <!--  -->
+    <view class="btn" bindtap="toFN" hidden="{{active==0}}">
+        <van-button>增加活动卡</van-button>
+    </view>
+
+</view>

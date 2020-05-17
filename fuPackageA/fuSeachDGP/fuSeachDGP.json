@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "searchResult": "./searchResult/searchResult",
+      "screenDrawer": "./screenDrawer/screenDrawer"
+  }
+}

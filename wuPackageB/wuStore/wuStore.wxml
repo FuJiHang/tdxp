@@ -1,0 +1,66 @@
+<view class="store_wrap">
+  <!-- 地图 -->
+  <view class="address_search">
+    <view class="address">
+      <image class="add_img" src="{{imgUrl+'icon_shouhuodizi@2x.png'}}"></image>
+      <view class="add_name">
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class="picker">
+            {{region[2]}}
+          </view>
+        </picker>
+      </view>
+      <image class="add_btn" src="{{imgUrl+'xiangxia_btn.png'}}"></image>
+    </view>
+    <view class="search_wrap">
+      <image class="s_img" src="{{imgUrl+'icon_search@3x.png'}}"></image>
+      <input type="text" class="search" placeholder="输入门店、商品名称" placeholder-class="styles" />
+    </view>
+  </view>
+
+  <!-- 当前位置 -->
+  <view class="current_position">
+    <view class="current">当前位置</view>
+    <view class="c_position">
+      <text class="position_text">越秀南路185号创举商务大厦14楼</text>
+      <image class="p_img" src="{{imgUrl+'shuaxin.png'}}"></image>
+    </view>
+  </view>
+
+  <!-- 门店列表 -->
+  <view class="store_list">
+    <block wx:for="{{storeList}}" wx:key>
+      <view class="nearby_content">
+        <!-- 图文层 -->
+        <view class="image_text" catchtap="handleBuy" data-storeid="{{item.StoreId}}">
+
+          <view class="nearby_text_img">
+            <image class="nearby_image" lazy-load src="{{item.img}}"></image>
+          </view>
+
+          <view class="nearby_main">
+            <view class="nearby_main_title">
+              <text class="stores_title">{{item.name}}</text>
+            </view>
+            <view class="sales_and_reviews">
+              <text class="sales">评分{{item.pinf}}</text>
+              <text class="reviews">预约{{item.yuyue}}</text>
+            </view>
+            <view class="sales_site">
+              <image class="sales_icom" lazy-load
+                src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/sjmed/icon_address@2x.png"></image>
+              <text class="sales_site_test" data-nums="{{index}}" catchtap="handleSeeAdd">{{item.address}}</text>
+              <text class="distance">距离{{item.juli}}km</text>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- 没有更多了 -->
+  <view class="no_data" wx:if='{{true}}'>
+    <text class="no_data_test">没有更多了~</text>
+  </view>
+
+</view>

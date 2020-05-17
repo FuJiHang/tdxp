@@ -1,0 +1,30 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2020-01-19 17:21:16 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2020-01-19 17:21:16 
+    切换门店
+ */ -->
+
+
+
+<view id="fuChangeStore">
+
+
+
+
+    <view class="child" wx:for="{{dataList}}" wx:key="{{index}}" bindtap="chooseFN" data-id="{{item.StoreId}}">
+        <image mode="aspectFill" src="{{item.StoreImages}}"></image>
+        <span class="contant">
+            <view class="name">{{item.StoreName}}</view>
+            <view class="val">{{item.Address}}</view>
+        </span>
+        <van-button size="small">切换</van-button>
+    </view>
+
+    <view class="noMore">
+        没有更多的了~~~
+    </view>
+
+
+</view>

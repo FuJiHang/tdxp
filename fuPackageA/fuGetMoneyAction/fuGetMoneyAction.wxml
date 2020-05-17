@@ -1,0 +1,10 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-12-16 15:43:40 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-12-16 15:49:14
+    营销活动
+ */ -->
+<view id="fuGetMoneyAction">
+    <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/fuGetMoneyAction.jpg" mode="widthFix" ></image>
+</view>

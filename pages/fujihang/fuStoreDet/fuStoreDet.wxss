@@ -1,0 +1,430 @@
+page {
+  height: 100%;
+}
+#fuStoreDet {
+  font-size: 26rpx;
+  color: #666;
+  height: 100%;
+}
+#fuStoreDet .lbt image {
+  width: 100%;
+}
+#fuStoreDet .lbt video {
+  width: 100%;
+  height: 100%;
+}
+#fuStoreDet .storeDetail {
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+#fuStoreDet .storeDetail .top {
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  width: 90%;
+  margin: 0 5% 0;
+  box-shadow: 0 4rpx 12rpx 0 rgba(174, 174, 174, 0.26);
+  border-radius: 8rpx;
+  font-size: 30rpx;
+}
+#fuStoreDet .storeDetail .top .storeName {
+  display: flex;
+  align-items: center;
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-bottom: 8rpx;
+}
+#fuStoreDet .storeDetail .top .storeName .van-icon {
+  margin: 8rpx 10rpx 0;
+}
+#fuStoreDet .storeDetail .top .time {
+  color: #999;
+  margin-bottom: 10rpx;
+}
+#fuStoreDet .storeDetail .top .rate {
+  margin-bottom: 20rpx ;
+}
+#fuStoreDet .storeDetail .top .rate .name {
+  color: #E69457;
+}
+#fuStoreDet .storeDetail .top .rate .val {
+  margin-left: 25rpx;
+  color: #999;
+}
+#fuStoreDet .storeDetail .top .address {
+  padding-bottom: 20rpx ;
+  display: flex;
+  align-items: flex-start;
+  font-size: 28rpx;
+  color: #999;
+}
+#fuStoreDet .storeDetail .top .address .name {
+  flex: 1;
+}
+#fuStoreDet .storeDetail .top .address image {
+  height: 40rpx;
+  width: 40rpx;
+}
+#fuStoreDet .storeDetail .top .address .add {
+  margin: 0 30rpx;
+}
+#fuStoreDet .storeDetail .top .address .phone {
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  border-left: 1px solid #f0f0f0;
+}
+#fuStoreDet .people {
+  display: flex;
+  align-items: center;
+  margin: 0 20rpx;
+  box-sizing: border-box;
+  padding: 15rpx 10rpx;
+  background: #F7F7F7;
+}
+#fuStoreDet .people .laba {
+  width: 35rpx;
+  height: 35rpx;
+}
+#fuStoreDet .people .flex {
+  flex: 1;
+  margin-left: 10rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  font-size: 30rpx;
+}
+#fuStoreDet .appoint {
+  background: white;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f0f0f0;
+  margin-top: 10rpx;
+}
+#fuStoreDet .appoint image {
+  height: 35rpx;
+  width: 35rpx;
+  margin-right: 15rpx;
+}
+#fuStoreDet .appoint .flex {
+  flex: 1;
+  margin-left: 20rpx;
+}
+#fuStoreDet .appoint .flex .type {
+  border-radius: 10rpx;
+  border: 1px solid #F56F68;
+  padding: 0 8rpx 2rpx;
+  box-sizing: border-box;
+  color: #F56F68;
+  font-size: 24rpx;
+}
+#fuStoreDet .appoint .peo {
+  color: #999;
+}
+#fuStoreDet .appoint .van-icon {
+  margin: 10rpx 0 0 15rpx;
+}
+#fuStoreDet .teamPro {
+  background: white;
+  margin-bottom: 20rpx;
+}
+#fuStoreDet .teamPro .navTop {
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f0f0f0;
+}
+#fuStoreDet .teamPro .navTop image {
+  height: 35rpx;
+  width: 35rpx;
+  margin-right: 15rpx;
+}
+#fuStoreDet .teamPro .navTop .flex {
+  flex: 1;
+}
+#fuStoreDet .teamPro .navTop .flex .type {
+  border-radius: 10rpx;
+  border: 1px solid #e6e6e6;
+  padding: 0 8rpx 2rpx;
+  box-sizing: border-box;
+  color: #e6e6e6;
+  font-size: 24rpx;
+  margin-left: 10rpx;
+}
+#fuStoreDet .teamPro .navTop .van-icon {
+  margin: 10rpx 0 0 15rpx;
+}
+#fuStoreDet .hotPro {
+  background: white;
+  margin-bottom: 20rpx;
+}
+#fuStoreDet .hotPro .navTop {
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 20rpx 0;
+  box-sizing: border-box;
+}
+#fuStoreDet .hotPro .navTop .flex {
+  flex: 1;
+}
+#fuStoreDet .hotPro .navTop .van-icon {
+  margin: 10rpx 0 0 15rpx;
+}
+#fuStoreDet .hotPro .van-hairline--top-bottom::after {
+  border-top: none !important;
+}
+#fuStoreDet .evaluate {
+  background: white;
+}
+#fuStoreDet .evaluate .navTop {
+  padding: 20rpx;
+  font-size: 35rpx;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 20rpx 0;
+  box-sizing: border-box;
+}
+#fuStoreDet .evaluate .navTop .flex {
+  border-left: 5rpx solid #F56F68;
+  padding-left: 20rpx;
+  flex: 1;
+  font-weight: 800;
+}
+#fuStoreDet .evaluate .navTop .van-icon {
+  margin: 10rpx 0 0 15rpx;
+}
+#fuStoreDet .evaluate .evaChild {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuStoreDet .evaluate .evaChild .person {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+#fuStoreDet .evaluate .evaChild .person image {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+}
+#fuStoreDet .evaluate .evaChild .person .contant {
+  flex: 1;
+  margin-left: 15rpx;
+}
+#fuStoreDet .evaluate .evaChild .person .contant .name {
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+}
+#fuStoreDet .evaluate .evaChild .person .contant .name .class {
+  margin-left: 10rpx;
+  color: white;
+  background: #fbbb01;
+  display: flex;
+  align-items: center;
+  padding: 0 10rpx 3rpx;
+  box-sizing: border-box;
+  font-size: 22rpx;
+  border-radius: 20rpx;
+}
+#fuStoreDet .evaluate .evaChild .person .contant .time {
+  color: #d1d1d1;
+  font-size: 24rpx;
+}
+#fuStoreDet .evaluate .evaChild .person .contant .art {
+  display: flex;
+  align-items: center;
+}
+#fuStoreDet .evaluate .evaChild .person .contant .art .star {
+  display: flex;
+  align-items: center;
+  margin-left: 15rpx;
+}
+#fuStoreDet .evaluate .evaChild .person .contant .art .star image {
+  height: 20rpx;
+  width: 20rpx;
+  margin-right: 5rpx;
+}
+#fuStoreDet .evaluate .evaChild .person .contant .service {
+  display: flex;
+  align-items: center;
+}
+#fuStoreDet .evaluate .evaChild .person .contant .service image {
+  height: 30rpx;
+  width: 30rpx;
+  margin: 0 10rpx;
+}
+#fuStoreDet .evaluate .evaChild .person .contant .service .type {
+  color: #d1d1d1;
+}
+#fuStoreDet .evaluate .evaChild .person .bgImg {
+  right: 50rpx;
+  top: 10rpx;
+  position: absolute;
+  height: 100rpx;
+  width: 100rpx;
+}
+#fuStoreDet .evaluate .evaChild .evaText {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}
+#fuStoreDet .evaluate .evaChild .shoushuo {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+#fuStoreDet .evaluate .evaChild .hide {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin: 20rpx 0;
+  font-size: 30rpx;
+  color: #F56F68;
+}
+#fuStoreDet .evaluate .evaChild .evaImg {
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+#fuStoreDet .evaluate .evaChild .evaImg image {
+  padding: 0 5rpx 10rpx;
+  box-sizing: border-box;
+  width: 33.33%;
+  height: 200rpx;
+}
+#fuStoreDet .noMore {
+  font-size: 28rpx;
+  color: #999;
+  padding: 20rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+#fuStoreDet .project {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f0f0f0;
+}
+#fuStoreDet .project image {
+  height: 160rpx;
+  width: 160rpx;
+}
+#fuStoreDet .project .contant {
+  flex: 1;
+  margin-left: 15rpx;
+  display: flex;
+  flex-direction: column;
+  height: 140rpx;
+}
+#fuStoreDet .project .contant .name_num {
+  display: flex;
+  align-items: center;
+}
+#fuStoreDet .project .contant .name_num .name {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  font-size: 32rpx;
+  flex: 1;
+  margin-right: 10rpx;
+  font-weight: 800;
+}
+#fuStoreDet .project .contant .name_num .van-icon {
+  margin: 10rpx 0 0 5rpx;
+}
+#fuStoreDet .project .contant .num {
+  color: #999;
+  margin: 10rpx 0;
+}
+#fuStoreDet .project .contant .price {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  font-size: 38rpx;
+  color: #F56F68;
+  font-weight: 800;
+}
+#fuStoreDet .project .contant .price .errPri {
+  margin-left: 10rpx;
+  color: #999;
+  font-size: 30rpx;
+  text-decoration: line-through;
+}
+.alertQcode {
+  transition: 0.5s;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  width: 0%;
+  height: 0%;
+  overflow: hidden;
+  padding: 20rpx 5%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+}
+.alertQcode .info_f {
+  text-align: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.alertQcode .info_f .van-button {
+  background: #F56F68;
+  width: 50%;
+  color: white;
+  border: none;
+}
+.alertQcode .img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.alertQcode .img image {
+  max-width: 100vh;
+  height: 85vh;
+}
+.alertQcode .exit_c {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5rpx 30rpx;
+  box-sizing: border-box;
+  background: #F56F68;
+  color: white;
+}
+.Qcode {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+}
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: #fff;
+  border-radius: 0;
+}
+button::after {
+  display: none;
+}

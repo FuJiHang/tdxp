@@ -1,0 +1,61 @@
+<!--pages/storesOrder/storesOrder.wxml-->
+<view id="storesOrder">
+
+  <!-- 导航条 -->
+  <view class="navTopMO">
+    <span class="child {{isChoose==index?'danger':''}}" wx:for="{{navTop}}" wx:key="index">
+      <van-button size="small" bindtap="changeTop" data-index="{{index}}">{{item}}</van-button>
+    </span>
+  </view>
+
+  <!-- 功能 -->
+  <van-tabs class="van_order" line-width='20' color="#F56F68" active="{{ active }}" bind:change="onChange" swipeable>
+    <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+      <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getDataR">
+        <view class="orderList" wx:for="{{functionList[active].data}}" wx:key="{{index}}"  wx:for-item="order">
+          <view class="orderListTop">
+            <span class="name">订单号：{{order.OrderId}}</span>
+            <!-- <span class="state" wx:if="{{order.Status==2}}">已预约</span>
+            <span class="state" wx:if="{{order.Status==3}}">已核销</span>
+            <span class="state" wx:if="{{order.Status==5}}">已完成</span>
+            <span class="state" wx:if="{{order.Status==4}}">已取消</span> -->
+            <span class="state" wx:if="{{order.Status==2}}">待成团</span>
+            <span class="state" wx:if="{{order.Status==3}}">已成团</span>
+            <span class="state" wx:if="{{order.Status==5}}">成团失败</span>
+            <!-- <span class="state" wx:if="{{order.Status==4}}">已取消</span> -->
+          </view>
+          <view class="orderListContent" wx:for="{{order.LineItems}}" wx:key="index">
+            <view class="contant">
+              <image src="{{item.Image}}" mode="aspectFill" />
+              <span class="middin">
+                <view class="name_mid child">{{item.Name?item.Name:'无'}}
+                  <view class="money">￥{{item.Price?item.Price:'0'}}</view>
+                </view>
+                <view class="teacher">{{item.TechnicianName?item.TechnicianName:'无'}}</view>
+                <view class="detail">
+                  <text class="code">详情</text>{{item.Description?item.Description:'无'}}
+                </view>
+              </span>
+            </view>
+            <view class="time">预约时间：{{item.SelectDate}}
+            </view>
+          </view>
+          <view class='userInfo'>
+            <image src='{{order.LineItems[0].UserPicture}}'></image>
+            <view class='userRightInfo'>
+              <view>用户:{{order.LineItems[0].UserName}}</view>
+            </view>
+          </view>
+          <view class="orderListAll">
+            共{{order.Quantity}}个项目 金额：
+            <text class="moneyAll">￥{{order.Amount}}</text>
+          </view>
+        </view>
+
+        <view class="noMore" wx:if="{{functionList[active].finish}}">
+          没有更多的了~~~
+        </view>
+      </scroll-view>
+    </van-tab>
+  </van-tabs>
+</view>

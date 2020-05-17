@@ -1,0 +1,154 @@
+
+page{
+    height: 100%;
+    font-size: 26rpx;
+}
+
+#fuPorsonEva{
+
+    .childEva{
+        background: white;
+        padding: 20rpx  ;
+        box-sizing: border-box;
+        margin-bottom: 20rpx;
+    }
+    // 
+    .person{
+        padding:0  20rpx  ;
+        box-sizing: border-box;
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        margin-bottom: 20rpx;
+        image{
+            height: 80rpx;
+            width: 80rpx;
+            border-radius: 50%;
+        }
+        .contant{
+            flex: 1;
+            margin-left: 15rpx;
+            .name{
+                font-size: 30rpx;
+                display: flex;
+                align-items: center;
+                font-weight: 800;
+                .class{
+                    margin-left: 10rpx;
+                    color: white;
+                    background: #fbbb01;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 10rpx 3rpx;
+                    box-sizing: border-box;
+                    font-size: 22rpx;
+                    border-radius: 20rpx;
+                }
+            }
+            .time{
+                color: rgb(209, 209, 209);
+                font-size: 24rpx;
+            }
+        }
+    }
+
+
+    // 
+    .appointList{
+        background: #f8f8f8;
+        padding: 20rpx 20rpx 10rpx;
+        display: flex;
+        margin: 0 20rpx 20rpx;
+        box-sizing: border-box;
+        .bW{
+            background: white;
+            height: 20rpx;
+        }
+        image{
+            height: 140rpx;
+            width: 140rpx;
+        }
+        .contant{
+            flex: 1;
+            margin-left: 20rpx;
+            .mB{
+                font-size: 28rpx;
+                margin-bottom: 10rpx;
+            }
+            .name_mon{
+                margin-bottom: 20rpx  !important;
+                display: flex;
+                .name{
+                    font-weight: bold;
+                    font-size: 30rpx;
+                    flex: 1;
+                    display:-webkit-box;
+                    -webkit-line-clamp: 2; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break:break-all;
+
+                }
+                .mon{
+                    margin-left: 5rpx;
+                    font-size: 30rpx;
+                    color: #F56F68;
+                }
+            }
+            
+            .address{
+                color: #999999; 
+            }
+            .code{
+                color: #F56F68;
+            }
+            .disAC{
+                display: flex;
+                align-items: center;
+            }
+            .img{
+                margin-right: 8rpx; 
+                height: 35rpx;
+                width: 35rpx;
+            }
+            .time{
+                display: flex;
+                align-items: center;
+                color: #61B6FD;
+                margin-bottom: 10rpx;
+                .upgrade{
+                    flex: 1;
+                }
+                .van-button{
+                    background: #F56F68;
+                    color: white;
+                }
+            }
+        }
+    }
+    .history{
+        display: flex;
+        align-items: center;
+        padding: 10rpx 20rpx;
+        box-sizing: border-box;
+        .flex{
+            flex: 1;
+        }
+        image{
+            filter: grayscale(100%);
+            height: 30rpx;
+            width: 30rpx;
+        }
+    }
+    button{
+        padding: 0;
+        margin: 0;
+        border:none;
+        background: #fff;
+        border-radius: 0;
+    }
+    button::after {
+        display: none;
+    }
+
+}

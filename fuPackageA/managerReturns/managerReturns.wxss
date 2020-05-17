@@ -1,0 +1,84 @@
+/* fuPackageA/managerReturns/managerReturns.wxss */
+
+#managerReturns .list {
+  color: #333;
+  font-size: 30rpx;
+}
+
+#managerReturns .allNum{
+  text-align: center;
+  font-size: 40rpx;
+  color: #fff;
+  background: #F56F68;
+  padding: 40rpx 0; 
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+
+#managerReturns .list .item {
+  padding: 20rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+#managerReturns .list .item .line {
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+
+#managerReturns .list .item .plane {
+  display: flex;
+  padding-top: 20rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#managerReturns .list .item .plane view:last-child {
+  color: tomato;
+}
+
+#managerReturns .detail .arr {
+  display: flex;
+  padding: 20rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+#managerReturns .detail .arr image {
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 20rpx;
+}
+
+#managerReturns .detail .arr .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#managerReturns .detail .arr .content .info {
+  color: #999;
+  font-size: 26rpx;
+}
+
+#managerReturns .detail .arr .content .bottom {
+  display: flex;
+  font-size: 28rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#managerReturns .detail .arr .content .bottom view:first-child {
+  color: tomato;
+}
+
+#managerReturns .returnBtn {
+  width: 90%;
+  color: #fff;
+  padding: 20rpx 0;
+  margin: 40rpx auto;
+  text-align: center;
+  border-radius: 8rpx;
+  background: tomato;
+}

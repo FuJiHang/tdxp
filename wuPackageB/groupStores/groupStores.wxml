@@ -1,0 +1,42 @@
+<view id="activities">
+  <view class="header">
+    <block wx:for="{{navData}}" wx:key="{{item}}">
+      <view bindtap="handleNav" class="header_title {{index==nums?'active':''}}" data-index="{{index}}">{{item.name}}
+      </view>
+    </block>
+  </view>
+
+  <view class="list_wrap" wx:if="{{nums==0}}">
+    <block wx:for="{{list}}" wx:key="{{item}}">
+      <view class="list">
+        <view class="list_logo">{{item.logo}}</view>
+        <view class="list_main">
+          <view class="list_title">{{item.Name}}</view>
+          <!-- <view class="list_test">{{item.test}}</view> -->
+          <!-- <view class="list_time">有效时间: {{item.time}}</view> -->
+        </view>
+        <view class="list_btn" wx:if="{{item.status}}">上架</view>
+        <view class="list_btn" wx:else data-num="0" data-id="{{item.ActivityId}}" data-type="{{item.TypeId}}"
+          bindtap="handleClick">下架</view>
+      </view>
+    </block>
+    <view class="nodata" wx:if="{{list.length==0}}">没有活动可上架~</view>
+  </view>
+
+  <view class="list_wrap" wx:if="{{nums==1}}">
+    <block wx:for="{{lists}}" wx:key="{{item}}">
+      <view class="list">
+        <view class="list_logo add_active">{{item.logo}}</view>
+        <view class="list_main">
+          <view class="list_title">{{item.Name}}</view>
+          <!-- <view class="list_test">{{item.test}}</view> -->
+          <!-- <view class="list_time add_time">有效时间: {{item.time}}</view> -->
+        </view>
+        <view class="list_btn" wx:if="{{item.status}}" data-id="{{item.ActivityId}}" data-num="1"
+          data-type="{{item.TypeId}}" bindtap="handleClick">上架</view>
+        <view class="list_btn" wx:else data-num="0" data-id="{{item.ActivityId}}" data-type="{{item.TypeId}}">下架</view>
+      </view>
+    </block>
+    <view class="nodata" wx:if="{{lists.length==0}}">没有活动可上架~</view>
+  </view>
+</view>

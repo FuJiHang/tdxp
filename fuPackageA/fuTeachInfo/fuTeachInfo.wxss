@@ -1,0 +1,121 @@
+page {
+  height: 100%;
+  font-size: 26rpx;
+  position: relative;
+  background: white;
+}
+#fuTeachInfo {
+  position: relative;
+  color: #666;
+}
+#fuTeachInfo .navTap {
+  display: flex;
+  align-items: flex-end;
+  padding: 20rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+  color: #999;
+}
+#fuTeachInfo .navTap .name {
+  font-weight: 800;
+  font-size: 34rpx;
+  color: #666;
+}
+#fuTeachInfo .contant {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+#fuTeachInfo .contant .img {
+  width: 25%;
+  padding: 5rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+#fuTeachInfo .contant .img image {
+  width: 100%;
+  height: 160rpx ;
+}
+#fuTeachInfo .contant .img .choose {
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  height: 30rpx;
+  width: 30rpx;
+}
+#fuTeachInfo .child {
+  display: flex;
+  align-items: flex-start;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuTeachInfo .child .name {
+  font-size: 30rpx;
+  font-weight: 800;
+}
+#fuTeachInfo .child .val {
+  flex: 1;
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+  border: 1px solid #f1f1f1;
+  border-radius: 5rpx;
+  min-height: 40rpx;
+}
+#fuTeachInfo .child .val .neirou {
+  flex: 1;
+  text-align: center;
+  box-sizing: border-box;
+}
+#fuTeachInfo .child .val image {
+  margin: 0 20rpx;
+  height: 20rpx;
+  width: 20rpx;
+}
+#fuTeachInfo .child .val textarea {
+  padding: 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+  height: 150rpx;
+}
+#fuTeachInfo .txtflex {
+  width: 80%;
+}
+#fuTeachInfo .border {
+  padding-top: 40rpx;
+  border-top: 1px solid #f1f1f1;
+}
+#fuTeachInfo .flexMin {
+  width: 70%;
+}
+#fuTeachInfo .flexMin .left {
+  margin-right: 20rpx;
+}
+#fuTeachInfo .addTip .val {
+  border: none;
+}
+#fuTeachInfo .addTip .val .choose {
+  padding: 2rpx 15rpx 5rpx;
+  border: 1px solid #fff;
+  border-radius: 20rpx;
+  margin-right: 10rpx;
+}
+#fuTeachInfo .addTip .val .inp {
+  border-color: #f0f0f0;
+}
+#fuTeachInfo .addTip .val .red {
+  border-color: #fb9691;
+}
+#fuTeachInfo .btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+#fuTeachInfo .btn .van-button {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  color: white;
+  background: #f56e68;
+}

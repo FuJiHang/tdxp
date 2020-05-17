@@ -1,0 +1,182 @@
+page {
+  height: 100%;
+  overflow: hidden;
+}
+#fuActionList {
+  font-size: 28rpx;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #666;
+  box-sizing: border-box;
+}
+#fuActionList ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+#fuActionList .navTopMO {
+  display: flex;
+  padding: 18rpx 0;
+  box-sizing: border-box;
+  background: white;
+}
+#fuActionList .navTopMO .child {
+  flex: 1;
+  text-align: center;
+}
+#fuActionList .navTopMO .child .van-button {
+  color: #999;
+  border: none;
+  background: white;
+}
+#fuActionList .navTopMO .danger .van-button {
+  background: #FF6262;
+  color: white;
+}
+#fuActionList .van_order {
+  flex: 1;
+  color: #999;
+  overflow: hidden;
+}
+#fuActionList .van_order .van-tabs {
+  height: 100%;
+  overflow: hidden;
+}
+#fuActionList .van_order .van-tabs__content {
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 44px ;
+  box-sizing: border-box;
+}
+#fuActionList .van_order .van-tabs__content .van-tabs__track {
+  height: 100%;
+  overflow: hidden;
+}
+#fuActionList .van_order .van-tabs__content .van-tabs__track .van-tab__pane {
+  height: 100% ;
+  overflow: hidden !important;
+}
+#fuActionList .van_order .van-tabs__content .van-tabs__track .van-tab__pane scroll-view {
+  height: 100%;
+}
+#fuActionList .van_order .van-tabs__content .van-tabs__track .van-tab__pane scroll-view .noMore {
+  font-size: 28rpx;
+  color: #999;
+  padding: 20rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+#fuActionList .van_order .actionChild {
+  background: white;
+  padding: 20rpx;
+  margin: 10rpx 20rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  position: relative;
+}
+#fuActionList .van_order .actionChild .absot {
+  position: absolute;
+  right: 20rpx;
+  top: 30%;
+  font-size: 33rpx;
+  color: #333;
+}
+#fuActionList .van_order .actionChild .red {
+  font-size: 32rpx;
+  color: #FF6262;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  text-align: right;
+}
+#fuActionList .van_order .actionChild .flxe {
+  display: flex;
+  align-items: center;
+  padding: 0 0 10rpx;
+  box-sizing: border-box;
+}
+#fuActionList .van_order .actionChild .flxe .duiQi {
+  width: 30%;
+}
+#fuActionList .van_order .actionChild .teaher .rightW {
+  flex: 1;
+  text-align: right;
+  margin-right: 5rpx;
+}
+#fuActionList .van_order .actionChild .teaher .van-icon {
+  margin-top: 10rpx;
+}
+#fuActionList .van_order .actionChild .product {
+  width: 100%;
+  display: flex;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
+#fuActionList .van_order .actionChild .product .proChild {
+  width: 33.33%;
+  padding: 20rpx 10rpx 0;
+  box-sizing: border-box;
+}
+#fuActionList .van_order .actionChild .product .proChild > image {
+  height: 150rpx;
+  width: 100%;
+  border-radius: 5rpx;
+}
+#fuActionList .van_order .actionChild .product .proChild .nameP {
+  overflow: hidden;
+  margin: 5rpx 0 2rpx;
+}
+#fuActionList .van_order .actionChild .product .proChild .pic {
+  overflow: hidden;
+  color: #FF6262;
+  font-size: 30rpx;
+}
+#fuActionList .van_order .actionChild .moreP {
+  font-size: 35rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+  border-radius: 5rpx;
+}
+#fuActionList .van_order .van-tab--active {
+  color: red;
+}
+.moreList {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20rpx;
+  margin: 5rpx 0;
+  font-size: 28rpx;
+  color: #666;
+}
+.moreList .van-checkbox {
+  margin-right: 20rpx;
+}
+.moreList image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 5rpx;
+}
+.moreList .contantM {
+  flex: 1;
+  margin-left: 10rpx;
+}
+.moreList .contantM .nameM {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  font-size: 30rpx;
+}
+.moreList .contantM .pirM {
+  margin: 10rpx 0;
+}
+.van-popup--right {
+  width: 80%;
+  height: 100%;
+  overflow: auto;
+}

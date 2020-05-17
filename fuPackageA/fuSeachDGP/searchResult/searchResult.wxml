@@ -1,0 +1,80 @@
+<view class='result' hidden='{{hiddenResult}}'>
+
+  <!-- 店铺列表 -->
+  <view class="mendian" wx:if="{{storeList}}">门店</view>
+  <view class='store-ul' wx:if="{{storeList}}">
+    <block  wx:for="{{storeList}}" wx:key="{{item}}">
+      <view class='store-li df ais' wx:if="{{index < num}}" data-storeid="{{item.StoreId}}" catchtap="handleBuy">
+        <image src='{{item.StoreImages}}' mode='widthFix'></image>
+        <view class='df fdc jct storeInfo'>
+          <view class='df ais newidth'>
+            <text class='to-line'>{{item.StoreName}}</text>
+            <view class='coupon'>距离:{{item.Distance}}</view>
+          </view>
+          <view>{{item.FullRegionPath}}{{item.Address}}</view>
+        </view>
+      </view>
+    </block>
+    <view class='more-store df ais jct-between' bindtap='moreStore' data-boo="{{isHide}}">
+      <view class='df ais more-storeL'>
+        <text></text>
+        <text>{{isHide?'收起':'更多会场'}}</text>
+      </view>
+      <image wx:if="{{gdIshow}}" src='{{imgUrl+"arrowRight.png"}}' mode='widthFix' class="gengduo"></image>
+      <image wx:else src='{{imgUrl+"arrowRight.png"}}' mode='widthFix' class="gengduo new_btn"></image>
+    </view>
+  </view>
+
+  <!-- 结果列表 -->
+  <view class="mendian newList" wx:if="{{comList.length !=0}}">商品</view>
+  <!-- <view class='result-ul' hidden='{{showResult}}'> -->
+  <view class='result-ul' wx:if="{{comList.length !=0}}">
+    <view class='result-ulH df ais'>
+      <view class='df ais jct flex'>
+        <view class='df ais jct result-ulHL' bindtap='priceSort'>
+          <text>价格</text>
+          <image src='{{imgUrl+sortIcon}}' mode='widthFix'></image>
+        </view>
+      </view>
+      <view class='df ais jct flex'>
+        <view class='df ais jct result-ulHR' bindtap='openDrawer'>
+          <text>筛选</text>
+          <image src='{{imgUrl+"icon_shaixuan@2x.png"}}' mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+    <view class='df ais result-inner'>
+      <!-- <view class='result-li'wx:for="{{resultList}}" wx:for-item="resultList" wx:for-index="resultIndex" wx:key="resultIndex"> -->
+      <block wx:for="{{comList}}" wx:for-index="resultIndex" wx:key="resultIndex">
+      <view class='result-li'  >
+        <!-- <image src='{{imgUrl+resultList.img}}' mode='widthFix'></image> -->
+        <image src='{{item.ImageUrl1}}' data-productid="{{item.ProductId}}" bindtap="Toprodetai" data-storeid="{{item.StoreId}}"></image>
+        <view class='goodsTitle to-2line'>{{item.ProductName}}</view>
+        <view class='goodsPrice df ais jct-between'>
+          <view class='df ais goodsPrice-l'>
+            <view class='df ais-end'>
+              <text>￥</text>
+              <text>{{item.SalePrice}}</text>
+            </view>
+            <view class='df ais jct'>新人专享价</view>
+          </view>
+          <view class='goodsPrice-r' bindtap="addCart">+</view>
+        </view>
+        <view class='df ais curPrice'>
+          <text>原价:</text>
+          <text>￥{{item.MarketPrice}}</text>
+        </view>
+      </view>
+      </block>
+
+    </view>
+  </view>
+  <!--占位wrapper-->
+  <view class="warpper"></view>
+
+  
+
+  <!-- 底部导航 -->
+  <tabBar curActive='-1'/>
+
+</view>

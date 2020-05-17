@@ -1,0 +1,44 @@
+<view id="project">
+  <view class="header">
+    <block wx:for="{{navData}}" wx:key="{{item}}">
+      <view bindtap="handleNav" class="header_title {{index==nums?'active':''}}" data-index="{{index}}">{{item.name}}
+      </view>
+    </block>
+  </view>
+  <view class="content">
+    <block wx:for="{{list}}" wx:key="{{item}}">
+      <view class="main">
+        <view class="seach_wrap" bindtap="handleIndex" data-nums="{{index}}">
+          <image class="seach_img" wx:if="{{item.status}}" src="{{imgUrl+'icon_no choice@2x.png'}}"></image>
+          <view class="img_icon" wx:else ></view>
+        </view>
+        <view class="img_wrap">
+          <image class="img" src="{{item.img}}"></image>
+        </view>
+        <view class="con_main">
+          <view class="price_wrap">
+            <text class="title">{{item.name}}</text>
+            <text class="price">￥{{item.price}}</text>
+          </view>
+          <view class="info_wrap">
+            <view class="info">
+              <text class="info_btn">详情</text>
+              {{item.info}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+      
+  </view>
+  <view class="foot">
+    <view class="check_all">
+      <view class="all" bindtap="handleAll">
+        <image class="check_img"wx:if="{{isShow}}" src="{{imgUrl+'icon_no choice@2x.png'}}"></image>
+        <view class="img_icons"  wx:else></view>
+      </view>
+      <view>全选</view>
+    </view>
+    <view class="btn">取消热门</view>
+  </view>
+</view>

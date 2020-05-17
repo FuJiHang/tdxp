@@ -1,0 +1,230 @@
+page {
+  height: 100%;
+  font-size: 26rpx;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background: #f56e68;
+}
+#fuLuckDraw {
+  color: #666;
+}
+#fuLuckDraw .numAll {
+  position: absolute;
+  top: 21%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#fuLuckDraw .numAll .juzhong {
+  border-radius: 15rpx;
+  background: #fff1f0;
+  color: #666;
+  padding: 12rpx 30rpx;
+  box-sizing: border-box;
+  font-size: 35rpx;
+  display: flex;
+  align-items: center;
+}
+#fuLuckDraw .numAll .flex {
+  flex: 1;
+  margin-left: 30rpx;
+}
+#fuLuckDraw .numAll .logo {
+  border-radius: 50%;
+  height: 50rpx;
+  width: 50rpx;
+  margin-right: 10rpx;
+}
+#fuLuckDraw .numAll .name {
+  margin-right: 20rpx;
+}
+#fuLuckDraw .swpierFu {
+  position: absolute;
+  bottom: -50rpx;
+  width: 100%;
+}
+#fuLuckDraw .swpierFu swiper {
+  height: 74rpx;
+}
+#fuLuckDraw .swpierFu swiper-item {
+  display: flex;
+  justify-content: center;
+}
+#fuLuckDraw .swpierFu .juzhong {
+  border-radius: 15rpx;
+  color: #fff;
+  padding: 12rpx 30rpx;
+  box-sizing: border-box;
+  font-size: 35rpx ;
+  display: flex;
+  align-items: center;
+}
+#fuLuckDraw .swpierFu .juzhong .name {
+  margin: 0 5rpx;
+  max-width: 16%;
+  min-width: 1%;
+  overflow: hidden;
+  height: 40rpx ;
+}
+#fuLuckDraw .swpierFu .flex {
+  overflow: hidden;
+  height: 40rpx;
+  flex: 1;
+  margin-left: 30rpx;
+}
+#fuLuckDraw .swpierFu .logo {
+  border-radius: 50%;
+  height: 50rpx;
+  width: 50rpx;
+}
+#fuLuckDraw .alert {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  left: 0;
+  top: 0;
+  position: fixed;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#fuLuckDraw .alert image {
+  width: 80%;
+}
+#fuLuckDraw .alert .close {
+  height: 60rpx;
+  width: 60rpx;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  right: 10%;
+  top: 10%;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  color: white;
+  font-size: 40rpx;
+  font-weight: 800;
+}
+#fuLuckDraw .bgF {
+  position: relative;
+}
+#fuLuckDraw .bgF .callBack {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  width: 100rpx;
+  height: 100rpx ;
+}
+#fuLuckDraw .bgF image {
+  width: 100%;
+}
+#fuLuckDraw .bgF .zhuanp {
+  width: 100%;
+  position: absolute;
+  top: 27.5%;
+  left: 7%;
+}
+#fuLuckDraw .bgF .zhuanp .sasa {
+  width: 650rpx;
+  height: 650rpx ;
+  position: relative;
+}
+#fuLuckDraw .bgF .zhuanp image {
+  width: 100%;
+  height: 100%;
+}
+#fuLuckDraw .bgF .zhuanp .child {
+  color: #f56e68;
+  font-size: 24rpx;
+  position: absolute;
+  text-align: center;
+  overflow: hidden;
+  width: 200rpx;
+  z-index: 2;
+}
+#fuLuckDraw .bgF .zhuanp .child .name {
+  margin-top: 8rpx;
+}
+#fuLuckDraw .bgF .zhuanp .child .img {
+  width: 100%;
+  justify-content: center;
+  height: 60rpx;
+}
+#fuLuckDraw .bgF .zhuanp .child .img image {
+  height: 100%;
+}
+#fuLuckDraw .bgF .zhuanp .child .valDet {
+  width: 90%;
+}
+#fuLuckDraw .bgF .zhuanp .ch0 {
+  top: 8%;
+  left: 35% ;
+}
+#fuLuckDraw .bgF .zhuanp .ch1 {
+  transform: rotateZ(60deg);
+  top: 24%;
+  left: 60%;
+}
+#fuLuckDraw .bgF .zhuanp .ch2 {
+  transform: rotateZ(120deg);
+  top: 52.5%;
+  left: 59%;
+}
+#fuLuckDraw .bgF .zhuanp .ch3 {
+  transform: rotateZ(180deg);
+  top: 70%;
+  left: 35%;
+}
+#fuLuckDraw .bgF .zhuanp .ch4 {
+  transform: rotateZ(240deg);
+  top: 53%;
+  left: 8%;
+}
+#fuLuckDraw .bgF .zhuanp .ch4 .left {
+  text-align: left;
+  margin-left: 20rpx;
+}
+#fuLuckDraw .bgF .zhuanp .ch5 {
+  transform: rotateZ(300deg);
+  top: 21%;
+  left: 10%;
+}
+#fuLuckDraw .bgF .zhuanp .ch5 .left {
+  text-align: left;
+  margin-left: 20rpx;
+}
+#fuLuckDraw .bgF .zpzz {
+  width: 100%;
+  position: absolute ;
+  top: 36.5%;
+  left: 38% ;
+  z-index: 9;
+}
+#fuLuckDraw .bgF .zpzz image {
+  width: 25% ;
+}
+#fuLuckDraw .btn {
+  position: fixed;
+  bottom: 0;
+  width: 100% ;
+}
+#fuLuckDraw .btn .van-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#fe493e, #f95d2d);
+  color: #fff;
+  font-size: 37rpx;
+  width: 100% ;
+  border: none;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

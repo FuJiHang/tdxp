@@ -1,0 +1,223 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-08-05 16:48:52 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-08-05 16:48:52 
+    新线上业绩
+*/ -->
+<view id="fuAchieveG">
+
+    <van-tabs sticky="{{true}}" class="van_order" line-width='20' color="#F56F68" active="{{ active }}" bind:change="onChangeTop" swipeable>
+        <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+
+
+        <view hidden="{{active}}"  bindtap="ChangeCheck" data-data="{{item}}" data-index="{{index}}"  class="DeclareCart" wx:for="{{dataInfo.Orders}}" wx:key="{{index}}">
+            <!-- {{item}} -->
+            <view class="store_time" data-data="{{item}}" data-index="{{index}}">
+                店名：
+                <span class="nameS">{{item.StoreName?item.StoreName:'无'}}</span>
+                <!-- 活动开始时间：
+                <span class="tiemS">{{item.ActivityStartDate?item.ActivityStartDate:'无'}}</span> -->
+            </view>
+            <view class="store_time" data-data="{{item}}" data-index="{{index}}">
+                活动开始时间：
+                <span class="tiemS">{{item.ActivityStartDate?item.ActivityStartDate:'无'}}</span>
+            </view>
+             <view class="order name" data-data="{{item}}" data-index="{{index}}">
+                顾客名字：{{item.UserName?item.UserName:'无'}}
+            </view>
+            <view class="team_zxz" data-data="{{item}}" data-index="{{index}}">
+                团队长：
+                <span class="nameS" data-data="{{item}}" data-index="{{index}}">{{item.TechnicianHeadName}}</span>
+                执行者：
+                <span class="tiemS" data-data="{{item}}" data-index="{{index}}">{{item.ExcutorName?item.ExcutorName:'无'}}</span>
+            </view>
+            <view class="name" data-data="{{item}}" data-index="{{index}}">
+                <span class="flex">操作技师：{{item.TechniciaInfo[1].Name?item.TechniciaInfo[1].Name:(item.TechniciaInfo[0].Name?item.TechniciaInfo[0].Name:'无')}}</span>
+                <van-button size="mini"  catchtap="changeTea" data-item="{{item}}">更改技师</van-button>
+            </view>
+            <view class="mini name" data-data="{{item}}" data-index="{{index}}">
+                <span class="flex">订单号：{{item.OrderId?item.OrderId:'无'}}</span>
+                <span class="time">{{item.OrderDate?item.OrderDate:'无'}}</span>
+            </view>
+            <view class="order name">
+                项目金额：￥{{item.OrderTotal?item.OrderTotal:'无'}}
+            </view>
+                <!-- <view class="order name">
+                门店名字：{{item.StoreName?item.StoreName:'无'}}
+            </view>
+                -->
+            <view class="checkList" >
+                代金券
+                <span class="checkS"  data-xz="{{dxS.choose}}" data-c="{{index}}" data-i="djjxfjD" data-si="{{dxSI}}" 
+                wx:for="{{item.djjxfjD}}" wx:for-item="dxS" wx:for-index="dxSI" wx:key="{{dxSI}}">
+                    <checkbox disabled="{{true}}" checked="{{dxS.choose}}"  data-xz="{{dxS.choose}}"/> {{dxS.name}}
+                </span>
+            </view>
+            <view class="checkList" >
+                修复剂
+                <span class="checkS"  data-xz="{{dxS.choose}}" data-c="{{index}}" data-i="djjxfjX" data-si="{{dxSI}}" 
+                wx:for="{{item.djjxfjX}}" wx:for-item="dxS" wx:for-index="dxSI" wx:key="{{dxSI}}">
+                    <checkbox disabled="{{true}}" checked="{{dxS.choose}}"  data-xz="{{dxS.choose}}"/> {{dxS.name}}
+                </span>
+            </view>
+            <view class="order name" data-data="{{item}}" data-index="{{index}}">
+                <span class="flex">核销码：{{item.TechniciaInfo[1].VerifyCode?item.TechniciaInfo[1].VerifyCode:'无'}}</span>
+                <van-checkbox value="{{ item.isChoose }}" checked-color="#f56e68" ></van-checkbox>
+            </view>
+            
+        </view>
+
+     
+        <!--  -->
+
+        <view >
+            
+            <view class="teachCart" wx:for="{{postDeclare}}" wx:key="{{index}}" hidden="{{!active}}">
+                <view class="navP"><span class="flex">项目{{index+1}}</span><span bindtap="delFN" class="del" wx:if="{{postDeclare.length-1==index&&index!=0}}">删除</span></view>
+                <view class="name" wx:if="{{zxzOrtdz==1}}" bindtap="openSFN" data-index="{{index}}">门店：{{item.store.name?item.store.name:'请选择门店'}}</view>
+                <view class="name" bindtap="openFN" data-index="{{index}}">技师：{{item.teacher.name?item.teacher.name:'请选择技师'}}</view>
+                <!-- <view class="select">
+                    <span class="left">没</span>
+                    <image src="{{imgUrl+'arrow_btn.png'}}"  />
+                    <view class="overDiv" wx:if="{{false}}">
+                        <view class="choose" wx:for="{{5}}" wx:key="{{index}}">
+                            法萨芬
+                        </view>
+                    </view>
+                </view> -->
+                <view class="name mini" wx:for="{{item.submitList}}" wx:key="{{indexs}}" wx:for-index="indexs" wx:for-item="items">{{items.name}}
+                    <span class="input">
+                        <input placeholder="{{items.t}}" bindinput="changeInput" value="{{items.val}}" data-idf="{{index}}" data-id="{{indexs}}"/>
+                    </span>
+                </view>
+                <view class="checkList" >
+                    代金券
+                    <span class="checkS" catchtap="djjxfjFNT" data-xz="{{dxS.choose}}" data-c="{{index}}" data-i="djjxfjD" data-si="{{dxSI}}" 
+                    wx:for="{{item.djjxfjD}}" wx:for-item="dxS" wx:for-index="dxSI" wx:key="{{dxSI}}">
+                        <checkbox checked="{{dxS.choose}}"/> {{dxS.name}}
+                    </span>
+                </view>
+                <view class="checkList" >
+                    修复剂
+                    <span class="checkS" catchtap="djjxfjFNT" data-xz="{{dxS.choose}}" data-c="{{index}}" data-i="djjxfjX" data-si="{{dxSI}}" 
+                    wx:for="{{item.djjxfjX}}" wx:for-item="dxS" wx:for-index="dxSI" wx:key="{{dxSI}}">
+                        <checkbox checked="{{dxS.choose}}" data-xz="{{dxS.choose}}"/> {{dxS.name}}
+                    </span>
+                </view>
+               
+                <view class="image" bindtap="uploadLogo" data-index="{{index}}">
+                    <image src="{{item.addImg.choose?item.addImg.imgc:imgUrl+addImg.img}}" mode="aspectFill"/>
+                    上传打款凭证
+                </view>
+            </view>
+            </view>
+            <view bindtap="addDeclare" class="addDeclare" hidden="{{!active}}">
+                新增项目+
+            </view>
+
+        </van-tab>
+    </van-tabs>
+
+    <view class="konbai"  ></view>
+
+
+
+    <!--  -->
+    <view class="btn" hidden="{{active}}">
+        <view class="topV">
+            <view class="pro  "  data-in="0" bindtap='CheckFN'>项目：{{prjXfj.prj}}单
+                <checkbox-group >
+                    <checkbox class="check"  color="#f56e68"  checked="{{choose[0]}}"/>
+                </checkbox-group>
+            </view>
+            <view class="pro " data-in="1" bindtap='CheckFN'>修复剂：{{prjXfj.Xfj}}瓶
+                <checkbox-group  >
+                    <checkbox class="check"  color="#f56e68" checked="{{choose[1]}}"/>
+                </checkbox-group>
+            </view>
+            <view class="pro " data-in="2" bindtap='CheckFN'>代金券：{{prjXfj.djj}}张
+                <checkbox-group  >
+                    <checkbox class="check"  color="#f56e68" checked="{{choose[2]}}"/>
+                </checkbox-group>
+            </view>
+        </view>
+        <view class="btnV">
+            <span class="allNum">
+                <van-checkbox  checked-color="#f56e68" value="{{ checked }}" bind:change="onChange">全选</van-checkbox>
+            </span>
+            <span class="sss"  bindtap="submitFN">
+                <van-button>提交</van-button>
+
+            </span>
+        </view>
+        
+    </view>
+
+    <view class="btn" hidden="{{!active}}">
+        <view class="btnBig" bindtap="subMitxxFN">
+
+
+            <van-button>提交</van-button>
+
+
+        </view>
+        
+    </view>
+
+    <!--  -->
+    <van-popup show="{{show}}" bindtap="onCloseP" position="bottom" bind:close="onCloseP">
+        <view class="tipFN">
+            <input catchtap value="{{Remark}}" placeholder="请输入备注，也可不填" bindinput="RemarkFN" />
+            <view class="ok">
+                <van-button catchtap="okFN" size="small">确定</van-button>
+            </view>
+        </view>
+    </van-popup>
+
+    <!--  -->
+    <van-popup show="{{teacher.show }}" position="right" bind:close="onCloseT">
+        <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getTeach">
+        <view class="teamFu" wx:for="{{listDataT.data}}" wx:key="{{index}}" bindtap="chooseTea" data-id="{{item.UserId}}" data-name="{{item.Name}}">
+            <!-- <span class="choose">
+                <van-checkbox checked-color="#F56F68"   value="{{item.choose}}" bindtap="ChangeTC"  data-index="{{index}}"></van-checkbox>
+            </span> -->
+            <image  src="{{item.HeadPortrait?item.HeadPortrait:item.Picture}}"/>
+            <view class="contant">
+                <view class="name_cla">
+                    <span class="name">{{item.Name?item.Name:'无'}}</span>
+                </view>
+                <view class="shen_phone">
+                    <!-- <span class="shen">省代</span> -->
+                    <span class="phone">电话：{{item.CellPhone?item.CellPhone:'无'}}</span>
+                </view>
+            </view>
+        </view>
+        <view class="noMore" wx:if="{{listDataT.finsh}}">
+            没有更多的了~~~
+        </view>
+        </scroll-view>
+    </van-popup>
+
+    <!--  -->
+    <van-popup show="{{store.show }}" position="right" bind:close="onSClose">
+        <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getStore">
+        <view class="storeCard" wx:for="{{storeList.data}}"  wx:key="{{index}}" data-index="{{item}}" bindtap="chooseStore">
+            <image mode="aspectFit" src="{{item.StoreImages}}" />
+            <view class="contantStore">
+                <view class="name_mi">
+                    <span class="name">{{item.StoreName}}</span>
+                    <span class="mi">距离{{item.Distance}}</span>
+                </view>
+                <view class="address">
+                    <image mode="aspectFit" src="{{imgUrl+'icon_address33.png'}}"/>{{item.Address}}
+                </view>
+            </view>
+        </view>
+        
+        <view class="noMore" wx:if="{{storeList.finsh}}">
+            没有更多的了~~~
+        </view>
+        </scroll-view>
+    </van-popup>
+</view>

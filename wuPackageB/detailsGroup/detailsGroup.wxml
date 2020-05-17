@@ -1,0 +1,21 @@
+<view id="group">
+  <view class="title_wrap">
+    <text class="title">活动名称:</text>
+    <text class="title">拼团活动</text>
+  </view>
+  <view class="time_wrap">
+    <text class="tiem_title">活动时间:</text>
+    <text class="time">2019/11/3 23:27:12</text>
+  </view>
+  <view class="group_wrap">
+    <text class="grpup_title">活动规则:</text>
+    <view class="main">
+      <text>1. 点击商城拼团活动，开团成为团长，并邀请好友参团，在拼团有效时间内凑齐成团人数，即可拼团成功，商城将会安排发货；</text>
+      <text>2. 拼团有效时间内未凑齐成团人数，即拼团失败。系统自动取消订单并全额退款，支付金额将会原路退回付款账户；</text>
+      <text>3. 拼团有效时间为24小时，即拼团允许邀请好友参团的时间，可在拼团详情页查看倒计时；</text>
+      <text>4. 用户购买拼团商品并无退货情况产生，可以获得与订单完成时的金额相等的积分数量；</text>
+      <text>5. 针对拼团商品，如果价格低于原商品价格的50%，用户购买时不可使用积分抵扣，也不能获得积分。</text>
+      <text>6. 拼团商品不可以使用优惠券</text>
+    </view>
+  </view>
+</view>

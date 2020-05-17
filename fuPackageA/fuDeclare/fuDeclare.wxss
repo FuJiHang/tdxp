@@ -1,0 +1,335 @@
+page {
+  height: 100%;
+  font-size: 28rpx;
+  position: relative;
+}
+.Remark {
+  padding: 20rpx;
+  box-sizing: border-box;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+.Remark .flex {
+  border: 1px solid #f5f5f5;
+  flex: 1;
+}
+.Remark .flex input {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+#fuDeclare {
+  position: relative;
+  color: #666;
+}
+#fuDeclare .DeclareCart {
+  padding: 0 20rpx 20rpx;
+  box-sizing: border-box;
+  background: white;
+  margin: 20rpx;
+}
+#fuDeclare .DeclareCart .store_time {
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+#fuDeclare .DeclareCart .store_time .nameS {
+  flex: 1;
+}
+#fuDeclare .DeclareCart .store_time .nameS,
+#fuDeclare .DeclareCart .store_time .tiemS {
+  color: #999;
+  font-size: 28rpx;
+}
+#fuDeclare .DeclareCart .name {
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  padding: 5rpx 0;
+  box-sizing: border-box;
+}
+#fuDeclare .DeclareCart .name .flex {
+  flex: 1;
+}
+#fuDeclare .DeclareCart .name .van-button {
+  background: #f56e68;
+  color: white;
+  border-radius: 30rpx;
+  width: 60px;
+}
+#fuDeclare .DeclareCart .checkList {
+  display: flex;
+  align-items: center;
+  padding: 5rpx 0;
+  box-sizing: border-box;
+}
+#fuDeclare .DeclareCart .checkList .checkS {
+  display: flex;
+  align-items: center;
+  font-size: 45rpx;
+  transform: scale(0.6, 0.6);
+}
+#fuDeclare .DeclareCart .mini {
+  font-size: 28rpx;
+  color: #999;
+}
+#fuDeclare .addDeclare {
+  padding: 0 20rpx 20rpx;
+  margin-bottom: 200rpx;
+  box-sizing: border-box;
+  font-size: 34rpx;
+  font-weight: 800;
+}
+#fuDeclare .teachCart {
+  padding: 20rpx;
+  box-sizing: border-box;
+  background: white;
+  margin: 20rpx;
+}
+#fuDeclare .teachCart .navP {
+  font-size: 30rpx;
+  font-weight: 800;
+  margin-bottom: 30rpx;
+  display: flex;
+  align-items: center;
+}
+#fuDeclare .teachCart .navP .flex {
+  flex: 1;
+}
+#fuDeclare .teachCart .navP .del {
+  color: #ff3232;
+}
+#fuDeclare .teachCart .name {
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+}
+#fuDeclare .teachCart .name .input {
+  width: 50%;
+  border: 1px solid #f5f5f5;
+}
+#fuDeclare .teachCart .name .input input {
+  width: 100%;
+}
+#fuDeclare .teachCart .image {
+  color: #999;
+  display: flex;
+  align-items: flex-end;
+}
+#fuDeclare .teachCart .image image {
+  height: 200rpx;
+  width: 200rpx;
+  margin-right: 20rpx;
+}
+#fuDeclare .teachCart .checkList {
+  display: flex;
+  align-items: center;
+  padding: 5rpx 0;
+  box-sizing: border-box;
+}
+#fuDeclare .teachCart .checkList .checkS {
+  display: flex;
+  align-items: center;
+  font-size: 45rpx;
+  transform: scale(0.6, 0.6);
+}
+#fuDeclare .teachCart .select {
+  border: 1px solid #e2e2e2;
+  height: 52rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20rpx;
+  width: 50%;
+  font-size: 30rpx;
+}
+#fuDeclare .teachCart .select .left {
+  box-sizing: border-box;
+  padding-left: 5rpx;
+  flex: 1;
+}
+#fuDeclare .teachCart .select image {
+  margin-right: 5rpx;
+  height: 30rpx;
+  width: 30rpx;
+}
+#fuDeclare .teachCart .select .overDiv {
+  width: 100%;
+  position: absolute ;
+  top: 52rpx;
+  background: white;
+  border-left: 1px solid #e2e2e2;
+  border-right: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  max-height: 200rpx;
+  overflow: auto;
+  z-index: 5;
+  left: -1px;
+}
+#fuDeclare .teachCart .select .overDiv .choose {
+  padding: 10rpx 5rpx ;
+  box-sizing: border-box;
+  border-top: 1px solid #e2e2e2;
+}
+.tip {
+  bottom: 80rpx;
+  padding: 20rpx;
+  text-align: center;
+  box-sizing: border-box;
+  color: #999;
+  margin-bottom: 200rpx;
+}
+.btn {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.btn .left {
+  background: #f56e68;
+  height: 120rpx;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.btn .left .pro {
+  margin-top: -8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn .left .pro .check {
+  transform: scale(0.6, 0.6);
+}
+.btn .left .pro .check .wx-checkbox-input {
+  background: none !important;
+  border: 2px solid #fff;
+}
+.btn .left .top {
+  margin-top: -2rpx;
+}
+.btn .okFN {
+  width: 50%;
+  height: 120rpx;
+}
+.btn .okFN .van-button {
+  color: white;
+  border: none;
+  height: 100%;
+  width: 100%;
+  background: #ff934b;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn .quanDA {
+  width: 100%;
+}
+.teamFu {
+  background: white;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  font-size: 27rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+.teamFu image {
+  margin-left: 20rpx;
+  height: 100rpx;
+  width: 100rpx;
+}
+.teamFu .contant {
+  flex: 1;
+  margin: 0 20rpx;
+}
+.teamFu .contant .name_cla {
+  display: flex;
+  margin-bottom: 20rpx;
+  align-items: flex-end;
+}
+.teamFu .contant .name_cla .name {
+  margin-right: 30rpx;
+  font-size: 30rpx;
+}
+.teamFu .contant .shen_phone {
+  display: flex;
+  align-items: center;
+}
+.teamFu .contant .shen_phone .phone {
+  color: #999;
+}
+.storeCard {
+  background: white;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.storeCard image {
+  height: 120rpx;
+  width: 120rpx;
+}
+.storeCard .contantStore {
+  flex: 1;
+  margin-left: 20rpx;
+}
+.storeCard .contantStore .name_mi {
+  display: flex;
+  align-items: center;
+}
+.storeCard .contantStore .name_mi .name {
+  font-weight: 700;
+  margin-right: 10rpx;
+  flex: 1;
+  font-size: 30rpx;
+}
+.storeCard .contantStore .name_mi .mi {
+  color: #61B6FD;
+  font-size: 28rpx;
+}
+.storeCard .contantStore .address {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  color: #999;
+}
+.storeCard .contantStore .address image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.storeCard .right_Statu .van-button {
+  margin-left: 20rpx;
+  background: #F56F68;
+  color: white;
+}
+.storeCard .right_Statu .Rname {
+  text-align: center;
+  color: #61B6FD;
+}
+.van-popup--right {
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+}
+.van-popup--right scroll-view {
+  overflow: auto;
+  flex: 1;
+}
+.van-popup--right scroll-view .noMore {
+  font-size: 28rpx;
+  color: #999;
+  padding: 20rpx;
+  text-align: center;
+  box-sizing: border-box;
+}

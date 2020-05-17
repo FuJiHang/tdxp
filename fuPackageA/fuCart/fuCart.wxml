@@ -1,0 +1,79 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-11 15:28:32 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-11 15:28:32 
+    购物车
+ */ -->
+
+<view class="layout" wx:if='{{boo}}'>
+  <view class='allSelect df ais'>
+    <icon class='iconfont df ais jct {{selectAllStatus? "iconxuanze":"iconweixuanze"}}' bindtap='selectAll'></icon>
+    <text>全选</text>
+  </view>
+  <view class='content-ul'>
+    <view class='content-li'>
+      <view class='li-header df ais jct-between'>
+        <view class='li-headerL df ais'>
+          <icon class='iconfont df ais jct {{selectAllStatus? "iconxuanze":"iconweixuanze"}}' bindtap='selectAll'>
+          </icon>
+          <view class='df ais'>
+
+            <text>代理商店</text>
+          </view>
+        </view>
+
+      </view>
+      <view class='li-inner'>
+        <!-- 商品简介 -->
+        <view class='li-innerTop df ais' wx:for='{{storeList.CartItemInfo}}' wx:for-index='index' wx:key
+          data-id='{{item.SkuID}}' bindtouchstart="touchStart" bindtouchend="touchEnd">
+          <icon class='iconfont df ais jct {{item.status? "iconxuanze":"iconweixuanze"}}' data-id='{{item.SkuID}}'
+            bindtap='selelctSingle' hidden='{{item.clearStatus}}'>
+          </icon>
+          <view class='li-innerR df ais flex'>
+            <image src='{{item.ThumbnailUrl100}}' mode='widthFix'></image>
+            <view class='flex'>
+              <view class='title'>{{item.Name}}</view>
+              <view class='goodsPer'>
+                <text>{{item.SkuContent}}</text>
+              </view>
+              <view class='df ais jct-between'>
+                <view class='goodsPrice'>￥{{item.MemberPrice}}</view>
+                <view class='df ais'>
+                  <text class='reduce df ais jct' data-id='{{item.SkuID}}' data-num='{{item.Quantity}}'
+                    data-type='reduce' bindtap='changeNum'>-</text>
+                  <text class='num df ais jct'>{{item.Quantity}}</text>
+                  <text class='add df ais jct' data-id='{{item.SkuID}}' data-num='{{item.Quantity}}' data-type='add'
+                    bindtap='changeNum'>+</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class='clear' hidden='{{!item.clearStatus}}' bindtap='clear' data-id='{{item.SkuID}}'
+            data-num='{{item.Quantity}}'>删除</view>
+        </view>
+        <!-- 换购 -->
+
+
+      </view>
+
+    </view>
+  </view>
+
+  <!-- 优惠券 -->
+  <Coupon id='coupon' />
+
+  <!-- 底部tab -->
+
+  <Custom-tab goodsTotal="{{goodsTotal}}" totalPrice="{{totalPrice}}" storeList='{{storeList}}'
+    magnitude="{{magnitudeObj}}" />
+
+</view>
+
+<view class='emptyCart df ais fdc' wx:if='{{storeList.CartItemInfo.length == 0}}'>
+  <!-- <image src='{{imgUrl+"icon_gouwuche-t@2x.png"}}' mode='widthFix'></image> -->
+  <view class='emptyCart-item1'>亲，您的购物车还是空的哦！</view>
+
+  <view class='emptyCart-item2' bindtap="toFN">去添加商品</view>
+</view>

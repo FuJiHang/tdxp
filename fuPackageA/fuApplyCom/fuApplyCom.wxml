@@ -1,0 +1,85 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-15 17:57:48 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-07-15 18:03:57
+    申请投诉
+*/ -->
+<view id="fuApplyCom">
+
+    <!--  -->
+    <!-- <van-tabs  line-width='20' color="#F56F68" active="{{ active }}" bind:change="onChange" swipeable>
+        <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="{{index}}"> -->
+
+
+    <view class="ApplyComO" wx:if="{{active==0}}">
+        <view class="tipT">
+            您有什么问题或建议想对我们说？
+        </view>
+        <view class="typeList">
+            <span class="name">类型:</span>
+            <van-checkbox bindtap="chooseFNT" data-data="{{index}}" wx:for="{{typeList}}" wx:key="{{index}}" value="{{ index==choose }}" >复选框</van-checkbox>
+        </view>
+
+        <view class="title">
+            <input bindinput="inputFN" data-name="postData.Title" value="{{postData.Title}}" placeholder="请输入你的主题" />
+        </view>
+        <view class="contant">
+            <textarea placeholder="请输入你的内容" bindinput="inputFN" data-name="postData.MainBody"
+                value="{{postData.MainBody}}"></textarea>
+        </view>
+        <!-- <view class="tip">*上传凭证，不能少于2张</view> -->
+        <!-- <view class="imgList">
+                        <span class="img" wx:for="{{imageLoad}}" data-index="{{index}}" wx:key="{{index}}" bindtap="chooseFN">
+                            <image src="{{item}}" mode="aspectFill" />
+                        </span>
+                        <span class="img" >
+                            <image bindtap="chooseImage" src="{{imgUrl+'addMD.png?1'}}" mode="aspectFill" />
+                        </span>
+
+                    </view>
+                    <view class="tebie">
+                        特别声明：商家投诉是当发现对方有违规交易，不良行为等可进行投诉，投诉通过后不可删除和修改，用户自行承当一切因个人行为言论导致的法律责任，本平台不会对外纰漏您的真实姓名，请放心提交
+                    </view> -->
+        <view class="btnO" bindtap="submitFN">
+            <van-button>提交申诉</van-button>
+        </view>
+    </view>
+    <!--  -->
+    <!-- <view class="ApplyComS" wx:for="{{functionList[active].data}}" wx:if="{{active==1}}">
+                    <view class="navTap">
+                        <span class="name">{{item.Title}}</span>
+                        <span class="time">{{item.ComplaintTime}}</span>
+                    </view>
+                    <view class="contant">
+                        {{item.MainBody}} 
+                    </view>
+                    <view class="operat">
+                        <span class="status">{{WhetherReply==1?'处理中':'待处理'}}</span>
+                        <span class="btn" bindtap="chuLiFN" data-id="{{item.id}}">
+                            <van-button size="mini" >
+                                尽快处理
+                            </van-button>
+                        </span>
+                    </view>
+                </view> -->
+
+
+    <!--  -->
+    <!-- <view class="ApplyComT" wx:for="{{functionList[active].data}}" wx:if="{{active==2}}">
+                    <view class="navTap">
+                        <span class="name">{{item.Title}}</span>
+                        <span class="time">{{item.ComplaintTime}}</span>
+                    </view>
+                    <view class="title">
+                       {{item.Title}}
+                    </view>
+                    <view class="contant">{{item.MainBody}}</view>
+                    <view class="return">{{item.ReplyBody}}</view>
+                </view> -->
+
+    <!-- </van-tab>
+    </van-tabs> -->
+
+
+</view>

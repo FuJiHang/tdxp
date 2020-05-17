@@ -1,0 +1,367 @@
+page {
+    height: 100%;
+    font-size: 26rpx;
+    position: relative;
+    color: #666;
+    padding-bottom: 60rpx;
+}
+
+
+#fuProductCou {
+
+    // 
+    .navTop {
+        padding: 30rpx 32rpx 26rpx 18rpx;
+        box-sizing: border-box;
+        background: #fff;
+        margin-bottom: 20rpx;
+
+        .price_num {
+            display: flex;
+            align-items: flex-end;
+            font-size: 32rpx;
+            margin-bottom: 30rpx;
+
+            .pri {
+                color: #E34F48;
+                font-size: 48rpx;
+
+                .mini {
+                    font-size: 30rpx;
+                }
+            }
+
+            .del {
+                margin-left: 26rpx;
+                color: #999;
+                flex: 1;
+                text-decoration: line-through;
+            }
+
+            .num {
+                color: #999;
+
+            }
+        }
+    }
+
+    // 
+    .address {
+        background: #fff;
+        display: flex;
+        align-items: center;
+
+        .contant {
+            flex: 1;
+            font-size: 30rpx;
+            font-weight: 800;
+        }
+
+        .child {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 22rpx;
+            color: #999;
+            margin-left: 50rpx;
+
+            image {
+                width: 40rpx;
+                margin-bottom: 12rpx;
+
+            }
+        }
+    }
+
+    .storeFu {
+
+        background: #fff;
+        padding: 30rpx;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20rpx;
+
+        .storeImg {
+            height: 80rpx;
+            width: 80rpx;
+            border-radius: 50%;
+        }
+
+        .contant {
+            flex: 1;
+            padding-left: 32rpx;
+            box-sizing: border-box;
+
+            .name {
+                display: flex;
+                align-items: center;
+                font-size: 30rpx;
+                font-weight: 800;
+
+
+            }
+            .flex{
+                max-width: 100%;
+                display:-webkit-box;
+                -webkit-line-clamp: 1; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break:break-all;
+            }
+            .tip {
+                margin-top: 7rpx;
+                color: #999;
+                font-size: 24rpx;
+
+
+            }
+
+
+        }
+
+        .child {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 24rpx;
+            color: #999;
+            margin-left: 32rpx;
+
+            image {
+                width: 50rpx;
+
+
+            }
+        }
+
+    }
+
+    .navTopDet {
+        padding: 30rpx 22rpx 32rpx;
+        box-sizing: border-box;
+        font-size: 30rpx;
+        background: #fff;
+
+    }
+
+    .detail {
+        padding: 20rpx;
+        box-sizing: border-box;
+        image,img{
+            width: 100%;
+        } 
+    }
+
+    // 
+    .btnBot {
+        display: flex;
+        align-items: center;
+        color: #999;
+        position: fixed;
+        bottom: 0;left: 0;
+        width: 100%;
+        border-top:1px solid rgb(241, 241, 241);
+        background: #fff;
+        .van-button {
+            height: 100rpx;
+            line-height: 100rpx;
+            border:none;
+            width: 100%;
+            color: #fff;
+            background: linear-gradient(72deg, rgba(210, 69, 62, 1) 0%, rgba(221, 91, 86, 1) 100%);
+        }
+        .btn{
+            width: 50%;
+        }
+        .child {
+            display: flex;
+            align-items: center;
+            width: 25%;
+
+            flex-direction: column;
+            font-size:24rpx;
+            border-right: 1px solid rgb(233, 233, 233);
+            image{
+               width: 50rpx;
+               height: 1px;
+               margin-bottom: 5rpx; 
+            }
+        }
+    }
+
+
+    // 
+    .evaluate {
+        background: white;
+        margin-bottom: 160rpx;
+        .navTop {
+            padding: 20rpx;
+            box-sizing: border-box;
+
+            .flex {
+                border-left: 5rpx solid #F56F68;
+                padding-left: 20rpx;
+                flex: 1;
+                font-weight: 800;
+            }
+
+            font-size: 35rpx;
+            display: flex;
+            align-items: center;
+            padding: 20rpx 20rpx 0;
+            box-sizing: border-box;
+
+            .van-icon {
+                margin: 10rpx 0 0 15rpx;
+            }
+        }
+
+        .evaChild {
+            padding: 20rpx;
+            box-sizing: border-box;
+
+            .person {
+                padding: 0 20rpx;
+                box-sizing: border-box;
+                display: flex;
+                align-items: flex-start;
+                position: relative;
+
+                image {
+                    height: 80rpx;
+                    width: 80rpx;
+                    border-radius: 50%;
+                }
+
+                .contant {
+                    flex: 1;
+                    margin-left: 15rpx;
+
+                    .name {
+                        font-size: 30rpx;
+                        display: flex;
+                        align-items: center;
+                        font-weight: 800;
+
+                        .class {
+                            margin-left: 10rpx;
+                            color: white;
+                            background: #fbbb01;
+                            display: flex;
+                            align-items: center;
+                            padding: 0 10rpx 3rpx;
+                            box-sizing: border-box;
+                            font-size: 22rpx;
+                            border-radius: 20rpx;
+                        }
+                    }
+
+                    .time {
+                        color: rgb(209, 209, 209);
+                        font-size: 24rpx;
+                    }
+
+                    .art {
+                        display: flex;
+                        align-items: center;
+
+                        .star {
+                            display: flex;
+                            align-items: center;
+                            margin-left: 15rpx;
+
+                            image {
+                                height: 20rpx;
+                                width: 20rpx;
+                                margin-right: 5rpx;
+                            }
+                        }
+                    }
+
+                    .service {
+                        display: flex;
+                        align-items: center;
+
+                        image {
+                            height: 30rpx;
+                            width: 30rpx;
+                            margin: 0 10rpx;
+                        }
+
+                        .type {
+                            color: rgb(209, 209, 209);
+                        }
+                    }
+                }
+
+                .bgImg {
+                    right: 50rpx;
+                    top: 10rpx;
+                    position: absolute;
+                    height: 100rpx;
+                    width: 100rpx;
+                }
+            }
+
+            .evaText {
+                padding: 0 20rpx;
+                box-sizing: border-box;
+                margin-top: 20rpx;
+                font-size: 28rpx;
+
+            }
+
+            .shoushuo {
+                display: -webkit-box;
+                -webkit-line-clamp: 3; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break: break-all;
+            }
+
+            .hide {
+                padding: 0 20rpx;
+                box-sizing: border-box;
+                margin: 20rpx 0;
+                font-size: 30rpx;
+                color: #F56F68;
+            }
+
+            .evaImg {
+                padding: 0 15rpx;
+                box-sizing: border-box;
+                display: flex;
+                flex-wrap: wrap;
+
+                image {
+                    padding: 0 5rpx 10rpx;
+                    box-sizing: border-box;
+                    width: 33.33%;
+                    height: 200rpx;
+                }
+            }
+        }
+    }
+
+
+}
+
+
+
+button{
+    margin:0;
+    padding:0;
+    background-color:#ffffff;
+    line-height:inherit;
+    height:100rpx;
+    border-radius:0;
+    border:none;
+    font-size:60rpx;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+ }
+ button::after{
+    border: none;
+ }

@@ -1,0 +1,147 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-26 11:51:23 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-04-26 11:51:23 
+    推廣
+*/ -->
+<view id="fuExtension">
+    
+    <view class="EnOrder" wx:if="{{verificationcode}}">
+        
+        <!-- 门店信息 -->
+        <view class="storeApp">
+            <!-- <image src="{{storeData.EnvironmentImages?storeData.EnvironmentImages:storeData.StoreImages}}" mode="aspectFill"/> -->
+            <view class="contant">
+                <view class="name_juli">
+                    门店名字：{{orderData.StoreName}}
+                    <span class="juli">
+                        <!-- 距离{{storeData.Distance}} -->
+                    </span>
+                </view>
+                <view class="address">
+                    <!-- <image mode="aspectFill" src="{{imgUrl+'icon_address33.png'}}" /> -->
+                    门店地址：{{orderData.Address}}
+                </view>
+            </view>
+        </view>
+
+        <!-- 导航条 -->
+        <view class="navTopP">
+            <image src="{{imgUrl+'spot_4.png'}}" />
+            <span class="name">项目</span>
+        </view>
+
+        <view class="fuPlaceContant">
+            <!-- 内容列表 -->
+            <view class="Project" wx:for="{{orderData.LineItems}}" wx:key="index">
+                <view class="cont_nav"  data-index="{{index}}">
+                    <span class="name">项目{{index+1}}</span>
+                    <span class="time" data-index="{{index}}">{{item.SelectDate}}</span>
+                </view>
+                <view class="cont_det">
+                    <image src="{{item.Image}}" mode="aspectFill"/>
+                    <span class="detail">
+                        <view class="name_men">
+                            <span class="name">{{item.ProductName}}</span>
+                            <span class="money">￥{{item.Price}} 定金：{{item.Deposit?item.Deposit:'无'}}</span>
+                        </view>
+                        <view class="company">{{item.StoreName}}</view>
+                        <view class="address">
+                            <image src="{{imgUrl+'icon_address33.png'}}" mode="aspectFill"/>{{item.StoreAddress?item.StoreAddress:'无'}}
+                        </view>
+                    </span>
+                </view>
+                <view class="border"></view>
+            </view>
+            
+
+            <!-- 電子券 -->
+            <view class="couponPE" bindtap="coupon" wx:if="{{orderData.CouponPrice==0}}">
+                <span class="name">电子券</span>
+                <span class="val">{{couponId.id!=0?'已选择电子券价格：'+couponId.pic+'元':'请选择电子券'}}</span>
+            </view>
+
+            <view class="couponPE gantan"  wx:else bindtap="couponOP" > 
+                <span class="name">技师优惠券</span>
+                <span class="val">{{orderData.CouponPrice}}元</span>
+                <van-icon name="warning-o" size="35rpx" color="#F56F68"/>
+            </view>
+
+            <!-- 支付方式 -->
+            <view class="payMode" bindtap="openPay">
+                <span class="name">支付方式</span>
+                <span class="val">{{payMode.mode==1?'支付宝':'微信'}}</span>
+            </view>
+            
+            <!-- 填写信息 -->
+            <view class="navTopP personTop">
+                <image src="{{imgUrl+'spot_5.png'}}" />
+                <span class="name">个人资料</span>
+            </view>
+            <view style="background:#fff">
+                <view class="personData" >
+                    <span class="name">姓名：</span>
+                    <input data-index="{{index}}" value="{{orderData.UserName}}" placeholder="{{item.plr}}" disabled />
+                </view>
+                <view class="personData" >
+                    <span class="name">手机号：</span>
+                    <input data-index="{{index}}" value="{{orderData.UserTel}}" placeholder="{{item.plr}}" disabled />
+                </view>
+            </view>
+        </view> 
+
+        <view class="btn">
+            <span class="pirce">￥{{allPrice}}元</span>
+            <van-button   bindtap="payFN">支付</van-button>
+        </view>
+
+    </view>
+
+    <image class="bgE" src="http://file.9oasd.com/bcdj/Storage/master/201911121945323590640.png"  />
+
+    <van-popup show="{{ showCou }}" position="bottom" bind:close="onCloseCou">
+
+
+        <view  class="couponGan" >
+            <view class="bWCou">
+                <view class="juchi top">
+                    <view class="child" wx:for="{{150}}"></view>
+                </view>
+                <view class="juchi btn">
+                    <view class="child" wx:for="{{150}}"></view>
+                </view>
+                <view class="juchi left">
+                    <view class="child" wx:for="{{150}}"></view>
+                </view>
+
+
+                <view class="leftNaction">
+                    {{orderData.Coupon.Price}}<span>元</span>
+                </view>
+                <view class="rightNaction">
+                    <view class="name">
+                        <span>{{orderData.Coupon.CouponName}}</span>
+                    </view>
+                    <view class="vip">VIP客户专享</view>
+                    <view class="time">使用日期：{{orderData.Coupon.ClosingTime}}使用</view>
+                </view>
+            </view>
+            <view class="yuan">
+                <view class="aaaa"></view>
+            </view>
+            <view class="typeName">活动专用</view>
+        </view>
+    </van-popup>    
+
+    <van-popup show="{{payMode.show}}" position="bottom" bind:close="onCloseP">
+        <view class="choosePay" wx:for="{{payList}}" wx:key="{{index}}" bindtap="chooseFN" data-index="{{index}}">
+            <image  class="logo" mode="aspectFit" src="{{imgUrl+item}}" />
+        </view>
+    </van-popup>
+
+    
+    <button wx:if="{{sid}}" class="getUser" bindtap="refurFN" open-type="getUserInfo">微信快速登录</button>
+
+
+</view>

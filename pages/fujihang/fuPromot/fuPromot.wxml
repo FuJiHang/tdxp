@@ -1,0 +1,68 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-06-21 13:58:12 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-06-21 13:58:12 
+    晋升执行团队长
+*/ -->
+<view id="fuPromot">
+
+    <!--  -->
+    <view class="contantPt">
+        <view class="navTop">
+            <span class="name">业绩明细</span>
+            <span class="time">仅显示近3个月业绩</span>
+            <span class="mon">总计：<span class="red">￥{{dataList.OrdersTotal}}</span></span>
+        </view>
+
+        <view class="childDet" wx:for="{{orderS}}" wx:key="{{index}}" wx:if="{{index<3||show}}">
+            <view class="time">{{item.OrdersDate}}</view>
+            <span class="tdz ">
+                <view class="name yh">{{dataList.ExcutorName}}<image src="{{imgUrl+'xxsq.png'}}" /></view>
+                    <!-- <view class=" yh mini" wx:if="{{type==1}}">
+                        <image src="{{imgUrl+'store-16.png'}}" />
+                        高级纹
+                    </view>  -->
+                
+            </span>
+            <span class="proj cout">
+                <view class="name">{{item.OrdersCount}}单</view>
+                <view class="ico yh">
+                    <image src="{{imgUrl+'store-16.png'}}" />
+                    {{item.StoreName}}
+                </view> 
+            </span>
+            <span class="money">￥{{item.OrdersTotal}}</span>
+        </view>
+
+        <!--  -->
+        <view class="more" bindtap="chang">
+            更多明细>>
+        </view>
+
+        <!--  -->
+        <view class="submit">
+            <view class="name">独立执行者姓名</view>
+            <view class="inputName ">
+                <span class="input {{index?'border':''}}" wx:for="{{inputList}}" wx:key="{{index}}">
+                    <input value="{{item.val}}" bindinput="changeInput" data-index="{{index}}" />
+                </span>
+            </view>
+        </view>
+
+
+
+        <!--  -->
+        <view class="tip red">温馨提示：
+        </view>
+        <view class="tip">达到以下要求即可提交申请，公司审核
+        </view>
+        <view class="tip"><span class="red">*</span>3个月累计业绩200W以上
+        </view>
+        <view class="tip last"><span class="red">*</span>培训独立执行者3位以上
+        </view>
+    </view>
+    <view class="btn" bindtap="submitFN">
+        <van-button>提交申请</van-button>
+    </view>
+</view>

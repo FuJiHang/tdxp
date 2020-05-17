@@ -1,0 +1,276 @@
+page{
+    height: 100%;
+    background: white;
+    font-size: 26rpx;
+    
+}
+// 导航条
+#fuExecuPer{
+    display: flex;
+    flex-direction: column;
+    color: #666;
+    box-sizing: border-box;
+    
+    // 
+    .navTopKa{
+        margin: 40rpx 30rpx;
+        border:1px solid rgb(241, 241, 241);
+        border-radius: 15rpx;
+        box-sizing: border-box;
+        box-shadow: -5rpx 10rpx 10rpx rgb(251, 251, 251);
+        overflow: hidden;
+        .Price{
+            color: white; 
+            padding: 40rpx 50rpx 60rpx;
+            background: linear-gradient(to bottom right, #f58867, #f56e68);
+            .pri_btn{
+                font-size: 30rpx;
+                margin-top: 10rpx;
+                display: flex;
+                align-items:flex-end;
+                font-size: 78rpx; 
+            }
+            span{
+                flex: 1;
+            }
+            .van-button{
+                margin-left: 30rpx;
+                color: #f67e77;
+                border-radius: 10rpx;
+                border:none;
+                font-size: 32rpx;
+            }
+        }
+        .storePr{
+            display: flex;
+            border-bottom: 1px solid rgb(240, 240, 240);
+            span{
+                box-sizing: border-box;
+                flex: 1;
+                margin: 20rpx;
+                text-align: center;
+                font-size: 28rpx;
+            }
+            :first-child{
+                border-right: 1px solid rgb(240, 240, 240);
+            }
+        }
+        .PriceList{
+            display: flex;
+            align-items: center;
+            :last-child{
+                border-right:none !important;
+            }
+            .child{
+                text-align: center;
+                flex: 1;
+                padding: 0 30rpx;
+                margin: 20rpx 0;
+                box-sizing: border-box;
+                border-right: 1px solid rgb(241, 241, 241);
+                .cname{
+                    color: #999;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .dian{
+                        margin-right: 10rpx;
+                        width: 15rpx;
+                        border-radius: 50%;
+                        height: 15rpx;
+                        display: block;
+                    }
+                    .bg01{
+                        background: #f56e68;
+                    }
+                    .bg02{
+                        background: #9284bf;
+                    }
+                    .bg03{
+                        background: #f49b01;
+                    }
+
+                }
+                .mon{
+                    margin-top: 10rpx;
+                    font-size: 32rpx;
+                    font-weight: 800;
+                }
+            }
+        }
+
+
+    }
+
+    .detail{
+        flex: 1;
+        border-top: 20rpx solid rgb(246, 246, 246);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        padding-bottom: 260rpx ;
+        box-sizing: border-box;
+        .top{
+            padding: 20rpx;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            .name{
+                flex: 1;
+                font-size: 30rpx;
+            }
+            image{
+                width: 32rpx;
+                height: 32rpx;
+                margin-right: 10rpx;
+            }
+            border-bottom: 1px solid rgb(241, 241, 241);
+        }
+        scroll-view {
+            flex: 1;
+            overflow: auto;
+        }
+        .childDet{
+            border-bottom: 1px solid rgb(240, 240, 240);
+            .detailMin{
+                display: flex;
+                align-items: center;
+                padding: 20rpx;
+                box-sizing: border-box;
+                span{
+                    flex: 1;
+                    overflow: hidden;
+                    text-align: center;
+                }
+                .time{
+                    overflow: hidden;
+                    max-width: 11%;
+                    color: #999;
+                }
+                .tdz{
+                    font-size: 30rpx;
+                    image{
+                        width: 30rpx;
+                        height: 30rpx;
+                        margin-left: 10rpx;
+                    }
+                }
+                .yh{
+                   
+                    justify-content: center;
+                    display: flex;
+                    align-items: center;
+                }
+                .cout{
+                    font-size: 30rpx;
+                    .ico{
+                        margin-top: 3rpx;
+                        color: #f56e68;
+                        font-size: 22rpx;
+                    }
+                    image{
+                        width: 20rpx;
+                        height: 20rpx;
+                    }
+                }
+                .mini{
+                    font-size: 22rpx;
+                    color: #ffbe98;
+                    image{
+                        margin-right: 5rpx;
+                        width: 20rpx;
+                        height: 20rpx;
+                    }
+                }
+                .proj .ico{
+                    color: #ffbe98;
+                }
+                .money{
+                    color: #f56e68;
+                    font-size: 35rpx;
+                }
+                .van-icon{
+                    margin-top: 8rpx;
+                }
+            }
+            .detailMax{
+                .color{
+                    color: #999;
+                }
+                .flexGP{
+                    display: flex;
+                    align-items: center;
+                    padding:8rpx 20rpx ;
+                    box-sizing: border-box;
+                  
+                    .flex_le{
+                        flex: 1;
+                    }
+                    .flex_gp{
+                        width: 33.33%;
+                        overflow: hidden;
+                    }
+                }
+                .rightSJ{
+                    text-align: right;
+                    color: #f56e68;
+                    font-size: 30rpx;
+                    font-weight: 800;
+                    padding:2rpx 20rpx 20rpx;
+                    box-sizing: border-box;
+                }
+            }
+        }
+    }
+
+    //
+    .btnDay{
+        position: fixed;
+        bottom: 0;
+        box-sizing: border-box;
+        background: #f56e68;
+        color: white;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        font-size: 28rpx;  
+        .child{
+            width: 50%;
+            box-sizing: border-box;
+            font-size: 36rpx;
+        }
+        .last{
+            width: 50%;
+            border-left: 1px solid #fd9f9a;
+            padding: 2rpx 20rpx 2rpx 40rpx;
+            margin: 18rpx 0;
+            box-sizing: border-box;
+            .zon{
+              margin-bottom: 5rpx;
+              
+            }
+        }
+        .noWidth{
+            width: 37%;
+            padding: 20rpx 0;
+            margin: 0;
+            font-size: 28rpx;  
+        }
+        .compla{
+            width: 26%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: #ff8055;
+            height: 100%;
+            image{
+                width: 60rpx;
+                height: 60rpx;
+                margin-bottom: 5rpx;
+            
+            }
+        }
+    }
+}

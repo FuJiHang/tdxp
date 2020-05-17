@@ -1,0 +1,66 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-24 13:36:53 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-04-24 13:36:53 
+    我的团队
+    */ -->
+<view id="fuMyTeam">
+
+    <!-- 搜索 -->
+    <view class="seachMT">
+        <view class="seachbg">
+            <image src="{{imgUrl+'icon_search.png'}}"  mode="aspectFill"/>
+            <input value="{{seach}}" bindinput="seaChFN"/>
+        </view>
+        <van-button size="small" bindtap="getData">搜索</van-button>
+    </view>
+
+    <!-- 省带 -->
+    
+    <view class="MyTeamContant" wx:if="{{dataList.length>0}}">
+
+        <view class="conantTeam" wx:for="{{dataList}}" wx:key="{{index}}">
+            <view class="teamFu">
+                <image mode="aspectFill" src="{{item.Picture}}"/>
+                <view class="contant">
+                    <view class="name_cla">
+                        <span class="name">{{item.UserName}}</span>
+                        <span class="cla" wx:if="{{item.Level==1}}">一级</span>
+                        <span class="cla" wx:if="{{item.Level==2}}">二级</span>
+                    </view>
+                    <view class="shen_phone">
+                        <span class="shen">省代</span>
+                        <span class="phone">{{item.CellPhone}}</span>
+                    </view>
+                </view>
+                <!-- <span class="jt {{open?'jtx':''}}">
+                    <van-icon name="arrow" />
+                </span> -->
+            </view>
+
+            <!-- 子 -->
+            <!-- <view class="teamChild {{open?'':'open'}}" wx:for="{{3}}">
+                <image mode="aspectFill" src="{{imgUrl+'icon_search.png'}}"/>
+                <view class="contant">
+                    <view class="name_cla">
+                        <span class="name">s</span>
+                        <span class="cla">s</span>
+                    </view>
+                    <view class="shen_phone">
+                        <span class="shen">s</span>
+                        <span class="phone">s</span>
+                    </view>
+                </view>
+            </view> -->
+
+        </view>
+    </view>
+    
+    <view class="noMore" wx:else>
+        没有数据哦~~~
+    </view>
+    
+    
+
+</view>

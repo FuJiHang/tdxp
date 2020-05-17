@@ -1,0 +1,90 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-17 17:56:48 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-04-17 17:56:48 
+    我的页面（身份切换）
+*/ -->
+<view id="fuMy">
+    <view class="MyCont">
+        <!-- 头像 -->
+        <view class="headTop">
+            <view class="head_logo">
+                <image mode="aspectFill" src="{{GetMembersInfo.Picture}}" class="head_img" />
+                <span class="contant">
+                    <span class="name">{{GetMembersInfo.NickName}}</span>
+                    <span class="join">{{GetMembersInfo.gradeName}}</span>
+                </span>
+                <!--  -->
+                <view bindtap='toFNS' class="qieHuan" wx:if="{{GetMembersInfo.gradeName=='店家'}}">
+                    切换门店 <van-icon name="arrow-down"></van-icon>
+                </view>
+            </view>
+            <!-- <image bindtap="toMH" class="img" mode="widthFix" src="{{imgUrl+'meihuaLogo.png'}}" /> -->
+            <!-- <van-icon name="arrow" /> -->
+
+            <!-- wjx暂时用不上了 -->
+            <view class="show_data" wx:if='{{false}}'>
+                <block wx:for="{{showData}}" wx:key="{{item}}">
+                    <view class="income_wrap" bindtap="handleTZ" data-index="{{index}}" data-goto="{{item.to}}">
+                        <text class="income_nums">{{item.nums}}</text>
+                        <text class="income">{{item.name}}</text>
+                    </view>
+                </block>
+            </view>
+
+        </view>
+        <!-- 功能 -->
+        <view class="wjx_gn">
+            <view class="function" wx:for="{{functionJosn}}" wx:key="{{indexf}}" wx:for-index="indexf">
+                <view class="navtTop">
+                    <image src="{{imgUrl+'spot_4.png'}}" mode="aspectFill" />
+                    <text class="nameTop">{{item.name}}</text>
+                    <!-- <view class="righte" wx:if="{{!item.fun}}">更多</view>
+                            <van-icon name="arrow" /> -->
+                </view>
+                <view class="idCardCont {{item.fun?'':'funM'}}">
+                    <view class="cardChild" wx:for="{{item.child}}" wx:key="{{index}}" wx:for-item="child"
+                        data-index="{{index}}" data-id="{{indexf}}" bindtap="toFN">
+                        <form bindsubmit='registerFormSubmit' report-submit='true' data-index="{{index}}"
+                            data-id="{{indexf}}">
+                            <!-- <button form-type='submit' class="btnMrFu" data-index="{{index}}" open-type="{{child.type?share:''}}"> -->
+                            <button form-type='submit' class="btnMrFu" data-index="{{index}}">
+                                <view class="bg">
+                                    <image mode="aspectFill" src="{{child.img}}" data-index="{{index}}"
+                                        data-id="{{indexf}}" />
+                                </view>
+                                <view class="name" data-index="{{index}}" data-id="{{indexf}}">
+                                    {{child.name}}
+                                </view>
+                            </button>
+                            <button open-type="share" class="wjx_btn" wx:if="{{child.type}}"></button>
+                        </form>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+    </view>
+    <!-- 底部导航条 -->
+    <!-- <view class="navBar">
+        <view class="child" wx:for="{{navBar}}" wx:key="index" data-index="{{index}}" bindtap="toNavFN">
+            <image mode="aspectFill" src="{{item.img}}" data-index="{{index}}"/>
+                <text class="name" data-index="{{index}}">{{item.name}}</text>
+        </view>
+    </view> -->
+</view>
+
+
+
+<!-- <van-popup class="fwb" show="{{ showXY }}"  position="bottom">
+    <rich-text class="richtext" nodes="{{richtext}}"></rich-text>
+    <view class="btn">
+        <span class="bty">
+            <van-button bindtap="closeXY">不同意</van-button>
+        </span>
+         <span class="{{totalTime>0?'disable':''}}">
+        <van-button bindtap="wtyFN">{{SMS}}</van-button>
+        </span>
+    </view>
+</van-popup> -->

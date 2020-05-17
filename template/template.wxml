@@ -1,0 +1,26 @@
+<!-- 项目列表项 -->
+<template name="project">
+  <view class='project_list_item' >
+    <image class='item_img'></image>
+    <view class='item_content'>
+      <text class='item_name'>芭比美甲</text>
+      <view class='item_info'><navigator class='item_lebal'>详情</navigator>光疗指甲油可卸美甲渐变QQ芭光疗指甲油可卸美甲渐变QQ芭光疗指甲芭,光疗指甲油可卸美甲渐变QQ芭光疗指甲油可卸美甲渐变QQ芭光疗指甲芭…光疗指甲油可卸美甲渐变QQ芭光疗指甲油可卸美甲渐变QQ芭光疗指甲芭…</view>
+    </view>
+  </view>
+
+
+</template>
+<!-- end 项目列表项 -->
+
+<!-- 技师列表项 -->
+<template name="technician">
+  <view class='project_list_item'>
+    <image class='item_img'></image>
+    <view class='item_content'>
+      <view class='item_name'>芭比美甲 <text class="level">广东会诊专家</text></view>
+      <view class='item_hospital'>广州市曙光整形医院</view>
+      <view class='item_summary'><navigator class='item_lebal'>简介</navigator>光疗指甲油可卸美甲渐变QQ芭光疗指甲油可卸美甲渐变QQ芭光疗指甲芭…</view>
+    </view>
+  </view>
+</template>
+<!-- end 技师列表项 -->

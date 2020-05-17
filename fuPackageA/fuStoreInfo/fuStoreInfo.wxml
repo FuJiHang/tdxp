@@ -1,0 +1,81 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-10 20:53:51 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-10 20:53:51 
+    门店基础信息
+*/ -->
+
+<view id="fuStoreInfo">
+
+    <view class="child">
+        <span class="name">所在位置</span>
+        <span class="address">
+            <view class="one mini">
+                <picker mode="region" bindchange="bindRegion" value="{{zxAddress}}" custom-item="{{customItem}}">
+                    <view class="picker" style="width:100%">
+                    {{zxAddress[0]}} {{zxAddress[1]}} {{zxAddress[2]}}
+                    </view>
+                </picker>
+            </view>
+            <view class="one" bindtap="toFN">
+                <input placeholder="自动获取" disabled="{{true}}" value="{{address}}" />
+                <image src="{{imgUrl+'icon_address33.png'}}" mode="aspectFill" />
+            </view>
+            <view class="one" >
+                <input placeholder="请输入门牌号" value="{{door}}" bindinput="changeInput" data-name="door" />
+            </view>
+        </span>
+    </view>
+    <view class="child time">
+        <span class="name">营业时间</span>
+        <span class="val" bindtap="openTime" data-index="0">
+           <input value="{{time[0]}}" disabled="{{true}}" />
+        </span>
+        ---
+        <span class="val" bindtap="openTime" data-index="1">
+           <input value="{{time[1]}}" disabled="{{true}}"/>
+        </span>
+    </view>
+    <view class="child">
+        <span class="name">联系方式</span>
+        <span class="val">
+            <input placeholder="请输入手机号码" value="{{phone}}" bindinput="changeInput" data-name="phone" />
+        </span>
+    </view>
+    <!-- <view class="child">
+        <span class="name">顾客说</span>
+        <span class="val">
+            <input placeholder="请输入顾客说" value="{{say}}" bindinput="changeInput" data-name="say"  />
+        </span>
+    </view>
+
+    <view class="chooseType">
+        <span class="name">门店类型：</span>
+        <span class="val">
+            <span class="checkS"  
+                bindtap="chooseMdType"
+                wx:for="{{chooseType}}"  wx:key="{{index}}" data-name="{{'chooseType['+index+'].isChoose'}}" data-xz="{{item.isChoose}}">
+                <checkbox  checked="{{item.isChoose}}"   /> {{item.TagName}}
+            </span>
+
+        </span>
+    </view> -->
+
+    <!--  -->
+    <view class="btn" bindtap="submit">
+        <van-button>提交</van-button>
+    </view>
+
+    <!-- 时间 -->
+    <van-popup show="{{ showTime }}" position="bottom" bind:close="onClose">
+        <van-datetime-picker
+            type="time"
+            value="{{currentDate}}"
+            bind:input="onInput"
+            bind:confirm="okTime"
+            bind:cancel="onClose"
+        />
+    </van-popup>   
+
+</view>

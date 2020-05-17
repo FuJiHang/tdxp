@@ -1,0 +1,138 @@
+<view id="member">
+  <image class="bg_img" src="{{imgUrl+'bg@2x.png'}}" wx:if="{{false}}"></image>
+  <view class="main" wx:if="{{false}}">
+    <!-- 头部 -->
+    <!-- <view class="header">
+      <block wx:for="{{showData}}" wx:key="{{item}}">
+        <view class="header_wrap">
+          <text class="num_store">{{item.price}}</text>
+          <view class="title">{{item.title}}</view>
+        </view>
+      </block>
+    </view> -->
+    <!-- 主体内容 不要了-->
+    <view class="content" wx:if="{{false}}">
+      <!-- <view class="con_title">排行榜</view> -->
+      <block wx:for="{{list}}" wx:key="{{item}}">
+        <view class="seniority">
+          <view class="con_num add_num" wx:if="{{index==0}}">{{item.id}}</view>
+          <view class="con_num add_num2" wx:if="{{index==1}}">{{item.id}}</view>
+          <view class="con_num add_num3" wx:if="{{index==2}}">{{item.id}}</view>
+          <view class="con_num" wx:if="{{index!=0 && index !=1 &&index!=2}}">{{item.id}}</view>
+          <view class="img_wrap">
+            <image class="img add_img" wx:if="{{index==0}}" src="{{item.img}}"></image>
+            <image class="img add_img2" wx:if="{{index==1}}" src="{{item.img}}"></image>
+            <image class="img add_img3" wx:if="{{index==2}}" src="{{item.img}}"></image>
+            <image class="img" wx:if="{{index!=0 && index !=1 && index!=2}}" src="{{item.img}}"></image>
+            <image class="icon_img" wx:if="{{index==0}}" src="{{imgUrl+'one@2x.png'}}"></image>
+            <image class="icon_img" wx:if="{{index==1}}" src="{{imgUrl+'two@2x.png'}}"></image>
+            <image class="icon_img" wx:if="{{index==2}}" src="{{imgUrl+'three@2x.png'}}"></image>
+          </view>
+          <view class="con_main">
+            <text class="con_name">{{item.name}}</text>
+            <text class="con_jd">{{item.miaoshu}}</text>
+          </view>
+          <view class="con_price">￥{{item.price}}</view>
+        </view>
+      </block>
+
+      <view class="no_data">没有更多了~</view>
+    </view>
+  </view>
+
+  <!-- 新的会员管理列表 -->
+  <view class="search">
+    <view class="search_time" bindtap="handleClick">请选择时间段</view>
+    <view class="search_btn" bindtap="handleSeach">搜索</view>
+    <!-- 时间段选择 -->
+    <view class="time_win" wx:if="{{isShow}}">
+      <view class="his-integral">*时间可以只传一个, 如: 起始或结束时间!</view>
+      <view class="hint_wrap1">
+        <!-- <view class="qishi">请选择起始时间</view> -->
+        <view class="time_one">
+          <picker mode="date" value="{{date}}" start="1990-01-01" end="2099-12-31" bindchange="bindDateChange1">
+            <view class="picker">
+              {{date1}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="hint_wrap2">
+        <!-- <view class="jieshu">请选择结束时间</view> -->
+        <view class="time_two">
+          <picker mode="date" value="{{date}}" start="1990-01-01" end="2099-12-31" bindchange="bindDateChange2">
+            <view class="picker">
+              {{date2}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="time_btn" catchtap="handleHide">确定</view>
+    </view>
+    <view class="mask_time" wx:if="{{isShow}}" catchtap="handleHide2"></view>
+  </view>
+
+  <view class="member_list">
+    <view class="list_header">
+      <view class="all_nums">总人数:<text class="red_num"> {{memberObj.UserCount}}人</text></view>
+      <view class="gross_amount">下单总金额:<text class="gross_num">
+          {{memberObj.OrderSum==null?'0':memberObj.OrderSum}}元</text></view>
+    </view>
+    <view class="the-main">
+      <view class="main_header">
+        <text class="the_title">头像</text>
+        <text class="the_title">昵称</text>
+        <text class="the_title">手机号码</text>
+        <text class="the_title">下单金额</text>
+        <text class="the_title">最近下单时间</text>
+      </view>
+ 
+      <block wx:for="{{memberList}}" wx:key="item" catchtap="giveOpen" data-data="{{item}}">
+        <view class="content_list" bindtap="giveOpen" data-data="{{item}}">
+          <view class="list_img">
+            <image class="search_img" src="{{item.Picture}}"></image>
+          </view>
+          <view class="list_name">{{item.Nickname}}</view>
+          <view class="list_phone">{{item.CellPhone}}</view>
+          <view class="list_price">￥{{item.OrderSum}}</view>
+          <view class="list_time">{{item.newTime=='1900.01.01'?'暂未下单':item.newTime}}</view>
+        </view>
+      </block> 
+
+    </view>
+
+  </view>
+
+  <van-popup show="{{showAlert}}" bindtap="onCloseP" position="bottom" bind:close="onCloseP">
+    <view class="iosJJ" catchtap>
+      <view class="child">
+        {{item.name}}
+        <input value="{{post.Integral}}" placeholder="请输入要送的积分" bindinput="changeInput" data-name="post.Integral" />
+      </view>
+      <view class="btn">
+        <span class="flex">
+          <van-button size="small" bindtap="onCloseP">取消</van-button>
+        </span>
+        <span class="okFN flex">
+          <van-button size="small" catchtap="giveFN">确定</van-button>
+        </span>
+      </view>
+    </view>
+  </van-popup>
+
+
+  <view class="tip">
+      请点击会员赠送积分
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+</view>

@@ -1,0 +1,71 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-03 19:54:45 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-03 19:54:45 
+    活动卡编辑
+*/ -->
+<view id="fuActionCard">
+    
+    <view class="topC">
+        <view class="Card {{'bg'+bg}}" hover-class="none" hover-stop-propagation="false">
+            <view class="name mb">{{submitList[0].val?submitList[0].val:submitList[0].plr}}
+            </view>
+            <view class="det mb">{{submitList[1].val?submitList[1].val:submitList[1].plr}}
+            </view>
+            <view class="price mb" >￥{{submitList[3].val?submitList[3].val:submitList[3].plr}}元
+            <!-- <span class="num">/次</span> -->
+            </view>
+            <view class="time mb">购买30天内有效</view>
+            <image mode="aspectFill" class="rightS" src="{{imgUrl+(bg==0?'yj.png':bg==1?'mr.png':'meijia.png')}}" />
+        </view> 
+        
+        <view class="color">
+            颜色：<span class="ok {{'bg'+index}}" wx:for="{{3}}" wx:key="{{index}}" data-index="{{index}}" bindtap="colorFN">
+                <van-icon wx:if="{{bg==index}}" name="success" size="20rpx" color="#fff" />
+            </span>
+        </view>
+    </view>
+    
+
+    <!--  -->
+    <view class="bgInput">
+        <view class="inputPost" wx:for="{{submitList}}" wx:key="{{index}}" >
+            <span class="name">{{item.name}}
+            </span>
+            <span class="val" >
+                <input wx:if="{{index!=5}}"   type="{{index==2||index==3||index==4?'number':'text'}}" value="{{item.val}}" placeholder="{{item.plr}}" bindinput="changFN" data-index="{{'submitList['+index+'].val'}}" />
+                <input disabled="{{true}}" wx:else bindtap="openTime"  value="{{item.val}}" placeholder="{{item.plr}}"  />
+            </span>
+        </view>
+    </view>
+    
+
+    <!--  -->
+    <view class="textarea">
+        <view class="name">使用细则</view>
+        <textarea hidden="{{showTime}}" value="{{textarea}}" bindinput="changFN" data-index="{{'textarea'}}"></textarea>
+    </view>
+
+    <!--  -->
+    <view class="btn" >
+    
+        <van-button bindtap="submit">提交</van-button>
+    </view>
+
+
+    <!--  -->
+    <!-- 时间 -->
+    <van-popup show="{{ showTime }}" position="bottom" bind:close="onClose">
+        <van-datetime-picker
+            type="datetime"
+            value="{{currentDate}}"
+            bind:input="onInput"
+            bind:confirm="okTime"
+            bind:cancel="onClose"
+            min-date="{{minDate}}"
+        />
+    </van-popup>   
+
+
+</view>

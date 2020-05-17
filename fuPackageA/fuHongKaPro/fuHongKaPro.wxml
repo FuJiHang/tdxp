@@ -1,0 +1,63 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2020-03-03 13:53:35 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2020-03-03 13:53:35 
+    红卡会员专区
+ */ -->
+<view id="fuHongKaPro">
+
+    <!--  -->
+    <view class="navTop">
+        <view class="top">
+            <image src="{{item.tagAdImg}}" mode="widthFix"></image>
+        </view>
+        <view class="btn">
+            <span class="child" wx:for="{{navTop}}" wx:key="{{index}}"> 
+                <image src="{{item.img}}" mode="widthFix"></image>
+                <view class="name">{{item.name}}</view>
+                <view class="val">{{item.val}}</view>
+
+            </span>
+        </view>
+    </view>
+
+    <!--  -->
+    <view class="banner" wx:for="{{productList}}" wx:key="{{index}}" wx:if="{{item.tagName=='会员专区'}}">
+        <image src="{{item.tagAdImg}}" mode="widthFix"></image>
+    </view>
+
+    <!--  -->
+    <view class="allProduct" wx:for="{{productList}}" wx:key="{{index}}" wx:if="{{item.tagName=='会员专区'}}">
+        <span class="child" wx:for-index="indexc" wx:for-item="itemc" data-productId="{{itemc.ProductId}}"
+            data-storeid="{{itemc.StoreId}}" bindtap="handleDetail" wx:for="{{item.ProductList}}" wx:key="{{indexc}}">
+            <image mode="aspectFit" src="{{itemc.ImageUrl2}}" />
+            <view class="name">{{itemc.ProductName}}</view>
+            <view class="price_btn">
+                <span class="mini">￥</span>
+                <span class="price">{{itemc.SalePrice}}</span>
+                <span class="redCard" wx:if="{{itemc.IsVip}}">
+                    <span class="red">
+                        <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/honka@3x.png" mode="widthFix" />
+                        红卡</span>
+                    <span class="black">专享￥{{itemc.NewUserPrice}}</span>
+                </span>
+            </view>
+        </span>
+    </view>
+
+    <view class="noMore">
+        没有更多的了~~~
+    </view>
+
+
+
+    <!-- 底部导航条  -->
+    <view class="navBarFu">
+        <view bindtap="toFNavc" data-to="{{item.to}}" class="child  {{xz==index?'black':''}}" wx:for="{{navBar}}"
+            wx:key="index" data-index="{{index}}">
+            <image mode="aspectFill" src="{{item.img}}" data-index="{{index}}" />
+            <text class="name" data-index="{{index}}">{{item.name}}</text>
+        </view>
+    </view>
+</view>

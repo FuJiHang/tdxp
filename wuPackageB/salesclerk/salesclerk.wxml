@@ -1,0 +1,99 @@
+<view id="salesclerk">
+  <block wx:for="{{list}}" wx:key="{{item}}">
+    <view class="list">
+      <view class="img_wrap">
+        <image class="img" src="{{item.Picture || mrImg}}"></image>
+      </view>
+      <view class="main">
+        <text class="title">{{item.Name}}</text>
+        <text class="test">{{item.Role}}</text>
+        
+      </view>
+      <view class="icon_wrap">
+        <view class="body-view">
+          <switch type="checkbox" 
+          checked="{{item.sta}}" 
+          bindchange="handleChange" 
+          data-storeid="{{item.StoreId}}"
+          data-name="{{item.Name}}"
+          data-phone="{{item.Phone}}"
+          data-picture="{{item.Picture}}"
+          data-authid="{{item.AuthId}}"
+          data-role="{{item.Role}}"
+          />
+          <view class="set">店员</view>
+        </view>
+        <image style="margin: 0 5rpx;" class="icon_dp" src="{{imgUrl+'akdp.png'}}" catchtap="handleShield" data-index="{{index}}"></image>
+        <image 
+        style="margin: 0 5rpx;"
+          class="icon_code" 
+          src="{{imgUrl+'icon_code.png'}}" 
+          catchtap="handleCode" 
+          data-index="{{index}}" 
+          data-authid="{{item.AuthId}}"
+          data-storeid="{{item.StoreId}}"
+          ></image>
+        <image 
+        style="margin: 0 5rpx;"
+          class="icon_edit" 
+          src="{{imgUrl+'bianji@2x.png'}}" 
+          catchtap="handleEdit" 
+          data-index="{{index}}"
+          data-authid="{{item.AuthId}}"
+          data-storeid="{{item.StoreId}}"
+          data-name="{{item.Name}}"
+          data-phone="{{item.Phone}}"
+          data-role="{{item.Role}}"
+          data-sta="{{item.sta}}"
+          ></image>
+          <span catchtap="giveOpen" data-data="{{item}}" style="font-size:26rpx;margin-left:5rpx;color:red;">送积分</span>
+      </view>
+    </view>
+  </block>
+  <view style="height: 150rpx;"></view>
+  <view class="btn" bindtap="handleClick">添加店员</view>
+  <view class="tiemS" wx:if="{{list.length==0}}">暂无店员~</view>
+</view>
+<!-- 分享二维弹窗 -->
+<view id="code" wx:if="{{isShow}}">
+  <view class="code_wrap">
+    <image class="code_img" src="{{codeImg}}"></image>
+  </view>
+  <view class="code_test">扫描二维码绑定会员</view>
+
+  <view class="btn_wrap">
+    <!-- <view class="z_code">
+      <image class="share_img" src="{{imgUrl+'icon_code2.png'}}"></image>
+      <text class="share">分享二维码</text>
+    </view>
+    <view class="fengxiang">
+      <image class="share_img" src="{{imgUrl+'icon_code2.png'}}"></image>
+      <text class="share">分享链接</text>
+    </view> -->
+    <view class="b_code" catchtap="handleBC">
+      <image class="share_img" src="{{imgUrl+'icon_code2.png'}}"></image>
+      <text class="share_code">保存二维码</text>
+    </view>
+  </view>
+</view>
+<view id="zhezhao" wx:if="{{isShow}}" catchtap="handleHide"></view>
+
+
+
+<van-popup show="{{showAlert}}" bindtap="onCloseP" position="bottom" bind:close="onCloseP">
+    <view class="iosJJ" catchtap>
+        <view class="child" >
+            {{item.name}}
+            <input value="{{post.Integral}}"  placeholder="请输入要送的积分" bindinput="changeInput"
+                data-name="post.Integral" />
+        </view>
+        <view class="btn">
+            <span class="flex">
+                <van-button size="small" bindtap="onCloseP">取消</van-button>
+            </span>
+            <span class="okFN flex">
+                <van-button size="small" catchtap="giveFN">确定</van-button>
+            </span>
+        </view>
+    </view>
+</van-popup>

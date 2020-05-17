@@ -1,0 +1,25 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-16 16:03:30 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-04-16 16:03:30 
+    团队技师订单
+*/ -->
+<view class="teamList">
+    <span >
+        <image src="{{imgUrl+'pic_head.png'}}" mode="aspectFill" />
+    </span>
+   
+    <view class="contantTL">
+        <view class="name_mon">
+            <text class="name">十大阿萨德阿萨德</text>
+            <span class="mon">￥20.00</span>
+        </view>
+        <view class="detail_btn">
+            <view class="left_db">
+                <text class="det">详情</text>啊圣诞节快乐卡的打开了家看来是的sad看了就看了阿萨
+            </view>
+            <van-button size="mini">修改分配</van-button>
+        </view>
+    </view>
+</view>

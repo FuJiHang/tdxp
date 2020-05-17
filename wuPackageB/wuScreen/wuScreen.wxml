@@ -1,0 +1,46 @@
+<view id="screen">
+  <view class="youhui">满50减30新势力专场优惠券适用于4家门店</view>
+  <view class="screen_nav">
+    <block wx:for="{{nav}}" wx:key="{{item}}">
+      <view class="nav_wrap">
+        <text class="title_nav">{{item}}</text>
+        <image class="title_img" src="{{imgUrl+'xiangxia_btn.png'}}"></image>
+      </view>
+    </block>
+  </view>
+  <!-- 门店列表 -->
+  <view class="store_list">
+    <block wx:for="{{storeList}}" wx:key>
+      <view class="nearby_content">
+        <!-- 图文层 -->
+        <view class="image_text" catchtap="handleBuy" data-storeid="{{item.StoreId}}">
+  
+          <view class="nearby_text_img">
+            <image class="nearby_image" lazy-load src="{{item.img}}"></image>
+          </view>
+  
+          <view class="nearby_main">
+            <view class="nearby_main_title">
+              <text class="stores_title">{{item.name}}</text>
+            </view>
+            <view class="sales_and_reviews">
+              <text class="sales">评分{{item.pinf}}</text>
+              <text class="reviews">预约{{item.yuyue}}</text>
+            </view>
+            <view class="sales_site">
+              <image class="sales_icom" lazy-load
+                src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/sjmed/icon_address@2x.png"></image>
+              <text class="sales_site_test" data-nums="{{index}}" catchtap="handleSeeAdd">{{item.address}}</text>
+              <text class="distance">距离{{item.juli}}km</text>
+            </view>
+          </view>
+  
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- 没有更多了 -->
+  <view class="no_data" wx:if='{{true}}'>
+    <text class="no_data_test">没有更多了~</text>
+  </view>
+</view>

@@ -1,0 +1,115 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2020-03-03 13:53:35 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2020-03-03 13:53:35 
+    红卡会员专区
+ */ -->
+<view id="fuHongKaPro">
+    <!--  -->
+    <view class="navTop">
+        <view class="top">
+            升级红卡会员
+            <span class="vip">
+                <image src="{{newImg+'hkhy003.png'}}" mode="widthFix"></image>
+            </span>
+            专享6大权益
+        </view>
+        <view class="mini">购物省得多·分享有奖励</view>
+        <view class="btn {{moreOpen?'moreOpen':''}}">
+            <view class="List" wx:for="{{navTop}}" wx:key="{{index}}">
+                <span class="left">{{item.name}}</span>
+                <span class="rightF">
+                    <span class="child" wx:for="{{item.data}}" wx:for-index="indexs" wx:for-item="items" wx:key="{{indexs}}">
+                        <image src="{{items.img}}" mode="widthFix"></image>
+                        <view class="name">{{items.name}}</view>
+                        <view class="val">{{items.val}}</view>
+                    </span>
+                </span>
+            </view>
+        </view>
+        <view class="more" bindtap="moreFN">
+            <view>显示更多权益</view>
+            <view class="arrow {{moreOpen?'moreArrow':''}}"></view>
+        </view>
+    </view>
+    <view class="bgwHu">
+        <view class="huDu"></view>
+    </view>
+    <!--  -->
+    <view class="bgW">
+        <!--  -->
+        <view class="navTopRed" bindtap="toFNXin" data-url="/fuPackageA/fuProductT/fuProductT?prDid=541&pagetype=undefined&storeid=undefined&dname=undefined&IsShowVideo=false">
+            <image src="{{newImg+'vipB.png'}}" mode="widthFix"></image>
+            <span class="contant">
+                <view class="name">升级红卡会员</view>
+                <view class="val">轻会员,享受不一样的优惠</view>
+            </span>
+        </view>
+    </view>
+    <!--  -->
+    <view class="navTopBg">
+        <span class="xian"></span>
+        <span class="text">超级会员权益</span>
+        <span class="xian"></span>
+    </view>
+    <view class="myStorePro">
+        <view class="bgS">
+            <view class="navTopH">每月0元领</view>
+            <view class="allProductT">
+                <span class="child" wx:for-index="indexc" wx:for-item="itemc"  data-data="{{itemc}}" bindtap="pointDetail" wx:for="{{getZearList}}" wx:key="{{indexc}}">
+                    <span class="image">
+                        <span class="tip" wx:if="{{!itemc.Stock}}">已领完</span>
+                        <image mode="aspectFit" src="{{itemc.ImageUrl}}" />
+                    </span>
+                    <view class="name">{{itemc.Name}}</view>
+                    <view class="price_btn">
+                        <span class="mini">￥</span>
+                        <span class="price">0</span>
+                        <span class="del">{{itemc.BuyPrice}}</span>
+                    </view>
+                    <view class="buyFN {{!itemc.Stock?'fiter':''}}">
+                        <van-button catchtap="getFN" data-id="{{itemc.GiftId}}">立即领取</van-button>
+                    </view>
+                </span>
+            </view>
+        </view>
+    </view>
+    <view class="navTopBg">
+        <span class="xian"></span>
+        <span class="text">红卡会员专享</span>
+        <span class="xian"></span>
+    </view>
+    <!--  -->
+    <view class="banner" wx:for="{{productList}}" wx:key="{{index}}" wx:if="{{item.tagName=='会员专区'}}">
+        <image src="{{item.tagAdImg}}" mode="widthFix"></image>
+    </view>
+    <!--  -->
+    <view class="allProduct" wx:for="{{productList}}" wx:key="{{index}}" wx:if="{{item.tagName=='会员专区'}}">
+        <span class="child" wx:for-index="indexc" wx:for-item="itemc" data-productId="{{itemc.ProductId}}" data-storeid="{{itemc.StoreId}}" bindtap="handleDetail" wx:for="{{item.ProductList}}" wx:key="{{indexc}}">
+            <image mode="aspectFit" src="{{itemc.ImageUrl2}}" />
+            <view class="name">{{itemc.ProductName}}</view>
+            <view class="price_btn">
+                <span class="mini">￥</span>
+                <span class="price">{{itemc.SalePrice}}</span>
+            </view>
+            <view class="redCard" wx:if="{{itemc.IsVip}}">
+                <span class="overFlow">
+                    <span class="red">
+                        <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/honka@3x.png" mode="widthFix" />
+                        红卡
+                    </span>
+                    <span class="black">专享￥{{itemc.NewUserPrice}}</span>
+                </span>
+            </view>
+        </span>
+    </view>
+    <view class="noMore">没有更多的了~~~</view>
+    <!-- 底部导航条 -->
+    <view class="navBarFu">
+        <view bindtap="toFNavc" data-to="{{item.to}}" class="child  {{xz==index?'black':''}}" wx:for="{{navBar}}" wx:key="index" data-index="{{index}}">
+            <image mode="aspectFill" src="{{item.img}}" data-index="{{index}}" />
+            <text class="name" data-index="{{index}}">{{item.name}}</text>
+        </view>
+    </view>
+</view>

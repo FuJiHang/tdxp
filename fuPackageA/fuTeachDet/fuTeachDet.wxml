@@ -1,0 +1,47 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-12 20:12:10 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-07-12 20:12:38
+    技师签约详情页
+*/ -->
+<view id="fuTeachDet">
+    
+    <!--  -->
+    <view class="bgTop">
+        <view class="bg">
+        </view>
+         <view class="btm">
+            <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/jsbj002.png" />
+            <!-- <view >
+                头道惠
+            </view>
+            <view class="tea">签约头疗师</view> -->
+        </view>
+    </view>
+    <!--  -->
+    <view class="teacher">
+        <image mode="aspectFill" src="{{dataInfo.HeadPortrait}}" />
+        <span class="contant">
+            <view class="name_tip">
+                {{dataInfo.Name?dataInfo.Name:'无'}}
+                <span class="vip">
+                    <image src="{{imgUrl+'vip.png'}}" />
+                </span>
+                <span class="mini">签约头疗师</span>
+            </view>
+            <view class="text">
+                {{dataInfo.GradeName}} | 从业{{dataInfo.WorkYeas}}年
+            </view>
+            <view class="text">
+                <van-rate value="{{5}}" color="#ff4444" size="13" />
+            </view>
+            <view class="text" wx:for="{{4}}" wx:key="{{index}}">
+                {{dataInfo['Title'+index]?dataInfo['Title'+index]:'暂无'}}
+            </view>
+        </span>
+    </view>
+
+
+</view>
+

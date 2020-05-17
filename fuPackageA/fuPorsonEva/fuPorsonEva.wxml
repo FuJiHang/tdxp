@@ -1,0 +1,54 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-10-17 18:21:07 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-10-17 18:21:07 
+    评价列表
+ */
+ -->
+
+<view id="fuPorsonEva">
+
+   <view class="childEva" wx:for="{{dataList}}" wx:key="{{index}}">
+      <view class="person">
+         <image src="{{item.UserPicture}}" mode='aspectFill' />
+         <span class="contant">
+            <view class="name">{{item.UserName}}<span class="class">Lv5</span></view>
+            <view class="time">{{item.AddDate}}</view>
+         </span>
+      </view>
+      <view class="appointList"  >
+         <image src="{{item.ThumbnailsUrl}}" />
+         <view class="contant">
+            <view class="name_mon mB">
+               <text class="name">{{item.ItemDescription?item.ItemDescription:"无"}}</text>
+               <text class="mon">￥{{item.ItemAdjustedPrice?item.ItemAdjustedPrice:0}}</text>
+            </view>
+            <view class="code disAC mB">
+               <!-- <image  class="img" src="{{imgUrl+'hexiaoma.png'}}" mode="aspectFill"/>
+               核销码：无 -->
+               <image  class="img left" src="{{imgUrl+'hexiaoma.png'}}" mode="aspectFill"/>
+               技师分配：{{item.TechnicianName}}
+            </view>
+            <view class="time"  data-index="{{index}}">
+               <span class="upgrade" data-index="{{index}}" >预约时间{{item.SelectDate}}</span >                      
+            
+            </view>
+         </view>
+
+      </view>
+      <view class="history" >
+         <span class="flex"></span>
+         <button open-type="share" data-data="{{item}}" id="{{index}}">
+            <image src="{{imgUrl+'shareCJ.png'}}"  />
+
+         </button>
+      </view>
+
+   </view>
+
+   
+
+
+
+</view>

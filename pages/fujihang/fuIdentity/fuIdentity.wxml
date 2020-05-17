@@ -1,0 +1,35 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-22 15:13:46 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-04-22 16:16:13
+    身份申请
+ */ -->
+<view id="fuIdentity">
+    
+    <!-- 导航条 -->
+    <view class="navTopIY">
+        角色申请选择
+    </view>
+
+    <!-- 申请选择 -->
+    
+    <view class="chooseIndentity  " wx:key="{{index}}" wx:for="{{Identity}}" data-index="{{index}}" bindtap="toFN">
+
+        <image mode="aspectFill" src="{{item.img}}" data-index="{{index}}"/>
+  
+
+        <!-- <view class="contant_cy" data-index="{{index}}">
+            <view class="name">{{item.name}}</view>
+            <view class="text">{{item.text}}</view>
+        </view> -->
+      
+        <span style="flex:1;">
+            {{item.name}}
+        </span>
+       
+        <van-icon name="arrow" data-index="{{index}}" />
+    </view>
+
+
+</view>

@@ -1,0 +1,31 @@
+<!-- 添加技师 -->
+<view class="add_tic">
+  <form bindsubmit="formSubmit">
+    <view class="upload">
+      <label class="up_title">上传头像</label>
+      <view class="pictbox">
+        <view class="evalteimg" wx:for="{{photoList}}" wx:key>
+          <image class="tu" src="{{item.ImageUrl}}"></image>
+          <image class="close" src="{{iconDel}}" data-index="{{index}}" catchtap="Deleted" data-type="{{item.nums}}"></image>
+        </view>
+        <view class="takepic" catchtap="postImg" data-subIndex="0" data-typeId="{{item.nums}}" wx:if="{{photoList.length<1}}">
+          <image class="pict" src="{{iconImg}}"></image>
+        </view>
+        <input type="text" id="img_name" value="{{StoreImages}}" name="addImg" maxlength="-1" />
+      </view>
+    </view>
+    <view class="content">
+      <view class="input_wrap">
+        <label class="name1">姓名</label>
+        <input type="text" class="name_in" value="" name="nameVal"  />
+      </view>
+      <view class="input_wrap">
+        <label class="name1">介绍</label>
+        <input type="text" class="name_in" value="" name="introduce" />
+      </view>
+    </view>
+    <view class="btn-area">
+      <button formType="submit" class="btn">提交</button>
+    </view>
+  </form>
+</view>

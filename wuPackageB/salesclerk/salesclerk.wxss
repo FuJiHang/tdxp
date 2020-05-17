@@ -1,0 +1,231 @@
+#salesclerk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+}
+#salesclerk .tiemS {
+  font-size: 30rpx;
+  color: #333;
+  margin-top: 300rpx;
+}
+#salesclerk .list {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 15rpx 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+#salesclerk .list .img_wrap {
+  flex: 0.6;
+}
+#salesclerk .list .img_wrap .img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 8rpx;
+}
+#salesclerk .list .main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15rpx;
+}
+#salesclerk .list .main .title {
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+#salesclerk .list .main .test {
+  font-size: 24rpx;
+  color: #61B6FD;
+}
+#salesclerk .list .icon_wrap {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25rpx;
+}
+#salesclerk .list .icon_wrap .body-view {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+#salesclerk .list .icon_wrap .icon_dp {
+  width: 46rpx;
+  height: 46rpx;
+  margin-left: 70rpx;
+}
+#salesclerk .list .icon_wrap .icon_code {
+  width: 46rpx;
+  height: 46rpx;
+}
+#salesclerk .list .icon_wrap .icon_edit {
+  width: 39rpx;
+  height: 39rpx;
+}
+#salesclerk .btn {
+  width: 90%;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  background-color: red;
+  padding: 25rpx 0;
+  border-radius: 50rpx;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 60rpx;
+}
+#code {
+  width: 600rpx;
+  height: 649rpx;
+  background-color: #fff;
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  right: 0;
+  bottom: 0;
+  z-index: 22;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 35rpx;
+  border-radius: 12rpx;
+}
+#code .code_wrap {
+  width: 535rpx;
+  height: 521rpx;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 1rpx solid #eee;
+  border-radius: 12rpx;
+  padding: 20rpx;
+}
+#code .code_wrap .code_img {
+  width: 502rpx;
+  height: 477rpx;
+  border-radius: 10rpx;
+}
+#code .code_test {
+  font-size: 32rpx;
+  color: #333;
+  margin-top: 20rpx;
+}
+#code .btn_wrap {
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60rpx 0;
+  border-top-left-radius: 15rpx;
+  border-top-right-radius: 15rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+#code .btn_wrap .b_code {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 12000;
+}
+#code .btn_wrap .b_code .share_img {
+  width: 80rpx;
+  height: 80rpx;
+}
+#code .btn_wrap .b_code .share_code {
+  margin-top: 15rpx;
+}
+#code .btn_wrap .z_code {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#code .btn_wrap .z_code .share_img {
+  width: 80rpx;
+  height: 80rpx;
+}
+#code .btn_wrap .z_code .share {
+  margin-top: 15rpx;
+}
+#code .btn_wrap .fengxiang {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#code .btn_wrap .fengxiang .share_img {
+  width: 80rpx;
+  height: 80rpx;
+}
+#code .btn_wrap .fengxiang .share {
+  margin-top: 15rpx;
+}
+#zhezhao {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+}
+.iosJJ {
+  margin: 0 10% 75%;
+  background: white;
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+.iosJJ .child {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 20rpx 0;
+  box-sizing: border-box;
+  font-size: 30rpx;
+}
+.iosJJ .child input {
+  display: flex;
+  align-items: center;
+  border-radius: 30rpx;
+  font-size: 30rpx;
+  padding: 0 20rpx;
+  height: 60rpx;
+  box-sizing: border-box;
+  flex: 1;
+  margin-left: 10rpx;
+  border: 1px solid #f0f0f0;
+}
+.iosJJ .btn {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 20rpx;
+  box-sizing: border-box;
+}
+.iosJJ .btn .flex {
+  flex: 1;
+}
+.iosJJ .btn .flex .van-button {
+  width: 100%;
+}
+.iosJJ .btn .okFN .van-button {
+  background: #FF5353;
+  color: white;
+  border: none;
+}
+.van-popup {
+  background: none !important;
+}
+/*# sourceMappingURL=./salesclerk.css.map */

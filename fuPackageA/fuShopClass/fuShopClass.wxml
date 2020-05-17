@@ -1,0 +1,46 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2020-03-03 16:56:54 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2020-03-03 16:56:54 
+    商城全部分类
+ */ -->
+<view id="fuShopClass">
+    <!--  -->
+    <view class="seachMTAM">
+        <view class="bg">
+            <image wx:if="{{!focus}}" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/seach@3x.png" mode="widthFix" />
+            <input class="{{focus?'focus':''}}" bindblur="getBlur" bindfocus="getFocus" bindinput="inputFN" bindconfirm="seachFN" data-name="seach" placeholder="请您输入您搜索的商品" />
+        </view>
+    </view>
+
+    <view class="banner">
+        <image  wx:if="{{functionList[active].BigImageUrl}}" src="{{functionList[active].BigImageUrl}}" mode="widthFix" />
+    </view>
+
+    <view class="vantab">
+        <van-tabs line-width='20' color="#FB1F4F" active="{{ active }}" bind:change="onChange" swipeable>
+            <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="{{index}}">
+               
+                <view class="allProduct">
+                    <span class="child" wx:for-index="indexc" wx:for-item="itemc" data-productId="{{itemc.ProductId}}" data-storeid="{{itemc.StoreId}}" bindtap="handleDetail" wx:for="{{item.data}}" wx:key="{{indexc}}">
+                        <image mode="aspectFit" src="{{itemc.ImageUrl2}}" />
+                        <view class="name">{{itemc.ProductName}}</view>
+                        <view class="price_btn">
+                            <span class="mini">￥</span>
+                            <span class="price">{{itemc.SalePrice}}</span>
+                            <span class="redCard" wx:if="{{itemc.IsVip}}">
+                                <span class="red">
+                                    <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/honka@3x.png" mode="widthFix" />
+                                    红卡
+                                </span>
+                                <span class="black">专享￥{{itemc.NewUserPrice}}</span>
+                            </span>
+                        </view>
+                    </span>
+                </view>
+                <view class="noMore" wx:if="{{item.finsh}}">没有更多的了~~~</view>
+            </van-tab>
+        </van-tabs>
+    </view>
+</view>

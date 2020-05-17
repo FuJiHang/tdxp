@@ -1,0 +1,96 @@
+/* pages/qidong/qidong.wxss */
+view{
+  margin: 0;
+  padding: 0;
+}
+page{
+  height: 100%;
+  width: 100%;
+}
+.box-qidong{
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+  width: 100%;
+  height: 100%;
+  position: relative;
+  /* background: #333; */
+
+}
+.tiaoguo{
+  padding: 8rpx 30rpx;
+  background: rgba(0, 0, 0, .6);
+  color: #fff;
+  position: fixed;
+  right: 40rpx;
+  bottom: 40rpx;
+}
+.box-qidong image{
+  width: 100%;
+  height: 100%;
+  /* position: relative; */
+  /* justify-content: center; */
+}
+.gobchome{
+position:absolute;
+width:50%;
+height:100rpx;
+/* opacity:0.5; */
+top:88%;
+
+left:0;
+right: 0;
+margin: auto;
+/* background:#FFFFFF; */
+font-family:'PingFang-SC-Bold';
+}
+.showtime{
+  position: absolute;
+  padding: 10rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  top: 80rpx;
+  left: 50rpx;
+  /* line-height:  */
+}
+.showtime .sss{
+  z-index: 3;
+  position: relative;
+  border-radius: 50%;
+  width:60rpx;
+  height: 60rpx;
+  line-height: 58rpx;
+  background:white;
+  text-align: center;
+  font-size: 35rpx;
+  color: #666;
+}
+
+.loading{
+  background: rgb(255, 255, 255);
+  border-radius:50%;
+  width: 70rpx;
+  height: 70rpx;
+  position: absolute;
+  left: 5rpx;
+  top: 5rpx;
+  animation:circleCake 1s linear ;
+  transform:rotate(45deg);
+}
+@keyframes circleCake{
+  0%{
+      clip-path: polygon(35rpx 35rpx,0 0px,0px 0,0px 0px,0 0px,0 0px);
+  }
+  25%{
+      clip-path: polygon(35rpx 35rpx,0 0,70rpx 0,70rpx 0,70rpx 0,70rpx 0);
+  }
+  50%{
+      clip-path: polygon(35rpx 35rpx,0 0,70rpx 0,70rpx 70rpx,70rpx 70rpx,70rpx 70rpx);
+  }    
+  75%{
+      clip-path: polygon(35rpx 35rpx,0 0,70rpx 0,70rpx 70rpx,0 70rpx,0px 70rpx);
+  }
+  100%{
+      clip-path: polygon(35rpx 35rpx,0 0,70rpx 0,70rpx 70rpx,0 70rpx,0px 0px);
+  }
+}

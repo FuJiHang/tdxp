@@ -1,0 +1,9 @@
+page{
+    height: 100%;
+    overflow: auto;
+}
+
+#fuGetMoneyAction image{
+    height: 1rpx;
+    width: 100%;
+}

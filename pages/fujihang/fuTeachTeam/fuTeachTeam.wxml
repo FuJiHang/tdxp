@@ -1,0 +1,83 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-24 13:36:53 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-04-24 13:36:53 
+    我的团队
+    */ -->
+<view id="fuTeachTeam">
+
+    <!-- 父 -->
+    <view class="teamFTop">
+        <image mode="aspectFill" src="{{dataList.HeadPicture}}"/>
+        <view class="contant">
+            <view class="name_cla">
+                {{dataList.HeadName?dataList.HeadName:'无'}}
+            </view>
+            <view class="shen_phone">
+                电话：{{dataList.CellPhone?dataList.CellPhone:'无'}} 
+            </view>
+        </view>
+    </view>
+
+    <!-- 省带 -->
+    
+    <view class="MyTeamContant" wx:if="{{teachlist.length>0}}">
+      <scroll-view scrolltolower="150" scroll-y="true" >
+        <view class="conantTeam" wx:if="{{item.UserId!='0'}}"  wx:for="{{teachlist}}" wx:key="{{index}}" data-index="{{index}}">
+            <view class="teamFu">
+                <image src="{{item.HeadPortrait}}"/>
+                <view class="contant">
+                    <view class="name_cla">
+                        <span class="name">{{item.Name?item.Name:'无'}}</span>
+                    </view>
+                    <view class="shen_phone">
+                        <!-- <span class="shen">省代</span> -->
+                        <span class="phone">电话：{{item.CellPhone?item.CellPhone:'无'}}    <span class="red">{{item.IsExcutor=='False'?'':'执行者'}}</span> <text decode="true">&nbsp;&nbsp;</text> <span class="red">{{item.IsAutoUntying=='False'?'':'流动'}}</span></span>
+                    </view>
+                </view>
+                <van-button wx:if="{{role=='head'}}" size="small" bindtap="openFunFN" data-index="{{index}}">操作</van-button>
+            </view>
+
+            <!-- 子 -->
+            <!-- <view class="teamChild {{open?'':'open'}}" wx:for="{{3}}">
+                <image mode="aspectFill" src="{{imgUrl+'icon_search.png'}}"/>
+                <view class="contant">
+                    <view class="name_cla">
+                        <span class="name">s</span>
+                        <span class="cla">s</span>
+                    </view>
+                    <view class="shen_phone">
+                        <span class="shen">s</span>
+                        <span class="phone">s</span>
+                    </view>
+                </view>
+            </view> -->
+        </view>
+        <view class="noMore" wx:if="{{finsh}}">
+            没有更多的了~~~
+        </view>
+        </scroll-view>
+        
+    </view>
+    
+    
+    
+    <view wx:if="{{role=='technician'}}" class="btn" bindtap="toFNSQ">
+        <van-button>申请绑定团队长</van-button>
+    </view>
+    
+    <van-popup show="{{show}}" position="bottom" bind:close="onCloseP">
+        <view class="yzm">
+            <view class="child" wx:for="{{choose}}" wx:key="{{index}}">
+                <van-button bindtap="chooseFN"  data-index="{{index}}">{{item}}</van-button>
+            </view>
+            <view class="btns">
+                <span class="cancl wt">
+                    <van-button  bindtap="onCloseP"  >取消</van-button>
+                </span>
+
+            </view>
+        </view>
+    </van-popup>
+</view>

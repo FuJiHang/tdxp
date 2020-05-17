@@ -1,0 +1,24 @@
+page {
+  height: 100%;
+  font-size: 26rpx;
+  position: relative;
+}
+#fuFunChoose {
+  position: relative;
+  color: #666;
+}
+#fuFunChoose .choose {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f1f1f1;
+}
+#fuFunChoose .choose .flex {
+  flex: 1;
+}
+#fuFunChoose .choose image {
+  width: 30rpx;
+  height: 30rpx;
+}

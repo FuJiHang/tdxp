@@ -1,0 +1,27 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-03 16:48:00 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-07-03 17:47:34
+    编辑门店
+ */ -->
+<view id="fuEditerTeach">
+
+
+    <view bindtap="toFN" data-to="{{c.to}}" class="childET {{functionList.length-1==cI?'nobr':''}}" wx:for="{{functionList}}" wx:for-item="c" wx:for-index="cI" wx:key="{{cI}}">
+        <span class="name">
+        {{c.name}}
+        </span>
+        <image src="{{imgUrl+'arrow_right.png'}}" />
+    </view>
+
+    <!--  -->
+   <view class="tip">
+      *以上项目设置完成后，可在"个人展示"查看效果*
+   </view>
+    
+   <!--  -->
+   <view class="btn" bindtap="toFND">
+      <van-button>个人展示</van-button>
+   </view>
+</view>

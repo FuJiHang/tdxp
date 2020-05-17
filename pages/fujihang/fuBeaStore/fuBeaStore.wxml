@@ -1,0 +1,191 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-05-17 09:34:37 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-05-17 09:35:10
+    新积分商城
+*/ -->
+<view id="fuBeaStore">
+
+    <!-- 轮播图 -->
+    <swiper autoplay="{{true}}" interval="{{3000}}" style="height:{{imgheights[current]}}rpx;" bindchange="bindchange">
+        <swiper-item wx:for="{{imgUrls}}" wx:key="{{index}}">
+            <image data-id='{{index}}' bindload="imageLoad" mode='widthFix'
+                src="{{item.PhotoPath+'?x-oss-process=image/resize,l_640'}}" class="slide-image" width="355"
+                height="150" />
+        </swiper-item>
+    </swiper>
+
+    <view  >
+        <view class="navBar" bindtap="changeMore" data-index="{{classfiyList[0].cid}}">
+            <span class="name">{{classfiyList[0].name}}</span>
+            <span class="val">换一批</span>
+        </view>
+        <view class="productCont " bindtouchstart="touchStart" bindtouchend="ischangeMoreFN" bindtouchmove="touchMove" >
+            <view class="product three" wx:for="{{classfiyList[0].data}}" data-CostPrice="{{item.CostPrice}}"
+                data-GiftId="{{item.GiftId}}" wx:key="{{index}}" bindtap="buyFN">
+                <view class="jiaoZiPi">
+                    <view class="img">
+                        <image src="{{item.ImageUrl+'?x-oss-process=image/resize,l_640'}}" mode="aspectFill" />
+                    </view>
+                    <view class="name">{{item.Name}}</view>
+                    <view class="detG">
+                        <span class="flex">
+                            <span class="mini">
+                                <view class="num"><span class="roundDiv">1</span>：{{item.NeedPoint}}积分</view>
+                                <view class="meili"><span
+                                        class="roundDiv">2</span>：{{item.ComboPrice}}元+{{item.ComboPoint}}积分</view>
+                            </span>
+                        </span>
+
+                        <span class="collectG {{item.IsCollected=='True'?'coll':''}}" data-indexs="{{indexs}}"
+                            data-index="{{index}}" data-GiftId="{{item.GiftId}}" catchtap="collFN">
+                        </span>
+                    </view>
+                    <view class="btnG">
+                        <van-button size="small" data-CostPrice="{{item.CostPrice}}" data-GiftId="{{item.GiftId}}">
+                            立即兑换
+                        </van-button>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+
+
+
+    <!-- 女性 -->
+    <view wx:for="{{classfiyList}}" wx:for-item="items" wx:for-index="indexs" wx:key="{{indexs}}"
+        wx:if="{{items.data.length!=0&&indexs}}">
+        <view class="navBar" bindtap="toMore" data-index="{{items.cid}}">
+            <span class="name">{{items.name}}</span>
+            <span class="val">更多</span>
+            >>
+        </view>
+        <view class="productCont">
+
+
+
+            <view class="product" wx:for="{{items.data}}" data-CostPrice="{{item.CostPrice}}"
+                data-GiftId="{{item.GiftId}}" wx:key="{{index}}" bindtap="buyFN">
+                <view class="jiaoZiPi">
+                    <view class="img">
+                        <image src="{{item.ImageUrl+'?x-oss-process=image/resize,l_640'}}" mode="aspectFill" />
+                    </view>
+                    <view class="name">{{item.Name}}</view>
+             
+                    <view class="detG">
+                        <span class="flex">
+                            <span class="mini">
+                                <view class="num"><span class="roundDiv">1</span>：{{item.NeedPoint}}积分</view>
+                                <view class="meili"><span
+                                        class="roundDiv">2</span>：{{item.ComboPrice}}元+{{item.ComboPoint}}积分</view>
+                            </span>
+                           
+                        </span>
+
+                        <span class="collectG {{item.IsCollected=='True'?'coll':''}}" data-indexs="{{indexs}}"
+                            data-index="{{index}}" data-GiftId="{{item.GiftId}}" catchtap="collFN">
+                           
+
+                        </span>
+                    </view>
+                    <view class="btnG">
+                        <van-button size="small" data-CostPrice="{{item.CostPrice}}" data-GiftId="{{item.GiftId}}">
+                            立即兑换
+                        </van-button>
+                    </view>
+      
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 筛选 -->
+    <van-popup show="{{ show }}" position="right" bind:close="onClose">
+        <view class="skuContant" wx:for="{{chooseList}}" wx:key="{{indexs}}" wx:for-index="indexs" wx:for-item="fitem">
+            <view class="name">{{fitem.name}}</view>
+            <view class="sku">
+
+                <span bindtap="chooseFN" class="child {{index==fitem.index?'choose':''}}" data-findex="{{indexs}}"
+                    data-index="{{index}}" wx:for="{{fitem.child}}" wx:key="{{index}}">
+                    <view class="val">{{item.name}}</view>
+                    <view class="bfb" wx:if="{{item.val}}">{{item.val}}的选择</view>
+                </span>
+            </view>
+        </view>
+
+
+        <view class="btnPP">
+            <van-button round size="small" bindtap="seachFN">确定</van-button>
+        </view>
+
+    </van-popup>
+
+    <!-- 分类弹窗 -->
+    <van-popup show="{{ showClassfiy }}" position="right" bind:close="onClose">
+        <!--  -->
+
+        <!--  -->
+        <view class="appointTO">
+            <!-- 左边 -->
+            <view class="leftCont">
+                <view class="Choose {{isChooseT==index?'isChoose':''}}" wx:for="{{GetAllClassList}}" data-index="{{index}}"
+                    bindtap="chooseClassfiyFN" wx:key="index" data-name="{{item.name}}" data-cid="{{item.cid}}">
+                    {{item.name}}</view>
+            </view>
+            <!-- 右边 -->
+            <view class="rightCont">
+                <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="GetProductsFN">
+                    <view class="detail">
+                        <view class="banner">
+                            <image src="{{imgUrl+'index009.jpg'}}" mode="widthFix" />
+                        </view>
+                        <view class="list">
+                            <view class="title">
+                                {{title}} <span class="flex"></span>
+                            </view>
+                            <view class="contant">
+                                <block wx:for="{{GetAllClassList[isChooseT].subs}}" wx:key="{{item}}">
+                                    <span class="child" data-giftid="{{item.cid}}" bindtap="toListFN">
+                                        <image mode="aspectFill" src="{{item.icon}}" />
+                                        <view class="name">{{item.name}}</view>
+                                    </span>
+                                </block>
+                            </view>
+                        </view>
+
+                    </view>
+                    <view class="noMore" >
+                        没有更多的了~~~
+                    </view>
+                    <view class="noMore" wx:if="{{!GetAllClassList[isChooseT].subs.length}}">
+                        暂无数据，看看其他吧~~~
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+
+
+    </van-popup>
+
+
+
+    <!--  -->
+    <image bindtap="openClassfiy" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/icon_fenlei.png" mode="widthFix"
+        class="classfiy"></image>
+
+
+
+    <view class="konbai"></view>
+    <!-- 底部导航条  -->
+    <view class="navBarFu" wx:if="{{isStore}}">
+        <view bindtap="toFNavc" wx:if="{{index!=2}}" data-index="{{index}}" data-to="{{item.to}}"
+            class="child {{index==2?'max':''}}  {{xz==index?'black':''}}" wx:for="{{navBar}}" wx:key="index"
+            data-index="{{index}}">
+            <image mode="aspectFill" src="{{imgUrl+item.img}}" data-index="{{index}}" />
+            <text class="name" data-index="{{index}}">{{item.name}}</text>
+        </view>
+    </view>
+</view>

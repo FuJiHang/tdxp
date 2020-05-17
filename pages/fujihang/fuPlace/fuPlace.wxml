@@ -1,0 +1,132 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-15 16:11:59 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-04-15 16:12:26
+    填写资料（立即付款）
+*/ -->
+<view id="fuPlace">
+
+    <!-- 门店信息 -->
+    <view class="storeApp">
+        <image src="{{storeData.EnvironmentImages?storeData.EnvironmentImages+'?x-oss-process=image/resize,h_640':storeData.StoreImages+'?x-oss-process=image/resize,h_640'}}" mode="aspectFill"/>
+        <view class="contant">
+            <view class="name_juli">
+                {{storeData.StoreName}}
+                <span class="juli">
+                    距离{{storeData.Distance}}
+                </span>
+            </view>
+            <view class="address">
+                <image mode="aspectFill" src="{{imgUrl+'icon_address33.png'}}" />
+                {{storeData.Address}}
+            </view>
+        </view>
+    </view>
+
+    <!-- 导航条 -->
+    <view class="navTopP">
+        <image src="{{imgUrl+'spot_4.png'}}" />
+        <span class="name">已选项目</span>
+    </view>
+
+    <view class="fuPlaceContant">
+        
+        <!-- 内容列表 -->
+        <view class="Project" wx:for="{{project}}" wx:key="index">
+            <view class="cont_nav" bindtap="openTime" data-index="{{index}}">
+                <span class="name">{{item.xm}}</span>
+                <span class="time" data-index="{{index}}">{{item.timeS}}</span>
+                <van-icon name="arrow" data-index="{{index}}"></van-icon>
+            </view>
+            <view class="cont_det">
+                <image src="{{item.Pic+'?x-oss-process=image/resize,h_640'}}" />
+                <span class="detail">
+                    <view class="name_men">
+                        <span class="name">{{item.ProductName}}</span>
+                        <span class="money">￥{{item.SalePrice}} 定金：{{pasreAll=="true"?0:item.Deposit}}</span>
+                    </view>
+                    <view class="company">{{item.ShortDescription}}</view>
+                    <view class="address">
+                        <image src="{{imgUrl+'icon_address33.png'}}" mode="aspectFill"/>{{item.address?item.address:'无'}}
+                    </view>
+                </span>
+            </view>
+            <view class="border"></view>
+        </view>
+        
+        <!-- 電子券 -->
+        <view class="couponPE" bindtap="coupon" wx:if="{{pasreAll=='true'&&!FightGroupActivityId&&!FightGroupId}}">
+            <span class="name">电子券</span>
+            <span class="val">{{couponId.id!=0?'已选择电子券价格：'+couponId.pic+'元':'请选择电子券'}}</span>
+        </view>
+
+        <!-- 修复剂 -->
+        <view class="xiuFuJi" bindtap="xiuFuJiFN" wx:if="{{pasreAll=='true'&&!FightGroupActivityId&&!FightGroupId}}">
+            <span class="name">修复剂</span>
+            <span class="val">200元</span>
+            <van-checkbox checked-color="#F56F68" value="{{ xiuFuJi }}" ></van-checkbox>
+        </view>
+
+        <!-- 支付方式 -->
+        <view class="payMode" bindtap="openPay">
+            <span class="name">支付方式</span>
+            <span class="val">{{payMode.mode==1?'支付宝':'微信'}}</span>
+        </view>
+
+        <!-- 填写信息 -->
+        <view class="navTopP personTop">
+            <image src="{{imgUrl+'spot_5.png'}}" />
+            <span class="name">填写个人资料</span>
+        </view>
+        <view style="background:#fff">
+            <view class="personData" wx:for="{{personData}}" wx:key="index">
+                <span class="name">{{item.name}}</span>
+                <input data-index="{{index}}" value="{{item.val}}" placeholder="{{item.plr}}" bindinput="bindinputFN"/>
+            </view>
+        </view>
+    </view>
+     
+
+    <!-- 底部 -->
+    <view class="PlaceOk">
+        <span class="money">
+            金额:<span class="num">￥{{allPrice}}</span>
+        </span>
+        <van-button bindtap="payFN">立即支付</van-button>
+    </view>
+
+    <!-- 时间 -->
+    <van-popup show="{{ showTime }}" position="bottom" bind:close="onClose">
+        <van-datetime-picker
+            type="datetime"
+            value="{{currentDate}}"
+            bind:input="onInput"
+            bind:confirm="okTime"
+            bind:cancel="onClose"
+        />
+    </van-popup>   
+
+    <van-popup show="{{payMode.show}}" position="bottom" bind:close="onCloseP">
+        <view class="choosePay" wx:for="{{payList}}" wx:key="{{index}}" bindtap="chooseFN" data-index="{{index}}">
+            <image  class="logo" mode="aspectFit" src="{{imgUrl+item}}" />
+        </view>
+    </van-popup>
+    <van-toast id="van-toast" />
+
+
+    <!--  -->
+    <van-popup class="fwb" show="{{ showXY }}"  position="bottom">
+        <rich-text class="richtext" nodes="{{richtext}}"></rich-text>
+        <view class="btn">
+            <span class="bty">
+                <van-button bindtap="closeXY">不同意</van-button>
+            </span>
+            <span class="{{totalTime>0?'disable':''}}">
+            <van-button bindtap="wtyFN">{{SMS}}</van-button>
+            </span>
+        </view>
+    </van-popup>
+
+</view>
+

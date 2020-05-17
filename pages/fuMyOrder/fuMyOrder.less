@@ -1,0 +1,44 @@
+page{
+    height: 100%;
+    overflow: hidden;
+}
+// 导航条
+#fuMyOrder{
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: #666;
+    // 导航条
+    .navTopMO{
+        display: flex;
+        padding: 18rpx 0;
+        box-sizing: border-box;
+        background: white;
+        .child{
+            flex: 1;
+            text-align: center;
+            .van-button{
+                color: #999;
+                border:none;
+                background: white;
+            }
+            
+        }
+        .danger{
+            .van-button{
+                background: #FF6262;
+                color: white;
+            }
+            
+        }
+    }
+    // 功能
+    .van-tabs{
+        flex: 1;
+        color: #999;
+        .van-tab--active{
+            color: red;
+        }
+    }
+}

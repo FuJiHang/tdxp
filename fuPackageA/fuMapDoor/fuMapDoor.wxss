@@ -1,0 +1,231 @@
+page {
+  height: 100%;
+  font-size: 26rpx;
+  overflow: hidden;
+  color: #666;
+}
+.picker-view-box {
+  margin-top: -50% !important;
+}
+#addr-picker {
+  width: 100% !important;
+}
+#fuMapDoor {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+#fuMapDoor .address_seach {
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+#fuMapDoor .address_seach .address {
+  flex: 1;
+}
+#fuMapDoor .address_seach .address .max {
+  font-size: 28rpx;
+}
+#fuMapDoor .seachMTAM {
+  display: flex;
+  align-items: center;
+  width: 25%;
+}
+#fuMapDoor .seachMTAM .seachbg {
+  margin-right: 10rpx;
+  flex: 1;
+  align-items: center;
+  display: flex;
+  background: #fafafa;
+  border-radius: 40rpx;
+}
+#fuMapDoor .seachMTAM .seachbg image {
+  margin-left: 20rpx;
+  height: 40rpx;
+  width: 40rpx;
+}
+#fuMapDoor .seachMTAM .seachbg input {
+  font-size: 28rpx;
+  margin: 0 20rpx;
+  flex: 1;
+  height: 60rpx;
+}
+#fuMapDoor .DoorList {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+#fuMapDoor .DoorList .top {
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+#fuMapDoor .DoorList .top .heng {
+  width: 10%;
+  border-radius: 20rpx;
+  height: 10rpx;
+  background: #cacaca;
+}
+#fuMapDoor .DoorList .scroll {
+  height: 100%;
+}
+#fuMapDoor .DoorList .scroll .List {
+  background: #fff;
+  padding: 10rpx 20rpx;
+  margin: 0 20rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+#fuMapDoor .DoorList .scroll .List .contant {
+  color: #999;
+  flex: 1;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+  border-right: 1px solid #f0f0f0;
+}
+#fuMapDoor .DoorList .scroll .List .btn {
+  box-sizing: border-box;
+  padding-left: 20rpx;
+}
+#fuMapDoor .DoorList .scroll .List .name {
+  font-size: 30rpx;
+  font-weight: 800;
+  color: #333;
+}
+#fuMapDoor .DoorList .scroll .List .address_time {
+  display: flex;
+  align-items: center;
+}
+#fuMapDoor .DoorList .scroll .List .address_time .child {
+  margin-right: 20rpx;
+  display: flex;
+  align-items: center;
+}
+#fuMapDoor .DoorList .scroll .List .address_time image {
+  margin-right: 10rpx;
+  width: 20rpx;
+}
+#fuMapDoor .DoorList .scroll .List .address {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+#fuMapDoor .DoorList .scroll .List .name,
+#fuMapDoor .DoorList .scroll .List .time,
+#fuMapDoor .DoorList .scroll .List .address_time,
+#fuMapDoor .DoorList .scroll .List .address,
+#fuMapDoor .DoorList .scroll .List .type {
+  margin: 10rpx 0;
+}
+#fuMapDoor .DoorList .scroll .List .type .child {
+  color: #ffb134;
+  border: 1px solid #ffb134;
+  border-radius: 5rpx;
+  padding: 1rpx 10rpx;
+  box-sizing: border-box;
+}
+#fuSeachDoor {
+  padding-top: 100rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100%;
+}
+#fuSeachDoor .seachMTAM {
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  height: 100rpx;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#fuSeachDoor .seachMTAM .seachbg {
+  margin-right: 10rpx;
+  flex: 1;
+  align-items: center;
+  display: flex;
+  background: #f1f1f1;
+  border-radius: 40rpx;
+}
+#fuSeachDoor .seachMTAM .seachbg image {
+  margin-left: 20rpx;
+  height: 40rpx;
+  width: 40rpx;
+}
+#fuSeachDoor .seachMTAM .seachbg input {
+  font-size: 28rpx;
+  margin: 0 20rpx;
+  flex: 1;
+  height: 60rpx;
+}
+#fuSeachDoor .seachMTAM .van-button {
+  border: none;
+  background: none;
+}
+#fuSeachDoor .List {
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+#fuSeachDoor .List .name {
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+  font-weight: 800;
+}
+#fuSeachDoor .List .val {
+  color: #999;
+}
+#fuSeachDoor .scroll {
+  overflow: auto;
+  height: 100%;
+}
+.address-box {
+  position: fixed;
+  z-index: 80;
+  top: 0;
+  left: 0;
+  /* background: black; */
+  /* opacity: 0.5; */
+  /* opacity: 0.5; */
+  height: 100%;
+  /* top: 10%; */
+  width: 100%;
+  display: flex;
+  background: #fff;
+  justify-content: center;
+  align-items: center;
+}
+.address-box2 {
+  position: absolute;
+  padding: 8px 18px;
+  box-sizing: border-box;
+  top: 30rpx;
+  margin: auto;
+  left: 0;
+  right: 0;
+  border: 1px solid #efefef;
+  width: 28%;
+  text-align: center;
+  color: #333;
+  border-radius: 4rpx;
+  background: #fff;
+  z-index: 222;
+  /* background: #FFFFFF; */
+  /* z-index: 210; */
+}
+.noMore {
+  text-align: center;
+  color: #999;
+}

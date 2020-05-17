@@ -1,0 +1,15 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-09-16 20:49:12 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-09-16 20:49:12 
+    选择功能
+*/ -->
+<view id="fuFunChoose">
+    <navigator url="{{item.url}}" wx:for="{{funList}}" wx:key="{{index}}">
+        <view class="choose">
+            <span class="flex">{{item.name}}</span>
+            <image src="{{imgUrl+'arrow_right.png'}}" />
+        </view>
+    </navigator>
+</view>

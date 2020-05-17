@@ -1,0 +1,159 @@
+
+page{
+    height: 100%;
+
+}    
+#fuEvaluate{
+    font-size: 26rpx;
+    color: #666;
+    padding-bottom: 100rpx;
+    // 头部
+    .teaher{
+        padding: 20rpx; 
+        background: white; 
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        image{
+            height: 130rpx;
+            width: 130rpx;
+            margin-left: 20rpx;
+        }
+        .contantTR{
+            flex: 1;
+            margin-left: 20rpx;
+            .name_mon{
+                .name{
+                    font-size:30rpx;
+                }
+                .mon{
+                    margin-left: 15%;
+                    font-size: 28rpx;
+                    color: #61B6FD;
+                }
+            }
+            .detail{
+                margin-top: 20rpx;
+                color: #999;
+                .type{
+                    font-size: 25rpx;
+                    padding: 2rpx 10rpx;
+                    border-radius: 10rpx;
+                    background: #F56F68;
+                    color: white;
+                    margin-right: 20rpx;
+                }
+            }
+        }
+    }
+
+
+    // 项目
+    .project{
+        padding: 20rpx;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        image{
+            height: 100rpx;
+            width: 100rpx;
+            margin-left: 20rpx;
+        }
+        .contantTR{
+            flex: 1;
+            margin-left: 20rpx;
+            .name_mon{
+                display: flex;
+                align-items: center;
+                .name{
+                    flex: 1;
+                    font-size:30rpx;
+                }
+                .mon{
+                   
+                    font-size: 28rpx;
+                    color: #F56F68;
+                }
+            }
+            .detail{
+                margin-top: 20rpx;
+                color: #999;
+                .type{
+                    font-size: 23rpx;
+                    padding: 2rpx 10rpx;
+                    border-radius: 10rpx;
+                    background: #F56F68;
+                    color: white;
+                    margin-right: 20rpx;
+                }
+            }
+        }
+    }
+    // 评价
+    .evaluate{
+        font-size: 28rpx;
+        background: white;
+        .name_img{
+            padding: 20rpx;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            .van-rate{
+                margin-left: 20rpx;
+                flex: 1;
+            }
+        }
+        textarea{
+            border-top: 1px solid rgb(240, 240, 240);
+            width: 100%;
+            padding: 20rpx;
+            box-sizing: border-box;
+        }
+    }
+
+    // 服务
+    .service{
+        margin-top: 20rpx;
+        background: white;
+        padding: 20rpx 0;
+        .name{
+            text-align: center;
+            font-size: 32rpx;
+            font-weight: bold;
+        }
+        .img_ser{
+            margin-top: 20rpx;
+            display: flex;
+            justify-content: center;
+            .child{
+                filter: grayscale(100%);
+                text-align: center;
+                padding:  20rpx ;
+                box-sizing: border-box;
+                font-size: 28rpx;
+                margin: 0 20rpx;
+            }
+            image{
+                margin-bottom: 10rpx;
+                height: 60rpx;
+                width: 60rpx;
+            }
+            .djimg{
+                filter: grayscale(0);
+            }
+        } 
+        
+    }
+    // 按钮
+    .submit{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        .van-button{
+            border:none;
+            width: 100%;
+            color: white;
+            background: #F56F68;
+        }
+    }
+}

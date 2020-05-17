@@ -1,0 +1,26 @@
+.addressInfo {
+  display: flex;
+  align-items: center;
+}
+.addressInfo-left {
+  margin-right: 30rpx;
+  flex-shrink: 0;
+}
+.addressInfo-right {
+  flex: 1;
+  line-height: 42rpx;
+}
+.addressInfo-icon {
+  font-size: 46rpx;
+}
+.addressInfo-title {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #4A4A4A;
+}
+.addressInfo-sub {
+  line-height: 34rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #9B9B9B;
+}

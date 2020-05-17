@@ -1,0 +1,158 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-09-12 10:39:14 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-09-12 10:39:14 
+    朋友圈详情改版
+ */ -->
+ <scroll-view scroll-with-animation  scroll-y="{{true}}"  id="fuJitter"   scroll-top="{{sTop}}" bindscroll="lFun" bindtouchstart="sfun" bindtouchend="hfun">
+
+   <view class="video" wx:for="{{tuijian.data}}" wx:key="{{index}}">
+      <image  src="{{item.ImageUrls}}" mode="aspectFill" wx:if="{{!item.isVideo}}" />
+      <block wx:if="{{item.isVideo}}">
+
+
+         <image  src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}" mode="aspectFill" wx:if="{{show!=index}}" />
+         <video object-fit="cover" show-center-play-btn="{{false}}" loop="{{true}}" wx:if="{{show==index}}"autoplay="{{true}}" controls='{{false}}' src="{{item.ImageUrls}}"></video>
+      </block>
+      <view class="bgBlack"></view>
+   </view>
+
+
+    
+  
+ </scroll-view>
+
+
+   <view id="fuJitterT">
+
+      <swiper current="{{showTH}}" bindchange="playMusic" data-data="{{item}}" bindanimationfinish="finshFN"  class="swiper" duration="300"  easing-function="easeInOutCubic" vertical="true">
+         <swiper-item wx:for="{{tuijian.data}}" wx:key="{{index}}">
+            <image  src="{{item.ImageUrlsArr[0]}}" mode="aspectFill" wx:if="{{!item.isVideo}}" />
+               <block wx:if="{{item.isVideo}}">
+                  <image   src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}" mode="aspectFill" wx:if="{{showTH!=index}}" />
+                  <image style="display:none;" bindload="getVideo"  src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}" mode="aspectFill" wx:if="{{showTH==index}}" />
+                  <!-- cover 全  contain 半-->
+                  <video muted="{{item.MusicUrl}}" bindtimeupdate="bindtimeupdateFN" object-fit="{{quanOrBan?'cover':'contain'}}" show-center-play-btn="{{false}}" loop="{{true}}"  wx:if="{{showTH==index}}"autoplay="{{true}}" controls='{{false}}' src="{{item.ImageUrls}}"></video>
+               
+
+               </block>
+         <audio hidden="{{true}}" wx:if="{{item.MusicUrl&&showTH==index}}"  src="{{item.MusicUrl}}" id="myAudio" ></audio>
+
+               <view class="bgBlack"></view>
+         </swiper-item>
+      </swiper>
+      
+   </view>
+
+
+
+
+
+   <!--  -->
+   <!-- <view class="seachF">
+      <input value="{{seach}}" bindinput="seachChange" bindconfirm="seachFN" placeholder="🔍 大家都在搜“拓客引流”" />
+   </view> -->
+        
+   <!--  -->
+   <view class="navTop">
+
+      <image bindtap="toFN" data-url='/fuPackageA/fuCircleFri/fuCircleFri' mode="widthFix" src="{{imgUrl+'icon_search.png'}}" />
+      <span bindtap="chooseFN" data-index="{{index}}" class="flex {{index==0?'choose':''}} {{choose==index?'bai':''}}" wx:for="{{navTop}}" wx:key="{{index}}">
+         {{item.name}}
+      </span>
+   
+   </view>
+
+   <!--  -->
+   <view class="detail">
+      <view class="name">{{tuijian.data[showTH].StoreName}}</view>
+      <view class="det">{{tuijian.data[showTH].Contents}}</view>
+   </view>
+
+
+   <!--  --> 
+   <view class="funtion">
+      <view class="people" bindtap="toFNGR">
+         <image class="peo" src="{{tuijian.data[showTH].Picture}}" />
+         <image class="add" src="{{imgUrl+'add_red.png?1'}}" />
+      </view>
+      <view class="child" wx:for="{{funtion}}" wx:if="{{index!=2}}" wx:key="{{index}}" data-index="{{index}}" bindtap="openfutionFN">
+         <image src="{{index==0&&item.choose?item.img1:item.img}}" />
+         <view class="val">{{item.val?item.val:0}}</view>
+      </view>
+      <view class="child"  >
+         <button open-type="share">
+                  <image src="{{funtion[2].img}}" />
+            <view class="val">{{funtion[2].val?funtion[2].val:0}}</view>
+         </button>
+   
+      </view>
+   </view>
+
+
+
+<!--  -->
+<view class="Comment {{isComShow?'isComShow':''}}" bindtap="ComShowFN">
+
+   <view class="contantCom" catchtap>
+      
+      <view class="listDiv">
+         <scroll-view scroll-y="{{true}}" bindscrolltolower="getComment">
+            <view class="peopleHt" wx:for="{{CommentList.data}}" wx:key="{{index}}"  bindtap="commentOne" data-id="{{item.id}}" data-aid="{{item.Articleid}}">
+               <image class="pt" src="{{item.Picture}}"/>
+               <span class="contant">
+                  <view class="name" >{{item.UserName}}</view>
+                  <view class="title">{{item.Contents}} <span class="time">{{item.CommentDate}}</span></view>
+                  <view class="huiFu" wx:for="{{item.CommentsList}}" wx:for-item="citem" wx:for-index="cindex" wx:key="{{cindex}}">
+                     <image class="ht" src="{{citem.Picture}}"/>
+                     <span class="contantH">
+                           <view class="name_type">
+                              <span class="na">{{citem.UserName}}</span>
+                              <span class="type" wx:if="{{citem.UserId==dataInfo.UserId}}">作者</span>
+                           </view>
+                           <view class="rtext">{{citem.Contents}}
+                              <span class="time">{{citem.CommentDate}}</span>
+                           </view>
+                     </span>
+                  </view>
+               </span>
+            </view>
+            <view class="noMore"  wx:if="{{CommentList.finsh}}">
+               已经到底啦~~~
+            </view>
+         </scroll-view>
+        
+
+      </view>
+
+      <view class="seachMT" >
+         <view class="seachbg">
+               <input disabled="{{true}}" bindtap="openFN" placeholder="说点什么，让TA也认识看笔记的你" value="{{seach}}" data-name="seach"/>
+         </view>
+         <van-button size="small" bindtap="submitComT">发送</van-button>
+      </view>
+
+   </view>
+
+</view>
+
+
+<!-- 底部导航条 -->
+<view class="navBarFu">
+    <view bindtap="toFNNav" data-to="{{item.to}}" class="child {{2==index?'max':''}}  " wx:for="{{navBar}}" wx:key="index" data-index="{{index}}" >
+        <image wx:if="{{2==index}}"  mode="aspectFill" src="{{imgUrl+item.img}}" data-index="{{index}}"/>
+        <text class="name" data-index="{{index}}">{{item.name}}</text>
+    </view>
+</view>
+
+<!--  -->
+<van-popup show="{{commenT.show}}"  position="bottom" bind:close="onCloseP">
+   <view class="seachMT" >
+      <view class="seachbg">
+            <input  focus="{{focusfu}}"  placeholder="请输入你回复的内容" value="{{commenT.txt}}" data-name="commenT.txt" bindinput="seaChFN"/>
+      </view>
+      <van-button size="small" bindtap="submitComT">发送</van-button>
+   </view>
+   
+</van-popup>

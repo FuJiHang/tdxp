@@ -1,0 +1,96 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2020-01-04 18:26:46 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2020-01-04 18:26:46 
+    积分商品上下架
+ */ -->
+<view id="fuChangePoint">
+    <van-tabs sticky="{{true}}" class="van_order" line-width='20' color="#F56F68" active="{{ active }}" bind:change="onChangeTop" swipeable>
+        <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+            <view class="list" wx:for="{{item.data}}" wx:for-index="indexc" wx:for-item="itemc" wx:key="{{indexc}}">
+                <image mode="aspectFill" src="{{itemc.ImageUrl}}"></image>
+                <span class="contant">
+                    <view class="name">{{itemc.Name}}</view>
+                    <view class="val">1: {{itemc.CostPrice}}元兑换</view>
+                    <view class="val">2: {{itemc.ComboPrice}}元+{{itemc.ComboPoint}}积分兑换</view>
+                    <view class="val">库存：{{itemc.StoreStock}}个</view>
+                    <view class="val">采购方式：{{itemc.BuyPrice}}元/个 或者 {{itemc.BuyPoints}}积分/个</view>
+                    <view class="btn">
+                        <span class="bg">
+                            <van-button size="small" bindtap="buyFN" data-data="{{itemc}}">
+                                采购
+                            </van-button>
+                            <van-button bindtap="changeFN" data-id="{{itemc.GiftId}}" size="small">
+                                {{active?'上架':'下架'}}
+                            </van-button>
+                        </span>
+                        <van-button size="small" bindtap="openFN" data-data="{{itemc}}">
+                            设置
+                        </van-button>
+                    </view>
+                </span>
+            </view>
+        </van-tab>
+    </van-tabs>
+</view>
+<view class="cart" bindtap="openCart">
+    <image src="https://bcdj.9oasd.cn/images/syYy.png" mode="widthFix"></image>
+</view>
+<van-popup show="{{showAlert}}" position="bottom" bind:close="onCloseP">
+    <view class="seachMT">
+        <view class="seachbg">
+            <view>方式一：</view>
+            <view class="disFlex">
+                <span class="name">价格</span>
+                <input placeholder="请输入价格" value="{{CostPrice}}" data-name="CostPrice" bindinput="seaChFN" />
+            </view>
+        </view>
+        <view class="seachbg">
+            <view>方式二：</view>
+            <view class="disFlex">
+                <span class="name">价格</span>
+                <input placeholder="请输入价格" value="{{ComboPrice}}" data-name="ComboPrice" bindinput="seaChFN" />
+            </view>
+            <view class="disFlex">
+                <span class="name">积分</span>
+                <input placeholder="请输入积分" value="{{ComboPoint}}" data-name="ComboPoint" bindinput="seaChFN" />
+            </view>
+        </view>
+        <van-button size="small" bindtap="submitComT">确定</van-button>
+    </view>
+</van-popup>
+<van-popup show="{{showAlertT}}" position="bottom" bind:close="onCloseP">
+    <view class="seachMT">
+        <view class="seachbg">
+            <!-- <view>当前积分  所需积分</view> -->
+            <view class="disFlex">
+                <span class="name">数量</span>
+                <input placeholder="请输入采购数量" value="{{numBuy}}" data-name="numBuy" bindinput="seaChFN" />
+            </view>
+        </view>
+        <van-button size="small" bindtap="toCard">加入购物车</van-button>
+    </view>
+</van-popup>
+<van-popup show="{{showAlertTH}}" position="bottom" bind:close="onCloseP">
+    <view class="cartAlert">
+        <view class="seachbg">
+            <view>当前积分  购买方式：{{point}}积分 或者 {{allPrice}}元</view>
+            <view class="cartList" wx:for="{{buyList}}" wx:key="{{index}}">
+                <image mode="aspectFill" src="{{item.img}}"></image>
+                <span class="name">数量</span>
+                <input placeholder="请输入采购数量" value="{{item.num}}" data-name="{{'buyList['+index+'].num'}}" bindinput="seaChFN" />
+                <van-button size="mini" type="danger" data-index="{{index}}" bindtap="delectFN">删除</van-button>
+            </view>
+        </view>
+        <view class="btnBon">
+             <span class="child">
+              <van-button size="small" bindtap="pointFN">积分</van-button>
+             </span>
+            <span class="child mon">
+                <van-button size="small" bindtap="moneyFN">金额</van-button>
+            </span>
+          
+        </view>
+    </view>
+</van-popup>

@@ -1,0 +1,99 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-06 16:57:38 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-06 16:57:38 
+    商品分类
+ */ -->
+
+
+<view id="fuClassfiy">
+
+    <!--  -->
+
+    <view class="seachMT" >
+        <view class="seachbg">
+            <image mode="widthFix" src="{{imgUrl+'icon_search.png'}}" />
+            <input    placeholder="洗衣液" value="{{seach}}"  bindinput="seaChFN"/>
+            <van-icon wx:if="{{clear}}" bindtap="clearFN" name="clear" color="#999" size="30rpx" />
+        </view>
+        <van-button size="small" bindtap="submitComT">搜索</van-button>
+    </view>
+
+
+    <!-- 预约页面 -->
+    <view class="appointTO">
+        <!-- 左边 -->
+        <view class="leftCont" >
+            <view class="Choose {{isChoose==index?'isChoose':''}}" wx:for="{{subs}}" data-index="{{index}}" bindtap="chooseFN"  wx:key="index" >{{item.name}}</view>
+        </view>
+        <!-- 右边 -->
+        <view class="rightCont">
+            <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getDataR">
+                <view class="detail">
+                    <view class="banner">
+                        <image  src="{{imgUrl+'index009.jpg'}}" mode="widthFix" />
+                    </view>
+                    <view class="list">
+                        <view class="title">
+                            保湿类 <span class="flex"></span>
+                        </view>
+                        <view class="contant">
+                            <span class="child">
+                                <image mode="aspectFill" src="{{imgUrl+'index009.jpg'}}" />
+                                <view class="name">女士香水</view>
+                            </span>
+                            <span class="child">
+                                <image mode="aspectFill" src="{{imgUrl+'index009.jpg'}}" />
+                                <view class="name">女士香水</view>
+                            </span>
+                            <span class="child">
+                                <image mode="aspectFill" src="{{imgUrl+'index009.jpg'}}" />
+                                <view class="name">女士香水</view>
+                            </span>
+                             <span class="child">
+                                <image mode="aspectFill" src="{{imgUrl+'index009.jpg'}}" />
+                                <view class="name">女士香水</view>
+                            </span>
+                        </view>
+                    </view>
+                     <view class="list">
+                        <view class="title">
+                            保湿类 <span class="flex"></span>
+                        </view>
+                        <view class="contant">
+                            <span class="child">
+                                <image mode="aspectFill" src="{{imgUrl+'index009.jpg'}}" />
+                                <view class="name">女士香水</view>
+                            </span>
+                            <span class="child">
+                                <image mode="aspectFill" src="{{imgUrl+'index009.jpg'}}" />
+                                <view class="name">女士香水</view>
+                            </span>
+                            <span class="child">
+                                <image mode="aspectFill" src="{{imgUrl+'index009.jpg'}}" />
+                                <view class="name">女士香水</view>
+                            </span>
+                             <span class="child">
+                                <image mode="aspectFill" src="{{imgUrl+'index009.jpg'}}" />
+                                <view class="name">女士香水</view>
+                            </span>
+                        </view>
+                    </view>
+                </view>
+                <view class="noMore" wx:if="{{functionList[active].subs[isChoose].finish}}">
+                    没有更多的了~~~
+                </view>
+                <view class="noMore" wx:if="{{!functionList[active].hasChild}}">
+                    暂无数据，看看其他吧~~~
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+            
+        
+
+
+
+
+</view>

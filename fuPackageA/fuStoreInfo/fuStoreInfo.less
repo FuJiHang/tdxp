@@ -1,0 +1,111 @@
+
+
+
+page{
+    height: 100%;
+    font-size: 28rpx;
+    position: relative;
+    background: white;
+}
+
+#fuStoreInfo{
+    position: relative;
+    color: #666;
+
+    // 
+    .chooseType{
+        display: flex;
+        align-items: center;
+        padding: 20rpx 20rpx 20rpx 0;
+        margin-left: 20rpx;
+        box-sizing: border-box;
+        .val{
+            flex: 1;
+            margin-left: 20rpx;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            .checkS{
+                display: flex;
+                align-items: center;
+                font-size: 45rpx;
+                transform: scale(0.6,0.6);
+            }
+        }
+    }
+
+    // 
+    .child{
+        display: flex;
+        align-items: baseline;
+        padding: 20rpx;
+        box-sizing: border-box;
+        .val{
+            margin-left: 20rpx;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            border:1px solid rgb(240, 240, 240);
+            padding:5rpx 20rpx;
+            box-sizing: border-box;
+            input{
+                display: flex;
+                align-items: center;
+                
+                width: 100%;
+            }
+            
+        }
+        .address{
+            margin-left: 20rpx;
+            .one{
+                flex: 1;
+                display: flex;
+                align-items: center;
+                border:1px solid rgb(240, 240, 240);
+                padding:5rpx 20rpx;
+                box-sizing: border-box;
+                margin-bottom: 20rpx;
+            }
+            .mini{
+                padding:15rpx 20rpx;
+            }
+            image{
+                margin: 0 0 0 20rpx;
+                height: 40rpx;
+                width: 40rpx;
+                
+            }
+        }
+    }
+
+    // 
+    .time{
+        
+        .val{
+            margin: 0 20rpx;
+            input{
+                text-align: center;
+            }
+        }
+    }
+
+    // 
+    .btn{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        .van-button{
+            width: 100%;
+            border:none;
+            border-radius: 0;
+            color: white;
+            background: #f56e68;
+        }
+    }
+
+    // 
+    .van-picker-column__item--selected,.van-picker__cancel,.van-picker__confirm{
+        color: #F56F68;
+    }
+}

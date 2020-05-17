@@ -1,0 +1,87 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-03 10:04:42 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-03 10:04:42 
+    拼团活动
+*/ -->
+<view id="fuCollAciton">
+    
+    <!--  -->
+    <view class="storeCard">
+        <image mode="aspectFill" src="{{imgUrl+'index006.jpg'+'?x-oss-process=image/resize,l_640'}}"  />
+        <span class="contant">
+            <view class="name">{{dataInfo.ProductName}}</view>
+            <view class="val">{{dataInfo.ShortDescription}}</view>
+            <view class="pri_num">
+                <span class="pri">￥{{dataInfo.SalePrice}}</span>
+                <span class="num">已售{{dataInfo.SaleCounts}}</span>
+            </view>
+        </span>
+    </view>
+    
+
+
+    <view class="editor">
+        <view class="navTap" >
+            编辑活动
+        </view>
+        <view class="contant" >
+            <view class="name_val flexEd">
+                <span class="name">活动价：</span>
+                <span class="val input">
+                    <input value="{{post.ProductPrice}}" data-data="post.ProductPrice" bindinput="inputChange"/>
+                </span>
+            </view>
+            <view class="num_peo flexEd">
+                <span class="name">拼团人数：</span>
+                <span class="val" wx:for="{{people}}" wx:key="{{index}}" >
+                   <checkbox class="check" data-index="{{index}}" bindtap="checkFN" checked="{{item.isChoose}}"/>{{item.name}}
+                </span>
+                <span class="zdy">自定义</span>
+                 
+                <span class="val input">
+                    <input value="{{post.JoinNumber}}" data-data="post.JoinNumber" bindinput="inputChange"/>
+                </span>
+            </view>
+             <view class="time flexEd">
+                <span class="name">活动起始日期：</span>
+                <span style="width:30%" class="val input" bindtap="openTime" data-index="post.StartDate">
+                    <input  value="{{post.StartDate}}"  disabled />
+                </span>
+                --
+                <span style="width:30%" class="val input " bindtap="openTime" data-index="post.EndDate">
+                    <input  value="{{post.EndDate}}"  disabled/>
+                </span>
+            </view>
+            <view class="guizhe">
+                <textarea value="{{post.Remark}}" data-data="post.Remark" bindinput="inputChange" placeholder='请输入活动规则' >
+                    
+                </textarea>
+            </view>
+        </view>
+          
+    </view>
+      
+      
+      
+
+
+    <view class="btn" bindtap="submitFN">
+        <van-button>提交活动</van-button>
+    </view>
+
+
+</view>
+
+<!-- 时间 -->
+<van-popup show="{{ showTime }}" position="bottom" bind:close="onClose">
+    <van-datetime-picker
+        type="datetime"
+        value="{{currentDate}}"
+        bind:input="onInput"
+        bind:confirm="okTime"
+        bind:cancel="onClose"
+        min-date="{{minDate}}"
+    />
+</van-popup>   

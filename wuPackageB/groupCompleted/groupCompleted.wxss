@@ -1,0 +1,278 @@
+.content {
+  box-sizing: border-box;
+  padding-bottom: 100rpx;
+}
+.content .hearder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 30rpx 0;
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+}
+.content .hearder .title {
+  display: flex;
+  align-items: center;
+}
+.content .hearder .title .title_img {
+  width: 60rpx;
+  height: 60rpx;
+}
+.content .hearder .title .title_t {
+  font-size: 30rpx;
+  color: #1afa29;
+  margin-left: 10rpx;
+}
+.content .hearder .addactive {
+  display: block;
+  width: 190rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 26rpx;
+  color: #999;
+  text-align: center;
+  border-radius: 5rpx;
+  background-color: #f2f2f2;
+}
+.content .hearder .new_title {
+  margin-top: 60rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.content .hearder .new_title text {
+  color: red;
+}
+.content .hearder .acc_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30rpx 0 30rpx 0;
+}
+.content .hearder .acc_content .acc_img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  border: 1rpx dashed #eee;
+  position: relative;
+}
+.content .hearder .acc_content .acc_img::before {
+  content: '团长';
+  padding: 0 8rpx;
+  border-radius: 18rpx;
+  color: #fff;
+  font-size: 26rpx;
+  background-color: #F4AD48;
+  position: absolute;
+  top: -7rpx;
+  left: -6rpx;
+}
+.content .hearder .acc_content .acc_img .accimg {
+  width: 100%;
+  border-radius: 50%;
+}
+.content .hearder .acc_content .acc_img2 {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30rpx 0 30rpx 0;
+}
+.content .hearder .acc_content .acc_img2 .accimg {
+  border-radius: 50%;
+}
+.content .hearder .acc_content .magin-r {
+  margin-left: -40rpx;
+}
+.content .btn_wrap {
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content .btn_wrap .btn2 {
+  width: 90%;
+  height: 82rpx;
+  line-height: 82rpx;
+  background-color: #fa3e3f;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+.content .btn_wrap .btn {
+  width: 90%;
+  background-color: #fa3e3f;
+  font-size: 30rpx;
+  color: #fff;
+  padding: 20rpx 0;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.content .btn_wrap .active {
+  background-color: #fff;
+  border: 1rpx solid #fa3e3f;
+  color: #fa3e3f;
+}
+.content .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+.content .info .acc_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30rpx 0 30rpx 0;
+}
+.content .info .acc_content .acc_img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  border: 1rpx dashed #eee;
+  position: relative;
+}
+.content .info .acc_content .acc_img .accimg {
+  width: 100%;
+  border-radius: 50%;
+}
+.content .info .acc_content .acc_img2 {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  border: 1rpx dashed #999999;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 60rpx;
+  color: #999;
+}
+.content .info .acc_content .magin-r {
+  margin-left: -40rpx;
+}
+.content .info .acc_content .teamLogo::before {
+  content: '团长';
+  padding: 0 8rpx;
+  border-radius: 18rpx;
+  color: #fff;
+  font-size: 26rpx;
+  background-color: #F4AD48;
+  position: absolute;
+  top: -7rpx;
+  left: -6rpx;
+}
+.content .info .order_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 25rpx;
+  border-top: 1rpx solid #eee;
+}
+.content .info .order_info .test {
+  color: #999;
+}
+.content .list {
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+.content .list .list_title {
+  padding: 20rpx 0;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+  border-bottom: 1rpx solid #eee;
+}
+.content .list .list_title text {
+  color: red;
+}
+.content .list .project {
+  margin: 24rpx 30rpx 0;
+  display: flex;
+  align-items: center;
+  background: #F7F7F7;
+  border-bottom: 1rpx solid #eee;
+}
+.content .list .project .img_num {
+  position: relative;
+}
+.content .list .project .img_num image {
+  height: 270rpx;
+  width: 270rpx;
+}
+.content .list .project .img_num .num {
+  border-radius: 0 30rpx 30rpx 30rpx;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 2rpx 10rpx 4rpx;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #d44639;
+}
+.content .list .project .contant {
+  display: flex;
+  flex-direction: column;
+  padding: 24rpx 22rpx;
+  box-sizing: border-box;
+  height: 270rpx;
+  flex: 1;
+}
+.content .list .project .contant .name_num {
+  font-size: 28rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+.content .list .project .contant .price_btn {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+.content .list .project .contant .price_btn .flex {
+  flex: 1;
+}
+.content .list .project .contant .price_btn .flex .peo_pri {
+  color: #E65757;
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+}
+.content .list .project .contant .price_btn .flex .peo_pri .pri {
+  font-size: 34rpx;
+}
+.content .list .project .contant .price_btn .flex .oneBuy {
+  color: #999;
+}
+.content .list .project .contant .price_btn .flex .oneBuy .pri {
+  text-decoration: line-throug;
+}
+.content .list .project .contant .price_btn .van-button {
+  color: #fff;
+  background: linear-gradient(83deg, #d34438 0%, #f2635e 100%);
+  border-radius: 15px;
+}
+.content .noda {
+  width: 100%;
+  font-size: 30rpx;
+  color: #999;
+  padding: 30rpx 0;
+  text-align: center;
+}
+/*# sourceMappingURL=./groupCompleted.css.map */

@@ -1,0 +1,41 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-21 15:58:09 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-21 15:58:09 
+    选择客户
+ */ -->
+
+<view id="fuPeople">
+
+
+    <!--  -->
+    <view class="seachMT">
+        <view class="seachbg">
+            <image src="{{imgUrl+'icon_search.png'}}" mode="aspectFill" />
+            <input placeholder="请输入手机号码" value="{{seach}}" bindinput="seaChFN" />
+        </view>
+        <van-button size="small" bindtap="getDataS">搜索</van-button>
+    </view>
+
+    <!--  -->
+    <view class="tip">
+        请选择客户
+    </view>
+
+    <!--  -->
+    <view class="title list">
+        <span class="child">姓名</span>
+        <span class="child">手机号</span>
+    </view>
+    <view class="list" wx:for="{{dataList}}" wx:key="{{index}}" bindtap="toFN" data-uid="{{item.UserId}}">
+        <span class="child">{{item.NickName}}</span>
+        <span class="child">{{item.CellPhone}}</span>
+    </view>
+
+    <view class="noMore" wx:if="{{finsh}}">
+        没有更多的了~~~
+    </view>
+
+
+</view>

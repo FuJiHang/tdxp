@@ -1,0 +1,96 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2020-03-13 16:55:31 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2020-03-13 16:55:31 
+    直播列表
+ */ -->
+<view id="fuLive">
+    <!-- <view class="list" bindtap="toFN" data-stu="{{item.Status}}" data-url="{{'plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id='+item.LiveRoomId}}" data-rid="{{item.LiveRoomId}}" wx:for="{{dataList}}" wx:key="{{index}}">
+        <span class="img">
+            <image class="imgbg" src="{{item.ShowImg[0]}}" mode="aspectFill"></image>
+            <span class="stuts">
+                <span class="name {{item.Status!=3?'hui':''}}">
+                    {{item.Status==3?'直播中':item.Status==4?'已结束':'待开播'}}
+                </span>
+              
+            </span>
+            <span class="people">
+                <image src="{{item.Picture}}" mode="aspectFill"></image>
+                <span class="name">{{item.AnchorName}}</span>
+            </span>
+        </span> 
+        <span class="contant">
+            <view class="name">{{item.Title}}</view>
+            <view class="val">
+                直播时间:
+                <span class="black">{{item.BeginTime +'-'+ item.endTime}}</span>
+            </view>
+            <view class="val dis">
+                <span>直播间粉丝福利</span>
+                <span class="red" wx:if="{{item.Status==4}}" data-id="{{item.Id}}" catchtap="openAlert">往期回放</span>
+            </view>
+            <view class="list">
+                <span catchtap="toFN" data-url="{{'/fuPackageA/fuProductT/fuProductT?prDid='+items.ProductId}}" class="child" wx:if="{{indexs<2}}" wx:for="{{item.Products}}" wx:for-index="indexs" wx:for-item="items" wx:key="{{indexs}}">
+                    <image src="{{items.ImageUrl}}" mode="aspectFill"></image>
+                    <view class="price">￥{{items.Price}}</view>
+                </span>
+            </view>
+        </span>
+    </view> -->
+    <span class="imgLive" bindtap="toFN" data-stu="{{item.Status}}"
+        data-url="{{'plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id='+item.LiveRoomId}}"
+        data-rid="{{item.LiveRoomId}}" wx:for="{{dataList}}" wx:key="{{index}}">
+        <image class="imgbg" src="{{item.ShowImg[0]}}" mode="aspectFill"></image>
+        <span class="stuts">
+            <span class="name {{item.Status==3?'zbz':item.Status==4?'hui':'dkb'}}">
+                {{item.Status==3?'直播中':item.Status==4?'已结束':'待开播'}}
+            </span>
+            <!-- <span class="val">{{item.ViewNum}}人观看</span> -->
+        </span>
+        <span class="peopleLive">
+
+            <view class="peopleZb">
+                <span class="float">
+                    <image src="{{item.Picture}}" mode="aspectFill"></image>
+                    <span class="name">{{item.AnchorName}}</span>
+                </span>
+            </view>
+            <view class="title_time">
+                <span class="title">{{item.Title}}</span>
+                <view class="timeF">时间:{{item.BeginTime +'-'+ item.endTime}}</view>
+            </view>
+        </span>
+
+        <image wx:if="{{item.Status!=4}}" class="typeImg"
+            src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/like003.png?1" mode="aspectFill">
+        </image>
+        <image wx:if="{{item.Status!=4}}" class="typeImg lastBtn"
+            src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/gift003.png?1" mode="aspectFill"></image>
+        <span class="HuiFan" wx:if="{{item.Status==4}}" data-id="{{item.Id}}" catchtap="openAlert">
+            <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/playW.png" mode="aspectFill"></image>查看回放
+        </span>
+    </span>
+
+
+
+    <view class="noMore">没有更多的了~~~</view>
+</view>
+<!--  -->
+<van-popup show="{{show}}"
+    custom-style="height:100%;justify-content: center;align-items: center;background:rgba(0,0,0,.1);display: flex;"
+    bindtap="onCloseP" position="bottom" bind:close="onCloseP">
+    <view class="zhibo" catchtap>
+        <scroll-view class="scroll-view" lower-threshold="huifan" scroll-y="true">
+            <span class="child" wx:for="{{videoList}}" wx:key="{{index}}">
+                <view class="time">
+                    <span class="create">开始时间:{{item.create_time}}</span>
+                    <span>过期时间:{{item.expire_time}}</span>
+                </view>
+                <video
+                    poster="{{item.media_url+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_10000,m_fast'}}"
+                    object-fit="cover" class="myVideo" src="{{item.media_url}}" autoplay='{{false}}' controls></video>
+            </span>
+        </scroll-view>
+    </view>
+</van-popup>

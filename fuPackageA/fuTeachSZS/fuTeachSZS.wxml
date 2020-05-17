@@ -1,0 +1,28 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-17 16:17:09 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-17 16:17:09 
+    匠心证书上传
+ */ -->
+<view id="fuTeachSZS">
+
+    <!--  -->
+   <view class="navTap">
+      <span class="name">匠心证书</span>
+   </view>
+   <view class="contant">
+      <span class="img" wx:for="{{imageLoad}}" data-index="{{index}}" wx:key="{{index}}" bindtap="chooseFN">
+         <image src="{{item}}" mode="aspectFill" />
+      </span>
+      <span class="img" wx:if="{{imageLoad.length<1}}">
+         <image bindtap="chooseImage" src="{{imgUrl+'addMD.png?1'}}" mode="aspectFill" />
+      </span>
+   </view>
+
+    <!--  -->
+   <view class="btn" bindtap="submit">
+      <van-button >提交</van-button>
+   </view>
+
+</view>

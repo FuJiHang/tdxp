@@ -1,0 +1,174 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-09-17 19:51:53 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-09-17 19:51:53 
+    抖音个人空间
+*/ -->
+<view id="fuJitterPeo">
+        <!--  -->
+   
+        <view class="navTop">
+            <view class="people">
+                <span class="img">
+                    <image src="{{dataList[0].Picture}}" />
+                </span>
+                <span class="flex">
+                    <view class="name">{{allData.UserName?allData.UserName:'无'}}</view>
+                    <view class="bc">
+                        <image src="{{imgUrl+'pyqCGF.png'}}" />
+                        <span class="val">{{allData.StoreName?allData.StoreName:'无'}}</span>
+                    </view>
+                </span>
+                <span class="guanzhu" bindtap="Favorite">
+                    <van-button round size="small">{{allData.IsFavorite?'已关注':'+关注'}}</van-button>
+                </span>
+            
+            </view>
+            <!--  -->
+         
+            <!--  -->
+            <view class="sign">{{allData.PerDescribe?allData.PerDescribe:'无'}}</view>
+            <!--  -->
+            <view class="funtion">
+                <span class="child" bindtap="toStore">
+                    <image src="{{imgUrl+'pyqMDF.png'}}" />
+                    进入门店
+                </span>
+                <span class="child" bindtap="callFN">
+                    <image src="{{imgUrl+'pyqDHF.png'}}" />
+                    联系方式
+                </span>
+            </view>
+            <!--  -->
+            <view class="hz_gz_fs">
+                <span class="flex">
+                    <span class="child">{{allData.ArticleLikeCount?allData.ArticleLikeCount:0}}获赞</span>
+                    <span class="child">{{allData.CommentCount?allData.CommentCount:0}}评论数</span>
+                    <span class="child">{{allData.CollectionCount?allData.CollectionCount:0}}收藏</span>
+                </span>
+                <span class="child red" wx:if="{{!openDet}}" bindtap="delectFN">删除</span>
+                <span class="child red" wx:if="{{!UserId}}" bindtap="collectFN">{{openDet?'管理':'取消'}}</span>
+            </view>
+            <!--  -->
+            <view class="contant {{nearTop?'nearTop':''}}">
+                <van-tabs line-width='20' bind:scroll="changeTop" color="#f0cf2c" sticky="{{true}}" active="{{ active }}" bind:change="onChange" swipeable>
+                    <van-tab wx:for="{{functionList}}" title="{{item.name+item.num}}" wx:key="{{index}}">
+                        <span class="goods" wx:if="{{active==0}}" wx:for="{{dataList}}" wx:key="{{index}}" data-det="{{item.isDelect}}" data-index="{{index}}" bindtap="toJitterFN">
+                          
+                            <image mode="aspectFill" src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}" />
+                            <span class="btn">
+                                <van-icon catchtap="Fabulous" name="like" size="30rpx" color="#fff" />
+                                {{item.ArticleLikeCount}}
+                            </span>
+                            <view class="check" wx:if="{{!openDet}}">
+                                <van-checkbox checked-color="#F56F68" value="{{ item.isDelect }}" ></van-checkbox>
+    
+                            </view>
+                        </span>
+                        <span class="goods" wx:if="{{active==2}}" wx:for="{{likeList}}" wx:key="{{index}}" data-index="{{index}}" bindtap="toJitterFNX">
+                          
+                            <image mode="aspectFill" src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}" />
+                            <span class="btn">
+                                <van-icon catchtap="Fabulous" name="like" size="30rpx" color="#fff" />
+                                {{item.ArticleLikeCount}}
+                            </span>
+                        </span>
+                        <view class="pyq" hidden="{{active!=1}}" wx:for="{{dataList}}" wx:key="{{index}}">
+                            <view class="logo_name">
+                                <image src="{{item.Picture}}" />
+                                {{item.UserName}}
+                            </view>
+                            <view class="title">{{item.Contents}}</view>
+                            <view class="video" bindtap="playFN" data-index="{{index}}" catchtouchmove>
+                                <image src="{{item.ImageUrls}}" mode="aspectFill" wx:if="{{!item.isVideo}}" />
+                                <block wx:if="{{item.isVideo}}">
+                                    <span class="play">
+                                        <van-icon name="play" size="120rpx" color="#fff" wx:if="{{showPlay!=index}}" />
+                                    </span>
+                                    <image src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}" mode="widthFix" wx:if="{{showPlay!=index}}" />
+                                    <video object-fit="contain" show-center-play-btn="{{false}}" loop="{{true}}" wx:if="{{showPlay==index}}" autoplay="{{true}}" src="{{item.ImageUrls}}"></video>
+                                </block>
+                            </view>
+                            <view class="funtion_time">
+                                <span class="time">{{item.kaisiTime}}</span>
+                                <span class="flex">
+                                    <span class="child" wx:for="{{funL}}" wx:for-index="cindex" wx:for-item="citem" wx:key="{{index}}" data-id="{{item.Id}}" data-findex="{{index}}" data-index="{{cindex}}" bindtap="chooseFN">
+                                        <image mode="aspectFit" src="{{cindex==2&&item.IsArticleLike?citem.img1:citem.img}}" />
+                                        {{citem.name}}
+                                    </span>
+                                </span>
+                            </view>
+                            <view class="evaluate">
+                                <view class="zan">{{item.ArticleLikeCount}}人赞过</view>
+                                <view class="allEva" data-id="{{item.Id}}" data-findex="{{index}}" data-index="{{1}}" bindtap="chooseFN">
+                                    查看全部{{item.CommentCount}}条评论
+                                </view>
+                                <view class="btn" data-id="{{item.Id}}" data-findex="{{index}}" data-index="{{1}}" bindtap="chooseFN">
+                                    <image mode="aspectFit" src="{{imgUrl+'pyq_qb.png'}}" />
+                                    添加评论...
+                                </view>
+                            </view>
+                        </view>
+                    </van-tab>
+                </van-tabs>
+            </view>
+        </view>
+        <!--  -->
+        <view class="navTopDing {{nearTop?'see':''}}">
+            <span class="name">{{allData.UserName}}</span>
+            <span class="guanzhu" bindtap="Favorite">
+                <van-button size="mini">{{allData.IsFavorite?'已关注':'+关注'}}</van-button>
+            </span>
+        </view>
+    </view>
+    <!--  -->
+    <view class="Comment {{isComShow?'isComShow':''}}" bindtap="ComShowFN">
+        <view class="contantCom" catchtap>
+            <view class="listDiv">
+                <scroll-view scroll-y="{{true}}" bindscrolltolower="getComment">
+                    <view class="peopleHt" wx:for="{{CommentList.data}}" wx:key="{{index}}" bindtap="commentOne" data-id="{{item.id}}" data-aid="{{item.Articleid}}">
+                        <image class="pt" src="{{item.Picture}}" />
+                        <span class="contant">
+                            <view class="name">{{item.UserName}}</view>
+                            <view class="title">
+                                {{item.Contents}}
+                                <span class="time">{{item.CommentDate}}</span>
+                            </view>
+                            <view class="huiFu" wx:for="{{item.CommentsList}}" wx:for-item="citem" wx:for-index="cindex" wx:key="{{cindex}}">
+                                <image class="ht" src="{{citem.Picture}}" />
+                                <span class="contantH">
+                                    <view class="name_type">
+                                        <span class="na">{{citem.UserName}}</span>
+                                        <span class="type" wx:if="{{citem.UserId==dataInfo.UserId}}">
+                                            作者
+                                        </span>
+                                    </view>
+                                    <view class="rtext">
+                                        {{citem.Contents}}
+                                        <span class="time">{{citem.CommentDate}}</span>
+                                    </view>
+                                </span>
+                            </view>
+                        </span>
+                    </view>
+                    <view class="noMore" wx:if="{{CommentList.finsh}}">已经到底啦~~~</view>
+                </scroll-view>
+            </view>
+            <view class="seachMT">
+                <view class="seachbg">
+                    <input disabled="{{true}}" bindtap="openFN" placeholder="说点什么，让TA也认识看笔记的你" value="{{seach}}" data-name="seach" />
+                </view>
+                <van-button size="small" bindtap="submitComT">发送</van-button>
+            </view>
+        </view>
+    </view>
+    <!--  -->
+    <van-popup show="{{commenT.show}}" position="bottom" bind:close="onCloseP">
+        <view class="seachMT">
+            <view class="seachbg">
+                <input focus="{{focusfu}}" placeholder="请输入你回复的内容" value="{{commenT.txt}}" data-name="commenT.txt" bindinput="seaChFN" />
+            </view>
+            <van-button size="small" bindtap="submitComT">发送</van-button>
+        </view>
+    </van-popup>

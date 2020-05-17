@@ -1,0 +1,396 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-15 10:30:45 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-15 10:30:45 
+    商城
+ */ -->
+<view id="fuNewMarket">
+    <!--  -->
+    <view class="storeInfo">
+        <image mode="aspectFill" src="{{getStore.StoreImages}}" />
+        {{getStore.StoreName}}
+    </view>
+    <!-- 轮播图 -->
+    <!-- 轮播图 -->
+    <view class="swiper">
+        <swiper autoplay="{{true}}" interval="{{3000}}" style="height:{{imgheights[current]}}rpx;" circular
+            bindchange="bindchange">
+            <swiper-item wx:for="{{imgUrls}}" wx:key="{{index}}">
+                <image data-id='{{index}}' bindload="imageLoad" mode='widthFix'
+                    src="{{item+'?x-oss-process=image/resize,l_640'}}" class="slide-image" width="355" height="150" />
+            </swiper-item>
+        </swiper>
+        <view class="dot">
+            <span class="child {{index==current?'dotRed':''}}" wx:for="{{imgUrls}}" wx:key="{{key}}"></span>
+        </view>
+    </view>
+    <!--  -->
+    <view class="jzjs">
+        <span class="child" wx:for="{{jzjs}}" wx:key="{{index}}">
+            <image mode="widthFix" src="{{item.img}}" />
+            {{item.name}}
+        </span>
+    </view>
+    <!-- <view class="function">
+        <span class="child" bindtap="toFN" data-to="{{item.to}}" data-post="{{item.post}}" wx:for="{{funList}}" wx:key="{{index}}">
+            <image src="{{item.img}}" mode="widthFix"></image>
+            <view class="name">{{item.name}}</view>
+        </span>
+    </view> -->
+    <!--  -->
+    <!-- <view class="notice">
+        <van-notice-bar left-icon="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/gg@3x.png" color="#333333" backgroundColor="#fff" text="公告：偏远地区不包邮。" />
+    </view> -->
+    <!--  -->
+    <!-- <view class="xsqg" >限时抢购</view> -->
+    <!--  -->
+    <view class="classfiyT">
+        <span class="child" wx:if="{{index<8}}" bindtap="toProType" data-item="{{item}}"
+            wx:for="{{classfiyT}}" wx:key="{{index}}">
+            <image src="{{item.icon}}" mode="widthFix"></image>
+            <view class="name">{{item.name}}</view>
+        </span>
+    </view>
+    <!--  -->
+    <view class="zhibo">
+        <view class="navTopZb">
+            <span class="left">
+                <image class="bgI" src="{{newImg+'zbtop003.png'}}" mode="widthFix"></image>
+                <image src="{{newImg+'zbtop013.png'}}" mode="widthFix"></image>
+                <span class="max">头道直播</span>
+                <span class="mini">抽奖进行中</span>
+            </span>
+            <span class="rightZ" bindtap='toFN' data-to='/fuPackageA/fuLive/fuLive'>
+                进入直播频道
+                <image src="{{newImg+'zbtop023.png'}}" mode="widthFix"></image>
+            </span>
+        </view>
+        <view class="people">
+            <span class="child" bindtap="toFNLive" data-stu="{{item.Status}}"
+                data-url="{{'plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id='+item.LiveRoomId}}"
+                data-rid="{{item.LiveRoomId}}" wx:if="{{index<4}}" wx:for="{{liveRoom}}" wx:key="{{index}}">
+                <image src="{{item.LiveImg[0]}}" mode="aspectFill"></image>
+                <view class="name">{{item.AnchorName}}</view>
+            </span>
+        </view>
+    </view>
+    <!--  -->
+    <view class="pingtuan" wx:if="{{teamList.length}}">
+        <view class="navTopPt">
+            <span class="flex">超值拼团</span>
+            <block bindtap="toFN" data-to="/fuPackageA/fuTeamList/fuTeamList">
+                <span class="val">查看更多</span>
+                <image src="{{newImg+'arrow_bl.png'}}" mode="aspectFill"></image>
+            </block>
+        </view>
+        <view class="productPt">
+            <span class="child" wx:for-index="indexc" wx:for-item="itemc" data-productId="{{itemc.ProductId}}"
+                data-storeid="{{itemc.StoreId}}" bindtap="handleDetail" wx:for="{{teamList}}" wx:key="{{indexc}}">
+                <image mode="aspectFit" src="{{itemc.ImageUrl2}}" />
+                <view class="name">{{itemc.ProductName}}</view>
+                <view class="price_btn">
+                    <span class="mini">{{itemc.JoinNumber}}人拼团价:</span>
+                    <span class="price">¥{{itemc.SalePrice}}</span>
+                </view>
+                <span class="nums">已拼{{itemc.ShowSaleCounts}}件</span>
+            </span>
+        </view>
+    </view>
+    <!--  -->
+    <view class="xsqgT" wx:if="{{DataXLQG.length}}">
+        <view class="navTopH">限量抢购</view>
+        <view class="porductXSQG" wx:if="{{3>index}}" data-productId="{{item.ProductId}}"
+            data-storeid="{{item.StoreId}}" bindtap="handleDetail" data-sx="{{item.bfb}}" wx:for="{{DataXLQG}}"
+            wx:key="{{index}}">
+            <span wx:if="{{itemlimitTxt!='已结束'}}"
+                style="font-size: 22rpx;color: #FB1F4F;top: 10rpx;right: 22rpx;position: absolute;">
+                {{item.limitTxt}}
+                <block>{{item.limitHours}}:{{item.limitMin}}:{{item.limitSecond}}</block>
+            </span>
+            <span style="position: relative;overflow: hidden;">
+                <image src="{{item.ThumbnailUrl310+'?x-oss-process=image/resize,l_640'}}" mode='aspectFill'></image>
+                <span class="end" wx:if="{{item.bfb==100}}">
+                    <span style="transform: rotateZ(-10deg);">售罄</span>
+                </span>
+            </span>
+            <span class="contant">
+                <view class="name">{{item.ProductName}}</view>
+                <view class="price">
+                    <span class="mini">限量抢购价:</span>
+                    ¥{{item.CountDownPrice}}
+                </view>
+                <view class="del">市场价:¥{{item.SalePrice?item.SalePrice:0}}</view>
+                <view class="num_buy">
+                    <span class="flex">
+                        <view class="num">已抢{{item.bfb}}%</view>
+                        <span class="bfb">
+                            <span class="hui" style="width:{{100-item.bfb}}%;"></span>
+                        </span>
+                    </span>
+                    <van-button disabled="{{item.bfb==100}}">
+                        {{item.bfb!=100?'立即抢购':'已抢完'}}
+                    </van-button>
+                </view>
+            </span>
+        </view>
+        <view class="bottonMore" bindtap='toFN' data-to="/fuPackageA/fuXJMS/fuXJMS">
+            <van-button>查看更多</van-button>
+        </view>
+    </view>
+    <!--  -->
+    <scroll-view class="funtionTop {{scrollTop>xiDing?'xiDing':''}}" scroll-x scroll-into-view="fun{{isFun}}"
+        scroll-with-animation="true">
+        <view class="child {{isFun==index?'isFun':''}}" id="fun{{index}}" data-index="{{index}}" bindtap="isFunFN"
+            wx:for="{{productList}}" wx:key="{{index}}">
+            {{item.tagName}}
+            <view class="border" hidden="{{isFun!=index}}"></view>
+        </view>
+    </scroll-view>
+    <!-- 2_1 -->
+    <view class="childNav" id="toNav0" wx:if="{{productList[0].ProductList.length}}">
+        <span class="child"></span>
+        <span class="text">{{productList[0].tagName}}</span>
+        <span class="child"></span>
+    </view>
+    <view class="jryx" wx:if="{{productList[0].ProductList.length&&index<3}}" data-productId="{{item.ProductId}}"
+        data-storeid="{{item.StoreId}}" bindtap="handleDetail" wx:for="{{productList[0].ProductList}}"
+        wx:key="{{index}}">
+        <image mode="aspectFill" src="{{item.AdsImageUrl}}" />
+        <view class="name">{{item.ProductName}}</view>
+        <view class="type">
+            <span class="child"></span>
+        </view>
+        <view class="price_btn">
+            <span class="mini">￥</span>
+            <span class="price">{{item.SalePrice}}</span>
+            <span class="redCard" wx:if="{{item.IsVip}}">
+                <span class="red">
+                    <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/honka@3x.png" mode="widthFix" />
+                    红卡
+                </span>
+                <span class="black">专享￥{{item.NewUserPrice}}</span>
+            </span>
+            <span class="btnY">
+                <van-button round size="mini">立即购买</van-button>
+            </span>
+        </view>
+    </view>
+    <!-- 2-all -->
+    <block wx:if="{{index}}" wx:for="{{productList}}" wx:key="{{index}}">
+        <view class="childNav" id="toNav{{index}}" wx:if="{{productList[index].ProductList.length}}">
+            <span class="child"></span>
+            <span class="text">{{productList[index].tagName}}</span>
+            <span class="child"></span>
+        </view>
+        <view class="allProduct" wx:if="{{productList[index].ProductList.length}}">
+            <span class="child" wx:for-index="indexc" wx:for-item="itemc" data-productId="{{itemc.ProductId}}"
+                data-storeid="{{itemc.StoreId}}" bindtap="handleDetail" wx:for="{{productList[index].ProductList}}"
+                wx:key="{{indexc}}">
+                <image mode="aspectFit" src="{{itemc.ImageUrl2}}" />
+                <view class="name">{{itemc.ProductName}}</view>
+                <view class="price_btn">
+                    <span class="mini">￥</span>
+                    <span class="price">{{itemc.SalePrice}}</span>
+                </view>
+                <view class="redCard" wx:if="{{itemc.IsVip}}">
+                    <span class="overFlow">
+                        <span class="red">
+                            <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/honka@3x.png" mode="widthFix" />
+                            红卡</span>
+                        <span class="black">专享￥{{itemc.NewUserPrice}}</span>
+                    </span>
+                </view>
+            </span>
+        </view>
+    </block>
+    <!-- 1 -->
+    <!-- <view class="navTop" wx:if="{{productList[0].ProductList.length}}">
+        <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/shopTab.png" />
+        <view class="name">{{productList[0].tagName}}</view>
+    </view>
+    <view class="contantList" wx:if="{{productList[0].ProductList.length}}">
+        <view class="child" data-productId="{{item.ProductId}}" data-storeid="{{item.StoreId}}" bindtap="handleDetail" wx:for="{{productList[0].ProductList}}" wx:key="{{index}}">
+            <image src="{{item.ImageUrl1}}" mode="aspectFill" />
+            <span class="contant">
+                <view class="name">{{item.ProductName}}</view>
+                <view class="btn_pri">
+                    <span class="price">
+                        ￥{{item.SalePrice}}元
+                        <view style="display: flex;align-items: center;margin-top: 5rpx;" wx:if="{{item.IsVip}}">
+                            <span style="color: #999;font-size: 22rpx;margin-right: 10rpx;">
+                                会员价￥{{item.NewUserPrice}}元
+                            </span>
+                            <span style="color: red;font-size: 30rpx;background: black;border-radius: 30rpx;padding: 6rpx 10rpx;">
+                                <image style="width: 15rpx;height: 1rpx;" mode="widthFix" src="http://img.hmeshop.cn/hmeshop_jxy/images/icon_putong.png"></image>
+                            </span>
+                        </view>
+                    </span>
+                    <van-button round size="mini">马上抢</van-button>
+                </view>
+            </span>
+        </view>
+    </view> -->
+    <!-- 2 -->
+    <!-- <view class="navTop" wx:if="{{productList[1].ProductList.length}}">
+        <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/shopTab.png" />
+        <view class="name">{{productList[1].tagName}}</view>
+    </view>
+    <view class="contantListTow" wx:if="{{productList[1].ProductList.length}}">
+        <view class="child" data-productId="{{item.ProductId}}" data-storeid="{{item.StoreId}}" bindtap="handleDetail" wx:for="{{productList[1].ProductList}}" wx:key="{{index}}">
+            <image src="{{item.ImageUrl1}}" mode="aspectFill" />
+            <view class="disBox">
+                <view class="name">{{item.ProductName}}</view>
+                <view class="btn_pri">
+                    ￥{{item.SalePrice}}元
+                    <view style="display: flex;align-items: center;margin-top: 5rpx;" wx:if="{{item.IsVip}}">
+                        <span style="color: #999;font-size: 22rpx;margin-right: 10rpx;">
+                            会员价￥{{item.NewUserPrice}}元
+                        </span>
+                        <span style="color: red;font-size: 30rpx;background: black;border-radius: 30rpx;padding: 6rpx 10rpx;">
+                            <image style="width: 15rpx;height: 1rpx;" mode="widthFix" src="http://img.hmeshop.cn/hmeshop_jxy/images/icon_putong.png"></image>
+                        </span>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view> -->
+    <!-- 3 -->
+    <!-- <view class="navTop" wx:if="{{productList[2].ProductList.length}}">
+        <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/shopTab.png" />
+        <view class="name">{{productList[2].tagName}}</view>
+    </view>
+    <view class="contantListTow contantListThree" wx:if="{{productList[2].ProductList.length}}">
+        <view class="child" data-productId="{{item.ProductId}}" data-storeid="{{item.StoreId}}" bindtap="handleDetail" wx:for="{{productList[2].ProductList}}" wx:key="{{index}}">
+            <image src="{{item.ImageUrl1}}" mode="aspectFill" />
+            <view class="disBox">
+                <view class="name">{{item.ProductName}}</view>
+                <view class="btn_pri">
+                    ￥{{item.SalePrice}}元
+                    <view style="display: flex;align-items: center;margin-top: 5rpx;" wx:if="{{item.IsVip}}">
+                        <span style="color: #999;font-size: 22rpx;margin-right: 10rpx;">
+                            会员价￥{{item.NewUserPrice}}元
+                        </span>
+                        <span style="color: red;font-size: 30rpx;background: black;border-radius: 30rpx;padding: 6rpx 10rpx;">
+                            <image style="width: 15rpx;height: 1rpx;" mode="widthFix" src="http://img.hmeshop.cn/hmeshop_jxy/images/icon_putong.png"></image>
+                        </span>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="navTop" wx:if="{{productList[3].ProductList.length}}">
+        <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/shopTab.png" />
+        <view class="name">{{productList[3].tagName}}</view>
+    </view>
+    <scroll-view class="contantScoll" scroll-x wx:if="{{productList[3].ProductList.length}}">
+        <view class="child" data-productId="{{item.ProductId}}" data-storeid="{{item.StoreId}}" bindtap="handleDetail" wx:for="{{productList[3].ProductList}}" wx:key="{{index}}">
+            <image src="{{item.ImageUrl1}}" mode="aspectFill" />
+            <view class="name">{{item.ProductName}}</view>
+            <view class="btn_pri">
+                ￥{{item.SalePrice}}元
+                <view style="display: flex;align-items: center;margin-top: 5rpx;" wx:if="{{item.IsVip}}">
+                    <span style="color: #999;font-size: 22rpx;margin-right: 10rpx;">
+                        会员价￥{{item.NewUserPrice}}元
+                    </span>
+                    <span style="color: red;font-size: 30rpx;background: black;border-radius: 30rpx;padding: 6rpx 10rpx;">
+                        <image style="width: 15rpx;height: 1rpx;" mode="widthFix" src="http://img.hmeshop.cn/hmeshop_jxy/images/icon_putong.png"></image>
+                    </span>
+                </view>
+            </view>
+        </view>
+    </scroll-view> -->
+    <!-- 4 -->
+    <!-- <view wx:if="{{indexf!=0&&indexf!=1&&indexf!=2&&indexf!=3}}" wx:for="{{productList}}" wx:index="{{indexf}}" wx:for-index="indexf" wx:for-item="itemf">
+        <view class="navTop">
+            <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/shopTab.png" />
+            <view class="name">{{itemf.tagName}}</view>
+        </view>
+        <view class="contantListTow">
+            <view class="child" data-productId="{{item.ProductId}}" data-storeid="{{item.StoreId}}" bindtap="handleDetail" wx:for="{{itemf.ProductList}}" wx:key="{{index}}">
+                <image src="{{item.ImageUrl1}}" mode="aspectFill" />
+                <view class="disBox">
+                    <view class="name">{{item.ProductName}}</view>
+                    <view class="btn_pri">
+                        ￥{{item.SalePrice}}元
+                        <view style="display: flex;align-items: center;margin-top: 5rpx;" wx:if="{{item.IsVip}}">
+                            <span style="color: #999;font-size: 22rpx;margin-right: 10rpx;">
+                                会员价￥{{item.NewUserPrice}}元
+                            </span>
+                            <span style="color: red;font-size: 30rpx;background: black;border-radius: 30rpx;padding: 6rpx 10rpx;">
+                                <image style="width: 15rpx;height: 1rpx;" mode="widthFix" src="http://img.hmeshop.cn/hmeshop_jxy/images/icon_putong.png"></image>
+                            </span>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view> -->
+    <view class="konbai"></view>
+    <!--  -->
+    <!-- <image bindtap="openClassfiy" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/icon_fenlei.png" mode="widthFix"
+        class="classfiy"></image> -->
+    <van-popup show="{{ showClassfiy }}" position="right" bind:close="onClose">
+        <!-- <view class="seachMT">
+            <view class="seachbg">
+                <image mode="widthFix" src="{{imgUrl+'icon_search.png'}}" />
+                <input placeholder="洗衣液" value="{{seach}}" bindinput="seaChFN" />
+                <van-icon wx:if="{{clear}}" bindtap="clearFN" name="clear" color="#999" size="30rpx" />
+            </view>
+            <van-button size="small" bindtap="submitComT">搜索</van-button>
+        </view> -->
+        <!-- 预约页面 -->
+        <view class="appointTO">
+            <!-- 左边 -->
+            <view class="leftCont">
+                <view class="Choose {{isChoose==index?'isChoose':''}}" wx:for="{{titleArr}}" data-index="{{index}}"
+                    bindtap="chooseFN" wx:key="index" data-name="{{item.name}}" data-cid="{{item.cid}}">
+                    {{item.name}}
+                </view>
+            </view>
+            <!-- 右边 -->
+            <view class="rightCont">
+                <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getDataR">
+                    <view class="detail">
+                        <view class="banner">
+                            <image src="{{imgUrl+'index009.jpg'}}" mode="widthFix" />
+                        </view>
+                        <view class="list">
+                            <view class="title">
+                                {{title}}
+                                <span class="flex"></span>
+                            </view>
+                            <view class="contant">
+                                <block wx:for="{{titleArr[isChoose].subs}}" wx:key="{{index}}">
+                                    <span class="child" bindtap="toFN"
+                                        data-to="{{'/fuPackageA/fuShopMore/fuShopMore?id='+titleArr[isChoose].cid}}">
+                                        <image mode="aspectFill" src="{{item.icon}}" />
+                                        <view class="name">{{item.name}}</view>
+                                    </span>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="noMore" wx:if="{{!titleArr[isChoose].subs.length}}">
+                        暂无数据，看看其他吧~~~
+                    </view>
+                    <view class="noMore" wx:else>没有更多的了~~~</view>
+                </scroll-view>
+            </view>
+        </view>
+    </van-popup>
+    <view class="navBarFu">
+        <view bindtap="toFNavc" wx:if="{{index!=2}}" data-index="{{index}}" data-to="{{item.to}}"
+            class="child {{index==2?'max':''}}  {{xz==index?'black':''}}" wx:for="{{navBar}}" wx:key="index"
+            data-index="{{index}}">
+            <image mode="aspectFill" src="{{item.img}}" data-index="{{index}}" />
+            <text class="name" data-index="{{index}}">{{item.name}}</text>
+        </view>
+    </view>
+</view>
+<!--  -->
+<button class="wxkf {{scrollTop>200?'wxkfSy':''}}" open-type="contact">
+    <image mode="aspectFill" src="{{newImg+'wxkf003.png'}}" data-index="{{index}}" />
+</button>
+<image bindtap="toTopFn" class="zd {{scrollTop>200?'isShowTop':''}}" mode="aspectFill" src="{{newImg+'zd003.png'}}"
+    data-index="{{index}}" />

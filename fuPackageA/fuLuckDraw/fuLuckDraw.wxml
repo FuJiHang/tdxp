@@ -1,0 +1,84 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-15 09:31:18 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-15 09:31:18 
+    抽奖
+*/ -->
+<view id="fuLuckDraw">
+    <!-- <view class="numAll">抽奖次数：{{dataInfo}}</view> -->
+  
+    <view class="bgF">
+          <view class="callBack" bindtap="toFN"></view>
+        <image  mode="widthFix"  src="https://bcdj.9oasd.com/images/cjbj005.png?1" />
+
+        <!--  -->
+        <view class="numAll">
+            <view class="juzhong">
+                <image src="{{logoUser}}" class="logo" mode="aspectFill" />
+                <!-- <span class="flex">
+                    恭喜您获得<span style="color:red">{{dataInfo}}</span>次抽奖机会
+                </span> -->
+                <span class="name">您当前有{{Points}}积分</span>
+                每次抽奖扣{{share.ConsumptionIntegral}}积分
+            </view>
+          
+            
+        </view>
+
+
+        <view class="zhuanp">
+            
+            <view class="sasa"  animation="{{animationData}}">
+                <image src="https://bcdj.9oasd.com/images/zhuanp.png?1" />
+                <span class="child {{'ch'+index}}"  wx:for="{{dataList}}" wx:key="{{index}}">
+                    <view class="name" wx:if="{{item.AwardGrade}}">{{item.AwardGrade}}等奖</view>
+                    <view class="img">
+                        <image mode="aspectFit" src="{{item.AwardPic}}" />
+                    </view>
+                    <view class="valDet {{item.AwardGrade?'':'left'}}">{{item.AwardName}}</view>
+                </span>
+            </view>
+
+            
+        </view>
+
+        
+        <view class="zpzz" bindtap="submit">
+            <image mode="widthFix" src="https://bcdj.9oasd.com/images/zpzz.png?1" />
+        </view>
+
+    </view>
+
+    <!--  -->
+    <view class="alert" wx:if="{{AwardGrade.alert}}">
+        <view class="close" bindtap="colseFN">
+            ✕
+        </view>
+        <image bindtap="toFNList" mode="widthFix" wx:if="{{AwardGrade.index==index}}" src="{{imgUrl+item}}"  wx:for="{{imgAlert}}" :key="{{index}}"/>
+    </view>
+
+<!--  -->
+    <view class="swpierFu">
+        <swiper  indicator-dots="{{false}}"  autoplay="{{true}}" circular="{{false}}" vertical="{{true}}" interval="{{4000}}" duration="{{500}}"   > 
+
+            <swiper-item wx:for="{{getList}}" wx::key="{{index}}">
+                <view class="juzhong">
+                    <image src="{{item.Picture}}" class="logo" mode="aspectFill" />
+                    <span class="name">{{item.UserName}}</span>
+                    <span class="flex">
+                        恭喜您获得<span style="color:red">{{item.AwardName}}</span>次抽奖机会
+                    </span>
+                </view>
+            </swiper-item>
+
+        </swiper>
+    </view>
+
+    <!--  -->
+    <!-- <view class="btn" >
+        <van-button open-type="share">
+            获取更多抽奖机会 >>
+        </van-button>
+    </view> -->
+</view>

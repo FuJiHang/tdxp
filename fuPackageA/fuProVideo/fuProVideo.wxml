@@ -1,0 +1,142 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-07 17:04:13 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-07 17:04:13 
+    商品视频导购页面
+*/ -->
+<view id="fuProVideo">
+
+    <swiper current="{{showTH}}" bindchange="playMusic" data-data="{{item}}" bindanimationfinish="finshFN"
+        class="swiper" duration="300" easing-function="easeInOutCubic" vertical="true">
+        <swiper-item wx:for="{{dataList}}" wx:key="{{index}}" wx:if="{{item}}">
+            <image src="{{item.ImageUrl1}}" mode="aspectFill" wx:if="{{!item.VideoUrl}}" />
+            <block wx:if="{{item.VideoUrl}}">
+                <image
+                    src="{{item.ImageUrl1+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}"
+                    mode="aspectFill" wx:if="{{showTH!=index}}" />
+                <image style="display:none;" bindload="getVideo"
+                    src="{{item.VideoUrl+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}"
+                    mode="aspectFill" wx:if="{{showTH==index}}" />
+
+                <video muted="{{item.MusicUrl}}" bindtimeupdate="bindtimeupdateFN"
+                    object-fit="{{quanOrBan?'cover':'contain'}}" show-center-play-btn="{{false}}" loop="{{true}}"
+                    wx:if="{{showTH==index}}" autoplay="{{true}}" controls='{{false}}' src="{{item.VideoUrl}}"></video>
+            </block>
+            <audio hidden="{{true}}" wx:if="{{item.MusicUrl&&showTH==index}}" src="{{item.MusicUrl}}"
+                id="myAudio"></audio>
+            <view class="bgBlack"></view>
+
+        </swiper-item>
+
+    </swiper>
+</view>
+<!-- 邀请提示 -->
+<view class="getPeople" wx:if="{{dataList[showTH].Rebate}}">
+    邀请粉丝下单赚
+    <span class="pri">{{dataList[showTH].Rebate}}元</span>
+</view>
+<!-- 分享 -->
+<button class="share" open-type="share">
+    <image mode="aspectFit"
+        src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/pse40ed171dba3a238-e0aa-4964-a901-bfff1e2701a1.png" />
+</button>
+<view class="fiexdBox">
+    <!--  -->
+    <view class="peopleTip">
+        <view wx:if="{{tipList[0]==index||tipList[1]==index}}" class="inLine"
+            wx:for="{{dataList[showTH].IsFightGroup?dataList[showTH].FightGroupInfos:dataList[showTH].BuyPeopleList}}" wx:key="{{index}}">
+            <view class="child donHua" wx:if="{{!dataList[showTH].IsFightGroup}}">
+                {{item}} 已购买该商品
+                <image mode="aspectFill" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/yuyue.png" />
+            </view>
+            <view class="child donHua" wx:else bindtap="joinGroup"  data-index="{{index}}"
+            data-id='{{item.FightGroupActivityId}}' 
+            data-isown='{{item.IsJoinGroup}}' 
+            data-FightGroupId="{{item.FightGroupId}}" >
+                <image mode="aspectFill" class="peo" src="{{item.THeadPicture}}"></image>
+                {{item.THeadNickName}}团队还差{{item.LeftNum}}人成团
+                <span style="color:red">立即加入</span>
+            </view>
+        </view>
+    </view>
+    <!-- 地址 -->
+    <!-- <view class="address">
+        <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/icon_address.png" />
+        <span class="flex">广州市越秀南路185号创举…</span>
+        距离我150m
+    </view> -->
+    <!-- 提示 -->
+    <view class="tipName">
+        {{dataList[showTH].IsFightGroup?dataList[showTH].FightGroupPrice+'元拼团价':dataList[showTH].SalePrice+'元会员专享价'}}
+    </view>
+    <!-- 切换 -->
+    <view class="product" wx:if="{{dataList[showTH].ProductName}}" bindtap="toBuy">
+        <image mode="aspectFill" src="{{dataList[showTH].ImageUrl1}}" />
+        <span class="contant">
+            <view class="name">{{dataList[showTH].ProductName}}</view>
+            <view class="buy">{{dataList[showTH].SaleCounts}}人 已购买</view>
+            <view class="pri_num">
+                <span class="pri">¥{{dataList[showTH].SalePrice}}</span>
+                <span class="num">
+                    <image mode="aspectFill" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/lijiyuyue.png" />
+                    {{dataList[showTH].IsFightGroup?'去拼团':'前往下单'}}
+                </span>
+            </view>
+        </span>
+    </view>
+</view>
+<!--  -->
+<view class="funtion">
+    <view class="child {{index<2?'max':''}}" wx:for="{{funtion}}" wx:key="{{index}}" data-index="{{index}}"
+        bindtap="openfutionFN">
+        <view wx:if="{{index<2}}" class="val">{{item.val?item.val:0}}</view>
+        <image src="{{(index==0||index==2)&&item.choose?item.img1:item.img}}" />
+
+    </view>
+
+</view>
+
+
+<van-popup show="{{showAlert}}" position="bottom" bind:close="onCloseP">
+    <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getPri">
+        <!-- 评价 -->
+        <view class='goods-comment' wx:for='{{listData}}' wx:key="{{pIndex}}" wx:if='{{listData.length != 0}}'
+            wx:for-index='pIndex'>
+            <view class='userInfo df ais'>
+                <image class='userInfoImg' src='{{item.Picture}}' mode='widthFix'></image>
+                <view class='userInfo-inner flex'>
+                    <view class='userInfo-innerT df ais jct-between'>
+                        <view class='df ais'>
+                            <view class='userName'>{{item.UserName}}</view>
+                            <!-- <view class='userInfo-grade df ais jct'>
+                  <image src='{{imgUrl+"icon_putong@2x.png"}}' mode='widthFix'></image>
+                  <text class='df ais jct'>铂金会员</text>
+                </view> -->
+                        </view>
+                        <view class='buyTime'>{{item.ReviewDate}}</view>
+                    </view>
+                    <view class='userInfo-gradeStar df ais'>
+                        <image src='{{imgUrl+"icon_01@2x (2).png"}}' mode='widthFix'></image>
+                        <image src='{{imgUrl+"icon_01@2x (2).png"}}' mode='widthFix'></image>
+                        <image src='{{imgUrl+"icon_02@2x.png"}}' mode='widthFix'></image>
+                        <image src='{{imgUrl+"icon_02@2x.png"}}' mode='widthFix'></image>
+                        <image src='{{imgUrl+"icon_02@2x.png"}}' mode='widthFix'></image>
+                    </view>
+                </view>
+            </view>
+            <view class='commoentInfo'>{{item.ReplyText}}</view>
+            <view class='commoentImg df ais jct-start'>
+                <block wx:for='{{item.ImagesList}}' wx:for-item='ImagesList' wx:key="{{cIndex}}" wx:for-index='cIndex'>
+                    <image src='{{ImagesList}}' mode='widthFix' data-pindex="{{pIndex}}" data-cindex="{{cIndex}}">
+                    </image>
+                </block>
+            </view>
+        </view>
+        <view class='empty df ais jct' wx:if='{{listData.length == 0}}'>暂无实拍内容...</view>
+
+
+    </scroll-view>
+
+
+</van-popup>

@@ -1,0 +1,71 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-08 15:02:09 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-08 15:02:09 
+    积分商品订单详情
+*/ -->
+<view id="fuOrderProDet">
+    <!--  -->
+    <view class="topBg">
+        <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/bg_order.png" />
+        <view class="child">
+            <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/icon_order_01.png" />
+            待付款
+        </view>
+    </view>
+    <!--  -->
+    <view class="chooseType">
+        <view class="contant">
+            <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/ps652486d512200ca1-cd2a-496a-b56f-3c279886c11a.png" />
+            <span class="flex">
+                <view class="name_phone">
+                    <span class="name">张佳佳</span>
+                    <span class="phone">13725196604</span>
+                </view>
+                <view class="address">广州市越秀区越秀南路创举商业大厦商业大厦商业大厦商业大厦</view>
+            </span>
+        </view>
+    </view>
+    <!--  -->
+    <view class="info">
+        <view class="top">
+            <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/icon_shop%20name.png" />
+            自提信息
+        </view>
+        <view class="product">
+            <image mode="aspectFill" src="{{imgUrl+'index009.jpg'}}" />
+            <span class="contant">
+                <view class="name">雅诗兰黛红石榴界面乳</view>
+                <view class="sku">
+                    <span>规格：200ml</span>
+                </view>
+                <view class="pri_num">X1</view>
+            </span>
+        </view>
+        <view class="list ri">
+            商品总价：
+            <span class="val pri">￥150.00</span>
+        </view>
+        <view class="list ri">
+            实付款：
+            <span class="val pri">￥150.00</span>
+            <span class="fare">(运费：￥00.00)</span>
+        </view>
+    </view>
+    <!--  -->
+    <view class="orderInfo">
+        <view class="child">
+            <span class="name bold">订单信息</span>
+        </view>
+        <view class="child">
+            <span class="name">订单编号</span>
+            <span class="val">16890525066765979</span>
+            <span class="copy">复制编号</span>
+        </view>
+        <view class="child">
+            <span class="name">创建时间</span>
+            <span class="val">2019/05/05 15:20:53</span>
+        </view>
+    </view>
+</view>

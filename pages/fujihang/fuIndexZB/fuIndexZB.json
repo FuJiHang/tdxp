@@ -1,0 +1,6 @@
+{
+  "enablePullDownRefresh":true,
+  "usingComponents": {
+    "addr-picker": "../../../components/addrpicker/addrPicker"
+  }
+}

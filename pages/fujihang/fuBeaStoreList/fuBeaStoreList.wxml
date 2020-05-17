@@ -1,0 +1,89 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-24 13:36:53 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-04-24 13:36:53 
+    商城查询
+    */ -->
+    <view id="fuBeaStoreList">
+
+        <!-- 搜索 -->
+        <view class="seachMT">
+            <view class="seachbg">
+                <image src="{{imgUrl+'icon_search.png'}}" mode="aspectFill" />
+                <input placeholder="请输入商品名称" value="{{seach}}" bindinput="seaChFN" />
+            </view>
+            <van-button size="small" bindtap="getDataS">搜索</van-button>
+        </view>
+    
+        <view class="contBL">
+            <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getData">
+                <view class="productCont">
+                    <view class="product" data-CostPrice="{{item.CostPrice}}" data-GiftId="{{item.GiftId}}" bindtap="buyFN"
+                        wx:for="{{dataList}}" wx:key="{{index}}">
+                        <view class="jiaoZiPi">
+    
+    
+                            <view class="img">
+                                <image src="{{item.ImageUrl+'?x-oss-process=image/resize,l_640'}}" mode="aspectFill" />
+                            </view>
+                            <view class="name">{{item.Name}}</view>
+                            <view class="det">{{item.ShortDescription}}</view>
+                            <view class="val">
+                                <!-- <image src="{{imgUrl+'fujinQian.png'}}" /> -->
+                                <view class="ovFU">
+                                    <!-- <span class="bea">
+                                        <span class="num">{{item.NeedPoint}}</span>
+                                        积分
+                                    </span>
+                                    <span class="xjin">
+                                        <span class="num">
+                                            或 {{item.ComboPoint}}
+                                        </span>
+                                        积分
+                                        <span class="num">
+                                            +{{item.ComboPrice}}
+                                        </span>
+                                        元
+                                    </span> -->
+                                    <span class="mini">
+                                        <view class="num"><span class="roundDiv">1</span>：{{item.NeedPoint}}积分</view>
+                                        <view class="meili"><span class="roundDiv">2</span>：{{item.ComboPrice}}元+{{item.ComboPoint}}积分</view>
+                                    </span>
+                                </view>
+    
+                            </view>
+                            <view class="btnFU">
+                                <view class="chaozuo">
+                                    <!-- <view class="collect {{item.IsCollected=='True'?'coll':''}}" data-index="{{index}}"
+                                        data-GiftId="{{item.GiftId}}" catchtap="collFN">
+                                        <van-icon name="like" />
+                                        加入收藏
+                                    </view> -->
+    
+                                    <view class="btn">
+                                        <van-button size="small" data-CostPrice="{{item.CostPrice}}"
+                                            data-GiftId="{{item.GiftId}}">
+                                            <!-- 立即兑换. -->
+                                            <image src="{{imgUrl+'fujinQianB.png'}}" class="bImg" />立即兑换
+                                        </van-button>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="noMore" wx:if="{{finsh}}">
+                    没有更多的啦~~~
+                </view>
+            </scroll-view>
+        </view>
+    
+    
+        <!-- <view class="noMore" >
+            没有数据哦~~~
+        </view> -->
+    
+    
+    
+    </view>

@@ -1,0 +1,84 @@
+page{
+    height: 100%;
+    overflow: hidden;
+}
+#fuTeamOrder{
+    font-size: 26rpx;
+    color: #666;
+    height: 100%;
+    overflow: hidden;
+    // 导航条和内容
+    .van-tabs{
+        height: 100%;
+        color: #999;
+        .van-tabs__content{
+            height: 100%;
+            overflow: hidden;
+            .van-tabs__track{
+                height: 100%;
+                overflow: hidden;
+                .van-tab__pane{
+                    padding-bottom: 44px ; 
+                    height: 100% ; 
+                    box-sizing: border-box;
+                    overflow: hidden;
+                }
+            }
+        }
+        .van-tab--active{
+            color: red; 
+        }
+    }
+    // 内容
+    .appointTO{
+        display: flex;
+        overflow: hidden;
+        height: 100%;
+        .leftCont{
+            width: 180rpx;
+            height: 100%;
+            overflow: auto;
+            .Choose{
+                width: 100%;
+                text-align: center;
+                line-height: 80rpx;
+                font-size: 28rpx;
+                height: 80rpx;
+                box-sizing: border-box;
+                border-left: 5rpx solid #f8f8f8 ;
+            }
+            .isChoose{
+                border-color:  #F56F68;
+                background: white;
+                color: #F56F68;
+            }
+        }
+        .rightCont{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            .time{
+                padding: 20rpx;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                image{
+                    margin-left: 15rpx;
+                    height: 22rpx;
+                    width: 22rpx;
+                }
+            }
+            .contant{
+                background: white; 
+                flex: 1;
+                overflow: auto;
+            }
+        }
+        ::-webkit-scrollbar{
+            width: 0;
+            height: 0;
+            color: transparent;
+        }
+    }
+}

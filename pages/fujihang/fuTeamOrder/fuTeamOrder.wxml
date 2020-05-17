@@ -1,0 +1,30 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-16 14:36:40 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-04-16 14:36:40 
+    团队技师订单
+*/ -->
+<view id="fuTeamOrder">
+    <!-- 导航条 -->
+    <van-tabs line-width='20' color="#F56F68"  active="{{ active }}" bind:change="onChange" swipeable>
+        <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+            <!-- 预约页面 -->
+            <view class="appointTO">
+                <!-- 左边 -->
+                <view class="leftCont">
+                    <view class="Choose {{isChoose==index?'isChoose':''}}" wx:for="{{chooseList}}" bindtap="chooseFN" data-index="{{index}}" wx:key="index">{{item.name}}</view>
+                </view>
+                <!-- 右边 -->
+                <view class="rightCont">
+                    <view class="time">选择日期：2005/22/22 <image src="../../../images/arrow_btn.png" mode="aspectFill" /></view>
+                    <view class="contant">
+                        <teamList wx:for="{{50}}"></teamList>
+                    </view>
+                </view>
+            </view>
+            
+
+        </van-tab>
+    </van-tabs>
+</view>

@@ -1,0 +1,86 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-12 11:54:42 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-11-12 11:56:40
+  奖励金佣金
+*/ -->
+<view class="myCommission">
+  <!-- <view class="topNav">
+    <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/bannerJL.png"></image>
+    <view class="detailAll">
+      <view class="val">{{dataInfor.Balance}}</view>
+      <view class="name">奖励金总额</view>
+    </view>
+  </view> -->
+
+  <view class="topNavG">
+    <view class="nmae">奖励金总额(元)</view>
+    <view class="val">{{dataInfor.AllBalance}}</view>
+
+    <view class="price">
+      <span class="child">
+        已结算总额(元):
+        <span class="color">
+          {{dataInfor.Balance}}
+        </span>
+      </span>
+      <span class="child">
+        待结算总额(元):
+        <span class="color">
+         {{dataInfor.NoBalance}}
+        </span>
+      </span>
+    </view>
+
+  </view>
+
+
+
+
+  <van-tabs line-width='20' color="#FB1F4F" active="{{ active }}" bind:change="onChange" swipeable>
+    <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="{{index}}">
+      <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getDataR">
+        <view class="integral-record-box" wx:for="{{functionList[active].data}}" wx:key="{{index}}">
+          <view class="top">
+            订单号：{{item.OrderId}}
+          </view>
+          <view class="proImgG">
+            <image src="{{item.ProductImg}}" mode="widthFix" />
+            <span class="valG">
+              <view class="name">
+                {{item.ProductName}}
+              </view>
+              <view class="val">
+                <span>
+                  该订单售出:
+                  <span style="color: #FB1F4F;margin-left: 8rpx;">
+                    {{item.UpProductSaleCount}}件
+                  </span>
+                </span>
+                <span class="pic">
+                  {{item.IsWithDrawText}} {{item.Income?item.Income:item.Expenses}}元
+                </span>
+              </view>
+            </span>
+          </view>
+          <view class="stName">
+            <span class="name">门店名称：</span>{{item.StoreName}}
+          </view>
+          <view class="info">
+            <span class="child">
+              角色：<span class="color">{{item.TradeTypeText}}</span>
+            </span>
+            <span class="child">
+              下单人：<span class="color">{{item.UserName}}</span>
+            </span>
+            <span class="child">
+              推荐人：<span class="color">{{item.StoreUser?item.StoreUser:'无'}}</span>
+            </span>
+          </view>
+        </view>
+        <view class="noMore" wx:if="{{functionList[active].finsh}}">没有更多的了~~~</view>
+      </scroll-view>
+    </van-tab>
+  </van-tabs>
+</view>

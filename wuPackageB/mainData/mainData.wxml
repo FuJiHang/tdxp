@@ -1,0 +1,45 @@
+<view class="main">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <block wx:for="{{main}}" wx:key="{{item}}">
+      <view class="input_wrap {{item.status?'active':''}}">
+        <label for="" class="title">{{item.title}}</label>
+        <input type="text" 
+        class="input_data" 
+        value="{{item.val}}" 
+        name="{{item.name}}" 
+        placeholder="{{item.pla}}"
+        placeholder-class="pla_style"
+        disabled="{{item.status}}"
+        />
+        <textarea wx:if="{{item.type}}" 
+          cols="30" rows="10" class="add" 
+          placeholder-class="text_style"
+          maxlength="100" value="{{val}}"
+          name="{{item.name}}" bindinput="handleVal"></textarea>
+      </view>
+    </block>
+    <!-- 上传图片 -->
+    <view class="uploadImg">
+      <view class="title_wrap">
+        <text class="up_title">上传环境图</text>
+        (<text class="up_samll">只允许上传1张</text>)
+      </view>
+      <view class="img_wrap">
+        <view class="pictbox">
+          <view class="evalteimg" wx:for="{{photoList}}" wx:key>
+            <image class="tu" src="{{item.ImageUrl}}"></image>
+            <image class="close" src="{{iconDel}}" data-index="{{index}}" catchtap="Deleted">
+            </image>
+          </view>
+          <view class="takepic" catchtap="postImg" wx:if="{{photoList.length < 1}}">
+            <image class="pict" src="{{iconImg}}"></image>
+          </view>
+          <input type="text" id="img_name" value="{{logo}}" name="hjImg" maxlength="-1" />
+        </view>
+      </view>
+    </view>
+    <view class="btn-area">
+      <button formType="submit" class="btn">保存</button>
+    </view>
+  </form>
+</view>

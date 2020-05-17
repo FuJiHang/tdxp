@@ -1,0 +1,126 @@
+#fuUpper {
+
+    // 
+    .seachF {
+        padding: 20rpx;
+        box-sizing: border-box;
+        background: rgb(255, 255, 255);
+        input {
+            width: 100%;
+            border-radius: 30rpx;
+            background: rgb(248, 248, 248);
+            text-align: center;
+            padding: 0 20rpx;
+            font-size: 30rpx;
+            height: 60rpx;
+            line-height: 60rpx;
+            box-sizing: border-box;
+        }
+    }
+
+    .noMore{
+        font-size: 28rpx;
+        color: #999;
+        padding: 20rpx 20rpx 200rpx;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    // 
+    .product {
+
+
+        background: #fff;
+        margin: 20rpx 20rpx 0;
+        padding: 20rpx;
+        border-radius: 20rpx;
+        display: flex;
+        align-items: center;
+
+        image {
+            height: 140rpx;
+            width: 140rpx;
+            margin: 0 20rpx;
+        }
+
+        .contant {
+            flex: 1;
+
+
+            .name {
+                font-size: 28rpx;
+                display: -webkit-box;
+                -webkit-line-clamp: 1; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break: break-all;
+                margin-bottom: 30rpx;
+            }
+
+            .price_btn {
+                display: flex;
+                align-items: center;
+                padding: 5rpx 14rpx 20rpx;
+
+                .mini {
+                    margin-top: 5rpx;
+                    font-size: 22rpx;
+                    color: #0F0F0F;
+                }
+
+                .price {
+                    color: #0F0F0F;
+                    font-weight: bold;
+                    font-size: 32rpx;
+                }
+
+                .redCard {
+                    border-radius: 48px;
+                    color: #fff;
+                    margin-left: 5rpx;
+                    font-size: 22rpx;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+
+                    .red {
+                        display: flex;
+                        align-items: center;
+                        padding: 3rpx 15rpx;
+                        background: rgba(251, 31, 79, 1);
+
+                        image {
+                            width: 18rpx;
+                            height: 18rpx;
+                            margin-right: 3rpx;
+                        }
+                    }
+
+                    .black {
+                        padding: 3rpx 15rpx;
+
+                        background: rgba(6, 0, 21, 1);
+                    }
+
+                }
+            }
+        }
+    }
+
+
+    // 
+    .btn {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+
+        .van-button {
+            background: linear-gradient(90deg, rgba(255, 83, 83, 1) 0%, rgba(255, 43, 149, 1) 100%);
+            color: #fff;
+            border: none;
+            width: 100%;
+        }
+    }
+
+}

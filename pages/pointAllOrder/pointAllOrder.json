@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-button": "../../../vant-weapp/dist/button/index",
+    "orderListFU": "/components/fujihang/orderListFU/orderListFU"
+  },
+  "navigationBarTitleText": "订单列表"
+}

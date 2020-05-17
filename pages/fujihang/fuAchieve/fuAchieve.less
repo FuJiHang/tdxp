@@ -1,0 +1,90 @@
+page{
+    height: 100%;
+    overflow: hidden;
+}
+#fuAchieve{
+    font-size: 26rpx;
+    color: #666;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+
+    // 功能
+    .van_order{
+        flex: 1;
+        color: #666;
+        overflow: hidden;
+        .van-tabs{
+            height: 100%;
+            overflow: hidden;
+        }
+        .van-tabs__content{
+            height: 100%;
+            overflow: hidden;
+            padding-bottom: 44px ;  
+            box-sizing: border-box;
+            .van-tabs__track{
+                
+                height: 100%;
+                overflow: hidden;
+                
+                .van-tab__pane{
+                    
+                    height: 100% ; 
+                    overflow: hidden !important;
+                    
+
+                    scroll-view{
+                        
+                        height: 100%;
+                        .noMore{
+                            font-size: 28rpx;
+                            color: #999;
+                            padding: 20rpx;
+                            text-align: center;
+                            box-sizing: border-box;
+                        }
+                    }
+                }
+            }
+        }
+        .van-tab--active{
+            color: red;
+        }
+
+        // 
+        .achieve{
+            
+        }
+    }
+    
+    // 
+    //
+    .btnDay{
+        padding: 10rpx;
+        box-sizing: border-box;
+        background: #f56e68;
+        color: white;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        .child{
+            width: 50%;
+            font-size: 36rpx;
+        }
+        .last{
+            border-left: 1px solid #fd9f9a;
+            width: 50%;
+            padding: 2rpx 20rpx 2rpx 40rpx;
+            margin: 18rpx 0;
+            box-sizing: border-box;
+            .zon{
+              margin-bottom: 5rpx;
+              font-size: 28rpx;  
+            }
+        }
+    }
+}

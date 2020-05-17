@@ -1,0 +1,55 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-09 09:27:53 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-09 09:27:53 
+    上传门店环境
+ */ -->
+<view id="fuStoreView">
+    
+   <!--  -->
+   <view class="navTap">
+      <span class="name">上传门店logo</span>
+   </view>
+   <view class="contant">
+
+      <span class="img"  >
+         <image src="{{logo}}" mode="aspectFill" />
+      </span>
+      <span class="img" >
+         <image bindtap="chooselogo" src="{{imgUrl+'addMD.png?1'}}" mode="aspectFill" />
+      </span>
+   </view>
+
+   <!--  -->
+   <view class="navTap">
+      <span class="name">上传门店环境</span>（可传8张，仅显示3张）
+   </view>
+   <view class="contant">
+      <span class="img" wx:for="{{imageLoad}}" data-index="{{index}}" wx:key="{{index}}" bindtap="chooseFN">
+         <image src="{{item}}" mode="aspectFill" />
+         <image class="choose" wx:if="{{index==choose[0]||index==choose[1]||index==choose[2]}}" src="{{imgUrl+'dagou-shi.png'}}" mode="aspectFill" />
+      </span>
+      <span class="img" wx:if="{{imageLoad.length<8}}">
+         <image bindtap="chooseImage" src="{{imgUrl+'addMD.png?1'}}" mode="aspectFill" />
+      </span>
+   </view>
+
+   <!--  -->
+   <view class="navTap">
+      <span class="name">上传视频</span>（可传10S）
+   </view>
+   <view class="contant" >
+      <span class="img" bindtap="chooseVideo" wx:if="{{!video}}">
+         <image src="{{imgUrl+'addMD.png?1'}}" mode="aspectFill" />
+      </span>
+      <video wx:if="{{video}}" id="myVideo" src="{{video}}"  enable-danmu danmu-btn controls></video>
+   </view>
+
+   <!--  -->
+   <view class="btn" bindtap="submit">
+      <van-button >提交</van-button>
+   </view>
+
+
+</view>

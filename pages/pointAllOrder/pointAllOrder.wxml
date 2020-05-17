@@ -1,0 +1,75 @@
+<!--pages/pointAllOrder/pointAllOrder.wxml-->
+<view id="fuMyOrder">
+
+  <!-- 功能 -->
+  <van-tabs class="van_order" line-width='20' color="#FB1F4F" active="{{ active }}" bind:change="onChange" swipeable>
+    <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+      <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getDataR">
+        <view class="orderList" wx:for="{{functionList[active].data}}" wx:key="index" wx:for-item="order">
+          <view class="orderListTop">
+            <span class="name">订单号：
+              <span class="hui">
+                {{order.OrderId}}
+              </span>
+
+            </span>
+            <span class="state" wx:if="{{order.Status==1}}">待付款</span>
+            <span class="state" wx:if="{{order.Status==2}}">待发货</span>
+            <span class="state" wx:if="{{order.Status==3}}">待收货</span>
+            <span class="state" wx:if="{{order.Status==5}}">已完成</span>
+            <span class="state" wx:if="{{order.Status==4}}">已取消</span>
+          </view>
+          <!-- <view class="orderListContent" wx:for="{{order.Gifts}}" wx:key="index"> -->
+          <view class="orderListContent" wx:for="{{order.LineItems.length?order.LineItems:order.Gifts}}" wx:key="index">
+            <view class="contant">
+              <image src="{{item.Image}}" mode="aspectFill" />
+              <span class="middin">
+                <view class="name_mid child">{{item.GiftName?item.GiftName:item.Name}}</view>
+                <!-- <view class="money">{{item.NeedPoint}}积分</view> -->
+                <view class="money">
+
+                  {{item.Price}}元
+                </view>
+                <!-- <view class='confirmBtn seeLog' wx:if="{{order.Status==3}}" data-id='{{order.OrderId}}'
+                  data-items="{{order.LineItems}}" bindtap='toLogistics'>查看物流</view>
+                <view class='confirmBtn seeLog' wx:if="{{order.Status==5}}" data-id='{{order.OrderId}}'
+                  data-items="{{order.LineItems}}" bindtap='toLogistics'>查看物流</view>
+                <view class='confirmBtn' wx:if="{{order.Status==3}}" data-id='{{order.OrderId}}' bindtap='toConfirm'>
+                  确认收货</view> -->
+              </span>
+              <span style="margin-left: 20rpx;">x{{item.Amount}}</span>
+              <view class="btn_wrap" bindtap="handleClick" data-id="{{order.OrderId}}"></view>
+            </view>
+          </view>
+          <view class="payFU {{order.Status==3?'kd':''}}" data-oId="{{item.OrderId}}">
+            <span style="flex: 1;">
+              共{{order.Quantity}}件商品 合计:￥{{order.Amount}}(运费{{order.Freight}}元)
+            </span>
+            <!-- {{order.ShipOrderNumber?order.ExpressCompanyName  +'   快递号:'+order.ShipOrderNumber:''}} -->
+            <span class="bgf">
+              <van-button wx:if="{{order.Status==1}}" size="small" bindtap="coloseFN" data-oId="{{order.OrderId}}">取消
+              </van-button>
+            </span>
+            <van-button wx:if="{{order.Status==1}}" size="small" bindtap="payFN" data-oId="{{order.OrderId}}">支付
+            </van-button>
+            <van-button wx:if="{{order.Status==2&&order.LineItems[0].CanRefund}}" size="small" bindtap="errOrder" data-oId="{{order.OrderId}}">申请售后
+            </van-button>
+            <van-button wx:if="{{order.Status==-1}}" size="small" bindtap="returnOrder" data-oId="{{order.OrderId}}">
+              取消售后
+            </van-button>
+            <van-button wx:if="{{order.Status==3}}" size="small" data-id='{{order.OrderId}}'
+              data-items="{{order.LineItems}}" bindtap='toLogistics'>查看物流
+            </van-button>
+            <van-button wx:if="{{order.Status==5}}" size="small" data-id='{{order.OrderId}}'
+              data-items="{{order.LineItems}}" bindtap='toLogistics'>查看物流
+            </van-button>
+            <van-button wx:if="{{order.Status==3}}" data-id='{{order.OrderId}}' bindtap='toConfirm'>确认收货
+            </van-button>
+          </view>
+
+        </view>
+        <view class="noMore" wx:if="{{functionList[active].finish}}">没有更多的了~~~</view>
+      </scroll-view>
+    </van-tab>
+  </van-tabs>
+</view>

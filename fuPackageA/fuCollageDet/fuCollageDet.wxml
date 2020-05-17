@@ -1,0 +1,49 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-02 09:17:37 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-07-02 09:18:30
+    拼团详情
+*/ -->
+<view id="fuCollageDet">
+
+    <!-- <view class="storeC">
+        <image src="{{imgUrl+'store.png'}}" mode="aspectFill" />{{dataInfo.StoreName}}
+    </view> -->
+    <view class="storeCard">
+        <image mode="aspectFill" src="{{dataInfo.ProductPicture+'?x-oss-process=image/resize,l_640'}}"  />
+        <span class="contant">
+            <view class="name">{{dataInfo.ProductName}}</view>
+            <view class="val">{{dataInfo.ProductDescription}}</view>
+            <view class="pri_num">
+                <span class="pri">￥{{dataInfo.FightPrice}}</span>
+                <span class="num">已售{{dataInfo.BuyCount}}</span>
+            </view>
+        </span>
+    </view>
+    
+    <view class="collage" wx:if="{{type!=0}}">
+        <span class="color" >{{dataInfo.JoinNumber}}</span>人成团 还差<span class="color">{{dataInfo.LeftJoinNumber}}</span>人
+    </view>
+    
+    <view class="time">活动时间：{{dataInfo.StartDate}}-{{dataInfo.EndDate}}</view>
+    
+    <view class="img_join_con" wx:if="{{type!=0}}" >
+        <span class="img_join" wx:for="{{dataInfo.Members}}" wx:key="{{index}}">
+            <image src="{{item.UserPicture+'?x-oss-process=image/resize,l_640'}}" mode="aspectFill" />
+            <span class="join" wx:if="{{item.IsFightGroupHead=='True'}}">团长</span>
+        </span>
+    </view>
+    
+    <view class="collage bigger">
+        <span class="color">{{dataInfo.JoinNumber}}</span>人成团价：￥<span class="color big">{{dataInfo.FightPrice}}元</span>
+    </view>
+    
+    <!-- <view class="btn"  wx:for="{{btnList}}" wx:key="{{index}}" bindtap="toFN" data-index="{{index}}">
+        <van-button open-type="{{index==2?'share':''}}" size="small" >{{item}}</van-button>
+    </view> -->
+    <view class="btn" >
+        <van-button open-type="share" size="small" >邀请好友参团</van-button>
+    </view>
+    
+</view>

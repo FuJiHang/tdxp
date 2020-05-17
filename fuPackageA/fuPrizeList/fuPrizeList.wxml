@@ -1,0 +1,41 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-08-08 16:38:44 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-08-08 16:38:44 
+    奖励列表
+*/ -->
+<view id="fuPrizeList" class="{{dzOrZxz?'pdt':''}}">
+    <!--  -->
+    <view class="seachMT" wx:if="{{dzOrZxz}}">
+        <view class="seachbg">
+            <image src="{{imgUrl+'icon_search.png'}}" mode="aspectFill" />
+            <input placeholder="请输入名字或手机号码" value="{{seach}}" bindinput="seaChFN" />
+        </view>
+        <van-button size="small" bindtap="getDataS">搜索</van-button>
+    </view>
+    <!--  -->
+    <view class="child" wx:for="{{dataList}}" wx:key="{{index}}">
+        <image src="{{item.AwardPic+'?x-oss-process=image/resize,l_640'}}" mode="aspectFill" />
+        <span class="contant">
+            <view class="name">奖品等级：{{item.AwardGrade}}等奖</view>
+            <view class="name">奖品名称：{{item.AwardName}}</view>
+            <view class="val" wx:if="{{isStore}}">中奖人：{{item.UserName}}</view>
+            <view class="val" wx:if="{{isStore}}">手机号：{{item.CellPhone}}</view>
+
+            <view class="time">
+                <span class="min">抽奖时间：{{item.AwardDate}}</span>
+                <van-button  catchtap="submit" wx:if="{{!isStore}}" size="mini" data-id="{{item.Id}}" data-index="{{index}}" data-st="{{item.Status}}"
+                    >
+                    {{item.Status==1?'领取':'已领取'}}
+                </van-button>
+                <van-button wx:else size="mini" data-id="{{item.Id}}" data-index="{{index}}" data-st="{{item.Status}}"
+                    catchtap="submit">
+                    {{item.Status==1?'发放':'已发放'}}
+                </van-button>
+            </view>
+        </span>
+    </view>
+
+    <view class="noMore" wx:if="{{finsh}}">没有更多的了~~~</view>
+</view>

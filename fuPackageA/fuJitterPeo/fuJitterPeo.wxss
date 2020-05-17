@@ -1,0 +1,414 @@
+page {
+  height: 100%;
+  font-size: 26rpx;
+  background: #1a1c2b;
+}
+#fuJitterPeo {
+  color: #fff;
+}
+#fuJitterPeo .bgTop {
+  position: relative;
+  height: 300rpx;
+  overflow: hidden;
+}
+#fuJitterPeo .bgTop image {
+  width: 100%;
+}
+#fuJitterPeo .bgTop .black {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+#fuJitterPeo .navTop {
+  padding: 0 20rpx ;
+  box-sizing: border-box;
+}
+#fuJitterPeo .navTop .people {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 9;
+  border-bottom: 1px solid #18042f;
+}
+#fuJitterPeo .navTop .people .flex {
+  flex: 1;
+  margin: 0 20rpx;
+}
+#fuJitterPeo .navTop .people .img image {
+  height: 180rpx;
+  width: 180rpx;
+  border-radius: 50%;
+  border: 4px solid #1a1c2b;
+}
+#fuJitterPeo .navTop .people .guanzhu .van-button {
+  border: none;
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #fff;
+  background: #fe2a53;
+}
+#fuJitterPeo .navTop .name {
+  margin-bottom: 20rpx;
+  font-size: 40rpx;
+}
+#fuJitterPeo .navTop .bc {
+  display: flex;
+  align-items: center;
+}
+#fuJitterPeo .navTop .bc image {
+  height: 40rpx;
+  width: 40rpx;
+  margin-right: 20rpx;
+}
+#fuJitterPeo .navTop .sign {
+  margin-top: 20rpx;
+  color: #d6d6d6;
+}
+#fuJitterPeo .navTop .funtion {
+  display: flex;
+  align-items: center;
+  margin: 25rpx 0 30rpx;
+}
+#fuJitterPeo .navTop .funtion .child {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
+  color: #f4c913;
+  background: rgba(255, 237, 79, 0.2);
+  margin-right: 20rpx;
+}
+#fuJitterPeo .navTop .funtion .child image {
+  height: 30rpx;
+  width: 30rpx;
+  margin-right: 5rpx;
+}
+#fuJitterPeo .navTop .hz_gz_fs {
+  display: flex;
+  align-items: center;
+}
+#fuJitterPeo .navTop .hz_gz_fs .flex {
+  flex: 1;
+}
+#fuJitterPeo .navTop .hz_gz_fs .child {
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+#fuJitterPeo .navTop .hz_gz_fs .red {
+  color: #fe2a53;
+  font-size: 30rpx;
+}
+#fuJitterPeo .contant .van-tabs__wrap {
+  background: #1a1c2b;
+}
+#fuJitterPeo .contant .van-hairline--top-bottom:after {
+  border-width: 0 0;
+}
+#fuJitterPeo .contant .van-tab--active {
+  color: #e9e9ec;
+}
+#fuJitterPeo .contant .van-tab__pane {
+  display: flex ;
+  flex-wrap: wrap;
+  margin-bottom: 800rpx;
+}
+#fuJitterPeo .contant .goods {
+  width: 33.33%;
+  padding: 3rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+#fuJitterPeo .contant .goods image {
+  height: 280rpx;
+  width: 100% ;
+}
+#fuJitterPeo .contant .goods .btn {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  display: flex ;
+  align-items: center;
+  color: #e9e9ec;
+  padding: 10rpx 15rpx;
+  box-sizing: border-box;
+}
+#fuJitterPeo .contant .goods .btn .van-icon {
+  margin-right: 10rpx;
+}
+#fuJitterPeo .contant .goods .check {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+}
+#fuJitterPeo .pyq {
+  padding: 20rpx;
+  box-sizing: border-box;
+  width: 100% ;
+  border-bottom: 3px solid #22222c;
+}
+#fuJitterPeo .pyq .logo_name {
+  color: #e7e8ed;
+  display: flex;
+  align-items: center;
+}
+#fuJitterPeo .pyq .logo_name image {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+#fuJitterPeo .pyq .title {
+  color: #e6e6f2;
+  font-size: 40rpx;
+  margin: 20rpx 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+#fuJitterPeo .pyq .video {
+  position: relative;
+}
+#fuJitterPeo .pyq .video .play {
+  position: absolute;
+  bottom: 10rpx;
+  right: 10rpx;
+  opacity: 0.6;
+}
+#fuJitterPeo .pyq .video video,
+#fuJitterPeo .pyq .video image {
+  border-radius: 20rpx;
+  width: 100%;
+}
+#fuJitterPeo .pyq .funtion_time {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+#fuJitterPeo .pyq .funtion_time .time {
+  flex: 1;
+  color: #898993;
+}
+#fuJitterPeo .pyq .funtion_time .flex {
+  color: #e8e9ee;
+  display: flex;
+  align-items: center;
+}
+#fuJitterPeo .pyq .funtion_time .flex .child {
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+}
+#fuJitterPeo .pyq .funtion_time .flex .child image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 10rpx;
+}
+#fuJitterPeo .pyq .evaluate {
+  background: #17171f;
+  border-radius: 10rpx;
+}
+#fuJitterPeo .pyq .evaluate .zan {
+  color: #c5c6ca;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #23232d;
+}
+#fuJitterPeo .pyq .evaluate .allEva {
+  color: #8b8b93;
+  font-size: 40rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuJitterPeo .pyq .evaluate .btn {
+  color: #8b8b95;
+  padding: 0 20rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+#fuJitterPeo .pyq .evaluate .btn image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+#fuJitterPeo .navTopDing {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 10%;
+  background: #1a1c2b;
+  display: none;
+  align-items: flex-end;
+  font-size: 30rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  z-index: 80;
+}
+#fuJitterPeo .navTopDing .name {
+  width: 40%;
+}
+#fuJitterPeo .navTopDing .guanzhu {
+  margin-left: 20rpx;
+}
+#fuJitterPeo .navTopDing .guanzhu .van-button {
+  border: none;
+  box-sizing: border-box;
+  color: #fff;
+  background: #fe2a53;
+}
+#fuJitterPeo .see {
+  display: flex;
+}
+.nearTop .van-tabs__wrap {
+  background: #1a1c2b !important;
+  top: 10% !important;
+}
+.seachMT {
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 20rpx 0;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+.seachMT .seachbg {
+  margin-right: 10rpx;
+  flex: 1;
+  align-items: center;
+  display: flex;
+  background: #EEEEEE;
+  border-radius: 40rpx;
+}
+.seachMT .seachbg image {
+  margin-left: 20rpx;
+  height: 40rpx;
+  width: 40rpx;
+}
+.seachMT .seachbg input {
+  height: 70rpx;
+  font-size: 28rpx;
+  margin: 0 20rpx;
+  flex: 1;
+}
+.seachMT .touxian {
+  margin-right: 20rpx;
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+}
+.seachMT .van-button {
+  border: none;
+  background: none;
+}
+.Comment {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.3s;
+  transform: translateY(100%);
+}
+.Comment .contantCom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: white;
+  border-radius: 20rpx 20rpx 0 0;
+  display: flex;
+  flex-direction: column;
+}
+.Comment .contantCom .listDiv {
+  flex: 1;
+  overflow: hidden;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.Comment .contantCom .listDiv scroll-view {
+  overflow: auto;
+  height: 100%;
+}
+.Comment .contantCom .listDiv .peopleHt {
+  display: flex;
+  padding: 20rpx 0rpx ;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f0f0f0;
+}
+.Comment .contantCom .listDiv .peopleHt .pt {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+}
+.Comment .contantCom .listDiv .peopleHt .contant {
+  flex: 1;
+  margin-left: 20rpx;
+  padding-top: 10rpx;
+  box-sizing: border-box;
+}
+.Comment .contantCom .listDiv .peopleHt .contant .name {
+  font-size: 28rpx;
+  color: #999;
+}
+.Comment .contantCom .listDiv .peopleHt .contant .title .time {
+  font-size: 24rpx;
+  color: #999;
+}
+.Comment .contantCom .listDiv .peopleHt .contant .huiFu {
+  display: flex;
+  padding: 20 0rpx ;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+.Comment .contantCom .listDiv .peopleHt .contant .huiFu .ht {
+  height: 50rpx;
+  width: 50rpx;
+  border-radius: 50%;
+}
+.Comment .contantCom .listDiv .peopleHt .contant .huiFu .contantH {
+  flex: 1;
+  margin-left: 20rpx;
+}
+.Comment .contantCom .listDiv .peopleHt .contant .huiFu .contantH .name_type .na {
+  color: #999;
+}
+.Comment .contantCom .listDiv .peopleHt .contant .huiFu .contantH .name_type .type {
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  padding: 10 5rpx ;
+  background: #f0f0f0;
+  box-sizing: border-box;
+}
+.Comment .contantCom .listDiv .peopleHt .contant .huiFu .contantH .rtext {
+  font-size: 28rpx;
+}
+.Comment .contantCom .listDiv .peopleHt .contant .huiFu .contantH .rtext .time {
+  font-size: 24rpx;
+  color: #999;
+}
+.Comment .contantCom .input {
+  height: 40rpx;
+}
+.isComShow {
+  transform: translateY(0%);
+}
+.noMore {
+  font-size: 28rpx;
+  color: #999;
+  padding: 20rpx 20rpx 160rpx;
+  text-align: center;
+  box-sizing: border-box;
+}

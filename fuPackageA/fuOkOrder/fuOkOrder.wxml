@@ -1,0 +1,257 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-06 20:08:37 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-06 20:08:37 
+    确认订单
+ */ -->
+<view id="fuOkOrder">
+    <!--  -->
+    <view class="chooseType" wx:if="{{pType==0}}">
+        <view class="top">
+            <span class="child {{index==0?'leftf':'rightf'}} {{index==isChoose?'choose':''}}" wx:for="{{chooseType}}"
+                wx:key="{{index}}">
+                <span class="name " bindtap="handleClick" data-index="{{index}}">{{item.name}}</span>
+            </span>
+        </view>
+        <view class="contant" bindtap="handleAddress" wx:if="{{isChoose==0 && !defaultAddressData}}">
+            <!-- <view class="contant" bindtap="handleAddress" wx:if="{{isChoose==0}}"> -->
+            <image mode="widthFix" src="{{chooseType[isChoose].img}}" />
+            <span class="flex">{{chooseType[isChoose].tip}}</span>
+            <image class="mini" mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/more_1.png" />
+        </view>
+
+        <view class="contant" bindtap="handleShop" wx:if="{{isChoose==1 && mdHide}}">
+            <image mode="widthFix" src="{{chooseType[isChoose].img}}" />
+            <span class="flex">{{chooseType[isChoose].tip}}</span>
+            <image class="mini" mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/more_1.png" />
+        </view>
+        <!-- wjx显示选择的门店 -->
+        <view class="search_shop" wx:if="{{isChoose==1 && mdShow}}" bindtap="handleCX">
+            <image mode="widthFix" src="{{chooseType[isChoose].img}}" />
+            <view class="shop_wrap">
+                <view class="shop_title">
+                    <text class="one_shop">{{objData.name}}</text>
+                    <text>{{objData.tell || ''}}</text>
+                </view>
+                <view class="shop_inof">{{objData.add}}</view>
+            </view>
+            <image class="mini" mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/more_1.png" />
+        </view>
+
+        <!-- 是否显示地址 -->
+        <!-- <view class="contant1" wx:if="{{defaultAddressData}}" bindtap="handleAddress"> -->
+        <view class="contant1" wx:if="{{isChoose==0 && defaultAddressData}}" bindtap="handleAddress">
+            <!-- <image mode="widthFix"
+                src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/ps652486d512200ca1-cd2a-496a-b56f-3c279886c11a.png" /> -->
+            <span class="flex1">
+                <!-- <span class="tip">请新建收货地址</span> -->
+                <view class="name_phone1">
+                    <span class="name1">{{addName}}</span>
+                    <span class="phone1">{{addTell}}</span>
+                </view>
+                <view class="address1">{{defaultAddressData}}</view>
+            </span>
+            <image class="mini1" mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/more_1.png" />
+        </view>
+    </view>
+    <!--  -->
+    <view class="info">
+
+        <!-- <view class="top">
+            <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/icon_shop%20name.png" />
+            商品信息
+        </view> -->
+        <block wx:for="{{orderInfo}}" wx:key='{{item}}'>
+            <view class="product">
+                <image mode="aspectFill" src="{{item.ThumbnailUrl40}}" />
+                <span class="contant">
+                    <view class="name add_name">{{item.Name}}</view>
+                    <view class="pri_num">
+                        <span class="pri">¥{{item.AdjustedPrice}}</span>
+                        <span class="num">
+                            <!-- <span>-</span> -->
+                            <span class="input">
+                                <!-- <input type="text" value="{{item.Quantity}}"  class="input_num"  /> -->
+                                <text class="input_test">{{item.Quantity}}</text>
+                            </span>
+                            <!-- <span>+</span> -->
+                        </span>
+                    </view>
+                </span>
+            </view>
+        </block>
+        <block wx:if="{{mdMessage.SendGift&&mdMessage.SendGift.Name}}" >
+            <view class="product">
+                <image mode="aspectFill" src="{{mdMessage.SendGift.ImageUrl}}" />
+                <span class="contant">
+                    <view class="name add_name">{{mdMessage.SendGift.Name}}</view>
+                    <view class="pri_num">
+                        <span class="pri">¥0</span>
+                        <span class="num">
+                            <!-- <span>-</span> -->
+                            <span class="input">
+                                <!-- <input type="text" value="{{item.Quantity}}"  class="input_num"  /> -->
+                                <text class="input_test">1</text>
+                            </span>
+                            <!-- <span>+</span> -->
+                        </span>
+                    </view>
+                </span>
+            </view>
+        </block>
+
+        <view class="list mborder">
+            <span class="name flex">运费</span>
+            <span class="val pri">￥{{OrderFreight}}</span>
+        </view>
+        <view class="list" bindtap="handleYH" wx:if="{{list.length !=0}}">
+            <span class="name flex">促销优惠</span>
+            <span class="val" wx:if="{{price==''}}">可用优惠券</span>
+            <span class="val" wx:else>已优惠{{price}}元</span>
+            <image class="mini" mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/more_1.png" />
+        </view>
+        <view class="list" wx:if="{{list.length ==0}}">
+            <span class="name flex">店铺优惠</span>
+            <span class="val" wx:if="{{price==''}}">无可用优惠券</span>
+            <image class="mini" mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/more_1.png" />
+        </view>
+        <view class="list">
+            <span class="name flex">推荐门店</span>
+            <span class="val ">{{mdMessage.RStoreName}}</span>
+        </view>
+        <!-- <view class="list" wx:if="{{giftList}}" bindtap="openFN">
+            <span class="name flex">0元购</span>
+            <span class="val " style="text-align: right; width: 70%;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 1;    ">{{isGift.name?isGift.name:'请选择'}}</span>
+        </view> -->
+
+        <view class="list" wx:if="{{isChoose}}">
+            <span class="name">姓名</span>
+            <span class="input">
+                <input bindinput="inputFN" data-name="zhiti.name" placeholder="请填写姓名" />
+            </span>
+        </view>
+        <view class="list" wx:if="{{isChoose}}">
+            <span class="name">手机号</span>
+            <span class="input">
+                <input bindinput="inputFN" data-name="zhiti.phone" placeholder="请填写手机号" />
+            </span>
+        </view>
+        <view class="list">
+            <span class="name">订单备注</span>
+            <span class="input">
+                <input placeholder="选填，请先和商家协商" />
+            </span>
+        </view>
+
+        <view class="yuDing" wx:if="{{PreSaleId}}">
+            <view>定金：￥{{mdMessage.DepositMoney}}</view>
+            <view>尾款：￥{{mdMessage.Retainage}}</view>
+            <view>合计：￥{{mdMessage.TotalPrice}}</view>
+            <view>共{{goodsNum}}件 需支付定金： <span class="val pri">￥{{mdMessage.DepositMoney}}</span></view>
+
+        </view>
+
+        <view class="list ri" wx:else>
+            共{{goodsNum}}件 合计：
+            <span class="val pri">￥{{goodsTotalPrice}}</span>
+        </view>
+    </view>
+    <view class="btn">
+        <van-button round bindtap='payModal'>去支付</van-button>
+    </view>
+</view>
+<view class="youhui" wx:if="{{yhShow}}">
+    <view class="yh_title">可用优惠券</view>
+    <view class="off_btn" catchtap="handleGB">x</view>
+    <view class="wrap">
+        <view class="couponGanT {{itemc.disableF||active==2?'disableF':''}}" wx:for="{{list}}" wx:for-index="indexs"
+            wx:for-item="itemc" wx:key="{{indexs}}" data-data="{{itemc}}">
+            <view class="letfCon">
+                <view class="contant">
+                    <view class="name">
+                        <span>￥</span>
+                        {{itemc.Price}}
+                        <span>抵用券</span>
+                    </view>
+                    <view class="disp">
+                        <view class="role">所购买的商品金额必须大于或等于{{itemc.OrderUseLimit}}元</view>
+                        <view class="time">{{itemc.ClosingTime}}过期</view>
+                    </view>
+                </view>
+                <view class="yuan shang"></view>
+                <view class="yuan xia"></view>
+                <view class="glass"></view>
+            </view>
+            <view class="rightCon" bindtap="chooseFN" data-code="{{itemc.ClaimCode}}" data-index="{{indexs}}"
+                data-price="{{itemc.Price}}">
+                <view class="contantR">
+                    <view class="buyName">可用优惠券</view>
+                    <view class="btn">立即使用</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="zhezhao" wx:if="{{yhShow}}" catchtap="handleGB"></view>
+
+<!-- 选择门店id列表 -->
+<view class="showList" wx:if="{{listShow}}">
+    <view class="list_title">
+        可选门店
+        <!-- <view class="list_btn" catchtap="handleXX">x</view> -->
+    </view>
+    <scroll-view scroll-y="{{true}}" class="scroll">
+        <block wx:for="{{mdList}}" wx:key="{{item}}">
+            <view class="list_nore" catchtap="handleSearch" data-index="{{index}}" data-add="{{item.Address}}"
+                data-name="{{item.StoreName}}" data-tell="{{item.Tel}}" data-sid="{{item.StoreId}}">
+                <view class="list_wrap_img">
+                    <image class="list_img" wx:if="{{index==mdNums}}" src="{{imgUrl2+'icon_dg.png'}}"></image>
+                    <!-- <image class="list_img" 
+                    wx:if="{{item.StoreId==csSid}}" 
+                    src="{{imgUrl2+'icon_dg.png'}}"></image> -->
+                </view>
+                <image class="md_img" src="{{item.StoreImages}}"></image>
+                <view class="shop_wrap">
+                    <view class="shop_title">
+                        <text class="one_shop">{{item.StoreName}}</text>
+                        <text>{{item.Tel || ''}}</text>
+                        <text class="list_jl">{{item.add}}</text>
+                    </view>
+                    <view class="shop_inof">{{item.Address}}</view>
+                </view>
+            </view>
+        </block>
+        <view class="noMore">
+            没有更多的了~~~
+        </view>
+        <view style="height:100rpx;"></view>
+    </scroll-view>
+
+    <div class="scroll_btn" catchtap="handleQD">确定</div>
+
+</view>
+
+
+<van-popup show="{{isGift.isShow}}" position="bottom" bindclose="handleCloseGoods" custom-class="newLive-popup-goods">
+
+    <view class="productGift" bindtap="chooseGift" 
+        data-name="{{itemc.Name}}" data-id="{{itemc.GiftId}}" wx:for="{{giftList}}" wx:for-item="itemc"
+        wx:for-index="indexc" wx:key="{{indexc}}">
+        <van-checkbox checked-color="#02E809" value="{{ itemc.GiftId==isGift.id }}">
+        </van-checkbox>
+        <image src="{{itemc.ImageUrl}}" mode="widthFix" />
+        <span class="contant">
+            <view class="name">
+                {{itemc.Name}}
+            </view>
+            <view class="price">
+                0元
+                市场价：￥{{itemc.BuyPrice}}
+            </view>
+        </span>
+    </view>
+
+
+
+</van-popup>

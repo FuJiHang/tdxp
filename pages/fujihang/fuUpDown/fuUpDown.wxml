@@ -1,0 +1,67 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-16 14:36:40 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-04-16 14:36:40 
+    上架下架
+*/ -->
+<view id="fuUpDown">
+
+    <!-- 门店信息 -->
+    <view class="storeApp">
+        <image src="{{storeInfo.EnvironmentImages}}" mode="aspectFill"/>
+        <view class="contant">
+            <view class="name_juli">
+                {{storeInfo.StoreName}}
+                <span class="juli">
+                    距离{{storeInfo.Distance}}
+                </span>
+            </view>
+            <view class="address">
+                <image mode="aspectFill" src="{{imgUrl+'icon_address33.png'}}" />
+                {{storeInfo.Address}}
+            </view>
+        </view>
+    </view>
+
+
+    <!-- 导航条 -->
+    <van-tabs line-width='0' color="#F56F68"  active="{{ active }}" bind:change="onChange" swipeable>
+        <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="indexF">
+            <!-- 预约页面 -->
+            <view class="appointTO">
+                <!-- 左边 -->
+                <view class="leftCont" wx:if="{{functionList[active].hasChild}}">
+                    <view class="Choose {{isChoose==index?'isChoose':''}}" wx:for="{{item.subs}}" bindtap="chooseFN" data-index="{{index}}" wx:key="index" wx:for-item="sub">{{sub.name}}</view>
+                </view>
+                <!-- 右边 -->
+                <view class="rightCont">
+                    <!-- <view class="contant"> -->
+                        <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getDataR">
+                            <upDownList isCard="{{edit}}" bind:compontpass="compontpass" StoreId="{{sid}}" data="{{item}}" wx:for="{{functionList[active].subs[isChoose].list}}" wx:key="index"></upDownList>
+                            <view class="noMore" wx:if="{{functionList[active].subs[isChoose].finish}}">
+                                没有更多的了~~~
+                            </view>
+                            <view class="noMore" wx:if="{{!functionList[active].hasChild}}">
+                                暂无数据，看看其他吧~~~
+                            </view>
+                        </scroll-view>
+                       
+                    <!-- </view> -->
+                </view>
+            </view>
+            
+            <view class="btn">
+                <!-- <text>上架共5个</text> -->
+                <van-button bindtap="toSetMenu">确定</van-button>
+            </view>
+
+        </van-tab>
+    </van-tabs>
+
+
+    <!--  -->
+    <!-- <view class="btnFAM">
+        <van-button bindtap="submitFN">{{edit==1?'设置套餐':'编辑拼团活动'}}</van-button>
+    </view> -->
+</view>

@@ -1,0 +1,45 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-12-11 17:14:42 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-12-11 17:14:42 
+    头门店详情修改
+
+ */ -->
+
+<view id="fuStoreDet">
+  <!-- 顶部 -->
+  <view class="banner">
+    <image class="bgImg" src="{{getStore.Introduce}}"></image>
+    <view class="storeInfo">
+      <image class="head" src="{{getStore.StoreImages}}"></image>
+      <view>{{getStore.StoreName}}</view>
+    </view>
+    <view class="tabIcon" bindtap="onClickIcon">
+      <image data-type="1" mode="aspectFit" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/homepage_erweima.png"></image>
+      <image data-type="2" mode="aspectFit" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/homepage_share.png">
+        <button open-type="share"></button>
+      </image>
+    </view>
+  </view>
+
+
+  <view class="showInfo">
+    <view class="time">营业时间：{{getStore.OpenStartDate}}-{{getStore.OpenEndDate}}</view>
+    <view class="content" bindtap="onClickIcon">
+      <view class="address" data-type="3">{{getStore.RegionName}}{{getStore.Address}}</view>
+      <image data-type="4" class="call" mode="aspectFit" src="https://bcdj.9oasd.cn/images/phoneS.png"></image>
+    </view>
+  </view>
+
+
+  <!-- 门店图片 -->
+  <view class="storeImg">
+    <view class="tips">门店图片</view>  
+    <view class="imgList">
+      <image src="{{getStore.SWXStoreEntrancePic}}"></image>
+      <image src="{{getStore.SWXIndoorPic}}"></image>
+    </view>
+  </view>
+
+</view>

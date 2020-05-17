@@ -1,0 +1,43 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-08-02 10:34:30 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-08-02 10:37:28
+    业绩申报记录
+*/ -->
+<view id="fuActionDetOut">
+
+    <view class="child" wx:for="{{dataInfo.Orders}}" wx:key="{{index}}">
+        <view class="text-righ">订单状态：{{item.OrderStatus}}</view>
+        <view class="listf">
+            <span class="flexf">订单号：{{item.OrderId}}</span>
+            <span>{{item.OrderDate}}</span>
+        </view>
+        <view class="listf">
+            <span class="flexf">门店名字：{{item.StoreName}}</span>
+            <span class="fw">金额：￥{{item.OrderTotal}}</span>
+        </view>
+        <view class="listf">
+            <span class="gpf">顾客名字：{{item.UserName}}</span>
+            <span class="gpf">团队长名字：{{item.TechnicianHeadName}}</span>
+            <span class="gpf">执行者名字：{{item.ExcutorName}}</span>
+        </view>
+        <view class="listf">
+            <span class="gpf">优惠券：{{item.IsIncludeCoupon?'1':''}}</span>
+            <span class="gpf">修复剂：{{item.IsIncludeRestorer?'1':''}}</span>
+            <span class="gpf">技师名字：{{item.TechniciaInfo[1].Name}}</span>
+        </view>
+     
+    </view>
+
+    <view class="kb"></view>
+    <view class="btnf">
+        <span class="leftf">
+            订单数：{{dataInfo.OrdersCount}}
+        </span>
+         <span class="leftf">
+            总金额：{{dataInfo.OrdersGetTotal}}
+        </span>
+    </view>
+
+</view>

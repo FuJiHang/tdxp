@@ -1,0 +1,178 @@
+#technician .list {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 15rpx 20rpx;
+  display: flex;
+  align-items: center;
+  border-top: 1rpx solid #eee;
+}
+#technician .list .img_wrap {
+  flex: 1;
+  margin-right: 10rpx;
+}
+#technician .list .img_wrap .img {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 10rpx;
+}
+#technician .list .content {
+  font-size: 26rpx;
+  color: #666;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#technician .list .content .name {
+  font-size: 30rpx;
+  color: #333;
+}
+#technician .list .content .test {
+  margin: 5rpx 0;
+}
+#technician .list .content .nums_wrap .nums {
+  margin-left: 10rpx;
+  color: red;
+}
+#technician .list .list_code {
+  flex: 1;
+}
+#technician .list .list_code .code {
+  width: 50rpx;
+  height: 50rpx;
+}
+#technician .list .edit_wrap {
+  flex: 1;
+}
+#technician .list .edit_wrap .edit_img {
+  width: 40rpx;
+  height: 40rpx;
+}
+#technician .list .btn_list {
+  flex: 1;
+}
+#technician .list .btn_list .btn_del {
+  width: 45rpx;
+  height: 50rpx;
+}
+#technician .btn_wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15rpx 0;
+  position: fixed;
+  left: 0;
+  bottom: 100rpx;
+}
+#technician .btn_wrap .btn_test {
+  font-size: 30rpx;
+  color: #fff;
+  width: 90%;
+  background-color: red;
+  border-radius: 50rpx;
+  padding: 25rpx 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+#code {
+  width: 600rpx;
+  height: 649rpx;
+  background-color: #fff;
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  right: 0;
+  bottom: 0;
+  z-index: 22;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 35rpx;
+  border-radius: 12rpx;
+}
+#code .code_wrap {
+  width: 535rpx;
+  height: 521rpx;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 1rpx solid #eee;
+  border-radius: 12rpx;
+  padding: 20rpx;
+}
+#code .code_wrap .code_img {
+  width: 502rpx;
+  height: 477rpx;
+  border-radius: 10rpx;
+}
+#code .code_test {
+  font-size: 32rpx;
+  color: #333;
+  margin-top: 20rpx;
+}
+#code .btn_wrap {
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60rpx 0;
+  border-top-left-radius: 15rpx;
+  border-top-right-radius: 15rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+#code .btn_wrap .b_code {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 12000;
+}
+#code .btn_wrap .b_code .share_img {
+  width: 80rpx;
+  height: 80rpx;
+}
+#code .btn_wrap .b_code .share_code {
+  margin-top: 15rpx;
+}
+#code .btn_wrap .z_code {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#code .btn_wrap .z_code .share_img {
+  width: 80rpx;
+  height: 80rpx;
+}
+#code .btn_wrap .z_code .share {
+  margin-top: 15rpx;
+}
+#code .btn_wrap .fengxiang {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#code .btn_wrap .fengxiang .share_img {
+  width: 80rpx;
+  height: 80rpx;
+}
+#code .btn_wrap .fengxiang .share {
+  margin-top: 15rpx;
+}
+#zhezhao {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+}

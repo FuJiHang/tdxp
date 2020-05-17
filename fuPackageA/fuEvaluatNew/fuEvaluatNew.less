@@ -1,0 +1,234 @@
+
+page{
+    height: 100%;
+    font-size: 26rpx;
+    position: relative;
+
+
+}
+
+#fuEvaluatNew{
+    color: #666;
+
+    .evaNew{
+        margin-bottom: 20rpx;
+        background: white;
+        padding-bottom: 20rpx;
+        textarea{
+            width: 100%;
+            padding: 20rpx;
+            box-sizing: border-box;
+            height: 250rpx;
+            border-top:1px solid rgb(245, 245, 245);
+        }
+        .chooselt{
+            display: flex;
+            align-items: center;
+            padding:0 10rpx;
+            box-sizing: border-box;
+            .child{
+                padding:3rpx 30rpx;
+                margin: 10rpx;
+                border:1px solid rgb(240, 240, 240);
+                border-radius: 30rpx;
+                color: #999;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            .choose{
+                border-color: #F56F68;
+                color: #F56F68;
+            }
+        }
+        .cate{
+            padding:0 20rpx ;
+            box-sizing: border-box;
+            .name{
+                font-size: 30rpx;
+                font-weight: 800;
+            }
+            .child{
+                display: flex;
+                align-items: center;
+                padding: 6rpx 0;
+                box-sizing: border-box;
+                .van-rate{
+                    margin-left: 20rpx;
+                    margin-top: 10rpx;
+                }
+            }
+        }
+    }
+    // 
+    .assem{
+        padding: 20rpx;
+        box-sizing: border-box;
+        background: white;
+        
+
+        .childA{
+            position: relative;
+            
+            margin-top: 20rpx;
+            padding: 20rpx;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+           
+            .proImg{
+                height: 170rpx;
+                width: 170rpx;
+                border-radius: 20rpx;
+                display: flex;
+                justify-items: center;
+                align-items: center;
+                overflow: hidden;
+                // position: relative;
+                image{
+                    background: rgb(255, 249, 249);
+                    // position:absolute;
+                    height: 100%;
+                    // width:  180rpx;
+                }
+            }
+            
+            .contant{
+                flex: 1;
+                margin-left: 20rpx;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                .ptcg{
+                    top: 30%;
+                    right: 30rpx;
+                    position: absolute;
+                    width: 100rpx;
+                    height: 100rpx;
+                }
+                .nameC{
+                    display: flex;
+                    align-items: center;
+                    .le{
+                        flex: 1;
+                        margin-right: 5rpx;
+                        font-weight: 800;
+                        color: #333;
+                        font-size: 30rpx;
+                        display:-webkit-box;
+                        -webkit-line-clamp: 1; //超出多少行
+                        overflow: hidden;
+                        -webkit-box-orient: vertical;
+                        word-break:break-all;
+                    }
+                    .ri{
+                        font-size: 28rpx;
+                        color: #F56F68;
+                    }
+                    
+                }
+                .detail{
+                    margin: 10rpx 0;
+                    display:-webkit-box;
+                    -webkit-line-clamp: 2; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break:break-all;
+                    color: #999;
+                }
+                .price{
+                    flex: 1;
+                    display: flex;
+                    align-items: flex-end;
+                    color: #999;
+                    .mon{
+                        color:#F56F68;
+                        font-size: 32rpx;
+                        flex: 1;
+                    } 
+                    // .monO{
+                    //     font-size: 29rpx;
+                    //     flex: 1;
+                    //     margin: 0 10rpx;
+                    // }
+                    .num{
+                        margin-right: 10rpx;
+                    }
+                    .btn{
+
+                        .van-button{
+                            border-radius: 30rpx;
+                            background: #F56F68;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 
+    // 
+    .imgList{
+        display: flex;
+        align-items: center;
+        padding: 10rpx ;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        margin-bottom:20rpx;
+        border-bottom: 1px solid rgb(241, 241, 241);
+        .padding{
+            padding: 10rpx ;
+            box-sizing: border-box;
+            width: 25%;
+        }
+        .choose{
+            height: 180rpx;
+            box-sizing: border-box;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-size: 30rpx;
+            color: #999;
+            background: rgb(245, 245, 245);
+            border-radius: 15rpx;
+            image{
+                height: 100rpx;
+                width: 100rpx;
+                margin-bottom: 5rpx;
+            }
+        }
+        .img{
+            
+            padding: 10rpx ;
+            box-sizing: border-box;
+            width: 25%;
+            position: relative;
+            image{
+                border-radius: 15rpx;
+                height: 170rpx;
+                width: 100%;
+            }
+            
+            
+        }
+    
+    }
+    
+
+    // 
+    .btn{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 9;
+        .van-button{
+            width: 100%;
+            border:none;
+            border-radius: 0;
+            color: white;
+            background: #f56e68;
+        }
+    }
+}

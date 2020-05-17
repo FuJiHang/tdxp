@@ -1,0 +1,125 @@
+/* pages/myBeautyIntegral/myBeautyIntegral.wxss */
+/* pages/myCommission/myCommission.wxss */
+/* pages/myIntegral/myIntegral.wxss */
+
+page{
+    height: 100%;
+}
+
+.myBeautyIntegral {
+    background-color: #fff;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    scroll-view{
+        flex: 1;
+        overflow: auto;
+        .noMore{
+          font-size: 28rpx;
+          color: #999;
+          padding: 20rpx;
+          text-align: center;
+          box-sizing: border-box;
+      }
+    }
+  .integral-titile {
+    width: 750rpx;
+    height: 260rpx;
+    background-color: #F56F68;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .integral-titile .titile-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 244rpx;
+    height: 244rpx;
+    z-index: 999; 
+    position: relative;
+  }
+  .titile-box image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -4rpx;
+    left: 0;
+    z-index: -1;
+  }
+  .titile-box .beauty-num {
+    font-family: 'BebasNeue-Regular';
+    font-size: 60rpx;
+    color: #fff;
+  }
+  .titile-box .my-beauty {
+    font-size: 24rpx;
+    color: #fff;
+    text-align: center;
+    margin-top: 16rpx;
+  }
+  .his-beauty-money {
+    width: 750rpx;
+    height: 90rpx;
+    background-color: #f7f7f7;
+    line-height: 90rpx;
+    font-size: 26rpx;
+    color: #666666;
+    padding-left: 30rpx;
+    display: flex;
+    align-items: center;
+  }
+  .his-beauty-money text {
+    margin-left: -4rpx;
+    margin-top: 2rpx;
+    line-height: 90rpx;
+  }
+  .integral-record-box {
+    padding: 0 30rpx 0 30rpx;
+  }
+  .integral-record-item {
+    width: 750rpx;
+    height: 98rpx;
+  }
+  .record-titile {
+    position: relative;
+  }
+  .record-titile::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #e5e5e5;
+    position: absolute;
+    top: 98rpx;
+    left: 0;
+  }
+  .integral-record-item .record-titile {
+    font-size: 24rpx;
+    color: #666666;
+    display: flex;
+    flex-direction: column;
+    padding-top: 14rpx;
+  }
+  .record-titile .record-info {
+    padding-top: 14rpx;
+    color: #666666;
+    font-size: 24rpx;
+  }
+  .record-titile .record-info text {
+    margin: 5rpx;
+  }
+  .record-comp {
+    position: absolute;
+    top: 30rpx;
+    right: 60rpx;
+  }
+  .record-comp .comp-jia,.record-comp .comp-jian {
+    font-size: 24rpx;
+  }
+  .record-comp .comp-num,.record-comp .comp-num {
+    font-size: 28rpx;
+  }
+}

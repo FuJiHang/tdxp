@@ -1,0 +1,598 @@
+page {
+  position: relative;
+  font-size: 26rpx;
+  color: #666;
+  box-sizing: border-box;
+}
+page .picker-view-box {
+  margin-top: -50% !important;
+}
+#fuIndexG .banner {
+  background: #fff;
+  height: 200rpx;
+}
+#fuIndexG .banner image {
+  width: 100%;
+  height: 1rpx;
+}
+#fuIndexG .maHe {
+  margin: 20rpx 0;
+  height: 300rpx;
+}
+#fuIndexG .seachMTAM {
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+}
+#fuIndexG .seachMTAM .addressImg {
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+  max-width: 25%;
+}
+#fuIndexG .seachMTAM .addressImg > span {
+  flex: 1;
+  margin-right: 10rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+#fuIndexG .seachMTAM .addressImg .van-icon {
+  margin-top: 5rpx;
+}
+#fuIndexG .seachMTAM .seachbg {
+  margin-right: 10rpx;
+  flex: 1;
+  align-items: center;
+  display: flex;
+  background: #EEEEEE;
+  border-radius: 40rpx;
+}
+#fuIndexG .seachMTAM .seachbg image {
+  margin-left: 20rpx;
+  height: 40rpx;
+  width: 40rpx;
+}
+#fuIndexG .seachMTAM .seachbg input {
+  font-size: 28rpx;
+  margin: 0 20rpx;
+  flex: 1;
+  height: 60rpx;
+}
+#fuIndexG .item-img {
+  width: 100%;
+}
+#fuIndexG .newS {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  background: white;
+  overflow: hidden;
+  height: 80rpx;
+}
+#fuIndexG .newS .leftNew {
+  width: 130rpx;
+}
+#fuIndexG .newS .border {
+  width: 1px;
+  margin: 0 20rpx;
+  height: 60rpx;
+  background: #f0f0f0;
+}
+#fuIndexG .newS .rightNew {
+  flex: 1;
+  height: 100%;
+}
+#fuIndexG .newS .rightNew .child {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+#fuIndexG .newS .rightNew .child .tip {
+  padding: 5rpx 10rpx;
+  box-sizing: border-box;
+  background: #f9eaee;
+  border-radius: 1px;
+  color: #e7483f;
+}
+#fuIndexG .newS .rightNew .child .txt {
+  flex: 1;
+  color: #999;
+  margin-left: 20rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+#fuIndexG .newS .rightNew :first-child {
+  padding-top: 0;
+}
+#fuIndexG .conpou {
+  box-sizing: border-box;
+  background: #fff;
+  margin: 20rpx 0;
+}
+#fuIndexG .conpou .cou {
+  width: 100%;
+}
+#fuIndexG .noPad {
+  margin: 20rpx 0;
+  padding: 0;
+}
+#fuIndexG .moreFun {
+  background: white;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+#fuIndexG .moreFun .topFun {
+  display: flex;
+}
+#fuIndexG .moreFun .topFun .flex {
+  box-sizing: border-box;
+  flex: 1;
+}
+#fuIndexG .moreFun .topFun .flex image {
+  width: 100%;
+}
+#fuIndexG .moreFun .btnFun {
+  display: flex;
+}
+#fuIndexG .moreFun .btnFun .flex {
+  box-sizing: border-box;
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  height: 287rpx;
+}
+#fuIndexG .moreFun .btnFun .flex image {
+  width: 100%;
+}
+#fuIndexG .moreFun .wid {
+  border-left: 1px solid #ebebeb;
+}
+#fuIndexG .moreKan .noMore {
+  float: left;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 120rpx;
+  color: #999;
+}
+#fuIndexG .moreKan .topName {
+  background: white;
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+#fuIndexG .moreKan .topName .name {
+  flex: 1;
+  font-size: 32rpx;
+}
+#fuIndexG .moreKan .topName .van-icon {
+  margin-top: 2rpx;
+}
+#fuIndexG .moreKan .contantKan {
+  padding: 0 8rpx;
+  box-sizing: border-box;
+}
+#fuIndexG .moreKan .contantKan .rightK {
+  float: right;
+}
+#fuIndexG .moreKan .contantKan .leftK {
+  float: left;
+}
+#fuIndexG .moreKan .contantKan .leftK,
+#fuIndexG .moreKan .contantKan .rightK {
+  width: 50%;
+  padding: 0 0 10rpx;
+  box-sizing: border-box;
+}
+#fuIndexG .moreKan .contantKan .leftK .child,
+#fuIndexG .moreKan .contantKan .rightK .child {
+  margin: 0 8rpx 20rpx;
+  background: white;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+#fuIndexG .moreKan .contantKan .leftK .child .logoImg,
+#fuIndexG .moreKan .contantKan .rightK .child .logoImg {
+  position: relative;
+}
+#fuIndexG .moreKan .contantKan .leftK .child .logoImg .playBtn,
+#fuIndexG .moreKan .contantKan .rightK .child .logoImg .playBtn {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  opacity: 0.8;
+  padding: 10rpx;
+  background: rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+#fuIndexG .moreKan .contantKan .leftK .child .logoImg image,
+#fuIndexG .moreKan .contantKan .rightK .child .logoImg image,
+#fuIndexG .moreKan .contantKan .leftK .child .logoImg .myVideo,
+#fuIndexG .moreKan .contantKan .rightK .child .logoImg .myVideo {
+  max-height: 800rpx;
+  width: 100%;
+}
+#fuIndexG .moreKan .contantKan .leftK .child .name,
+#fuIndexG .moreKan .contantKan .rightK .child .name {
+  margin: 15rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  font-size: 28rpx;
+}
+#fuIndexG .moreKan .contantKan .leftK .child .btnXX,
+#fuIndexG .moreKan .contantKan .rightK .child .btnXX {
+  padding: 0 20rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  color: #999;
+}
+#fuIndexG .moreKan .contantKan .leftK .child .btnXX .touxiang,
+#fuIndexG .moreKan .contantKan .rightK .child .btnXX .touxiang {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#fuIndexG .moreKan .contantKan .leftK .child .btnXX .touxiang image,
+#fuIndexG .moreKan .contantKan .rightK .child .btnXX .touxiang image {
+  width: 100%;
+}
+#fuIndexG .moreKan .contantKan .leftK .child .btnXX .nameC,
+#fuIndexG .moreKan .contantKan .rightK .child .btnXX .nameC {
+  flex: 1;
+  margin: 0 5rpx;
+}
+#fuIndexG .moreKan .contantKan .leftK .child .btnXX .van-icon,
+#fuIndexG .moreKan .contantKan .rightK .child .btnXX .van-icon {
+  margin: 8rpx 5rpx 0 0;
+}
+#fuIndexG .address-box {
+  position: fixed;
+  z-index: 80;
+  top: 0;
+  left: 0;
+  /* background: black; */
+  /* opacity: 0.5; */
+  /* opacity: 0.5; */
+  height: 100%;
+  /* top: 10%; */
+  width: 100%;
+  display: flex;
+  background: #fff;
+  justify-content: center;
+  align-items: center;
+}
+#fuIndexG .address-box2 {
+  position: absolute;
+  padding: 8px 18px;
+  box-sizing: border-box;
+  top: 30rpx;
+  margin: auto;
+  left: 0;
+  right: 0;
+  border: 1px solid #efefef;
+  width: 28%;
+  text-align: center;
+  color: #333;
+  border-radius: 4rpx;
+  background: #fff;
+  z-index: 222;
+  /* background: #FFFFFF; */
+  /* z-index: 210; */
+}
+#fuIndexG #addr-picker {
+  width: 100% !important;
+}
+#fuIndexG .konbai {
+  height: 120rpx;
+}
+#fuIndexG .goodProduct .topName {
+  background: white;
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+#fuIndexG .goodProduct .topName .name {
+  flex: 1;
+  font-size: 32rpx;
+}
+#fuIndexG .goodProduct .topName .van-icon {
+  margin-top: 4rpx;
+}
+#fuIndexG .goodProduct .productCont {
+  padding: 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+#fuIndexG .goodProduct .productCont .product {
+  padding: 10rpx;
+  width: 50%;
+  box-sizing: border-box;
+}
+#fuIndexG .goodProduct .productCont .product .jiaoZiPi {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#fuIndexG .goodProduct .productCont .product .img {
+  flex: 1;
+  box-sizing: border-box;
+  border-bottom: 1px solid #fafafa;
+}
+#fuIndexG .goodProduct .productCont .product .img image {
+  height: 220rpx;
+  max-width: 100%;
+}
+#fuIndexG .goodProduct .productCont .product .name {
+  font-size: 32rpx;
+  padding: 0 20rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  margin: 10rpx 0;
+}
+#fuIndexG .goodProduct .productCont .product .det {
+  color: #999;
+  margin-bottom: 20rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+#fuIndexG .goodProduct .productCont .product .val {
+  display: flex;
+  align-items: center;
+  color: #F56F68;
+  padding: 0 20rpx 20rpx;
+  box-sizing: border-box;
+}
+#fuIndexG .goodProduct .productCont .product .val .ovFU {
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+#fuIndexG .goodProduct .productCont .product .val .bea {
+  font-size: 30rpx;
+  overflow: hidden;
+}
+#fuIndexG .goodProduct .productCont .product .val .bea .num {
+  color: #E65757;
+  font-size: 30rpx;
+}
+#fuIndexG .goodProduct .productCont .product .val .xjin {
+  color: #999;
+  font-size: 22rpx;
+  text-decoration: line-through;
+}
+#fuIndexG .goodProduct .productCont .product .val .xjin .num {
+  margin: 0 10rpx;
+  font-size: 30rpx;
+}
+.navBarFu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  background: white;
+  display: flex;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+  border-top: 1px solid #f1f1f1;
+}
+.navBarFu .child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  opacity: 0.6;
+}
+.navBarFu .child image {
+  width: 40rpx;
+  height: 40rpx;
+}
+.navBarFu .child .name {
+  margin-top: 5rpx;
+}
+.navBarFu .black {
+  opacity: 1;
+}
+.navBarFu .max {
+  opacity: 1;
+}
+.navBarFu .max image {
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  top: -40rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.teamPro {
+  background: white;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+}
+.teamPro .navTop {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #999;
+  border-bottom: 1px solid #f3f3f3;
+}
+.teamPro .navTop .flex {
+  font-size: 32rpx;
+  flex: 1;
+}
+.teamPro .navTop image {
+  height: 44rpx;
+  width: 44rpx;
+  margin-right: 10rpx;
+}
+.teamPro .navTop .van-icon {
+  margin-top: 8rpx;
+  margin-left: 10rpx;
+}
+.teamPro .project {
+  margin: 24rpx 30rpx 0;
+  display: flex;
+  align-items: center;
+  background: #F7F7F7;
+}
+.teamPro .project .img_num {
+  position: relative;
+}
+.teamPro .project .img_num image {
+  height: 270rpx;
+  width: 270rpx;
+}
+.teamPro .project .img_num .num {
+  border-radius: 0 30rpx 30rpx 30rpx;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 2rpx 10rpx 4rpx;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #d44639;
+}
+.teamPro .project .contant {
+  display: flex;
+  flex-direction: column;
+  padding: 24rpx 22rpx;
+  box-sizing: border-box;
+  height: 270rpx;
+  flex: 1;
+}
+.teamPro .project .contant .name_num {
+  font-size: 28rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+.teamPro .project .contant .price_btn {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+.teamPro .project .contant .price_btn .flex {
+  flex: 1;
+}
+.teamPro .project .contant .price_btn .flex .peo_pri {
+  color: #E65757;
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+}
+.teamPro .project .contant .price_btn .flex .peo_pri .pri {
+  font-size: 34rpx;
+}
+.teamPro .project .contant .price_btn .flex .oneBuy {
+  color: #999;
+}
+.teamPro .project .contant .price_btn .flex .oneBuy .pri {
+  text-decoration: line-throug;
+}
+.teamPro .project .contant .price_btn .van-button {
+  color: #fff;
+  background: linear-gradient(83deg, #d34438 0%, #f2635e 100%);
+  border-radius: 15px;
+}
+.van-popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+}
+.van-popup image {
+  width: 100%;
+}
+.van-popup .img {
+  width: 100%;
+  position: relative;
+}
+.van-popup .img .name,
+.van-popup .img .phone,
+.van-popup .img .code,
+.van-popup .img .getCode,
+.van-popup .img .register {
+  position: absolute;
+  width: 48%;
+  height: 75rpx;
+}
+.van-popup .img .name {
+  left: 33%;
+  top: 46%;
+}
+.van-popup .img .phone {
+  left: 32.7%;
+  top: 78%;
+}
+.van-popup .img .code {
+  left: 33%;
+  top: 56.5%;
+  width: 23%;
+}
+.van-popup .img .getCode {
+  left: 57.8%;
+  top: 56.5%;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fd5c48;
+}
+.van-popup .img .register {
+  left: 22%;
+  top: 72%;
+  width: 58%;
+}
+.van-popup .close {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  height: 100rpx;
+  width: 60%;
+}

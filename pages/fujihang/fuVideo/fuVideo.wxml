@@ -1,0 +1,46 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-05-30 18:41:19 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-05-30 18:41:19 
+    录制视频
+*/ -->
+
+<view id="fuVideo">
+
+    <view class="cententView {{!first?'open':''}}">
+        <camera class="camera" device-position="back" flash="off" binderror="error" >
+        </camera>
+        <cover-view class="aaaaa">
+           <button>asda</button>
+        <!-- <view class="btn">
+            <button class="openClose"  bindtap="btnClick1">
+                <view class="type">
+                    <van-icon wx:if="{{open}}" name="stop" color="#F56F68" size="80rpx" />
+                </view>
+                <view class="time {{open?'dh':''}}"></view>
+            </button>
+        </view> -->
+         </cover-view>
+    </view>
+
+    <view class="centantVideo {{first?'open':''}}" >
+        <video  class="video" src="{{videoSrc}}"></video>
+        <view class="btn">
+            <span class="flex">
+                <van-icon bindtap="closeFN" name="cross" color="#fff" size="65rpx"/>
+            </span>
+            
+            <van-icon name="success" color="#fff" size="65rpx" />
+        </view>
+    </view>
+
+    <!-- <button type="primary" bindtap="btnClick1">开始录像</button>
+    <button type="primary" bindtap="btnClick2">结束录像</button>
+
+    <image mode="widthFix" src="{{src}}"></image>
+
+    <button type="primary" bindtap="btnClick3">拍摄照片</button> -->
+
+
+</view>

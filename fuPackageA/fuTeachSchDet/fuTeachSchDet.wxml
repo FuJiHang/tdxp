@@ -1,0 +1,35 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-12 20:33:36 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-07-12 20:34:26
+    技师匠心展示
+*/ -->
+<view id="fuTeachSchDet">
+
+    <!--  -->
+    <view class="navTap">
+        <span class="name">匠心商学院毕业证书展示</span>
+    </view>
+
+    <image class="zs" mode="widthFix" src="{{dataInfo.AcademyPicture+'?x-oss-process=image/resize,l_640'}}" />
+    
+    <!--  -->
+    <view class="navTap">
+        <span class="name">荣誉展示</span>
+    </view>
+
+    <view class="goodImg" wx:for="{{dataInfo.Honors}}" wx:key="{{index}}">
+        <span class="contant">
+            <view class="name">{{item.Title}}</view>
+            <view class="det">{{item.Content}}</view>
+
+        </span>
+        <span class="img">
+            <image src="{{item.Picture+'?x-oss-process=image/resize,l_640'}}"  />
+
+        </span>
+    </view>
+
+
+</view>

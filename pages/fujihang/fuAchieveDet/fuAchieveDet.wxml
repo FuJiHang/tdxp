@@ -1,0 +1,145 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-06-19 19:33:38 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-06-19 19:33:38 
+ */ -->
+<view id="fuAchieveDet">
+
+    <!--  -->
+    <view class="navtop">
+        <span class="child {{index==0?'border':''}} {{item.num?'red':''}}" wx:for="{{navTop}}" wx:key="{{index}}" data-index="{{index}}" bindtap="chooseFN">{{item.name}}
+            <van-icon name="{{item.icon?'arrow-up':'arrow-down'}}" size="30rpx" color="{{item.num?'#f56e68':''}}" />
+        </span>
+    </view>
+ 
+    <!--  -->
+    <scroll-view scroll-y="true" bindscrolltolower="getData">
+        <view class="fAchiDet" wx:for="{{orderS}}" wx:key="{{index}}" wx:if="{{type==0}}">
+            <view class="name" wx:if="{{type==0}}">
+                {{dataList.ExcutorName?dataList.ExcutorName:'无'}}(执行者)
+            </view>
+            <view class="name" wx:if="{{type==1}}">
+                {{dataList.TechniciaInfo[0].Name?dataList.TechniciaInfo[0].Name:'无'}}(技师)
+            </view>
+            <view class="pro">
+                {{item.TechniciaInfo[1].Product}}({{item.StoreName}})
+            </view>
+            <view class="det">
+                <span class="flex">活动：{{item.ActivityName?item.ActivityName:'无'}}</span>
+                <span class="flex">加色：{{item.TechniciaInfo[0].Product}}</span>
+            </view>
+            <view class="det pro">
+                <span class="flex">总金额：￥{{item.OrderTotal}}</span>
+                <span class="flex">提成金额：<span class="pM">￥{{item.OrderSplittin}}</span></span>
+            </view>
+            <view class="time">
+                {{item.OrderDate}}
+            </view>
+            <image class="djs {{item.DrawStatus?'yjs':''}}" src="{{imgUrl+(item.DrawStatus?'yjs.png':'djs.png')}}" />
+        </view>
+
+
+        <!--  -->
+        <view class="childDet" wx:if="{{type!=0}}" wx:for="{{orderS}}" wx:key="{{index}}" data-open="{{item.openDet}}" data-index='{{index}}' bindtap="openFN">
+            <view class="detailMin" wx:if="{{type!=2}}">
+                <view class="time">{{item.OrderDate}}</view>
+                <span class="tdz ">
+                    <view class="name yh" wx:if="{{type!=2}}">{{type==1?(item.ExcutorName?item.ExcutorName:'无'):''}}
+                        {{type!=1?(item.TechnicianHeadName?item.TechnicianHeadName:'无'):''}}
+                        <image src="{{imgUrl+(type==1?'xxsq.png':'team01.png')}}" mode="widthFix" /></view>
+                    <view class="name yh" wx:if="{{type==2}}">
+                        {{item.ActivityName?item.ActivityName:'无'}}
+                    </view>
+                    <view class=" yh mini" wx:if="{{type==3}}">
+                        <image src="{{imgUrl+'store-16.png'}}" mode="widthFix" />
+                        {{item.StoreName?item.StoreName:'无'}}
+                    </view> 
+                </span>
+                <span class="cout"  wx:if="{{type!=2&&type!=3}}">
+                    <view class="name">{{type==1||type==4||type==0?(item.TechniciaInfo[0].Name?item.TechniciaInfo[0].Name:'无'):''}}
+                    </view>
+                    <view class="ico">{{type==1?item.TechniciaInfo[0].GradeName:'高级头疗师'}}</view>
+                </span>
+                <span class="proj cout" wx:if="{{type!=4&&type!=3}}">
+                    <view class="name" wx:if="{{type!=2}}">{{item.TechniciaInfo[1].Product?item.TechniciaInfo[1].Product:'无'}}</view>
+                    <view class="ico yh">
+                        <image src="{{imgUrl+'store-16.png'}}" mode="widthFix" />
+                        {{item.StoreName?item.StoreName:'无'}}
+                    </view> 
+                </span>
+                <span class="cout" wx:if="{{type==4||type==3}}">{{item.OrdersCount}}单</span>
+                <span class="money">￥{{type!=4?item.OrderTotal:''}}{{type==4||type==3?item.OrdersTotal:''}}
+                </span>
+                <van-icon name="{{item.openDet?'arrow':'arrow-down'}}" size="30rpx"  />
+            </view>
+            <!-- 店家除外 -->
+            <view class="detailMax" hidden="{{item.openDet}}" wx:if="{{type!=4&&type!=3}}">
+                <view class="flexGP color">
+                    <span class="flex_le">订单编号：{{item.OrderId}}</span>
+                    <span>日期:{{item.timeFJ}}</span>
+                </view>
+                <view class="flexGP">
+                    <span class="flex_gp">顾客名字：{{item.UserName}}</span>
+                    <span class="flex_gp">头疗师：{{item.TechniciaInfo[1].Name}}</span>
+                    <span class="flex_gp">执行团队长：{{item.TechnicianHeadName}}</span>
+                </view>
+                <view class="flexGP">
+                    <span class="flex_gp">项目名：{{item.TechniciaInfo[1].Product}}</span>
+                    <span class="flex_gp">修复剂：{{item.IsIncludeRestorer=='False'?0:1}}</span>
+                    <span class="flex_gp">代金券：{{item.IsIncludeCoupon=='False'?0:1}}</span>
+                </view>
+                <view class="rightSJ">实收金额:{{item.Paytotal?item.Paytotal:item.PayTotal}}</view>
+            </view>
+            <!-- 店家 -->
+                <view class="detailMax" wx:for-item="itemoc" wx:key="indexoc" wx:for-index="indexoc" wx:for="{{item.OrderDetails}}" hidden="{{item.openDet}}" wx:if="{{type==4||type==3}}">
+                <view class="flexGP color">
+                    <span class="flex_le">订单编号：{{itemoc.OrderId}}</span>
+                    <span>日期:{{itemoc.timeFJ}}</span>
+                </view>
+                <view class="flexGP">
+                    <span class="flex_gp">顾客名字：{{itemoc.UserName}}</span>
+                    <span class="flex_gp">头疗师：{{itemoc.TechniciaInfo[1].Name}}</span>
+                    <span class="flex_gp">执行团队长：{{itemoc.TechnicianHeadName}}</span>
+                </view>
+                <view class="flexGP">
+                    <span class="flex_gp">项目名：{{itemoc.TechniciaInfo[1].Product}}</span>
+                    <span class="flex_gp">修复剂：{{itemoc.IsIncludeRestorer=='False'?0:1}}</span>
+                    <span class="flex_gp">代金券：{{itemoc.IsIncludeCoupon=='False'?0:1}}</span>
+                </view>
+                <view class="rightSJ">实收金额:{{itemoc.PayTotal}}</view>
+            </view>
+        </view>
+
+
+        <view class="konbai"></view>
+    </scroll-view>
+    
+
+    <!--  -->
+    <view class="btnDay">
+
+
+        <span class="child ">
+            今日单数：{{type!=3?(dataList.TodayOrdersNum?dataList.TodayOrdersNum:'0'):''}}
+            {{type==3?(dataList.TodayOrders?dataList.TodayOrders:'0'):''}}单
+        </span>
+        <span class="last ">
+            <view class="zon">结算金额：￥{{dataList.SettleAmount}}</view>
+            <view class="zon">提成金额：￥{{dataList.SplittinFromOrders}}</view>
+        </span>
+      
+    </view>
+
+
+    <!-- 时间 -->
+    <van-popup show="{{ showTime }}" position="bottom" bind:close="onClose">
+        <van-datetime-picker
+            type="datetime"
+            value="{{currentDate}}"
+            bind:input="onInput"
+            bind:confirm="okTime"
+            bind:cancel="onClose"
+        />
+    </van-popup>   
+</view>

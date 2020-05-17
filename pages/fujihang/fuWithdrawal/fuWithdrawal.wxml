@@ -1,0 +1,30 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-06-11 10:02:25 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-06-11 10:02:25 
+    提现
+ */ -->
+<view id="fuWithdrawal">
+    <view class="money">可提现金额：{{dataInfo.Balance}}元     
+         已冻结金额：{{dataInfo.RequestBalance}}元</view>
+    <view class="topName">请选择提现方式</view>
+    <view class="withdra" wx:for="{{chooseList}}" wx:key="{{index}}" wx:if="{{index==0&&dataInfo.EnableBulkPaymentWeixin||index==1&&dataInfo.EnableBulkPaymentAliPay}}">
+        <image bindtap="chooseFN" data-index="{{index}}" class="logo" mode="aspectFit" src="{{imgUrl+item.img}}"/>
+        <view class="inputXx " wx:if="{{index==choose}}">
+            <view class="userName flex" wx:if="{{choose}}">账号：<span class="val"><input data-index="{{index}}" data-name="Code" bindinput="changFN" placeholder="请输入账号"  value="{{item.Code}}"/></span></view>
+            <view class="userName flex" wx:if="{{choose}}">真实姓名：<span class="val"><input data-index="{{index}}" data-name="RealName" bindinput="changFN" placeholder="请输入真实姓名"  value="{{item.RealName}}"/></span></view>
+            <view class="momey flex">提现金额：<span class="val"><input bindblur="bindblur" bindinput="changFN"  data-index="{{index}}" data-name="mon" placeholder="请输入金额" value="{{item.mon}}"/></span></view>
+        </view>
+    </view>
+
+
+    <view class="textArea">
+        <input placeholder="请输入备注" value="{{Remark}}" bindinput="RemarkFN" />
+    </view>
+
+    <view class="btn">
+        <van-button bindtap="submitFN">确认</van-button>
+    </view>
+
+</view>

@@ -1,0 +1,26 @@
+<!--components/timePicker/timePicker.wxml-->
+<view class='time_picker_main {{show?"show":""}}'>
+  <view class='time_mask' catchtouchmove='stopMove'></view>
+  <view class='picker_box'>
+    <view class='time_btn_box'>
+      <view class='btn_cancel' hover-class='hover' bindtap='bindCancel'>取消</view><view class='btn_sure' hover-class='hover' bindtap='bindSure'>确定</view>
+    </view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{years}}" wx:key="{{index}}" style="line-height: 50px">{{item}}年</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{months}}" wx:key="{{index}}" style="line-height: 50px">{{item}}月</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{days}}" wx:key="{{index}}" style="line-height: 50px">{{item}}日</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{hours}}" wx:key="{{index}}" style="line-height: 50px">{{item}}时</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{minutes}}" wx:key="{{index}}" style="line-height: 50px">{{item}}分</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

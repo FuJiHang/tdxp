@@ -1,0 +1,84 @@
+<view class="content">
+  <view class="hearder" wx:if="{{!(dataInfo.NeedNum-dataInfo.NowNum)}}">
+    <view class="title">
+      <image class="title_img" src="{{imgUrl+'icon_dg.png'}}"></image>
+      <view class="title_t">拼单成功</view>
+    </view>
+    <view class="acc_content">
+      <!-- 拼团成功图像 -->
+      <view class="acc_img magin-r">
+        <image class="accimg magin-r" src="{{userArr[0].Picture}}"></image>
+      </view>
+      <view class="acc_img2 magin-r" wx:if="{{status==1&&index!=0&&index<7}}" wx:key="{{index}}" wx:for="{{userArr}}">
+        <image class="accimg" src="{{item.Picture}}"></image>
+      </view>
+      <!-- <view class="acc_img2">?</view> -->
+    </view>
+  </view>
+  <view class="hearder" wx:if="{{dataInfo.NeedNum-dataInfo.NowNum}}">
+    <view class="title addactive">{{limitHours}}:{{limitMin}}:{{limitSecond}}</view>
+    <view class="new_title">
+      还差
+      <text>{{dataInfo.NeedNum-dataInfo.NowNum}}</text>
+      人，赶紧邀请好友来拼单吧
+    </view>
+  </view>
+  <view class="btn_wrap">
+    <button class="btn2" open-type="share" wx:if="{{status==0}}">邀请好友拼单</button>
+    <view class="btn {{status==0?'active':''}}" bindtap="handleIndex">去首页逛逛</view>
+  </view>
+  <view class="info" wx:if="{{dataInfo.NeedNum-dataInfo.NowNum}}">
+    <view class="acc_content ">
+      <view class="acc_img magin-r " wx:if="{{index<dataInfo.NowNum}}" wx:key="{{index}}" wx:for="{{userArr}}">
+        <image class="accimg {{item.IsFightGroupHead?'teamLogo':''}}" src="{{item.Picture}}"></image>
+      </view>
+      <view class="acc_img2 magin-r" wx:if="{{index<5}}" wx:for="{{dataInfo.NeedNum-dataInfo.NowNum}}" wx:key="{{index}}">
+        ?
+      </view>
+    </view>
+    <view class="order_info" wx:if="{{false}}">
+      <text class="inof_test">订单详情</text>
+      <text class="test">头道汤头疗+头道追风汤熏... ></text>
+    </view>
+  </view>
+  <!-- 拼团列表 -->
+  <view class="list">
+    <view class="list_title" wx:if="{{false}}">购买此商品的<text>1.4万</text>人还在买</view>
+    <view class="list_title" wx:else>更多优惠拼团</view>
+    <view class="project" 
+      bindtap="handleDetail" 
+      data-id="{{item.FightGroupActivityId}}" 
+      data-productId="{{item.ProductId}}"
+      wx:for="{{teamList}}" wx:key="{{index}}">
+      <span class="img_num">
+        <image src="{{item.ImageUrl1+'?x-oss-process=image/resize,l_640'}}" mode='aspectFill' />
+        <span class="num">
+          已拼{{item.SoldCount?item.SoldCount:0}}件
+        </span>
+      </span>
+      <span class="contant">
+        <view class="name_num">
+          {{item.ProductName}}
+        </view>
+        <view class="price_btn">
+          <span class="flex">
+            <view class="peo_pri">
+              {{item.JoinNumber}}人团
+              <span class="pri">
+                ¥{{item.SalePrice}}
+              </span>
+            </view>
+            <view class="oneBuy">
+              单买价
+              <span class="pri">¥{{item.SingleSalePrice?item.SingleSalePrice:0}}</span>
+            </view>
+          </span>
+          <van-button size="small" round>去拼团</van-button>
+        </view>
+      </span>
+    </view>
+  </view>
+  <view class="noda">没有更多了~</view>
+ 
+  
+</view>

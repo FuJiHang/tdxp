@@ -1,0 +1,280 @@
+#reward {
+
+  // 头部
+  .header {
+    width: 750rpx;
+    height: 300rpx;
+    background-color: #ff8056;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .header_price {
+      display: flex;
+      flex-direction: column;
+      // justify-content: center;
+      // align-items: center;
+      font-size: 28rpx;
+      color: #fff;
+      position: absolute;
+      top: 53rpx;
+
+      .price {
+        margin-bottom: 15rpx;
+        font-size: 48rpx;
+      }
+
+      .miaoshu {
+        margin-bottom: 20rpx;
+      }
+    }
+
+    .show_wrap {
+      color: #fff;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: linear-gradient(80deg, rgba(230, 106, 81, 1) 0%, rgba(230, 105, 81, 1) 100%);
+      padding: 10rpx 0;
+
+      .show_je {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        &::after {
+          content: '';
+          width: 4rpx;
+          height: 40rpx;
+          background-color: #fff;
+          position: absolute;
+          top: 20rpx;
+          right: 2rpx;
+        }
+
+        &:last-child::after {
+          background: none;
+        }
+
+        .num_store {
+          font-size: 30rpx;
+        }
+
+        .num_name {
+          font-size: 26rpx;
+        }
+      }
+
+    }
+  }
+
+  //导航栏
+  .nav_wrap {
+    margin-bottom: 20rpx;
+
+    .nav_title {
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 25rpx 0;
+      font-size: 30rpx;
+      color: #333;
+
+      .title {
+        flex: 1;
+        text-align: center;
+      }
+
+      .active {
+        color: #E9696A;
+        position: relative;
+
+        &::after {
+          content: '';
+          width: 60rpx;
+          height: 4rpx;
+          background-color: #E9696A;
+          position: absolute;
+          left: 41%;
+          bottom: -23rpx;
+        }
+      }
+    }
+
+    .search_wrap {
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 25rpx 0;
+      font-size: 30rpx;
+      color: #333;
+      width: 100%;
+
+      .search_ytd {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .ytd {
+          text-align: center;
+        }
+
+        .ytd_img {
+          width: 18rpx;
+          height: 13rpx;
+          margin: 10rpx 0 0 5rpx;
+        }
+      }
+
+      .search_price {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .s_price {
+          text-align: center;
+        }
+
+        .ytd_img {
+          width: 18rpx;
+          height: 13rpx;
+          margin: 10rpx 0 0 5rpx;
+        }
+      }
+    }
+  }
+
+  .list_wrap {
+    .pingtai {
+      .list {
+        font-size: 28rpx;
+        color: #333;
+        margin-bottom: 20rpx;
+        .reservation_wrap {
+          display: flex;
+          align-items: center;
+          background-color: #fff;
+          justify-content: space-between;
+          padding: 15rpx 20rpx;
+          .reservation {
+            font-size: 26rpx;
+            color: #666;
+
+            .res_title {}
+            .res_num {}
+          }
+
+          .res_time {
+            font-size: 26rpx;
+            color: #666;
+          }
+        }
+
+        .reservation_img {
+          display: flex;
+          align-items: center;
+          padding: 10rpx 20rpx;
+
+          .res_img {
+            width: 80rpx;
+            height: 80rpx;
+          }
+
+          .res_content {
+            margin-left: 10rpx;
+          }
+        }
+
+        .predict {
+          .predict_wrap {
+            background-color: #fff;
+            display: flex;
+            justify-content: flex-end;
+            padding: 15rpx 20rpx;
+
+            .predict_s {
+              .s_title {
+                margin-left: 30rpx;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //价格弹窗
+  .price_win {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 377rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-top: 1rpx solid #eee;
+    padding: 15rpx 50rpx;
+    z-index: 10;
+
+    .win_content {
+      font-size: 28rpx;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+
+      .win_btn {
+        width: 161rpx;
+        border: 1rpx solid #eee;
+        padding: 10rpx 15rpx;
+        // margin-right: 15rpx;
+        text-align: center;
+        margin-bottom: 15rpx;
+        border-radius: 5rpx;
+      }
+
+      .add_win {
+        color: #E65757;
+        background-color: #fff6f9;
+        border: 1rpx solid #E65757;
+      }
+    }
+
+    .affirm_btn {
+      width: 310rpx;
+      text-align: center;
+      padding: 15rpx 20rpx;
+      color: #fff;
+      font-size: 30rpx;
+      border-radius: 50rpx;
+      background-color: #E65757;
+      margin-top: 60rpx;
+    }
+  }
+
+  .price_zz {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .6)
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "upDownList":"../../../components/fujihang/upDownList/upDownList"
+  },
+  "navigationBarTitleText":"上下架项目"
+}

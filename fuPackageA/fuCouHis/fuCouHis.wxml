@@ -1,0 +1,30 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-29 22:35:01 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-29 22:35:01 
+    核销记录
+ */ -->
+<view id="fuCouHis">
+
+   <view class="child" bindtap="toFN" data-id="{{item}}" wx:for="{{dataList}}" wx:key="{{index}}">
+      <view class="list">
+         次数卡名：{{item.CardName}}<span class="flex">{{item.IsScore?'已评价':'去评价'}}</span>
+      </view>
+      <view class="list">
+         核销店员名：{{item.StoreAuthName}}
+      </view>
+      <view class="list">
+            技师名：{{item.TCName}}
+         </view>
+      <view class="list ri">
+         核销时间：{{item.CreateDate}}
+      </view>
+
+   </view>
+
+
+   <view class="noMore" wx:if="{{finsh}}">
+         没有更多的了~~~
+     </view>
+</view>

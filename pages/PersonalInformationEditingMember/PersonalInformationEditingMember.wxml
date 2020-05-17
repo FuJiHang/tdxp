@@ -1,0 +1,49 @@
+<!--pages/PersonalInformationEditingMember/PersonalInformationEditingMember.wxml-->
+<view id='PIEM-box'>
+  <!-- /PIEM-top-box 设置背景/ -->
+  <view class='PIEM-top-box' style="background-image: url('https://bcdj.9oasd.com/images/personal_bg.png">
+    <view class='PIEM-top-box2'>
+      <view class='PIEM-top-left'>
+        <image src="{{GetMembersInfo.Picture}}" class='PIEM-top-left-img'></image>
+      </view>
+      <view class='PIEM-top-right'>
+        <view class='PIEM-name'>
+          {{GetMembersInfo.NickName}}
+          <span>会员</span>
+        </view>
+        <view class='PIEM-time'>
+          {{GetMembersInfo.Gender == 0 ? '' : dataInfo.Gender == 1 ? '男' : '女'}}
+          <span>{{GetMembersInfo.BirthDate == null ? '' : GetMembersInfo.BirthDate}}</span>
+        </view>
+        <view class='PIEM-address'>
+          <image  src='https://bcdj.9oasd.com/images/icon_address33.png'></image>
+          <span>{{GetMembersInfo.Address == null ? '暂未填写地址' : GetMembersInfo.Address}}</span>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='PIEM-basic-box'>
+    <view class='PIEM-basic-title-box'>
+      <view class='PIEM-basic-title-box2'>
+        <span>基本信息</span>
+      </view>
+    </view>
+    <view class='PIEM-basic-list-box' wx:for="{{informationData}}">
+      <view class='PIEM-basic-list-box2'>
+        <view class='PIEM-basic-list-title'>{{item.title}}</view>
+        <view class='PIEM-basic-list-val'> {{item.val}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='PIEM-bio-box' wx:if="{{false}}">
+    <view class='PIEM-bio-box2'>
+
+      <view class='PIEM-bio-title'>个人简历</view>
+      <view class='PIEM-bio-content'>
+        本人为人和善，医德高尚，对生活充满激情。勤学好问，认真负责，对工作细心、热忱。在实习过程中，以患者为中心，向患者学习，积累了大量的实际临床经验，对常见疾病有丰富的经验，对疑难杂症亦有一定的了解。我相信，只要不断学习，技术就能不断进步。
+      </view>
+    </view>
+  </view>
+
+</view>

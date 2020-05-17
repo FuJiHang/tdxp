@@ -1,0 +1,66 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-08 14:15:24 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-08 14:15:24 
+    下单成功
+*/ -->
+<view id="fuOrderTip">
+    <view class="top">
+        <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/okOrder.png" mode="widthFix" />
+        <view class="name">支付成功</view>
+        <view class="price" wx:if="{{total}}">
+            ¥{{total}}
+        </view>
+        <view class="price" wx:if="{{!total}}">
+            7618积分 + ¥89.00
+        </view>
+        <view class="tip">
+            {{PreSaleId?'已预定该商品':'仓库正在为您备货中'}}
+        </view>
+        <view class="btn">
+            <span class="child" bindtap="handleSee">
+                <van-button round>查看订单</van-button>
+            </span>
+            <span class="child" bindtap="handleIndex">
+                <van-button round>返回首页</van-button>
+            </span>
+        </view>
+    </view>
+    <!--  -->
+    <view class="coupon" wx:for="{{list}}" wx:key="{{item}}">
+        <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/okOrder.png" mode="aspectFill" />
+        <span class="contant">
+            <view class="name">{{item.CouponName}}</view>
+            <view class="val">￥{{item.Price}}</view>
+        </span>
+        <button class="cp_btn" open-type="share" data-couponid="{{item.CouponId}}" data-order="{{item.GatewayPayId}}">分享</button>
+    </view>
+    <!-- <view class="couponGanT {{itemc.disableF||active==2?'disableF':''}}"
+        wx:for="{{list}}" wx:for-index="indexs" wx:for-item="itemc" wx:key="{{indexs}}"
+         data-data="{{itemc}}">
+        <view class="letfCon">
+            <view class="contant">
+                <view class="name">
+                    <span>￥</span>
+                    {{itemc.Price}}
+                    <span>抵用券</span>
+                </view>
+                <view class="disp">
+                    <view class="role">所购买的商品金额必须大于或等于{{itemc.OrderUseLimit}}元</view>
+                    <view class="time">{{itemc.ClosingTime}}过期</view>
+                </view>
+            </view>
+            <view class="yuan shang"></view>
+            <view class="yuan xia"></view>
+            <view class="glass"></view>
+        </view>
+        <view class="rightCon" bindtap="chooseFN" data-couponid="{{item.CouponId}}" data-order="{{item.GatewayPayId}}">
+            <view class="contantR">
+                <view class="buyName">附近可用</view>
+                <view class="btn">分享好友</view>
+            </view>
+        </view>
+    </view> -->
+
+</view>

@@ -1,0 +1,49 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2020-03-27 10:24:20 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2020-03-27 10:24:20 
+    上下架项目
+ */ -->
+<view id="fuUpper">
+
+    <!--  -->
+    <view class="seachF">
+        <input bindinput="inputFN" bindconfirm="confirmFN" data-name="seach" value="{{seach}}" placeholder="请输入要搜索的商品" />
+    </view>
+
+    <van-tabs sticky="true" line-width='20' color="rgba(255, 43, 149, 1)" active="{{ active }}" bind:change="onChange" swipeable>
+        <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+            <!--  -->
+            <view class="product" wx:for="{{item.data}}" wx:key="{{indexc}}" wx:for-index="indexc" wx:for-item="itemc" bindtap="chooseFN" data-name="{{'functionList['+index+'].data['+indexc+'].isChoose'}}" data-choose="{{itemc.isChoose }}">
+                <van-checkbox value="{{ itemc.isChoose }}" checked-color="rgba(255, 43, 149, 1)" ></van-checkbox>
+                <image mode="widthFix" src="{{itemc.ImageUrl1}}" />
+                <span class="contant">
+                    <view class="name">{{itemc.ProductName}}</view>
+                    <view class="price_btn">
+                        <span class="mini">￥</span>
+                        <span class="price">{{itemc.SalePrice}}</span>
+                        <span class="redCard" wx:if="{{itemc.IsVip}}">
+                            <span class="red">
+                                <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/honka@3x.png" mode="widthFix" />
+                                红卡
+                            </span>
+                            <span class="black">专享￥{{itemc.NewUserPrice}}</span>
+                        </span>
+                    </view>
+                </span>
+            </view>
+        </van-tab>
+    </van-tabs>
+
+     <!--  -->
+    <view class="noMore" wx:if="{{functionList[active].finsh}}">
+        没有更多的了~~~
+    </view>
+    <!--  -->
+    <view class="btn" bindtap='subMitFN'>
+        <van-button>{{active?'上架':'下架'}}</van-button>
+
+
+    </view>
+</view>

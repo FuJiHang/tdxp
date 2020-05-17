@@ -1,0 +1,679 @@
+@import "../../app.wxss";
+
+
+page {
+    height: 100%;
+    font-size: 26rpx;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: rgb(0, 0, 0);
+
+}
+
+
+
+#fuProVideo {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    .bgBlack {
+        position: absolute;
+
+        width: 100vh;
+        background: rgba(0, 0, 0, .2);
+        top: 0;
+        left: 0;
+        height: 100vh;
+    }
+
+    .video,
+    image {
+        height: 100vh;
+        width: 100%;
+
+        video {
+            height: 100vh;
+            width: 100%;
+        }
+    }
+
+    .swiper,
+    swiper-item {
+        height: 100vh;
+
+        video {
+            height: 100vh;
+            width: 100%;
+        }
+    }
+}
+
+
+
+
+
+
+
+.funtion {
+    position: fixed;
+    bottom: 50rpx;
+    right: 20rpx;
+    height: 50%;
+    color: #fff;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+
+
+    .child {
+        flex: 1;
+        text-align: center;
+        font-size: 28rpx;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        image {
+            height: 70rpx;
+            width: 70rpx;
+        }
+
+        .val {
+            max-width: 70rpx;
+            color: #E5414A;
+            padding: 0 10rpx;
+            box-sizing: border-box;
+            background: #fff;
+            border-radius: 20rpx;
+        }
+    }
+
+    .max {
+        flex: 1.4;
+    }
+}
+
+.getPeople {
+    max-width: 80%;
+    padding: 15rpx 25rpx;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, .6);
+    font-size: 30rpx;
+    position: fixed;
+    left: 30rpx;
+    top: 187rpx;
+
+    .pri {
+        // flex: 1;
+        // display: -webkit-box;
+        // -webkit-line-clamp: 1; //超出多少行
+        // overflow: hidden;
+        // -webkit-box-orient: vertical;
+        // word-break: break-all;
+        color: #E5414A;
+    }
+
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    border-radius:40rpx;
+}
+
+.fiexdBox {
+    position: fixed;
+    left: 30rpx;
+    bottom: 30rpx;
+
+}
+
+.share {
+    position: fixed;
+    right: 30rpx;
+    top: 170rpx;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    font-size: 28rpx;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    width: 100rpx;
+
+    image {
+        height: 100rpx;
+        width: 100rpx;
+    }
+
+}
+
+.share::after {
+
+    border: none;
+
+}
+
+// 
+.peopleTip {
+    margin-bottom: 25rpx;
+
+    .child {
+        max-width: 80%;
+        padding: 8rpx 20rpx;
+        box-sizing: border-box;
+        background: rgba(0, 0, 0, .6);
+        margin-bottom: 20rpx;
+
+        image {
+            margin-left: 10rpx;
+            height: 30rpx;
+            width: 30rpx;
+        }
+
+        .flex {
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 1; //超出多少行
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            word-break: break-all;
+        }
+
+        display: inline-flex; 
+        align-items: center;
+        color: #fff;
+        border-radius:30rpx;
+    }
+    .peo{ 
+        margin-left: 10rpx;
+        height: 30rpx;
+        width: 30rpx;
+        border-radius: 50%;
+    }
+
+    .donHua {
+        animation: fff 3.5s;
+    }
+
+}
+
+// 
+.address {
+    max-width: 90%;
+    padding: 5rpx 20rpx;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, .6);
+
+    image {
+        margin-right: 5rpx;
+
+        width: 40rpx;
+    }
+
+    .flex {
+        flex: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; //超出多少行
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        word-break: break-all;
+    }
+
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    border-radius:9rpx;
+}
+
+// 
+.tipName {
+    color: #fff;
+    font-size: 40rpx;
+    margin: 25rpx 0;
+}
+
+// 
+.product {
+    width: 550rpx;
+    background: rgba(255, 255, 255, .9);
+    padding: 10rpx 20rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border-radius: 10rpx;
+
+    image {
+        width: 130rpx;
+        height: 130rpx;
+    }
+
+    .contant {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-left: 30rpx;
+        font-size: 30rpx;
+        height: 160rpx;
+
+        .name,
+        .buy,
+        .pri {
+            display: -webkit-box;
+            -webkit-line-clamp: 1; //超出多少行
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            word-break: break-all;
+        }
+
+        .buy {
+            font-size: 26rpx;
+            color: #999;
+        }
+
+        .pri_num {
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+
+            .pri {
+                flex: 1;
+                color: #E65656;
+            }
+
+            .num {
+                padding: 2rpx 20rpx;
+
+                image {
+                    margin-right: 5rpx;
+                    height: 30rpx;
+                    width: 30rpx;
+                }
+
+                align-items: center;
+                display: flex;
+                color: #fff;
+                border-radius:19rpx;
+                background:linear-gradient(177deg, rgba(229, 65, 74, 1), rgba(254, 147, 3, 1));
+            }
+
+        }
+    }
+}
+
+
+
+// 
+.seachF {
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    padding: 20rpx;
+    box-sizing: border-box;
+    position: fixed;
+    margin-top: 20%;
+    background: rgb(245, 245, 245);
+
+    input {
+        width: 100%;
+
+        text-align: center;
+        padding: 0 20rpx;
+        font-size: 30rpx;
+        height: 60rpx;
+        line-height: 60rpx;
+        box-sizing: border-box;
+    }
+}
+
+
+
+// 
+.Comment {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: .3s;
+    transform: translateY(100%);
+
+    .contantCom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70%;
+        background: white;
+        border-radius: 20rpx 20rpx 0 0;
+        display: flex;
+        flex-direction: column;
+
+        .listDiv {
+            flex: 1;
+            overflow: hidden;
+            padding: 0 20rpx;
+            box-sizing: border-box;
+
+            scroll-view {
+                overflow: auto;
+                height: 100%;
+            }
+
+            .peopleHt {
+                display: flex;
+                padding: 20rpx 0rpx;
+                box-sizing: border-box;
+                border-bottom: 1px solid rgb(240, 240, 240);
+
+                .pt {
+                    height: 80rpx;
+                    width: 80rpx;
+                    border-radius: 50%;
+                }
+
+                .contant {
+                    flex: 1;
+                    margin-left: 20rpx;
+                    padding-top: 10rpx;
+                    box-sizing: border-box;
+
+                    .name {
+                        font-size: 28rpx;
+                        color: #999;
+                    }
+
+                    .title {
+                        .time {
+                            font-size: 24rpx;
+                            color: #999;
+                        }
+                    }
+
+                    .huiFu {
+                        display: flex;
+                        padding: 20 0rpx;
+                        box-sizing: border-box;
+                        margin-top: 20rpx;
+
+                        .ht {
+                            height: 50rpx;
+                            width: 50rpx;
+                            border-radius: 50%;
+                        }
+
+                        .contantH {
+                            flex: 1;
+                            margin-left: 20rpx;
+
+                            .name_type {
+                                .na {
+                                    color: #999;
+                                }
+
+                                .type {
+                                    border-radius: 30rpx;
+                                    font-size: 24rpx;
+                                    padding: 10 5rpx;
+                                    background: rgb(240, 240, 240);
+                                    box-sizing: border-box;
+                                }
+                            }
+
+                            .rtext {
+                                font-size: 28rpx;
+
+                                .time {
+                                    font-size: 24rpx;
+                                    color: #999;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .input {
+            height: 40rpx;
+        }
+    }
+}
+
+.isComShow {
+    transform: translateY(0%);
+
+}
+
+
+// 搜索框
+.seachMT {
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 20rpx 20rpx 0;
+    box-sizing: border-box;
+    margin-bottom: 20rpx;
+
+    .seachbg {
+        margin-right: 10rpx;
+        flex: 1;
+        align-items: center;
+        display: flex;
+        background: #EEEEEE;
+        border-radius: 40rpx;
+
+        image {
+            margin-left: 20rpx;
+            height: 40rpx;
+            width: 40rpx;
+        }
+
+        input {
+            height: 70rpx;
+            font-size: 28rpx;
+            margin: 0 20rpx;
+            flex: 1;
+        }
+    }
+
+    .touxian {
+        margin-right: 20rpx;
+        height: 80rpx;
+        width: 80rpx;
+        border-radius: 50%;
+    }
+
+    .van-button {
+        border: none;
+        background: none;
+    }
+}
+
+// 
+.noMore {
+    font-size: 28rpx;
+    color: #999;
+    padding: 20rpx 20rpx 160rpx;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+@keyframes fff {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+
+    }
+
+    15% {
+        transform: translateX(5%);
+        opacity: 1;
+    }
+
+    17% {
+        transform: translateX(-5%);
+    }
+
+    19% {
+        transform: translateX(5%);
+    }
+
+    21% {
+        transform: translateX(0%);
+    }
+
+    87% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
+        display: none;
+    }
+
+}
+
+.van-popup--bottom {
+    height: 60%;
+
+    scroll-view {
+
+        height: 100%;
+
+        .goods-comment {
+            background-color: #fff;
+            padding: 30rpx 30rpx 15rpx 30rpx;
+        }
+
+        .goods-comment:first-child {
+            margin-top: -30rpx;
+        }
+
+        .goods-comment {
+            padding: 0 30rpx 30rpx 30rpx;
+            background-color: #fff;
+            margin: 20rpx 0;
+        }
+
+        .goods-commentH {
+            height: 89rpx;
+            margin-bottom: 10rpx;
+        }
+
+        .goods-commentH view:first-child {
+            color: #333;
+            font-size: 30rpx;
+        }
+
+        .goods-commentH view:last-child {
+            color: #999;
+            font-size: 26rpx;
+        }
+
+        .goods-commentH view:last-child text {
+            margin-right: 30rpx;
+        }
+
+        /* .userInfo {
+            position: relative;
+          }
+          
+          .userImg {
+            width: 76rpx;
+            margin-right: 20rpx;
+          }
+          
+          .userName {
+            color: #333;
+            font-size: 26rpx;
+          }
+          
+          .userName text:last-child {
+            color: #999;
+            margin-top: 7rpx;
+          } */
+
+        .commoentInfo {
+            color: #666;
+            font-size: 24rpx;
+            margin-top: 20rpx;
+        }
+
+        .commoentImg {
+            margin-top: 20rpx;
+        }
+
+        .commoentImg image {
+            width: 220rpx;
+        }
+
+        .userInfoImg {
+            width: 76rpx;
+            border-radius: 50%;
+            margin-right: 20rpx;
+        }
+
+        .userName {
+            color: #333;
+            font-size: 26rpx;
+        }
+
+        .userInfo-grade {
+            width: 129rpx;
+            height: 30rpx;
+            background-color: #333333;
+            border-radius: 15rpx;
+            margin-left: 16rpx;
+        }
+
+        .userInfo-grade image {
+            width: 20rpx;
+        }
+
+        .userInfo-grade text {
+            color: #FFDDBC;
+            font-size: 18rpx;
+            margin-left: 6rpx;
+            height: 30rpx;
+            padding-bottom: 6rpx;
+            box-sizing: border-box;
+        }
+
+        .userInfo-gradeStar {
+            margin-top: 12rpx;
+        }
+
+        .userInfo-gradeStar image {
+            width: 19rpx;
+            margin-right: 9rpx;
+        }
+
+        .buyTime {
+            color: #999;
+            font-size: 20rpx;
+        }
+
+        .empty {
+            margin-top: 100rpx;
+            color: #666;
+            font-size: 28rpx;
+        }
+
+    }
+}
+
+.van-bottom-enter-active {
+    border-radius: 30rpx 30rpx 0 0;
+}

@@ -1,0 +1,162 @@
+page {
+    height: 100%;
+    font-size: 28rpx;
+}
+
+#fuOkOrderT {
+    color: #666;
+
+    .chooseType{
+        box-sizing: border-box;
+        margin: 30rpx  30rpx 20rpx;
+        background: #fff;
+        border-radius: 10rpx;
+        color:#333;
+        .contant{
+            display: flex;
+            align-items: center;
+            padding:  30rpx;
+            box-sizing: border-box;
+            font-size: 32rpx;
+            image{
+                width: 40rpx;
+            }
+            .tip{
+                display: block;
+                height: 80rpx;
+                line-height: 80rpx;
+            }
+            .flex{
+                flex: 1;
+                margin: 0 40rpx 0 20rpx; 
+                .name_phone{
+                    .phone{
+                        font-size: 28rpx;
+                        margin-left: 30rpx;
+                    }
+                    margin-bottom: 20rpx;
+                }
+                .address{
+                    color: #999;
+                }
+            }
+            .mini{
+                width: 30rpx;
+            }
+
+        }
+    }
+    
+    // 
+    .info{
+        background: rgb(255, 255, 255);
+        box-sizing: border-box;
+        margin: 0  30rpx 20rpx;
+        border-radius: 10rpx;
+
+        .top{
+            padding: 20rpx;
+            box-sizing: border-box;
+            font-size: 32rpx;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgb(240, 240, 240);
+            image{
+                width: 40rpx; 
+                margin-right: 20rpx;
+            }
+        }
+        .product{
+            padding: 30rpx;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgb(240, 240, 240);            
+            image{
+                width: 160rpx;
+                height: 160rpx;
+            }
+            .contant{
+                flex: 1;
+                display:flex;
+                flex-direction: column;
+                margin-left: 30rpx;
+                font-size: 34rpx;
+                height:  160rpx;
+                .pri_num{
+                    flex: 1;
+                    display: flex;
+                    align-items: flex-end;
+                    .pri{
+                        flex: 1;
+                        color: #E65656;
+                    }
+                    .num{
+                        display: flex;
+                        align-items: center;
+                        span{
+                            height: 40rpx;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 40rpx;
+                            border-radius: 50%;
+                            border:1px solid rgb(236, 236, 236);
+                        }
+                        .input{
+                            margin: 0 30rpx;
+                            width: 60rpx;
+                            border-radius: 40%;
+                            input{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .list{
+            padding:30rpx;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgb(240, 240, 240);   
+            .name{
+                font-weight: bold;
+            }   
+            .flex{
+                flex: 1;
+            } 
+            .val{
+                color: #999;
+            }
+            .pri{
+                color: #E65656;
+            }
+            .input{
+                flex: 1;
+                input{
+                    text-align: right;
+                    width: 100%;
+                }
+            }
+            .mini{
+                margin-left: 20rpx;
+                filter: grayscale(100%);
+                width: 30rpx;
+            }
+        }
+        .ri{
+            justify-content: flex-end;;
+        }
+    }
+    .btn{
+        width: 94%;
+        margin: 10% 3%;
+        .van-button{
+            width: 100%;
+            background: #E65656;
+            color: #fff;
+        }
+    }
+}

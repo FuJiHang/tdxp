@@ -1,0 +1,40 @@
+<!--pages/myBeautyIntegral/myBeautyIntegral.wxml-->
+
+<!--pages/myCommission/myCommission.wxml-->
+<view class="myBeautyIntegral">
+        <view class="integral-titile">
+        <view class="titile-box">
+          <image src="{{imgUrl+'list_pic_03@2x.png'}}"></image>
+          <view class="beauty-num">{{dataInfor.Points?dataInfor.Points:dataInfor.Point}}</view>
+          <view class="my-beauty">我的积分</view>
+        </view>
+      </view>
+      <!-- <view class="his-beauty-money">
+        历史积分：
+        <text>{{dataInfor.Total}}</text>
+      </view> -->
+      <scroll-view scroll-y="true" bindscrolltolower="getDataR">
+
+        <view class="integral-record-box" wx:for="{{dataList}}" wx:key="{{index}}">
+          <view class="integral-record-item">
+            <view class="record-titile">
+              {{item.TradeTypeName?item.TradeTypeName:item.Remark}}
+              <view class="record-comp">
+                <!-- <text class="comp-jian" wx:if{}>-</text> -->
+                <text class="comp-num" >{{item.Reduced}}</text>
+                <!-- <text class="comp-num" wx:else>{{item.Increased?'+'+item.Increased:'-'+item.Reduced}}</text> -->
+              </view>
+              <view class="record-info">
+                <text class="record-date">{{item.TradeDate}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      
+        <view class="noMore" wx:if="{{finsh}}">
+          没有更多的了~~~
+        </view>
+      
+      </scroll-view>
+      </view>
+      

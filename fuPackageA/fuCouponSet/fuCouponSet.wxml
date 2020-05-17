@@ -1,0 +1,57 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-08 15:43:45 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-08 15:43:45 
+    电子券设置
+*/ -->
+
+<view id="fuCouponSet">
+
+    <view  class="couponGanT " wx:for="{{dataList}}" wx:for-index="indexs" wx:for-item="itemc" wx:key="{{indexs}}" bindtap="chooseFN" data-choose="{{itemc.choose}}" data-index="{{indexs}}">
+        
+        <!--  -->
+        <van-checkbox value="{{ itemc.choose }}" checked-color="#f56e68"></van-checkbox>
+        <view class="navtion">
+
+        
+            <view class="letfCon">
+                <view class="contant">
+                        <view class="name">{{itemc.Price}}元<span>{{itemc.isDiYon?'抵用券':'优惠券'}}</span>
+                    </view>
+                    <view class="role">使用规则：所购买的商品金额必须大于或等于{{itemc.OrderUseLimit}}元
+                    </view>
+                    <view class="time"> {{itemc.ClosingTime}}过期
+                    </view>
+                </view>
+                
+            </view>
+            <view class="rightCon">
+                <view class="contantR">
+                    <view class="buyName">购买价格
+                    </view>
+                    <view class="pirce">{{itemc.BuyPrice}}元
+                    </view>
+                    <view class="btnc">立即购买
+                    </view>
+                </view>
+                
+            </view>
+            <view class="middren">
+                <view class="fenSe">
+                    <view class="bg"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!--  -->
+    <view class="noMore" wx:if="{{finsh}}">
+        没有更多的了~~~
+    </view>
+    <!--  -->
+    <view class="btn" bindtap="submit">
+        <van-button>提交</van-button>
+    </view>
+
+</view>

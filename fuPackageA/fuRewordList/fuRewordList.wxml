@@ -1,0 +1,99 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-12-15 22:11:40 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-12-15 22:11:40 
+    奖金活动列表
+ */ -->
+<view id="fuRewordList">
+    <view class="navTop">
+        <!-- <view class="name">积分活动</view>
+        <view class="val">文化护航，专业致胜</view>
+        <view class="det">
+            头道惠积分抽奖活动
+        </view> -->
+        <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/reListBg.png?1" mode="widthFix"></image>
+    </view>
+    <view class="contantAction">
+        <image class="bgTop" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/reListBgNav.png" mode="widthFix" />
+        <view class="child" bindtap="toFN" data-to="{{'/fuPackageA/fuRewardPool/fuRewardPool?aid='+item.ActivityId}}"
+            wx:for="{{dataList}}" wx:key="{{index}}">
+            <view class="time_num">
+                <span class="red">{{item.CreateDate}}</span>
+                后截至
+                <span class="flex">
+                    已有
+                    <span class="red">{{item.ActivityCount}}</span>
+                    人参与
+                </span>
+            </view>
+            <view class="contant">
+                <image src="{{item.SharePic}}" mode="aspectFill"></image>
+                <span class="name_pri_btn">
+                    <view class="name">{{item.ActivityName}}</view>
+                    <view class="pri"></view>
+                    <view class="btn">
+                        <van-button round size="small">立即参与</van-button>
+                    </view>
+                </span>
+            </view>
+        </view>
+        <view class="child" bindtap="tipFN" data-to="{{'/fuPackageA/fuRewardPool/fuRewardPool?aid='+item.ActivityId}}"
+            wx:for="{{startList}}" wx:key="{{index}}">
+            <view class="time_num">
+                <span class="red">{{item.CreateDate}}</span>
+                后截至
+                <span class="flex">
+                    已有
+                    <span class="red">{{item.ActivityCount}}</span>
+                    人参与
+                </span>
+            </view>
+            <view class="contant">
+                <image src="{{item.SharePic}}" mode="aspectFill"></image>
+                <span class="name_pri_btn">
+                    <view class="name">{{item.ActivityName}}</view>
+                    <view class="pri"></view>
+                    <view class="btn">
+                        <van-button round size="small">待开始</van-button>
+                    </view>
+                </span>
+            </view>
+        </view>
+        
+        <view class="navTip">
+            已结束的活动
+        </view>
+        <view class="closeContant">
+            <view class="child" wx:for="{{endList}}" wx:key="{{index}}" bindtap="toFN" data-to="{{'/fuPackageA/fuRewardPool/fuRewardPool?aid='+item.ActivityId+'&isEnd=true'}}">
+                <view class="time_num">
+                    <span class="red">{{item.CreateDate}}</span>
+                    后截至
+                    <span class="flex">
+                        已有
+                        <span class="red">{{item.ActivityCount}}</span>
+                        人参与
+                    </span>
+                </view>
+                <view class="contant">
+                    <image src="{{item.SharePic}}" mode="aspectFill"></image>
+                    <span class="name_pri_btn">
+                        <view class="name">{{item.ActivityName}}</view>
+                        <view class="pri"></view>
+                        <view class="btn fliter">
+                            <van-button round size="small">已结束</van-button>
+                        </view>
+                    </span>
+                </view>
+            </view>
+
+
+
+        </view>
+
+    </view>
+
+    <view class="noMore">
+        没有更多的了~~~
+    </view>
+</view>

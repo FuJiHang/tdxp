@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "order-good": "../../../components/order-good",
+    "address-info": "../../../components/address-info",
+    "logistics-trail": "../../../components/logistics-trail"
+  },
+  "navigationBarTitleText": "订单详情"
+}

@@ -1,0 +1,32 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-29 15:22:39 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-29 15:22:39 
+    设置微信客服
+ */ -->
+
+
+
+ 
+<view id="fuSetService">
+
+
+   <view class="child">
+      <view class="list">
+         <input value="{{item.name}}" placeholder="请输入微信账号" />
+      </view>
+      <view class="image" bindtap="uploadLogo" data-index="{{index}}">
+            <image src="{{item.addImg.choose?item.addImg.imgc:imgUrl+'add_2.png'}}" mode="aspectFill"/>
+            上传个人微信二维码
+        </view>
+   </view>
+
+
+
+
+   <view class="btn">
+      <van-button>提交</van-button>
+   </view>
+
+</view>

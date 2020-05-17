@@ -1,0 +1,551 @@
+page {
+    height: 100%;
+    overflow: hidden;
+}
+
+// 导航条
+#fuCoupon {
+    font-size: 26rpx;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: #666;
+    box-sizing: border-box;
+
+    ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        color: transparent;
+    }
+
+    // 导航条
+    .navTopMO {
+        display: flex;
+        padding: 18rpx 0;
+        box-sizing: border-box;
+        background: white;
+
+        .child {
+            flex: 1;
+            text-align: center;
+
+            .van-button {
+                color: #999;
+                border: none;
+                background: white;
+            }
+
+        }
+
+        .danger {
+            .van-button {
+                background: #FF5353;
+                color: white;
+            }
+
+        }
+    }
+
+    // 功能
+    .van_order {
+        height: 100%;
+        color: #666;
+        overflow: hidden;
+
+        .van-tabs {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .van-tabs__content {
+            height: 100%;
+            overflow: hidden;
+            padding-bottom: 44px;
+            box-sizing: border-box;
+
+            .van-tabs__track {
+
+                height: 100%;
+                overflow: hidden;
+
+                .van-tab__pane {
+
+                    height: 100%;
+                    overflow: hidden !important;
+
+
+                    scroll-view {
+                        overflow: auto;
+                        height: 100%;
+                        background: #fff;
+
+                        .noMore {
+                            font-size: 28rpx;
+                            color: #999;
+                            padding: 20rpx 20rpx 250rpx;
+                            text-align: center;
+                            box-sizing: border-box;
+                        }
+                    }
+                }
+            }
+        }
+
+        .van-tab--active {
+            color: red;
+        }
+    }
+
+    // 优惠卷
+    .couponFu {
+        margin: 10rpx 20rpx;
+        box-sizing: border-box;
+        padding: 0 20rpx 30rpx;
+        background: #FF5353;
+        position: relative;
+        color: white;
+        overflow: hidden;
+
+        .name_pic {
+            position: relative;
+            height: 110rpx;
+            padding: 20rpx 0;
+            margin-top: 5rpx;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            z-index: 3;
+            border-bottom: 1px dashed rgb(240, 240, 240);
+
+            .name {
+                font-size: 30rpx;
+                flex: 1;
+                margin-right: 10rpx;
+            }
+
+            .pic {
+                font-size: 32rpx;
+                // color: #FF5353;
+            }
+        }
+
+        .name_pic::before {
+            background: #F7F7F7;
+            content: '';
+            height: 70rpx;
+            width: 70rpx;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -35rpx;
+            left: -50rpx;
+        }
+
+        .name_pic::after {
+            background: #F7F7F7;
+            content: '';
+            height: 70rpx;
+            width: 70rpx;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -35rpx;
+            right: -50rpx;
+        }
+
+        .rule {
+            z-index: 3;
+            position: relative;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; //超出多少行
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            word-break: break-all;
+            font-size: 28rpx;
+            // color: #999;
+            margin: 20rpx 0;
+        }
+
+        .time {
+            position: absolute;
+            z-index: 3;
+        }
+
+        .time_hd {
+            left: 20rpx;
+            top: 5rpx;
+        }
+
+        .time_gq {
+            right: 20rpx;
+            bottom: 5rpx;
+        }
+
+        .bg {
+            position: absolute;
+            height: 100%;
+            width: 120%;
+            background: rgba(255, 255, 255, .15);
+            left: -2%;
+            top: 38%;
+            transform: rotate(-17deg);
+        }
+
+    }
+
+    .disableF {
+        filter: grayscale(100%);
+    }
+
+    // 导航条
+    .navTopMO {
+        display: flex;
+        padding: 18rpx 0;
+        box-sizing: border-box;
+        background: white;
+
+        .child {
+            flex: 1;
+            text-align: center;
+
+            .van-button {
+                color: #999;
+                border: none;
+                background: white;
+            }
+
+        }
+
+        .danger {
+            .van-button {
+                background: #FF5353;
+                color: white;
+            }
+
+        }
+    }
+
+    .couponGan {
+        margin: 10rpx 20rpx;
+        box-sizing: border-box;
+        padding: 30rpx 50rpx 30rpx 30rpx;
+        background: rgb(255, 113, 113);
+        position: relative;
+        overflow: hidden;
+
+        .typeName {
+            font-size: 24rpx;
+            position: absolute;
+            top: 15rpx;
+            left: -50rpx;
+            color: white;
+            padding: 5rpx 50rpx;
+            box-sizing: border-box;
+            background: #f9b552;
+            transform: rotate(-35deg);
+        }
+
+        .yuan {
+            right: -35rpx;
+            position: absolute;
+            top: 0;
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            .aaaa {
+                border-radius: 50%;
+                background: #F7F7F7;
+                width: 70rpx;
+                height: 70rpx;
+            }
+        }
+
+        .bWCou {
+            background: white;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            .juchi {
+                left: 0;
+                overflow: hidden;
+                position: absolute;
+                min-width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .child {
+                    width: 10rpx;
+                    height: 10rpx;
+                    border-radius: 50%;
+                    background: rgb(255, 113, 113);
+                }
+            }
+
+            .top {
+                top: -5rpx;
+            }
+
+            .btn {
+                bottom: -5rpx;
+            }
+
+            .left {
+                min-height: 100%;
+                left: -5rpx;
+                top: 0;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .leftNaction {
+                padding: 55rpx 30rpx 65rpx;
+                box-sizing: border-box;
+                font-size: 65rpx;
+                color: rgb(255, 113, 113);
+                font-weight: 700;
+
+                span {
+                    font-size: 30rpx;
+                }
+            }
+
+            .rightNaction {
+                flex: 1;
+                margin-left: 10rpx;
+                padding-right: 20rpx;
+                box-sizing: border-box;
+
+                .name {
+                    font-size: 31rpx;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break: break-all;
+
+                    span {
+                        background: linear-gradient(#fff, rgb(255, 238, 238), #fff);
+                    }
+                }
+
+                .vip {
+                    color: #999;
+                    font-size: 29rpx;
+                    margin: 10rpx 0;
+                }
+
+                .time {
+                    color: #999;
+                    font-size: 27rpx;
+                }
+            }
+        }
+    }
+
+
+    .couponGanT {
+        margin: 10rpx 20rpx;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+
+        .letfCon {
+            flex: 1;
+            background: #FF5353;
+            padding: 20rpx;
+            box-sizing: border-box;
+            border-radius: 10rpx;
+            color: white;
+            border-right: 1px dashed #fff;
+            position: relative;
+
+            .contant {
+                border-radius: 20rpx;
+                border: 1px solid #fff;
+                border-image:linear-gradient(to right,#fff,#FF5353) 1 10;
+                padding: 20rpx;
+                box-sizing: border-box;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .name {
+                font-size: 40rpx;
+
+                span {
+                    font-size: 30rpx;
+                }
+
+                font-weight: 700;
+            }
+
+            .disp {
+                display: flex;
+                flex: 1;
+
+                align-items: flex-end;
+
+            }
+
+            .role {
+                flex: 1;
+                display: -webkit-box;
+                -webkit-line-clamp: 2; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break: break-all;
+                font-size: 28rpx;
+                margin: 0 15rpx;
+            }
+
+            .time {
+                border-left: 1px solid rgb(240, 240, 240);
+                flex: 1;
+                padding: 0 15rpx;
+                box-sizing: border-box;
+
+
+            }
+        }
+
+        .rightCon {
+            padding: 15rpx;
+            box-sizing: border-box;
+            background: #FF5353;
+            border-radius: 10rpx;
+            width: 33.33%;
+
+            .contantR {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+                text-align: center;
+                border-radius: 10rpx;
+                background: white;
+                position: relative;
+                .cp_btn{
+                    width: 210rpx;
+                    height: 185rpx;
+                    // background-color: pink;
+                    opacity: 0;
+                    position: absolute;
+                    top:10rpx;
+                    right: 20rpx;
+                }
+            }
+
+            .buyName {
+                padding: 10rpx 0 30rpx;
+                color: #FF5353;
+                font-size: 32rpx;
+            }
+            .noPad{
+                padding-bottom: 0;
+            }
+
+            .pirce {
+                font-size: 35rpx;
+                margin: 8rpx 0 16rpx;
+            }
+
+            .btn {
+                margin: 0 20rpx;
+                padding: 5rpx 30rpx;
+                box-sizing: border-box;
+                background: #FF5353;
+                color: white;
+                border-radius: 20rpx;
+            }
+        }
+
+        .yuan {
+            position: absolute;
+            height: 40rpx;
+            width: 40rpx;
+            border-radius: 40%;
+            right: -20rpx;
+            background: #fff;
+        }
+        .glass{
+            background: #fff;
+            opacity: .2;
+            width: 300rpx;
+            height: 600rpx;
+            position: absolute;
+            top: -100rpx;
+            left: -280rpx;
+            transform: rotateZ(32deg);
+        }
+
+        .xia {
+            bottom: -30rpx;
+        }
+
+        .shang {
+            top: -30rpx;
+        }
+    }
+
+    // 
+    .iosJJ {
+        margin: 0 10% 75%;
+        background: white;
+        border-radius: 15rpx;
+        overflow: hidden;
+
+        .child {
+            display: flex;
+            align-items: center;
+            padding: 20rpx 20rpx 0;
+            box-sizing: border-box;
+            font-size: 30rpx;
+
+            input {
+                display: flex;
+                align-items: center;
+                border-radius: 30rpx;
+                font-size: 30rpx;
+                padding: 0 20rpx;
+                height: 60rpx;
+                box-sizing: border-box;
+                flex: 1;
+                margin-left: 10rpx;
+                border: 1px solid rgb(240, 240, 240);
+            }
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            padding: 20rpx 20rpx;
+            box-sizing: border-box;
+
+            .flex {
+                flex: 1;
+
+                .van-button {
+                    width: 100%;
+
+                }
+            }
+
+            .okFN {
+                .van-button {
+                    background: #FF5353;
+                    color: white;
+                    border: none;
+                }
+
+            }
+
+        }
+    }
+
+    .van-popup {
+        background: none !important;
+    }
+}

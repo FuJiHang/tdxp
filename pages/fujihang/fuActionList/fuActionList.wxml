@@ -1,0 +1,100 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-06-05 17:58:22 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-06-05 17:58:22 
+    活动历史列表
+*/ -->
+<view id="fuActionList">
+    
+
+    <!-- 功能 -->
+    <van-tabs class="van_order"  line-width='20' color="#F56F68"  active="{{ active }}" bind:change="onChange" swipeable>
+        <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+            
+   
+            
+            <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getDataR" >
+                <view class="actionChild" bindtap="toDetail" data-id="{{child.ActivityId}}" wx:for="{{functionList[active].data}}" wx:key="{{inc}}" wx:for-item="child" wx:for-index="inc">
+                    <view class="name flxe">
+                        <span class="duiQi">
+                        活动名称：
+                        </span>
+                        {{child.ActivityName}}
+                    </view>
+                    <view class="storeA flxe">
+                        <span class="duiQi">
+                        店名：
+                        </span>
+                        {{child.StoreName}}
+                    </view>
+                    <view class="time flxe">
+                        <span class="duiQi">
+                        时间：
+                        </span>
+                        {{child.StartDate}}  -  {{child.EndDate}}
+                    </view>
+                    <view class="num flxe">
+                        <span class="duiQi">
+                        订单数量：
+                        </span>
+                        {{child.ActivityOrdersCount}}
+                    </view>
+                    <view class="price flxe">
+                        <span class="duiQi">
+                        总金额：
+                        </span>
+                        {{child.ActivityRevenue}}
+                    </view>
+                    <view class="price flxe">
+                        <span class="duiQi">
+                        执行者：
+                        </span>
+                        {{child.Excutor[0].Name}}
+                    </view>
+                    
+                    <view class="teaher flxe" catchtap="openChoose" data-type="true" data-index="{{inc}}" data-id="{{child.ActivityId}}" data-data="{{child.Technicians}}">技师：<span class="rightW">{{child.tnum}}位</span><van-icon  size="30rpx" name="arrow" /></view>
+                    <view class="product">
+                        <view class="proChild" wx:if="{{pin==0||pin==1||child.Products.length==3&&pin==2}}" wx:for="{{child.Products}}" wx:for-item="pro" wx:for-index="pin" wx:key="{{pin}}">
+                            <image mode="widthFix"  src="{{pro.Picture}}"/>
+                            <!--  -->
+                            <view class="nameP">{{pro.Name}}</view>
+                             <view class="pic">￥{{pro.Price}}</view>
+                        </view>
+                        <view catchtap="openChoose" data-data="{{child.Products}}" class="proChild moreP" wx:if="{{child.Products.length>3}}">
+                            <span>
+                                <view >更多</view>
+                            <view >项目</view>
+                            </span>
+                            
+                        </view>
+                    </view>
+                    <view class="red" hidden="{{!active}}">
+                        点击查看详情
+                    </view>
+                    <view class="absot">
+                        业绩申报
+                    </view>
+                </view>
+
+                <view class="noMore" wx:if="{{functionList[active].finish}}">
+                    没有更多的了~~~
+                </view>
+            </scroll-view>
+        </van-tab>
+    </van-tabs>
+</view>
+
+<van-popup show="{{ showStore.show }}" position="right" bind:close="onClose" data-name="showStore">
+    <view class="moreList" bindtap="changeTea" data-index="{{index}}" data-inact="{{item.inAct}}" wx:for="{{showStore.data}}" wx:key="{{index}}">
+        <van-checkbox wx:if="{{typeOP&&!active}}" checked-color="#F56F68" value="{{ item.inAct!='False'}}"></van-checkbox>
+        <image mode="widthFix" src="{{item.Picture}}"/>
+        <view class="contantM">
+            <view class="nameM">
+                {{item.Id?'':'产品'}}名称：{{item.Name}}
+            </view>
+            <view class="pirM">{{item.Id?'电话：'+item.CellPhone:'价格：'+item.Price}}</view>
+            <view wx:if="{{item.inAct}}">{{item.inAct=='False'?'未参与':'已参与'}}</view>
+        </view>
+    </view>
+</van-popup>

@@ -1,0 +1,53 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-08-20 15:40:31 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-08-20 15:40:31 
+    提现记录
+ */ -->
+
+<view id="fuRecordJiLu">
+
+
+    <!--  -->
+    <view class="list" wx:for="{{dataList}}" wx:key="{{index}}">
+        <view class="child">
+            <span class="flex">
+            申请时间：
+            {{item.RequestTime}}
+            </span>
+            名字：
+            {{item.UserName}}
+        </view>
+         <view class="child">
+            <span class="flex">
+            状态：
+            <!-- null 未审批 0 已拒绝 1 审核通过 -->
+            {{item.IsPass?'审核通过':item.IsPass==0?'已拒绝':'未审批'}}
+            </span>
+            <span class="flex">
+            提现方式：
+            {{item.IsWeixin?'微信':item.IsAlipay?'支付宝':'无'}}
+            </span>
+            <span >
+            金额：￥
+            {{item.Amount}}
+            </span>
+        </view>
+         <view class="child" v-if="{{item.ManagerRemark}}">
+            拒绝理由：
+              {{item.ManagerRemark?item.ManagerRemark:'无'}}
+         
+        </view>
+    </view>
+
+    <view class="noMore" wx:if="{{finsh}}">
+        没有更多的了~~~
+    </view>
+
+
+
+
+
+
+</view>

@@ -1,0 +1,150 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-25 14:29:38 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-25 14:29:38 
+    到店打卡
+ */ -->
+<view id="fuSignIn">
+
+    <!--  -->
+    <view class="navTop">
+
+        <!--  -->
+        <!--  -->
+        <view class="address noBg">
+            <image class="storeImg" src="{{getStore.StoreImages}}" mode="aspectFill"></image>
+            <span class="contant">
+                <view class="name">
+                    <image src="{{imgUrl+'circuit-city-icon@2x.png'}}" mode="widthFix"></image>
+                    <span class="flex">{{getStore.RegionName}}</span>
+                </view>
+                <view class="tip">
+                    距您{{getStore.Distance}}，步行大概需要{{getStore.Time}}分钟
+                </view>
+            </span>
+            <view class="Explain" bindtap="openEx">
+                打卡说明
+            </view>
+        </view>
+
+
+        <!--  -->
+        <view class="Sign" bindtap="midClickFN">
+            <view class="mid {{midClick?'midClick':''}}">
+                <view class="btn">
+                    打卡
+                </view>
+            </view>
+        </view>
+
+        <!--  -->
+        <view class="time">
+            <span class="child {{item.isTrue?'colorB':''}}" wx:for="{{getHis}}" wx:key="{{index}}">
+                <view class="top {{index==0?'before':'' }} {{index==6?'after':''}}">
+                    <view class="bg"></view>
+                </view>
+                <view class="name">
+                    {{item.name}}
+                </view>
+            </span>
+        </view>
+
+
+    </view>
+
+    <!--  -->
+    <!-- <van-notice-bar left-icon="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/labaSg.png"
+        text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。">
+
+    </van-notice-bar> -->
+    <!--  -->
+    <view class="address">
+        <image class="storeImg" src="{{getStore.StoreImages}}" mode="aspectFill"></image>
+        <span class="contant">
+            <view class="name">
+                <image src="{{imgUrl+'circuit-city-icon@2x.png'}}" mode="widthFix"></image>
+                <span class="flex">{{getStore.RegionName}}</span>
+                <image class="more" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/moreMan.png" mode="widthFix">
+                </image>
+
+            </view>
+            <view class="tip">
+                距您{{getStore.Distance}}，步行大概需要{{getStore.Time}}分钟
+            </view>
+        </span>
+        <span class="child" bindtap="handleCode">
+            <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/homepage_erweima.png" mode="widthFix"></image>
+
+            <view class="name">二维码</view>
+        </span>
+        <span class="child">
+            <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/homepage_share.png" mode="widthFix"></image>
+            <view class="name">分享</view>
+            <button class="fengxiang" open-type="share"></button>
+        </span>
+    </view>
+
+    <!--  -->
+    <view class="ExplainAlert {{ExAlert?'ExAlert':''}}" catchtouchmove>
+        <van-tabs line-width='20' color="#F56F68" active="{{ active }}" bind:change="onChange" swipeable>
+            <van-tab wx:for="{{functionList}}" wx:for-item="fath" wx:for-index="indexF" title="{{fath.name}}"
+                wx:key="{{indexF}}">
+
+                <view class="detail" wx:if="{{active==0}}">
+                    <view class="nav">
+                        活动奖品
+                    </view>
+                    <view class="list"  wx:for="{{detailAction}}" wx:key="{{index}}">
+                        <view class="red">
+                            {{index+1}}.{{item.ActivityName}}{{item.Days}}天
+                        </view>
+                        <view class="det">
+                            可获得{{item.PrizeValue}}{{item.PrizeType}}
+                        </view>
+                    </view>
+                    <view class="nav mgTop">
+                        活动时间
+                    </view>
+                    <view class="list">
+                        {{detailAction[0].StartDate}}   至  {{detailAction[0].EndDate}}
+
+                    </view>
+                    <view class="nav mgTop">
+                        活动说明
+                    </view>
+                    <view class="list">
+
+                    </view>
+
+                </view>
+
+
+                <scroll-view wx:if="{{active==1}}" scroll-y bindscrolltolower="getData">
+                    <view class="ExplainChild" wx:for="{{fath.data}}" wx:key="{{index}}">
+                        <image src="{{item.Picture+'?x-oss-process=image/resize,l_640'}}" mode="aspectFill" />
+                        <span class="contant">
+                            <view class="name">奖品类型：{{item.PrizeType==1?'积分':item.PrizeType==2?'优惠券':item.PrizeType==3?'礼品':item.PrizeType==4?'次数卡':''}}</view>
+                            <view class="name">奖品名称：{{item.AwardName}}</view>
+                            <view class="time">
+                                <span class="min">抽奖时间：{{item.AwardDate}}</span>
+                                <!-- <van-button size="mini" data-id="{{item.Id}}" data-index="{{index}}"
+                                    data-st="{{item.Status}}" catchtap="submit">
+                                    {{item.Status==1?'领取':'已领取'}}
+                                </van-button> -->
+                            </view>
+                        </span>
+                    </view>
+                    <view class="noMore" wx:if="{{fath.finsh}}">没有更多的了~~~</view>
+
+                </scroll-view>
+            </van-tab>
+        </van-tabs>
+        <view class="close">
+            <van-icon name="close" bindtap="closeEx" size="60rpx" color="#fff" />
+
+        </view>
+    </view>
+
+
+</view>

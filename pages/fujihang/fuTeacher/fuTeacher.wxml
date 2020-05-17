@@ -1,0 +1,72 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-06-27 13:53:45 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-06-27 13:54:09
+    技师列表
+*/ -->
+<view id="fuTeacher">
+    <!--  -->
+    <!-- 搜索 -->
+    <view class="seachMTAM">
+        <view class="seachbg">
+            <image src="{{imgUrl+'icon_search.png'}}"  mode="aspectFill"/>
+            <input placeholder="请输入技师名称" value="{{seach}}" bindinput="seaChFN"/>
+        </view>
+        <van-button size="small" bindtap="seachZXT">搜索</van-button>
+    </view>
+
+    <!--  -->
+    <view class="contantKan">
+        <view class="leftK" id="leftK" >
+            <view class="child" wx:for="{{one}}" wx:key="{{index}}" bindtap="toFN" data-id="{{item.Id}}">
+                <view class="logoImg">
+                        <image mode="widthFix"  src="{{item.HeadPortrait+'?x-oss-process=image/crop,w_1080,h_1080'}}" />
+                </view>
+                <view class="name">
+                    {{item.Name}} <span class="join">{{item.GradeName}}</span>
+                </view>
+                <view class="detail">
+                    {{item.ProductName}}
+                </view>
+                <view class="xx">
+                    <van-rate
+                        value="{{ item.Star }}"
+                        size="{{ 10 }}"
+                        color="#f44"
+                        void-color="#eee"
+                        void-icon="star"
+                    />
+                </view>
+            </view>
+        </view>
+        <view class="rightK" id="rightK">
+            <view class="child" wx:for="{{two}}" wx:key="{{index}}" bindtap="toFN" data-id="{{item.Id}}">
+                <view class="logoImg">
+                    <image mode="widthFix" src="{{item.HeadPortrait+'?x-oss-process=image/crop,w_1080,h_1080'}}" />
+                </view>
+                <view class="name">
+                    {{item.Name}} <span class="join">{{item.GradeName}}</span>
+                </view>
+                <view class="detail">
+                    {{item.ProductName}}
+                </view>
+                <view class="xx">
+                    <van-rate
+                        value="{{ 3 }}"
+                        size="{{ 10 }}"
+                        color="#f44"
+                        void-color="#eee"
+                        void-icon="star"
+                    />
+                </view>
+            </view>
+        </view>
+    </view>
+    
+     <view class="noMore" wx:if="{{finsh}}">
+    没有更多的了~~~
+</view>   
+
+</view>
+

@@ -1,0 +1,294 @@
+page {
+    height: 100%;
+    overflow: hidden;
+}
+
+#fuCollect {
+    background: rgb(240, 240, 240);
+    font-size: 26rpx;
+    color: #666;
+    height: 100%;
+    overflow: hidden;
+
+    .tab {
+        display: flex;
+        align-items: flex-start;
+        font-size: 30rpx;
+        color: #333;
+        padding: 20rpx 0;
+        border-top: 1rpx solid #eee;
+        background-color: #fff;
+
+        .nav {
+            flex: 1;
+            text-align: center;
+        }
+
+        .active {
+            color: red;
+            position: relative;
+
+            &::before {
+                content: '';
+                width: 70rpx;
+                height: 7rpx;
+                border-radius: 3rpx;
+                background-color: red;
+                position: absolute;
+                left: 40%;
+                bottom: -19rpx;
+            }
+        }
+    }
+
+    //开始----
+    .colect {
+        padding: 22rpx;
+        background: rgba(255, 255, 255, 1);
+        box-sizing: border-box;
+        margin-top: 19rpx;
+        height: 100%;
+        overflow: hidden;
+        scroll-view {
+            height: 100%;
+            overflow: auto;
+        }
+    }
+
+    .containt {
+        display: flex;
+        border-bottom: 1px solid gainsboro;
+        margin-bottom: 21rpx;
+    }
+
+    .containt>image {
+        width: 164rpx;
+        height: 164rpx;
+    }
+
+    .contr {
+        padding-left: 16rpx;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .name {
+        width: 414rpx;
+        font-size: 28rpx;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .people {
+        font-weight: 500;
+        color: rgba(102, 102, 102, 1);
+        font-size: 22rpx;
+    }
+
+    .redue {
+        width: 220rpx;
+        min-width: 194rpx;
+        background: rgba(255, 204, 204, 1);
+        color: rgba(255, 51, 51, 1);
+        font-size: 20rpx;
+    }
+
+    .pricebox {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .price {
+        font-size: 28rpx;
+        font-weight: 800;
+        color: rgba(255, 68, 68, 1);
+    }
+
+    .emity {
+        position: relative;
+        font-size: 30rpx;
+        text-align: center;
+        top: 40%;
+    }
+
+    //结束----
+
+
+    .contBL {
+        height: 100%;
+        overflow: hidden;
+
+
+        ::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+            color: transparent;
+        }
+
+        scroll-view {
+            height: 100%;
+            overflow: auto;
+
+            .productCont {
+                padding: 10rpx;
+                box-sizing: border-box;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+
+            .product {
+                background: white;
+                margin: 7rpx;
+                // margin-right: 2rpx;
+                // width: calc(50% - 2.6rpx);
+                width: 350rpx;
+                display: flex;
+                flex-direction: column;
+
+                .img {
+                    padding: 20rpx;
+                    box-sizing: border-box;
+                    border-bottom: 1px solid rgb(250, 250, 250);
+
+                    image {
+                        height: 220rpx;
+                        max-width: 100%;
+                    }
+                }
+
+                .name {
+                    font-size: 32rpx;
+                    padding: 10rpx 0;
+                    width: 340rpx;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .det {
+                    color: #999;
+                    margin-bottom: 20rpx;
+                    padding: 0 20rpx;
+                    box-sizing: border-box;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break: break-all;
+                }
+
+                .val {
+                    display: flex;
+                    align-items: center;
+                    color: #F56F68;
+                    padding: 0 20rpx;
+                    box-sizing: border-box;
+
+                    image {
+                        height: 30rpx;
+                        width: 30rpx;
+                    }
+
+                    .ovFU {
+                        flex: 1;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1; //超出多少行
+                        overflow: hidden;
+                        -webkit-box-orient: vertical;
+                        word-break: break-all;
+                    }
+
+                    .bea {
+                        font-size: 22rpx;
+                        overflow: hidden;
+
+                        .num {
+                            margin: 0 10rpx;
+                            font-size: 30rpx;
+                        }
+                    }
+
+                    .xjin {
+
+                        font-size: 22rpx;
+
+                        .num {
+                            margin: 0 5rpx;
+                            font-size: 30rpx;
+                        }
+                    }
+                }
+
+                .chaozuo {
+                    margin-top: 10rpx;
+                    border-top: 1rpx solid rgb(250, 250, 250);
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+
+                    .collect {
+                        justify-content: center;
+                        padding: 0 20rpx;
+                        box-sizing: border-box;
+                        display: flex;
+
+                        .van-icon {
+                            margin-right: 10rpx;
+                        }
+
+                        filter: grayscale(100%);
+                        color:#F56F68;
+                        font-size: 28rpx;
+                    }
+
+                    .coll {
+                        filter: grayscale(0);
+                    }
+
+                    .btn {
+                        overflow: hidden;
+                        flex: 1;
+
+                        .van-button {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: none;
+                            background: #F56F68;
+                            color: white;
+                            padding: 0;
+                            border-radius: 0;
+
+                            .bImg {
+                                width: 20rpx;
+                                height: 20rpx;
+                                margin-right: 10rpx;
+                            }
+                        }
+                    }
+                }
+
+                .btnFU {
+                    flex: 1;
+                    display: flex;
+                    align-items: flex-end;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .noMore {
+        padding: 20rpx 20rpx 350rpx;
+        text-align: center;
+        font-size: 30rpx;
+    }
+}

@@ -1,0 +1,14 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-10-18 11:39:56 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-10-18 11:39:56 
+    弹窗帮助跳转
+*/ -->
+<view id="fuEImgGai">
+
+    <image src="{{imgUrl+img}}" mode="widthFix" />
+
+
+
+</view>

@@ -1,0 +1,128 @@
+<!--pages/PersonalInformationMember/PersonalInformationMember.wxml-->
+<!-- <text>PersonalInformationMember</text> -->
+<view id='PersonalInformationMember'>
+  <view class='PLM-top-box'>
+    <view class='PLM-top-img-box'>
+      <image src='{{imageURl}}' class='PLM-top-img' bindtap='getimg'></image>
+      <view>更改头像</view>
+    </view>
+  </view>
+
+  <view class="bw">
+
+  
+    <view class='PLM-center-box' wx:for="{{fromdata}}" wx:key="{{index}}">
+      <view class='PLM-center-list-box'>
+        <view class='PLM-center-list-title'>
+          {{item.title}}
+        </view>
+        <view class='PLM-center-list-val'>
+          <input type='text' value='{{item.inputval}}' data-index = "{{index}}" bindinput="weachinput" class='PLM-center-list-ipt' placeholder='{{item.placeholder}}'  ></input>
+        </view>
+      </view>
+    </view>
+    <view class='genderBox' bindtap='xingbie' >
+      <span>性别</span> <view class='genderValueBox'> {{gender}}</view>
+      <image class='PLM-address-box-diqu-inp-right' src='{{imageRight}}'></image>
+    </view>
+
+    <view class='birthdayBox' catchtap='showTime'>
+      <span>生日</span> <view class='birthdayValueBox'> {{checkBirthday == null  ? '请选择生日' : checkBirthday }}</view>
+      <image class='PLM-address-box-diqu-inp-right' src='{{imageRight}}'></image>
+    </view>
+    
+    <!-- <view class='userQQbox'>
+      <span class = "userQQboxTitle">QQ</span>
+      <span class="inputBF">
+        <input type='text' value='{{userQQval}}' placeholder='请输入QQ' class='qqinput' bindinput="watchQQ" ></input>
+      </span>
+    </view> -->
+    <view class='userQQbox'>
+      <span class = "userQQboxTitle">手机号码</span>
+      <span class="inputBF">
+        <input type='text' disabled="{{ws=='all'||CellPhoneVerification}}" value='{{phoneNumber}}' placeholder='请输入手机号' class='qqinput' bindinput="watchPhone" ></input>
+      </span>  
+    </view>
+    <!-- <view class='userQQbox'>
+      <span class = "userQQboxTitle">身份证号</span>
+      <span class="inputBF">
+        <input type='text' value='{{idCard}}' placeholder='请输入身份证号码' class='qqinput' bindinput="watchIdcard" ></input>
+      </span>
+    </view> -->
+    <!-- <view class='userQQbox'>
+      <span class = "userQQboxTitle">支付宝</span>
+      <span class="inputBF">
+        <input type='text' value="{{ReceivingAccount?ReceivingAccount:''}}" data-name="ReceivingAccount" placeholder='请输入支付宝' class='qqinput' bindinput="changeInput" ></input>
+      </span>
+    </view> -->
+    <!-- <view class='userQQbox'>
+      <span class = "userQQboxTitle">开户行</span>
+      <span class="inputBF">
+        <input type='text' value="{{BankName?BankName:''}}" data-name="BankName" placeholder='请输入开户行' class='qqinput' bindinput="changeInput" ></input>
+      </span>
+    </view> -->
+    <!-- <view class='userQQbox'>
+      <span class = "userQQboxTitle">开户名</span>
+      <span class="inputBF">
+        <input type='text' value="{{BankAccountName?BankAccountName:''}}" data-name="BankAccountName" placeholder='请输入开户名' class='qqinput' bindinput="changeInput" ></input>
+      </span>
+    </view> -->
+    <!-- <view class='userQQbox'>
+      <span class = "userQQboxTitle">银行卡号</span>
+      <span class="inputBF">
+        <input type='text' value="{{BankAccountNo?BankAccountNo:''}}" data-name="BankAccountNo" placeholder='请输入银行卡号' class='qqinput' bindinput="changeInput" ></input>
+      </span>
+    </view> -->
+
+
+  </view>
+
+  <view class='PLM-geren-box' wx:if = "{{false}}">
+    <view class='PLM-geren-title'>个人简介</view>
+    <view class='PLM-geren-put-box'>
+      <input type='' class='PLM-geren-put' placeholder='请输入个人简介'></input>
+    </view>
+  </view>
+  <view class='PLM-address-box'>
+    <view class='PLM-address-box-diqu'>
+      <view class='PLM-address-box-diqu-title'>
+        地区
+      </view>
+      <view class='PLM-address-box-diqu-inp-box'>
+        <!-- <view></view> -->
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class="picker">
+            {{region[0]}} {{region[1]}} {{region[2]}}
+          </view>
+        </picker>
+      </view>
+      <view class='PLM-address-box-diqu-inp-right-box'>
+        <image class='PLM-address-box-diqu-inp-right' src='{{imageRight}}'></image>
+      </view>
+      <view>
+      </view>
+    </view>
+  </view>
+  <view class='userQQbox'>
+    <span class = "userQQboxTitle">详细地址</span>
+    <span class="inputBF">
+      <input type='text'  value='{{detailedAddress}}' placeholder='请输入详细地址' class='qqinput' bindinput="xiangxidizhi" ></input>
+    </span>  
+  </view>
+
+ 
+<!-- 时间选择 -->
+  <van-popup show="{{ show }}" bind:close="onClose" position="bottom" >
+      <van-datetime-picker
+        type="date"
+        value="{{ currentDate }}"
+        bind:confirm="datesure"
+        bind:cancel = "datacencel"
+        min-date="{{ minDate }}"
+      />
+  </van-popup>
+  
+</view>
+<cover-view wx:if="{{!show}}" class='PLM-bottom-submit' bindtap='commitUserMsg'>
+保存
+</cover-view>

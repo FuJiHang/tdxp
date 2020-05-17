@@ -1,0 +1,224 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-16 10:28:44 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-04-16 10:28:44 
+    订单详情
+*/ -->
+<view id="fuOrderDetail" >
+    
+    <!-- 内容 -->
+    <view class="contantOD">
+
+        <!-- 头部 -->
+        <view class="navTopOD">
+            <view class="bW">
+                <view class="orderId">
+                    订单编号：<text class="val">{{orderData.OrderId}}</text> 
+                    <text class="state" wx:if="{{orderData.Status==1}}" >待付款</text>
+                    <text class="state" wx:if="{{orderData.Status==2}}" >已预约</text>
+                    <text class="state" wx:if="{{orderData.Status==3}}" >已核销</text>
+                    <text class="state" wx:if="{{orderData.Status==4}}" >已取消</text>
+                    <text class="state" wx:if="{{orderData.Status==5}}" >已完成</text>
+                    <text class="state" wx:if="{{orderData.Status==6}}" >退款中</text>
+                </view>
+                <view class="payTime">
+                    下单时间：<text class="val">{{orderData.OrderDate}}</text>
+                </view>
+            </view>
+            
+        </view>
+
+        <!-- 预约信息 -->
+        <view class="appoint">
+            <view class="navChild">
+                <text class="name">预约信息</text>
+                <!-- <span class="time">
+                    预约时间  2019/03/21 15:00:00
+                </span> -->
+            </view>
+            <view class="appointList" wx:for="{{orderData.LineItems}}" wx:key="index"  >
+                <image src="{{item.Image}}" />
+                <view class="contant">
+                    <view class="name_mon mB">
+                        <text class="name">{{item.ProductName}}</text>
+                        <text class="mon">￥{{item.Price}}</text>
+                    </view>
+                    <!-- <view class="company mB">
+                        {{item.StoreName}}
+                      
+                    </view>
+                    <view class="address disAC mB">
+                        <image class="img" src="{{imgUrl+'icon_address33.png'}}" mode="aspectFill"/>
+                        {{item.StoreAddress?item.StoreAddress:'无'}}
+                    </view> -->
+                    <view class="code disAC mB">
+                        <image  class="img" src="{{imgUrl+'hexiaoma.png'}}" mode="aspectFill"/>
+                        核销码：{{item.VerificationPassword?item.VerificationPassword:'无'}}
+                        <image  class="img left" src="{{imgUrl+'hexiaoma.png'}}" mode="aspectFill"/>
+                        技师分配：{{item.Technician?item.Technician:'无'}}
+                    </view>
+                    <view class="time"  data-index="{{index}}">
+                        <span class="upgrade" data-index="{{index}}" bindtap="changeTime">预约时间:{{item.SelectDate}}</span >                      
+                        <van-button wx:if="{{orderData.Status==2}}" size="mini" data-index="{{index}}" bindtap="upgradeFN">升单</van-button>
+                        <van-button wx:if="{{orderData.Status==5&&!item.IsAppraised}}" size="mini" data-index="{{index}}" bindtap="pjFN">评价</van-button>
+                        <span wx:if="{{orderData.Status==5&&item.IsAppraised}}">已评价</span>
+                    </view>
+                </view>
+               
+            </view>
+        </view>
+
+        <!-- 个人信息 -->
+        <view class="info">
+            <view class="navChild">个人信息</view>
+            <view class="childList" wx:for="{{infoList}}" wx:key="index">
+                <text class="name">{{item.name}}</text>
+                <text class="val">{{item.val}}</text>
+            </view>
+        </view>
+        <!-- 门店信息 -->
+        <view class="info">
+            <view class="navChild">门店信息</view>
+            <view class="childList" wx:for="{{storeList}}" wx:key="index">
+                <text class="name">{{item.name}}</text>
+                <text class="val">{{item.val}}</text>
+            </view>
+        </view>
+
+        <view class="couponPE" bindtap="couponOP" wx:if="{{orderData.Coupon.Type==0&&orderData.Coupon.Price}}">
+            <span class="name">电子券</span>
+            <span class="val">{{orderData.Coupon.Price}}元</span>
+            <van-icon name="warning-o" size="35rpx" color="#F56F68"/>
+        </view>
+
+        <view class="couponPE" bindtap="couponOP"  wx:if="{{orderData.Coupon.Type==1&&orderData.Coupon.Price}}">
+            <span class="name">技师优惠券</span>
+            <span class="val">{{orderData.Coupon.Price}}元</span>
+            <van-icon name="warning-o" size="35rpx" color="#F56F68"/>
+        </view>
+
+        <view class="couponPE" bindtap="coupon" wx:if="{{orderData.Coupon.Type==''}}">
+            <span class="name">优惠券</span>
+            <span class="val">{{couponId.id!=0?'已选择电子券价格：'+couponId.pic+'元':'请选择优惠券'}}</span>
+        </view>
+
+        
+        
+        
+    </view>
+
+    <!-- 底部 -->
+    <view class="btnOD">
+        <view class="money">
+            <view >
+                金额：<text class="num">￥{{orderData.OrderTotal}}</text>
+                <view class="dingjin" wx:if="{{orderData.FinalPayment==0&&orderData.Deposit!=0&&orderData.Status==2}}">
+                    已付定金：<text class="num">￥{{orderData.Deposit}}</text>
+                </view>
+            </view>
+            
+            
+        </view>
+        <van-button size="small"   bindtap="openPicFn">改价</van-button>
+        <!-- <van-button size="small"  wx:if="{{orderData.Status==1}}" bindtap="payFN">立即付款</van-button> -->
+        <!-- <van-button size="small"  wx:if="{{orderData.Status==5&&!orderData.IsAppraised}}" bindtap="pjFN">去评价</van-button> -->
+        <!-- <span class="red" wx:if="{{orderData.Status==5&&orderData.IsAppraised}}">
+            已评价
+        </span> -->
+    </view>
+
+    <van-popup show="{{ showCou }}" position="bottom" bind:close="onCloseCou">
+
+        <view wx:if="{{orderData.Coupon.Type=='0'}}" class="couponGanT" >
+            <view class="letfCon">
+                <view class="contant">
+                        <view class="name">{{orderData.Coupon.Price}}元<span>抵用券</span>
+                    </view>
+                    <view class="role">使用规则：所购买的商品金额必须大于或等于{{orderData.Coupon.OrderUseLimit}}元
+                    </view>
+                    <view class="time"> {{orderData.Coupon.ClosingTime}}过期
+                    </view>
+                </view>
+                
+            </view>
+            <view class="rightCon">
+                <view class="contantR">
+                    <view class="buyName">购买价格
+                    </view>
+                    <view class="pirce">{{orderData.Coupon.BuyPrice}}元
+                    </view>
+                    <view class="btn">立即领取
+                    </view>
+                </view>
+                
+            </view>
+            <view class="middren">
+                <view class="fenSe">
+                    <view class="bg"></view>
+                </view>
+            </view>
+        </view>
+
+
+
+
+        <view wx:if="{{orderData.Coupon.Type=='1'}}" class="couponGan" >
+            <view class="bWCou">
+                <view class="juchi top">
+                    <view class="child" wx:for="{{150}}"></view>
+                </view>
+                <view class="juchi btn">
+                    <view class="child" wx:for="{{150}}"></view>
+                </view>
+                <view class="juchi left">
+                    <view class="child" wx:for="{{150}}"></view>
+                </view>
+
+
+                <view class="leftNaction">
+                    {{orderData.Coupon.Price}}<span>元</span>
+                </view>
+                <view class="rightNaction">
+                    <view class="name">
+                        <span>{{orderData.Coupon.CouponName}}</span>
+                    </view>
+                    <view class="vip">VIP客户专享</view>
+                    <view class="time">使用日期：{{orderData.Coupon.ClosingTime}}使用</view>
+                </view>
+            </view>
+            <view class="yuan">
+                <view class="aaaa"></view>
+            </view>
+            <view class="typeName">活动专用</view>
+        </view>
+
+        
+    </van-popup>    
+
+    <!-- 时间 -->
+    <van-popup show="{{ showTime }}" position="bottom" bind:close="onClose">
+        <van-datetime-picker
+            type="datetime"
+            value="{{currentDate}}"
+            bind:input="onInput"
+            bind:confirm="okTime"
+            bind:cancel="onClose"
+        />
+    </van-popup>   
+
+    <!--  -->
+    <van-popup show="{{ openPic }}" position="top" bind:close="onClosePic">
+        <view class="addpic" wx:for="{{addPrice}}" wx:key="{{index}}">
+            {{item.name}}:
+            <van-button wx:if="{{!index}}" bindtap="changeType">{{addOrsub}}</van-button>
+            <span class="inp">
+                <input data-index="{{index}}" placeholder="{{item.plr}}" value="{{item.val}}" bindinput="bindpic"/>
+            </span>
+        </view>
+        <view class="addOk" bindtap="okPriFN">
+            <van-button>确定</van-button>
+        </view>
+    </van-popup>
+</view>
+  

@@ -1,0 +1,79 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-15 13:38:37 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-04-15 13:38:37 
+    我的订单卡片
+*/ -->
+<view class="orderList">
+    <view class="orderListTop" bindtap="toFN">
+        <view class="statusId">
+            <span class="name">
+                订单号：{{order.OrderId}}
+                <span class="red" wx:if="{{order.IsFightGroupOrder!='False'}}">
+                    (拼团订单-{{order.FightGroupStatusText}})
+                </span>
+            </span>
+            <span class="state" wx:if="{{order.Status==1}}">待付款</span>
+            <span class="state" wx:if="{{order.Status==2}}">已预约</span>
+            <span class="state" wx:if="{{order.Status==3}}">已核销</span>
+            <span class="state" wx:if="{{order.Status==5}}">已完成</span>
+            <span class="state" wx:if="{{order.Status==4}}">已取消</span>
+        </view>
+        <!-- <view class="statusId">
+            预约人数：2人
+        </view> -->
+    </view>
+    <view class="orderListContent" wx:for="{{order.LineItems}}" wx:key="index" bindtap="toFN">
+        <view class="contant">
+            <image src="{{item.Image}}" mode="aspectFill" />
+            <span class="middin">
+                <view class="name_mid child">
+                    <view class="name_xz">{{item.Name?item.Name:'无'}}</view>
+                    <view class="money">￥{{item.Price?item.Price:'0'}}</view>
+                </view>
+                <view class="teacher">{{item.TechnicianName?item.TechnicianName:'无'}}</view>
+                <view class="detail">
+                    <text class="code">详情</text>
+                    {{item.Description?item.Description:'无'}}
+                </view>
+                <!-- <view class="company child">暗示的拉斯看到<text>待分配技师</text></view>
+                <view class="address child">
+                    <image mode="aspectFill" src="../../../images/icon_address33.png" />
+                    暗示的的离开
+                </view> -->
+            </span>
+        </view>
+        <view class="time">预约时间：{{item.SelectDate}}</view>
+    </view>
+    <view class="orderListAll">
+        <view class="aaPicAll">
+            <view>
+                共{{order.Quantity}}个项目 金额：
+                <text class="moneyAll">￥{{order.Amount}}</text>
+            </view>
+            <view>
+                定金：
+                <text class="moneyAll">￥{{order.Deposit}}</text>
+            </view>
+            <view style="color:red;">实收金额：{{order.PayTotal}}元</view>
+            <view wx:if="{{order.Status==2&&order.RestoresCount>0}}">
+                <!-- <view wx:if="{{order.Status==2&&order.RestorerHasPaid=='False'&&order.RestoresCount>0}}"> -->
+                修复剂：{{order.RestorerHasPaid=='False'?'未支付':'已支付'}} ({{order.RestoresCount}}瓶)
+            </view>
+        </view>
+        <view class="btn" wx:if="{{order.Status==1}}">
+            <button class="fuBtn" bindtap="openPay" data-index="{{0}}">支付</button>
+        </view>
+        <view class="btn" wx:if="{{order.Status==2&&order.RestorerHasPaid=='False'&&order.RestoresCount>0}}">
+            <button class="fuBtn" bindtap="openPay" data-xfj="{{true}}">支付</button>
+        </view>
+    </view>
+    <van-popup show="{{payMode.show}}" bindtap="onCloseP" position="bottom" bind:close="onCloseP">
+        <view class="iosJJ">
+            <view class="choosePay" wx:for="{{payList}}" wx:key="{{index}}" catchtap="chooseFN" data-index="{{index}}">
+                <image class="logo" mode="aspectFit" src="{{imgUrl+item}}" />
+            </view>
+        </view>
+    </van-popup>
+</view>

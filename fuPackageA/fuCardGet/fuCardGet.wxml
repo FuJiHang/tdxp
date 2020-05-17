@@ -1,0 +1,47 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-03 19:54:45 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-03 19:54:45 
+    活动卡领取
+*/ -->
+<view id="fuCardGet">
+    
+    <view class="topC">
+        <view class="Card {{'bg'+(dataInfo.ColorType)}}" hover-class="none" hover-stop-propagation="false">
+            <view class="name mb">{{dataInfo.CardName}}
+            </view>
+            <view class="det mb">{{dataInfo.ProductName}}
+            </view>
+            <view class="price mb" >￥{{dataInfo.CostPrice}}元
+            <!-- <span class="num">/次</span> -->
+            </view>
+            <view class="time mb">购买30天内有效</view>
+           <image mode="aspectFill" class="rightS" src="{{imgUrl+(dataInfo.ColorType==0?'yj.png':dataInfo.ColorType==1?'mr.png':'meijia.png')}}" />
+        </view> 
+        
+        <view class="numPeo">
+            <image mode="aspectFill" src="{{imgUrl+'duiX.png'}}" />
+            <span class="name">随时享受</span>
+            <span class="val">已有{{dataInfo.GetCount}}人领取</span>
+            <van-icon name="arrow" size="35rpx" />
+        </view>
+    </view>
+    
+
+    
+    
+
+    <!--  -->
+    <view class="textarea">
+        <view class="name">详情</view>
+        <view class="val">{{dataInfo.CardDetail}}</view>
+    </view>
+
+    <!--  -->
+    <view class="btn" bindtap="submit">
+        <van-button>立即领取</van-button>
+    </view>
+
+    
+</view>

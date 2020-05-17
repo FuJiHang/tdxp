@@ -1,0 +1,42 @@
+/* pages/projectDetail/projectDetail.wxss */
+@import '/template/template.wxss';
+page {
+  position: relative;
+  font-size: 32rpx;
+  color: #333;
+  background: #f7f7f7;
+  padding-bottom: 128rpx;
+}
+.project_head {
+  background: #fff;
+}
+.addr_text{
+  margin-top: 8rpx;
+  font-size: 28rpx;
+  background-size: 28rpx 28rpx;
+}
+.project_head>.project_list_item {
+  border-bottom: none;
+}
+.floor {
+  margin-top: 20rpx;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  font-weight: bold;
+  background: #fff;
+}
+
+.border_bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+.pic_box {
+  overflow: hidden;
+}
+
+.pic_box>image {
+  width: 100%;
+}

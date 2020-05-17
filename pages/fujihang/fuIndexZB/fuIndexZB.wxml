@@ -1,0 +1,294 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-06-17 09:19:07 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-06-17 09:19:34
+    总部首页改
+*/ -->
+<view id="fuIndexG">
+
+    <!-- 搜索 -->
+    <view class="seachMTAM">
+        <view class="addressImg" bindtap="getaddress">
+            <!-- <span>{{nowCityName}}</span> -->
+            <span>{{getAddressDet}}</span>
+
+            <van-icon name="arrow-down" size="30rpx" />
+        </view>
+        <view class="seachbg" bindtap="toFN" data-to="/fuPackageA/fuSeachDGP/fuSeachDGP">
+            <image src="{{imgUrl+'icon_search.png'}}" mode="aspectFill" />
+            <input disabled="{{true}}" bindinput="changInput" value="{{seach}}" placeholder="请输入要搜索的内容"
+                bindconfirm="seaChFN" />
+        </view>
+    </view>
+
+    <!--  -->
+    <swiper indicator-color="rgba(166,166,166,1)" indicator-active-color="#E96C59"
+        style="height:{{imgheights[current]+'rpx'}}" indicator-dots="{{true}}" autoplay="{{true}}" circular="{{false}}"
+        vertical="{{false}}" interval="{{4000}}" duration="{{500}}" bindchange="bindchangeImg">
+        <swiper-item wx:for="{{background}}" wx:key="index" data-id='{{index}}'>
+            <image data-id='{{index}}' bindload="imageLoad" class='item-img' data-photoId="{{item.PhotoId}}"
+                src="{{item.AdImg+'?x-oss-process=image/resize,l_640'}}" mode='widthFix'
+                data-categoryId="{{item.CategoryId}}" catchtap='clickImg'></image>
+        </swiper-item>
+    </swiper>
+
+
+
+    <!--  -->
+    <view class="newS">
+        <image mode="widthFix" class="leftNew" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/goodNew.jpg" />
+        <view class="border"></view>
+        <view class="rightNew">
+            <swiper autoplay="{{true}}" interval="{{4000}}" duration="{{500}}" circular="{{true}}" vertical="{{true}}">
+                <swiper-item wx:for="{{getXKTList}}" wx:key="{{index}}">
+                    <view class="child" bindtap="toPYQFN" data-id="{{item.Id}}">
+                        <span class="tip">NEW</span>
+                        <span class="txt">{{item.Contents}}</span>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+
+    <!--  -->
+    <swiper class="banner " autoplay="{{true}}" interval="{{3000}}" duration="{{500}}">
+        <swiper-item wx:for="{{bannerThree}}" data-data="{{item}}" bindtap="couponFN" wx:key="{{index}}">
+            <image src="{{item.UploadLogo}}" mode="widthFix"></image>
+        </swiper-item>
+    </swiper>
+
+
+    <view class="moreFun">
+        <view class="topFun">
+            <span class="flex " bindtap="toFFN" data-to="/pages/fujihang/fuStoreG/fuStoreG">
+                <image mode="widthFix"
+                    src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/indexM031.jpg?x-oss-process=image/resize,h_480&1" />
+            </span>
+            <span class="flex " bindtap="toFFN" data-to="/pages/fujihang/fuTeacher/fuTeacher">
+                <image mode="widthFix"
+                    src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/indexM032.jpg?x-oss-process=image/resize,h_480" />
+            </span>
+        </view>
+        <view class="btnFun">
+            <span class="flex" bindtap="toFFN" data-to="/fuPackageA/fuGetMoneyAction/fuGetMoneyAction">
+                <image mode="widthFix"
+                    src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/indexM003.jpg?x-oss-process=image/resize,h_480" />
+            </span>
+            <span class="flex " bindtap="toFFNSS" data-to="/fuPackageA/fuRewordList/fuRewordList">
+                <image mode="widthFix"
+                    src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/indexM004.jpg?x-oss-process=image/resize,h_480" />
+            </span>
+            <span class="flex" bindtap="toFN" data-to="/pages/fujihang/fuBeaStore/fuBeaStore">
+                <image mode="widthFix"
+                    src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/indexM005.jpg?x-oss-process=image/resize,h_480" />
+            </span>
+        </view>
+    </view>
+
+
+    <!--  -->
+    <swiper class="banner maHe" autoplay="{{true}}" interval="{{3000}}" duration="{{500}}">
+        <swiper-item wx:for="{{bannerTwo}}" bindtap="toFN" data-to="{{item.to}}" wx:key="{{index}}">
+            <image src="{{item.img}}" mode="widthFix"></image>
+        </swiper-item>
+    </swiper>
+
+
+    <!-- 拼团 -->
+    <view class="teamPro" wx:if="{{teamList.length !=0}}">
+        <view class="navTop" bindtap="toFN" data-to="/fuPackageA/fuTeamList/fuTeamList">
+            <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/hot.png" mode='aspectFit' />
+
+            <span class="flex">
+                火爆拼团中
+            </span>
+            更多
+            <van-icon name="arrow" size="35rpx" color="#999" />
+        </view>
+        <view class="project" bindtap="toProOrCouFN" data-type="{{item.ProductType}}"
+            data-productId="{{item.ProductId}}" wx:for="{{teamList}}" wx:key="{{index}}">
+            <span class="img_num">
+                <image src="{{item.ImageUrl1+'?x-oss-process=image/resize,l_640'}}" mode='aspectFill' />
+                <span class="num">
+                    已拼{{item.SoldCount?item.SoldCount:0}}件
+                </span>
+            </span>
+        
+            <span class="contant">
+                <view class="name_num">
+                    {{item.ProductName}}
+                </view>
+                <view class="price_btn">
+                    <span class="flex">
+                        <view class="peo_pri">
+                            {{item.JoinNumber}}人团
+                            <span class="pri">
+                                ¥{{item.SalePrice}}
+                            </span>
+                        </view>
+                        <view class="oneBuy">
+                            单买价
+                            <span class="pri">¥{{item.SingleSalePrice?item.SingleSalePrice:0}}</span>
+                        </view>
+
+                    </span>
+                    <van-button size="small" round>去拼团</van-button>
+
+                </view>
+            </span>
+        </view>
+    </view>
+
+
+    <!-- 精选商品 -->
+    <!-- <view class="goodProduct">
+        <view class="topName" bindtap="toFN" data-to="/fuPackageA/fuShop/fuShop">
+            <span class="name">精选商品</span>
+            更多
+            <van-icon name="arrow" size="30rpx" />
+        </view>
+        <view class="productCont">
+            <view class="product" wx:for="{{proList.data}}" wx:key="{{index}}">
+                <view class="jiaoZiPi" data-dname="{{item.StoreName}}" data-productId="{{item.ProductId}}"
+                    data-storeid="{{item.StoreId}}" bindtap="handleDetail">
+                    <view class="img">
+                        <image src="{{item.ImageUrl1+'?x-oss-process=image/resize,l_640'}}" mode="widthFix" />
+                    </view>
+                    <view class="name">{{item.ProductName}}</view>
+                    <view class="det"></view>
+                    <view class="val">
+                        <view class="ovFU">
+                            <span class="bea">
+                                <span class="num">￥{{item.SalePrice}}</span>
+
+                            </span>
+                            <span class="xjin">
+
+                                <span class="num">￥{{item.MarketPrice}}</span>
+
+                            </span>
+                        </view>
+                    </view>
+
+                </view>
+            </view>
+        </view>
+    </view> -->
+    <!--  -->
+    <!-- <view class="moreKan" >
+            <view class="topName" bindtap="toPYQLB">
+                <span class="name">大家都在看</span>
+                <van-icon name="arrow" size="30rpx" />
+            </view>
+            <view class="contantKan">
+                <view class="leftK" id="leftK">
+                    <view class="child" bindtap="toPYQFN" data-no="{{item.No}}" data-index="{{index}}" data-name="le"
+                        data-id="{{item.Id}}" wx:for="{{nearList.data1}}" wx:key="{{index}}">
+                        <view class="logoImg">
+                            <image hidden="{{!item.isVideo}}"
+                                src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}"
+                                class="myVideo" mode="widthFix" />
+                         
+                            <view wx:if="{{item.isVideo}}" class="playBtn">
+                                <van-icon name="play-circle" color="#fff" size="60rpx" />
+                            </view>
+                            <image hidden="{{item.isVideo}}" mode="widthFix" src="{{item.ImageUrlsArr[0]}}" />
+                        </view>
+                        <view class="name">
+                            {{item.Contents?item.Contents:'无'}}
+                        </view>
+                        <view class="btnXX">
+                            <view class="touxiang">
+                                <image mode="aspectFit" src="{{item.Picture}}" />
+                            </view>
+                            <span class="nameC">{{item.UserName?item.UserName:'无'}}</span>
+                            <van-icon catchtap="Fabulous" data-nameNum="{{'nearList.data1['+index+'].ArticleLikeCount'}}"
+                                data-num="{{item.ArticleLikeCount}}"
+                                data-name="{{'nearList.data1['+index+'].IsArticleLike'}}" data-tf="{{item.IsArticleLike}}"
+                                data-id="{{item.Id}}" name="{{item.IsArticleLike?'like':'like-o'}}" size="30rpx"
+                                color="{{item.IsArticleLike?'#f7726d':'#666'}}" />
+                            <span class="num">{{item.ArticleLikeCount}}</span>
+                        </view>
+                    </view>
+                </view>
+                <view class="rightK" id="rightK">
+                    <view class="child" bindtap="toPYQFN" data-no="{{item.No}}" data-index="{{index}}" data-id="{{item.Id}}"
+                        wx:for="{{nearList.data2}}" wx:key="{{index}}">
+                        <view class="logoImg">
+                            <image hidden="{{!item.isVideo}}"
+                                src="{{item.ImageUrls+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast'}}"
+                                class="myVideo" mode="widthFix" />
+    
+                         
+                            <view wx:if="{{item.isVideo}}" class="playBtn">
+                                <van-icon name="play-circle" color="#fff" size="60rpx" />
+                            </view>
+                            <image hidden="{{item.isVideo}}" mode="widthFix" src="{{item.ImageUrlsArr[0]}}" />
+                        </view>
+                        <view class="name">
+                            {{item.Contents?item.Contents:'无'}}
+                        </view>
+                        <view class="btnXX">
+                            <view class="touxiang">
+                                <image mode="aspectFit" src="{{item.Picture}}" />
+                            </view>
+                            <span class="nameC">{{item.UserName?item.UserName:'无'}}</span>
+                            <van-icon catchtap="Fabulous" data-nameNum="{{'nearList.data2['+index+'].ArticleLikeCount'}}"
+                                data-num="{{item.ArticleLikeCount}}"
+                                data-name="{{'nearList.data2['+index+'].IsArticleLike'}}" data-tf="{{item.IsArticleLike}}"
+                                data-id="{{item.Id}}" name="{{item.IsArticleLike?'like':'like-o'}}" size="30rpx"
+                                color="{{item.IsArticleLike?'#f7726d':'#666'}}" />
+                            <span class="num">{{item.ArticleLikeCount}}</span>
+                        </view>
+                    </view>
+                </view>
+                <view class="noMore" hidden="{{!nearList.finsh}}">
+                    没有更多的了~~~
+                </view>
+            </view>
+        </view> -->
+
+    <view class="konbai"></view>
+    <!-- 地址弹窗 -->
+    <view class='address-box' wx:if="{{showSelect}}" catchtouchmove="ture">
+        <view class='address-box2' catchtap='remakeAddress' wx:if="{{showSelect}}">
+            <!-- gohome 回到原来的位置 -->
+            当前位置
+        </view>
+        <addr-picker bindaddrevent="onSelectRegion" id='addr-picker' wx:if="{{showSelect}}"></addr-picker>
+    </view>
+</view>
+<!--  -->
+<!-- newAlert -->
+
+
+
+
+<!-- 底部导航条 -->
+<view class="navBarFu">
+    <view bindtap="toFNNav" wx:if="{{index!=2}}" data-to="{{item.to}}" data-index="{{index}}"
+        class="child {{index==2?'max':''}}   {{xz==index?'black':''}}" wx:for="{{navBar}}" wx:key="index"
+        data-index="{{index}}" >
+        <image mode="aspectFill" src="{{imgUrl+item.img}}" data-index="{{index}}" />
+        <text class="name" data-index="{{index}}">{{item.name}}</text>
+    </view>
+</view>
+
+
+<van-popup catchtouchmove custom-style="background:none;height:100%;" bindtap="onCloseP" show="{{newAlert}}"
+    position="bottom" bind:close="onCloseP">
+    <span class="img" catchtap>
+        <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/popup_bangding.png?1" />
+        <input class="name" data-index="0" bindinput="changeInput" placeholder="{{postList[0].plr}}"
+            value="{{postList[0].val}}" />
+        
+        <input class="code" data-index="1" bindinput="changeInput" placeholder="{{postList[1].plr}}"
+            value="{{postList[1].val}}" />
+        <span class="getCode" bindtap="getSMS">{{SMS}}</span>
+        <span class="register" bindtap="subimt"></span>
+        <view class="close" bindtap="onCloseP"></view>
+    </span>
+
+ 
+</van-popup>

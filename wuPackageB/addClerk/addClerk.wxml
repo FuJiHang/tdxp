@@ -1,0 +1,24 @@
+<view id="add_clerk">
+  <form bindsubmit="formSubmit">
+    <block wx:for="{{inputData}}" wx:key="{{item}}">
+      <view class="input_wrap">
+        <label for="" class="title">{{item.title}}</label>
+        <input type="{{item.type}}" class="in_sr" placeholder="{{item.pla}}" value="{{item.val}}" name="{{item.name}}"
+          placeholder-class="inputStyle" wx:if="{{item.status}}" />
+        <image class="icon" src="{{imgUrl+'more_02@2x.png'}}" wx:if="{{!item.status}}"></image>
+      </view>
+    </block>
+    <view class="body-view">
+      <switch type="checkbox" checked="{{item.sta}}" bindchange="handleChange" data-storeid="{{item.StoreId}}"
+        data-name="{{item.Name}}" data-phone="{{item.Phone}}" data-picture="{{item.Picture}}" data-authid="{{item.AuthId}}"
+        data-role="{{item.Role}}" />
+      <view class="set">店员</view>
+    </view>
+  
+    <view class="btn-area">
+      <button formType="submit">下一步</button>
+    </view>
+  
+  </form>
+
+</view>

@@ -1,0 +1,39 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-20 17:15:29 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-20 17:15:29 
+    门店二维码
+ */ -->
+
+
+<view id="fuStroeCode">
+
+    <!-- <view class="alert">
+        <view class="address">
+            <image class="storeImg" src="{{imgUrl+'index005.jpg'}}" mode="aspectFill"></image>
+            <span class="contant">
+                <view class="name">
+                    <span class="flex">广东省广州市越秀区中山三...</span>
+                </view>
+                <view class="tip">
+                    距您500m，步行大概需要{{getStore.Time}}分钟
+                </view>
+            </span>
+        </view>
+        <view class="logo">
+            <image src="https://tdh.hmeshop.cn/Storage/master/QRCode/StoreQRCode_50.png" mode="widthFix"></image>
+        </view>
+        <view class="tipSB">
+            长按识别图中二维码
+        </view>
+    </view> -->
+
+    <canvas class="canvasStyle" style="{{ratio==0.7?'width:224px;height:336px':ratio==0.8?'width:256px;height:384px':''}}" canvas-id="qrCanvas" data-mode="content"></canvas>
+
+    <view class="btn" wx:if="{{status}}">
+        <van-button bindtap="saveShareImg">保存图片</van-button>
+    </view>
+
+
+</view>

@@ -1,0 +1,57 @@
+<view class="fx_header" style=" background: url({{headerbg}}) left top no-repeat; background-size: 100% auto; ">
+    <view class="fxInfoBox">
+        <view class="fx_Info">
+            <view class="fx_userInfo">
+                <view class="fx_hd">
+                    <view class="fx_name">{{DistributionInfo.ShopName}}</view>
+                    <view class="btn" hidden="{{!ReferralGradeName}}">{{DistributionInfo.ReferralGradeName}}</view>
+                </view>
+                <view class="name_desc">再获得
+          <text>{{DistributionInfo.UpgradeNeedSplittin}}</text>元佣金升级为
+          <text>{{DistributionInfo.NextReferralGradeName}}</text>
+                </view>
+            </view>
+            <view bindtap="RefferStore" class="Distribution">店铺分销</view>
+        </view>
+        <view class="drawalsBox pd24">
+            <view class="drawals fl">
+                <view class="drawals_width">
+                    <view class="yuan">¥</view>
+                    <text>{{DistributionInfo.CanDrawSplittin}}</text>
+                </view>
+                <text>可提现</text>
+            </view>
+            <view class="drawals fl">
+                <view class="drawals_width">
+                    <view class="yuan">¥</view>
+                    <text>{{DistributionInfo.HistorySplittin}}</text>
+                </view>
+                <text>历史赚取</text>
+            </view>
+            <view class="drawals fr">
+                <view class="drawals_width">
+                    <view class="yuan">¥</view>
+                    <text>{{DistributionInfo.NoSettlementSplttin}}</text>
+                </view>
+                <text>未结算</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="fx_common">
+    <view bindtap="bindyongjin" class="fx_li">
+        <view class="iconfont fx_icon icon_ "></view>
+        <text>我的佣金</text>
+        <view class="iconfont fr angle-right right_size"></view>
+    </view>
+    <view bindtap="bindxiaji" class="fx_li">
+        <view class="iconfont fx_icon icon_5"></view>
+        <text>我的下级</text>
+        <view class="iconfont fr angle-right right_size"></view>
+    </view>
+    <view bindtap="bindstoreinfo" class="fx_li">
+        <view class="iconfont fx_icon icon_2"></view>
+        <text>店铺信息</text>
+        <view class="iconfont fr angle-right right_size"></view>
+    </view>
+</view>

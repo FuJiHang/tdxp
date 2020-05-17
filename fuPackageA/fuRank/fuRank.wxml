@@ -1,0 +1,57 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-01 10:14:15 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-01 10:14:15 
+    排行榜
+*/ -->
+<view id="fuRank">
+
+    <van-tabs class="van_order" line-width='20' color="#F56F68" active="{{ active }}" bind:change="onChange" swipeable>
+        <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+            
+            <view class="RankCart" wx:for="{{item.data.Data}}" wx:for-item="itemc" wx:for-index="indexc" wx:key="{{indexc}}">
+                <span class="title" >{{active?indexc+1:''}}
+                </span>
+                <image class="{{active?'big':''}}" src="{{itemc.Picture}}" mode="aspectFill"/>
+                <span class="name_join">
+                    <view class="name">{{active?itemc.TechnicianName:itemc.TechnicianHeadName}}</view>
+                    <view class="join">{{active?itemc.GradeName:'团队长'}}</view>
+                </span>
+                <span class="name_join num_store">
+                    <view class="name">{{itemc.OrdersCount}}单</view>
+                    <view class="join org">
+                        <!-- <image src="{{imgUrl+'store-16.png'}}" mode="aspectFill" /> -->
+                        <span class="hid">
+                             {{itemc.StoreName}}
+                        </span>
+                   
+                    </view>
+                </span>
+                <span class="pri">
+                    ￥{{active?itemc.TechnicianTotal:itemc.StoreTotal}}
+                </span>
+            </view>
+
+
+
+        </van-tab>
+    </van-tabs>
+    <view class="noMore">没有更多的了~~~</view>
+    <view class="konbai"></view>
+
+</view>
+
+
+<view class="btn">
+    <view class="left">
+       当日活动门店：{{functionList[active].data.TodayActivityCount}}
+    </view>
+    <view class="left pad">
+        <view class="pro top">今日接单数：{{functionList[active].data.TodayOrdersCount}}
+        </view>
+        <view class="pro">今日操作总金额：￥{{functionList[active].data.TodayOrdersTotal}}
+        </view>
+    </view>
+    
+</view>

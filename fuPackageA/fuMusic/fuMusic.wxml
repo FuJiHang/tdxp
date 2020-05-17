@@ -1,0 +1,41 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-10-14 11:01:48 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-10-14 11:01:48 
+    选择音乐
+ */ -->
+<view id="fuMusic">
+    <view class="Music">
+         <audio  poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" class="myAudio" id="{{'myAudio'+index}}" controls loop></audio>
+    </view>
+
+
+    <view class="list" wx:for="{{dataList}}" wx:key="{{index}}">
+
+       <!-- <image src="{{poster}}" mode="scaleToFill" /> -->
+       <span class="contant">
+           <view class="name_time">
+               <span class="name">
+                   {{name}}
+               </span>
+               <span class="time">
+                   3:21
+               </span>
+           </view>
+           <view class="person">
+                   {{author}}
+           </view>
+       </span>
+    </view>
+    <view class="noMore">没有更多的了~~~</view>
+    <!--  -->
+    <view class="btn" bindtap="submitFN">
+        <span class="flex cancal">
+            <van-button>取消</van-button>
+        </span>
+        <span class="flex">
+            <van-button>确定</van-button>
+        </span>
+    </view>
+</view>

@@ -1,0 +1,44 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-06-20 17:10:20 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-06-20 17:10:20 
+    执行者团队长选择门店
+*/ -->
+<view id="fuShopChoose">
+
+    <!--  -->
+    <!-- 搜索 -->
+    <view class="seachMT">
+        <view class="seachbg">
+            <image src="{{imgUrl+'icon_search.png'}}"  mode="aspectFill"/>
+            <input value="{{seach}}" bindinput="seaChFN" placeholder="请输入店名"/>
+        </view>
+        <van-button size="small" bindtap="getData">搜索</van-button>
+    </view>
+
+    <!--  -->
+    <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getDataR"  >
+                
+        <view class="storeCard" wx:for="{{dataList}}"  wx:key="{{index}}" data-id="{{item.StoreId}}" bindtap="toFN">
+            <image mode="aspectFit" src="{{item.StoreImages}}" />
+
+            <view class="contantStore">
+                <view class="name_mi">
+                    <span class="name">{{item.StoreName}}</span>
+                    <span class="mi">距离{{item.Distance}}</span>
+                </view>
+                <view class="address">
+                    <image mode="aspectFit" src="{{imgUrl+'icon_address33.png'}}"/>{{item.Address}}
+                </view>
+            </view>
+
+
+        </view>
+        
+        <view class="noMore" wx:if="{{finsh}}">
+            没有更多的了~~~
+        </view>
+
+    </scroll-view>
+</view>

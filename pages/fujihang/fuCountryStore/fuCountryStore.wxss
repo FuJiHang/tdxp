@@ -1,0 +1,128 @@
+page {
+  overflow: hidden;
+  height: 100%;
+}
+#fuCountryStore {
+  background: #f0f0f0;
+  font-size: 26rpx;
+  color: #666;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+#fuCountryStore .seachMT {
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuCountryStore .seachMT .seachbg {
+  margin-right: 10rpx;
+  flex: 1;
+  align-items: center;
+  display: flex;
+  background: #EEEEEE;
+  border-radius: 40rpx;
+}
+#fuCountryStore .seachMT .seachbg image {
+  margin-left: 20rpx;
+  height: 40rpx;
+  width: 40rpx;
+}
+#fuCountryStore .seachMT .seachbg input {
+  font-size: 28rpx;
+  margin: 0 20rpx;
+  flex: 1;
+  height: 60rpx;
+}
+#fuCountryStore .seachMT .van-button {
+  border: none;
+  background: none;
+}
+#fuCountryStore .contantCS {
+  flex: 1;
+  overflow: hidden;
+}
+#fuCountryStore .contantCS .van-tabs {
+  height: 100%;
+  overflow: hidden;
+}
+#fuCountryStore .contantCS .van-tabs__content {
+  height: 100%;
+  overflow: hidden;
+}
+#fuCountryStore .contantCS .van-tabs__content .van-tabs__track {
+  height: 100%;
+  overflow: hidden;
+}
+#fuCountryStore .contantCS .van-tabs__content .van-tabs__track .van-tab__pane {
+  padding-bottom: 44px ;
+  height: 100% ;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#fuCountryStore .contantCS .van-tabs__content .van-tabs__track .van-tab__pane scroll-view {
+  overflow: auto;
+  height: 100%;
+}
+#fuCountryStore .contantCS .van-tabs__content .van-tabs__track .van-tab__pane scroll-view .noMore {
+  font-size: 28rpx;
+  color: #999;
+  padding: 20rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+#fuCountryStore .contantCS .van-tabs__content .van-tabs__track .van-tab__pane scroll-view .storeCard {
+  background: white;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+#fuCountryStore .contantCS .van-tabs__content .van-tabs__track .van-tab__pane scroll-view .storeCard image {
+  height: 120rpx;
+  width: 120rpx;
+}
+#fuCountryStore .contantCS .van-tabs__content .van-tabs__track .van-tab__pane scroll-view .storeCard .contantStore {
+  flex: 1;
+  margin-left: 20rpx;
+}
+#fuCountryStore .contantCS .van-tabs__content .van-tabs__track .van-tab__pane scroll-view .storeCard .contantStore .name_mi {
+  display: flex;
+  align-items: center;
+}
+#fuCountryStore .contantCS .van-tabs__content .van-tabs__track .van-tab__pane scroll-view .storeCard .contantStore .name_mi .name {
+  font-weight: 700;
+  margin-right: 10rpx;
+  flex: 1;
+  font-size: 30rpx;
+}
+#fuCountryStore .contantCS .van-tabs__content .van-tabs__track .van-tab__pane scroll-view .storeCard .contantStore .name_mi .mi {
+  color: #61B6FD;
+  font-size: 28rpx;
+}
+#fuCountryStore .contantCS .van-tabs__content .van-tabs__track .van-tab__pane scroll-view .storeCard .contantStore .address {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  color: #999;
+}
+#fuCountryStore .contantCS .van-tabs__content .van-tabs__track .van-tab__pane scroll-view .storeCard .contantStore .address image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+#fuCountryStore .contantCS .van-tabs__content .van-tabs__track .van-tab__pane scroll-view .storeCard .right_Statu .van-button {
+  margin-left: 20rpx;
+  background: #F56F68;
+  color: white;
+}
+#fuCountryStore .contantCS .van-tabs__content .van-tabs__track .van-tab__pane scroll-view .storeCard .right_Statu .Rname {
+  text-align: center;
+  color: #61B6FD;
+}
+#fuCountryStore .contantCS .van-tab--active {
+  color: red;
+}

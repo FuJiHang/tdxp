@@ -1,0 +1,67 @@
+
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-19 17:03:07 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-04-19 17:03:07 
+    评价
+*/ -->
+<view id="fuEvaluate">
+     
+    <view class="contantEE">
+        <!-- 技师信息 -->
+        <view class="teaher">
+            <image mode="aspectFill" src="{{jsData.HeadPortrait}}" />
+            <view class="contantTR">
+                <view class="name_mon">
+                    <span class="name">{{jsData.Name}}</span>
+                    <span class="mon">{{jsData.Introduce}}</span>
+                </view>
+                <view class="detail">
+                    <text class="type">擅长</text>{{jsData.Specialize?jsData.Specialize:'无'}}
+                </view>
+            </view>
+        </view>
+
+    <!-- 项目 -->
+        <view class="project" wx:for="{{orderData.LineItems}}" wx:key="{{index}}">
+            <image  src="{{item.Image}}" />
+            <view class="contantTR">
+                <view class="name_mon">
+                    <span class="name">{{item.ProductName}}</span>
+                    <span class="mon">￥{{item.Price}}</span>
+                </view>
+                <view class="detail">
+                    <text class="type">详情</text>萨迪克拉开距离阿萨德麦克雷
+                </view>
+            </view>
+        </view>
+
+        <!-- 评价 -->
+        <view class="evaluate">
+            <view class="name_img" wx:for="{{pjList}}" wx:key="{{index}}">
+                <text class="name">{{item.name}}</text>
+                <van-rate value="{{ item.val }}" bind:change="changeRate" data-index="{{index}}" ></van-rate>
+            </view>
+            <textarea placeholder="请填写您对该项目的评价" value="{{textVal}}" bindinput="changeTx"></textarea>
+        </view>
+
+        <!-- 服务 -->
+        <view class="service">
+            <view class="name">您对本次服务整体满意吗？</view>
+            <view class="img_ser">
+                <view bindtap="djimgFN" class="child {{index==djimg?'djimg':''}}" wx:for="{{pjtu}}" wx:key="{{index}}" data-index="{{index}}">
+                    <image src="{{item.name}}" mode="aspectFill" data-index="{{index}}"/>
+                    <text class="val" data-index="{{index}}">{{item.val}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    
+
+    <!-- 提交 -->
+    <view class="submit">
+        <van-button bindtap="submit">保存</van-button>
+    </view>
+
+</view>

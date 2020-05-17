@@ -1,0 +1,88 @@
+<view class="item-box" wx:if="{{false}}">
+  <view class="items">
+    <view wx:for="{{list}}" wx:key="{{index}}" class="item">
+      <view class=" txt">
+        <view class='fu' bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.txtStyle}}">
+          <view class='useranameBox'>
+            <view class='userName'>
+              {{index + 1}} {{item.txt}}
+            </view>
+            <view class='userPhone'>
+              {{item.phone}}
+            </view>
+            <text class='iddefault'>默认地址</text>
+          </view>
+
+          <view class='addressBox'>
+            <view class='userAddress'>
+              {{item.address}}
+            </view>
+            <view class='imgbox' bindtap='clickEdit' data-index="{{index}}">
+              <!-- <image src='/images/icon_edit.png'></image> -->
+            </view>
+          </view>
+        </view>
+      </view>
+      <view data-index="{{index}}" bindtap="delItem" class="inner del">
+        <!-- <image src='../images/icon_del.png'></image> -->
+        <text>删除</text>
+      </view>
+    </view>
+  </view>
+  <view class='addBox'>
+    <image src='/images/icon_add.png' bindtap='goadd'></image>
+  </view>
+</view>
+
+<!-- 上面是旧版 -->
+
+<view id='box' wx:if="{{isEmpty}}">
+  <view class='addressListBox'>
+    <view class='addressList' bindtap='chooseFN'  data-data="{{item}}"
+    data-index="{{index}}"  wx:for="{{listData}}" wx:key="{{index}}">
+      <view class='addressListBox2'>
+        <view class='addressUserName'>
+          <view class='name'> {{item.ShipTo}}</view>
+          <view class='call'>{{item.CellPhone}}</view>
+        </view>
+        <view class='useraddressBox'>
+          <text class='province'>{{item.FullRegionName}}</text>
+          <!-- <text class='city'>{{item.city}}</text>
+                    <text class='area'>{{item.area}}</text> -->
+
+          {{item.Address}}
+        </view>
+      </view>
+      <view class='canStateBox'>
+        <van-checkbox value="{{ item.IsDefault }}"  data-index="{{index}}"  catchtap='clickSetDafaultCir'  checked-color="#50DD1A"></van-checkbox>
+        <!-- <image src='http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/icon_seleted.png' wx:if="{{item.IsDefault}}" class='isdefault'></image> -->
+        <!-- <view class='setDafaultCir' 
+
+          wx:if="{{!item.IsDefault}}">
+          <view class="set_btn" data-index="{{index}}"  catchtap='clickSetDafaultCir'></view>
+        </view> -->
+        <text class='defaultTip' >设为默认</text>
+        <van-button  catchtap='clickBianji' data-index="{{index}}">编辑</van-button>
+        <van-button catchtap='clickdel' data-index="{{index}}">删除</van-button>
+
+        <!-- <image src='http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/icon_bianji.png' class='bianji' catchtap='clickBianji' data-index="{{index}}"></image>
+        <image src='http://img.hmeshop.cn/hmeshop_jxy/images/lajitong.png' class='deletedimg' catchtap='clickdel' data-index="{{index}}"></image> -->
+      </view>
+
+
+    </view>
+    <view class='dingqi'></view>
+  </view>
+  <view class='addBtn' bindtap='goadd'>新增地址</view>
+</view>
+
+<view class='box2' wx:if="{{!isEmpty}}">
+  <view class='imgboxisEmpty'>
+    <image src='/images/icon_shouhuodizhi.png'></image>
+  </view>
+
+  <view class='emptyTip'>
+    暂无收货地址~
+  </view>
+  <view class='addNewAddressBtn' bindtap='goadd'> 新增收货人</view>
+</view>

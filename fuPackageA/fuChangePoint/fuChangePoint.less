@@ -1,0 +1,141 @@
+
+#fuChangePoint{
+
+    .list{
+        padding: 20rpx;
+        box-sizing: border-box;
+        background: #fff;
+        margin-bottom: 20rpx;
+        display: flex;
+        align-items: center;
+        image{
+            height: 200rpx;
+            width: 200rpx;
+        }
+        .contant{
+            flex: 1;
+            margin-left: 20rpx;
+            .name{
+                font-size: 30rpx;
+                display:-webkit-box;
+                -webkit-line-clamp: 2; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break:break-all;
+            }
+            .val{
+                font-size: 28rpx;
+            }
+            .name,.val{
+                margin-bottom: 10rpx;
+            }
+            .btn{
+                display: flex;
+                justify-content: flex-end;
+                .van-button{
+                    margin-left: 20rpx;
+                }
+                .bg{
+                    .van-button{
+                        background: rgb(255, 60, 11);
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// 
+.cart{
+    position: fixed;
+    right: 20rpx;
+    bottom: 15%;
+    border:1px solid rgb(133, 133, 133);
+    height: 70rpx;
+    width: 70rpx;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    image{
+        height: 1rpx ;
+        width: 40rpx;
+    }
+}
+.seachMT{
+    padding: 20rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    input{
+        flex: 1;
+        margin-left: 20rpx;
+        
+    }
+    .seachbg{
+        margin-bottom: 20rpx;
+    }
+    .van-button{
+        background: rgb(255, 60, 11);
+        color: #fff;
+        width: 100%;
+    }
+    .disFlex{
+        border-bottom: 1px solid rgb(223, 223, 223);
+        margin-bottom: 20rpx;
+        display: flex;
+        align-items: center;
+    }
+}
+
+// 
+.cartAlert{
+    padding: 20rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    input{
+        flex: 1;
+        margin-left: 20rpx;
+        
+    }
+    .seachbg{
+        margin-bottom: 20rpx;
+    }
+    .btnBon{
+        display: flex;
+        align-items: center;
+        .van-button{
+             
+            width: 100%;
+        }
+        .child{
+            width: 100%;
+        }
+        .mon{
+            width: 100%;
+            margin-left: 20rpx;
+            .van-button{
+                background: rgb(255, 60, 11);
+                color: #fff;
+            }
+        }
+    }
+}
+.cartList{
+    border-bottom: 1px solid rgb(223, 223, 223);
+    margin-bottom: 20rpx;
+    display: flex;
+    align-items: center;
+    image{
+        height: 150rpx;
+        width: 150rpx;
+        margin-right: 20rpx;
+    }
+    input{
+        flex: 1;
+        margin: 20rpx;
+        
+    }
+}

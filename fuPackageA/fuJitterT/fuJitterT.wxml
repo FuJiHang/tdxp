@@ -1,0 +1,28 @@
+
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-09-12 10:39:14 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-09-12 10:39:14 
+    朋友圈详情改版
+ */ -->
+ <view   id="fuJitter" bindtouchstart="touchStart" bindtouchend="touchEnd">
+    
+   <!--  -->
+   <view class="video" wx:for="{{5}}" wx:key="{{index}}">
+      <image src="https://file.9oasd.com/bcdj/StoreVideo/20190824/7ead8f99fe4f4451b8fb4db0083c1b72.mp4?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast" mode="widthFix" wx:if="{{show!=index}}" />
+      <video wx:if="{{show==index}}"autoplay="{{true}}" objectFit="contain" controls='{{false}}' src="https://file.9oasd.com/bcdj/StoreVideo/20190824/7ead8f99fe4f4451b8fb4db0083c1b72.mp4"></video>
+   </view>
+
+
+   <swiper current="{{showTH}}" bindanimationfinish="finshFN" bindchange="changeFN"  class="swiper" duration="300"  easing-function="easeInOutCubic" vertical="true">
+      <swiper-item wx:for="{{20}}" wx:key="{{index}}">
+         <video wx:if="{{showTH==index}}"autoplay="{{true}}" objectFit="contain" controls='{{false}}' src="https://file.9oasd.com/bcdj/StoreVideo/20190824/7ead8f99fe4f4451b8fb4db0083c1b72.mp4"></video>
+         <image wx:if="{{showTH!=index}}"  src="https://file.9oasd.com/bcdj/StoreVideo/20190824/7ead8f99fe4f4451b8fb4db0083c1b72.mp4?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_800,f_jpg,w_640,m_fast" mode="widthFix"  />
+      </swiper-item>
+   </swiper>
+    
+  
+ </view>
+
+   <!-- <view class="sss">{{show}}</view> -->

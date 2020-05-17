@@ -1,0 +1,83 @@
+page {
+    background: #fff;
+    font-size: 26rpx;
+}
+
+#fuWuLiu {
+    .navTop {
+        padding: 20rpx 30rpx;
+        background: rgba(25, 24, 73, 1);
+        display: flex;
+        align-items: center;
+        color: #fff;
+        image {
+            width: 122rpx;
+            height: 122rpx;
+        }
+        .contant{
+            margin-left: 28rpx;
+            flex: 1;
+            .name{
+                font-size: 30rpx;
+                font-weight: bold;
+            }
+            .mb{
+                margin: 10rpx 0 6rpx;
+            }
+        }
+    }
+
+    .top {
+        font-size: 30rpx;
+        font-weight: bold;
+        padding: 36rpx 32rpx;
+        border-bottom: 1px solid rgb(240, 240, 240);
+    }
+
+    .wl {
+        padding: 44rpx 70rpx;
+        overflow: hidden;
+
+        .name {
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            margin-bottom: 12rpx;
+          
+            .dian {
+                height: 22rpx;
+                width: 22rpx;
+                border-radius: 50%;
+                margin-right: 6rpx;
+                background: rgba(204, 204, 204, 1);
+                position: relative;
+            }
+            .flex{
+                flex: 1;
+            }
+            .dian::after {
+                content: ' ';
+                left: 10rpx;
+                top: -300rpx;
+                height: 600rpx;
+                width: 2rpx;
+                background: rgba(204, 204, 204, 1);
+                position: absolute;
+            }
+            .start::after{
+                top: 0;
+            }
+            .end{
+                background:#12D12E;
+            }
+        }
+
+        .val {
+            margin-left: 28rpx;
+            color: #999;
+            font-size: 22rpx;
+        }
+
+    }
+
+}

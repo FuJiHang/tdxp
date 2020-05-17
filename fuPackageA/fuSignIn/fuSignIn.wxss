@@ -1,0 +1,310 @@
+page {
+  height: 100%;
+  font-size: 26rpx;
+}
+#fuSignIn {
+  color: #666;
+}
+#fuSignIn .address {
+  background: #fff;
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+#fuSignIn .address .storeImg {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+}
+#fuSignIn .address .contant {
+  flex: 1;
+  margin: 0 0 0 8rpx;
+}
+#fuSignIn .address .contant .name {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+#fuSignIn .address .contant .name image {
+  width: 24rpx;
+  margin-right: 8rpx;
+  margin-top: 10rpx;
+}
+#fuSignIn .address .contant .name .more {
+  width: 8rpx;
+}
+#fuSignIn .address .contant .tip {
+  margin-top: 7rpx;
+  color: #999;
+  font-size: 24rpx;
+  padding-left: 32rpx;
+  box-sizing: border-box;
+}
+#fuSignIn .address .child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 32rpx;
+  position: relative;
+}
+#fuSignIn .address .child image {
+  width: 38rpx;
+  margin-bottom: 14rpx;
+}
+#fuSignIn .address .child .fengxiang {
+  position: absolute;
+  top: -7rpx;
+  right: -1rpx;
+  opacity: 0;
+  width: 60rpx;
+  height: 100rpx;
+}
+#fuSignIn .Explain {
+  border-radius: 50rpx 0 0 50rpx;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 8rpx 15rpx 8rpx 25rpx;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  top: 40rpx;
+}
+#fuSignIn .noBg {
+  background: none;
+}
+#fuSignIn .noBg .tip {
+  color: #f1f1f1 !important;
+}
+#fuSignIn .noBg .storeImg {
+  border: 5rpx solid #f1f1f1;
+}
+#fuSignIn .navTop {
+  background: url(http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/bannerJL.png) no-repeat;
+  background-size: auto 100%;
+  color: #f1f1f1;
+}
+#fuSignIn .navTop .Sign {
+  border-radius: 50%;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.6);
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 220rpx;
+  width: 220rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  margin: 0rpx auto 30rpx;
+}
+#fuSignIn .navTop .Sign .mid {
+  transition: 0.3s;
+  padding: 4rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #cf433c 0%, #d38381 100%);
+}
+#fuSignIn .navTop .Sign .midClick {
+  padding: 7rpx;
+}
+#fuSignIn .navTop .Sign .btn {
+  font-weight: 800;
+  border-radius: 50%;
+  font-size: 40rpx;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e1605c;
+  background: #fff;
+}
+#fuSignIn .navTop .time {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+#fuSignIn .navTop .time .child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+#fuSignIn .navTop .time .child .top {
+  border-radius: 50%;
+  height: 50rpx;
+  width: 50rpx;
+  padding: 8rpx;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  position: relative;
+}
+#fuSignIn .navTop .time .child .top .bg {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+#fuSignIn .navTop .time .child .top::before {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  top: 22.5rpx;
+  border-top: 1px solid #fff;
+  left: -105%;
+}
+#fuSignIn .navTop .time .child .top::after {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  top: 22.5rpx;
+  border-top: 1px solid #fff;
+  right: -105%;
+}
+#fuSignIn .navTop .time .child .before::before,
+#fuSignIn .navTop .time .child .after::after {
+  border: none;
+}
+#fuSignIn .navTop .time .child .name {
+  font-size: 28rpx;
+  margin-top: 5rpx;
+}
+#fuSignIn .navTop .time .colorB .bg {
+  background: #fbe057 !important;
+}
+#fuSignIn .navTop .time .colorB .top::before,
+#fuSignIn .navTop .time .colorB .top::after,
+#fuSignIn .navTop .time .colorB .top {
+  border-color: #fbe057;
+}
+#fuSignIn .ExplainAlert {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: 0.3s;
+  transform: translateX(100%);
+}
+#fuSignIn .ExplainAlert .close {
+  display: flex;
+  justify-content: center;
+  margin: 30rpx 0;
+}
+#fuSignIn .ExAlert {
+  transform: translateX(0);
+  opacity: 1;
+}
+#fuSignIn van-tabs {
+  height: 100%;
+  overflow: hidden;
+}
+#fuSignIn van-tabs .van-tabs__wrap {
+  background: none;
+}
+#fuSignIn van-tabs .van-tab {
+  color: #fff;
+}
+#fuSignIn van-tabs .van-tab--active {
+  color: #F56F68;
+}
+#fuSignIn van-tabs .van-tabs {
+  height: 100%;
+  overflow: hidden;
+}
+#fuSignIn van-tabs .van-tabs .van-tabs__content {
+  height: 100%;
+  overflow: hidden;
+}
+#fuSignIn van-tabs .van-tabs .van-tabs__content .van-tabs__track {
+  height: 100%;
+  overflow: hidden;
+}
+#fuSignIn van-tabs .van-tabs .van-tabs__content .van-tabs__track .van-tab__pane {
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+#fuSignIn van-tabs .van-tabs .van-tabs__content .van-tabs__track .van-tab__pane scroll-view {
+  height: 100%;
+  overflow: auto;
+}
+#fuSignIn .ExplainChild {
+  margin: 20rpx 20rpx 0;
+  padding: 20rpx;
+  border-radius: 15rpx;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+#fuSignIn .ExplainChild image {
+  height: 160rpx;
+  width: 160rpx;
+}
+#fuSignIn .ExplainChild .contant {
+  flex: 1;
+  margin-left: 20rpx;
+}
+#fuSignIn .ExplainChild .name {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 800;
+  margin-bottom: 5rpx;
+}
+#fuSignIn .ExplainChild .time {
+  display: flex;
+  align-items: center;
+}
+#fuSignIn .ExplainChild .time .min {
+  color: #999;
+  flex: 1;
+}
+#fuSignIn .ExplainChild .time .van-button {
+  color: white;
+  border: none;
+  background: #f56e68;
+}
+#fuSignIn .detail {
+  padding: 30rpx ;
+  color: #fff;
+  box-sizing: border-box;
+}
+#fuSignIn .detail .nav {
+  padding: 15rpx 0;
+  box-sizing: border-box;
+  background: #fff;
+  color: #666;
+  margin-bottom: 15rpx;
+  font-size: 32rpx;
+  width: 160rpx;
+  text-align: center;
+}
+#fuSignIn .detail .list {
+  font-size: 30rpx;
+  margin-bottom: 40rpx;
+}
+#fuSignIn .detail .list .red {
+  color: #f56e68;
+  margin-bottom: 20rpx;
+}
+#fuSignIn .mgTop {
+  margin-top: 50rpx;
+}
+#fuSignIn .noMore {
+  font-size: 28rpx;
+  color: #999;
+  padding: 20rpx;
+  text-align: center;
+  box-sizing: border-box;
+}

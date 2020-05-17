@@ -1,0 +1,149 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-15 10:30:45 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-15 10:30:45 
+    商城
+ */ -->
+
+
+<view id="fuShop">
+
+    <!-- 轮播图 -->
+    <!-- 轮播图 -->
+    <swiper autoplay="{{true}}" interval="{{3000}}" style="height:{{imgheights[current]}}rpx;" circular bindchange="bindchange">
+        <swiper-item wx:for="{{imgUrls}}" wx:key="{{index}}">
+            <image data-id='{{index}}' bindload="imageLoad" mode='widthFix'
+                src="{{item.PhotoPath+'?x-oss-process=image/resize,l_640'}}" class="slide-image" width="355"
+                height="150" />
+        </swiper-item>
+    </swiper>
+
+
+
+    <!--  -->
+    <view class="productCont">
+        <view class="product" 
+            wx:for="{{proList.data}}" 
+            wx:key="{{index}}" 
+            bindtap="handleDetail" 
+            data-productId="{{item.ProductId}}" 
+            data-storeid="{{item.StoreId}}">
+            <view class="jiaoZiPi">
+                <view class="img">
+                    <image src="{{item.ImageUrl1+'?x-oss-process=image/resize,l_640'}}" mode="widthFix" />
+                </view>
+                <view class="name">{{item.ProductName}}</view>
+                <view class="det">{{item.Description}}</view>
+                <view class="val">
+                    <view class="ovFU">
+                        <span class="bea">
+                            <span class="num">￥{{item.SalePrice}}</span>
+
+                        </span>
+                        <span class="xjin">
+
+                            <span class="num">￥{{item.MarketPrice}}</span>
+
+                        </span>
+                    </view>
+                </view>
+
+            </view>
+        </view>
+    </view>
+
+    <!--  -->
+    <image bindtap="openClassfiy" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/icon_fenlei.png" mode="widthFix"
+        class="classfiy"></image>
+
+    <van-popup show="{{ showClassfiy }}" position="right" bind:close="onClose">
+        <!--  -->
+
+        <view class="seachMT">
+            <view class="seachbg">
+                <image mode="widthFix" src="{{imgUrl+'icon_search.png'}}" />
+                <input placeholder="洗衣液" value="{{seach}}" bindinput="seaChFN" />
+                <van-icon wx:if="{{clear}}" bindtap="clearFN" name="clear" color="#999" size="30rpx" />
+            </view>
+            <van-button size="small" bindtap="submitComT">搜索</van-button>
+        </view>
+
+
+        <!-- 预约页面 -->
+        <view class="appointTO">
+            <!-- 左边 -->
+            <view class="leftCont">
+                <view 
+                    class="Choose {{isChoose==index?'isChoose':''}}" 
+                    wx:for="{{titleArr}}" 
+                    data-index="{{index}}"
+                    bindtap="chooseFN" 
+                    wx:key="index"
+                    data-name="{{item.name}}"
+                    data-cid="{{item.cid}}"
+                    >{{item.name}}</view>
+            </view>
+            <!-- 右边 -->
+            <view class="rightCont">
+                <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getDataR">
+                    <view class="detail">
+                        <view class="banner">
+                            <image src="{{imgUrl+'index009.jpg'}}" mode="widthFix" />
+                        </view>
+                        <view class="list">
+                            <view class="title">
+                                {{title}} <span class="flex"></span>
+                            </view>
+                            <view class="contant">
+                                <block wx:for="{{listData}}" wx:key="{{item}}">
+                                    <span 
+                                        class="child"
+                                        data-productId="{{item.ProductId}}" 
+                                        data-storeid="{{item.StoreId}}"
+                                        bindtap="handleDetail"
+                                    >
+                                        <image mode="aspectFill" src="{{item.ImageUrl1}}" />
+                                        <view class="name">{{item.ProductName}}</view>
+                                    </span>
+                                </block>
+                            </view>
+                        </view>
+                        <!-- <view class="list" wx:if="{{false}}">
+                            <view class="title">
+                                保湿类 <span class="flex"></span>
+                            </view>
+                            <view class="contant">
+                                <span class="child">
+                                    <image mode="aspectFill" src="{{imgUrl+'index009.jpg'}}" />
+                                    <view class="name">女士香水</view>
+                                </span>
+                                <span class="child">
+                                    <image mode="aspectFill" src="{{imgUrl+'index009.jpg'}}" />
+                                    <view class="name">女士香水</view>
+                                </span>
+                                <span class="child">
+                                    <image mode="aspectFill" src="{{imgUrl+'index009.jpg'}}" />
+                                    <view class="name">女士香水</view>
+                                </span>
+                                <span class="child">
+                                    <image mode="aspectFill" src="{{imgUrl+'index009.jpg'}}" />
+                                    <view class="name">女士香水</view>
+                                </span>
+                            </view>
+                        </view> -->
+                    </view>
+                    <view class="noMore" wx:if="{{functionList[active].subs[isChoose].finish}}">
+                        没有更多的了~~~
+                    </view>
+                    <view class="noMore" wx:if="{{!functionList[active].hasChild}}">
+                        暂无数据，看看其他吧~~~
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+
+
+    </van-popup>
+
+</view>

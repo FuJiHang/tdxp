@@ -1,0 +1,154 @@
+page {
+    font-size: 22rpx;
+    color: #666;
+}
+
+#fuShopClass {
+
+    .seachMTAM {
+        padding: 0 22rpx;
+        height: 90rpx;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        left: 0;
+        top:0;
+        width: 100%;
+        z-index: 3;
+        box-sizing: border-box;
+        .bg{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:rgba(245,245,245,1);
+            border-radius: 34rpx;
+            padding: 10rpx;
+            overflow: hidden;
+            opacity:0.9;
+
+        }
+        input {
+          
+            text-align: center;
+         
+        }
+        .focus{
+            flex: 1;
+        }
+        image{
+            width: 24rpx;
+            height: 1rpx;  
+        }
+    }
+
+    // 
+    .banner {
+        background: rgb(255, 255, 255);
+        min-height: 90rpx;
+        image {
+            width: 100%;
+            height: 1rpx;
+           
+        }
+    }
+
+    // 
+    .vantab{
+
+    }
+
+    // 
+    .van-tab--active {
+        font-size: 36rpx;
+        font-weight: bold;
+    }
+
+    // 
+    // 
+    .allProduct {
+        padding: 20rpx 15rpx;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+
+        .child {
+            margin: 0 5rpx 10rpx;
+            width: calc(50% - 10rpx);
+            background: #fff;
+            border-radius: 4px;
+
+            image {
+                width: 100%;
+                height: 320rpx;
+            }
+
+            .name {
+                margin: 4rpx 12rpx 10rpx;
+                font-size: 28rpx;
+                display: -webkit-box;
+                -webkit-line-clamp: 1; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break: break-all;
+            }
+
+            .price_btn {
+                display: flex;
+                align-items: center;
+                padding: 5rpx 14rpx 20rpx;
+
+                .mini {
+                    margin-top: 5rpx;
+                    font-size: 22rpx;
+                    color: #0F0F0F;
+                }
+
+                .price {
+                    color: #0F0F0F;
+                    font-weight: bold;
+                    font-size: 32rpx;
+                }
+
+                .redCard {
+                    border-radius: 48px;
+                    color: #fff;
+                    margin-left: 5rpx;
+                    font-size: 22rpx;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    .red {
+                        display: flex;
+                        align-items: center;
+                        padding: 3rpx 15rpx;
+                        background: rgba(251, 31, 79, 1);
+                        image{
+                            width: 18rpx;
+                            height: 18rpx;
+                            margin-right: 3rpx;
+                        }
+                    }
+
+                    .black {
+                        padding: 3rpx 15rpx;
+
+                        background: rgba(6, 0, 21, 1);
+                    }
+
+                }
+            }
+        }
+    }
+
+    // 
+    .noMore {
+        font-size: 28rpx;
+        color: #999;
+        padding: 20rpx;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+
+}

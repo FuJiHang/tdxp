@@ -1,0 +1,120 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-05-06 13:57:27 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-05-06 13:57:27 
+    个人名片
+*/ -->
+<view id="fuBusiCard">
+
+    <!-- 卡片 -->
+    <view class="BusiCard">
+        <image class="tx" mode="aspectFill"  src="../../../images/home_tab_01.png" />
+        <span class="rightBC">
+            <view class="logo">
+                <span>
+                    <image  class="logoImg" mode="aspectFit" src="../../../images/home_tab_01.png"/>
+                </span>
+            </view>
+            <view class="name">思考思考</view>
+            <view class="join">思考思考</view>
+            <view class="address">
+                <span class="val">啊实打实大师水电费</span>
+                <image  class="imgss" src="{{imgUrl+'circuit-city-icon@2x.png'}}"/>
+            </view>
+            <view class="xiejiao"></view>
+        </span>
+       
+    </view>
+
+    <!--  -->
+<view class="bw">
+
+    <!--  -->
+    <view class="moreInfor">
+        <view class="nameTop" bindtap="openFN">展开全部名片信息
+            <van-icon name="{{openInfor?'arrow-up':'arrow-down'}}" />
+        </view>
+        <view class="contant {{openInfor?'openInfor':''}}">
+            <view class="child" wx:for="{{moreInfor}}" wx:key="{{index}}">
+                <span class="name">{{item.name}}</span>
+                <span class="val">{{item.val}}</span>
+                <van-button size="small">{{item.btn}}</van-button>
+            </view>
+        </view>
+    </view>
+
+    <!--  -->
+    <view class="shareTxl">
+        <span class="btn">
+            <van-button size="small">分享名片</van-button>
+        </span>
+        <span class="btn cr">
+            <van-button size="small">存入手机通讯录</van-button>
+        </span>
+    </view>
+
+    <!--  -->
+    <view class="historyBC">
+        <span class="leftHy">
+            <view class="Person">
+                <image class="pImg"  src="../../../images/home_tab_01.png" />
+                <image class="pImg" src="../../../images/home_tab_01.png" />
+            </view>
+            <view class="val">64人预览</view>
+        </span>
+        <span class="rightHy">
+            <image class="zanHy" src="../../../images/home_tab_01.png" />
+            <view class="good">靠谱1</view>
+        </span>
+    </view>
+    
+    <!--  -->
+    <view class="introductBC">
+        <view class="name">我的个人简介</view>
+        <view class="val">成驾驶室</view>
+        <view class="yuyin">
+            <image class="open" src="../../../images/home_tab_01.png" />
+            <span class="contant">
+                <view class='yval'>sad</view>
+                <view class='yname'>sad</view>
+            </span>
+        </view>
+    </view>
+
+    <!--  -->
+    <view class="myVideo">
+        <view class="name">
+            我的视频
+        </view>
+        <view class="contantVO">
+             <video
+                id="myVideo"
+                src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+                enable-danmu
+                danmu-btn
+                controls
+            ></video>
+        </view>
+    </view>
+
+    <!--  -->
+    <view class="impres">
+        <view class="name">我的印象标签</view>
+        <view class="contant">
+            <span class="child">就不2</span>
+        </view>
+    </view>
+
+    <!--  -->
+    <view class="myWorks">
+        <view class="name">我的作品</view>
+        <view class="contant">
+            <image class="workImg" mode="aspectFit" src="../../../images/home_tab_01.png" />
+        </view>
+    </view> 
+
+
+
+</view>
+</view>

@@ -1,0 +1,104 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-17 19:15:18 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-17 19:15:18 
+    个人空间
+*/ -->
+<view id="fuPerSpace">
+
+    <!--  -->
+    <view class="head">
+        <view class="bg">
+        </view>
+        <image mode="aspectFit" src="{{userName.img}}" />
+    </view>
+
+    <!--  -->
+    <view class="peopleName">{{userName.name}}</view>
+    <!-- <view class="sige">阿萨德
+        <image src="{{imgUrl+'index012.jpg'}}" />
+    </view> -->
+    
+    <!--  -->
+    <view class="function" wx:if="{{!UserId}}">
+        <span class="child" bindtap="toFUN" data-url="{{item.url}}" wx:for="{{functionL}}" wx:key="{{index}}" >
+            <image src="{{imgUrl+item.img}}" />
+            <view class="name">{{item.name}}</view>
+        </span>
+    </view>
+    
+
+    <!--  -->
+    <view >
+        <view class="picture">
+            <span class="left">
+                <view class="name">我的相册</view>
+                <view class="val">{{myImg.num}}</view>
+            </span>
+            <span class="img">
+                <image mode="aspectFill" wx:if="{{index<3}}" wx:for="{{myImg.data}}" wx:key="{{index}}" src="{{item+'?x-oss-process=image/resize,l_640'}}"  />
+            </span>
+            <span class="carme" bindtap="toXC" wx:if="{{!UserId}}">
+                <image src="{{imgUrl+'grkjxj.png'}}"  />
+                <view class="name">上传图片</view>
+            </span>
+        </view>
+        <view class="more" bindtap="toFN" data-ty='img'>查看更多>></view>
+    </view>
+
+    <view >
+        <view class="picture videoFU">
+            <span class="left">
+                <view class="name">我的视频</view>
+                <view class="val">{{myVideo.num}}</view>
+            </span>
+            <span class="img">
+                 <video  class="myVideo" wx:if="{{index<3}}" wx:for="{{myVideo.data}}" wx:key="{{index}}" src="{{item}}"   controls></video>
+            
+            </span>
+            <span class="carme" wx:if="{{!UserId}}"   bindtap="toXC">
+                <image src="{{imgUrl+'grkjxj.png'}}"  />
+                <view class="name">上传视频</view>
+            </span>
+        </view>
+        <view class="more" bindtap="toFN" data-ty='video'>查看更多>></view>
+    </view>
+
+    <!--  -->
+    <view class="day" wx:for="{{dataInfo}}" wx:key="{{index}}">
+        <view class="navtap">
+            <span class="flex">
+                <view class="hot "></view>
+                <span class="time">{{item.CreateDate}}</span>
+            </span>
+            <span class="flex mid">
+                {{item.timef}}
+            </span>
+            <span class="flex">
+            
+            </span>
+        </view>
+        <view class="contant">
+            <view class="arrow"></view>
+            <view class="title">{{item.Contents}}</view>
+            <view class="imgList" wx:if="{{!item.isVideo}}" >      
+                <image  wx:for="{{item.ImageUrlsArr}}" wx:for-item="img" wx:for-index="indexm" wx:key="{{indexm}}" mode="aspectFill" src="{{img+'?x-oss-process=image/resize,l_640'}}" />
+            </view>
+            <video wx:if="{{item.isVideo}}" class="myVideo" src="{{item.ImageUrls}}"   controls></video>
+            <view class="address">
+                <image  src="{{imgUrl+'store-16.png'}}" />
+                门店：{{item.StoreName?item.StoreName:'无'}}
+                <image  src="{{imgUrl+'peoT.png'}}" />
+                技师：{{item.Name?item.Name:'无'}}
+            </view>
+        </view>
+
+
+    </view>
+
+
+    
+    <view class="noMore" wx:if="{{finsh}}">没有更多的了~~~</view>
+
+</view>

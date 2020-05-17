@@ -1,0 +1,282 @@
+page{
+    height: 100%;
+    overflow: hidden;
+}
+#identityVerification{
+
+    position: relative;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    flex-direction: column;
+    .fujihangCant{
+        overflow: auto;
+        flex: 1;
+    }
+  .IVF-top-box{
+    width: 100%;
+    height: 260rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background: white;
+    /* background: red; */
+  }
+  .IVF-top-center-box{
+    width: 690rpx;
+    height: 148rpx;
+    background:  #FFB462;
+    border-radius: 4rpx;
+    display: flex;
+    position: relative;
+  }
+
+  .IVF-top-center-box::after{
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    bottom:0rpx;
+    content: "";
+    text-align: center;
+    display: flex;
+    height: 10rpx;
+    
+    }
+
+    .bg0{
+        background: #FFB462;
+    }
+    .bg0::after{
+        box-shadow: 0 5rpx 30rpx #FFB462;
+    }
+    .bg1{
+        background: #FFCD62;
+    }
+    .bg1::after{
+        box-shadow: 0 5rpx 30rpx #FFCD62;
+    }
+    .bg2{
+        background: #FF6262;
+    }
+    .bg2::after{
+        box-shadow: 0 5rpx 30rpx #FF6262;
+    }
+    .bg3{
+        background:#84D1FF;
+    }
+    .bg3::after{
+        box-shadow: 0 5rpx 30rpx #84D1FF;
+    }
+
+
+    .bw{
+        background: white;
+        margin-top: 20rpx;
+    }
+    // 标题
+    .navtop{
+        padding: 20rpx;
+        box-sizing: border-box;
+        font-size: 30rpx;
+    }// 添加
+    .upload{
+        display: flex;
+        padding:20rpx 10rpx;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        .img{
+            margin: 0 1.1%;
+            width: 17%;
+            image{
+                width: 100%;
+                height: 100rpx;
+            }
+        }
+        .add{
+            font-size: 80rpx;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100rpx;
+            border:1px dashed rgb(204, 204, 204);
+            border-radius: 30rpx;
+        }
+    }
+
+  .IVF-top-left{
+    width: 78rpx;
+    height: 78rpx;
+    /* background: red; */
+    margin: 35rpx 20rpx 0;
+  }
+  .IVF-top-left image{
+    width: 78rpx;
+    height: 78rpx;
+  }
+  .IVF-top-center{
+    margin-top: 45rpx;
+    width: 203rpx;
+    height: 58rpx;
+    /* background: blue; */
+    margin-left: 10rpx;
+    font-size: 28rpx;
+    color: #FFFFFF;
+  
+  }
+  .IVF-top-title{
+    font-size: 24rpx;
+    margin: -5rpx 0 5rpx;
+  }
+  .IVF-top-describe{
+    font-size: 20rpx;
+  }
+  
+  .IVF-top-right{
+    margin-top: 63rpx;
+    margin-left: 270rpx;
+    width: 90rpx;
+    height: 23rpx;
+    font-size: 24rpx;
+    color: #FFFFFF;
+    /* background: red; */
+  }
+  .IVF-center-box{
+    width: 100%;
+    margin: 20rpx 0;
+    background: white;
+  }
+  .IVF-center-title{
+    width: 100%;
+    height: 88rpx;
+    font-size: 28rpx;
+    color: #666666;
+    padding-left: 31rpx;
+    line-height: 88rpx;
+    border-bottom: 1px solid #E5E5E5;
+    box-sizing: border-box;
+  }
+  .IVF-center-conter-box{
+    width: 100%;
+    height: 95rpx;
+    display: flex;
+    box-sizing: border-box;
+    padding-left: 30rpx;
+  }
+  .IVF-center-conter-title{
+    height: 95rpx;
+    /* width: 100rpx; */
+    line-height: 95rpx;
+    color: #666666;
+    font-size: 28rpx;
+  
+  }
+  .IVF-center-conter-val{
+    height: 95rpx;
+    font-size: 28rpx;
+    line-height: 95rpx;
+    color: #666666;
+    margin-left: 107rpx;
+  }
+  .IVF-bottom-box{
+    width: 100%;
+    background: #FFFFFF;
+  
+  }
+  .IVF-bottom-title{
+   width: 100%;
+   height: 86rpx;
+   padding-left: 30rpx;
+   color: #666666;
+   font-size: 28rpx;
+   line-height: 86rpx;
+   box-sizing: border-box;
+  }
+  .IVF-bottom-conter-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .IVF-bottom-conter{
+    width: 675rpx;
+    /* height: 152rpx; */
+    /* background: red; */
+    font-size: 26rpx;
+    word-wrap: break-word;
+    color: #999999;
+  }
+  .IVF-bottom{
+    width: 100%;
+    height: 34rpx;
+  }
+  .IVF-bottom-btn-box{
+    width: 100%;
+    height: 98rpx;
+    display: flex;
+  }
+  .IVF-bottom-btn-cancel , .IVF-bottom-btn-agree{
+    width: 50%;
+    height: 98rpx;
+    line-height: 98rpx;
+    text-align: center;
+    font-size: 32rpx;
+  }
+  .IVF-bottom-btn-cancel{
+    color: #F56F68;
+    background: #FFFFFF;
+  }
+  .IVF-bottom-btn-agree{
+    color: #FFFFFF;
+    background: #F56F68;
+  }
+
+  .alert{
+      
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, .6);
+      text-align: center;
+      transition: .3s;
+      transform:translateY(100%);  
+      .fuBw{
+        overflow: hidden;
+        border-radius: 20rpx;
+          background: white;
+          width: 90%;
+          .name{
+              padding: 20rpx 0;
+              box-sizing: border-box;
+          }
+          .text{
+              box-sizing: border-box;
+              padding:0 20rpx;
+              margin-bottom: 20rpx;
+            textarea{
+                color: #999999;
+                width: 100%;
+                background: #F5F5F5;
+                padding: 20rpx;
+                box-sizing: border-box;
+            }
+          }
+          .btn{
+              .van-button{
+                  width: 100%;
+                  
+                  color: #F56F68;
+              }
+          }
+          
+      }
+  }
+  .isOpen{
+      opacity: 1;
+    transform:translateY(0);  
+  }
+}

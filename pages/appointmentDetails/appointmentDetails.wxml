@@ -1,0 +1,42 @@
+<!--pages/appointmentDetails/appointmentDetails.wxml-->
+<import src="/template/template.wxml"></import>
+<view class='page_wrapper'>
+<view class='floor'>
+  <text class='pd_left_44 icon_blue'>选择时间</text>
+  <view class='more' bindtap='showPicker'>{{appointTime}}</view>
+</view>
+
+<view class='floor mg_top20'>
+  <text class='pd_left_44 icon_blue'>选择技师</text>
+  <navigator class='more' url='/pages/selectTechnician/selectTechnician'>{{selectedTechnician.name}}</navigator>
+</view>
+ 
+<view class='floor border_bottom mg_top20'>
+  <text class='pd_left_44 icon_red'>所有项目</text>
+</view>
+<view class='main_tab border_bottom'>
+  <view wx:for="{{mainTabs}}" wx:key="{{index}}" class='main_tab_item {{item.selected?"current_tab":""}}' data-index="{{index}}" bindtap='bindMainTab'>{{item.text}}</view>
+</view>
+<view class='all_project_box'>
+  <scroll-view class='sub_tab' scroll-y>
+    <view wx:for="{{subTabs}}" wx:key="{{index}}" class='sub_tab_item {{item.selected?"active":""}}' data-index="{{index}}" bindtap='bindSubTab'>{{item.text}}</view>
+  </scroll-view>
+  
+  <scroll-view class='all_project_right' scroll-y>
+    <checkbox-group bindchange="checkboxChange">
+      <view class='all_project_item' wx:for="{{10}}" wx:key="{{index}}">
+        <!-- checkbox里的value最好使用项目id -->
+        <checkbox class='checkbox' value="{{item.id}}"/>
+        <template is="project"></template>
+      </view>
+    </checkbox-group>
+  </scroll-view>
+</view>
+</view>
+<view class='under_btn_box'>
+  <view class='under_item'>
+    <text>共选1项</text>
+  </view>
+  <button class='under_item' bindtap='bindAppointment'>预约</button>
+</view>
+<time-picker show="{{showDatePicke}}" bind:sure="bindSure" />

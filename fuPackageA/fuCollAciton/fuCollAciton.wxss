@@ -1,0 +1,139 @@
+page {
+  height: 100%;
+  font-size: 26rpx;
+  position: relative;
+}
+#fuCollAciton {
+  position: relative;
+  color: #666;
+}
+#fuCollAciton .storeCard {
+  box-sizing: border-box;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+#fuCollAciton .storeCard image {
+  height: 140rpx;
+  width: 140rpx;
+  border-radius: 10rpx;
+}
+#fuCollAciton .storeCard .contant {
+  flex: 1;
+  margin-left: 20rpx;
+}
+#fuCollAciton .storeCard .contant .name {
+  font-size: 32rpx;
+  font-weight: 800;
+}
+#fuCollAciton .storeCard .contant .val {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  margin: 10rpx 0;
+  font-size: 22rpx;
+  color: #999;
+}
+#fuCollAciton .storeCard .contant .pri_num {
+  display: flex;
+  align-items: center;
+}
+#fuCollAciton .storeCard .contant .pri_num .pri {
+  font-size: 32rpx;
+  font-weight: 800;
+  color: #f56e68;
+  flex: 1;
+}
+#fuCollAciton .storeCard .contant .pri_num .num {
+  color: #999;
+}
+#fuCollAciton .collage {
+  box-sizing: border-box;
+  padding: 20rpx;
+  font-size: 38rpx;
+  text-align: center;
+}
+#fuCollAciton .collage .color {
+  color: #f56e68;
+}
+#fuCollAciton .time {
+  color: #999;
+  box-sizing: border-box;
+  padding: 20rpx;
+  text-align: center;
+}
+#fuCollAciton .editor {
+  margin-top: 20rpx;
+  background: white;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+}
+#fuCollAciton .editor .navTap {
+  box-sizing: border-box;
+  padding: 20rpx;
+  font-size: 32rpx;
+}
+#fuCollAciton .editor .contant .flexEd {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 20rpx 20rpx ;
+}
+#fuCollAciton .editor .contant .flexEd .name {
+  font-size: 30rpx;
+  margin-right: 20rpx;
+}
+#fuCollAciton .editor .contant .flexEd .input {
+  width: 20%;
+  border-radius: 30rpx;
+  padding: 0 20rpx  ;
+  box-sizing: border-box;
+  border: 1px solid #f0f0f0;
+}
+#fuCollAciton .editor .contant .flexEd .input input {
+  width: 100%;
+}
+#fuCollAciton .editor .contant .flexEd .check {
+  transform: scale(0.6, 0.6);
+}
+#fuCollAciton .editor .contant .flexEd .check .wx-checkbox-input {
+  background: none !important;
+  border: 2px solid #eeeeee;
+}
+#fuCollAciton .editor .contant .flexEd .zdy {
+  margin: 0 10rpx;
+}
+#fuCollAciton .editor .contant .num_peo .name {
+  margin: 0;
+}
+#fuCollAciton .editor .contant .num_peo .val {
+  font-size: 22rpx;
+}
+#fuCollAciton .editor .contant .guizhe {
+  margin: 0 20rpx 80rpx;
+  border: 1px solid #f0f0f0;
+}
+#fuCollAciton .editor .contant .guizhe textarea {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuCollAciton .btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+#fuCollAciton .btn .van-button {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  color: white;
+  background: #f56e68;
+}
+.van-picker-column__item--selected,
+.van-picker__cancel,
+.van-picker__confirm {
+  color: #F56F68;
+}

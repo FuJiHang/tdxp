@@ -1,0 +1,54 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2020-03-17 11:17:28 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2020-03-17 11:17:28 
+    拼团邀请
+ */ -->
+<view id="fuYQPT">
+    <!-- 改版 -->
+    <view class="product">
+        <image src="{{goodsInfo.ImageUrl1}}" mode="aspectFill" />
+        <span class="contant">
+            <view class="name">{{goodsInfo.FightGroupActivityInfo.ProductName}}</view>
+            <view class="price">
+                {{goodsInfo.FightGroupActivityInfo.JoinNumber}}人拼团价:
+                <span class="big">¥{{goodsInfo.FightGroupPrice}}</span>
+            </view>
+            <view class="del">市场价:¥{{goodsInfo.CostPrice}}</view>
+            <view class="num">
+                已有{{goodsInfo.FightGroupActivityInfo.FightGroupsOrderCount*goodsInfo.FightGroupActivityInfo.JoinNumber}}人拼团
+            </view>
+        </span>
+    </view>
+    <!--  -->
+    <view class="people">
+        <span class="child" wx:if="{{index<5}}" wx:for="{{groupList.FightGroupUsers}}" wx:key="{{index}}">
+            <image src="{{item.Picture}}" mode="aspectFill" />
+            <span class="pz" wx:if="{{groupList.UserId==item.UserId}}">拼主</span>
+        </span>
+        <span class="child childNo" wx:if="{{index<6-groupList.FightGroupUsers.length}}" wx:for="{{groupList.LeftNum}}" wx:key="{{index}}">
+            ?
+        </span>
+    </view>
+    <!-- <view class="tip">拼主所选规格：黄色(2个更划算)</view> -->
+    <block wx:if="{{groupList.LeftNum}}">
+        <view class="time" wx:if="{{groupList.limitHours!='00'||groupList.limitMin!='00'||groupList.limitSecond!='00'}}">
+            仅剩
+            <span class="color">{{groupList.LeftNum}}</span>
+            个名额，{{groupList.limitHours}}:{{groupList.limitMin}}:{{groupList.limitSecond}}后结束
+        </view>
+    </block>
+    <view class="btn">
+        <block wx:if="{{groupList.LeftNum}}">
+            <van-button bindtap="toBuy" wx:if="{{groupList.limitHours!='00'||groupList.limitMin!='00'||groupList.limitSecond!='00'}}">
+                参与{{groupList.THeadNickName}}的拼单
+            </van-button>
+        </block>
+        <view class="hui">
+            <van-button wx:if="{{groupList.limitHours=='00'&&groupList.limitMin=='00'&&groupList.limitSecond=='00'||!groupList.LeftNum}}">
+                {{groupList.limitHours=='00'&&groupList.limitMin=='00'&&groupList.limitSecond=='00'?'已结束':groupList.LeftNum?'':'已结束'}}
+            </van-button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,127 @@
+#fuChangePoint .list {
+  padding: 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+}
+#fuChangePoint .list image {
+  height: 200rpx;
+  width: 200rpx;
+}
+#fuChangePoint .list .contant {
+  flex: 1;
+  margin-left: 20rpx;
+}
+#fuChangePoint .list .contant .name {
+  font-size: 30rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+#fuChangePoint .list .contant .val {
+  font-size: 28rpx;
+}
+#fuChangePoint .list .contant .name,
+#fuChangePoint .list .contant .val {
+  margin-bottom: 10rpx;
+}
+#fuChangePoint .list .contant .btn {
+  display: flex;
+  justify-content: flex-end;
+}
+#fuChangePoint .list .contant .btn .van-button {
+  margin-left: 20rpx;
+}
+#fuChangePoint .list .contant .btn .bg .van-button {
+  background: #ff3c0b;
+  color: #fff;
+}
+.cart {
+  position: fixed;
+  right: 20rpx;
+  bottom: 15%;
+  border: 1px solid #858585;
+  height: 70rpx;
+  width: 70rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.cart image {
+  height: 1rpx ;
+  width: 40rpx;
+}
+.seachMT {
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.seachMT input {
+  flex: 1;
+  margin-left: 20rpx;
+}
+.seachMT .seachbg {
+  margin-bottom: 20rpx;
+}
+.seachMT .van-button {
+  background: #ff3c0b;
+  color: #fff;
+  width: 100%;
+}
+.seachMT .disFlex {
+  border-bottom: 1px solid #dfdfdf;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.cartAlert {
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.cartAlert input {
+  flex: 1;
+  margin-left: 20rpx;
+}
+.cartAlert .seachbg {
+  margin-bottom: 20rpx;
+}
+.cartAlert .btnBon {
+  display: flex;
+  align-items: center;
+}
+.cartAlert .btnBon .van-button {
+  width: 100%;
+}
+.cartAlert .btnBon .child {
+  width: 100%;
+}
+.cartAlert .btnBon .mon {
+  width: 100%;
+  margin-left: 20rpx;
+}
+.cartAlert .btnBon .mon .van-button {
+  background: #ff3c0b;
+  color: #fff;
+}
+.cartList {
+  border-bottom: 1px solid #dfdfdf;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.cartList image {
+  height: 150rpx;
+  width: 150rpx;
+  margin-right: 20rpx;
+}
+.cartList input {
+  flex: 1;
+  margin: 20rpx;
+}

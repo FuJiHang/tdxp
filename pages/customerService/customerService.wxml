@@ -1,0 +1,4 @@
+<!--pages/customerService/customerService.wxml-->
+<view class='content'>
+  <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/lxkf.png" />
+</view>

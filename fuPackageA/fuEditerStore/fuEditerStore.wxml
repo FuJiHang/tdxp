@@ -1,0 +1,21 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-03 16:48:00 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-07-03 17:47:34
+    编辑门店
+ */ -->
+<view id="fuEditerStore">
+   <view class="funChild {{index==0?'fisrt':''}}" wx:for="{{functionList}}" wx:key="{{index}}">
+      <view class="navTop" wx:if="{{item.name}}">{{item.name}}</view>
+      <view bindtap="toFN" data-to="{{c.to}}" class="child" wx:for="{{item.child}}" wx:for-item="c" wx:for-index="cI" wx:key="{{cI}}">
+         <span class="name">{{c.name}}</span>
+         <image src="{{imgUrl+'arrow_right.png'}}" />
+      </view>
+   </view>
+   <view class="tip">*以上项目设置完成后，可在"我的门店"查看效果*</view>
+   <!--  -->
+   <view class="btn" bindtap="toFND">
+      <van-button>我的门店</van-button>
+   </view>
+</view>

@@ -1,0 +1,70 @@
+page {
+    height: 100%;
+    font-size: 26rpx;
+    background: white;
+  }
+  #fuLogin {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 28rpx;
+  }
+  #fuLogin .child {
+    width: 75%;
+    padding-bottom: 10rpx;
+    border-bottom: 1px solid #f1f1f1;
+    margin-bottom: 20rpx;
+    display: flex;
+    align-items: center;
+  }
+  #fuLogin .child .name {
+    margin-right: 10rpx;
+  }
+  #fuLogin .child .input {
+    border-left: 1px solid #ebebeb;
+    padding-left: 10rpx;
+    box-sizing: border-box;
+    flex: 1;
+  }
+  #fuLogin .child .input input {
+    width: 100%;
+  }
+  #fuLogin .van-button {
+    width: 300rpx;
+    height: 80rpx ;
+    line-height: 80rpx ;
+    background: #ea3d2f;
+    color: white;
+    margin-top: 40rpx;
+  }
+  #fuLogin .WeiXi {
+    width: 100%;
+ /*    margin-top: 80rpx;
+    padding-top: 80rpx; */
+/*     border-top: 1px solid #cacaca; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #fuLogin .WeiXi .tip {
+    text-align: center ;
+    color: #999;
+    font-size: 32rpx;
+  }
+  #fuLogin .WeiXi image {
+    width: 180rpx;
+    margin: 80rpx 0;
+  }
+  #fuLogin .WeiXi .van-button {
+    margin-top: 0;
+    background: #55b837;
+  }
+  #fuLogin .WeiXi .red .van-button {
+    margin-top: 20rpx;
+    background: #ea3d2f;
+  }
+  /*# sourceMappingURL=./fuLogin.css.map */
+  

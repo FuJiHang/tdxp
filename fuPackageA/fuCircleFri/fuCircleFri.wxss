@@ -1,0 +1,314 @@
+page {
+  height: 100%;
+  font-size: 26rpx;
+  position: relative;
+  background: white;
+}
+#fuCircleFri {
+  position: relative;
+  color: #666;
+  padding-top: 180rpx;
+}
+#fuCircleFri .fiexd {
+  z-index: 8;
+  top: 0;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  background: #fff;
+}
+#fuCircleFri .navTap {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuCircleFri .navTap .addressImg {
+  display: flex;
+  align-items: center;
+}
+#fuCircleFri .navTap .addressImg > span {
+  overflow: hidden ;
+  margin-right: 10rpx;
+  color: #999;
+  flex: 1 ;
+  white-space: nowrap ;
+}
+#fuCircleFri .navTap .addressImg .van-icon {
+  margin-top: 8rpx;
+}
+#fuCircleFri .navTap .leri {
+  display: flex;
+  align-items: center;
+  width: 17% ;
+}
+#fuCircleFri .navTap .mid {
+  flex: 1;
+  text-align: center;
+  font-size: 34rpx;
+  color: #787;
+}
+#fuCircleFri .navTap .mid .name {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+#fuCircleFri .navTap .choose {
+  color: #f7726d;
+}
+#fuCircleFri .seachF {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuCircleFri .seachF input {
+  width: 100%;
+  border-radius: 30rpx;
+  background: #f5f5f5;
+  text-align: center;
+  padding: 0 20rpx;
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  box-sizing: border-box;
+}
+#fuCircleFri .follow scroll-view {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  white-space: nowrap;
+}
+#fuCircleFri .follow scroll-view .people {
+  display: inline-block;
+  text-align: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuCircleFri .follow scroll-view .people image {
+  height: 110rpx;
+  width: 110rpx;
+  border-radius: 50%;
+}
+#fuCircleFri .follow scroll-view .people .name {
+  width: 110rpx;
+  overflow: hidden;
+  padding: 5rpx 0;
+  box-sizing: border-box;
+}
+#fuCircleFri .follow .bgb {
+  padding: 0  10rpx 20rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+  background: #f6f6f6;
+  border-bottom: 1px solid #dddddd;
+}
+#fuCircleFri .follow .bgb .peopleLike {
+  background: white;
+  padding: 0 20rpx 10rpx;
+  box-sizing: border-box;
+  margin: 10rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  display: inline-block;
+  width: 33.33%;
+}
+#fuCircleFri .follow .bgb .peopleLike .delect {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5rpx 0;
+}
+#fuCircleFri .follow .bgb .peopleLike .img {
+  display: flex;
+  justify-content: center;
+}
+#fuCircleFri .follow .bgb .peopleLike image {
+  height: 180rpx;
+  width: 180rpx;
+  border-radius: 50%;
+}
+#fuCircleFri .follow .bgb .peopleLike .name,
+#fuCircleFri .follow .bgb .peopleLike .val {
+  overflow: hidden;
+  padding: 10rpx 0;
+}
+#fuCircleFri .follow .bgb .peopleLike .val {
+  color: #999;
+}
+#fuCircleFri .follow .bgb .peopleLike .btn_l {
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+#fuCircleFri .follow .bgb .peopleLike .btn_l .van-button {
+  width: 100%;
+  border-radius: 30rpx;
+  background: #f7726d;
+  color: white;
+}
+#fuCircleFri .noLike {
+  text-align: center;
+  padding: 10% 0;
+}
+#fuCircleFri .noLike .name {
+  font-size: 30rpx ;
+  font-weight: 800;
+}
+#fuCircleFri .noLike .val {
+  margin-top: 20rpx;
+  color: #999;
+}
+#fuCircleFri .navLike {
+  background: #f6f6f6;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+#fuCircleFri .navLike .le {
+  font-size: 30rpx ;
+  font-weight: 800;
+  flex: 1;
+}
+#fuCircleFri .navLike .ri {
+  margin-right: 10rpx;
+  color: #999;
+}
+#fuCircleFri .navLike image {
+  width: 30rpx;
+  height: 30rpx;
+}
+#fuCircleFri .contantKan {
+  padding: 0 8rpx;
+  box-sizing: border-box;
+}
+#fuCircleFri .contantKan .rightK {
+  float: right;
+}
+#fuCircleFri .contantKan .leftK {
+  float: left;
+}
+#fuCircleFri .contantKan .noMore {
+  float: left;
+  text-align: center;
+  width: 100%;
+  padding: 20rpx 0;
+  color: #999;
+}
+#fuCircleFri .contantKan .leftK,
+#fuCircleFri .contantKan .rightK {
+  width: 50%;
+  padding: 0 0 10rpx;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+#fuCircleFri .contantKan .leftK .child,
+#fuCircleFri .contantKan .rightK .child {
+  margin: 0 8rpx 20rpx;
+  background: white;
+  border-radius: 12rpx;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+#fuCircleFri .contantKan .leftK .child .logoImg,
+#fuCircleFri .contantKan .rightK .child .logoImg {
+  position: relative;
+}
+#fuCircleFri .contantKan .leftK .child .logoImg .playBtn,
+#fuCircleFri .contantKan .rightK .child .logoImg .playBtn {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  opacity: 0.8;
+  padding: 10rpx;
+  background: rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+#fuCircleFri .contantKan .leftK .child .logoImg image,
+#fuCircleFri .contantKan .rightK .child .logoImg image,
+#fuCircleFri .contantKan .leftK .child .logoImg .myVideo,
+#fuCircleFri .contantKan .rightK .child .logoImg .myVideo {
+  max-height: 800rpx;
+  width: 100%;
+  border-radius: 12rpx ;
+}
+#fuCircleFri .contantKan .leftK .child .name,
+#fuCircleFri .contantKan .rightK .child .name {
+  margin: 15rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  font-size: 28rpx;
+}
+#fuCircleFri .contantKan .leftK .child .btnXX,
+#fuCircleFri .contantKan .rightK .child .btnXX {
+  padding: 0 20rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  color: #999;
+}
+#fuCircleFri .contantKan .leftK .child .btnXX .touxiang,
+#fuCircleFri .contantKan .rightK .child .btnXX .touxiang {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#fuCircleFri .contantKan .leftK .child .btnXX .touxiang image,
+#fuCircleFri .contantKan .rightK .child .btnXX .touxiang image {
+  width: 100%;
+}
+#fuCircleFri .contantKan .leftK .child .btnXX .nameC,
+#fuCircleFri .contantKan .rightK .child .btnXX .nameC {
+  flex: 1;
+  margin: 0 5rpx;
+}
+#fuCircleFri .contantKan .leftK .child .btnXX .van-icon,
+#fuCircleFri .contantKan .rightK .child .btnXX .van-icon {
+  margin: 8rpx 5rpx 0 0;
+}
+#fuCircleFri .address-box {
+  position: fixed;
+  z-index: 80;
+  top: 0;
+  left: 0;
+  /* background: black; */
+  /* opacity: 0.5; */
+  /* opacity: 0.5; */
+  height: 100%;
+  /* top: 10%; */
+  width: 100%;
+  display: flex;
+  background: #fff;
+  justify-content: center;
+  align-items: center;
+}
+#fuCircleFri .address-box2 {
+  position: absolute;
+  padding: 8px 18px;
+  box-sizing: border-box;
+  top: 30rpx;
+  margin: auto;
+  left: 0;
+  right: 0;
+  border: 1px solid #efefef;
+  width: 25%;
+  text-align: center;
+  color: #333;
+  border-radius: 4rpx;
+  background: #fff;
+  z-index: 222 ;
+  /* background: #FFFFFF; */
+  /* z-index: 210; */
+}
+#fuCircleFri #addr-picker {
+  width: 100% !important;
+}

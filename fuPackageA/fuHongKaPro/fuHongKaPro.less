@@ -1,0 +1,214 @@
+page {
+    height: 100%;
+    font-size: 26rpx;
+    //background: #7c2806;
+    background: rgba(245, 245, 245, 1);
+}
+
+
+#fuHongKaPro {
+    color: #666;
+
+    // 
+    .banner {
+        padding: 22rpx 24rpx;
+        background: #fff;
+        margin-bottom: 22rpx;
+
+        image {
+            border-radius: 8rpx;
+        }
+    }
+
+    .swiper {
+        position: relative;
+        padding: 0 22rpx;
+        box-sizing: border-box;
+        background: #fff;
+
+        .dot {
+            position: absolute;
+            bottom: 50rpx;
+            left: 0;
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            padding: 0 60rpx;
+            box-sizing: border-box;
+
+            .child {
+                background: rgba(51, 51, 51, 1);
+                height: 15rpx;
+                width: 15rpx;
+                border-radius: 50%;
+                margin: 0 3rpx;
+                opacity: 0.8;
+            }
+
+            .dotRed {
+                background: rgb(255, 255, 255);
+
+            }
+        }
+    }
+
+
+    swiper-item {
+        image {
+
+            width: 100%;
+        }
+    }
+
+    .noMore {
+        font-size: 28rpx;
+        color: #999;
+        padding: 20rpx 20rpx 180rpx;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    // 
+    // 
+    .allProduct {
+        padding: 0 15rpx;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+
+        .child {
+            margin: 0 5rpx 10rpx;
+            width: calc(50% - 10rpx);
+            background: #fff;
+            border-radius: 4px;
+
+            image {
+                width: 100%;
+                height: 320rpx;
+            }
+
+            .name {
+                margin: 4rpx 12rpx 10rpx;
+                font-size: 28rpx;
+                display: -webkit-box;
+                -webkit-line-clamp: 1; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break: break-all;
+            }
+
+            .price_btn {
+                display: flex;
+                align-items: flex-end;
+                padding: 5rpx 14rpx 20rpx;
+
+                .mini {
+                    font-size: 22rpx;
+                    color: #333;
+                    font-weight: bold;
+                }
+
+                .price {
+                    font-size: 32rpx;
+                    color: #333;
+                    font-weight: bold;
+                }
+
+                .redCard {
+                    border-radius: 48px;
+                    color: #fff;
+                    margin-left: 5rpx;
+                    font-size: 22rpx;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+
+                    .red {
+                        display: flex;
+                        align-items: center;
+                        padding: 3rpx 15rpx;
+                        background: rgba(251, 31, 79, 1);
+
+                        image {
+                            width: 18rpx;
+                            height: 18rpx;
+                            margin-right: 3rpx;
+                        }
+                    }
+
+                    .black {
+                        padding: 3rpx 15rpx;
+
+                        background: rgba(6, 0, 21, 1);
+                    }
+
+                }
+            }
+        }
+    }
+
+}
+
+// dib导航
+.navBarFu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    background: white;
+    display: flex;
+    padding: 24rpx 0 12rpx;
+    box-sizing: border-box;
+    font-size: 22rpx;
+    border-top: 1px solid rgb(240, 240, 240);
+
+    .child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex: 1;
+        position: relative;
+        color: #999;
+        font-weight: bold;
+
+        image {
+            width: 40rpx;
+            height: 40rpx;
+        }
+
+        .name {
+            margin-top: 12rpx;
+            // color: #999;
+
+        }
+
+    }
+
+    .black {
+        color: #FB1F4F;
+    }
+
+    .max {
+
+
+        image {
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            top: -40rpx;
+            width: 100rpx;
+            height: 100rpx;
+        }
+    }
+
+
+
+}
+
+.konbai {
+    height: 120rpx;
+}

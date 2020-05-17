@@ -1,0 +1,256 @@
+/* pages/pointAllOrder/pointAllOrder.wxss */
+
+page {
+  height: 100%;
+  overflow: hidden;
+}
+
+#fuMyOrder {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #666;
+  box-sizing: border-box;
+  font-size: 26rpx;
+}
+
+#fuMyOrder .van_order {
+  flex: 1;
+  color: #999;
+  overflow: hidden;
+}
+
+#fuMyOrder .van_order .van-tabs {
+  height: 100%;
+  overflow: hidden;
+}
+
+#fuMyOrder .van_order .van-tabs__content {
+  height: 100%;
+  overflow: hidden;
+}
+
+#fuMyOrder .van_order .van-tabs__content .van-tabs__track {
+  height: 100%;
+  overflow: hidden;
+}
+
+#fuMyOrder .van_order .van-tabs__content .van-tabs__track .van-tab__pane {
+  padding-bottom: 44px;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#fuMyOrder .van_order .van-tabs__content .van-tabs__track .van-tab__pane scroll-view {
+  overflow: auto;
+  height: 100%;
+}
+
+#fuMyOrder .van_order .van-tabs__content .van-tabs__track .van-tab__pane scroll-view .noMore {
+  font-size: 28rpx;
+  color: #999;
+  padding: 20rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#fuMyOrder .van_order .van-tab--active {
+  color: #FB1F4F;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.orderList {
+  font-size: 24rpx;
+  color: #666;
+  background: white;
+  margin: 22rpx 22rpx 0;
+  border-radius: 8rpx;
+}
+
+.orderList .orderListTop {
+  display: flex;
+  align-items: center;
+  padding: 22rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(245, 245, 245);
+  font-weight: bold;
+}
+
+.orderList .orderListTop .hui {
+  color: #666;
+}
+
+.orderList .orderListTop .name {
+  flex: 1;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.orderList .orderListTop .state {
+  font-size: 24rpx;
+  color: #FB1F4F;
+}
+
+.orderList .orderListContent {
+  background: #fff;
+
+  margin-bottom: 14rpx;
+}
+
+.orderList .orderListContent .contant {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 32rpx;
+  position: relative;
+}
+
+.orderList .orderListContent .contant .btn_wrap {
+  position: absolute;
+  top: -72rpx;
+  left: 0;
+  width: 100%;
+  height: 150rpx;
+  /* background-color: pink; */
+  opacity: 0;
+}
+
+.orderList .orderListContent .contant image {
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.orderList .orderListContent .contant .middin {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.orderList .orderListContent .contant .money {
+  color: #FB1F4F;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.orderList .orderListContent .contant .middin .name_mid {
+  font-size: 26rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+
+
+.orderList .orderListContent .contant .middin .teacher {
+  color: #61b6fd;
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+
+.orderList .orderListContent .contant .middin .detail {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.orderList .orderListContent .contant .middin .detail .code {
+  margin-right: 10rpx;
+  border-radius: 6rpx;
+  background: #f56f68;
+  color: white;
+  font-size: 26rpx;
+  box-sizing: border-box;
+  padding: 2rpx 6rpx;
+}
+
+.orderList .orderListContent .time {
+  margin: 10rpx 0 10rpx 20rpx;
+  color: #61b6fd;
+  font-size: 24rpx;
+}
+
+.orderList .orderListAll {
+  padding: 20rpx 20rpx 20rpx 0;
+  margin-left: 20rpx;
+  box-sizing: border-box;
+  text-align: right;
+  font-size: 28rpx;
+  color: #999;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.orderList .orderListAll .moneyAll {
+  color: #f56f68;
+}
+
+.orderList .btn {
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.orderList .btn .fuBtn {
+  margin: 0;
+  width: 160rpx;
+  font-size: 24rpx;
+  background: #f56f68;
+  color: white;
+}
+
+.orderList .payFU {
+  border-top: 1px solid rgb(240, 240, 240);
+  display: flex;
+  align-items: center;
+  padding: 26rpx 28rpx 32rpx;
+  box-sizing: border-box;
+  font-size: 22rpx;
+  color: #666;
+  font-weight: bold;
+}
+
+
+.orderList .kd {
+  justify-content: flex-start;
+  font-size: 30rpx;
+}
+
+.orderList .payFU .van-button {
+  width: 134rpx;
+  height: 54rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #ffffff;
+  color: #666666;
+  font-size: 22rpx;
+  border: 1px solid rgba(229, 229, 229, 1);
+  border-radius: 50rpx;
+}
+
+.orderList .payFU .bgf .van-button {
+  background: #ffffff;
+  color: #666666;
+  margin-right: 10rpx;
+  border: 1px solid rgba(229, 229, 229, 1);
+  border-radius: 50rpx;
+}
+
+.confirmBtn {
+  padding: 10rpx 20rpx;
+  color: #666666;
+  background: #fff;
+  display: inline-block;
+  float: right;
+  border-radius: 10rpx;
+}
+
+.seeLog {
+  margin-left: 10rpx;
+}

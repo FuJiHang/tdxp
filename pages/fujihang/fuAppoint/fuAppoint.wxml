@@ -1,0 +1,97 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-16 14:36:40 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-04-16 14:36:40 
+    门店预约
+*/ -->
+<view id="fuAppoint">
+
+    <!-- 门店信息 -->
+    <view class="storeApp">
+        <image src="{{storeData.EnvironmentImages}}" mode="aspectFill"/>
+        <view class="contant">
+            <view class="name_juli">
+                {{storeData.StoreName}}
+                <span class="juli">
+                    距离{{storeData.Distance}}
+                </span>
+            </view>
+            <view class="address">
+                <image mode="aspectFill" src="{{imgUrl+'icon_address33.png'}}" />
+                {{storeData.Address}}
+            </view>
+        </view>
+    </view>
+
+    <!-- 内容 -->
+    <view class="vanCont">
+        
+        <!-- 导航条 -->
+        <van-tabs line-width='0' color="#F56F68"  active="{{ active }}" bind:change="onChange" swipeable>
+            <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="indexF">
+                <!-- 预约页面 -->
+                <view class="appointTO">
+                    <!-- 左边 -->
+                    <view class="leftCont" wx:if="{{functionList[active].hasChild}}">
+                        <view class="Choose {{isChoose==index?'isChoose':''}}" wx:for="{{item.subs}}" bindtap="chooseFN" data-index="{{index}}" wx:key="index" wx:for-item="sub">{{sub.name}}</view>
+                    </view>
+                    <!-- 右边 -->
+                    <view class="rightCont">
+                        <!-- <view class="contant"> -->
+                            <scroll-view scrolltolower="150"  scroll-y="true" bindscrolltolower="getDataR">
+                                
+                                
+                                <view class="upDownList" wx:for="{{functionList[active].subs[isChoose].list}}" wx:for-item="data" wx:key="index" data-index="{{index}}">
+                                    <span class="choose">
+                                        <van-checkbox checked-color="#F56F68" value="{{data.choose}}" bindtap="ChangeXM"  data-index="{{index}}"></van-checkbox>
+                                    </span>
+                                    <span bindtap="toProduct" data-index="{{index}}">
+                                        <image src="{{data.Pic}}" mode="aspectFill" />
+                                    </span>
+                                
+                                    <view class="contantTL" bindtap="toProduct" data-index="{{index}}">
+                                        <view class="name_mon">
+                                            <text class="name">{{data.ProductName}}</text>
+                                            <span class="mon">￥{{data.SalePrice}}</span>
+                                        </view>
+                                        <view class="detail_btn">
+                                            <text class="det">详情</text>{{data.ShortDescription}}
+                                        </view>
+                                    </view>
+                                    
+                                </view>
+
+
+
+                                <view class="noMore" wx:if="{{functionList[active].subs[isChoose].finish}}">
+                                    没有更多的了~~~
+                                </view>
+                                <view class="noMore" wx:if="{{!functionList[active].hasChild}}">
+                                    暂无数据，看看其他吧~~~
+                                </view>
+                            </scroll-view>
+                        
+                        <!-- </view> -->
+                    </view>
+                </view>
+            </van-tab>
+        </van-tabs>
+    </view>
+
+    <!-- 底部按钮 -->
+    <view class="btn">
+        <text>共选{{all}}项</text>
+        <view class="ok">
+            <span class="diaosiTuhao" wx:if="{{false}}">
+                <van-button bindtap="toBuy" data-data="{{false}}">预约</van-button>
+            </span>
+            <span class="diaosiTuhao">
+                <van-button bindtap="toBuy" data-data="{{true}}" class="tuhao">全额付款</van-button>
+            </span>
+            
+        </view>
+    </view>
+
+
+</view>

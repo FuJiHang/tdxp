@@ -1,0 +1,375 @@
+page {
+  height: 100%;
+  overflow: hidden;
+}
+.getUser {
+  position: absolute;
+  margin: 0 auto;
+  bottom: 60rpx;
+  background: #55b837;
+  color: #fff;
+  left: 0;
+  right: 0;
+  width: 35%;
+  font-size: 35rpx;
+  border-radius: 50rpx;
+}
+#fuExtension {
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  font-size: 26rpx;
+}
+#fuExtension .bgE {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#fuExtension .EnOrder {
+  z-index: 2;
+  position: relative;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  overflow: auto;
+  padding: 20rpx 20rpx 12%;
+  box-sizing: border-box;
+}
+#fuExtension .EnOrder .storeApp {
+  background: white;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+#fuExtension .EnOrder .storeApp image {
+  height: 120rpx;
+  width: 120rpx;
+}
+#fuExtension .EnOrder .storeApp .contant {
+  flex: 1;
+  margin-left: 20rpx;
+}
+#fuExtension .EnOrder .storeApp .contant .name_juli {
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+}
+#fuExtension .EnOrder .storeApp .contant .name_juli .juli {
+  font-size: 28rpx;
+  flex: 1;
+  text-align: right;
+  color: #61B6FD;
+}
+#fuExtension .EnOrder .storeApp .contant .address {
+  margin-top: 20rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+}
+#fuExtension .EnOrder .storeApp .contant .address image {
+  margin-right: 10rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+#fuExtension .EnOrder .fuPlaceContant {
+  flex: 1;
+  overflow: auto;
+}
+#fuExtension .EnOrder .navTopP {
+  background: white;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+#fuExtension .EnOrder .navTopP image {
+  height: 30rpx;
+  width: 30rpx;
+}
+#fuExtension .EnOrder .navTopP .name {
+  font-weight: bold;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+#fuExtension .EnOrder .Project {
+  background: white;
+}
+#fuExtension .EnOrder .Project .cont_nav {
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+#fuExtension .EnOrder .Project .cont_nav .name {
+  flex: 1;
+  font-size: 28rpx;
+}
+#fuExtension .EnOrder .Project .cont_nav .time {
+  color: #61B6FD;
+  margin-right: 10rpx;
+}
+#fuExtension .EnOrder .Project .cont_nav .van-icon {
+  margin-top: 10rpx;
+}
+#fuExtension .EnOrder .Project .cont_det {
+  margin: 15rpx 20rpx 0 20rpx ;
+  padding: 20rpx;
+  box-sizing: border-box;
+  align-items: center;
+  background: #f8f8f8;
+  display: flex;
+}
+#fuExtension .EnOrder .Project .cont_det image {
+  height: 130rpx;
+  width: 130rpx;
+}
+#fuExtension .EnOrder .Project .cont_det .detail {
+  margin-left: 20rpx;
+  flex: 1;
+}
+#fuExtension .EnOrder .Project .cont_det .name_men {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+#fuExtension .EnOrder .Project .cont_det .name_men .name {
+  flex: 1;
+  font-weight: bold;
+  font-size: 30rpx;
+}
+#fuExtension .EnOrder .Project .cont_det .name_men .money {
+  font-size: 28rpx;
+  color: #F56F68;
+}
+#fuExtension .EnOrder .Project .cont_det .company {
+  margin-bottom: 10rpx;
+}
+#fuExtension .EnOrder .Project .cont_det .address {
+  display: flex;
+  align-items: center;
+  color: #999;
+}
+#fuExtension .EnOrder .Project .cont_det .address image {
+  margin-right: 5rpx;
+  height: 25rpx;
+  width: 25rpx;
+}
+#fuExtension .EnOrder .Project .border {
+  height: 25rpx;
+  margin-left: 20rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+#fuExtension .EnOrder .personTop {
+  margin-top: 20rpx;
+}
+#fuExtension .EnOrder .personData {
+  background: white;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx 20rpx 20rpx 0;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f0f0f0;
+}
+#fuExtension .EnOrder .personData .name {
+  width: 25%;
+  font-size: 28rpx;
+}
+#fuExtension .EnOrder .personData > input {
+  font-size: 26rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+#fuExtension .EnOrder .PlaceOk {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+#fuExtension .EnOrder .PlaceOk .money {
+  font-size: 30rpx;
+  flex: 1;
+  color: #999;
+}
+#fuExtension .EnOrder .PlaceOk .money .num {
+  color: #F56F68;
+}
+#fuExtension .EnOrder .PlaceOk .van-button {
+  border: none;
+  width: 300rpx;
+  background: #F56F68;
+  color: white;
+}
+#fuExtension .EnOrder .price_tip {
+  color: #F56F68;
+  text-align: center;
+  font-size: 35rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+#fuExtension .btn {
+  z-index: 5;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  left: 0;
+  align-items: center;
+  background: white;
+}
+#fuExtension .btn .pirce {
+  margin-left: 20rpx;
+  flex: 1;
+  font-size: 30rpx;
+  color: #F56F68;
+}
+#fuExtension .btn .van-button {
+  width: 240rpx;
+  border: none;
+  background: #F56F68;
+  color: white ;
+}
+#fuExtension .couponPE,
+#fuExtension .payMode {
+  padding: 20rpx;
+  box-sizing: border-box;
+  background: white;
+  margin: 20rpx 0;
+  display: flex;
+  align-items: center;
+}
+#fuExtension .couponPE .name,
+#fuExtension .payMode .name {
+  flex: 1;
+  font-size: 28rpx;
+}
+#fuExtension .couponPE .val,
+#fuExtension .payMode .val {
+  color: #999;
+}
+#fuExtension .gantan .val {
+  color: #999;
+}
+#fuExtension .gantan .van-icon {
+  margin-top: 5rpx;
+}
+#fuExtension .couponGan {
+  margin: 10rpx 20rpx;
+  box-sizing: border-box;
+  padding: 30rpx 50rpx 30rpx 30rpx;
+  background: #ff7171;
+  position: relative;
+  overflow: hidden;
+}
+#fuExtension .couponGan .typeName {
+  font-size: 24rpx;
+  position: absolute;
+  top: 15rpx;
+  left: -50rpx;
+  color: white;
+  padding: 5rpx 50rpx;
+  box-sizing: border-box;
+  background: #f9b552;
+  transform: rotate(-35deg);
+}
+#fuExtension .couponGan .yuan {
+  right: -35rpx;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+#fuExtension .couponGan .yuan .aaaa {
+  border-radius: 50%;
+  background: #F7F7F7;
+  width: 70rpx;
+  height: 70rpx;
+}
+#fuExtension .couponGan .bWCou {
+  background: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+#fuExtension .couponGan .bWCou .juchi {
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#fuExtension .couponGan .bWCou .juchi .child {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background: #ff7171;
+}
+#fuExtension .couponGan .bWCou .top {
+  top: -5rpx;
+}
+#fuExtension .couponGan .bWCou .btn {
+  bottom: -5rpx;
+}
+#fuExtension .couponGan .bWCou .left {
+  min-height: 100%;
+  left: -5rpx;
+  top: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#fuExtension .couponGan .bWCou .leftNaction {
+  padding: 55rpx 30rpx 65rpx;
+  box-sizing: border-box;
+  font-size: 65rpx;
+  color: #ff7171;
+  font-weight: 700;
+}
+#fuExtension .couponGan .bWCou .leftNaction span {
+  font-size: 30rpx;
+}
+#fuExtension .couponGan .bWCou .rightNaction {
+  flex: 1;
+  margin-left: 10rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+}
+#fuExtension .couponGan .bWCou .rightNaction .name {
+  font-size: 31rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+#fuExtension .couponGan .bWCou .rightNaction .name span {
+  background: linear-gradient(#fff, #ffeeee, #fff);
+}
+#fuExtension .couponGan .bWCou .rightNaction .vip {
+  color: #999;
+  font-size: 29rpx;
+  margin: 10rpx 0;
+}
+#fuExtension .couponGan .bWCou .rightNaction .time {
+  color: #999;
+  font-size: 27rpx;
+}
+#fuExtension .choosePay {
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f5f5f5;
+}
+#fuExtension .choosePay image {
+  width: 100%;
+  height: 70rpx;
+}

@@ -1,0 +1,54 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-12 09:51:24 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-12 09:51:24 
+    技师编辑头衔
+*/ -->
+<view id="fuTeachTitle">
+
+    <!--  -->
+    <view class="navTap">
+        填写个人头衔
+    </view>
+    <view class="child" wx:for="{{post}}" wx:key="{{index}}">
+        <span class="name">头衔{{index+1}}</span>
+        <span class="val">
+            <input value="{{item}}" bindinput="changeFN" data-index="{{index}}" />
+            
+
+        </span>
+    </view>
+
+    <!--  -->
+    <view class="navTap">
+        示例：
+    </view>
+    <view class="teacher">
+        <image mode="aspectFill" src="{{dataInfo.HeadPortrait}}" />
+        <span class="contant">
+            <view class="name_tip">
+                {{dataInfo.Name}}
+                <span class="vip">
+                    <image src="{{imgUrl+'vip.png'}}" />
+                </span>
+                <span class="mini">签约头疗师</span>
+            </view>
+            <view class="text">
+                {{dataInfo.GradeName}} | 从业{{dataInfo.WorkYeas}}年
+            </view>
+            <view class="text">
+                <van-rate value="{{5}}" color="#ff4444" size="13" />
+            </view>
+            <view class="text" wx:for="{{post}}" wx:key="{{index}}">
+                {{item?item:'请填写头衔'}}
+            </view>
+        </span>
+    </view>
+
+    <!--  -->
+   <view class="btn" bindtap="submit">
+      <van-button >提交</van-button>
+   </view>
+
+</view>

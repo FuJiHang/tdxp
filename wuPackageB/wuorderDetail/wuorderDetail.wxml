@@ -1,0 +1,73 @@
+<view class='layout'>
+  <view class='header'>
+    <image src='http://img.hmeshop.cn/hmeshop_jxy/images/bg_order@2x.png' mode='widthFix'></image>
+    <view class='header-c df ais'>
+      <image src='http://img.hmeshop.cn/hmeshop_jxy/images/icon_order_01@2x.png' mode='widthFix'></image>
+      <text>{{data.StatusText}}</text>
+    </view>
+  </view>
+  
+  <!-- 用户信息 -->
+  <view class='userInfo df ais'>
+    <image src='http://img.hmeshop.cn/hmeshop_jxy/images/icon_address@2x.png' mode='widthFix'></image>
+    <view class='userInfo-inner flex'>
+      <view class='userInfo-innerT df ais-end'>
+        <text>{{data.ShipTo}}</text>
+        <text>{{data.Cellphone}}</text>
+      </view>
+      <view class='userInfo-innerB'>{{data.Address}}</view>
+    </view>
+    <!-- <image src='{{imgUrl+"more_1@2x.png"}}' mode='widthFix'></image> -->
+    <image src='' mode='widthFix'></image>
+  </view>
+  
+  <!-- 商店列表 -->
+  <view class='storeList' bindtap="handleDetail">
+    <view class='storeName df ais'>
+      <!-- <image src='{{imgUrl+"touxiang_03@2x.png"}}' mode='widthFix'></image> -->
+      <text>{{data.Suppliers[0].SupplierName}}</text>
+    </view>
+    <view class='goodsList df ais' wx:for='{{data.Suppliers[0].LineItems}}' wx:key="{{item}}">
+      <image src='{{item.Image}}' mode='widthFix'></image>
+      <view class='flex'>
+        <view class='goodsName to-line'>{{item.Name}}</view>
+        <view class='goodsType'>
+          <text>{{item.SkuText}}</text>
+          <!-- <text>尺寸：24cm</text> -->
+        </view>
+        <view class='df ais jct-between goodsPrice'>
+          <text>￥ {{item.Price}}</text>
+          <text>x {{item.Amount}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- <view class='totalPrice df ais jct-end'>
+      <text>商品总价：</text>
+      <text>￥ {{data.OrderAmount}}</text>
+    </view> -->
+    <view class='realityPrice df ais jct-end'>
+      <text>实付款： </text>
+      <text>￥ {{data.OrderTotal}}</text>
+      <text>( 运费：￥ {{data.Freight}} )</text>
+    </view>
+  </view>
+
+  <!-- 订单信息 -->
+  <view class='orderInfo'>
+    <view class='df ais orderInfo-title'>订单信息</view>
+    <view class='df ais jct-between orderInfo-code'>
+      <view>订单编号</view>
+      <view class='df ais jct-end'>
+        <text>{{data.OrderId}}</text>
+        <text data-code='{{data.OrderId}}' bindtap='_setClipboard'>复制编号</text>
+      </view>
+    </view>
+    <view class='df ais jct-between orderInfo-time'>
+      <view>创建时间</view>
+      <view>
+        <text>{{data.OrderDate}}</text>
+        <!-- <text>15:20:53</text> -->
+      </view>
+    </view>
+  </view>
+</view>

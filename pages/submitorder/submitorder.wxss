@@ -1,0 +1,771 @@
+page {
+    background: #f5f5f5;
+    padding-bottom: 105rpx;
+    color: #212121;
+}
+
+.hdonglist::after,.hdonglist::before {
+    border: 6px solid transparent;
+    border-left: 6px solid #fff;
+    width: 0;
+    position: absolute;
+    right: 10px;
+    height: 0;
+    top: 45rpx;
+    content: ' ';
+}
+
+.hdonglist::before {
+    border-left-color: #bbbbbb;
+    right: 8px;
+    top: 45rpx;
+}
+
+.hdonglist1::after,.hdonglist1::before {
+    border: 6px solid transparent;
+    border-left: 6px solid #fff;
+    width: 0;
+    position: absolute;
+    right: 10px;
+    height: 0;
+    top: 75rpx;
+    content: ' ';
+}
+
+.hdonglist1::before {
+    border-left-color: #bbbbbb;
+    right: 8px;
+    top: 75rpx;
+}
+
+.hdonglist {
+    line-height: 40rpx;
+    padding-left: 25rpx;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+.hdonglist image {
+    width: 36rpx;
+    height: 40rpx;
+    margin-right: 30rpx;
+    margin-top: 40rpx;
+    display: inline-block;
+}
+
+.hdonglist .address {
+    font-size: 28rpx;
+    line-height: 40rpx;
+    margin-bottom: 16rpx;
+    color: #616161;
+}
+
+.xuanbg image {
+    width: 750rpx;
+    height: 11rpx;
+    display: block;
+}
+
+.xuanbg {
+    background: #fff;
+    padding: 0;
+    padding-top: 24rpx;
+    height: 11rpx;
+    overflow: hidden;
+}
+
+.orderlist {
+    margin-bottom: 18rpx;
+    background: #fff;
+    font-size: 14px;
+    padding-top: 24rpx;
+    margin-top: 24rpx;
+    border-bottom: 1rpx solid #e0e0e0;
+}
+
+.orderlisttile {
+    display: flex;
+    padding: 0 24rpx 24rpx 24rpx;
+}
+
+.orderhao {
+    width: 540rpx;
+    font-size: 32rpx;
+}
+
+.orderzt {
+    width: 170rpx;
+    text-align: right;
+    color: #fe5722;
+}
+
+.orderlistcont {
+    padding: 32rpx 24rpx;
+    font-size: 28rpx;
+    display: flex;
+    border-bottom: 1rpx solid #e0e0e0;
+    background: #f5f5f5;
+}
+
+.ordername {
+    height: 80rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+    font-size: 28rpx;
+    color: #212121;
+    display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.orderlistright {
+    text-align: right;
+    width: 165rpx;
+}
+
+.orderlistcont image {
+    width: 152rpx;
+    height: 152rpx;
+    margin-right: 16rpx;
+    display: inline;
+}
+
+.orderlisc {
+    width: 360rpx;
+}
+
+.ordersize {
+    margin-top: 10rpx;
+    font-size: 28rpx;
+    color: #747474;
+    float: left;
+}
+
+.orderlistzong {
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: right;
+    padding: 0 24rpx;
+    font-size: 32rpx;
+    font-family: microsoft yahei;
+}
+
+.orderlistzong text {
+    font-size: 32rpx;
+    color: #212121;
+}
+
+.orderlistzong.song {
+    display: flex;
+    color: #424242;
+    font-size: 28rpx;
+    border-bottom: 1rpx solid #e0e0e0;
+}
+
+.orderlistzong.song image {
+    width: 56rpx;
+    height: 32rpx;
+    margin-right: 20rpx;
+    margin-top: 30rpx;
+}
+
+.yunfei {
+    padding: 24rpx;
+    display: flex;
+    line-height: 48rpx;
+}
+
+.bfengex {
+    border-top: 1rpx solid #ddd;
+}
+
+.submfs1 {
+    padding: 24rpx 0;
+}
+
+.submfs {
+    margin-top: 24rpx;
+    background: #fff;
+    position: relative;
+    border-bottom: 1rpx solid #e0e0e0;
+}
+
+.submfs .hdonglist {
+    font-size: 32rpx;
+    line-height: 40rpx;
+}
+
+.submfs .hdonglist::after,.submfs .hdonglist::before {
+    top: 50%;
+    margin-top: -13rpx;
+    font-size: 18px;
+}
+
+.yunfeir {
+    font-size: 28rpx;
+    width: 500rpx;
+    line-height: 40rpx;
+    text-align: right;
+}
+
+.yunfeir text {
+    margin-top: 10rpx;
+    display: block;
+    margin-bottom: 10rpx;
+}
+
+.yunfeir text.help {
+    color: #bfbfbf;
+    display: inline-block;
+}
+
+.yunfeir switch {
+    width: 70rpx;
+    height: 48rpx;
+    margin-left: 8rpx;
+    float: right;
+    margin-right: 24rpx;
+}
+
+.yunfeil {
+    width: 250rpx;
+    font-size: 32rpx;
+}
+
+.yunfei_benzhu {
+    width: 135rpx;
+    font-size: 32rpx;
+}
+
+.hdonglist .yf {
+    float: right;
+    margin-right: 32rpx;
+}
+
+.submfs1 .yunfei {
+    border: none;
+    padding: 0 24rpx;
+    line-height: 40rpx;
+    margin-bottom: 24rpx;
+}
+
+.jinge {
+    position: fixed;
+    bottom: 0px;
+    border-top: 1rpx solid #e0e0e0;
+    width: 750rpx;
+    z-index: 1;
+    background: #fff;
+    line-height: 48rpx;
+    text-align: right;
+    font-size: 14px;
+}
+
+.jinge .classtext {
+    margin-left: 24rpx;
+    line-height: 48rpx;
+    padding: 24rpx 0;
+    float: left;
+    font-size: 32rpx;
+    font-family: Microsoft yahei;
+}
+
+.jinge .classtext .price {
+    color: #ff5722;
+}
+
+.jinge .classtext .price text {
+    font-weight: bold;
+    font-size: 36rpx;
+    font-family: Arial;
+}
+
+.jinge button {
+    border: none;
+    display: block;
+    background: #ff5722;
+    color: #fff;
+    height: 98rpx;
+    line-height: 98rpx;
+    float: right;
+    font-size: 34rpx;
+    width: 50%;
+    border-radius: 0rpx;
+}
+
+.jinge button::after {
+    display: none;
+}
+
+.xuanzhed {
+    border-top: 1rpx solid #e0e0e0;
+}
+
+.hdonglist1 {
+    display: flex;
+}
+
+.classnames {
+    display: flex;
+    width: 600rpx;
+    flex-direction: column;
+}
+
+.yhname {
+    line-height: 40rpx;
+    font-size: 32rpx;
+    color: #212121;
+}
+
+.lqyhq {
+    position: fixed;
+    bottom: 0;
+    z-index: 99999;
+    left: 0;
+    overflow: hidden;
+    zoom: 1;
+    background: #fff;
+    font-size: 14px;
+    min-height: 560rpx;
+    max-height: 1100rpx;
+    overflow-y: scroll;
+}
+
+.lqyhqtitle .lqicon {
+    width: 64rpx;
+    height: 39rpx;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.lqicon1 {
+    width: 32rpx;
+    height: 32rpx;
+    float: right;
+}
+
+.lqyhqtitle {
+    padding: 25rpx 35rpx;
+    background: #fff;
+    width: 682rpx;
+    border-bottom: 1rpx solid #ddd;
+}
+
+.lqyhqtitle text {
+    margin-left: 20rpx;
+    margin-top: 3rpx;
+}
+
+.lqicon3 {
+    width: 679rpx;
+    margin: 0 auto;
+    height: 199rpx;
+    display: block;
+    margin-top: 24rpx;
+    margin-bottom: 24rpx;
+}
+
+.youhuiquan {
+    position: relative;
+    z-index: 99999;
+}
+
+.nrong {
+    display: flex;
+    position: absolute;
+    width: 680rpx;
+    top: 20rpx;
+    color: #fff;
+    padding: 0 35rpx;
+}
+
+.nrje {
+    width: 210rpx;
+    text-align: center;
+    height: 200rpx;
+    line-height: 150rpx;
+}
+
+.nrje text {
+    font-size: 48rpx;
+}
+
+.nrtime {
+    width: 430rpx;
+    margin-left: 20rpx;
+}
+
+.nrtimelqan {
+    border-top: 1rpx solid #fff;
+    text-align: right;
+    padding-top: 10rpx;
+    margin-top: 10rpx;
+}
+
+.nrtimelqan button {
+    border: none;
+    background: #fff;
+    width: 200rpx;
+    height: 60rpx;
+    display: inline-block;
+    line-height: 1.7;
+    color: #ff686d;
+}
+
+.nrtimelist {
+    font-size: 26rpx;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 30rpx;
+}
+
+.nrtimelist::before {
+    content: "";
+    width: 10rpx;
+    height: 10rpx;
+    background: #fff;
+    display: inline-block;
+    margin-right: 10rpx;
+    position: absolute;
+    top: 13rpx;
+    left: 10rpx;
+}
+
+.btmbg {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    z-index: 1000;
+    zoom: 1;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+
+.none {
+    display: none;
+}
+
+.nrtimelqan .nrtimelist {
+    float: left;
+    margin-top: 15rpx;
+}
+
+.gouwqnr {
+    max-height: 680rpx;
+    overflow-y: scroll;
+}
+
+.liuyab {
+    background: #fff;
+    height: 90rpx;
+    line-height: 90rpx;
+    padding-left: 25rpx;
+    display: flex;
+}
+
+.liuyabl {
+    width: 250rpx;
+}
+
+.liuyabr {
+    width: 500rpx;
+    padding-right: 24rpx;
+    font-family: microsoft yahei;
+}
+
+.liuyabr input {
+    color: #9e9e9e;
+    font-family: microsoft yahei;
+}
+
+.pointDiscount {
+    display: flex;
+    padding: 24rpx;
+    line-height: 48rpx;
+}
+
+.pointDiscountL {
+    font-size: 32rpx;
+    width: 70%;
+    text-align: left;
+    color: #bfbfbf;
+}
+
+.pointDiscountR {
+    font-size: 28rpx;
+    width: 28%;
+    text-align: right;
+}
+
+.pointDiscountL input {
+    background: #f9f9f9;
+    padding: 0 24rpx;
+    border-radius: 5rpx;
+}
+
+.order_yhj {
+    border-top: 1rpx #e0e0e0 solid;
+}
+
+.submit_count {
+    color: #212121;
+    font-size: 28rpx;
+    margin-right: 8rpx;
+}
+
+.jfdik .yunfeir {
+    width: 548rpx;
+    text-align: left;
+    line-height: 48rpx;
+}
+
+.jfdik .yunfeil {
+    width: 154rpx;
+    line-height: 50rpx;
+}
+
+.jfdik .yunfeir text {
+    line-height: 48rpx;
+    margin: 0;
+}
+
+.supplier {
+    overflow: hidden;
+    color: #747474;
+    line-height: 68rpx;
+    background: #fff;
+    border-top: 2rpx #eee solid;
+    border-bottom: 2rpx #eee solid;
+}
+
+.supplier-icon {
+    margin-left: 20rpx;
+    display: flex;
+    font-size: 28rpx;
+    line-height: 68rpx;
+    float: left;
+}
+
+.supplier-icon text {
+    margin-left: 25rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 500rpx;
+}
+
+.suppliertotal {
+    width: 100%;
+    text-align: right;
+    line-height: 80rpx;
+    font-size: 24rpx;
+}
+
+.suppliertotal text {
+    margin-right: 40rpx;
+    font-size: 26rpx;
+}
+
+.invoiceBox {
+    padding-top: 24rpx;
+    padding-right: 0;
+    padding-bottom: 0;
+    margin-top: 24rpx;
+    background: #ffffff;
+}
+
+.invoice_div {
+    border-bottom: 1rpx #f0f0f0 solid;
+    padding: 24rpx 24rpx;
+    overflow: hidden;
+    line-height: 48rpx;
+}
+
+.invoice_div label {
+    width: 176rpx;
+    float: left;
+    margin-right: 16rpx;
+    color: #515151;
+    font-size: 30rpx;
+    line-height: 56rpx;
+}
+
+.invoice_tab text {
+    background: #f0f0f0;
+    color: #515151;
+    font-size: 24rpx;
+    line-height: 56rpx;
+    text-align: center;
+    padding: 16rpx;
+    margin-right: 24rpx;
+    border-radius: 8rpx;
+}
+
+.invoice_tab text.active {
+    background: #ff5722;
+    color: #fff;
+}
+
+.sure-btn {
+    background: #ff5722;
+    position: fixed;
+    bottom: 0;
+    font-size: 32rpx;
+    padding: 24rpx;
+    line-height: 48rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.invoice_style {
+    float: left;
+    width: 120rpx;
+    margin-right: 48rpx;
+    font-size: 30rpx;
+    color: #515151;
+    line-height: 56rpx;
+}
+
+.invoice_style label {
+    width: 44rpx;
+    height: 44rpx;
+    margin-right: 8rpx;
+    float: left;
+}
+
+.invoice_style .sel_check {
+    width: 44rpx;
+    height: 44rpx;
+}
+
+.invoice_style text {
+    background: #ff5722;
+    line-height: 56rpx;
+    border-radius: 8rpx;
+    padding: 16rpx;
+    font-size: 24rpx;
+    color: #fff;
+}
+
+.input-name {
+    font-size: 30rpx;
+    line-height: 56rpx;
+}
+
+.message {
+    padding: 24rpx;
+    padding-right: 0;
+    background: #f0f0f0;
+    color: #747474;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    width: 100%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.tax-des {
+    float: left;
+    background: #fff8e1;
+    line-height: 40rpx;
+    color: #747474;
+    font-size: 24rpx;
+    margin-left: 192rpx;
+    margin-top: 16rpx;
+    padding-left: 8rpx;
+}
+
+.invoice_tab {
+    float: right;
+}
+
+.fontweight {
+    font-weight: 600;
+}
+
+.small-name {
+    font-size: 24rpx;
+    font-weight: normal;
+}
+
+.submfs1 .showblock {
+    border: none;
+    padding: 0 24rpx;
+    line-height: 40rpx;
+    margin-bottom: 24rpx;
+    display: block;
+}
+
+.pb0 {
+    padding-bottom: 0;
+}
+
+.goumai {
+    width: 276rpx;
+    background: linear-gradient(to right,#ff5722,#ff1a1a);
+    height: 98rpx;
+    text-align: center;
+    line-height: 98rpx;
+    color: #fff;
+    border-right: 0;
+}
+
+.goumai.shop {
+    background-image: linear-gradient(-90deg,#ff7a52,#ffa78c);
+}
+
+.distpicker {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 560rpx;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #fff;
+}
+
+.distpicker-btn {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 40rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background-color: #fafafa;
+    color: #586c94;
+}
+
+.distpicker-content {
+    box-sizing: border-box;
+    width: 100%;
+    height: 560rpx;
+    background-color: #fff;
+}
+
+.regionname {
+    display: block;
+    overflow: hidden;
+    width: 470rpx;
+    font-size: 32rpx;
+    line-height: 48rpx;
+    float: left;
+}
+
+.arrow_right_w {
+    font-size: 30rpx;
+    float: right;
+    width: 30rpx;
+}
+
+.company_width {
+    width: 206rpx!important;
+}

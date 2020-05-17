@@ -1,0 +1,123 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-12-04 09:32:57 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-12-04 09:32:57 
+    奖金池
+ */ -->
+<view id="fuRewardPool">
+    <view class="bgToday">
+        <image class="bg" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/rewardBg_01.png" mode="widthFix"></image>
+        <!--  -->
+        <!-- <view class="today" wx:if="{{!isShow}}">
+            <view class="val">今日中奖：
+
+                <span wx:for="{{dataInfo.LotteryList}}" wx:key="{{index}}">
+                    {{item.LotteryName}}
+                </span>
+
+                <span class="textAligin">获得{{dataInfo.AwardList[0].AwardName}}</span>
+            </view>
+        </view> -->
+
+
+    </view>
+    <!--  -->
+
+    <view class="openReward {{isShow==2?'del':''}}" wx:if="{{isShow&&!isEnd}}">
+        距开奖还有：
+        <span class="child">{{endTime.limitHours}}</span>:
+        <span class="child">{{endTime.limitMin}}</span>:
+        <span class="child">{{endTime.limitSecond}}</span>:
+        <span class="child">{{endTime.Millisecond}}</span>
+
+    </view>
+    <!--  -->
+    <view class="reward">
+        <view class="tip">{{dataInfo.Statu==2?'历史奖品':'今日奖品'}}</view>
+        <image src="{{dataInfo.AwardList[0].AwardPic}}" mode="widthFix" />
+
+
+    </view>
+    <!--  -->
+    <view class="rule">
+        <view class="navTop">
+            <view class="left">
+
+            </view>
+            抽奖规则
+            <view class="right">
+
+            </view>
+        </view>
+        <view class="contant">{{dataInfo.Description}}</view>
+    </view>
+    <!--  -->
+    <view class="record">
+        <view class="nav">
+            <view class="bgw">
+                <span class="child {{isChoose==index?'isChoose':''}}" bindtap="changeFN" data-index="{{index}}"
+                    wx:for="{{navTop}}" wx:key="{{index}}">
+                    {{item}}
+                </span>
+            </view>
+
+        </view>
+
+
+        <view class="table">
+            <view class="top">
+                <span class="child">头像</span>
+                <span class="child {{!isChoose?'max':''}}">名字</span>
+
+                <span wx:if="{{isChoose}}" class="child max">获得奖品</span>
+                <span class="child">{{!isChoose?'参与时间':'开奖时间'}}</span>
+
+
+            </view>
+
+            <view class="scroll">
+                <scroll-view scroll-with-animation="true" scroll-into-view="{{!isChoose?scrollTopP:scrollTopH}}"
+                    scroll-y="true">
+                    <!-- id="{{'to'+index}}" -->
+                    <view class="list"  wx:for="{{!isChoose?getPeoList.data:getHisList.data}}"
+                        wx:key="{{index}}">
+                        <span class="child">
+                            <image src="{{item.Picture}}" mode="aspectFill" />
+                        </span>
+                        <span class="child {{!isChoose?'max':''}}">{{item.UserName}}</span>
+                        <span class="child max" wx:if="{{isChoose}}">{{item.AwardName}}</span>
+                        <span class="child">{{dataInfo.Statu==2?item.TradeDateEnd:item.TradeDate}}</span>
+                    </view>
+                </scroll-view>
+                <!-- <view class="menChen"></view> -->
+            </view>
+
+
+        </view>
+    </view>
+
+    <!--  -->
+    <view class="joinIn" wx:if="{{!isEnd}}">
+        <span class="width" bindtap="joinFN">
+            <van-button round>立即参与</van-button>
+        </span>
+
+
+    </view>
+
+    <van-popup show="{{showGet}}" bindtap="onCloseP" position="bottom" bind:close="onCloseP">
+        <view class="alert" catchtap>
+            <image class="bg" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/getRewod.png" mode="widthFix"></image>
+            <image class="product" src="{{dataInfo.AwardList[0].AwardPic}}" mode="aspectFill"></image>
+            <view class="name">
+                <view>恭喜您</view>
+                获得{{dataInfo.AwardList[0].AwardName}}
+            </view>
+            <view class="get" bindtap="toFN"></view>
+            <view class="close" bindtap="onCloseP"></view>
+        </view>
+
+    </van-popup>
+
+</view>

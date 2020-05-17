@@ -1,0 +1,482 @@
+page{
+    height: 100%;
+    overflow: hidden;
+}
+#fuOrderDetail{
+    font-size: 26rpx;
+    color: #666;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .addpic{
+        padding: 20rpx;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        font-size: 28rpx;
+        border-bottom: 1px solid rgb(246, 246, 246);
+        .inp{
+            margin-left: 20rpx;
+            flex: 1;
+            input{
+                width: 100%;
+            }
+        }
+        .van-button{
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            margin: 0 20rpx;
+            font-size: 50rpx;
+            border:0;
+    
+        }
+    }
+    .addOk{
+        .van-button{
+            width: 100%;
+            border:none;
+            background: #F56F68;
+            color: white;
+        }
+    }
+    // 内容
+    .contantOD{
+        flex: 1;
+        overflow: auto ;
+        // 订单信息
+        .navTopOD{
+            background: white;
+            padding: 20rpx 20rpx 0 0;
+            box-sizing: border-box;
+            font-size: 28rpx;
+            color: #999;
+            
+            .bW{
+                padding-bottom: 20rpx;
+                box-sizing: border-box;
+                margin-left: 20rpx;
+                border-bottom: 1px solid rgb(240, 240, 240);
+            }
+            .orderId{
+                display: flex;
+                align-items: center;
+                margin-bottom: 10rpx;
+                .val{
+                    margin-left: 30rpx;
+                    flex: 1;
+                }
+                .state{
+                    color: #43CC5A;
+                }
+            }
+            .payTime{
+                .val{
+                    margin-left: 30rpx;
+                }
+            }
+        }
+        // 预约信息
+        .appoint{
+            background: white;
+            box-sizing: border-box;
+            padding-bottom: 0.01rpx;
+            .navChild{
+                display: flex;
+                align-items: center;
+                padding: 20rpx;
+                box-sizing: border-box;
+                .name{
+                    flex: 1;
+                    font-size: 31rpx;
+                    font-weight: bold;
+                }
+                .time{
+                    color: #61B6FD;
+                }
+            }
+            .appointList{
+                background: #f8f8f8;
+                padding: 20rpx 20rpx 10rpx;
+                display: flex;
+                margin: 0 20rpx 20rpx;
+                box-sizing: border-box;
+                .bW{
+                    background: white;
+                    height: 20rpx;
+                }
+                image{
+                    height: 140rpx;
+                    width: 140rpx;
+                }
+                .contant{
+                    flex: 1;
+                    margin-left: 20rpx;
+                    .mB{
+                        font-size: 28rpx;
+                        margin-bottom: 10rpx;
+                    }
+                    .name_mon{
+                        margin-bottom: 20rpx  !important;
+                        display: flex;
+                        .name{
+                            font-weight: bold;
+                            font-size: 30rpx;
+                            flex: 1;
+     
+                                display:-webkit-box;
+                            -webkit-line-clamp: 2; //超出多少行
+                            overflow: hidden;
+                            -webkit-box-orient: vertical;
+                            word-break:break-all;
+
+                        }
+                        .mon{
+                            margin-left: 5rpx;
+                            font-size: 30rpx;
+                            color: #F56F68;
+                        }
+                    }
+                    
+                    .address{
+                        color: #999999; 
+                    }
+                    .code{
+                        color: #F56F68;
+                    }
+                    .disAC{
+                        display: flex;
+                        align-items: center;
+                    }
+                    .img{
+                        margin-right: 8rpx; 
+                        height: 35rpx;
+                        width: 35rpx;
+                    }
+                    .time{
+                        display: flex;
+                        align-items: center;
+                        color: #61B6FD;
+                        margin-bottom: 10rpx;
+                        .upgrade{
+                            flex: 1;
+                        }
+                        .van-button{
+                            background: #F56F68;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+        // 个人信息
+        .info{
+            background: white;
+            padding-bottom: 20rpx;
+            box-sizing: border-box;
+            .navChild{
+                font-size: 31rpx;
+                font-weight: bold;
+                padding: 0 20rpx 20rpx;
+                box-sizing: border-box;
+            }
+            .childList{
+                color: #999;
+                font-size: 28rpx; 
+                box-sizing: border-box;
+                padding: 0 20rpx 8rpx;
+                display: flex;
+                .name{
+                    width: 120rpx;
+                }
+                .val{
+                    margin-left: 30rpx;
+                }
+            }
+        }
+    }
+
+    // 优惠券
+    .couponPE{
+        padding: 20rpx;
+        box-sizing: border-box;
+        background: white;
+        margin: 20rpx 0;
+        display: flex;
+        align-items: center;
+        .name{
+            flex: 1;
+            font-size: 28rpx;
+        }
+        .val{
+            margin: 0 10rpx;
+            color: #999;
+        }
+        .van-icon{
+            margin-top: 5rpx;
+        }
+    }
+
+    .couponGan{
+        margin: 10rpx 20rpx;
+        box-sizing: border-box;
+        padding: 30rpx 50rpx 30rpx 30rpx;
+        background: rgb(255, 113, 113);
+        position: relative;
+        overflow: hidden;
+        .typeName{
+            font-size: 24rpx;
+            position: absolute;
+            top: 15rpx;
+            left: -50rpx;
+            color: white;
+            padding: 5rpx 50rpx;
+            box-sizing: border-box;
+            background: #f9b552;
+            transform: rotate(-35deg);
+        }
+        .yuan{
+            right: -35rpx;
+            position: absolute;
+            top:0;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            .aaaa{
+                border-radius: 50%;
+                background: #F7F7F7;
+                width:70rpx;
+                height:70rpx;
+            }
+        }
+        .bWCou{
+            background: white;
+            position: relative;
+            display: flex;
+            align-items: center;
+            .juchi{
+                left: 0;
+                overflow: hidden;
+                position: absolute;
+                min-width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .child{
+                    width: 10rpx;
+                    height: 10rpx;
+                    border-radius: 50%;
+                    background: rgb(255, 113, 113);
+                }
+            }
+            .top{
+                top: -5rpx;
+            }
+            .btn{
+                bottom: -5rpx;
+            }
+            .left{
+                min-height: 100%;
+                left: -5rpx;
+                top: 0;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .leftNaction{
+                padding: 55rpx 30rpx 65rpx;
+                box-sizing: border-box;
+                font-size: 65rpx;
+                color: rgb(255, 113, 113);
+                font-weight: 700;
+                span{
+                    font-size: 30rpx;
+                }
+            }
+            .rightNaction{
+                flex: 1;
+                margin-left: 10rpx;
+                padding-right: 20rpx;
+                box-sizing: border-box;
+                .name{
+                    font-size: 31rpx;
+                    display:-webkit-box;
+                    -webkit-line-clamp: 2; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break:break-all;
+                    span{
+                        background: linear-gradient(#fff, rgb(255, 238, 238),#fff);
+                    }
+                }
+                .vip{
+                    color: #999;
+                    font-size: 29rpx;
+                    margin: 10rpx 0;
+                }
+                .time{
+                    color: #999;
+                    font-size: 27rpx;
+                }
+            }
+        }
+    }
+    
+
+    .couponGanT{
+        margin: 10rpx 20rpx;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        .letfCon{
+            flex: 1;
+            background: #FF6262;
+            padding: 20rpx;
+            box-sizing: border-box;
+            border-radius: 10rpx;
+            color: white;
+            border-right: 1px dashed #fff;
+            
+            .contant{
+                border-radius: 10rpx;
+                border:1px solid #fff;
+                padding: 20rpx;
+                box-sizing: border-box;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            .name{
+                text-align: center;
+                font-size: 40rpx;
+                span{
+                    font-size: 30rpx;
+                }
+                font-weight: 700;
+            }
+            .role{
+                display:-webkit-box;
+                -webkit-line-clamp: 2; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break:break-all;
+                font-size: 28rpx;
+                margin: 10rpx 10rpx 5rpx;
+            }   
+            .time{
+                flex: 1;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-end;
+            }
+        }
+        .rightCon{
+            padding: 15rpx;
+            box-sizing: border-box;
+            background: #FF6262;
+            border-radius: 10rpx;
+            width: 33.33%;
+            .contantR{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+                text-align: center;
+                border-radius: 10rpx;
+                background: white;
+            }
+            .buyName{
+                padding-top: 10rpx;
+                color: #999;
+                font-size: 32rpx;
+            }
+            .pirce{
+                font-size: 35rpx;
+                margin: 8rpx 0 16rpx;
+            }
+            .btn{
+                margin: 0 20rpx;
+                padding: 5rpx 30rpx;
+                box-sizing: border-box;
+                background: #FF6262;
+                color: white;
+                border-radius: 20rpx;
+            }
+        }
+        .middren{
+            z-index: 2;
+            border-radius: 10rpx;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            top: 0;left: -40rpx;
+            height: 100%;
+            .fenSe{
+                padding: 20rpx;
+                border-radius: 50%;
+                border:1px solid #fff;
+                background: #FF6262;
+                position: relative;
+                .bg{
+                    border-radius: 50%;
+                    background: white;
+                    width: 40rpx;
+                    height: 40rpx;
+                }
+            }
+            .fenSe::before{
+                position: absolute;
+                content: '';
+                top: -5rpx;
+                right:calc(20rpx + 1px) ; 
+                height:10rpx;
+                width: 20rpx;
+                background: #FF6262;
+            }
+            .fenSe::after{
+                position: absolute;
+                content: '';
+                bottom: -5rpx;
+                right:calc(20rpx + 1px) ;
+                height: 10rpx;
+                width: 20rpx;
+                background: #FF6262;
+            }
+        }
+    }
+
+
+
+    // 底部
+    .btnOD{
+        padding: 20rpx;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        background: white;
+        .money{
+            font-size: 30rpx;
+            color: #999;
+            display: flex;
+            align-items: center;
+            flex: 1;
+            .num{
+                color: #F56F68;
+            }
+        }
+        .van-button{ 
+            font-size: 28rpx;
+            color: #666666;
+            border:1px solid rgb(233, 233, 233);
+            border-radius: 10rpx;
+            background: none;
+        }
+        .red{
+            color: #F56F68;
+            font-size: 28rpx;
+        }
+    }
+}

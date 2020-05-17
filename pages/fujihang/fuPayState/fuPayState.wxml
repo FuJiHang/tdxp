@@ -1,0 +1,50 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-15 20:52:44 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-04-15 20:52:44 
+    支付状态
+*/ -->
+<view id="fuPayState">
+
+    <!--  -->
+    <view class="image">
+        <image src="../../../images/ok.png" mode="aspectFill"/>
+    </view>
+    
+    <view class="name">
+        已支付
+    </view>
+    <view class="money">
+        共支付金额<span class="num">￥{{money}}</span>
+    </view>
+
+    <view class="btn">
+        <view class="button red">
+            <van-button bindtap="toFN" data-index="{{0}}">查看订单</van-button> 
+        </view>
+        <view class="button index">
+            <van-button bindtap="toFN" data-index="{{1}}">返回首页</van-button>
+        </view>
+    </view>
+
+
+    <!-- 弹窗 -->
+    <van-popup custom-style="background:none;height:100%;" 	 show="{{showC}}" bindtap="onCloseP" position="bottom" bind:close="onCloseP">
+        <span class="img">
+            <image style="width:100%;" mode="widthFix" src="{{imgUrl+'PinJiaFX.png'}}" />
+            <view class="tip" bindtap="toFFN" data-url="/fuPackageA/fuEImgGai/fuEImgGai">
+                * 点击查看红包领取细则
+            </view>
+            <view class="btn">
+                <span class="child" bindtap="tipFN">
+                    以 后 再 说
+                </span>
+                  <span class="child wihte" bindtap="toFFN" data-type="1" data-url="/fuPackageA/fuEvaluatNew/fuEvaluatNew">
+                    立 即 评 价
+                </span>
+            </view>
+        </span>
+        
+    </van-popup>
+</view>

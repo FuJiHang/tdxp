@@ -1,0 +1,48 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-15 10:43:17 
+ * @Last Modified by: fujihang
+ * @Last Modified time: 2019-04-15 10:43:39
+    审核列表
+ */ -->
+
+<view id="fuExamine">
+    
+
+    <!-- 功能 -->
+    <van-tabs class="van_order"  line-width='20' color="#F56F68"  active="{{ active }}" bind:change="onChange" swipeable>
+        <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+            
+   
+            
+            <scroll-view scrolltolower="150" scroll-y="true" bindscrolltolower="getDataR" wx:if="{{active==index}}">
+                <view class="conantTeam" wx:for="{{functionList[active].data}}" data-index="{{index}}" wx:key="{{index}}" bindtap="toFN">
+                    <view class="teamFu">
+                        <image  class="headImg"  src="{{item.Picture?item.Picture:item.StoreImages}}"/>
+                        <view class="contant">
+                            <view class="name_cla">
+                                <span class="name">{{item.UserName}}</span>
+                                <span class="cla" >申请成为
+                                    <text class="red" wx:if="{{item.fSF==0}}">技师</text>
+                                    <text class="red" wx:elif="{{item.fSF==1}}">分校弟子</text>
+                                    <text class="red" wx:else>店主</text>
+                                </span>
+                            </view>
+                            <view class="shen_phone">
+                                <span class="shen">省代</span>
+                                <span class="phone">{{item.CellPhone}}</span>
+                            </view>
+                        </view>
+                        <span class="jt " wx:if="{{!active}}">
+                            <van-icon name="arrow" />
+                        </span>
+                    </view>
+                </view>
+
+                <view class="noMore" wx:if="{{functionList[active].finish}}">
+                    没有更多的了~~~
+                </view>
+            </scroll-view>
+        </van-tab>
+    </van-tabs>
+</view>

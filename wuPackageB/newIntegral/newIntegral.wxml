@@ -1,0 +1,32 @@
+<view class="newIntegral">
+  <!-- 头部 -->
+  <view class="nav">
+    <block wx:for="{{nav}}" wx:key="{{item}}">
+      <view class="nav_title {{index==nums?'active':''}}" data-index="{{index}}" bindtap="handleNav">{{item.name}}</view>
+    </block>
+  </view>
+
+  <!-- 列表 -->
+  <view class="content">
+    <block wx:for="{{list}}" wx:key="{{item}}">
+      <view class="list">
+        <view class="numbers">
+          <text>单号:</text>
+          <text>{{item.danhao}}</text>
+          <text class="red_num" wx:if="{{nums==0}}">+{{item.jifen}}</text>
+          <text class="red_num" wx:else>-{{item.jifen}}</text>
+        </view>
+        <view class="main">
+          <image class="list_img" src="{{item.img}}"></image>
+          <view class="main_wrap">
+            <text class="main_title">{{item.title}}</text>
+            <text class="main_num">x{{item.num}}</text>
+          </view>
+          <view class="timer">{{item.time}}</view>
+        </view>
+      </view>
+    </block>
+      
+  </view>
+
+</view>

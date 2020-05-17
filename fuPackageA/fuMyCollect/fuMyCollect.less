@@ -1,0 +1,303 @@
+
+
+page{
+    height: 100%;
+    // overflow: hidden;
+}
+#fuMyCollect{
+    font-size: 26rpx;
+    color: #666;
+
+    // 搜索框
+    .seachMTAM{
+        background: white;
+        display: flex;
+        align-items: center;
+        padding: 20rpx;
+        box-sizing: border-box;
+        .seachbg{
+            margin-right: 10rpx;
+            flex: 1;
+            align-items: center;
+            display: flex;
+            background: #EEEEEE;
+            border-radius: 40rpx;
+            image{
+                margin-left: 20rpx;
+                height: 40rpx;
+                width: 40rpx;
+            }
+            input{
+                font-size: 28rpx;
+                margin:0 20rpx;
+                flex: 1;
+                height: 60rpx;
+            }
+        }
+        .van-button{
+            border:none;
+            background: none;
+        }
+    }
+
+  
+    scroll-view{
+        ::-webkit-scrollbar{
+            display:none;
+         }
+    }
+
+    // 
+    // 功能
+    .van_order{
+        flex: 1;
+        color: #666;
+        overflow: hidden;
+        .van-tabs{
+            height: 100%;
+            overflow: hidden;
+            .van-tab{
+                line-height: 35px;
+            }
+        }
+        .van-tabs__content{
+            height: 100%;
+            overflow: hidden;
+            padding-bottom: 44px ;  
+            box-sizing: border-box;
+            .van-tabs__track{
+                height: 100%;
+                overflow: hidden;
+                .van-tab__pane{
+                    height: 100% ; 
+                    overflow: hidden !important;
+                    scroll-view{
+                        -webkit-overflow-scrolling: touch;
+                        height: 100%;
+                        .noMore{
+                            font-size: 28rpx;
+                            color: #999;
+                            padding: 20rpx;
+                            text-align: center;
+                            box-sizing: border-box;
+                        }
+                    }
+                    .paiLie{
+                        padding:  10rpx 10rpx 0;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+        }
+       
+        
+ 
+        
+       
+
+        
+    }
+
+    // 
+    .storeChildSHU{
+        padding:10rpx;
+        box-sizing: border-box;
+        display: flex;
+        align-items: flex-start;
+        background: white;
+        .storeImg{
+            width:  160rpx;
+            height: 160rpx;
+        }
+        .contantS{
+            margin-left: 10rpx;
+            flex: 1;
+            .name{
+                font-size: 30rpx;
+                display:-webkit-box;
+                -webkit-line-clamp: 1; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break:break-all;
+                font-weight: 800;
+                margin-bottom: 5rpx;
+            }
+            .eva{
+                display: flex;
+                align-items: center;
+                image{
+                    width: 20rpx;
+                    height: 20rpx;
+                    margin-right: 5rpx;
+                }
+            }
+            .coup{
+                padding:10rpx;
+                box-sizing: border-box;
+                margin-bottom: 10rpx;
+                span{
+                    padding:2rpx 10rpx;
+                    box-sizing: border-box;
+                    color: #F56F68;
+                    border:1px solid #F56F68;
+                    border-radius: 10rpx;
+                }
+            }
+            .bottomC{
+                display: flex;
+                align-items: center;
+               
+                image{
+                    height: 30rpx;
+                    width: 30rpx;
+                }
+                .flexC{
+                    font-size: 22rpx;
+                    // flex: 1;
+                    color: #999;
+                    margin: 0 10rpx 0 8rpx;
+                }
+                .mi{
+                    margin-left: 10rpx;
+                    color: #F56F68;
+                }
+            }
+            .groupB{
+                display: flex;
+                align-items: center;
+                padding: 10rpx 0;
+                box-sizing: border-box;
+                border-bottom: 1px solid rgb(248, 248, 248);
+                font-size: 30rpx;
+                image{
+                    width: 35rpx;
+                    height: 35rpx;
+                    margin-right: 10rpx;
+                }
+                .flex{
+                    flex: 1;
+                    .tip{
+                        
+                        font-size: 22rpx;
+                        border-radius: 10rpx;
+                        padding:0 20rpx ;
+                        box-sizing: border-box;
+                        margin-left: 10rpx;
+                        color: #999;
+                        border:1px solid rgb(241, 241, 241);
+                    }
+                }
+            }
+            .yuyue{
+                .tip{
+                    color: #F56F68 !important;
+                    border-color: #F56F68 !important;
+                }
+                .num{
+                    color: #999;
+                    margin-right: 10rpx;
+                }
+            }
+            .people{
+                display: flex;
+                align-items: center;
+                margin: 10rpx 0; 
+                box-sizing: border-box;
+                .laba{
+                    width: 35rpx;
+                    height: 35rpx;
+                }
+                .flex{
+                    flex: 1;
+                    margin-left: 10rpx;
+                    display:-webkit-box;
+                    -webkit-line-clamp: 1; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break:break-all;
+                    font-size: 30rpx;
+                }
+            }
+        }
+    }
+
+    // 
+    .teacher{
+        background: white;
+        padding: 20rpx;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10rpx;
+        image{
+            height: 160rpx;
+            width: 160rpx;
+        }
+        .contant{
+            flex: 1;
+            margin-left: 20rpx;
+            .name{
+                font-size: 34rpx;
+                .join{
+                    margin-left: 20rpx;
+                    color: #999;
+                    font-size: 28rpx;
+                }
+            }
+            .detail{
+                font-size: 30rpx;
+                display:-webkit-box;
+                -webkit-line-clamp: 1; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break:break-all;
+                margin: 10rpx 0;
+            }
+        }
+    }
+
+    // 
+    .dynamic{
+        background: white;
+        padding: 20rpx;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10rpx;
+        image{
+            height: 160rpx;
+            width: 160rpx;
+        }
+        .contant{
+            height: 160rpx;
+            flex: 1;
+            margin-left: 20rpx;
+            display: flex;
+            flex-direction: column;
+            .name{
+                font-size: 34rpx;
+                display: flex;
+                align-items: center;
+                margin-bottom: 10rpx;
+                .join{
+                    font-size: 24rpx;
+                    flex: 1;
+                    text-align: right;
+                    color: #999;
+                }
+            }
+           .detail{
+               flex: 1;
+            
+           }
+        }
+    }
+
+    .noMore{
+        font-size: 28rpx;
+        color: #999;
+        padding: 20rpx;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}

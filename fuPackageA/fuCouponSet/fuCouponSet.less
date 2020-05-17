@@ -1,0 +1,168 @@
+
+page{
+    height: 100%;
+    font-size: 26rpx;
+    position: relative;
+    background: white;
+    
+}
+
+#fuCouponSet{
+    position: relative;
+    color: #666;
+    padding-bottom: 100rpx;
+    box-sizing: border-box;
+    // 
+    .couponGanT{
+        margin: 10rpx 20rpx;
+        display: flex;
+        align-items: center;
+        .van-checkbox{
+            margin-right: 30rpx;
+        }
+        .navtion{
+            position: relative;
+            overflow: hidden;
+            display: flex;
+        }
+        
+       
+        .letfCon{
+            flex: 1;
+            background: #FF6262;
+            padding: 20rpx;
+            box-sizing: border-box;
+            border-radius: 10rpx;
+            color: white;
+            border-right: 1px dashed #fff;
+            
+            .contant{
+                border-radius: 10rpx;
+                border:1px solid #fff;
+                padding: 20rpx;
+                box-sizing: border-box;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            .name{
+                text-align: center;
+                font-size: 40rpx;
+                span{
+                    font-size: 30rpx;
+                }
+                font-weight: 700;
+            }
+            .role{
+                display:-webkit-box;
+                -webkit-line-clamp: 2; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break:break-all;
+                font-size: 28rpx;
+                margin: 10rpx 10rpx 5rpx;
+            }   
+            .time{
+                flex: 1;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-end;
+            }
+        }
+        .rightCon{
+            padding: 15rpx;
+            box-sizing: border-box;
+            background: #FF6262;
+            border-radius: 10rpx;
+            width: 37%;
+            .contantR{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+                text-align: center;
+                border-radius: 10rpx;
+                background: white;
+            }
+            .buyName{
+                padding-top: 10rpx;
+                color: #999;
+                font-size: 32rpx;
+            }
+            .pirce{
+                font-size: 35rpx;
+                margin: 8rpx 0 16rpx;
+            }
+            .btnc{
+                margin: 0 20rpx;
+                padding: 5rpx 30rpx;
+                box-sizing: border-box;
+                background: #FF6262;
+                color: white;
+                border-radius: 20rpx;
+            }
+        }
+        .middren{
+            z-index: 2;
+            border-radius: 10rpx;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            top: 0;left: -40rpx;
+            height: 100%;
+            .fenSe{
+                padding: 20rpx;
+                border-radius: 50%;
+                border:1px solid #fff;
+                background: #FF6262;
+                position: relative;
+                .bg{
+                    border-radius: 50%;
+                    background: white;
+                    width: 40rpx;
+                    height: 40rpx;
+                }
+            }
+            .fenSe::before{
+                position: absolute;
+                content: '';
+                top: -5rpx;
+                right:calc(20rpx + 1px) ; 
+                height:10rpx;
+                width: 20rpx;
+                background: #FF6262;
+            }
+            .fenSe::after{
+                position: absolute;
+                content: '';
+                bottom: -5rpx;
+                right:calc(20rpx + 1px) ;
+                height: 10rpx;
+                width: 20rpx;
+                background: #FF6262;
+            }
+        }
+    }
+    // 
+    .noMore{
+        font-size: 28rpx;
+        color: #999;
+        padding: 20rpx 20rpx 200rpx;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    // 
+    .btn{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 9;
+        .van-button{
+            width: 100%;
+            border:none;
+            border-radius: 0;
+            color: white;
+            background: #f56e68;
+        }
+    }
+}

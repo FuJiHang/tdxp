@@ -1,0 +1,114 @@
+
+page{
+    height: 100%;
+    position: relative;
+    padding-top: 50px;
+    box-sizing: border-box;
+    background: white;
+
+}
+
+// 导航条
+#fuTeacher{
+  
+    font-size: 26rpx;
+    color: #666; 
+
+    // 搜索框
+    .seachMTAM{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: white;
+        display: flex;
+        align-items: center;
+        padding: 20rpx;
+        box-sizing: border-box;
+        z-index: 9;
+        .seachbg{
+            margin-right: 10rpx;
+            flex: 1;
+            align-items: center;
+            display: flex;
+            background: #EEEEEE;
+            border-radius: 40rpx;
+            image{
+                margin-left: 20rpx;
+                height: 40rpx;
+                width: 40rpx;
+            }
+            input{
+                font-size: 28rpx;
+                margin:0 20rpx;
+                flex: 1;
+                height: 60rpx;
+            }
+        }
+        .van-button{
+            border:none;
+            background: none;
+        }
+    }
+
+    // 
+    .contantKan{
+        padding: 0 8rpx;
+        box-sizing: border-box;
+        .rightK{
+            float: right;
+        }
+        .leftK{
+            float: left;
+        }
+        .leftK,.rightK{
+            width: 50%;
+            padding: 0 0 10rpx;
+            box-sizing: border-box;
+            .child{
+                margin: 0 8rpx 10rpx;
+                background: white;
+                border-radius:15rpx;
+                overflow: hidden;
+                .logoImg{
+                    image{
+                        background: rgb(248, 180, 177);
+                        max-height: 800rpx;
+                        width: 100%;
+                    }
+                }
+                .name{
+                    margin: 0 18rpx;
+                    font-size: 32rpx;
+                    .join{
+                        font-size: 26rpx;
+                        color: #999;
+                    }
+                }
+                .detail{
+                    margin:8rpx 18rpx;
+                    box-sizing: border-box;
+                    display:-webkit-box;
+                    -webkit-line-clamp: 1; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break:break-all;
+                    font-size: 30rpx;
+                }
+                .xx{
+                    margin: 0 18rpx 10rpx;
+                }
+            }
+           
+        }
+    }
+    .noMore{
+        width: 100%;
+        font-size: 28rpx;
+        color: #999;
+        padding: 20rpx;
+        text-align: center;
+        box-sizing: border-box;
+        float: left;
+    }
+
+}

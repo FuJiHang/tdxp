@@ -1,0 +1,384 @@
+page{
+    height: 100%;
+    overflow: hidden;
+}
+
+.getUser{
+    position: absolute;
+    margin: 0 auto;
+    bottom: 60rpx;
+    background: #55b837;
+    color: #fff;
+    left: 0;right: 0;
+    width: 35%;
+    font-size: 35rpx;
+    border-radius: 50rpx;
+}
+#fuExtension{
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    font-size: 26rpx;
+
+  
+
+    .bgE{
+        top:0;
+        left:0;
+        position:absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .EnOrder{
+        z-index: 2;
+        position: relative;
+        height: 100%;
+        background: rgba(0,0,0,.2);
+        overflow: auto;
+        padding: 20rpx 20rpx 12%;
+        box-sizing: border-box;
+        // 门店信息
+        .storeApp{
+            background: white;
+            margin-bottom: 20rpx;
+            padding: 20rpx;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            image{
+                height: 120rpx;
+                width: 120rpx;
+            }
+            .contant{
+                flex: 1;
+                margin-left: 20rpx;
+                .name_juli{
+                    font-size: 30rpx;
+                    display: flex; 
+                    align-items: center;
+                    .juli{
+                        font-size: 28rpx;
+                        flex: 1;
+                        text-align: right;
+                        color: #61B6FD;
+                    }
+                }
+                .address{
+                    margin-top: 20rpx;
+                    color: #999;
+                    display: flex;
+                    align-items: center;
+                    image{
+                        margin-right: 10rpx;
+                        width: 30rpx;
+                        height: 30rpx;
+                    }
+                }
+            }
+        }
+        .fuPlaceContant{
+            flex: 1;
+            overflow: auto;
+        }
+        .navTopP{
+            background: white;
+            padding: 20rpx;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgb(240, 240, 240);
+            image{
+                height: 30rpx;
+                width: 30rpx;
+            }
+            .name{
+                font-weight: bold;
+                font-size: 30rpx;
+                margin-left: 20rpx;
+            }
+        }
+        .Project{
+            background: white;
+            .cont_nav{
+                padding: 20rpx;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                .name{
+                    flex: 1;
+                    font-size: 28rpx;
+                }
+                .time{
+                    color: #61B6FD;
+                    margin-right: 10rpx;
+                }
+                .van-icon{
+                    margin-top: 10rpx;
+                }
+            }
+            .cont_det{
+                margin: 15rpx 20rpx 0 20rpx ;
+                padding: 20rpx;
+                box-sizing: border-box;
+                align-items: center;
+                background: #f8f8f8;
+                display: flex;
+                image{
+                    height: 130rpx;
+                    width: 130rpx;
+                }
+                .detail{
+                    margin-left: 20rpx;
+                    flex: 1;
+                }
+                .name_men{
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 10rpx;
+                    .name{
+                        flex: 1;
+                        font-weight: bold;
+                        font-size: 30rpx;
+                    }
+                    .money{
+                        font-size: 28rpx;
+                        color: #F56F68;
+                    }
+                }
+                .company{
+                    margin-bottom: 10rpx;
+                }
+                .address{
+                    display: flex;
+                    align-items: center;
+                    image{
+                        margin-right: 5rpx;
+                        height: 25rpx;
+                        width: 25rpx;
+                    }
+                    color: #999;
+                }
+            }
+            .border{
+                height: 25rpx;
+                margin-left: 20rpx;
+                border-bottom: 1px solid rgb(240, 240, 240);
+
+            }
+        }
+        .personTop{
+            margin-top: 20rpx;
+        }
+        .personData{
+            background: white;
+            margin-left: 20rpx;
+            margin-bottom: 20rpx;
+            padding: 20rpx 20rpx 20rpx 0;
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            border-bottom: 1px solid rgb(240, 240, 240);
+            .name{
+                width: 25%;
+                font-size: 28rpx;
+            }
+            >input{
+                font-size: 26rpx;
+                color: #999;
+                display: flex;
+                align-items: center;
+                flex: 1;
+            }
+        }
+        .PlaceOk{
+            display: flex;
+            align-items: center;
+            background: white;
+            padding-left: 20rpx;
+            box-sizing: border-box;
+            .money{
+                font-size: 30rpx;
+                flex: 1;
+                color: #999;
+                .num{
+                    color: #F56F68;
+                }
+            }
+            .van-button{
+                border: none;
+                width: 300rpx;
+                background: #F56F68;
+                color: white;
+            }
+        }
+        .price_tip{
+            color: #F56F68;
+            text-align: center;
+            font-size: 35rpx;
+            box-sizing: border-box;
+            padding: 20rpx;      
+        }
+
+    }
+
+    .btn{
+        z-index: 5;
+        position: fixed;
+        bottom: 0;
+        width:100%;
+        display: flex;
+        left: 0;
+        align-items: center;
+        background: white;
+        .pirce{
+            margin-left: 20rpx;
+            flex: 1;
+            font-size: 30rpx;
+            color: #F56F68;
+        }
+        .van-button{
+            width: 240rpx;
+            border:none;
+            background: #F56F68 ;
+            color: white ;
+        }
+    }
+
+    .couponPE,.payMode{
+        padding: 20rpx;
+        box-sizing: border-box;
+        background: white;
+        margin: 20rpx 0;
+        display: flex;
+        align-items: center;
+        .name{
+            flex: 1;
+            font-size: 28rpx;
+        }
+        .val{
+            color: #999;
+        }
+    }
+    .gantan{
+        .val{
+            color: #999;
+        }
+        .van-icon{
+            margin-top: 5rpx;
+        }
+    }
+    
+
+    .couponGan{
+        margin: 10rpx 20rpx;
+        box-sizing: border-box;
+        padding: 30rpx 50rpx 30rpx 30rpx;
+        background: rgb(255, 113, 113);
+        position: relative;
+        overflow: hidden;
+        .typeName{
+            font-size: 24rpx;
+            position: absolute;
+            top: 15rpx;
+            left: -50rpx;
+            color: white;
+            padding: 5rpx 50rpx;
+            box-sizing: border-box;
+            background: #f9b552;
+            transform: rotate(-35deg);
+        }
+        .yuan{
+            right: -35rpx;
+            position: absolute;
+            top:0;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            .aaaa{
+                border-radius: 50%;
+                background: #F7F7F7;
+                width:70rpx;
+                height:70rpx;
+            }
+        }
+        .bWCou{
+            background: white;
+            position: relative;
+            display: flex;
+            align-items: center;
+            .juchi{
+                left: 0;
+                overflow: hidden;
+                position: absolute;
+                min-width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .child{
+                    width: 10rpx;
+                    height: 10rpx;
+                    border-radius: 50%;
+                    background: rgb(255, 113, 113);
+                }
+            }
+            .top{
+                top: -5rpx;
+            }
+            .btn{
+                bottom: -5rpx;
+            }
+            .left{
+                min-height: 100%;
+                left: -5rpx;
+                top: 0;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .leftNaction{
+                padding: 55rpx 30rpx 65rpx;
+                box-sizing: border-box;
+                font-size: 65rpx;
+                color: rgb(255, 113, 113);
+                font-weight: 700;
+                span{
+                    font-size: 30rpx;
+                }
+            }
+            .rightNaction{
+                flex: 1;
+                margin-left: 10rpx;
+                padding-right: 20rpx;
+                box-sizing: border-box;
+                .name{
+                    font-size: 31rpx;
+                    display:-webkit-box;
+                    -webkit-line-clamp: 2; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break:break-all;
+                    span{
+                        background: linear-gradient(#fff, rgb(255, 238, 238),#fff);
+                    }
+                }
+                .vip{
+                    color: #999;
+                    font-size: 29rpx;
+                    margin: 10rpx 0;
+                }
+                .time{
+                    color: #999;
+                    font-size: 27rpx;
+                }
+            }
+        }
+    }
+    .choosePay{
+        padding: 30rpx 20rpx;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgb(245, 245, 245);
+        image{
+            width: 100%;
+            height: 70rpx;
+        }
+    }
+}

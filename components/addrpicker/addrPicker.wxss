@@ -1,0 +1,55 @@
+/* components/addrPicker.wxss */
+/* components/addrPicker/addrPicker.wxss */
+.addr-box{
+  /* position: fixed; */
+  bottom: 0;
+  left: 0;
+  /* height: 100%;
+  width: 100%; */
+   width: 100%;
+  height: 100rpx;
+  font-size: 15px;
+  z-index: 100;
+  opacity: 1;
+  background: #fff;
+  /* background: red; */
+  text-align: center;
+}
+.btn-box{
+  /* padding: 20px;  */
+  display: flex;
+  position: fixed;
+  top: 20rpx;
+  /* left: 0; */
+  /* height: 100%; */
+  width: 100%;
+  /* top: 0; */
+  /* bottom: 0; */
+  /* right: 0; */
+ 
+  background: #fff;
+  color: #333;
+  z-index: 200;
+}
+.flex_1{
+  flex: 1;
+}
+.addr-cancel,.addr-sure{
+  padding: 8px 18px;
+  border: 1px solid #efefef;
+  border-radius: 4px;
+}
+.addr-sure{
+  color: #fff;
+  background: #49CB5F;
+  border-color: #49CB5F;
+}
+.addr-cover{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, .3);
+}

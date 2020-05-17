@@ -1,0 +1,199 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-20 18:21:48 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-20 18:21:48 
+    卡券详情
+ */ -->
+<view id='fuProductCou'>
+
+
+  <!--  -->
+  <swiper indicator-color="rgba(255,255,255,1)" indicator-active-color="#E96C59" style="height:{{imgheights[current]+'rpx'}}" indicator-dots="{{true}}" autoplay="{{true}}" circular="{{false}}" vertical="{{false}}" interval="{{4000}}" duration="{{500}}"
+    bindchange="bindchangeImg">
+    <swiper-item wx:for="{{background}}" wx:key="index" data-id='{{index}}'>
+      <image data-id='{{index}}' bindload="imageLoad" class='item-img' data-photoId="{{item.PhotoId}}" src="{{item+'?x-oss-process=image/resize,l_640'}}" mode="widthFix" data-categoryId="{{item.CategoryId}}" catchtap='clickImg'></image>
+    </swiper-item>
+  </swiper>
+
+  <!--  -->
+  <view class="navTop">
+    <view class="price_num">
+      <span class="pri">
+        <span class="mini">
+          ¥
+        </span>
+        {{project.Price}}
+      </span>
+      <span class="del">
+        ¥{{project.FightPrice}}
+      </span>
+      <span class="num">已售{{project.CouponSalesCount}}份</span>
+    </view>
+
+    <view class="address">
+      <span class="contant">
+        {{project.Name}}
+      </span>
+      <!-- onShare toFN-->
+      <span class="child" bindtap="onShare" data-to="/fuPackageA/fuStroeCode/fuStroeCode">
+        <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/homepage_erweima.png" mode="widthFix">
+        </image>
+
+        <view class="name">海报</view>
+      </span>
+      <button open-type="share">
+        <span class="child">
+          <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/homepage_share.png" mode="widthFix">
+          </image>
+          <view class="name">分享</view>
+        </span>
+      </button>
+
+    </view>
+  </view>
+
+  <!--  -->
+  <view class="storeFu" wx:if="{{!typeforList}}">
+    <image class="storeImg" src="{{getStore.StoreImages}}" mode="aspectFill"></image>
+    <span class="contant">
+      <view class="name">
+        <span class="flex">{{getStore.RegionName}}</span>
+      </view>
+      <view class="tip">
+        距您{{getStore.Distance}}，步行大概需要{{getStore.Time}}分钟
+      </view>
+    </span>
+    <span class="child" bindtap="openMap">
+      <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/addressKa.png" mode="widthFix"></image>
+
+
+    </span>
+    <span class="child" bindtap="phoneFN">
+      <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/kefu.png" mode="widthFix"></image>
+    </span>
+  </view>
+
+  <!-- 门店列表 -->
+  <view class="storeFu" wx:else>
+    <image class="storeImg" src="{{nowStroeInfo.StoreImages}}" mode="aspectFill"></image>
+    <span class="contant">
+      <view class="name">
+        <span class="flex">{{nowStroeInfo.Address}}</span>
+      </view>
+      <view class="tip">
+        距您{{nowStroeInfo.Distance}}
+      </view>
+    </span>
+    <span class="child" bindtap="listOpenMap" data-location="{{nowStroeInfo.Position}}">
+      <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/addressKa.png" mode="widthFix"></image>
+    </span>
+    <span class="child" bindtap="listPhoneFN" data-phone="{{nowStroeInfo.Tel}}">
+      <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/kefu.png" mode="widthFix"></image>
+    </span>
+  </view>
+  <view class="listBox" wx:if="{{typeforList}}">
+    <view class="listTips" bindtap="bindUnfold">
+      <view>更多</view>
+      <view class="{{isUnfold?'downArrow':'arrow'}}"></view>
+    </view>
+    <scroll-view class="list" scroll-y bindscrolltolower="scrollBottom" style="max-height:{{isUnfold?'350rpx':'0'}}">
+      <radio-group bindchange="radioChange">
+        <view class="storeFu" wx:for="{{storeList}}" wx:key="{{index}}">
+          <image class="storeImg" src="{{item.StoreImages}}" mode="aspectFill"></image>
+          <span class="contant">
+            <view class="name">
+              <span class="flex">{{item.Address}}</span>
+            </view>
+            <view class="tip">
+              距您{{item.Distance}}
+            </view>
+          </span>
+          <radio value="{{index}}"></radio>
+        </view>
+      </radio-group>
+
+    </scroll-view>
+  </view>
+ 
+
+  <!--  -->
+  <view class="navTopDet">
+    查看详情
+  </view>
+  <view class="detail">
+    <rich-text nodes="{{project.Info}}"></rich-text>
+  </view>
+
+
+  <view class="evaluate">
+    <view class="navTop" bindtap="toFNEVA">
+      <span class="flex">精选点评</span>
+      <van-icon name="arrow" size="35rpx" color="#999" />
+    </view>
+    <view class="evaChild" wx:for="{{project.Appraises}}" wx:key="{{index}}">
+      <view class="person">
+        <image src="{{item.UserPicture+'?x-oss-process=image/resize,l_640'}}" mode='aspectFill' />
+        <span class="contant">
+          <view class="name">
+            {{item.UserName}}
+            <span class="class">Lv5</span>
+          </view>
+          <view class="time">{{item.AddDate}}</view>
+          <view class="art">
+            技术分
+            <span class="star">
+              <image wx:for="{{item.TechnicalScore}}" wx:key="{{index}}" mode='aspectFit' src="{{imgUrl+'xinH.png'}}" />
+            </span>
+          </view>
+          <view class="service art">
+            服务分
+            <span class="star">
+              <image wx:for="{{item.ServiceScore}}" wx:key="{{index}}" mode='aspectFit' src="{{imgUrl+'xinH.png'}}" />
+            </span>
+          </view>
+          <!-- {
+            name:app.imgUrl+'haoping.png',
+            val:'好评',
+          },
+          {
+            name:app.imgUrl+'zhongping.png',
+            val:'中评',
+          },
+          {
+            name:app.imgUrl+'chaping.png',
+            val:'差评',
+          }, -->
+        </span>
+        <image wx:if="{{item.IsSpecial!='False'}}" class="bgImg" src="{{imgUrl+'zxhpS.png'}}" mode='aspectFit' />
+      </view>
+      <view class="evaText {{item.all?'':'shoushuo'}}">{{item.AppraiseText}}</view>
+      <view class="hide" bindtap="allFN" data-index="{{'getStore.Appraises['+index+'].all'}}" data-data="{{item.all}}">
+        {{item.all?'收起':'全文'}}
+      </view>
+      <view class="evaImg">
+        <image wx:for="{{item.Pictures}}" wx:for-item="ac" wx:for-index="aI" wx:key="{{aI}}" src="{{ac+'?x-oss-process=image/resize,l_640'}}" mode='aspectFill' />
+      </view>
+    </view>
+  </view>
+
+
+  <!--  -->
+  <view class="btnBot">
+    <span class="child" bindtap="toIndex" >
+      <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/homepage_shouye.png" mode="widthFix"></image>
+      <view class="name">首页</view>
+    </span>
+    <span class="child" bindtap="openMap">
+      <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/mendian.png" mode="widthFix"></image>
+      <view class="name">门店</view>
+    </span>
+    <span class="btn" bindtap="toBuy">
+      <van-button>立即购买</van-button>
+
+    </span>
+  </view>
+
+  <!-- 分享 -->
+  <share wx:if="{{isShow}}" shareInfo="{{shareInfo}}" bind:closeEvent="closeEvent"></share>
+</view>

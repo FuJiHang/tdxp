@@ -1,0 +1,60 @@
+page {
+  height: 100%;
+  font-size: 26rpx;
+  position: relative;
+}
+#fuMusic .Music {
+  display: none;
+}
+#fuMusic .list {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #f3f3f3;
+}
+#fuMusic .list image {
+  height: 140rpx;
+  width: 140rpx;
+}
+#fuMusic .list .contant {
+  flex: 1;
+}
+#fuMusic .list .contant .name_time {
+  display: flex;
+  align-items: center;
+}
+#fuMusic .list .contant .name_time .name {
+  flex: 1;
+}
+#fuMusic .list .contant .person {
+  margin-top: 20rpx;
+}
+#fuMusic .btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+}
+#fuMusic .btn .flex {
+  flex: 1;
+}
+#fuMusic .btn .van-button {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  color: white;
+  background: #f56e68;
+}
+#fuMusic .btn .cancal .van-button {
+  background: #ff5f25;
+}
+#fuMusic .noMore {
+  font-size: 28rpx;
+  color: #999;
+  padding: 20rpx 20rpx 200rpx;
+  text-align: center;
+  box-sizing: border-box;
+}

@@ -1,0 +1,495 @@
+
+
+page{
+    height: 100%;
+    // overflow: hidden;
+}
+#fuStoreG{
+    font-size: 26rpx;
+    color: #666;
+    // height: 100%;
+    // overflow: hidden;
+    // display: flex;
+    // flex-direction: column;
+
+    // 搜索框
+    .seachMTAM{
+        background: white;
+        display: flex;
+        align-items: center;
+        padding: 20rpx;
+        box-sizing: border-box;
+        .seachbg{
+            margin-right: 10rpx;
+            flex: 1;
+            align-items: center;
+            display: flex;
+            background: #EEEEEE;
+            border-radius: 40rpx;
+            image{
+                margin-left: 20rpx;
+                height: 40rpx;
+                width: 40rpx;
+            }
+            input{
+                font-size: 28rpx;
+                margin:0 20rpx;
+                flex: 1;
+                height: 60rpx;
+            }
+        }
+        .van-button{
+            border:none;
+            background: none;
+        }
+    }
+
+    // 
+    .find{
+        padding: 20rpx;
+        display: flex;
+        align-items: flex-end;
+        .blob{
+            font-size: 35rpx;
+            font-weight: 900;
+        }
+        .manzhu{
+            font-size: 28rpx;
+            flex: 1;
+            margin: 0 20rpx;
+        }
+        .qhImg{
+            width: 45rpx;
+            height: 45rpx;
+        }
+
+    }
+    scroll-view{
+        ::-webkit-scrollbar{
+            display:none;
+         }
+    }
+   
+    .van-popup{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // 
+    // 功能
+    .van_order{
+      
+        flex: 1;
+        color: #666;
+        overflow: hidden;
+        .van-tabs{
+            height: 100%;
+            overflow: hidden;
+            .van-tab{
+                line-height: 35px;
+            }
+        }
+        .van-tabs__content{
+            height: 100%;
+            overflow: hidden;
+            padding-bottom: 44px ;  
+            box-sizing: border-box;
+            .van-tabs__track{
+                height: 100%;
+                overflow: hidden;
+                .van-tab__pane{
+                    height: 100% ; 
+                    overflow: hidden !important;
+                    scroll-view{
+                        -webkit-overflow-scrolling: touch;
+                        height: 100%;
+                        .noMore{
+                            font-size: 28rpx;
+                            color: #999;
+                            padding: 20rpx;
+                            text-align: center;
+                            box-sizing: border-box;
+                        }
+                    }
+                    .paiLie{
+                        padding:  10rpx 10rpx 0;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+        }
+        .van-tab--active{
+            background: linear-gradient(to right,#e85d56,#e65751);
+            color: white;
+            position: relative;
+            .van-ellipsis::after{
+                z-index: 12;
+                width: 100%;
+                background: url('https://bcdj.9oasd.com/images/sjS.png?3') no-repeat;
+                background-size: 101% auto;
+                position: absolute;
+                bottom: 0;
+                height: 20rpx;
+                color: #666; 
+                content: ' ';
+                line-height: 0;
+                left: 0;
+                
+            }
+        }
+        .van-tabs__scroll--line{
+            position: relative;
+        }
+        .van-tabs__scroll--line::after {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: rgba(200, 200, 200,0.2);
+            content: ' ';
+            bottom: 20rpx;
+            left: 0;
+            z-index: 1;
+        }
+        .van-ellipsis{
+            // border-bottom: 1px solid rgb(241, 241, 241);
+        }
+        
+        .van-tabs__line{
+           display: none;
+        }
+        .van-hairline--top-bottom::after {
+            border: none !important;
+        }
+ 
+        
+       
+
+        
+        // 
+        .storeChild{
+            padding: 20rpx 10rpx 0;
+            box-sizing: border-box;
+            border-radius: 10rpx;
+            margin: 10rpx;
+            background: white;
+            .navTop{
+                display: flex;
+                align-items: flex-start;
+                .storeImg{
+                    border-radius: 10rpx;
+                    height: 140rpx;
+                    width: 25%;
+                }
+                .contant{
+                    flex: 1;
+                    margin-left: 20rpx;
+                    .topC{
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 5rpx;
+                        .name_eva{
+                            flex: 1;
+                            .name{
+                                font-size: 30rpx;
+                                display:-webkit-box;
+                                -webkit-line-clamp: 1; //超出多少行
+                                overflow: hidden;
+                                -webkit-box-orient: vertical;
+                                word-break:break-all;
+                                font-weight: 800;
+                                margin-bottom: 5rpx;
+                            }
+                            .eva{
+                                display: flex;
+                                align-items: center;
+                                image{
+                                    width: 20rpx;
+                                    height: 20rpx;
+                                    margin-right: 5rpx;
+                                }
+                            }
+                        }
+                        .van-button{
+                            color: white;
+                            background: #F56F68;
+                            border:none;
+                            border-radius: 10rpx;
+                        }
+                    }
+                    .bottomC{
+                        display: flex;
+                        align-items: center;
+                        image{
+                            height: 30rpx; 
+                            width: 30rpx;
+                        }
+                        .flex{
+                            flex: 1;
+                            color: #999;
+                            margin: 0 10rpx 0 5rpx;
+                            display:-webkit-box;
+                            -webkit-line-clamp: 1; //超出多少行
+                            overflow: hidden;
+                            -webkit-box-orient: vertical;
+                            word-break:break-all;
+
+                        }
+                        .mi{
+                            color: #F56F68;
+                        }
+                    }
+                }
+            }
+            .project{
+                display: flex;
+                padding:10rpx;
+                box-sizing: border-box;
+                .leImg{
+                    overflow: hidden;
+                    width: 50%;
+                    position: relative;
+                    image{
+                        height: 350rpx;
+                        width: 100%;
+                    }
+                    .name{
+                        bottom: 20rpx;
+                    }
+                }
+                .riCont{
+                    width: 50%;
+                    .topImg{
+                        position: relative;
+                        image{
+                            height: 175rpx;
+                            width: 100%;
+                        }
+                    }
+                }
+                .name{
+                    font-size: 24rpx;
+                    max-width: 100%;
+                    padding:5rpx 40rpx 5rpx 20rpx;
+                    box-sizing: border-box;
+                    background: rgba(0, 0, 0, .3);
+                    color: rgb(219, 219, 219);
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+            .people{
+                display: flex;
+                align-items: center;
+                padding: 20rpx 40rpx 20rpx 20rpx;
+                box-sizing: border-box;
+                background: #eeeeee;
+                border-radius: 10rpx;
+                font-size: 30rpx;
+                .flex{
+                    flex: 1;
+                    display:-webkit-box;
+                    -webkit-line-clamp: 1; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break:break-all;
+                }
+            }
+            .groupB{
+                display: flex;
+                align-items: center;
+                padding: 20rpx;
+                box-sizing: border-box;
+                border-bottom: 1px solid rgb(248, 248, 248);
+                font-size: 30rpx;
+                image{
+                    width: 35rpx;
+                    height: 35rpx;
+                    margin-right: 10rpx;
+                }
+                .flex{
+                    flex: 1;
+                    .tip{
+                        
+                        font-size: 22rpx;
+                        border-radius: 10rpx;
+                        padding:0 20rpx;
+                        box-sizing: border-box;
+                        margin-left: 10rpx;
+                        color: #999;
+                        border:1px solid rgb(241, 241, 241);
+                    }
+                }
+                .arrow{
+                    height: 30rpx;
+                    margin-left: 10rpx;
+                }
+            }
+            .groupT{
+                border-top: 1px solid rgb(248, 248, 248);
+
+            }
+            .yuyue{
+                .tip{
+                    color: #F56F68 !important;
+                    border-color: #F56F68 !important;
+                }
+                .num{
+                    color: #999;
+                }
+            }
+        }
+    }
+
+
+    // 
+    .storeChildSHU{
+        padding:10rpx;
+        box-sizing: border-box;
+        display: flex;
+        align-items: flex-start;
+        background: white;
+        .storeImg{
+            width: 33%;
+            height: 150rpx;
+        }
+        .contantS{
+            margin-left: 10rpx;
+            flex: 1;
+            .name{
+                font-size: 30rpx;
+                display:-webkit-box;
+                -webkit-line-clamp: 1; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break:break-all;
+                font-weight: 800;
+                margin-bottom: 5rpx;
+            }
+            .eva{
+                display: flex;
+                align-items: center;
+                image{
+                    width: 20rpx;
+                    height: 20rpx;
+                    margin-right: 5rpx;
+                }
+            }
+            .coup{
+                padding:10rpx;
+                box-sizing: border-box;
+                margin-bottom: 10rpx;
+                span{
+                    padding:2rpx 10rpx;
+                    box-sizing: border-box;
+                    color: #F56F68;
+                    border:1px solid #F56F68;
+                    border-radius: 10rpx;
+                }
+            }
+            .bottomC{
+                display: flex;
+                align-items: center;
+               
+                image{
+                    height: 30rpx;
+                    width: 30rpx;
+                }
+                .flexC{
+                    font-size: 22rpx;
+                    flex: 1;
+                    color: #999;
+                    margin: 0 10rpx 0 8rpx;
+                }
+                .mi{
+                    color: #F56F68;
+                }
+            }
+           
+            .groupB{
+                display: flex;
+                align-items: center;
+                padding: 10rpx 0;
+                box-sizing: border-box;
+                border-bottom: 1px solid rgb(248, 248, 248);
+                font-size: 30rpx;
+                image{
+                    width: 35rpx;
+                    height: 35rpx;
+                    margin-right: 10rpx;
+                }
+                .flex{
+                    flex: 1;
+                    .tip{
+                        
+                        font-size: 22rpx;
+                        border-radius: 10rpx;
+                        padding:0 20rpx ;
+                        box-sizing: border-box;
+                        margin-left: 10rpx;
+                        color: #999;
+                        border:1px solid rgb(241, 241, 241);
+                    }
+                }
+            }
+            .groupT{
+                border-top: 1px solid rgb(248, 248, 248);
+
+            }
+            .yuyue{
+                .tip{
+                    color: #F56F68 !important;
+                    border-color: #F56F68 !important;
+                }
+                .num{
+                    color: #999;
+                    margin-right: 10rpx;
+                }
+            }
+            .people{
+                display: flex;
+                align-items: center;
+                margin: 10rpx 0; 
+                box-sizing: border-box;
+                .laba{
+                    width: 35rpx;
+                    height: 35rpx;
+                }
+                .flex{
+                    flex: 1;
+                    margin-left: 10rpx;
+                    display:-webkit-box;
+                    -webkit-line-clamp: 1; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break:break-all;
+                    font-size: 30rpx;
+                }
+            }
+        }
+    }
+
+    .noMore{
+        font-size: 28rpx;
+        color: #999;
+        padding: 20rpx;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+.rev{
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    image{
+        margin: 0 auto;
+    }
+    .close{
+        position: absolute;
+        bottom: 0;
+        left: 20%;
+        height: 100rpx;
+        width: 60%;
+    }
+}

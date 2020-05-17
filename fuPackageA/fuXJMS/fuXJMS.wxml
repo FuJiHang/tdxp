@@ -1,0 +1,104 @@
+<!--
+ * @Author: fujihang
+ * @Date: 2020-02-16 16:39:10
+ * @LastEditors: fujihang
+ * @LastEditTime: 2020-02-19 14:34:35
+ * @FilePath: \头道惠\fuPackageA\fuXJMS\fuXJMS.wxml
+ -->
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2020-02-16 16:41:48 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2020-02-16 16:41:48 
+    每日秒杀
+ */ -->
+<view id="fuXJMS">
+
+
+
+
+    <!-- 3 -->
+    <!-- <view class="navTop" >
+        <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/shopTab.png" />
+        <view class="name">限量秒杀</view>
+    </view>
+    <view class="contantListTow contantListThree" >
+        <view class="child" data-productId="{{item.ProductId}}" data-storeid="{{item.StoreId}}" bindtap="handleDetail"
+            wx:for="{{productList}}" wx:key="{{index}}">
+            <image src="{{item.ThumbnailUrl310}}" mode="aspectFill" />
+            <view class="disBox">
+                <view class="name">{{item.ProductName}} 
+                    <span style="font-size: 22rpx;color: red;">
+                        {{item.limitTxt}} 
+                        <block wx:if="{{itemlimitTxt!='已结束'}}">
+                            {{item.limitHours}}:{{item.limitMin}}:{{item.limitSecond}}
+                        </block>
+                      
+                    </span>
+                </view>
+                <view class="btn_pri">
+                    ￥{{item.CountDownPrice}}元
+                    <view style="display: flex;align-items: center;margin-top: 5rpx;font-size: 22rpx;" >
+                        <span style="color: #999;margin-right: 10rpx;text-decoration: line-through;">
+                           原价￥{{item.SalePrice}}元 
+                        </span>
+                        剩余{{item.TotalCount-item.BoughtCount}}个
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view> -->
+
+    <!--  -->
+    <view class="timeNav">
+        <span class="border"></span>
+        <span class="name">好物低价，先到先得</span>
+        <!-- <span class="time">
+            <span class="big">离本场结束：</span>
+            <span class="child">21</span> 时
+            <span class="child">12</span> 分
+            <span class="child">21</span> 秒
+        </span> -->
+    </view>
+
+    <!--  -->
+    <view class="porduct" data-productId="{{item.ProductId}}" data-storeid="{{item.StoreId}}" bindtap="handleDetail"
+        data-sx="{{item.bfb}}" wx:for="{{productList}}" wx:key="{{index}}">
+        <span wx:if="{{itemlimitTxt!='已结束'}}"
+            style="font-size: 22rpx;color: #FB1F4F;top: 10rpx;right: 22rpx;position: absolute;">
+            {{item.limitTxt}}
+            <block>
+                {{item.limitHours}}:{{item.limitMin}}:{{item.limitSecond}}
+            </block>
+        </span>
+        <span style="position: relative;overflow: hidden;">
+            <image src="{{item.ThumbnailUrl310+'?x-oss-process=image/resize,l_640'}}" mode='aspectFill'></image>
+            <span class="end" wx:if="{{item.bfb==100}}">
+                <span style="transform: rotateZ(-10deg);">售罄</span>
+
+            </span>
+        </span>
+
+        <span class="contant">
+            <view class="name">{{item.ProductName}}</view>
+            <view class="price">
+                <span class="mini">限量抢购价:</span>
+                ¥{{item.CountDownPrice}}
+            </view>
+            <view class="del">市场价:¥{{item.SalePrice?item.SalePrice:0}} </view>
+            <view class="num_buy">
+                <span class="num">已抢{{item.bfb}}%</span>
+                <span class="flex">
+                    <span class="bfb">
+                        <span class="hui" style="width:{{100-item.bfb}}%;"></span>
+                    </span>
+                </span>
+                <van-button disabled="{{item.bfb==100}}">{{item.bfb!=100?'立即抢购':'已抢完'}}</van-button>
+            </view>
+        </span>
+    </view>
+
+    <view class="noMore" wx:if="{{finsh}}">
+        没有更多的了~~~
+    </view>
+</view>

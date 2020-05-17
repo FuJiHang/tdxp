@@ -1,0 +1,140 @@
+page{
+    height: 100%;
+    position: relative;
+}
+#fuBind{
+    font-size: 26rpx;
+    color: #666;
+    
+    //  技师名字，执行团队长
+    .teach_name_tdz{
+        padding:0 20rpx;
+        box-sizing: border-box;
+        background: white;
+        margin-bottom: 20rpx;
+        font-size: 28rpx;
+        .teachName{
+            display: flex;
+            align-items: center;
+            padding: 20rpx 0;
+            border-bottom:1px solid rgb(240, 240, 240);
+            .name{
+                width: 150rpx;
+            }
+            .child{
+                flex: 1;
+                margin-left: 20rpx;
+            }
+        }
+    }
+    .bw{
+        background: white;
+    }
+    // 标题
+    .navtop{
+        padding: 20rpx;
+        box-sizing: border-box;
+        font-size: 30rpx;
+    }
+
+    // 内容
+    .contont{
+        font-size: 28rpx;
+        padding: 20rpx 20rpx 20rpx 0;
+        margin-left: 20rpx;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgb(240, 240, 240);
+        display: flex;
+        flex-wrap: wrap;
+        .textfu{
+            width: 100%;
+            height: 200rpx;
+            // overflow: hidden;
+        }
+        textarea{
+            box-sizing: border-box;
+            width: 100%;
+            font-size: 28rpx;
+            max-height: 200rpx;
+        }
+    }
+
+    .van-popup--bottom{
+        max-height: 60%;
+    }
+    
+    .btn{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        .van-button{
+            border:none;
+            width: 100%;
+            background: #F56F68;
+            color: white;
+        }
+    }
+
+    .seaConCL{
+        // flex: 1;
+        // overflow: auto;
+        // 执行团队长列表
+        .chooseList{
+            font-size: 30rpx;
+            padding:25rpx 20rpx;
+            box-sizing: border-box;
+            display: flex;
+            border-bottom: 1px solid rgb(240, 240, 240);
+            .name{
+                margin-right: 10rpx;
+                flex: 1;
+                display: -webkit-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-wrap: break-word;
+                white-space: normal !important;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;   
+            }
+        }
+        .noMore{
+            font-size: 28rpx;
+            color: #999;
+            padding: 20rpx;
+            text-align: center;
+            box-sizing: border-box;
+        }
+    }
+    // 搜索框
+    .seachMTAM{
+        background: white;
+        display: flex;
+        align-items: center;
+        padding: 20rpx;
+        box-sizing: border-box;
+        
+        .seachbg{
+            margin-right: 10rpx;
+            flex: 1;
+            align-items: center;
+            display: flex;
+            background: #EEEEEE;
+            border-radius: 40rpx;
+            image{
+                margin-left: 20rpx;
+                height: 40rpx;
+                width: 40rpx;
+            }
+            input{
+                font-size: 28rpx;
+                margin:0 20rpx;
+                flex: 1;
+                height: 60rpx;
+            }
+        }
+        .van-button{
+            border:none;
+            background: none;
+        }
+    }
+}

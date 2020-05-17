@@ -1,0 +1,30 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-07-18 20:07:25 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-07-18 20:07:25 
+    相册
+    */ -->
+<view id="fuAlbum" >
+
+    <span wx:if="{{type=='img'}}" class="img" wx:for="{{dataInfo}}" wx:key="{{index}}">
+        <image  src="{{item+'?x-oss-process=image/resize,h_640'}}" mode="aspectFill" data-url="{{item}}" bindtap="aa"/>
+    </span>
+
+
+    <span  wx:if="{{type!='img'}}" class="img" bindtap="openFN" data-url="{{item}}" wx:for="{{dataInfo}}" wx:key="{{index}}">
+        <video  src="{{item}}" ></video>
+        <view class="mengban"></view>
+    </span>
+
+    <!--  -->
+    <view  class="maxVideo" bindtap="errFN" wx:if="{{showVideo.show}}">
+        <video catchtap   src="{{showVideo.url}}" controls></video>
+        <view class="down" catchtap="downFN">下载</view>
+    </view>
+    
+</view>
+
+<view class="noMore" wx:if="{{finsh}}">
+    没有更多的了~~~
+</view>

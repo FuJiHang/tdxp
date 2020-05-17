@@ -1,0 +1,32 @@
+<view id="activities">
+  <view class="header">
+    <block wx:for="{{navData}}" wx:key="{{item}}">
+      <view bindtap="handleNav" class="header_title {{index==nums?'active':''}}" data-index="{{index}}">{{item.name}}</view>
+    </block>
+  </view>
+
+  <view class="list_wrap">
+    <block wx:for="{{lists}}" wx:key="{{item}}">
+      <view class="list">
+        <view class="list_logo">
+          <image src="{{item.SharePic}}" mode="widthFix" ></image>
+          
+        </view>
+        <view class="list_main">
+          <view class="list_title">{{item.ActivityName}}</view>
+          <!-- <view class="list_test">{{item.test}}</view> -->
+          <!-- <view class="list_time">有效时间: {{item.time}}</view> -->
+        </view>
+        <view class="list_btn" bindtap="upOrDown" data-name="true" data-aid="{{item.ActivityId}}" wx:if="{{nums}}">上架</view>
+        <view class="list_btn" 
+          wx:else
+          data-aid="{{item.ActivityId}}"
+          bindtap="upOrDown"
+        >下架</view>
+      </view>
+    </block>
+    <view class="nodata" wx:if="{{lists.length==0}}">{{nums?'没有活动可上架':'没有活动可下架'}}~</view>
+  </view>
+
+  
+</view>

@@ -1,0 +1,291 @@
+<form bindsubmit="submitOrder" reportSubmit="true">
+    <view class="page1" hidden="{{currentPage=='page1'?false:true}}" style="transform:translate({{currentPage=='page1'?0:100}}%, 0%) translateZ(0px);">
+        <view bindtap="addAddresstap" class="address-info" hidden="{{ShippingAddressInfo!=null}}">
+            <view class="address-outer">
+                <text class="iconfont icon__locate"></text>
+                <view class="infos">
+                    <text class="name"></text>
+                    <text class="address"> 请选择一个收货地址</text>
+                </view>
+                <text class="iconfont arrow_right"></text>
+            </view>
+            <view class="addr-xuanbg">
+                <image src="/images/order_06.jpg"></image>
+            </view>
+        </view>
+        <view bindtap="gotoAddress" class="address-info" hidden="{{ShippingAddressInfo==null}}">
+            <view class="address-outer">
+                <text class="iconfont icon__locate"></text>
+                <view class="infos">
+                    <text class="name">{{ShippingAddressInfo.ShipTo}}，{{ShippingAddressInfo.CellPhone}}</text>
+                    <text class="address"> {{ShippingAddressInfo.FullAddress}}</text>
+                </view>
+                <text class="iconfont arrow_right"></text>
+            </view>
+            <view class="addr-xuanbg">
+                <image src="/images/order_06.jpg"></image>
+            </view>
+        </view>
+        <view class="orderlist">
+            <view class="orderlisttile">
+                <view class="orderhao">订单清单</view>
+            </view>
+            <block wx:for="{{Suppliers}}" wx:key="item.SupplierId">
+                <view class="supplier">
+                    <view class="supplier-icon">
+                        <image class="mt8" hidden="{{item.SupplierId==0}}" mode="widthFix" src="/images/gongyingshang.png" style="width:45rpx;"></image>
+                        <image class="mt8" hidden="{{item.SupplierId!=0}}" mode="widthFix" src="/images/icon_platform_v.png" style="width:45rpx;"></image>
+                        <text>{{item.SupplierName}}</text>
+                    </view>
+                </view>
+                <view class="orderlistcont" wx:for="{{Suppliers[index].ProductItems}}" wx:for-item="items" wx:key="{{item.SkuID}}">
+                    <image mode="aspectFit" src="{{items.ThumbnailUrl180}}"></image>
+                    <view class="orderlisc">
+                        <view class="ordername">{{items.Name}}</view>
+                        <view class="ordersize">{{items.SkuContent}}</view>
+                    </view>
+                    <view class="orderlistright">
+                        <text>￥{{items.AdjustedPrice}}</text>
+                        <view>
+                            <text class="iconfont icon__close submit_count"></text>{{items.Quantity}} </view>
+                    </view>
+                </view>
+                <view class="suppliertotal">运费：
+          <text>￥{{item.Feright}}</text>小计 ：
+          <text>￥{{item.SupplierTotal}}</text>
+                </view>
+            </block>
+            <view class="orderlistzong">商品合计 ：￥
+        <text>{{ProductAmount}}</text>
+            </view>
+        </view>
+        <view class="submfs">
+            <view class="yunfei">
+                <view class="yunfeil">配送方式</view>
+                <view class="yunfeir">
+          快递配送 运费 {{OrderFreight}} 元
+        </view>
+            </view>
+            <view bindtap="clickCouponList" class="hdonglist yunfei order_yhj pt24 pb24" hidden="{{CouponList==null||CouponList.length==0}}">
+                <text class="yunfeil">优惠券</text>
+                <text class="yf yunfeir">{{SelectedCouponIndex>=0?'-￥'+CouponList[SelectedCouponIndex].Price:'未使用'}}</text>
+            </view>
+            <view class="yunfei jfdik" wx:if="{{MaxUsePoint}}">
+                <view class="yunfeil">积分抵扣</view>
+                <view class="yunfeir">
+                    <text class="help">共{{MyPoints}}分，最多{{MaxUsePoint}}分抵{{MaxPointDiscount}}元</text>
+                    <switch bindchange="ChkUsePoint" checked="{{checboxswitch}}"></switch>
+                </view>
+            </view>
+            <view class="pointDiscount" hidden="{{!pointDiscountShow}}">
+                <view class="pointDiscountL">
+                    <input bindblur="UsePointNumber" bindconfirm="UsePointNumber" fixed="false" placeholder="输入使用积分" value="{{DeductionPoints}}"></input>
+                </view>
+                <view class="pointDiscountR">
+                    <text>-￥{{PointsDiscount}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="submfs submfs1 border-bottom pb0" hidden="{{SupplierId!=0||!OrderInfo.EnableTax&&!OrderInfo.EnableE_Invoice&&!OrderInfo.EnableVATInvoice}}">
+            <view class="yunfei jfdik">
+                <view class="yunfeil">索取发票</view>
+                <view class="yunfeir">
+                    <text class="help">税率（{{InvoiceRate}}%）</text>
+                    <switch bindchange="OpenUseInvoice"></switch>
+                </view>
+            </view>
+            <view bindtap="ChooseInvoice" class="hdonglist yunfei order_yhj pt24 pb24" hidden="{{!IsOpenInvoice}}">
+                <view class="yunfeil">发票类型</view>
+                <view class="yf yunfeir">{{InvoiceTypeName}}({{InvoiceTitleName}})</view>
+            </view>
+        </view>
+        <view class="submfs">
+            <view class="yunfei">
+                <view class="yunfei_benzhu">订单备注</view>
+                <view class="liuyabr yunfeir">
+                    <input bindblur="bindRemarkInput" bindconfirm="bindRemarkInput" fixed="false" placeholder="选填，可填写您与卖家达成一致的要求"></input>
+                </view>
+            </view>
+        </view>
+        <view class="submfs submfs1">
+            <view class="yunfei">
+                <view class="yunfeil">商品金额</view>
+                <view class="yunfeir"> ￥{{ProductAmount}} </view>
+            </view>
+            <view class="yunfei">
+                <view class="yunfeil">运费
+          <text wx:if="{{FullFreeFreight}}">(满免)</text>
+                </view>
+                <view class="yunfeir">￥{{OrderFreight}}</view>
+            </view>
+            <view class="yunfei" hidden="{{!IsOpenInvoice}}">
+                <view class="yunfeil">税费</view>
+                <view class="yunfeir">￥{{TaxRate}}</view>
+            </view>
+            <view class="yunfei" hidden="{{DefaultCouponCode==''}}">
+                <view class="yunfeil">优惠券</view>
+                <view class="yunfeir">-￥{{DefaultCouponPrice>ProductAmount?ProductAmount:DefaultCouponPrice}}</view>
+            </view>
+            <view class="yunfei" wx:if="{{FullDiscount&&FullDiscount>0}}">
+                <view class="yunfeil">满减</view>
+                <view class="yunfeir">-￥{{FullDiscount}}</view>
+            </view>
+            <view class="yunfei" wx:if="{{PointsDiscount&&PointsDiscount>0}}">
+                <view class="yunfeil">积分抵扣</view>
+                <view class="yunfeir">-￥{{PointsDiscount}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="page2" hidden="{{currentPage=='page2'?false:true}}" style="transform:translate({{currentPage=='page2'?0:100}}%, 0%) translateZ(0px);">
+        <view class="invoiceBox">
+            <view class="invoice_div">
+                <label>发票类型</label>
+                <view class="invoice_tab">
+                    <text bindtap="ChangeInvoiceType" class="mui-control-item {{InvoiceType<=1?'active':''}}" data-name="普通发票" hidden="{{!OrderInfo.EnableTax}}">普通发票</text>
+                    <text bindtap="ChangeInvoiceType" class="mui-control-item {{InvoiceType>=2&&InvoiceType<=3?'active':''}}" data-name="电子发票" hidden="{{!OrderInfo.EnableE_Invoice}}">电子发票</text>
+                    <text bindtap="ChangeInvoiceType" class="mui-control-item {{InvoiceType==4?'active':''}}" data-name="增值税发票" hidden="{{!OrderInfo.EnableVATInvoice}}">增值税发票</text>
+                </view>
+                <view class="invoice_tab tax-des" hidden="{{InvoiceType!=4}}" style="background:url({{taxBg}}) no-reapter">发票将在订单完成之后{{OrderInfo.EndOrderDays}}--{{OrderInfo.VATInvoiceDays}}个工作日后寄出。</view>
+            </view>
+            <view class="mui-slider-item mui-control-content mui-active">
+                <view class="invoice_div" hidden="{{InvoiceType==4}}">
+                    <label>发票抬头</label>
+                    <view bindtap="ChangeInvoiceType" class="invoice_style" data-name="个人">
+                        <label class="sel_checked" style="background:url({{InvoiceType==0||InvoiceType==2?InvoiceChecked:InvoiceCheck}}) center center no-repeat; background-size:100% 100%"></label>个人
+          </view>
+                    <view bindtap="ChangeInvoiceType" class="invoice_style" data-name="单位">
+                        <label class="sel_checked" style="background:url({{InvoiceType==1||InvoiceType==3?InvoiceChecked:InvoiceCheck}}) center center no-repeat; background-size:100% 100%"></label>单位
+          </view>
+                </view>
+                <view hidden="{{InvoiceType==0||InvoiceType==2}}">
+                    <view class="message fontweight" hidden="{{InvoiceType!=4}}">增票资质
+            <text class="small-name">(以下各项均为必填项)</text>
+                    </view>
+                    <view class="invoice_div">
+                        <label>单位名称</label>
+                        <input bindinput="ChangeValue" class="input-name" data-key="InvoiceTitle" placeholder="必填，请填写单位名称" type="text" value="{{InvoiceTitle}}"></input>
+                    </view>
+                    <view class="invoice_div">
+                        <label class="company_width">纳税人识别号</label>
+                        <input bindinput="ChangeValue" class="input-name" data-key="InvoiceTaxpayerNumber" placeholder="必填，请填写纳税人识别号" type="text" value="{{InvoiceTaxpayerNumber}}"></input>
+                    </view>
+                </view>
+                <view hidden="{{InvoiceType!=2&&InvoiceType!=3}}">
+                    <view class="mui-slider-item mui-control-content electron">
+                        <text class="message">收票人信息</text>
+                        <view class="invoice_div">
+                            <label>收票人手机</label>
+                            <input bindinput="ChangeValue" class="input-name" data-key="ReceivePhone" placeholder="必填，通过手机号接收开票提醒" type="text" value="{{InvoiceEnty.ReceivePhone}}"></input>
+                        </view>
+                        <view class="invoice_div">
+                            <label>收票人邮箱</label>
+                            <input bindinput="ChangeValue" class="input-name" data-key="ReceiveEmail" placeholder="必填，用来接收电子发票" type="text" value="{{InvoiceEnty.ReceiveEmail}}"></input>
+                        </view>
+                    </view>
+                </view>
+                <view hidden="{{InvoiceType!=4}}">
+                    <view class="mui-slider-item mui-control-content electron">
+                        <view class="invoice_div">
+                            <label>注册地址</label>
+                            <input bindinput="ChangeValue" class="input-name" data-key="RegisterAddress" placeholder="请填写单位注册地址" type="text" value="{{InvoiceEnty.RegisterAddress}}"></input>
+                        </view>
+                        <view class="invoice_div">
+                            <label>注册电话</label>
+                            <input bindinput="ChangeValue" class="input-name" data-key="RegisterTel" placeholder="请填写单位注册电话" type="text" value="{{InvoiceEnty.RegisterTel}}"></input>
+                        </view>
+                        <view class="invoice_div">
+                            <label>开户银行</label>
+                            <input bindinput="ChangeValue" class="input-name" data-key="OpenBank" placeholder="请填写单位开户银行" type="text" value="{{InvoiceEnty.OpenBank}}"></input>
+                        </view>
+                        <view class="invoice_div">
+                            <label>银行账户</label>
+                            <input bindinput="ChangeValue" class="input-name" data-key="BankAccount" placeholder="请填写单位银行账户" type="text" value="{{InvoiceEnty.BankAccount}}"></input>
+                        </view>
+                        <view class="message fontweight">收票人信息
+              <text class="small-name">(以下各项均为必填项)</text>
+                        </view>
+                        <view class="invoice_div">
+                            <label>收票人姓名</label>
+                            <input bindinput="ChangeValue" class="input-name" data-key="ReceiveName" placeholder="请填写收票人姓名" type="text" value="{{InvoiceEnty.ReceiveName}}"></input>
+                        </view>
+                        <view class="invoice_div">
+                            <label>收票人手机</label>
+                            <input bindinput="ChangeValue" class="input-name" data-key="ReceivePhone" placeholder="请填写收票人手机号码 " type="text" value="{{InvoiceEnty.ReceivePhone}}"></input>
+                        </view>
+                        <view catchtap="bindFullAddressTap" class="invoice_div">
+                            <label>收票人地区</label>
+                            <view class="regionname {{FullRegionPath?'':'regionname-color'}}"> {{FullRegionPath?FullRegionPath:'选择省、市、区/街道'}}</view>
+                            <view class="iconfont arrow_right arrow_right_w"></view>
+                        </view>
+                        <view class="invoice_div">
+                            <label>详细地址</label>
+                            <input bindinput="ChangeValue" class="input-name" data-key="ReceiveAddress" placeholder="请填写详细地址" type="text" value="{{InvoiceEnty.ReceiveAddress}}"></input>
+                        </view>
+                    </view>
+                </view>
+                <view class="invoice_div">
+                    <label>发票内容</label>
+                    <view class="invoice_style">
+                        <text>明细</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="distpicker {{showDistpicker?'':'hidden'}}" wx:if="{{showDistpicker}}">
+            <view class="distpicker-btn">
+                <view bindtap="distpickerCancel" class="distpicker-cancel-btn">取消</view>
+                <view catchtap="distpickerSure" class="distpicker-sure-btn">确定</view>
+            </view>
+            <picker-view bindchange="changeArea" class="distpicker-content" indicatorStyle="height: 40px;" value="{{value}}">
+                <picker-view-column>
+                    <view class="area-item" wx:for="{{provinceName}}" wx:key="province">{{item}}</view>
+                </picker-view-column>
+                <picker-view-column>
+                    <view class="area-item" wx:for="{{cityName}}" wx:key="city">{{item}}</view>
+                </picker-view-column>
+                <picker-view-column>
+                    <view class="area-item" wx:for="{{districtName}}" wx:key="district">{{item}}</view>
+                </picker-view-column>
+            </picker-view>
+        </view>
+    </view>
+    <view class="jinge" hidden="{{currentPage=='page1'?false:true}}">
+        <view class="classtext">
+      实付金额：
+      <text class="price">￥{{OrderTotalPrice}}
+      </text>
+        </view>
+        <button disabled="{{isEnable}}" formType="submit">提交订单</button>
+    </view>
+    <view class="jinge" hidden="{{currentPage=='page2'&&!showDistpicker?false:true}}">
+        <button bindtap="SaveInvoice" class="goumai">确定</button>
+        <button bindtap="CancelInvoice" class="goumai shop">取消</button>
+    </view>
+</form>
+<view bindtap="clickback" class="btmbg {{backShow}}"></view>
+<view class="lqyhq {{couponShow}}">
+    <view class="lqyhqtitle">
+        <image class="lqicon" src="/images/yjq_03.jpg"></image>
+        <text>选择优惠券</text>
+        <image bindtap="onCouponHide" class="lqicon1" src="/images/yjq_04.jpg"></image>
+    </view>
+    <view class="gouwqnr">
+        <view class="youhuiquan" wx:for="{{CouponList}}" wx:key="CouponId">
+            <image class="lqicon3" src="/images/yjq_07.jpg"></image>
+            <view class="nrong">
+                <view class="nrje">￥
+            <text>{{item.Price}}</text>
+                </view>
+                <view class="nrtime">
+                    <view class="nrtimelist">{{item.LimitText}}</view>
+                    <view class="nrtimelist">{{item.StartTimeText}}-{{item.ClosingTimeText}}</view>
+                    <view class="nrtimelqan">
+                        <view class="nrtimelist">{{item.CanUseProduct}}</view>
+                        <button bindtap="setCoupon" data-num="{{index}}" id="{{item.CouponId}}" wx:if="{{SelectedCouponIndex!=index}}">使用</button>
+                        <button bindtap="cancelCoupon" wx:if="{{SelectedCouponIndex==index}}">取消</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,15 @@
+<view class="content">
+  <view class="main">
+    <view class="main_wrap">
+      <view class="order">单号:201911191645</view>
+      <view class="order">下单人:张天哎</view>
+    </view>
+    <view class="img_wrap">
+      <view class="img">
+        <image class="tdh_img" src="{{img}}"></image>
+      </view>
+      <view class="tdu_title">头道汤头疗一次</view>
+    </view>
+  </view>
+  <view class="btn">核销</view>
+</view>

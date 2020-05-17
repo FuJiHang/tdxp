@@ -1,0 +1,101 @@
+#activities {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20rpx 0;
+    border-top: 1rpx solid #eee;
+
+    .header_title {
+      flex: 1;
+      font-size: 30rpx;
+      color: #333;
+      text-align: center;
+    }
+
+    .active {
+      color: #E9696A;
+      position: relative;
+
+      &::after {
+        content: '';
+        width: 50rpx;
+        height: 2px;
+        background-color: #E9696A;
+        position: absolute;
+        left: 43%;
+        bottom: -19rpx;
+      }
+    }
+  }
+
+  .list_wrap {
+    background-color: #fff;
+    margin-top: 20rpx;
+    .nodata{
+      font-size: 30rpx;
+      color:#999;
+      padding: 20rpx;
+      text-align: center;
+    }
+    .list {
+      display: flex;
+      align-items: center;
+      padding: 15rpx 25rpx 15rpx 20rpx;
+      border-bottom: 1rpx solid #eee;
+
+      .list_logo {
+        width: 120rpx;
+        height: 120rpx;
+        line-height: 120rpx;
+        text-align: center;
+        font-size: 60rpx;
+        color: #fff;
+        margin-right: 15rpx;
+        overflow: hidden;
+        image{
+          width: 120rpx;
+          height: 1rpx;
+        }
+      }
+      .add_active{
+        background-color: #ccc;
+      }
+
+      .list_main {
+        flex: 1;
+
+        .list_title {
+          font-size: 28rpx;
+          color: #333;
+        }
+
+        .list_test {
+          font-size: 22rpx;
+          color: #999;
+          margin-bottom: 10rpx;
+        }
+
+        .list_time {
+          font-size: 24rpx;
+          color: #61B6FD;
+        }
+        .add_time{
+          color:#ccc;
+        }
+      }
+
+      .list_btn {
+        width: 100rpx;
+        font-size: 28rpx;
+        color: #fff;
+        text-align: center;
+        border-radius: 30rpx;
+        background-color: #E65757;
+        margin-right: 20rpx;
+        padding: 5rpx 0;
+      }
+    }
+  }
+}

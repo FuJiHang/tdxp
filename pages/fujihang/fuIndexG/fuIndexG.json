@@ -1,0 +1,9 @@
+{
+  
+  "enablePullDownRefresh":true,
+  "navigationBarBackgroundColor":"#ffffff",
+  "navigationBarTextStyle":"black",
+  "usingComponents": {
+    "addr-picker": "../../../components/addrpicker/addrPicker"
+  }
+}

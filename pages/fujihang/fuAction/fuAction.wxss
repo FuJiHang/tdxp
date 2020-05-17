@@ -1,0 +1,277 @@
+page {
+  height: 100%;
+  position: relative;
+}
+#fuAction {
+  font-size: 26rpx;
+  color: #666;
+}
+#fuAction .seachMTAM {
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuAction .seachMTAM .seachbg {
+  margin-right: 10rpx;
+  flex: 1;
+  align-items: center;
+  display: flex;
+  background: #EEEEEE;
+  border-radius: 40rpx;
+}
+#fuAction .seachMTAM .seachbg image {
+  margin-left: 20rpx;
+  height: 40rpx;
+  width: 40rpx;
+}
+#fuAction .seachMTAM .seachbg input {
+  font-size: 28rpx;
+  margin: 0 20rpx;
+  flex: 1;
+  height: 60rpx;
+}
+#fuAction .seachMTAM .van-button {
+  border: none;
+  background: none ;
+}
+#fuAction .timeFA {
+  background: white;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+#fuAction .timeFA .name {
+  font-size: 30rpx;
+  flex: 1;
+}
+#fuAction .van-picker-column__item--selected,
+#fuAction .van-picker__cancel,
+#fuAction .van-picker__confirm {
+  color: #F56F68;
+}
+#fuAction .nameAC {
+  background: white;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+}
+#fuAction .nameAC .inp {
+  margin-left: 20rpx;
+  flex: 1;
+}
+#fuAction .nameAC .inp input {
+  font-size: 28rpx;
+  text-align: right;
+  width: 100%;
+}
+#fuAction .nameAC .inp textarea {
+  font-size: 28rpx;
+  width: 100%;
+}
+#fuAction .textarea {
+  align-items: flex-start;
+}
+#fuAction .van-popup--right {
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+}
+#fuAction .van-popup--right scroll-view {
+  height: 100%;
+  overflow: auto;
+}
+#fuAction .van-popup--right scroll-view .noMore {
+  font-size: 28rpx;
+  color: #999;
+  padding: 20rpx 20rpx 80rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+#fuAction .storeList {
+  background: white;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+#fuAction .storeList scroll-view {
+  height: 100%;
+  overflow: auto;
+}
+#fuAction .storeList .btn {
+  display: flex;
+}
+#fuAction .storeList .btn .child {
+  flex: 1;
+}
+#fuAction .storeList .btn .child .van-button {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  color: white;
+  background: #ff8b4e;
+}
+#fuAction .storeList .btn .red .van-button {
+  background: #F56F68;
+}
+#fuAction .storeList .storeCard {
+  background: white;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+#fuAction .storeList .storeCard image {
+  height: 120rpx;
+  width: 120rpx;
+}
+#fuAction .storeList .storeCard .contantStore {
+  flex: 1;
+  margin-left: 20rpx;
+}
+#fuAction .storeList .storeCard .contantStore .name_mi {
+  display: flex;
+  align-items: center;
+}
+#fuAction .storeList .storeCard .contantStore .name_mi .name {
+  font-weight: 700;
+  margin-right: 10rpx;
+  flex: 1;
+  font-size: 30rpx;
+}
+#fuAction .storeList .storeCard .contantStore .name_mi .mi {
+  color: #61B6FD;
+  font-size: 28rpx;
+}
+#fuAction .storeList .storeCard .contantStore .address {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  color: #999;
+}
+#fuAction .storeList .storeCard .contantStore .address image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+#fuAction .storeList .storeCard .right_Statu .van-button {
+  margin-left: 20rpx;
+  background: #F56F68;
+  color: white;
+}
+#fuAction .storeList .storeCard .right_Statu .Rname {
+  text-align: center;
+  color: #61B6FD;
+}
+#fuAction .storeList .upDownList {
+  display: flex;
+  padding: 20rpx 20rpx 20rpx 0;
+  margin-left: 20rpx;
+  box-sizing: border-box;
+  background: white;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: center;
+}
+#fuAction .storeList .upDownList image {
+  margin-left: 20rpx;
+  height: 130rpx;
+  width: 130rpx;
+}
+#fuAction .storeList .upDownList .contantTL {
+  flex: 1;
+  margin-left: 20rpx;
+}
+#fuAction .storeList .upDownList .contantTL .name_mon {
+  display: flex;
+  align-items: center;
+}
+#fuAction .storeList .upDownList .contantTL .name_mon .name {
+  font-size: 29rpx;
+  font-weight: bold;
+  flex: 1;
+  margin-right: 5rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+#fuAction .storeList .upDownList .contantTL .name_mon .mon {
+  color: #F56F68;
+  font-size: 28rpx;
+}
+#fuAction .storeList .upDownList .contantTL .detail_btn {
+  margin-top: 20rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #999;
+}
+#fuAction .storeList .upDownList .contantTL .detail_btn .det {
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+  color: #fff;
+  background: #F56F68;
+  box-sizing: border-box;
+  padding: 2rpx 5rpx;
+}
+#fuAction .storeList .teamFu {
+  background: white;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  font-size: 27rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+#fuAction .storeList .teamFu image {
+  margin-left: 20rpx;
+  height: 100rpx;
+  width: 100rpx;
+}
+#fuAction .storeList .teamFu .contant {
+  flex: 1;
+  margin: 0 20rpx;
+}
+#fuAction .storeList .teamFu .contant .name_cla {
+  display: flex;
+  margin-bottom: 20rpx;
+  align-items: flex-end;
+}
+#fuAction .storeList .teamFu .contant .name_cla .name {
+  margin-right: 30rpx;
+  font-size: 30rpx;
+}
+#fuAction .storeList .teamFu .contant .shen_phone {
+  display: flex;
+  align-items: center;
+}
+#fuAction .storeList .teamFu .contant .shen_phone .phone {
+  color: #999;
+}
+.submit {
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+}
+.submit .van-button {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  color: white;
+  background: #F56F68;
+}

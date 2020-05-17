@@ -1,0 +1,72 @@
+.newIntegral {
+  border-top: 1rpx solid #eee;
+  box-sizing: border-box;
+}
+.newIntegral .nav {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15rpx;
+  background-color: #fff;
+}
+.newIntegral .nav .nav_title {
+  flex: 1;
+  font-size: 30rpx;
+  color: #333;
+  text-align: center;
+  padding: 15rpx 0;
+}
+.newIntegral .nav .active {
+  color: #E65757;
+  border-bottom: 2rpx solid red;
+}
+.newIntegral .content {
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.newIntegral .content .list {
+  position: relative;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.newIntegral .content .list .numbers {
+  font-size: 28rpx;
+  color: #999;
+  margin-bottom: 10rpx;
+  position: relative;
+}
+.newIntegral .content .list .numbers .red_num {
+  font-size: 32rpx;
+  color: #E65757;
+  position: absolute;
+  top: -3rpx;
+  right: 20rpx;
+}
+.newIntegral .content .list .main {
+  display: flex;
+  align-items: center;
+}
+.newIntegral .content .list .main .list_img {
+  width: 60rpx;
+  height: 60rpx;
+}
+.newIntegral .content .list .main .main_wrap {
+  font-size: 28rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+.newIntegral .content .list .main .main_wrap .main_title {
+  display: block;
+  width: 367rpx;
+  margin-left: 10rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.newIntegral .content .list .main .timer {
+  font-size: 24rpx;
+  color: #999;
+  position: absolute;
+  top: 80rpx;
+  right: 20rpx;
+}

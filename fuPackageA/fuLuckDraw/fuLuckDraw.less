@@ -1,0 +1,252 @@
+
+page{
+    height: 100%;
+    font-size: 26rpx;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background: #f56e68 ;
+}
+
+#fuLuckDraw{
+  
+    
+    color: #666;
+    // position: relative;
+    .numAll{
+        position: absolute;
+        top: 21%;
+        width: 100%;  
+        display: flex;
+        justify-content: center; 
+        .juzhong{
+            border-radius: 15rpx;
+            background: #fff1f0;
+            color: #666;
+            padding: 12rpx 30rpx;
+            box-sizing: border-box;
+            font-size: 35rpx;
+            display: flex;
+            align-items: center;
+        }
+        .flex{
+            flex: 1;
+            margin-left: 30rpx;
+        }
+        .logo{
+            border-radius: 50%;
+            height:50rpx;
+            width: 50rpx;
+            margin-right: 10rpx;
+        }
+        .name{
+            margin-right: 20rpx;
+        }
+    }
+
+    .swpierFu{
+        position: absolute;
+        bottom: -50rpx;
+        width: 100%;  
+       
+        swiper{
+           height: 74rpx;
+          
+        }
+        swiper-item{
+
+            display: flex;
+            justify-content: center; 
+        }
+        .juzhong{
+            border-radius: 15rpx;
+            color: #fff ;
+            padding: 12rpx 30rpx;
+            box-sizing: border-box;
+            font-size: 35rpx ;
+            display: flex;
+            align-items: center;
+            .name{ 
+                margin:  0 5rpx;
+                max-width: 16%;
+                min-width: 1%;
+                overflow: hidden;
+                height: 40rpx ;
+            }
+        }
+      
+        .flex{
+            overflow: hidden;
+            height: 40rpx;
+            flex: 1;
+            margin-left: 30rpx;
+        }
+        .logo{
+            border-radius: 50%;
+            height:50rpx;
+            width: 50rpx;
+        }
+    }
+    .alert{
+
+        height:100%;
+        width: 100%;
+        background: rgba(0, 0, 0, .6);
+        left: 0;
+        top: 0;
+        position: fixed;
+        z-index: 9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        image{
+            width: 80%;
+        }
+        .close{
+            height: 60rpx;
+            width: 60rpx;
+            border:2px solid #fff;
+            border-radius: 50%;
+            right: 10%;
+            top: 10%;
+            line-height: 60rpx;
+            text-align: center;
+            position: absolute;
+            color: white;
+            font-size: 40rpx;
+            font-weight: 800;
+        }
+    }
+
+    .bgF{
+        position: relative;
+        .callBack{
+            position: absolute;
+            top: 10rpx;
+            right:10rpx;
+            width: 100rpx;
+            height: 100rpx ;
+        }
+        image{
+            width: 100%;
+            // height: 90%;
+        }
+        .zhuanp{
+            width: 100%;
+            position: absolute;
+            top: 27.5%;
+            left: 7%;
+            .sasa{
+                width: 650rpx;
+                height: 650rpx ;
+                // animation:spin 5s ease infinite ;
+                position: relative;
+            }
+            image{
+                width: 100%;
+                height: 100%;
+              
+            }
+            .child{
+                color:#f56e68;
+                font-size: 24rpx;
+                position: absolute;
+                text-align: center;
+                overflow: hidden;
+                width: 200rpx;
+                z-index: 2;
+                .name{
+                    margin-top: 8rpx;
+                }
+                .img{
+                    width: 100%;
+                    justify-content: center;
+                    height: 60rpx;
+                    image{
+                        height: 100%;
+                    }
+                }
+                .valDet{
+                    width: 90%;
+                }
+            }
+            .ch0{
+                top: 8%;
+                left: 35% ;
+                
+            }
+            .ch1{
+                transform: rotateZ(60deg);
+                top:24%;
+                left: 60%;
+            }
+            .ch2{
+                transform: rotateZ(120deg) ;
+                top:52.5%;
+                left: 59%;
+            }
+            .ch3{
+                transform: rotateZ(180deg);
+                top:70%;
+                left: 35%;
+            }
+            .ch4{
+                transform: rotateZ(240deg);
+                top:53%;
+                left: 8%;
+                .left{
+                    text-align: left;
+                    margin-left: 20rpx;
+                }
+            }
+            .ch5{
+                transform: rotateZ(300deg);
+                top:21%;
+                left: 10%;
+                .left{
+                    text-align: left;
+                    margin-left: 20rpx;
+                }
+            }
+
+        }
+        .zpzz{
+            width: 100%;
+            position: absolute ;
+            top: 36.5%;
+            left: 38% ;
+            z-index: 9;
+            image{
+                width: 25% ;
+                
+            }
+            
+        }
+    }
+    // 
+    .btn{
+        position: fixed;
+        bottom: 0;
+        width: 100% ;
+        .van-button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(#fe493e,#f95d2d);
+            color: #fff;
+            font-size: 37rpx;
+            width: 100% ;
+            border:none;
+          
+        }
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}

@@ -1,0 +1,64 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-08 13:49:44 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-08 13:49:44 
+    积分商品下单
+    */ -->
+<view id="fuOkOrderT">
+    <!--  -->
+    <view class="chooseType">
+        <view class="contant">
+            <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/ps652486d512200ca1-cd2a-496a-b56f-3c279886c11a.png" />
+            <span class="flex">
+                <!-- <span class="tip">请新建收货地址</span> -->
+                <view class="name_phone">
+                    <span class="name">张佳佳</span>
+                    <span class="phone">13725196604</span>
+                </view>
+                <view class="address">广州市越秀区越秀南路创举商业大厦商业大厦商业大厦商业大厦</view>
+            </span>
+            <image class="mini" mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/more_1.png" />
+        </view>
+    </view>
+    <!--  -->
+    <view class="info">
+        <view class="top">
+            <image mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/icon_shop%20name.png" />
+            兑换信息
+        </view>
+        <view class="product">
+            <image mode="aspectFill" src="{{imgUrl+'index009.jpg'}}" />
+            <span class="contant">
+                <view class="name">雅诗兰黛红石榴界面乳</view>
+                <view class="pri_num">
+                    <span class="pri">¥239.00</span>
+                    <span class="num">
+                        <span>-</span>
+                        <span class="input">
+                            <input />
+                        </span>
+                        <span>+</span>
+                    </span>
+                </view>
+            </span>
+        </view>
+        <view class="list">
+            <span class="name flex">配送方式</span>
+            <span class="val">快递免邮</span>
+            <image class="mini" mode="widthFix" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/more_1.png" />
+        </view>
+        <view class="list">
+            <span class="name flex">兑换所需价格</span>
+            <span class="val pri">￥239.00</span>
+        </view>
+        <view class="list">
+            <span class="name flex">兑换所需积分</span>
+            <span class="val">（我的积分100）</span>
+            <span class="val pri">15000</span>
+        </view>
+    </view>
+    <view class="btn">
+        <van-button round>立即兑换</van-button>
+    </view>
+</view>

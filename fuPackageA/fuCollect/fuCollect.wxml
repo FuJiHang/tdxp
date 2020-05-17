@@ -1,0 +1,25 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-11-12 10:38:51 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-11-12 10:38:51 
+    我的收藏
+ */ -->
+<view class="colect" wx:if="{{List.length!=0}}">
+  <block wx:for="{{List}}" wx:key="{{item}}">
+    <view class="containt" data-productid="{{item.ProductId}}" bindtap="Toprodetai">
+      <!-- <image src="{{item.ThumbnailUrl}}" mode="widthFix"></image> -->
+      <image src="{{item.ThumbnailUrl}}" ></image>
+      <view class="contr">
+        <view class="name">{{item.ProductName}}</view>
+        <view class="people">{{item.FavoriteCount}}人收藏</view>
+        <view class="redue">比收藏时{{item.DiffPrice<0?'降价':'涨价'}}{{item.DiffPrice}}元</view>
+        <view class="pricebox">
+          <view class="price">￥{{item.SalePrice}}</view>
+          <!-- <view class="liker">找相似</view> -->
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="emity" wx:if="{{List.length==0}}">暂无收藏</view>

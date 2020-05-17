@@ -1,0 +1,26 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-16 16:03:30 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-04-16 16:03:30 
+    上下架列表
+*/ -->
+<view class="upDownList" bindtap="onChange">
+    <span class="choose">
+        <van-checkbox checked-color="#F56F68" value="{{ checked }}"></van-checkbox>
+    </span>
+    <span >
+        <image src="{{data.Pic}}"  />
+    </span>
+   
+    <view class="contantTL">
+        <view class="name_mon">
+            <text class="name">{{data.ProductName}}</text>
+            <span class="mon">￥{{data.SalePrice}}</span>
+        </view>
+        <view class="detail_btn">
+            <text class="det">详情</text>啊圣诞节快乐卡的打开了家看来是的sad看了就看了阿萨
+        </view>
+    </view>
+    
+</view>

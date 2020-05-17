@@ -1,0 +1,744 @@
+page{
+    height: 100%;
+    overflow: auto;
+    // overflow: hidden;
+    -webkit-overflow-scrolling:touch;
+}
+view{
+    -webkit-overflow-scrolling:touch;
+}
+#fuBeaStore{
+    font-size: 26rpx;
+    color: #666;
+
+    // padding-bottom: 120px ;
+    box-sizing: border-box;
+    swiper-item{
+        image{
+            width: 100%;
+        }
+    }
+    // 
+    .newNews{
+        z-index: 3;
+        position: relative;
+        // box-shadow: 0 -15rpx 50rpx rgb(161, 161, 161);
+        display: flex;
+        font-size: 29rpx ;
+        background: white;
+        box-sizing: border-box;
+        padding: 20rpx;
+        align-items: center;
+        // margin-bottom: 20rpx ;
+        .name{
+            color: #2b2b2b;
+        }
+        .van-icon-volume-o{
+            margin: 10rpx 20rpx;
+        }
+        .new{
+            flex: 1;
+            .van-notice-bar {
+                font-size: 26rpx;
+                height: 20px;
+                padding: 0;
+            }
+            // background: white;
+        }
+    }
+    .navBar{
+       
+        padding: 20rpx;
+        font-size: 30rpx;
+        box-sizing: border-box;
+        background: white;
+        color: #090909;
+        display: flex;
+        align-items: center;
+        .name{
+            padding-left: 20rpx;
+            border-left: 8rpx solid #ff6666;
+            color: #070707;
+            flex: 1;
+            font-weight: 800;
+        }
+        .val{
+            font-size: 28rpx;
+            margin-right: 10rpx;
+        }
+        image{
+            width: 30rpx;
+            height: 30rpx;
+        }
+    }
+
+    .typefun{
+        margin-bottom: 20rpx ;
+        image{
+            width: 100% ;
+        }
+    }
+
+    .hotProduct{
+        display: flex ;
+        background: white;
+        border-top:1px solid rgb(240, 240, 240) ;
+        margin-bottom: 20rpx;
+        .leftHP{
+        
+            padding:0 20rpx;
+            box-sizing: border-box;
+            border-right: 1px solid rgb(240, 240, 240);
+            width: 40%;
+            .name{ 
+                margin: 25rpx 0;
+                font-size: 32rpx;
+                text-align: center;
+                color: #444444;
+                display:-webkit-box;
+                -webkit-line-clamp: 1; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break:break-all ;
+            }
+            .img{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                image{
+                    background: rgb(255, 231, 230);
+                    height: 150rpx;
+                    max-width: 100%;
+                }
+                
+            }
+            .val{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #242424;
+                padding: 25rpx 0;
+         
+                
+                image{
+                    height: 30rpx;
+                    width: 30rpx;
+                }
+                .num{
+                    // margin: 0 10rpx;
+                    font-size: 28rpx;
+                    display: flex;
+                    align-items: baseline;
+                } 
+                // .meili{
+                //     font-size: 23rpx;
+                // }
+            }
+        }
+        .rightHP{      
+            flex: 1;
+            .border{
+                border-bottom: 1px solid rgb(240, 240, 240);
+            }
+            .childPro{
+                padding: 10rpx 20rpx;
+                box-sizing: border-box;
+                display: flex;
+                
+                .contant{
+                    flex: 1;
+                    margin-right: 20rpx;
+                    .val{
+                        display: flex;
+                        align-items: center;
+                        color: #242424;
+                        .ovFU{
+                            flex: 1;
+                            // display:-webkit-box;
+                            // -webkit-line-clamp: 1; //超出多少行
+                            // overflow: hidden;
+                            // -webkit-box-orient: vertical;
+                            // word-break:break-all;
+                        }
+                       
+                        image{
+                            height: 30rpx;
+                            width: 30rpx;       
+                        }
+                        .num{
+                            display: flex;
+                            align-items: baseline;
+                            // margin: 0 10rpx;
+                            font-size: 28rpx;
+                        }
+                        // .meili{
+                        //     font-size: 22rpx;
+                        // }
+                    }
+                    .name{
+                        font-size: 32rpx;
+                        margin: 20rpx 0 5rpx;
+                        display:-webkit-box;
+                        -webkit-line-clamp: 1; //超出多少行
+                        overflow: hidden;
+                        -webkit-box-orient: vertical;
+                        word-break:break-all;
+                    }
+                    .det{
+                        display:-webkit-box;
+                        -webkit-line-clamp: 1; //超出多少行
+                        overflow: hidden;
+                        -webkit-box-orient: vertical;
+                        word-break:break-all;
+                        margin-bottom: 15rpx;
+                        color: #999;
+                        font-size: 24rpx   ; 
+                    }
+                }
+                .productImg{
+                    background:  rgb(255, 231, 230);
+                    height: 150rpx;
+                    width: 150rpx;
+                }
+            }
+        }
+    }
+
+    // 
+    .productCont{
+        padding: 10rpx;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        background: white;
+        margin-bottom: 20rpx;
+        .product{
+            padding: 10rpx 10rpx 0;
+            margin-bottom: 20rpx;
+            width:50%;
+            box-sizing: border-box;
+            .jiaoZiPi{
+                border:1px solid rgb(241, 241, 241);
+                background: white;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+
+                .detG{
+                    padding: 10rpx;
+                    box-sizing: border-box;
+                    display: flex; 
+                    align-items: center;
+                    .flex{
+                        flex: 1; 
+                        display: flex ; 
+                        align-items: center;
+                        color: #2a2a2a;
+                        font-size: 30rpx;
+                        image{
+                            margin-right: 10rpx;
+                            height: 30rpx;
+                            width:30rpx;
+                        }
+
+                    }
+                  
+                    .collectG{ 
+                        display: flex; 
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        color: #c9c9c9;
+                        font-size: 24rpx;
+                        filter: grayscale(100%);
+                    }
+                    .coll{
+                        filter: grayscale(0) ;
+                    }
+                }
+                .btnG{
+                    border-top: 1px solid rgb(240, 240, 240);
+                    .van-button{
+                        border: none;
+                        width: 100%;
+                        color: #373737;
+                    }
+                }
+            }
+            .img{
+                // padding: 20rpx;
+                box-sizing: border-box;
+                border-bottom: 1px solid rgb(240, 240, 240);
+                image{
+                    background:  rgb(255, 231, 230);
+                    height: 220rpx;
+                    max-width: 100%;
+                    
+                }
+            }
+            .name{
+                font-size: 32rpx;
+                margin:10rpx 20rpx;
+                box-sizing: border-box;
+                display:-webkit-box;
+                -webkit-line-clamp: 1; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break:break-all;
+            }
+            .det{
+                color: #999;
+                margin-bottom: 20rpx;
+                padding: 0 20rpx;
+                box-sizing: border-box;
+                display:-webkit-box;
+                -webkit-line-clamp: 2; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break:break-all;
+            }
+            .val{
+                display: flex;
+                align-items: center;
+                color: #F56F68;
+                padding: 0 20rpx;
+                box-sizing: border-box;
+                image{
+                    height: 30rpx;
+                    width:30rpx;
+                }
+                .ovFU{
+                    flex: 1;
+                    display:-webkit-box;
+                    -webkit-line-clamp: 1; //超出多少行
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    word-break:break-all;  
+                }
+                .bea{
+                    font-size: 22rpx;
+                    overflow: hidden;
+                    .num{
+                        // margin: 0 10rpx;
+                        font-size: 30rpx;
+                        display: flex;
+                        align-items: baseline;
+                    }
+                }
+                .xjin{
+                    
+                    font-size: 22rpx;
+                    .num{
+                        // margin: 0 5rpx;
+                        font-size: 30rpx;
+                        display: flex;
+                        align-items: baseline;
+                    }
+                } 
+            }
+            .chaozuo{
+                margin-top: 10rpx;
+                border-top: 1rpx solid rgb(240, 240, 240);
+                display: flex; 
+                align-items: center;
+                width: 100%;
+                .collect{
+                    justify-content: center;
+                    padding: 0 20rpx;
+                    box-sizing: border-box;
+                    display: flex;
+                    .van-icon{
+                        margin-right: 10rpx;
+                    }
+                    filter: grayscale(100%);
+                    color:#F56F68;
+                    font-size: 28rpx;
+                }
+                .coll{
+                    filter: grayscale(0);
+                }
+                .btn{
+                    overflow: hidden;
+                    flex: 1;
+                    .van-button{
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border:none;
+                        background: #F56F68;
+                        color: white;
+                        padding: 0;
+                        border-radius: 0;
+                        .bImg{
+                            width: 20rpx;
+                            height: 20rpx;
+                            margin-right: 10rpx;
+                        }
+                    }
+                }
+            }
+            .btnFU{
+                flex: 1;
+                display: flex;
+                align-items: flex-end;
+                width: 100%;
+            }
+        }
+        .three{
+            width:33.33%;
+        }
+    }
+
+    // 
+    .senoud{
+        margin-bottom: 20rpx ;
+        display: flex;
+        padding: 10rpx ;
+        box-sizing: border-box ; 
+        background: white;
+        .child{
+            width: 50% ;
+            padding:0 10rpx;
+            box-sizing: border-box ; 
+            .name{
+                font-weight: 800;
+                display:-webkit-box;
+                -webkit-line-clamp: 1; //超出多少行
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                word-break:break-all;
+                font-size: 30rpx;
+                color: #070707;
+                margin: 10rpx 0 20rpx;
+                box-sizing: border-box ; 
+            }
+            image{
+                height: 150rpx;
+                width: 100%;
+            }
+        }
+    }
+
+    .van-popup--right{
+        width: 80%;
+        overflow: auto;
+        height: 100%;
+        padding: 20rpx 0;
+        box-sizing: border-box;
+        .skuContant{
+            .name{
+                font-size: 32rpx;
+                color: #999;
+                padding: 20rpx;
+                padding-left: 30rpx;
+                box-sizing: border-box;
+            }
+            .sku{
+                display: flex;
+                padding-left: 30rpx;
+                box-sizing: border-box;
+                flex-wrap: wrap;
+                .child{
+                    width:calc(33.33% - 3.6rpx) ;
+                    text-align: center;
+                    border-radius: 6rpx;
+                    background: rgb(240, 240, 240);
+                    margin: 20rpx 20rpx 0 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    .val{
+                        font-size: 30rpx;
+                        padding: 10rpx 5rpx 5rpx;
+                    }
+                    .bfb{
+                        padding-bottom: 10rpx;
+                    }
+                }
+                .choose{
+                    background: #F56F68;
+                    color: white;
+                }
+            }
+        }
+    }
+    .btnPP{
+        padding: 20rpx;
+        box-sizing: border-box;
+        text-align: right;
+        margin-top: 40rpx;
+        .van-button{
+            background: #F56F68;
+            color: white;
+        }
+    }
+    // dib导航
+  .navBarFu{
+    position: fixed;
+    bottom: 0;left: 0;
+    width: 100%;
+    z-index: 3;
+    background: white;
+    display: flex;
+    padding: 10rpx 0;
+    box-sizing: border-box;
+    font-size: 26rpx;
+    border-top:1px solid rgb(240, 240, 240);
+    .child{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex: 1;
+        position: relative;
+        opacity: 0.6;
+        image{
+            width: 40rpx;
+            height: 40rpx;
+        }
+        .name{
+            margin-top: 5rpx;
+            // color: #999;
+        }
+        
+    }
+    .black{ 
+        opacity: 1;
+    }
+    .max{
+        opacity: 1;
+        image{
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            top: -40rpx;
+            width: 100rpx;
+            height: 100rpx;
+        }
+    }
+  }
+  .konbai{
+    height: 120rpx ;
+  }
+
+
+
+ 
+
+
+}   
+
+
+.van-popup--right {
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
+
+
+    display: flex;
+    flex-direction: column;
+
+    // 搜索框
+    .seachMT {
+        background: white;
+        display: flex;
+        align-items: center;
+        padding: 20rpx;
+        box-sizing: border-box;
+
+        .seachbg {
+            flex: 1;
+            align-items: center;
+            display: flex;
+            background: #EEEEEE;
+            border-radius: 40rpx;
+
+            image {
+                width: 40rpx;
+                margin-left: 20rpx;
+            }
+
+            input {
+                height: 70rpx;
+                font-size: 28rpx;
+                margin: 0 20rpx;
+                flex: 1;
+            }
+
+            .van-icon {
+                margin-top: 5rpx;
+                margin-right: 20rpx;
+            }
+        }
+
+        .van-button {
+            padding: 0;
+            border: none;
+            background: none;
+        }
+    }
+
+
+
+    // 内容
+    .appointTO {
+        display: flex;
+        overflow: hidden;
+        flex: 1;
+        border-top: 1px solid rgb(240, 240, 240);
+
+        .leftCont {
+            width: 180rpx;
+            height: 100%;
+            overflow: auto;
+            padding-bottom: 250rpx;
+            box-sizing: border-box;
+
+            .Choose {
+                width: 100%;
+                text-align: center;
+                line-height: 80rpx;
+                font-size: 28rpx;
+                height: 80rpx;
+                box-sizing: border-box;
+                transition: .5s;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .isChoose {
+                background: #E5414A;
+                color: white;
+            }
+        }
+
+        .rightCont {
+            height: 100%;
+            width: 100%;
+            // flex: 1;
+            // display: flex;
+            // flex-direction: column;
+            overflow: hidden;
+
+            scroll-view {
+                background: white;
+                // flex: 1;
+                height: 100%;
+                overflow: auto;
+
+                .noMore {
+                    font-size: 28rpx;
+                    color: #999;
+                    padding: 20rpx 20rpx 250rpx;
+                    text-align: center;
+                    box-sizing: border-box;
+                }
+            }
+        }
+    }
+
+    // 
+    .detail {
+        .banner {
+            padding: 20rpx;
+            box-sizing: border-box;
+
+            image {
+                width: 100%;
+            }
+        }
+
+        .list {
+            .title {
+                padding: 20rpx;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                color: #E5414A;
+
+                .flex {
+                    flex: 1;
+                    margin-left: 40rpx;
+                    height: 1px;
+                    background: rgb(238, 238, 238);
+                }
+            }
+
+            .contant {
+                padding: 10rpx;
+                box-sizing: border-box;
+                display: flex;
+                flex-wrap: wrap;
+
+                .child {
+                    width: 33.33%;
+                    padding: 10rpx;
+                    box-sizing: border-box;
+                    text-align: center;
+                    margin-bottom: 20rpx;
+
+                    image {
+                        width: 100%;
+                        margin-bottom: 5rpx;
+                        height: 100rpx;
+                    }
+                    .name{
+                        display:-webkit-box;
+                        -webkit-line-clamp: 2; //超出多少行
+                        overflow: hidden;
+                        -webkit-box-orient: vertical;
+                        word-break:break-all;
+                    }
+
+                }
+            }
+        }
+    }
+
+ 
+}
+
+.classfiy {
+    position: fixed;
+    right: 10rpx;
+    top: 60%;
+    width: 130rpx;
+    height: 1rpx;
+}
+.mini{
+    color: #777;
+    font-size: 26rpx;
+    text-align: center;
+
+}
+.num{
+    display: flex;
+    align-items: baseline;
+}
+
+.overHide{
+    display:-webkit-box;
+    -webkit-line-clamp: 1; //超出多少行
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    word-break:break-all;
+}
+.meili{
+    display: flex;
+    align-items: baseline;
+    margin-top: 10rpx;
+}
+.roundDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40rpx;
+    width: 40rpx;
+    border-radius: 50%;
+    border:1px solid rgb(240, 240, 240);
+}

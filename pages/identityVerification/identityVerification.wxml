@@ -1,0 +1,79 @@
+<!--pages/identityVerification/identityVerification.wxml-->
+<!-- <text>pages/identityVerification/identityVerification.wxml</text> -->
+<view id='identityVerification'>
+
+  <view class="fujihangCant">
+
+
+    <view class='IVF-top-box'>
+    <!-- IVF-top-box顶部盒子 -->
+      <view class='IVF-top-center-box {{applicaData.bg}}'>
+        <view class='IVF-top-left'>
+          <image src="{{applicaData.img}}"></image>
+        </view>
+        <view class='IVF-top-center'>
+          <view class='IVF-top-title' >{{applicaData.name}}</view>
+          <view class='IVF-top-describe'>{{applicaData.text}}</view>
+        </view>
+        <view class='IVF-top-right'>已选择</view>
+      </view>
+
+      <!-- IVF-top-box 顶部盒子-->
+    </view>
+
+    <view class='IVF-center-box'>
+    <!-- IVF-center-box 中部盒子-->
+      <view class='IVF-center-title'>基本信息</view>
+      <view class='IVF-center-conter-box' wx:for="{{informationData}}" wx:key="{{index}}">
+        <view class='IVF-center-conter-title'>{{item.title}}</view>
+        <view class='IVF-center-conter-val'>{{item.val?item.val:'无'}}</view>
+      </view>
+    <!-- IVF-center-box 中部盒子-->
+    </view>
+
+    <view class='IVF-bottom-box' wx:if="{{getData.fSF!=2}}">
+    <!-- IVF-bottom-box 底部 盒子-->
+      <view class='IVF-bottom-title'>{{getData.fSF?'申请理由':'个人简历'}}</view>
+      <view class='IVF-bottom-conter-box'>
+        <view class='IVF-bottom-conter'> {{getData.fSF?getData.RepelReason:getData.Introduce}}</view>
+      </view>
+      <view class='IVF-bottom'></view>
+    <!-- IVF-bottom-box底部 盒子-->
+    </view>
+
+    <view class="bw">
+      <view class="navtop" wx:if="{{getData.fSF!=1}}">
+          {{getData.fSF?'门店环境':'作品案例'}}
+      </view>
+      <view class="upload">
+          <span class="img" wx:for="{{getData.Picture}}" wx:key="{{index}}" >
+              <image src="{{item}}" mode="aspectFill" />
+          </span>
+      </view>
+    </view>
+    
+
+
+  </view>
+  <view class='IVF-bottom-btn-box'>
+    <view class='IVF-bottom-btn-cancel' bindtap="openFN">拒绝</view>
+    <view class='IVF-bottom-btn-agree' data-index="{{0}}" bindtap="submitFN">同意</view>
+  </view>
+  
+
+
+  <!-- 弹窗 -->
+  <view class="alert {{isOpen?'isOpen':''}}" catchtap="closeFN">
+    <view class="fuBw" catchtap="openFN">
+      <view class="name">请输入拒绝理由</view>
+      <view class="text">
+        <textarea maxlength="-1"></textarea>
+      </view>
+      <view class="btn">
+        <van-button bindtap="submitFN" data-index="{{1}}">确定</van-button>
+      </view>
+    </view>
+  </view>
+
+  <!-- identityVerification -->
+</view>

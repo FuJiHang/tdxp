@@ -1,0 +1,141 @@
+page {
+  height: 100%;
+  overflow: hidden;
+}
+#fuPromot {
+  font-size: 30rpx;
+  color: #666;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+#fuPromot .contantPt {
+  flex: 1;
+  overflow: auto;
+}
+#fuPromot .contantPt .red {
+  color: #F56F68;
+}
+#fuPromot .contantPt .name {
+  font-size: 34rpx;
+}
+#fuPromot .contantPt .navTop {
+  background: white;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+}
+#fuPromot .contantPt .navTop .time {
+  flex: 1;
+  margin-left: 20rpx;
+  color: #999;
+}
+#fuPromot .contantPt .childDet {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+  background: white;
+  border-bottom: 1px solid #f0f0f0;
+}
+#fuPromot .contantPt .childDet span {
+  flex: 1;
+  overflow: hidden;
+  text-align: center;
+}
+#fuPromot .contantPt .childDet .time {
+  overflow: hidden;
+  max-width: 11%;
+  color: #999;
+}
+#fuPromot .contantPt .childDet .tdz {
+  font-size: 30rpx;
+}
+#fuPromot .contantPt .childDet .tdz image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+#fuPromot .contantPt .childDet .yh {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+#fuPromot .contantPt .childDet .cout {
+  font-size: 30rpx;
+}
+#fuPromot .contantPt .childDet .cout .ico {
+  margin-top: 3rpx;
+  color: #f56e68;
+  font-size: 22rpx;
+}
+#fuPromot .contantPt .childDet .cout image {
+  width: 20rpx;
+  height: 20rpx;
+}
+#fuPromot .contantPt .childDet .mini {
+  font-size: 22rpx;
+  color: #ffbe98;
+}
+#fuPromot .contantPt .childDet .mini image {
+  margin-right: 5rpx;
+  width: 20rpx;
+  height: 20rpx;
+}
+#fuPromot .contantPt .childDet .proj .ico {
+  color: #ffbe98;
+}
+#fuPromot .contantPt .childDet .money {
+  color: #f56e68;
+  font-size: 35rpx;
+}
+#fuPromot .contantPt .more {
+  text-align: center;
+  background: white;
+  padding: 20rpx;
+  box-sizing: border-box;
+  color: #999;
+}
+#fuPromot .contantPt .submit {
+  margin-top: 20rpx;
+  background: white;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuPromot .contantPt .submit .inputName {
+  display: flex;
+  align-items: center;
+}
+#fuPromot .contantPt .submit .inputName .input {
+  margin: 20rpx 0 0;
+  flex: 1;
+  border: 1px solid #cacaca;
+}
+#fuPromot .contantPt .submit .inputName .input input {
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+#fuPromot .contantPt .submit .inputName .border {
+  margin-left: 20rpx;
+}
+#fuPromot .contantPt .tip {
+  background: white;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+}
+#fuPromot .contantPt .tip .red {
+  margin-right: 10rpx;
+}
+#fuPromot .contantPt .last {
+  padding-bottom: 20rpx;
+}
+#fuPromot .btn .van-button {
+  border-radius: 0;
+  border: none;
+  width: 100%;
+  background: #F56F68;
+  color: white;
+}

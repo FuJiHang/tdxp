@@ -1,0 +1,71 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2019-04-16 17:26:20 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2019-04-16 17:26:20 
+    技师列表
+*/ -->
+
+<view id="fuTeachList">
+
+
+    <view class="contantFTL">
+
+        <view class="teacher" wx:for="{{teacher}}" wx:key="{{index}}" wx:for-index="index" data-index="{{index}}">
+            <view class="detail_top">
+                <view class="check_f" data-id="{{index}}">
+                    <van-checkbox checked-color='#F56F68' data-id="{{index}}" value="{{ item.ischoose }}" bindtap="onChange"></van-checkbox>
+                </view>
+                <span class="head">
+                    <image mode='aspectFill' src="{{item.tPic}}" />
+                </span>
+                
+                <view class="contant_top">
+                    <view class="name_join">
+                        <text class="name">{{item.tName}}</text>
+                        <span class="join">{{item.tGrade}}</span>
+                    </view>
+                    <view class="good">
+                        <text class="code">擅长</text>
+                        <span wx:for="{{item.tPrograms}}" wx:for-item="g" wx:key="{{indexg}}">
+                            {{g.ProgramName}}
+                        </span>
+                    </view>
+                </view>
+            </view>
+
+            <view class="classList" wx:for="{{item.trows}}" wx:if="{{item.isOpen||index<=1}}" wx:key="index" wx:for-item="child">
+                <view class="classTop">
+                    <span class="head">
+                        <image src="{{child.ProgramPicture}}" mode='aspectFill'/>
+                    </span>
+                    
+                    <view class="contant">
+                        <view class="name_mon mb">
+                            <text class="name">{{child.ProgramName}}</text>
+                            <span class="mon">￥{{child.ProgramCost}}</span>
+                        </view>
+                        <!-- <view class="company mb">{{child.StoreAddress}}</view> -->
+                        <view class="address mb">
+                            <image src="{{imgUrl+'icon_address33.png'}}" />
+                            {{child.StoreAddress}}
+                        </view>
+                    </view>
+                </view>
+                <view class="time">{{child.time}}</view>
+            </view>
+            <view wx:if="{{item.trows.length>1}}" class="more" bindtap="openOrClose" data-index="{{index}}">
+                {{item.isOpen?'收起':'更多'}}<van-icon name="{{item.isOpen?'arrow-up':'arrow-down'}}" />
+            </view>
+        </view>
+        
+        <view class="noMore">
+            没有更多的了~~~
+        </view>
+    </view>
+    
+    <!--  -->
+    <view class="btn">
+        <van-button bindtap="subFN">立即分配</van-button>
+    </view>
+</view>

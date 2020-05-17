@@ -1,0 +1,182 @@
+<view id="reward">
+  <view class="header">
+    <view class="header_price" wx:if="{{index==0}}"><!--用于店铺营收-->
+      <text class="price">{{dianpu.price}}</text>
+      <text class="miaoshu">{{dianpu.title}}</text>
+    </view>
+    <view class="header_price" wx:if="{{index==1}}"><!--用于会员奖励-->
+      <text class="price">{{huiyuan.price}}</text>
+      <text class="miaoshu">{{huiyuan.title}}</text>
+    </view>
+    <view class="header_price" wx:if="{{index==2}}"><!--用于平台奖励-->
+      <text class="price">{{pingtai.price}}</text>
+      <text class="miaoshu">{{pingtai.title}}</text>
+    </view>
+    
+    <view class="show_wrap" wx:if="{{index==0}}"><!--用于店铺营收-->
+      <block wx:for="{{showData2}}" wx:key="{{item}}">
+        <view class="show_je">
+          <text class="num_store">{{item.price}}</text>
+          <text class="num_name">{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+    <view class="show_wrap" wx:if="{{index==1}}"><!--用于会员奖励-->
+      
+      <block wx:for="{{showData3}}" wx:key="{{item}}">
+        <view class="show_je">
+          <text class="num_store">{{item.price}}</text>
+          <text class="num_name">{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+    <view class="show_wrap" wx:if="{{index==2}}"><!--用于平台奖励-->
+      <block wx:for="{{showData}}" wx:key="{{item}}">
+        <view class="show_je">
+          <text class="num_store">{{item.price}}</text>
+          <text class="num_name">{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 导航栏 -->
+  <view class="nav_wrap">
+    <view class="nav_title" wx:if="{{index==2}}"> <!--用于平台奖励-->
+      <block wx:for="{{navData}}" wx:key>
+        <view class="title {{index==nums?'active':''}}" data-index="{{index}}" bindtap="handleNav">{{item.name}}</view>
+      </block>
+    </view>
+    <view class="nav_title" wx:if="{{index==1}}"><!--用于会员奖励-->
+      <block wx:for="{{navData2}}" wx:key>
+        <view class="title {{index==numss?'active':''}}" data-index="{{index}}" bindtap="handleNav2">{{item.name}}</view>
+      </block>
+    </view>
+    <view class="search_wrap" wx:if="{{index==0}}"><!--用于店铺营收-->
+      <view class="search_ytd">
+        <view class="ytd">
+          <!-- 2019年10月31日 -->
+          <picker mode="date" value="{{date}}" start="1960-01-01" end="2060-12-31" bindchange="bindDateChange">
+            <view class="picker">
+              {{date}}
+            </view>
+          </picker>
+        </view>
+        <image class="ytd_img" src="{{imgUrl+'sanjiaoxing.png'}}"></image>
+      </view>
+      <view class="search_price" bindtap="handleShow">
+        <view class="s_price">价格</view>
+        <image class="ytd_img" src="{{imgUrl+'sanjiaoxing.png'}}"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 列表内容 -->
+  <view class="list_wrap">
+    <view class="pingtai" wx:if="{{index==0}}"><!--店铺营收-->
+      <block wx:for="{{list}}" wx:key="{{item}}">
+        <view class="list">
+          <view class="reservation_wrap">
+            <view class="reservation">
+              <text class="res_title">预约单号:</text>
+              <text class="res_num">{{item.nums}}</text>
+            </view>
+            <view class="res_time">{{item.time}}</view>
+          </view>
+          <view class="reservation_img">
+            <image class="res_img" src="{{img}}"></image>
+            <view class="res_content">{{item.title}}</view>
+          </view>
+          <!-- 预计收益 -->
+          <view class="predict">
+            <view class="predict_wrap">
+              <view class="predict_s">
+                <text class="s_title">预约:</text>
+                <text>￥{{item.yuji}}</text>
+              </view>
+              <view class="predict_s">
+                <text class="s_title">全款:</text>
+                <text>￥{{item.quank}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view class="pingtai" wx:if="{{index==1}}"><!--会员奖励-->
+      <block wx:for="{{list}}" wx:key="{{item}}">
+        <view class="list">
+          <view class="reservation_wrap">
+            <view class="reservation">
+              <text class="res_title">预约单号:</text>
+              <text class="res_num">{{item.nums}}</text>
+            </view>
+            <view class="res_time">{{item.time}}</view>
+          </view>
+          <view class="reservation_img">
+            <image class="res_img" src="{{img}}"></image>
+            <view class="res_content">{{item.title}}</view>
+          </view>
+          <!-- 预计收益 -->
+          <view class="predict">
+            <view class="predict_wrap">
+              <view class="predict_s">
+                <text class="s_title">推荐佣金:</text>
+                <text>￥{{item.yuji}}</text>
+              </view>
+              <view class="predict_s">
+                <text class="s_title">全款:</text>
+                <text>￥{{item.quank}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view class="pingtai" wx:if="{{index==2}}"><!--平台奖励-->
+      <block wx:for="{{list}}" wx:key="{{item}}">
+        <view class="list">
+          <view class="reservation_wrap">
+            <view class="reservation">
+              <text class="res_title">预约单号:</text>
+              <text class="res_num">{{item.nums}}</text>
+            </view>
+            <view class="res_time">{{item.time}}</view>
+          </view>
+          <view class="reservation_img">
+            <image class="res_img" src="{{img}}"></image>
+            <view class="res_content">{{item.title}}</view>
+          </view>
+          <!-- 预计收益 -->
+          <view class="predict">
+            <view class="predict_wrap">
+              <view class="predict_s">
+                <text class="s_title">预计收益:</text>
+                <text>￥{{item.yuji}}</text>
+              </view>
+              <view class="predict_s">
+                <text class="s_title">全款:</text>
+                <text>￥{{item.quank}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+      
+
+  </view>
+
+
+  <!-- 价格弹窗 -->
+  <view class="price_win" wx:if="{{isShow}}">
+    <view class="win_content">
+      <block wx:for="{{priceWin}}" wx:key="{{item}}">
+        <view class="win_btn {{index==winNum?'add_win':''}}" bindtap="handleWin" data-index="{{index}}">{{item}}</view>
+      </block>
+    </view>
+    <view class="affirm_btn" bindtap="handleAffirm">确认</view>
+  </view>
+  <view class="price_zz" catchtap="handleOff" wx:if="{{isShow}}"></view>
+
+</view>

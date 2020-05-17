@@ -1,0 +1,350 @@
+/* pages/receivingAddress/receivingAddress.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  background: #F7F7f7;
+}
+
+view {
+  box-sizing: border-box;
+}
+
+.item-box {
+  /* width: 700rpx; */
+  width: 100%;
+  margin: 0 auto;
+  padding: 40rpx 40rpx;
+  background: #F7F7f7;
+
+}
+
+.items {
+  width: 100%;
+  box-sizing: border-box;
+  /* background: #FFF; */
+  /* display: flex;
+    flex-direction: column; */
+}
+
+.item {
+  position: relative;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  border-top: 2rpx solid #eee;
+
+  /* height: 120rpx; */
+
+  /* overflow: hidden; */
+}
+
+.item:last-child {
+  border-bottom: 2rpx solid #eee;
+}
+
+.inner {
+  position: absolute;
+  top: 0;
+}
+
+.txt {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  transition: left 0.2s ease-in-out;
+  text-overflow: ellipsis;
+  background: #FFF;
+}
+
+.fu {
+  position: relative;
+  z-index: 99;
+  box-sizing: border-box;
+  transition: transform 0.2s ease-in-out;
+  background: #FFF;
+  padding: 36rpx 36rpx;
+}
+
+.inner.del {
+  width: 180rpx;
+  background: red;
+  text-align: center;
+  z-index: 4;
+  right: 0;
+  color: #fff;
+  height: 100%;
+  display: flex;
+  font-size: 24rpx;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.del image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.item-icon {
+  width: 64rpx;
+  height: 120rpx;
+  vertical-align: middle;
+  margin-right: 16rpx;
+  background: #FFF;
+}
+
+.useranameBox {
+  display: flex;
+  align-items: center;
+}
+
+.userName {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.userPhone {
+  font-size: 26rpx;
+  color: #333333;
+  padding: 0rpx 20rpx;
+}
+
+.iddefault {
+  font-size: 20rpx;
+  color: #FFF;
+  padding: 5rpx 10rpx;
+  background: #479EFF;
+  border-radius: 40rpx;
+}
+
+.addressBox {
+  justify-content: space-between;
+  background: red;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #FFF;
+  margin-bottom: 20rpx;
+}
+
+.userAddress {
+  font-size: 22rpx;
+  color: #666666;
+  width: 80%;
+  font-family: "PingFang-SC-Medium";
+  overflow: hidden;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+
+}
+
+.imgbox {
+  width: 40rpx;
+  height: 40rpx;
+
+}
+
+.addBox {
+  width: 100%;
+  background: #FFF;
+  display: flex;
+  height: 200rpx;
+  border-radius: 10rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.addBox image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+/* 上面是以前的样式 */
+#box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #F4F4F4;
+  box-sizing: border-box;
+}
+
+.addressListBox {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.addressList {
+  margin: 22rpx 22rpx 0;
+  /* padding: 25rpx 25rpx; */
+  background: #FFF;
+  border-radius: 5rpx;
+}
+
+.addressUserName {
+  display: flex;
+  align-items: center;
+  font-size:32rpx;
+  align-items: center;
+  color: #333333;
+  font-weight: bold;
+}
+
+.addressListBox2 {
+  padding: 34rpx 0 28rpx;
+  margin: 0 26rpx;
+  border-bottom: 1px solid #F5F2ED;
+}
+
+.call {
+  margin-left: 20rpx;
+  font-size:26rpx;
+  color: #666666;
+}
+
+.useraddressBox {
+  font-size: 22rpx;
+  color: #CCCCCC;
+  padding: 8rpx 0rpx 0;
+  /* display: flex;
+  align-items: center; */
+
+}
+
+.useraddressBox text {
+  font-size: 22rpx;
+  color: #ccc;
+  margin-right: 20rpx;
+
+}
+
+.useraddressBox text:last-child {
+  margin-right: 0rpx;
+}
+
+.canStateBox {
+  padding: 22rpx 26rpx;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.canStateBox .van-button {
+  width: 134rpx;
+  height: 54rpx;
+  border-radius: 28rpx;
+  border: 1px solid rgba(229, 229, 229, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 22rpx;
+  margin-left: 26rpx;
+}
+
+.setDafaultCir {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 1px solid #666666;
+  /* 用于定位按钮 */
+  position: relative;
+}
+
+.defaultTip {
+  flex: 1;
+  font-size: 22rpx;
+  color: #666666;
+  padding-left: 8rpx;
+}
+
+.isdefault,
+.bianji,
+.deletedimg {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.bianji {
+  margin-right: 60rpx;
+}
+
+.addBtn {
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  width: calc(100% - 64rpx);
+  position: absolute;
+  bottom: 50rpx;
+  color: #FFF;
+  font-size: 32rpx;
+  background: linear-gradient(90deg, rgba(255, 83, 83, 1) 0%, rgba(255, 43, 149, 1) 100%);
+  margin: 0 32rpx;
+  border-radius: 50rpx;
+  font-weight: bold;
+}
+
+.dingqi {
+  height: 200rpx;
+}
+
+/* 缺省页 */
+.box2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.imgboxisEmpty {
+  min-width: 400rpx;
+  min-height: 220rpx;
+  margin-top: 300rpx;
+  width: 70%;
+  height: 220rpx;
+  /* background: yellow; */
+}
+
+.imgboxisEmpty image {
+  width: 100%;
+}
+
+.emptyTip {
+  margin-top: 30rpx;
+  padding: 20rpx auto;
+  color: #999999;
+  font-size: 26rpx;
+  letter-spacing: 3rpx;
+}
+
+.addNewAddressBtn {
+  margin-top: 30rpx;
+  padding: 8rpx 30rpx;
+  color: #33B5FF;
+  border: 1px solid #33B5FF;
+  border-radius: 100rpx;
+  letter-spacing: 3rpx;
+}
+
+
+.set_btn {
+  position: absolute;
+  top: -17rpx;
+  left: -3rpx;
+  width: 260rpx;
+  height: 60rpx;
+  /* background-color: pink; */
+  opacity: 0;
+}

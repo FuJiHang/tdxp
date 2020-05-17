@@ -1,0 +1,20 @@
+<!--pages/recharge/recharge.wxml-->
+<view class='top'>选择充值方式</view>
+<view class='content'>
+  <view class="active">
+    <view>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/qianbao.png'></image>
+    </view>
+    微信支付
+  </view>
+</view>
+<view class='tixian'>
+  <view class='tixianFont'>充值金额：</view>
+  <view class='fuhao'>￥</view>
+  <input placeholder-class="place-holder place-holder1" type='number' bindinput='writeMoney' value='{{money}}' placeholder='可充值金额为整数'></input>
+</view>
+<view class='content2'>
+  <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/zhuyi.png'></image>
+  <text>当前余额剩余 {{userInfo.Balance}} 元</text>
+</view>
+<view class='btn' bindtap='confirmPrepaid'>确认充值</view>

@@ -1,0 +1,89 @@
+page {
+  height: 100%;
+  font-size: 28rpx;
+  position: relative;
+  background: white;
+}
+#fuTeachTitle {
+  position: relative;
+  color: #666;
+}
+#fuTeachTitle .navTap {
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 36rpx;
+  font-weight: 800;
+  margin-bottom: 20rpx;
+}
+#fuTeachTitle .child {
+  padding: 0 20rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  color: #999;
+}
+#fuTeachTitle .child .val {
+  margin-left: 20rpx;
+  flex: 1;
+  border: 1px solid #f0f0f0;
+}
+#fuTeachTitle .child .val input {
+  width: 100%;
+}
+#fuTeachTitle .teacher {
+  padding: 20rpx;
+  margin: 20rpx 30rpx;
+  box-sizing: border-box;
+  border: 1px solid #f0f0f0;
+  border-radius: 15rpx;
+  display: flex;
+  align-items: center;
+}
+#fuTeachTitle .teacher image {
+  height: 250rpx;
+  width: 40%;
+  border-radius: 10rpx;
+  background: #f5ada9;
+}
+#fuTeachTitle .teacher .name_tip {
+  display: flex;
+  align-items: center;
+  font-size: 36rpx;
+  font-weight: 800;
+}
+#fuTeachTitle .teacher .name_tip .mini {
+  font-size: 27rpx;
+}
+#fuTeachTitle .teacher .vip {
+  margin: 0 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #F56F68;
+  width: 30rpx;
+  height: 30rpx;
+  z-index: 2;
+  position: relative;
+}
+#fuTeachTitle .teacher .vip image {
+  width: 20rpx;
+  height: 20rpx;
+}
+#fuTeachTitle .teacher .contant {
+  flex: 1;
+  margin-left: 10rpx;
+}
+#fuTeachTitle .btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+#fuTeachTitle .btn .van-button {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  color: white;
+  background: #f56e68;
+}

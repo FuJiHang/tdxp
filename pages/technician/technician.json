@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "orderListFU":"/components/fujihang/orderListFU/orderListFU"
+  }
+}
